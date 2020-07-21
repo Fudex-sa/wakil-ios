@@ -22,6 +22,7 @@ enum PresentType {
     case presentWithNavigation
     case modal
     case modalWithNavigation
+    
 }
 
 protocol IRouter {

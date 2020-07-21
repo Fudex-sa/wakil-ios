@@ -12,12 +12,29 @@ import UIKit
 
 protocol ILOGINRequesterPresenter: class {
 	// do someting...
+    
+      func showErrorAlert(title: String, msg: String)
+    func navigateHome()
+    func getUser(user: LOGINRequesterModel.loginSuccess)
 }
 
-class LOGINRequesterPresenter: ILOGINRequesterPresenter {	
+class LOGINRequesterPresenter: ILOGINRequesterPresenter {
+    func getUser(user: LOGINRequesterModel.loginSuccess) {
+        view?.getUser(user: user)
+    }
+    
+   
 	weak var view: ILOGINRequesterViewController?
 	
 	init(view: ILOGINRequesterViewController?) {
 		self.view = view
 	}
+    
+    func showErrorAlert(title: String, msg: String){
+        view?.showAlert(title: title, msg: msg)
+    }
+    func navigateHome() {
+        view?.navigateToHome()
+    }
+    
 }

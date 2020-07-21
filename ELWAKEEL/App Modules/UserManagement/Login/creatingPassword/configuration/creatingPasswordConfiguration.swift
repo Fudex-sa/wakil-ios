@@ -12,13 +12,14 @@ import Foundation
 import UIKit
 
 class creatingPasswordConfiguration {
-    static func setup(parameters: [String: Any] = [:]) -> UIViewController {
+    static func setup(parameters: [String: Any] = [:], type: String, id: Int) -> UIViewController {
         let controller = creatingPasswordViewController()
         let router = creatingPasswordRouter(view: controller)
         let presenter = creatingPasswordPresenter(view: controller)
         let worker = creatingPasswordWorker()
         let interactor = creatingPasswordInteractor(presenter: presenter, worker: worker)
-        
+        controller.id = id
+        controller.type = type
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters

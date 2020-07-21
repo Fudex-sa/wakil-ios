@@ -15,11 +15,20 @@ enum FirstSupplierEndPointEndpoint {
     /*
      Add Endpoint
      case sample
+     
      case sample(parameter: [String: Any])
     */
+    case register(name: String,email:String, phone: String, country_code: String, type: String, accepted:Bool, password: String, address: String, city_ids: [Int], latitude: String, longitude: String)
+    case countries
+    case getCities(countries: [Int])
+    
 }
 
 extension FirstSupplierEndPointEndpoint: IEndpoint {
+    var image: UIImage? {
+        return nil
+    }
+    
     var method: HTTPMethod {
         /*
         Do like this:
@@ -29,7 +38,14 @@ extension FirstSupplierEndPointEndpoint: IEndpoint {
             return .get
         }
         */
+        switch self {
+        case .register:
+        return .post
+        case.countries:
         return .get
+        case .getCities:
+        return .post
+        }
     }
     
     var path: String {
@@ -41,7 +57,14 @@ extension FirstSupplierEndPointEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        switch self {
+        case .register:
+        return "http://wakil.api-ksa.com/api/register"
+        case .countries:
+            return "http://wakil.api-ksa.com/api/countries"
+        case .getCities:
+            return "http://wakil.api-ksa.com/api/cities"
+        }
     }
     
     var parameter: Parameters? {
@@ -52,8 +75,18 @@ extension FirstSupplierEndPointEndpoint: IEndpoint {
         case .sample(let model):
             return model.parameter()
         }
+         
         */
-        return nil
+        switch self {
+        case .register(let name, let email, let phone, let country_code, _, let accepted, let password, let address, let city_ids, let latitude, let longitude):
+            
+            return ["name":name,"email":email,"phone":phone,"country_code":country_code,"type":"provider","accepted": accepted,"password":password,"city_ids": city_ids,"address":address,"latitude":latitude,"longitude":longitude]
+        case .countries:
+            return nil
+        case .getCities(let countries):
+            return ["country_ids": countries]
+        }
+      
     }
     
     var header: HTTPHeaders? {
@@ -65,7 +98,14 @@ extension FirstSupplierEndPointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        switch self {
+        case .register:
+            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        case .countries:
+            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        case .getCities(_):
+            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        }
     }
     
     var encoding: ParameterEncoding {        

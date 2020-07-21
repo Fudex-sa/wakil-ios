@@ -8,7 +8,8 @@ target 'ELWAKEEL' do
   # Pods for ELWAKEEL
 
   pod 'LocalizationFramework', :path => '../localization'
-
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 
 end

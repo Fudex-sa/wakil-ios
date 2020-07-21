@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import LocalizationFramework
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+     
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//            self.navigate(type: .modal, module: GeneralRouterRoute.suppilerSecond(id: 9), completion: nil)
+//            self.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
+        self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+//            self.navigate(type: .modal, module: GeneralRouterRoute.sideMenu, completion: nil)
+        
+        }
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
 
 }
 

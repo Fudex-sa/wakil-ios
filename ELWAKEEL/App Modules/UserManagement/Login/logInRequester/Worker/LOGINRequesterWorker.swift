@@ -9,11 +9,56 @@
 //              * https://github.com/AhmedibnAdam
 
 import Foundation
-
+import SwiftyJSON
 protocol ILOGINRequesterWorker: class {
+    
+    func loginFromApi(phone: String ,password: String, type: String ,complition :  @escaping (_ error:ErrorModel? ,_ success: Bool,_ data: LOGINRequesterModel.loginSuccess?)->Void)
 	// do someting...
 }
 
 class LOGINRequesterWorker: ILOGINRequesterWorker {
-	// do someting...
+    func loginFromApi(phone: String, password: String,type: String, complition: @escaping (ErrorModel?, Bool, LOGINRequesterModel.loginSuccess?) -> Void) {
+        print("first")
+        print(password)
+        print(phone)
+        NetworkService.share.request(endpoint: loginEndpoint.login(phone: phone, password: password, type: type ),success: { (responsData) in
+            let response = responsData
+            print("secind")
+            do {
+                let decoder = JSONDecoder()
+                let user = try decoder.decode(LOGINRequesterModel.loginSuccess.self, from: response)
+                print(user)
+                
+                complition(nil,true,user)
+                
+            } catch _ {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let error = try decoder.decode(ErrorModel.self, from: responsData )
+                    print(error)
+                    complition(error , false, nil)
+                } catch let error {
+                    print(error)
+                    
+                }
+            }
+            
+            
+        }, failure: { (error) in
+            do {
+                let decoder = JSONDecoder()
+                let error = try decoder.decode(ErrorModel.self, from: error as! Data )
+                print(error)
+                complition(error , false , nil)
+                
+            } catch let error {
+                print(error)
+                complition(nil , false , nil)
+            }
+            
+        })
+        }
+        
+    
 }

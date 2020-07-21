@@ -18,7 +18,7 @@ class VerificationConfiguration {
         let presenter = VerificationPresenter(view: controller)
         let worker = VerificationWorker()
         let interactor = VerificationInteractor(presenter: presenter, worker: worker)
-        
+        controller.param = parameters
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters

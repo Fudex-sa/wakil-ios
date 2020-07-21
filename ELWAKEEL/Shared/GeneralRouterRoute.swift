@@ -21,21 +21,52 @@ enum GeneralRouterRoute: IRouter {
      
      you can use: String, Int, [String: Any], etc..
     */
+    case login(type: String)
+    case supplierFirst(type: String)
+    case suppilerSecond(id: Int)
+    case HomeLogIn
+    case LoginRequester(type: String)
+    case verification(params: [String:Any])
+    case registrationType
+    case creatingPassword(type: String, id: Int)
+    case forgetPassword
+    case newPassword(phone: String)
+    case Home
+    case sideMenu
+    
+    
 }
 
 extension GeneralRouterRoute {
     var module: UIViewController? {
-        /*
-         Setup module with parameters like:
-         
-         switch self {
-         case .sample:
-            return SampleConfiguration.setup()
-        case .sample(let parameters):
-            return SampleConfiguration.setup(parameters: parameters)
-         }
-         
-         */
-        return nil
+        switch self{
+        case .login(let type):
+            return LOGINRequesterConfiguration.setup(userTypeL: type)
+        case.supplierFirst(let type):
+            return SupplierFirstScreenConfiguration.setup(type: type)
+        case .suppilerSecond(let id):
+            return secondScreenConfiguration.setup(id: id)
+        case .HomeLogIn:
+            return LOGINConfiguration.setup()
+        case .LoginRequester(let type):
+            return CreatingRequesterConfiguration.setup(type: type)
+        case .verification(let params):
+            return VerificationConfiguration.setup(parameters: params)
+        case.registrationType:
+            return registraionTypeConfiguration.setup()
+        case .creatingPassword(let type, let id):
+            return creatingPasswordConfiguration.setup(type: type, id: id)
+        case.forgetPassword:
+            return ForgetpasswordConfiguration.setup()
+        case .newPassword(let phone):
+            return NewPasswordConfiguration.setup(phone: phone)
+
+        case .Home:
+            return HomeConfiguration.setup()
+        case .sideMenu:
+            return sideMenuConfiguration.setup()
+            
+        }
+        
     }
 }

@@ -17,9 +17,15 @@ enum CreatingRequesterEndpointEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
+    
+    case register(phone: String)
 }
 
 extension CreatingRequesterEndpointEndpoint: IEndpoint {
+    var image: UIImage? {
+        return nil
+    }
+    
     var method: HTTPMethod {
         /*
         Do like this:
@@ -29,7 +35,12 @@ extension CreatingRequesterEndpointEndpoint: IEndpoint {
             return .get
         }
         */
-        return .get
+        switch self {
+        case .register:
+            
+        
+        return .post
+        }
     }
     
     var path: String {
@@ -41,7 +52,12 @@ extension CreatingRequesterEndpointEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        switch self {
+        case .register:
+            
+        return "http://wakil.api-ksa.com/api/register"
+        }
+        
     }
     
     var parameter: Parameters? {
@@ -53,9 +69,13 @@ extension CreatingRequesterEndpointEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
+      
+        switch self {
+        case .register(let phone):
+            
+            return ["phone":phone, "accepted":"true", "type": "client", "country_code": "+20"]
     }
-    
+    }
     var header: HTTPHeaders? {
         /*
         Do like this:
@@ -65,7 +85,10 @@ extension CreatingRequesterEndpointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        switch self {
+        case .register:
+       return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        }
     }
     
     var encoding: ParameterEncoding {        

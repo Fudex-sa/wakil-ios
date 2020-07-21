@@ -17,9 +17,15 @@ enum VerificationEndpointEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
+    
+    case verification(phone: String, code: String)
 }
 
 extension VerificationEndpointEndpoint: IEndpoint {
+    var image: UIImage? {
+        return nil
+    }
+    
     var method: HTTPMethod {
         /*
         Do like this:
@@ -29,7 +35,7 @@ extension VerificationEndpointEndpoint: IEndpoint {
             return .get
         }
         */
-        return .get
+        return .post
     }
     
     var path: String {
@@ -41,9 +47,11 @@ extension VerificationEndpointEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        switch self {
+        case .verification:
+        return "http://wakil.api-ksa.com/api/code/verify"
     }
-    
+    }
     var parameter: Parameters? {
         /*
         Do like this:
@@ -53,9 +61,12 @@ extension VerificationEndpointEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
+        switch self {
+        case .verification(let phone, let code):
+            
+            return ["phone":phone,"code": code]
     }
-    
+    }
     var header: HTTPHeaders? {
         /*
         Do like this:
@@ -65,7 +76,12 @@ extension VerificationEndpointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+
+        switch self {
+        case .verification:
+            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        }
+        
     }
     
     var encoding: ParameterEncoding {        

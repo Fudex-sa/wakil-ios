@@ -11,10 +11,26 @@
 import UIKit
 
 protocol IsecondScreenPresenter: class {
+    func moveToHome()
+    func assingNewProvider(provider: secondScreenModel.newUser)
+    func showAlert(title: String, msg: String)
+    
 	// do someting...
 }
 
-class secondScreenPresenter: IsecondScreenPresenter {	
+class secondScreenPresenter: IsecondScreenPresenter {
+    func showAlert(title: String, msg: String) {
+        view?.showAlert(title: title, msg: msg)
+    }
+    
+    func moveToHome() {
+        view?.moveToHome()
+    }
+    
+    func assingNewProvider(provider: secondScreenModel.newUser) {
+        view?.assingNewProvider(provider: provider)
+    }
+    
 	weak var view: IsecondScreenViewController?
 	
 	init(view: IsecondScreenViewController?) {

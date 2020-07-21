@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>nedd your localtion</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Need your localtion</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>ELWAKEEL WNAT TO ACCESS YOUR PHOTO LIBAREY</string>
+	<key>NSCameraUsageDescription</key>
+	<string>ELWAKEEL WNAT TO ACCSESS YOUR CAMER</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

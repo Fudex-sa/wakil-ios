@@ -12,12 +12,20 @@ import UIKit
 
 protocol ISupplierFirstScreenRouter: class {
 	// do someting...
+
+    func goNext(id: Int)
+
 }
 
-class SupplierFirstScreenRouter: ISupplierFirstScreenRouter {	
+class SupplierFirstScreenRouter: ISupplierFirstScreenRouter {
+    
+    
 	weak var view: SupplierFirstScreenViewController?
 	
 	init(view: SupplierFirstScreenViewController?) {
 		self.view = view
 	}
+    func goNext(id: Int) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.suppilerSecond(id: id), completion: nil)
+    }
 }

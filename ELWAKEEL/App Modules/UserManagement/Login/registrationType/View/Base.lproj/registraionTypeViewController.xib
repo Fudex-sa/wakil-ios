@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="registraionTypeViewController" customModule="ELWAKEEL" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionLB" destination="BVl-Xo-h4n" id="TBZ-mb-RoN"/>
+                <outlet property="providerBTN" destination="MSU-ym-NFl" id="K5E-DM-9Qn"/>
+                <outlet property="requesterBTN" destination="qVd-z3-8BK" id="F6y-ls-whP"/>
+                <outlet property="titleLBL" destination="f5i-HF-jM1" id="szM-Kn-z7J"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,8 +27,15 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyi-o7-ceL">
-                    <rect key="frame" x="15" y="40" width="11" height="22"/>
+                    <rect key="frame" x="15" y="40" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="SnH-0e-VHf"/>
+                        <constraint firstAttribute="width" constant="30" id="wlh-6g-jxh"/>
+                    </constraints>
                     <state key="normal" image="Arrow"/>
+                    <connections>
+                        <action selector="backBTN:" destination="-1" eventType="touchUpInside" id="PKM-ne-YWp"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="cKj-ul-Uc5">
                     <rect key="frame" x="146.5" y="170" width="82" height="87"/>
@@ -35,8 +46,8 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-Xo-h4n">
-                    <rect key="frame" x="70" y="318" width="235" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-Xo-h4n">
+                    <rect key="frame" x="158" y="318" width="59.5" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -60,6 +71,9 @@
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="ReuesterBTN:" destination="-1" eventType="touchUpInside" id="p1E-38-TgD"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSU-ym-NFl" customClass="GradientButton" customModule="ELWAKEEL" customModuleProvider="target">
                     <rect key="frame" x="50" y="508" width="275" height="50"/>
@@ -80,6 +94,9 @@
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="providerBTN:" destination="-1" eventType="touchUpInside" id="TLx-Rb-hTP"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,18 +112,18 @@
                 <constraint firstItem="cyi-o7-ceL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="SeW-C9-L4z"/>
                 <constraint firstItem="cyi-o7-ceL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="UhP-WB-46g"/>
                 <constraint firstItem="f5i-HF-jM1" firstAttribute="top" secondItem="cKj-ul-Uc5" secondAttribute="bottom" constant="10" id="V5K-nG-Lg3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BVl-Xo-h4n" secondAttribute="trailing" constant="70" id="W6o-Ad-l8a"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BVl-Xo-h4n" secondAttribute="trailing" id="W6o-Ad-l8a"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="naJ-ya-Mqc" secondAttribute="bottom" id="ZyO-EJ-HbF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qVd-z3-8BK" secondAttribute="trailing" constant="50" id="f1J-Qi-eLb"/>
                 <constraint firstItem="cKj-ul-Uc5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="hSU-GW-Hz5"/>
                 <constraint firstItem="cKj-ul-Uc5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hle-P4-tuJ"/>
                 <constraint firstItem="qVd-z3-8BK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="kVf-z2-zdf"/>
                 <constraint firstItem="BVl-Xo-h4n" firstAttribute="top" secondItem="f5i-HF-jM1" secondAttribute="bottom" constant="15" id="l0e-NU-8oV"/>
-                <constraint firstItem="BVl-Xo-h4n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="mK5-h6-CZs"/>
+                <constraint firstItem="BVl-Xo-h4n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mK5-h6-CZs"/>
                 <constraint firstItem="MSU-ym-NFl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="xDW-cD-qcC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-890" y="-59"/>
+            <point key="canvasLocation" x="-890.39999999999998" y="-59.820089955022496"/>
         </view>
     </objects>
     <resources>

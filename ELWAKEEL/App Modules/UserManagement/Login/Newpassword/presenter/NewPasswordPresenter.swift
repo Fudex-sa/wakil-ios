@@ -11,10 +11,20 @@
 import UIKit
 
 protocol INewPasswordPresenter: class {
+    func showAlert(title: String, msg: String)
+    func GoHome()
 	// do someting...
 }
 
-class NewPasswordPresenter: INewPasswordPresenter {	
+class NewPasswordPresenter: INewPasswordPresenter {
+    func GoHome() {
+        view?.GoHome()
+    }
+    
+    func showAlert(title: String, msg: String) {
+        view?.showAlert(title: title, msg: msg)
+    }
+    
 	weak var view: INewPasswordViewController?
 	
 	init(view: INewPasswordViewController?) {

@@ -17,9 +17,14 @@ enum CreatingPasswordEndPointEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
+    case createNewPassword(password: String,type:String ,id: Int)
 }
 
 extension CreatingPasswordEndPointEndpoint: IEndpoint {
+    var image: UIImage? {
+        return nil
+    }
+    
     var method: HTTPMethod {
         /*
         Do like this:
@@ -29,9 +34,11 @@ extension CreatingPasswordEndPointEndpoint: IEndpoint {
             return .get
         }
         */
-        return .get
+        switch self {
+        case .createNewPassword:
+        return .post
     }
-    
+    }
     var path: String {
         /*
         Do like this:
@@ -41,7 +48,11 @@ extension CreatingPasswordEndPointEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        switch self {
+        case .createNewPassword(_, _, let id):
+            return "http://wakil.api-ksa.com/api/complete-info/\(id)"
+        }
+        
     }
     
     var parameter: Parameters? {
@@ -53,7 +64,11 @@ extension CreatingPasswordEndPointEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
+        switch self {
+        case .createNewPassword(let password, let type, _):
+            return ["password": password ,"type": type]
+        }
+        
     }
     
     var header: HTTPHeaders? {
@@ -65,8 +80,10 @@ extension CreatingPasswordEndPointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
-    }
+        switch self {
+        case .createNewPassword:
+            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        }    }
     
     var encoding: ParameterEncoding {        
         /*

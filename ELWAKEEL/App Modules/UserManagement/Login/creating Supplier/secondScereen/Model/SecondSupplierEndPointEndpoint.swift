@@ -17,13 +17,20 @@ enum SecondSupplierEndPointEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
+    
+    case register(type: String, commercial_number: Int, bank_name: String, bank_iban: Int, commercial_image: UIImage, license_image: UIImage, id: Int)
 }
 
 extension SecondSupplierEndPointEndpoint: IEndpoint {
-    var image: UIImage? {
-        return nil
-    }
     
+    var image: UIImage?{
+        switch self {
+        
+        case .register(_, _, _, _, let commercial_image,_, _):
+            return commercial_image
+        }
+    }
+   
     var method: HTTPMethod {
         /*
         Do like this:
@@ -33,7 +40,11 @@ extension SecondSupplierEndPointEndpoint: IEndpoint {
             return .get
         }
         */
-        return .get
+        switch self {
+        case .register:
+        return .post
+        }
+        
     }
     
     var path: String {
@@ -45,9 +56,11 @@ extension SecondSupplierEndPointEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        switch self{
+        case .register(_, _, _, _, _,_,_):
+       return "http://wakil.api-ksa.com/api/complete-info/9"
     }
-    
+    }
     var parameter: Parameters? {
         /*
         Do like this:
@@ -57,9 +70,13 @@ extension SecondSupplierEndPointEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
+        switch self {
+        case .register(let type, let commercial_number, let bank_name, let bank_iban,let commercial_image , let license_image, _):
+        
+            return ["type": type,"commercial_number": commercial_number,  "bank_name": bank_name,"bank_iban": bank_iban, "commercial_image": commercial_image,"license_image": license_image]
+
     }
-    
+    }
     var header: HTTPHeaders? {
         /*
         Do like this:
@@ -69,7 +86,11 @@ extension SecondSupplierEndPointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        switch self {
+        case .register:
+         
+            return ["Accept": "application/json", "Accept-Language":"en"]
+        }
     }
     
     var encoding: ParameterEncoding {        

@@ -9,12 +9,17 @@
 //              * https://github.com/AhmedibnAdam
 
 import UIKit
+import LocalizationFramework
 
 protocol INewPasswordInteractor: class {
 	var parameters: [String: Any]? { get set }
+    func updatePassword(password: String, phone: String)
 }
 
 class NewPasswordInteractor: INewPasswordInteractor {
+    
+    
+    
     var presenter: INewPasswordPresenter?
     var worker: INewPasswordWorker?
     var parameters: [String: Any]?
@@ -23,4 +28,25 @@ class NewPasswordInteractor: INewPasswordInteractor {
     	self.presenter = presenter
     	self.worker = worker
     }
+    func updatePassword(password: String, phone: String) {
+        worker?.updatePasswordAPI(password: password, Phone: phone, complition: { (error, success, responseData) in
+            
+            if error != nil{
+                print("error1")
+                self.presenter?.showAlert(title: Localization.errorLBL, msg: Localization.thereiserror)
+                
+            }
+            
+                if responseData?.count == 0{
+                    print("error2")
+                    self.presenter?.showAlert(title: Localization.information, msg: Localization.passwordUpdated)
+                    self.presenter?.GoHome()
+                    
+                }
+                else{
+                    print("error3")
+                       self.presenter?.showAlert(title: Localization.errorLBL, msg: Localization.thereiserror)
+                    }
+})
+}
 }

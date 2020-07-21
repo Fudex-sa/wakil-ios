@@ -23,4 +23,8 @@ struct ForgetpasswordModel {
 	struct Response {
 		// do someting...
 	}
+    
+    struct forgetpassword: Codable {
+        
+    }
 }

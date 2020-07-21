@@ -12,12 +12,20 @@ import UIKit
 
 protocol ILOGINRequesterRouter: class {
 	// do someting...
+    
+    func navigateToHome()
 }
 
-class LOGINRequesterRouter: ILOGINRequesterRouter {	
+class LOGINRequesterRouter: ILOGINRequesterRouter {
+   
+    
 	weak var view: LOGINRequesterViewController?
 	
 	init(view: LOGINRequesterViewController?) {
 		self.view = view
 	}
+    
+    func navigateToHome() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.registrationType, completion: nil)
+    }
 }

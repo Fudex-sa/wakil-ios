@@ -17,9 +17,15 @@ enum ForgetPasswordEndPointEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
+    case forgetpassword(password: String)
+    
 }
 
 extension ForgetPasswordEndPointEndpoint: IEndpoint {
+    var image: UIImage? {
+        return nil
+    }
+    
     var method: HTTPMethod {
         /*
         Do like this:
@@ -29,7 +35,7 @@ extension ForgetPasswordEndPointEndpoint: IEndpoint {
             return .get
         }
         */
-        return .get
+        return .post
     }
     
     var path: String {
@@ -41,7 +47,12 @@ extension ForgetPasswordEndPointEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        
+        switch self {
+        case .forgetpassword:
+        return "http://wakil.api-ksa.com/api/password/reset"
+            
+        }
     }
     
     var parameter: Parameters? {
@@ -53,7 +64,14 @@ extension ForgetPasswordEndPointEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
+        
+        switch self {
+        case .forgetpassword(let phone):
+            return ["phone":phone]
+            
+            
+        }
+        
     }
     
     var header: HTTPHeaders? {
@@ -65,7 +83,13 @@ extension ForgetPasswordEndPointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        
+        
+        switch self {
+        case .forgetpassword:
+            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        }
+        
     }
     
     var encoding: ParameterEncoding {        

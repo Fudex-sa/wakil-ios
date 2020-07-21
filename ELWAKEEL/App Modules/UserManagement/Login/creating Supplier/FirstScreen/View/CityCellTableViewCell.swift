@@ -13,6 +13,17 @@ class CityCellTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var city: UILabel!
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                accessoryType = .checkmark
+                
+            } else {
+                accessoryType = .none
+                
+            }
+        }}
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

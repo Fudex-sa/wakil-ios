@@ -17,9 +17,15 @@ enum loginEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
+    
+    case login(phone: String, password: String, type: String)
 }
 
 extension loginEndpoint: IEndpoint {
+    var image: UIImage? {
+        return nil
+    }
+    
     var method: HTTPMethod {
         /*
         Do like this:
@@ -29,9 +35,12 @@ extension loginEndpoint: IEndpoint {
             return .get
         }
         */
-        return .get
+        switch self{
+        case .login:
+        
+        return .post
     }
-    
+    }
     var path: String {
         /*
         Do like this:
@@ -41,7 +50,12 @@ extension loginEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        
+        switch self {
+        case .login:
+        return "http://wakil.api-ksa.com/api/login"
+            
+        }
     }
     
     var parameter: Parameters? {
@@ -53,7 +67,15 @@ extension loginEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
+        
+        switch self {
+            
+        case .login(let phone, let password, let type):
+//            let defaults = UserDefaults.standard
+//            let device_token = defaults.string(forKey: "firebase_token")
+            return ["phone": phone , "password": password , "type": type]
+        }
+       
     }
     
     var header: HTTPHeaders? {
@@ -65,7 +87,10 @@ extension loginEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        switch self {
+        case .login:
+            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        }
     }
     
     var encoding: ParameterEncoding {        
@@ -79,6 +104,8 @@ extension loginEndpoint: IEndpoint {
             return JSONEncoding.default
         }
         */
+        switch self {
+        case .login:
         return JSONEncoding.default
-    }
+        }}
 }

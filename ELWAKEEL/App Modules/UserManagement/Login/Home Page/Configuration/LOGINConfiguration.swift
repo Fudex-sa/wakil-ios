@@ -14,6 +14,7 @@ import UIKit
 class LOGINConfiguration {
     static func setup(parameters: [String: Any] = [:]) -> UIViewController {
         let controller = LOGINViewController()
+        
         let router = LOGINRouter(view: controller)
         let presenter = LOGINPresenter(view: controller)
         let worker = LOGINWorker()

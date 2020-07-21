@@ -12,9 +12,16 @@ import UIKit
 
 protocol IForgetpasswordRouter: class {
 	// do someting...
+    func goVerification(params: [String:Any])
+    
 }
 
-class ForgetpasswordRouter: IForgetpasswordRouter {	
+class ForgetpasswordRouter: IForgetpasswordRouter {
+    func goVerification(params: [String : Any]) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.verification(params: params), completion: nil)
+    }
+    
+    
 	weak var view: ForgetpasswordViewController?
 	
 	init(view: ForgetpasswordViewController?) {

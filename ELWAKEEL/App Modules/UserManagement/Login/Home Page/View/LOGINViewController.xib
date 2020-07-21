@@ -11,8 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LOGINViewController" customModule="ELWAKEEL" customModuleProvider="target">
             <connections>
-                <outlet property="ServiceRequester" destination="hHi-w5-RVA" id="zBE-cv-hSg"/>
-                <outlet property="backBTN" destination="C2Y-km-agD" id="WUR-EL-YMU"/>
+                <outlet property="ServiceRequester" destination="zGA-Y6-zVE" id="Y2z-XL-3hm"/>
                 <outlet property="descriptionLBL" destination="oXD-Ig-68T" id="xOL-fY-uYd"/>
                 <outlet property="serviceSupplier" destination="hHi-w5-RVA" id="f22-Qm-y8w"/>
                 <outlet property="titleLBL" destination="Bcb-ja-3lS" id="wZQ-IH-6QN"/>
@@ -27,45 +26,66 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="L19-IP-DLt">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-km-agD" userLabel="Back">
-                    <rect key="frame" x="349" y="40" width="11" height="22"/>
-                    <state key="normal" image="Arrow"/>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="SA3-wT-8ej">
                     <rect key="frame" x="146.5" y="150" width="82" height="87"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcb-ja-3lS" userLabel="titleLB">
-                    <rect key="frame" x="166.5" y="252" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcb-ja-3lS" userLabel="titleLB">
+                    <rect key="frame" x="187.5" y="252" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXD-Ig-68T" userLabel="descriptionLB">
-                    <rect key="frame" x="70" y="283" width="235" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXD-Ig-68T" userLabel="descriptionLB">
+                    <rect key="frame" x="70" y="262" width="235" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <color key="textColor" white="0.96575342470000003" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGA-Y6-zVE" userLabel="service requster">
-                    <rect key="frame" x="47.5" y="394" width="280" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGA-Y6-zVE" userLabel="service requster" customClass="GradientButton" customModule="ELWAKEEL" customModuleProvider="target">
+                    <rect key="frame" x="47.5" y="382" width="280" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="goG-9U-eoW"/>
                         <constraint firstAttribute="width" constant="280" id="m7A-JK-8nk"/>
                     </constraints>
-                    <state key="normal" title="Button">
+                    <state key="normal" title="service requester">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
+                            <color key="value" red="0.098039215686274508" green="0.66274509803921566" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
+                            <color key="value" red="0.011764705882352941" green="0.60392156862745094" blue="0.57647058823529407" alpha="0.99315068493150682" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="requester:" destination="-1" eventType="touchUpInside" id="hG6-Jg-0Rl"/>
+                        <action selector="servicesRequesterBTN:" destination="-1" eventType="touchUpInside" id="2NT-Qx-2sO"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-w5-RVA" userLabel="Service supplier">
-                    <rect key="frame" x="47.5" y="473" width="280" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-w5-RVA" userLabel="Service supplier" customClass="GradientButton" customModule="ELWAKEEL" customModuleProvider="target">
+                    <rect key="frame" x="47.5" y="461" width="280" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="XKy-rd-aJh"/>
+                    </constraints>
+                    <state key="normal" title="service provider">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
+                            <color key="value" red="0.098039215686274508" green="0.66274509803921566" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
+                            <color key="value" red="0.011764705882352941" green="0.60392156862745094" blue="0.57647058823529407" alpha="0.99315068493150682" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="supplierBTN:" destination="-1" eventType="touchUpInside" id="n4V-Yu-ZEd"/>
+                        <action selector="servicesProviderBTN:" destination="-1" eventType="touchUpInside" id="ayz-Yx-EUA"/>
                     </connections>
                 </button>
             </subviews>
@@ -84,19 +104,17 @@
                 <constraint firstItem="Bcb-ja-3lS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SzI-id-w3h"/>
                 <constraint firstAttribute="bottom" secondItem="L19-IP-DLt" secondAttribute="bottom" id="XNf-hh-J6r"/>
                 <constraint firstItem="SA3-wT-8ej" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="aaH-r0-lJM"/>
-                <constraint firstItem="C2Y-km-agD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="dBN-xm-Bbg"/>
                 <constraint firstItem="hHi-w5-RVA" firstAttribute="trailing" secondItem="zGA-Y6-zVE" secondAttribute="trailing" id="g1f-2H-E7R"/>
                 <constraint firstAttribute="trailing" secondItem="L19-IP-DLt" secondAttribute="trailing" id="iqw-TU-28n"/>
                 <constraint firstItem="hHi-w5-RVA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oAg-RE-WLG"/>
                 <constraint firstItem="oXD-Ig-68T" firstAttribute="top" secondItem="Bcb-ja-3lS" secondAttribute="bottom" constant="10" id="oQM-Uc-c7U"/>
                 <constraint firstItem="oXD-Ig-68T" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rKk-JS-uJD"/>
-                <constraint firstAttribute="trailing" secondItem="C2Y-km-agD" secondAttribute="trailing" constant="15" id="xAt-GX-qIS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="71.200000000000003" y="131.78410794602701"/>
         </view>
     </objects>
     <resources>
-        <image name="Arrow" width="11.5" height="19.5"/>
         <image name="BackGround" width="414" height="736"/>
         <image name="Logo" width="82.5" height="87.5"/>
     </resources>

@@ -20,6 +20,10 @@ enum TypeEndPointEndpoint {
 }
 
 extension TypeEndPointEndpoint: IEndpoint {
+    var image: UIImage? {
+        return nil
+    }
+    
     var method: HTTPMethod {
         /*
         Do like this:

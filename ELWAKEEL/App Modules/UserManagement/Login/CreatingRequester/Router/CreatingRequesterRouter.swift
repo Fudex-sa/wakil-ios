@@ -12,9 +12,15 @@ import UIKit
 
 protocol ICreatingRequesterRouter: class {
 	// do someting...
+    func GoVerification(type: String, id: Int)
+    
 }
 
-class CreatingRequesterRouter: ICreatingRequesterRouter {	
+class CreatingRequesterRouter: ICreatingRequesterRouter {
+    func GoVerification(type: String, id: Int) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.verification(params: ["type":type, "id": id]), completion: nil)
+    }
+    
 	weak var view: CreatingRequesterViewController?
 	
 	init(view: CreatingRequesterViewController?) {

@@ -92,18 +92,24 @@ extension NetworkService {
     
     func uploadToServerWith<T: IEndpoint>(endpoint: T , success: ((_ data: Data)->Void)? = nil, failure: ((_ error: Error?)->Void)? = nil) {
         DispatchQueue.global(qos: .background).async {
+            
+            
+
             let image = endpoint.image!
-            let imgData = image.jpegData(compressionQuality: 0.1)!
+           let imgData = image.jpegData(compressionQuality: 0.3)!
             Alamofire.upload(multipartFormData: { multipartFormData in
-                multipartFormData.append(imgData, withName: "avatar",fileName: "avatar", mimeType: "avatar/jpg")
+                multipartFormData.append(imgData, withName: "commercial_image   ",fileName: "commercial_image.jpeg", mimeType: "image/jpeg")
+                print(endpoint.path)
                 for (key, value) in endpoint.parameter ?? ["":""] {
-                    multipartFormData.append(((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!), withName: key)
-                }
+                    print(value)
+                    
+                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+
+                    }
             }, usingThreshold:UInt64.init(), to:endpoint.path , method:.post, headers: endpoint.header)
             { (result) in
                 switch result {
                 case .success(let upload, _ , _):
-                    //  success?(value)
                     upload.uploadProgress(closure: { (Progress) in
                         print("Upload Progress: \(Progress.fractionCompleted)")
                     })
@@ -111,17 +117,99 @@ extension NetworkService {
                         switch response.result {
                         case .success (let value):
                             success?(value)
-                        case .failure(let error):
-                            print(error)
+                              case .failure(let error):
+                            print("rrrrr\(error.localizedDescription)")
                         }
                         
                     }
                 case .failure(let error):
-                    print(error)
+                    print("error\(error.localizedDescription)")
                 }
                 
             }
         }
+        
     }
+    
+    func uploadImages(type: String, bank_Name: String, Iban_Number: Int, commercial_number: Int, comercial_Image: UIImage, licence_Image: UIImage, id: Int, compition: @escaping((_ error: Error?, _ success: Bool, _ data : secondScreenModel.newUser?)->Void)){
+        
+        let headers =
+            ["Accept": "application/json", "Accept-Language":"en"]
+        let commercial_img = comercial_Image.jpegData(compressionQuality: 0.5)
+        let licence_Img = licence_Image.jpegData(compressionQuality: 0.5)
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in            multipartFormData.append(commercial_img!, withName: "commercial_image",fileName: "commercial_image.png" , mimeType: "image/png")
+            multipartFormData.append(licence_Img!, withName: "license_image",fileName: "license_image.png" , mimeType: "image/png")
+            
+            multipartFormData.append(type.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "type")
+            multipartFormData.append(bank_Name.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "bank_name")
+            
+            multipartFormData.append("\(commercial_number)".data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "commercial_number")
+            multipartFormData.append("\(Iban_Number)".data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "bank_iban")
+            
+        }, usingThreshold:UInt64.init(),
+           to: "http://wakil.api-ksa.com/api/complete-info/\(id)",
+           method: .post,
+           headers: headers, //pass header dictionary here
+            encodingCompletion: { (result) in
+                
+                switch result {
+                    
+                case .failure(let error):
+                    print(error)
+                    compition(error, false, nil)
+                    
+                    case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
+//                    
+//                        upload.responseJSON(completionHandler: { (response) in
+//                            print("Response\(response)")
+//                            switch result{
+//                            case .success:
+//                                print("success")
+//                                do {
+//                                let decode = JSONDecoder()
+//                                let data =  try decode.decode(secondScreenModel.newUser.self, from: response.data!)
+//                                    compition(nil,true, data)}
+//                                catch(let error){
+//                                    print("error Parsing \(error.localizedDescription)")
+//                                    compition(error,false, nil)
+//                                }
+//                            case .failure(let error):
+//                                print("error\(error.localizedDescription)")
+//                                compition(error, false, nil)
+//                            }
+//                        })
+                    upload.uploadProgress(closure: { (progress: Progress) in
+                        print(progress)
+                    })
+                        .responseJSON(completionHandler: { (response: DataResponse<Any>) in
+                            
+                            switch response.result
+                            {
+                            case .failure(let error):
+                                print(error)
+                                compition(error, false, nil)
+                                
+                            case .success(let value):
+                                do{
+                                      let decoder = JSONDecoder()
+                                    let New_User = try decoder.decode(secondScreenModel.newUser.self, from: response.data!)
+                                    compition(nil,true, New_User)
+                                }
+                                
+                                catch(let error)
+                                {
+                                    print(error.localizedDescription)
+                                    compition(nil,false,nil)
+                                }
+                            }
+                            
+                                })
+    }
+    
+    })
+
+    }
+    
     
 }

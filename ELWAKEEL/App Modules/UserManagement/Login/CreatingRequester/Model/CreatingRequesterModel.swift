@@ -23,4 +23,14 @@ struct CreatingRequesterModel {
 	struct Response {
 		// do someting...
 	}
-}
+    
+    struct registerCleint: Codable {
+            var id: Int?
+            var name: String?
+            var phone: String?
+            var email: String?
+            var average_rating: Int?
+            
+        }  
+    }
+

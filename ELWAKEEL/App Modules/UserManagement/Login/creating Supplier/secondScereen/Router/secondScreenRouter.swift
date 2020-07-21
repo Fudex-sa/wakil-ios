@@ -12,9 +12,14 @@ import UIKit
 
 protocol IsecondScreenRouter: class {
 	// do someting...
+    func MoveToHome()
 }
 
-class secondScreenRouter: IsecondScreenRouter {	
+class secondScreenRouter: IsecondScreenRouter {
+    func MoveToHome() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+    }
+    
 	weak var view: secondScreenViewController?
 	
 	init(view: secondScreenViewController?) {

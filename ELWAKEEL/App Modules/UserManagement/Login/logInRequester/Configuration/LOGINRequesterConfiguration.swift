@@ -12,13 +12,13 @@ import Foundation
 import UIKit
 
 class LOGINRequesterConfiguration {
-    static func setup(parameters: [String: Any] = [:]) -> UIViewController {
+    static func setup(parameters: [String: Any] = [:], userTypeL: String) -> UIViewController {
         let controller = LOGINRequesterViewController()
         let router = LOGINRequesterRouter(view: controller)
         let presenter = LOGINRequesterPresenter(view: controller)
         let worker = LOGINRequesterWorker()
         let interactor = LOGINRequesterInteractor(presenter: presenter, worker: worker)
-        
+        controller.type = userTypeL
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters

@@ -12,9 +12,25 @@ import UIKit
 
 protocol ICreatingRequesterPresenter: class {
 	// do someting...
+    func goVerification(type: String, id: Int)
+    func showAlert(title: String, msg: String)
+    func assignModel(newClient: CreatingRequesterModel.registerCleint)
 }
 
-class CreatingRequesterPresenter: ICreatingRequesterPresenter {	
+class CreatingRequesterPresenter: ICreatingRequesterPresenter {
+    func goVerification(type: String, id: Int) {
+        view?.goVerification(type: type, id: id)
+    }
+    
+    func assignModel(newClient: CreatingRequesterModel.registerCleint) {
+        view?.assingModel(model: newClient)
+    }
+    
+    func showAlert(title: String, msg: String) {
+        view?.showAlert(title: title, msg: msg)
+    }
+    
+    
 	weak var view: ICreatingRequesterViewController?
 	
 	init(view: ICreatingRequesterViewController?) {

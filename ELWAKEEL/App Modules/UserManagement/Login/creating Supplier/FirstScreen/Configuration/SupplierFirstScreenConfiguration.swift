@@ -12,13 +12,13 @@ import Foundation
 import UIKit
 
 class SupplierFirstScreenConfiguration {
-    static func setup(parameters: [String: Any] = [:]) -> UIViewController {
+    static func setup(parameters: [String: Any] = [:], type: String) -> UIViewController {
         let controller = SupplierFirstScreenViewController()
         let router = SupplierFirstScreenRouter(view: controller)
         let presenter = SupplierFirstScreenPresenter(view: controller)
         let worker = SupplierFirstScreenWorker()
         let interactor = SupplierFirstScreenInteractor(presenter: presenter, worker: worker)
-        
+        controller.type = type
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters

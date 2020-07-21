@@ -10,6 +10,20 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var cityLBL: UILabel!
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                accessoryType = .checkmark
+                
+            } else {
+                accessoryType = .none
+                
+            }
+        }}
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

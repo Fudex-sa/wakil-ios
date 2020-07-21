@@ -13,6 +13,9 @@ import LocalizationFramework
 
 protocol IsecondScreenViewController: class {
 	var router: IsecondScreenRouter? { get set }
+    func assingNewProvider(provider: secondScreenModel.newUser)
+    func moveToHome()
+    func showAlert(title: String, msg: String)
 }
 
 class secondScreenViewController: UIViewController {
@@ -37,12 +40,18 @@ class secondScreenViewController: UIViewController {
     @IBOutlet weak var termsLBL: UILabel!
     @IBOutlet weak var checkBTN: UIButton!
     
-    var checked = false
-    var check2 = false
-    var imagePicker = UIImagePickerController()
+ 
+    var pickerLicence = UIImagePickerController()
+    var pickerCommercial = UIImagePickerController()
+    var id: Int = 9
+    var comerialImage: UIImage?
+    var licenceImage: UIImage?
+    var unchecked = true
+    let preferredLanguage = NSLocale.preferredLanguages[0]
+    var provider: secondScreenModel.newUser?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("ID\(id)")
         setUpView()
         setUpcompoents()
         setUpTEXTFEILD()
@@ -52,16 +61,13 @@ class secondScreenViewController: UIViewController {
     
     func setUpTEXTFEILD()
     {
-     bankNameTXT.delegate = self
+    
+        bankNameTXT.delegate = self
         numberTXT.delegate = self
-        recordNumTXT.delegate = self
-        recordImageTXt.delegate = self
         recordImage2TXT.delegate = self
-        bankNameTXT.tag = 0
-        numberTXT.tag = 1
-        recordNumTXT.tag = 2
-        recordImageTXt.tag = 3
-        recordImage2TXT.tag = 4
+        recordImageTXt.delegate = self
+        recordNumTXT.delegate = self
+        
     }
     func setUpcompoents()
     {
@@ -90,93 +96,118 @@ class secondScreenViewController: UIViewController {
     {
         let button1 = UIButton(type: .custom)
         button1.setImage(UIImage(named: "upload"), for: .normal)
-        button1.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -16)
+        button1.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
         button1.frame = CGRect(x: CGFloat(recordImageTXt.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
         button1.addTarget(self, action: #selector(self.upload), for: .touchUpInside)
-        recordImageTXt.leftView = button1
-        recordImageTXt.leftViewMode = .always
+        
+             recordImageTXt.leftView = button1
+            recordImageTXt.leftViewMode = .always
+        
         
     }
     func addBTN2(){
         let button2 = UIButton(type: .custom)
         button2.setImage(UIImage(named: "upload"), for: .normal)
-        button2.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -16)
+        button2.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
         button2.frame = CGRect(x: CGFloat(recordImage2TXT.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
         button2.addTarget(self, action: #selector(self.uploadimage), for: .touchUpInside)
+
         recordImage2TXT.leftView = button2
         recordImage2TXT.leftViewMode = .always
         
     }
     
-    
     @IBAction func chechBTN(_ sender: UIButton) {
-        
-        if (sender.isSelected == true)
-        {
-            sender.setBackgroundImage(UIImage(named: "check"), for: UIControl.State.normal)
-            sender.isSelected = false;
+       
+        if unchecked {
+            sender.setImage(UIImage(named:"check"), for: .normal)
+            unchecked = false
         }
-        else
-        {
-           
-            sender.isSelected = true;
+        else {
+            sender.setImage( UIImage(named:""), for: .normal)
+            unchecked = true
         }
+    
     }
     
     
     @objc func upload()
     {
-       self.checked = true
-        showAlert()
+
+        showAlert(picker: pickerCommercial)
     }
     @objc func uploadimage()
     {
-        self.check2 = true
-        showAlert()
+        showAlert(picker: pickerLicence)
         
     }
     
     @IBAction func sendBTN(_ sender: Any) {
-        self.navigate(type: .modal, module: GeneralRouterRoute.verification, completion: nil)
+        
+        guard let bankName = bankNameTXT.text,
+              let ibanNumber = numberTXT.text,
+              let comercialNumber = recordNumTXT.text
+        else {
+            ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
+            
+            print("error Gurd")
+            return
+        }
+        let iban = Int(ibanNumber)!
+        let comNumber = Int(comercialNumber)
+        if comerialImage == nil || licenceImage == nil{
+            ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
+            print("Error If")
+            return
     }
+        else if unchecked == true{
+           
+                ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.acceptTerms, sender: self)
+                return
+            }
+        
+        else{
+            
+             self.interactor?.register(type: "provider", commercial_number: comNumber!, bank_name: bankName, bank_iban: iban, commercial_image: comerialImage!, license_image: licenceImage!, id: id)
+    }
+    }
+  
     
-    private func showAlert() {
+    private func showAlert(picker: UIImagePickerController) {
         
         let alert = UIAlertController(title: Localization.chooseImageALert, message: Localization.alertMSG, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: Localization.camara, style: .default, handler: {(action: UIAlertAction) in
-            self.getImage(fromSourceType: .camera)
+            self.getImage(fromSourceType: .camera, pickerImage: picker)
         }))
         alert.addAction(UIAlertAction(title: Localization.photoAlbum, style: .default, handler: {(action: UIAlertAction) in
-            self.getImage(fromSourceType: .photoLibrary)
+            self.getImage(fromSourceType: .photoLibrary, pickerImage: picker)
         }))
         alert.addAction(UIAlertAction(title: Localization.cancel, style: .destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     //get image from source type
-    private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
+    private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType, pickerImage: UIImagePickerController) {
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = sourceType
-            self.present(imagePickerController, animated: true, completion: nil)
+            pickerImage.delegate = self
+            pickerImage.sourceType = sourceType
+            self.present(pickerImage, animated: true, completion: nil)
         }
     }
 }
 extension secondScreenViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if checked == true {
-            let image = info[.originalImage] as? UIImage
-            self.recordImageTXt.text = Localization.uploaded
-            self.checked = false
-           
+        
+        if picker == pickerCommercial{
+            let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            comerialImage = image
+            self.recordImageTXt.text = "\(comerialImage!)"
             
         }
-        if check2 == true{
-            let image = info[.originalImage] as? UIImage
-            self.recordImage2TXT.text = Localization.uploaded
-            self.check2 = false
-            
+        else{
+            let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            licenceImage = image
+            self.recordImage2TXT.text = "\(licenceImage!)"
         }
         dismiss(animated: true, completion: nil)
         
@@ -184,24 +215,32 @@ extension secondScreenViewController: UIImagePickerControllerDelegate, UINavigat
     
 }
 extension secondScreenViewController: UITextFieldDelegate{
-     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    
-        let nextTextFieldTag = textField.tag + 1
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
         
-        if let nextTextField = textField.superview?.viewWithTag(nextTextFieldTag) as? UITextField {
-            nextTextField.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
-        return true
-    }
+}
 }
 
 extension secondScreenViewController: IsecondScreenViewController {
+    func showAlert(title: String, msg: String) {
+        ShowAlertView.showAlert(title: title, msg: msg, sender: self)
+    }
+    
+    func assingNewProvider(provider: secondScreenModel.newUser) {
+        self.provider = provider
+    }
+    
+    func moveToHome() {
+        router?.MoveToHome()
+    }
+    
 	// do someting...
 }
 
 extension secondScreenViewController {
+    
+    
 	// do someting...
 }
 
