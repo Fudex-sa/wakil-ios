@@ -10,15 +10,37 @@ import UIKit
 
 class requestCell: UITableViewCell {
 
+    
+    @IBOutlet weak var requestNumLBL: UILabel!
+    
+    
+    @IBOutlet weak var showNumberLBL: UILabel!
+    @IBOutlet weak var requestStatus: UILabel!
+    @IBOutlet weak var requestDESLBL: UILabel!
+    @IBOutlet weak var requestAddresBL: UILabel!
+    @IBOutlet weak var requesteAccept: UILabel!
+    @IBOutlet weak var requestNum2: UILabel!
+    @IBOutlet weak var goTORequest: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        requestNum2.layer.masksToBounds = true
+        requestNum2.layer.cornerRadius = requestNum2.frame.width/2
+        showNumberLBL.layer.masksToBounds = true
+        showNumberLBL.layer.cornerRadius = showNumberLBL.frame.width/2
+       
     }
-
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }

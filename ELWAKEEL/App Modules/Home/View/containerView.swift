@@ -29,7 +29,6 @@ class HomeContainerController: UIViewController {
         print("hamada")
         configureHomeController()
         print("hamada2")
-//    self.sender.delegate = self
         
     }
     

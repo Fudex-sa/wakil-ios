@@ -1,0 +1,6 @@
+framework module Pods_ELWAKEEL {
+  umbrella header "Pods-ELWAKEEL-umbrella.h"
+
+  export *
+  module * { export * }
+}

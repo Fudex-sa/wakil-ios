@@ -11,22 +11,30 @@
 import UIKit
 
 protocol IVerificationRouter: class {
-    func goNewPassword(type: String, id: Int)
-    func createNewPassword(phone: String)
+    func goNewpassword(phone: String)
+    func createpassword(type: String, id: Int)
+    func goHome()
 	// do someting...
 }
 
 class VerificationRouter: IVerificationRouter {
+    func createpassword(type: String, id: Int) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.creatingPassword(type: type, id: id), completion: nil)
+    }
+    
+    func goHome() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+    }
+    
+    func goNewpassword(phone: String) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.newPassword(phone: phone), completion: nil)
+    }
+    
     func createNewPassword(phone: String) {
 view?.navigate(type: .modal, module: GeneralRouterRoute.newPassword(phone: phone), completion: nil)
         
     }
-    
-    
-    
-    func goNewPassword(type: String, id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.creatingPassword(type: type, id: id), completion: nil)
-    }
+   
     
 	weak var view: VerificationViewController?
 	

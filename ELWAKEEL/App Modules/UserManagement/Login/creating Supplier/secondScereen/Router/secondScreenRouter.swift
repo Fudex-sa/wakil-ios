@@ -12,13 +12,20 @@ import UIKit
 
 protocol IsecondScreenRouter: class {
 	// do someting...
-    func MoveToHome()
+    func MoveToVerification(type: String)
+
+    
 }
 
 class secondScreenRouter: IsecondScreenRouter {
-    func MoveToHome() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+    func MoveToVerification(type: String) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.verification(params: ["type": type]), completion: nil)
     }
+    
+    func MoveToVerification() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.addrequest, completion: nil)
+    }
+    
     
 	weak var view: secondScreenViewController?
 	

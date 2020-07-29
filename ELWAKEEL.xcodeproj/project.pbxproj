@@ -14,7 +14,6 @@
 		070021F224C0438000C8CE31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070021EA24C0438000C8CE31 /* HomeViewController.swift */; };
 		070021F324C0438000C8CE31 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070021EB24C0438000C8CE31 /* HomeInteractor.swift */; };
 		070021F424C0438000C8CE31 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070021EC24C0438000C8CE31 /* HomeModel.swift */; };
-		070021F524C0438000C8CE31 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070021ED24C0438000C8CE31 /* HomeViewController.xib */; };
 		0702417224B12E1A001271BC /* CreatingRequesterConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702416A24B12E1A001271BC /* CreatingRequesterConfiguration.swift */; };
 		0702417324B12E1A001271BC /* CreatingRequesterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702416B24B12E1A001271BC /* CreatingRequesterPresenter.swift */; };
 		0702417424B12E1A001271BC /* CreatingRequesterWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702416C24B12E1A001271BC /* CreatingRequesterWorker.swift */; };
@@ -59,6 +58,40 @@
 		0720192024B6BDC400E7952F /* FirstSupplierEndPointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720191F24B6BDC400E7952F /* FirstSupplierEndPointEndpoint.swift */; };
 		0720192224B6BDE200E7952F /* CreatingRequesterEndpointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720192124B6BDE200E7952F /* CreatingRequesterEndpointEndpoint.swift */; };
 		0720192424B6BDFE00E7952F /* VerificationEndpointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720192324B6BDFE00E7952F /* VerificationEndpointEndpoint.swift */; };
+		0720CBAA24CEF63600DEB73A /* requestDetailsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBA224CEF63600DEB73A /* requestDetailsConfiguration.swift */; };
+		0720CBAB24CEF63600DEB73A /* requestDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBA324CEF63600DEB73A /* requestDetailsPresenter.swift */; };
+		0720CBAC24CEF63600DEB73A /* requestDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBA424CEF63600DEB73A /* requestDetailsWorker.swift */; };
+		0720CBAD24CEF63600DEB73A /* requestDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBA524CEF63600DEB73A /* requestDetailsRouter.swift */; };
+		0720CBAE24CEF63600DEB73A /* requestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBA624CEF63600DEB73A /* requestDetailsViewController.swift */; };
+		0720CBAF24CEF63600DEB73A /* requestDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBA724CEF63600DEB73A /* requestDetailsInteractor.swift */; };
+		0720CBB024CEF63600DEB73A /* requestDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBA824CEF63600DEB73A /* requestDetailsModel.swift */; };
+		0720CBC224CF522400DEB73A /* addrequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBBA24CF522400DEB73A /* addrequestConfiguration.swift */; };
+		0720CBC324CF522400DEB73A /* addrequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBBB24CF522400DEB73A /* addrequestPresenter.swift */; };
+		0720CBC424CF522400DEB73A /* addrequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBBC24CF522400DEB73A /* addrequestWorker.swift */; };
+		0720CBC524CF522400DEB73A /* addrequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBBD24CF522400DEB73A /* addrequestRouter.swift */; };
+		0720CBC624CF522400DEB73A /* addrequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBBE24CF522400DEB73A /* addrequestViewController.swift */; };
+		0720CBC724CF522400DEB73A /* addrequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBBF24CF522400DEB73A /* addrequestInteractor.swift */; };
+		0720CBC824CF522400DEB73A /* addrequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBC024CF522400DEB73A /* addrequestModel.swift */; };
+		0720CBD224CFA51F00DEB73A /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBD124CFA51F00DEB73A /* AlertController.swift */; };
+		0720CBD424CFA56400DEB73A /* alertExention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBD324CFA56400DEB73A /* alertExention.swift */; };
+		0720CBD524CFA7BD00DEB73A /* requestDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0720CBD724CFA7BD00DEB73A /* requestDetailsViewController.xib */; };
+		0720CBDC24CFA7F600DEB73A /* addrequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0720CBDE24CFA7F600DEB73A /* addrequestViewController.xib */; };
+		0720CBE324CFA81B00DEB73A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0720CBE524CFA81B00DEB73A /* HomeViewController.xib */; };
+		0720CBF424CFB79E00DEB73A /* editRequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBEC24CFB79E00DEB73A /* editRequestConfiguration.swift */; };
+		0720CBF524CFB79E00DEB73A /* editRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBED24CFB79E00DEB73A /* editRequestPresenter.swift */; };
+		0720CBF624CFB79E00DEB73A /* editRequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBEE24CFB79E00DEB73A /* editRequestWorker.swift */; };
+		0720CBF724CFB79E00DEB73A /* editRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBEF24CFB79E00DEB73A /* editRequestRouter.swift */; };
+		0720CBF824CFB79E00DEB73A /* editRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBF024CFB79E00DEB73A /* editRequestViewController.swift */; };
+		0720CBF924CFB79E00DEB73A /* editRequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBF124CFB79E00DEB73A /* editRequestInteractor.swift */; };
+		0720CBFA24CFB79E00DEB73A /* editRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720CBF224CFB79E00DEB73A /* editRequestModel.swift */; };
+		0720CBFB24CFB79E00DEB73A /* editRequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0720CBF324CFB79E00DEB73A /* editRequestViewController.xib */; };
+		07219F6024D04A0900F81CFF /* addRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07219F5E24D04A0900F81CFF /* addRequestCell.swift */; };
+		07219F6124D04A0900F81CFF /* addRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07219F5F24D04A0900F81CFF /* addRequestCell.xib */; };
+		0727EC9424D121810007E420 /* tableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0727EC9324D121810007E420 /* tableView.xib */; };
+		0727EC9824D121F30007E420 /* region.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0727EC9624D121F30007E420 /* region.xib */; };
+		0727EC9A24D1266F0007E420 /* region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727EC9924D1266F0007E420 /* region.swift */; };
+		0727EC9C24D138700007E420 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727EC9B24D138700007E420 /* HomeEndpoint.swift */; };
+		0727EC9E24D160620007E420 /* addrequestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727EC9D24D160620007E420 /* addrequestEndpoint.swift */; };
 		0728F5E124B4189B00DEE416 /* LOGINRequesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0728F5E324B4189B00DEE416 /* LOGINRequesterViewController.xib */; };
 		0728F5E824B4250600DEE416 /* VerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0728F5EA24B4250600DEE416 /* VerificationViewController.xib */; };
 		072C2AA224AFC3F70050F83F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072C2AA124AFC3F70050F83F /* APIError.swift */; };
@@ -92,6 +125,14 @@
 		077B112D24AFE710000C811B /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B112524AFE710000C811B /* VerificationModel.swift */; };
 		0783902824C55AAD00250164 /* requestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0783902624C55AAD00250164 /* requestCell.swift */; };
 		0783902924C55AAD00250164 /* requestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0783902724C55AAD00250164 /* requestCell.xib */; };
+		07920D2524D1BEFA0006B7AD /* aboutUsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07920D1D24D1BEFA0006B7AD /* aboutUsConfiguration.swift */; };
+		07920D2624D1BEFA0006B7AD /* aboutUsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07920D1E24D1BEFA0006B7AD /* aboutUsPresenter.swift */; };
+		07920D2724D1BEFA0006B7AD /* aboutUsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07920D1F24D1BEFA0006B7AD /* aboutUsWorker.swift */; };
+		07920D2824D1BEFA0006B7AD /* aboutUsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07920D2024D1BEFA0006B7AD /* aboutUsRouter.swift */; };
+		07920D2924D1BEFA0006B7AD /* aboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07920D2124D1BEFA0006B7AD /* aboutUsViewController.swift */; };
+		07920D2A24D1BEFA0006B7AD /* aboutUsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07920D2224D1BEFA0006B7AD /* aboutUsInteractor.swift */; };
+		07920D2B24D1BEFA0006B7AD /* aboutUsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07920D2324D1BEFA0006B7AD /* aboutUsModel.swift */; };
+		07920D2C24D1BEFA0006B7AD /* aboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07920D2424D1BEFA0006B7AD /* aboutUsViewController.xib */; };
 		0798BE6924AFBEBB0019C7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798BE6824AFBEBB0019C7F6 /* AppDelegate.swift */; };
 		0798BE6B24AFBEBB0019C7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798BE6A24AFBEBB0019C7F6 /* ViewController.swift */; };
 		0798BE6E24AFBEBB0019C7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0798BE6C24AFBEBB0019C7F6 /* Main.storyboard */; };
@@ -149,7 +190,6 @@
 		070021EA24C0438000C8CE31 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		070021EB24C0438000C8CE31 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		070021EC24C0438000C8CE31 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		070021ED24C0438000C8CE31 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0702416A24B12E1A001271BC /* CreatingRequesterConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingRequesterConfiguration.swift; sourceTree = "<group>"; };
 		0702416B24B12E1A001271BC /* CreatingRequesterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingRequesterPresenter.swift; sourceTree = "<group>"; };
 		0702416C24B12E1A001271BC /* CreatingRequesterWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingRequesterWorker.swift; sourceTree = "<group>"; };
@@ -196,6 +236,46 @@
 		0720191F24B6BDC400E7952F /* FirstSupplierEndPointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSupplierEndPointEndpoint.swift; sourceTree = "<group>"; };
 		0720192124B6BDE200E7952F /* CreatingRequesterEndpointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingRequesterEndpointEndpoint.swift; sourceTree = "<group>"; };
 		0720192324B6BDFE00E7952F /* VerificationEndpointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationEndpointEndpoint.swift; sourceTree = "<group>"; };
+		0720CBA224CEF63600DEB73A /* requestDetailsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDetailsConfiguration.swift; sourceTree = "<group>"; };
+		0720CBA324CEF63600DEB73A /* requestDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDetailsPresenter.swift; sourceTree = "<group>"; };
+		0720CBA424CEF63600DEB73A /* requestDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDetailsWorker.swift; sourceTree = "<group>"; };
+		0720CBA524CEF63600DEB73A /* requestDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDetailsRouter.swift; sourceTree = "<group>"; };
+		0720CBA624CEF63600DEB73A /* requestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDetailsViewController.swift; sourceTree = "<group>"; };
+		0720CBA724CEF63600DEB73A /* requestDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDetailsInteractor.swift; sourceTree = "<group>"; };
+		0720CBA824CEF63600DEB73A /* requestDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDetailsModel.swift; sourceTree = "<group>"; };
+		0720CBBA24CF522400DEB73A /* addrequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addrequestConfiguration.swift; sourceTree = "<group>"; };
+		0720CBBB24CF522400DEB73A /* addrequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addrequestPresenter.swift; sourceTree = "<group>"; };
+		0720CBBC24CF522400DEB73A /* addrequestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addrequestWorker.swift; sourceTree = "<group>"; };
+		0720CBBD24CF522400DEB73A /* addrequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addrequestRouter.swift; sourceTree = "<group>"; };
+		0720CBBE24CF522400DEB73A /* addrequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addrequestViewController.swift; sourceTree = "<group>"; };
+		0720CBBF24CF522400DEB73A /* addrequestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addrequestInteractor.swift; sourceTree = "<group>"; };
+		0720CBC024CF522400DEB73A /* addrequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addrequestModel.swift; sourceTree = "<group>"; };
+		0720CBD124CFA51F00DEB73A /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		0720CBD324CFA56400DEB73A /* alertExention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertExention.swift; sourceTree = "<group>"; };
+		0720CBD624CFA7BD00DEB73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/requestDetailsViewController.xib; sourceTree = "<group>"; };
+		0720CBD924CFA7C200DEB73A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/requestDetailsViewController.strings; sourceTree = "<group>"; };
+		0720CBDB24CFA7CB00DEB73A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/requestDetailsViewController.strings; sourceTree = "<group>"; };
+		0720CBDD24CFA7F600DEB73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/addrequestViewController.xib; sourceTree = "<group>"; };
+		0720CBE024CFA7FA00DEB73A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/addrequestViewController.strings; sourceTree = "<group>"; };
+		0720CBE224CFA7FD00DEB73A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/addrequestViewController.strings; sourceTree = "<group>"; };
+		0720CBE424CFA81B00DEB73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeViewController.xib; sourceTree = "<group>"; };
+		0720CBE724CFA81F00DEB73A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HomeViewController.strings; sourceTree = "<group>"; };
+		0720CBE924CFA82200DEB73A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HomeViewController.strings; sourceTree = "<group>"; };
+		0720CBEC24CFB79E00DEB73A /* editRequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRequestConfiguration.swift; sourceTree = "<group>"; };
+		0720CBED24CFB79E00DEB73A /* editRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRequestPresenter.swift; sourceTree = "<group>"; };
+		0720CBEE24CFB79E00DEB73A /* editRequestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRequestWorker.swift; sourceTree = "<group>"; };
+		0720CBEF24CFB79E00DEB73A /* editRequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRequestRouter.swift; sourceTree = "<group>"; };
+		0720CBF024CFB79E00DEB73A /* editRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRequestViewController.swift; sourceTree = "<group>"; };
+		0720CBF124CFB79E00DEB73A /* editRequestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRequestInteractor.swift; sourceTree = "<group>"; };
+		0720CBF224CFB79E00DEB73A /* editRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRequestModel.swift; sourceTree = "<group>"; };
+		0720CBF324CFB79E00DEB73A /* editRequestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = editRequestViewController.xib; sourceTree = "<group>"; };
+		07219F5E24D04A0900F81CFF /* addRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRequestCell.swift; sourceTree = "<group>"; };
+		07219F5F24D04A0900F81CFF /* addRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addRequestCell.xib; sourceTree = "<group>"; };
+		0727EC9324D121810007E420 /* tableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tableView.xib; sourceTree = "<group>"; };
+		0727EC9624D121F30007E420 /* region.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = region.xib; sourceTree = "<group>"; };
+		0727EC9924D1266F0007E420 /* region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = region.swift; sourceTree = "<group>"; };
+		0727EC9B24D138700007E420 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
+		0727EC9D24D160620007E420 /* addrequestEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addrequestEndpoint.swift; sourceTree = "<group>"; };
 		0728F5E224B4189B00DEE416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LOGINRequesterViewController.xib; sourceTree = "<group>"; };
 		0728F5E524B4189F00DEE416 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LOGINRequesterViewController.strings; sourceTree = "<group>"; };
 		0728F5E724B418A100DEE416 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LOGINRequesterViewController.strings; sourceTree = "<group>"; };
@@ -235,6 +315,14 @@
 		077B112524AFE710000C811B /* VerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
 		0783902624C55AAD00250164 /* requestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestCell.swift; sourceTree = "<group>"; };
 		0783902724C55AAD00250164 /* requestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = requestCell.xib; sourceTree = "<group>"; };
+		07920D1D24D1BEFA0006B7AD /* aboutUsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutUsConfiguration.swift; sourceTree = "<group>"; };
+		07920D1E24D1BEFA0006B7AD /* aboutUsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutUsPresenter.swift; sourceTree = "<group>"; };
+		07920D1F24D1BEFA0006B7AD /* aboutUsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutUsWorker.swift; sourceTree = "<group>"; };
+		07920D2024D1BEFA0006B7AD /* aboutUsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutUsRouter.swift; sourceTree = "<group>"; };
+		07920D2124D1BEFA0006B7AD /* aboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutUsViewController.swift; sourceTree = "<group>"; };
+		07920D2224D1BEFA0006B7AD /* aboutUsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutUsInteractor.swift; sourceTree = "<group>"; };
+		07920D2324D1BEFA0006B7AD /* aboutUsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutUsModel.swift; sourceTree = "<group>"; };
+		07920D2424D1BEFA0006B7AD /* aboutUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aboutUsViewController.xib; sourceTree = "<group>"; };
 		0798BE6524AFBEBB0019C7F6 /* ELWAKEEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELWAKEEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0798BE6824AFBEBB0019C7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0798BE6A24AFBEBB0019C7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -351,7 +439,7 @@
 		070021FA24C043F300C8CE31 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				070021ED24C0438000C8CE31 /* HomeViewController.xib */,
+				0720CBE524CFA81B00DEB73A /* HomeViewController.xib */,
 				070021EA24C0438000C8CE31 /* HomeViewController.swift */,
 				071014AE24C3CB1D00510998 /* containerView.swift */,
 				071D235B24C543BF001A89C8 /* cell.swift */,
@@ -382,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				070021EC24C0438000C8CE31 /* HomeModel.swift */,
+				0727EC9B24D138700007E420 /* HomeEndpoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -848,6 +937,234 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0720CBA124CEF60E00DEB73A /* requestDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBEA24CFB73E00DEB73A /* requestDetails */,
+				0720CBEB24CFB75A00DEB73A /* requestEidt */,
+			);
+			path = requestDetails;
+			sourceTree = "<group>";
+		};
+		0720CBB224CEF65D00DEB73A /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBA324CEF63600DEB73A /* requestDetailsPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		0720CBB324CEF66600DEB73A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBA824CEF63600DEB73A /* requestDetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0720CBB424CEF66F00DEB73A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBA624CEF63600DEB73A /* requestDetailsViewController.swift */,
+				0720CBD724CFA7BD00DEB73A /* requestDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0720CBB524CEF67800DEB73A /* router */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBA524CEF63600DEB73A /* requestDetailsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		0720CBB624CEF68000DEB73A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBA224CEF63600DEB73A /* requestDetailsConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		0720CBB724CEF69400DEB73A /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBA424CEF63600DEB73A /* requestDetailsWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		0720CBB824CEF6A000DEB73A /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBA724CEF63600DEB73A /* requestDetailsInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		0720CBB924CF520B00DEB73A /* Add request */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBD024CF527E00DEB73A /* Worker */,
+				0720CBCF24CF525700DEB73A /* Model */,
+				0720CBCE24CF524F00DEB73A /* View */,
+				0720CBCD24CF524300DEB73A /* Configuration */,
+				0720CBCC24CF523800DEB73A /* Iterator */,
+				0720CBCB24CF523100DEB73A /* Router */,
+				0720CBCA24CF522A00DEB73A /* presenter */,
+			);
+			path = "Add request";
+			sourceTree = "<group>";
+		};
+		0720CBCA24CF522A00DEB73A /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBBB24CF522400DEB73A /* addrequestPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		0720CBCB24CF523100DEB73A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBBD24CF522400DEB73A /* addrequestRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0720CBCC24CF523800DEB73A /* Iterator */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBBF24CF522400DEB73A /* addrequestInteractor.swift */,
+			);
+			path = Iterator;
+			sourceTree = "<group>";
+		};
+		0720CBCD24CF524300DEB73A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBBA24CF522400DEB73A /* addrequestConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		0720CBCE24CF524F00DEB73A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBBE24CF522400DEB73A /* addrequestViewController.swift */,
+				0720CBDE24CFA7F600DEB73A /* addrequestViewController.xib */,
+				07219F5E24D04A0900F81CFF /* addRequestCell.swift */,
+				07219F5F24D04A0900F81CFF /* addRequestCell.xib */,
+				0727EC9324D121810007E420 /* tableView.xib */,
+				0727EC9624D121F30007E420 /* region.xib */,
+				0727EC9924D1266F0007E420 /* region.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0720CBCF24CF525700DEB73A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBC024CF522400DEB73A /* addrequestModel.swift */,
+				0727EC9D24D160620007E420 /* addrequestEndpoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0720CBD024CF527E00DEB73A /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBBC24CF522400DEB73A /* addrequestWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		0720CBEA24CFB73E00DEB73A /* requestDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBB824CEF6A000DEB73A /* interactor */,
+				0720CBB724CEF69400DEB73A /* Worker */,
+				0720CBB624CEF68000DEB73A /* Configuration */,
+				0720CBB524CEF67800DEB73A /* router */,
+				0720CBB424CEF66F00DEB73A /* View */,
+				0720CBB324CEF66600DEB73A /* Model */,
+				0720CBB224CEF65D00DEB73A /* presenter */,
+			);
+			path = requestDetails;
+			sourceTree = "<group>";
+		};
+		0720CBEB24CFB75A00DEB73A /* requestEidt */ = {
+			isa = PBXGroup;
+			children = (
+				0720CC0224CFB82900DEB73A /* worker */,
+				0720CC0124CFB7F100DEB73A /* Router */,
+				0720CC0024CFB7E700DEB73A /* View */,
+				0720CBFF24CFB7E000DEB73A /* Model */,
+				0720CBFE24CFB7D600DEB73A /* configuration */,
+				0720CBFD24CFB7B500DEB73A /* interactor */,
+				0720CBFC24CFB7AC00DEB73A /* presenter */,
+			);
+			path = requestEidt;
+			sourceTree = "<group>";
+		};
+		0720CBFC24CFB7AC00DEB73A /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBED24CFB79E00DEB73A /* editRequestPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		0720CBFD24CFB7B500DEB73A /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBF124CFB79E00DEB73A /* editRequestInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		0720CBFE24CFB7D600DEB73A /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBEC24CFB79E00DEB73A /* editRequestConfiguration.swift */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+		0720CBFF24CFB7E000DEB73A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBF224CFB79E00DEB73A /* editRequestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0720CC0024CFB7E700DEB73A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBF024CFB79E00DEB73A /* editRequestViewController.swift */,
+				0720CBF324CFB79E00DEB73A /* editRequestViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0720CC0124CFB7F100DEB73A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBEF24CFB79E00DEB73A /* editRequestRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0720CC0224CFB82900DEB73A /* worker */ = {
+			isa = PBXGroup;
+			children = (
+				0720CBEE24CFB79E00DEB73A /* editRequestWorker.swift */,
+			);
+			path = worker;
+			sourceTree = "<group>";
+		};
 		072C2A9D24AFC22C0050F83F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -868,6 +1185,8 @@
 			isa = PBXGroup;
 			children = (
 				072C2AAB24AFC4EE0050F83F /* ShowAlertView.swift */,
+				0720CBD124CFA51F00DEB73A /* AlertController.swift */,
+				0720CBD324CFA56400DEB73A /* alertExention.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -884,6 +1203,9 @@
 		072C2AA024AFC2720050F83F /* App Modules */ = {
 			isa = PBXGroup;
 			children = (
+				07920D2D24D1BF050006B7AD /* aboutUs */,
+				0720CBB924CF520B00DEB73A /* Add request */,
+				0720CBA124CEF60E00DEB73A /* requestDetails */,
 				070021E524C0434300C8CE31 /* Home */,
 				072C2AB124AFC5480050F83F /* UserManagement */,
 				0710148B24C3B23600510998 /* SideMenu */,
@@ -964,6 +1286,21 @@
 				070C394824B26F1C00565923 /* interactor */,
 			);
 			path = Verification;
+			sourceTree = "<group>";
+		};
+		07920D2D24D1BF050006B7AD /* aboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				07920D1D24D1BEFA0006B7AD /* aboutUsConfiguration.swift */,
+				07920D1E24D1BEFA0006B7AD /* aboutUsPresenter.swift */,
+				07920D1F24D1BEFA0006B7AD /* aboutUsWorker.swift */,
+				07920D2024D1BEFA0006B7AD /* aboutUsRouter.swift */,
+				07920D2124D1BEFA0006B7AD /* aboutUsViewController.swift */,
+				07920D2224D1BEFA0006B7AD /* aboutUsInteractor.swift */,
+				07920D2324D1BEFA0006B7AD /* aboutUsModel.swift */,
+				07920D2424D1BEFA0006B7AD /* aboutUsViewController.xib */,
+			);
+			path = aboutUs;
 			sourceTree = "<group>";
 		};
 		0798BE5C24AFBEBB0019C7F6 = {
@@ -1378,25 +1715,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				071014A724C3C50100510998 /* sideMenuViewController.xib in Resources */,
+				0720CBD524CFA7BD00DEB73A /* requestDetailsViewController.xib in Resources */,
 				07AEA24124B3D91F000C6898 /* secondScreenViewController.xib in Resources */,
 				07040B0F24B991F0000837A5 /* TableViewCell.xib in Resources */,
 				0702417924B12E1A001271BC /* CreatingRequesterViewController.xib in Resources */,
+				07219F6124D04A0900F81CFF /* addRequestCell.xib in Resources */,
 				07BDC79A24B50CE400283900 /* creatingPasswordViewController.xib in Resources */,
 				072C2AC324AFC5780050F83F /* LOGINViewController.xib in Resources */,
 				07BDC7D024B52AFC00283900 /* NewPasswordViewController.xib in Resources */,
+				0720CBDC24CFA7F600DEB73A /* addrequestViewController.xib in Resources */,
 				07F29A8F24B2ABE30061126C /* SupplierFirstScreenViewController.xib in Resources */,
 				0728F5E824B4250600DEE416 /* VerificationViewController.xib in Resources */,
 				0798BE7324AFBEBC0019C7F6 /* LaunchScreen.storyboard in Resources */,
+				0727EC9824D121F30007E420 /* region.xib in Resources */,
 				0728F5E124B4189B00DEE416 /* LOGINRequesterViewController.xib in Resources */,
 				070241A024B15274001271BC /* CityCellTableViewCell.xib in Resources */,
 				071014A624C3B90800510998 /* MenuCell.xib in Resources */,
+				07920D2C24D1BEFA0006B7AD /* aboutUsViewController.xib in Resources */,
+				0720CBFB24CFB79E00DEB73A /* editRequestViewController.xib in Resources */,
 				0783902924C55AAD00250164 /* requestCell.xib in Resources */,
 				0798BE7024AFBEBC0019C7F6 /* Assets.xcassets in Resources */,
+				0727EC9424D121810007E420 /* tableView.xib in Resources */,
 				071D235E24C543BF001A89C8 /* cell.xib in Resources */,
 				07BDC77B24B4F83600283900 /* registraionTypeViewController.xib in Resources */,
 				0798BE6E24AFBEBB0019C7F6 /* Main.storyboard in Resources */,
 				07BDC7B924B5108900283900 /* ForgetpasswordViewController.xib in Resources */,
-				070021F524C0438000C8CE31 /* HomeViewController.xib in Resources */,
+				0720CBE324CFA81B00DEB73A /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1414,6 +1758,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-ELWAKEEL/Pods-ELWAKEEL-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/LocalizationFramework/LocalizationFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/RSSelectionMenu/RSSelectionMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1422,6 +1767,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LocalizationFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSSelectionMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1460,33 +1806,44 @@
 			files = (
 				07BDC76F24B4F3A700283900 /* registraionTypeRouter.swift in Sources */,
 				07BDC7B024B50F8B00283900 /* ForgetpasswordModel.swift in Sources */,
+				07920D2524D1BEFA0006B7AD /* aboutUsConfiguration.swift in Sources */,
 				070021F424C0438000C8CE31 /* HomeModel.swift in Sources */,
 				077B112724AFE710000C811B /* VerificationConfiguration.swift in Sources */,
 				0710149924C3B28E00510998 /* sideMenuInteractor.swift in Sources */,
+				0720CBC224CF522400DEB73A /* addrequestConfiguration.swift in Sources */,
 				0710149424C3B28E00510998 /* sideMenuConfiguration.swift in Sources */,
 				0702418A24B1344A001271BC /* SupplierFirstScreenInteractor.swift in Sources */,
 				07BDC78D24B5049E00283900 /* creatingPasswordWorker.swift in Sources */,
+				0720CBC424CF522400DEB73A /* addrequestWorker.swift in Sources */,
 				0798BE6B24AFBEBB0019C7F6 /* ViewController.swift in Sources */,
 				0720191E24B6BD8000E7952F /* SecondSupplierEndPointEndpoint.swift in Sources */,
 				07BDC7AE24B50F8B00283900 /* ForgetpasswordViewController.swift in Sources */,
+				0720CBAD24CEF63600DEB73A /* requestDetailsRouter.swift in Sources */,
+				0720CBF724CFB79E00DEB73A /* editRequestRouter.swift in Sources */,
 				072C2AA224AFC3F70050F83F /* APIError.swift in Sources */,
 				070021F224C0438000C8CE31 /* HomeViewController.swift in Sources */,
 				072C2AC224AFC5780050F83F /* LOGINModel.swift in Sources */,
 				07BDC7CB24B52AFC00283900 /* NewPasswordWorker.swift in Sources */,
+				07920D2824D1BEFA0006B7AD /* aboutUsRouter.swift in Sources */,
 				070021EE24C0438000C8CE31 /* HomeConfiguration.swift in Sources */,
 				070ABABD24B60F090001CF5B /* NetworkService.swift in Sources */,
+				0720CBB024CEF63600DEB73A /* requestDetailsModel.swift in Sources */,
 				0710149524C3B28E00510998 /* sideMenuPresenter.swift in Sources */,
 				0702417824B12E1A001271BC /* CreatingRequesterModel.swift in Sources */,
+				0720CBC324CF522400DEB73A /* addrequestPresenter.swift in Sources */,
 				072C2AAC24AFC4EE0050F83F /* ShowAlertView.swift in Sources */,
+				0727EC9E24D160620007E420 /* addrequestEndpoint.swift in Sources */,
 				07AEA23A24B3CE47000C6898 /* secondScreenPresenter.swift in Sources */,
 				0702418824B1344A001271BC /* SupplierFirstScreenRouter.swift in Sources */,
 				07BDC7AC24B50F8B00283900 /* ForgetpasswordWorker.swift in Sources */,
+				07920D2A24D1BEFA0006B7AD /* aboutUsInteractor.swift in Sources */,
 				070021F024C0438000C8CE31 /* HomeWorker.swift in Sources */,
 				07BDC78E24B5049E00283900 /* creatingPasswordRouter.swift in Sources */,
 				0702417624B12E1A001271BC /* CreatingRequesterViewController.swift in Sources */,
 				07BDC79024B5049E00283900 /* creatingPasswordInteractor.swift in Sources */,
 				0720192024B6BDC400E7952F /* FirstSupplierEndPointEndpoint.swift in Sources */,
 				072C2AAA24AFC4B80050F83F /* GeneralRouterRoute.swift in Sources */,
+				0720CBC724CF522400DEB73A /* addrequestInteractor.swift in Sources */,
 				07AEA23B24B3CE47000C6898 /* secondScreenWorker.swift in Sources */,
 				0710149724C3B28E00510998 /* sideMenuRouter.swift in Sources */,
 				07BDC77024B4F3A700283900 /* registraionTypeViewController.swift in Sources */,
@@ -1495,22 +1852,34 @@
 				07BDC7AD24B50F8B00283900 /* ForgetpasswordRouter.swift in Sources */,
 				0710149A24C3B28E00510998 /* sideMenuModel.swift in Sources */,
 				0710149624C3B28E00510998 /* sideMenuWorker.swift in Sources */,
+				0720CBF824CFB79E00DEB73A /* editRequestViewController.swift in Sources */,
 				072C2AC124AFC5780050F83F /* LOGINInteractor.swift in Sources */,
 				072C2ABE24AFC5780050F83F /* LOGINWorker.swift in Sources */,
 				07BDC7CD24B52AFC00283900 /* NewPasswordViewController.swift in Sources */,
+				0720CBD224CFA51F00DEB73A /* AlertController.swift in Sources */,
 				072C2AC024AFC5780050F83F /* LOGINViewController.swift in Sources */,
 				072C2AD124AFD1A40050F83F /* LOGINRequesterPresenter.swift in Sources */,
+				07920D2724D1BEFA0006B7AD /* aboutUsWorker.swift in Sources */,
+				0727EC9C24D138700007E420 /* HomeEndpoint.swift in Sources */,
 				0702418924B1344A001271BC /* SupplierFirstScreenViewController.swift in Sources */,
 				072C2AD524AFD1A40050F83F /* LOGINRequesterInteractor.swift in Sources */,
 				077B112B24AFE710000C811B /* VerificationViewController.swift in Sources */,
+				0720CBAF24CEF63600DEB73A /* requestDetailsInteractor.swift in Sources */,
+				0720CBD424CFA56400DEB73A /* alertExention.swift in Sources */,
 				07BDC76D24B4F3A700283900 /* registraionTypePresenter.swift in Sources */,
 				07BDC7CE24B52AFC00283900 /* NewPasswordInteractor.swift in Sources */,
 				071014A524C3B90800510998 /* MenuCell.swift in Sources */,
 				072C2ABC24AFC5780050F83F /* LOGINConfiguration.swift in Sources */,
+				0720CBAB24CEF63600DEB73A /* requestDetailsPresenter.swift in Sources */,
 				070021F324C0438000C8CE31 /* HomeInteractor.swift in Sources */,
+				0720CBF524CFB79E00DEB73A /* editRequestPresenter.swift in Sources */,
 				0702418624B1344A001271BC /* SupplierFirstScreenPresenter.swift in Sources */,
 				0720191C24B6BD5900E7952F /* TypeEndPointEndpoint.swift in Sources */,
+				0720CBFA24CFB79E00DEB73A /* editRequestModel.swift in Sources */,
 				071014AF24C3CB1D00510998 /* containerView.swift in Sources */,
+				0727EC9A24D1266F0007E420 /* region.swift in Sources */,
+				0720CBAE24CEF63600DEB73A /* requestDetailsViewController.swift in Sources */,
+				0720CBF924CFB79E00DEB73A /* editRequestInteractor.swift in Sources */,
 				07BDC77124B4F3A700283900 /* registraionTypeInteractor.swift in Sources */,
 				0720191624B6BCCB00E7952F /* NewPasswordEndPointEndpoint.swift in Sources */,
 				07BDC76E24B4F3A700283900 /* registraionTypeWorker.swift in Sources */,
@@ -1522,15 +1891,19 @@
 				07BDC7AF24B50F8B00283900 /* ForgetpasswordInteractor.swift in Sources */,
 				0720191A24B6BD3600E7952F /* CreatingPasswordEndPointEndpoint.swift in Sources */,
 				07BDC77224B4F3A700283900 /* registraionTypeModel.swift in Sources */,
+				07219F6024D04A0900F81CFF /* addRequestCell.swift in Sources */,
 				071D235D24C543BF001A89C8 /* cell.swift in Sources */,
 				07AEA23F24B3CE47000C6898 /* secondScreenModel.swift in Sources */,
 				0702417324B12E1A001271BC /* CreatingRequesterPresenter.swift in Sources */,
 				0798BE6924AFBEBB0019C7F6 /* AppDelegate.swift in Sources */,
 				0720192224B6BDE200E7952F /* CreatingRequesterEndpointEndpoint.swift in Sources */,
 				0702418524B1344A001271BC /* SupplierFirstScreenConfiguration.swift in Sources */,
+				0720CBC624CF522400DEB73A /* addrequestViewController.swift in Sources */,
 				07AEA23924B3CE47000C6898 /* secondScreenConfiguration.swift in Sources */,
+				0720CBC824CF522400DEB73A /* addrequestModel.swift in Sources */,
 				0720192424B6BDFE00E7952F /* VerificationEndpointEndpoint.swift in Sources */,
 				07AEA23E24B3CE47000C6898 /* secondScreenInteractor.swift in Sources */,
+				0720CBAA24CEF63600DEB73A /* requestDetailsConfiguration.swift in Sources */,
 				07BDC7AB24B50F8B00283900 /* ForgetpasswordPresenter.swift in Sources */,
 				070021EF24C0438000C8CE31 /* HomePresenter.swift in Sources */,
 				07BDC7CC24B52AFC00283900 /* NewPasswordRouter.swift in Sources */,
@@ -1540,6 +1913,8 @@
 				0702417524B12E1A001271BC /* CreatingRequesterRouter.swift in Sources */,
 				0702419F24B15274001271BC /* CityCellTableViewCell.swift in Sources */,
 				072C2ABD24AFC5780050F83F /* LOGINPresenter.swift in Sources */,
+				07920D2924D1BEFA0006B7AD /* aboutUsViewController.swift in Sources */,
+				0720CBF424CFB79E00DEB73A /* editRequestConfiguration.swift in Sources */,
 				077B112824AFE710000C811B /* VerificationPresenter.swift in Sources */,
 				072C2AD324AFD1A40050F83F /* LOGINRequesterRouter.swift in Sources */,
 				0702417424B12E1A001271BC /* CreatingRequesterWorker.swift in Sources */,
@@ -1547,7 +1922,9 @@
 				072C2AD024AFD1A40050F83F /* LOGINRequesterConfiguration.swift in Sources */,
 				072C2AA624AFC4820050F83F /* SencDelegate.swift in Sources */,
 				07AEA23D24B3CE47000C6898 /* secondScreenViewController.swift in Sources */,
+				07920D2B24D1BEFA0006B7AD /* aboutUsModel.swift in Sources */,
 				077B112924AFE710000C811B /* VerificationWorker.swift in Sources */,
+				0720CBAC24CEF63600DEB73A /* requestDetailsWorker.swift in Sources */,
 				07BDC79124B5049E00283900 /* creatingPasswordModel.swift in Sources */,
 				07AEA23C24B3CE47000C6898 /* secondScreenRouter.swift in Sources */,
 				0702418B24B1344A001271BC /* SupplierFirstScreenModel.swift in Sources */,
@@ -1556,6 +1933,7 @@
 				07BDC7AA24B50F8B00283900 /* ForgetpasswordConfiguration.swift in Sources */,
 				072C2AEA24AFDAAA0050F83F /* designable.swift in Sources */,
 				072C2ABF24AFC5780050F83F /* LOGINRouter.swift in Sources */,
+				07920D2624D1BEFA0006B7AD /* aboutUsPresenter.swift in Sources */,
 				07447AF524C6E82A00A1B112 /* sideMenu.swift in Sources */,
 				070021F124C0438000C8CE31 /* HomeRouter.swift in Sources */,
 				0783902824C55AAD00250164 /* requestCell.swift in Sources */,
@@ -1564,9 +1942,11 @@
 				077B112A24AFE710000C811B /* VerificationRouter.swift in Sources */,
 				07040B0B24B94968000837A5 /* Model.swift in Sources */,
 				077B112D24AFE710000C811B /* VerificationModel.swift in Sources */,
+				0720CBC524CF522400DEB73A /* addrequestRouter.swift in Sources */,
 				072C2AD424AFD1A40050F83F /* LOGINRequesterViewController.swift in Sources */,
 				07BDC78F24B5049E00283900 /* creatingPasswordViewController.swift in Sources */,
 				07BDC7CA24B52AFC00283900 /* NewPasswordPresenter.swift in Sources */,
+				0720CBF624CFB79E00DEB73A /* editRequestWorker.swift in Sources */,
 				07BDC76C24B4F3A700283900 /* registraionTypeConfiguration.swift in Sources */,
 				07BDC7CF24B52AFC00283900 /* NewPasswordModel.swift in Sources */,
 			);
@@ -1583,6 +1963,36 @@
 				071014AD24C3C51500510998 /* ar */,
 			);
 			name = sideMenuViewController.xib;
+			sourceTree = "<group>";
+		};
+		0720CBD724CFA7BD00DEB73A /* requestDetailsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0720CBD624CFA7BD00DEB73A /* Base */,
+				0720CBD924CFA7C200DEB73A /* en */,
+				0720CBDB24CFA7CB00DEB73A /* ar */,
+			);
+			name = requestDetailsViewController.xib;
+			sourceTree = "<group>";
+		};
+		0720CBDE24CFA7F600DEB73A /* addrequestViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0720CBDD24CFA7F600DEB73A /* Base */,
+				0720CBE024CFA7FA00DEB73A /* en */,
+				0720CBE224CFA7FD00DEB73A /* ar */,
+			);
+			name = addrequestViewController.xib;
+			sourceTree = "<group>";
+		};
+		0720CBE524CFA81B00DEB73A /* HomeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0720CBE424CFA81B00DEB73A /* Base */,
+				0720CBE724CFA81F00DEB73A /* en */,
+				0720CBE924CFA82200DEB73A /* ar */,
+			);
+			name = HomeViewController.xib;
 			sourceTree = "<group>";
 		};
 		0728F5E324B4189B00DEE416 /* LOGINRequesterViewController.xib */ = {
@@ -1800,13 +2210,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NLMQ6J3UBG;
+				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/ELWAKEEL/supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.ELWAKEEL;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fudex.ELWAKEEL-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1819,13 +2229,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NLMQ6J3UBG;
+				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/ELWAKEEL/supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.ELWAKEEL;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fudex.ELWAKEEL-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

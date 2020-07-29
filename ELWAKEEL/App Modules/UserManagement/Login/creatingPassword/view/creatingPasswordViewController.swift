@@ -62,8 +62,8 @@ class creatingPasswordViewController: UIViewController {
     
     
     @IBAction func loginBTN(_ sender: Any) {
-        guard let password = passwordTXT.text,
-            let confirmidPassword = retypePassword.text else{
+        guard let password = passwordTXT.text, !password.isEmpty,
+            let confirmidPassword = retypePassword.text, !confirmidPassword.isEmpty else{
                 ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
             return
                 
@@ -86,7 +86,7 @@ extension creatingPasswordViewController: IcreatingPasswordViewController {
     func goHome() {
         // Go To home Scerren
         
-        print("Hmaoe")
+        self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
     }
     
     func assignResponse(newClient: creatingPasswordModel.NewClient) {

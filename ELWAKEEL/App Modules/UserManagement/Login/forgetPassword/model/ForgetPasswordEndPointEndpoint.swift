@@ -50,7 +50,7 @@ extension ForgetPasswordEndPointEndpoint: IEndpoint {
         
         switch self {
         case .forgetpassword:
-        return "http://wakil.api-ksa.com/api/password/reset"
+        return "http://wakil.dev.fudexsb.com/api/password/reset"
             
         }
     }

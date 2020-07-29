@@ -53,7 +53,7 @@ extension NewPasswordEndPointEndpoint: IEndpoint {
         switch self {
         case .newPassword:
             
-        return "http://wakil.api-ksa.com/api/password/update"
+        return "http://wakil.dev.fudexsb.com/api/password/update"
     }
     }
     var parameter: Parameters? {

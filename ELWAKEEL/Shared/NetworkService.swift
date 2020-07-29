@@ -148,7 +148,7 @@ extension NetworkService {
             multipartFormData.append("\(Iban_Number)".data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "bank_iban")
             
         }, usingThreshold:UInt64.init(),
-           to: "http://wakil.api-ksa.com/api/complete-info/\(id)",
+           to: "http://wakil.dev.fudexsb.com/api/complete-info/\(id)",
            method: .post,
            headers: headers, //pass header dictionary here
             encodingCompletion: { (result) in

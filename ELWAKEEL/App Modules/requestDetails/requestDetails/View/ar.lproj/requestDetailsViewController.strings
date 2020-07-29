@@ -1,0 +1,69 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4G4-z5-Wm1"; */
+"4G4-z5-Wm1.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5Be-nf-rw3"; */
+"5Be-nf-rw3.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "B8M-Fp-xPf"; */
+"B8M-Fp-xPf.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FA4-tE-MRx"; */
+"FA4-tE-MRx.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IB0-gG-PbK"; */
+"IB0-gG-PbK.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IjQ-sj-bpD"; */
+"IjQ-sj-bpD.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Loh-c3-KHT"; */
+"Loh-c3-KHT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Mmm-mQ-GVG"; */
+"Mmm-mQ-GVG.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NV7-nv-Ws0"; */
+"NV7-nv-Ws0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "P3J-Vs-y4O"; */
+"P3J-Vs-y4O.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Uni-bf-Syf"; */
+"Uni-bf-Syf.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XWQ-yZ-6dI"; */
+"XWQ-yZ-6dI.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XdE-fy-X6c"; */
+"XdE-fy-X6c.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aoE-9n-zdu"; */
+"aoE-9n-zdu.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "i4u-gE-oO8"; */
+"i4u-gE-oO8.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kRa-gN-CDy"; */
+"kRa-gN-CDy.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mMD-wH-MLg"; */
+"mMD-wH-MLg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ppu-Hn-W8D"; */
+"ppu-Hn-W8D.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qrs-UW-9gy"; */
+"qrs-UW-9gy.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "u3E-bk-opA"; */
+"u3E-bk-opA.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uut-wh-4Vv"; */
+"uut-wh-4Vv.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "w5p-Gf-z3E"; */
+"w5p-Gf-z3E.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "wRv-IV-E0Z"; */
+"wRv-IV-E0Z.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";

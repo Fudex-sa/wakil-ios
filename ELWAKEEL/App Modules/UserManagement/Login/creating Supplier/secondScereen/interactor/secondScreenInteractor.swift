@@ -39,7 +39,16 @@ class secondScreenInteractor: IsecondScreenInteractor {
             
             if success{
                 self.presenter?.assingNewProvider(provider: data!)
-                self.presenter?.moveToHome()
+                
+                
+                let userdefults = UserDefaults.standard
+                userdefults.set(data?.type, forKey: "type")
+                userdefults.set(data?.accessToken, forKey: "token")
+                userdefults.set(data?.user.email, forKey: "email")
+                userdefults.set(data?.user.name, forKey: "name")
+                userdefults.set(data?.user.id, forKey: "id")
+                userdefults.set(data?.user.phone, forKey: "phone")
+                self.presenter?.moveToverification(type: data!.type)
             }
         })
     }

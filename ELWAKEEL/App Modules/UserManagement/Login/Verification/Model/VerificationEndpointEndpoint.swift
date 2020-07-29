@@ -49,7 +49,7 @@ extension VerificationEndpointEndpoint: IEndpoint {
         */
         switch self {
         case .verification:
-        return "http://wakil.api-ksa.com/api/code/verify"
+        return "http://wakil.dev.fudexsb.com/api/code/verify"
     }
     }
     var parameter: Parameters? {

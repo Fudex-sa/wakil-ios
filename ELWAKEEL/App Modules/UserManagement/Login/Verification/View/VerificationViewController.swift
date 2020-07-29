@@ -13,8 +13,10 @@ import LocalizationFramework
 
 protocol IVerificationViewController: class {
 	var router: IVerificationRouter? { get set }
-    func goNewPassword(type: String, id: Int)
-    func CreateNewPassword(phone: String)
+  
+    func goNewPassword(phone: String)
+    func createPassword(type: String, id: Int)
+    func goHome()
 }
 
 class VerificationViewController: UIViewController {
@@ -84,7 +86,8 @@ class VerificationViewController: UIViewController {
      guard let num1 = firstNUM.text,
         let num2 = secondNUM.text,
         let num3 = thirdNum.text,
-        let num4 = furthNUM.text
+        let num4 = furthNUM.text,
+        !num1.isEmpty || !num2.isEmpty || !num3.isEmpty || !num4.isEmpty
         else{
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
             
@@ -96,12 +99,19 @@ class VerificationViewController: UIViewController {
         let number3 = Int(num3)
         let number4 = Int(num4)
         
-        if number1 == 4 && number2 == 3 && number3 == 2 && number4 == 1{
-            if type != nil || id != nil {
-                goNewPassword(type: self.type!, id: self.id!)
+        if number1 == 1 && number2 == 2 && number3 == 3 && number4 == 4{
+            if type == "provider" {
+                print("provider")
+                self.goHome()
+ 
             }
-            else if phone != nil {
-                CreateNewPassword(phone: phone!)
+            else if type == "client" {
+                print("client")
+                self.createPassword(type: type!, id: id!)
+            }
+            else {
+                print("forget password")
+                self.goNewPassword(phone: phone!)
             }
             
         }
@@ -118,14 +128,19 @@ class VerificationViewController: UIViewController {
 }
 
 extension VerificationViewController: IVerificationViewController {
-    func CreateNewPassword(phone: String) {
-        router?.createNewPassword(phone: phone)
+    func goHome() {
+        router?.goHome()
+    }
+    
+    func goNewPassword(phone: String) {
+        router?.goNewpassword(phone: phone)
+    }
+    
+    func createPassword(type: String, id: Int) {
+        router?.createpassword(type: type, id: id)
     }
     
     
-    func goNewPassword(type: String, id: Int) {
-        router?.goNewPassword(type: type, id: id)
-    }
     
     
     

@@ -28,6 +28,13 @@ class creatingPasswordInteractor: IcreatingPasswordInteractor {
             if success{
                 if let response = responseData{
                     self.presenter?.assignClient(client: response)
+                    let userdefults = UserDefaults.standard
+                    userdefults.set(response.type, forKey: "type")
+                    userdefults.set(response.accessToken, forKey: "token")
+                    userdefults.set(response.user.email, forKey: "email")
+                    userdefults.set(response.user.name, forKey: "name")
+                    userdefults.set(response.user.id, forKey: "id")
+                    userdefults.set(response.user.phone, forKey: "phone")
                     self.presenter?.GoHome()
                     
                 }

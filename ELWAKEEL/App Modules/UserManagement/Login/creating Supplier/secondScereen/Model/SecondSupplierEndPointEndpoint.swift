@@ -58,7 +58,7 @@ extension SecondSupplierEndPointEndpoint: IEndpoint {
         */
         switch self{
         case .register(_, _, _, _, _,_,_):
-       return "http://wakil.api-ksa.com/api/complete-info/9"
+       return "http://wakil.dev.fudexsb.com/api/complete-info/9"
     }
     }
     var parameter: Parameters? {

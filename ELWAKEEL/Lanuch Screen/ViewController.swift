@@ -16,10 +16,9 @@ class ViewController: UIViewController {
      
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//            self.navigate(type: .modal, module: GeneralRouterRoute.suppilerSecond(id: 9), completion: nil)
-//            self.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
-        self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
-//            self.navigate(type: .modal, module: GeneralRouterRoute.sideMenu, completion: nil)
+            self.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
+//        self.navigate(type: .modal, module: GeneralRouterRoute.aboutUs, completion: nil)
+//            self.navigate(type: .modal, module: GeneralRouterRoute.requestDetails, completion: nil)
         
         }
     }

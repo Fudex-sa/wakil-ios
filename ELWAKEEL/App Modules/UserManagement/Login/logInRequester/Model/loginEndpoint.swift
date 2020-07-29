@@ -53,7 +53,7 @@ extension loginEndpoint: IEndpoint {
         
         switch self {
         case .login:
-        return "http://wakil.api-ksa.com/api/login"
+        return "http://wakil.dev.fudexsb.com/api/login"
             
         }
     }

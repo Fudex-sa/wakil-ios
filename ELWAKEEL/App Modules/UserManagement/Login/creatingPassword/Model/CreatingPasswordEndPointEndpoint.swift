@@ -50,7 +50,7 @@ extension CreatingPasswordEndPointEndpoint: IEndpoint {
         */
         switch self {
         case .createNewPassword(_, _, let id):
-            return "http://wakil.api-ksa.com/api/complete-info/\(id)"
+            return "http://wakil.dev.fudexsb.com/api/complete-info/\(id)"
         }
         
     }

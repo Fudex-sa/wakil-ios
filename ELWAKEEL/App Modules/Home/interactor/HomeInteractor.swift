@@ -12,9 +12,17 @@ import UIKit
 
 protocol IHomeInteractor: class {
 	var parameters: [String: Any]? { get set }
+    func getDevertising()
 }
 
 class HomeInteractor: IHomeInteractor {
+    func getDevertising() {
+        worker?.getAdvertising(complition: { (success, error, data) in
+            print(data)
+        })
+       
+    }
+    
     var presenter: IHomePresenter?
     var worker: IHomeWorker?
     var parameters: [String: Any]?

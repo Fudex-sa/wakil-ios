@@ -11,7 +11,7 @@
 import UIKit
 
 protocol IsecondScreenPresenter: class {
-    func moveToHome()
+    func moveToverification(type: String)
     func assingNewProvider(provider: secondScreenModel.newUser)
     func showAlert(title: String, msg: String)
     
@@ -19,13 +19,19 @@ protocol IsecondScreenPresenter: class {
 }
 
 class secondScreenPresenter: IsecondScreenPresenter {
+    func moveToverification(type: String) {
+        view?.moveToVerification(type: type)
+    }
+    
+    
+    
     func showAlert(title: String, msg: String) {
         view?.showAlert(title: title, msg: msg)
     }
     
-    func moveToHome() {
-        view?.moveToHome()
-    }
+//    func moveToHome() {
+//        view?.moveToHome()
+//    }
     
     func assingNewProvider(provider: secondScreenModel.newUser) {
         view?.assingNewProvider(provider: provider)

@@ -55,7 +55,7 @@ extension CreatingRequesterEndpointEndpoint: IEndpoint {
         switch self {
         case .register:
             
-        return "http://wakil.api-ksa.com/api/register"
+        return "http://wakil.dev.fudexsb.com/api/register"
         }
         
     }

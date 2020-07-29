@@ -26,6 +26,6 @@ class LOGINRequesterRouter: ILOGINRequesterRouter {
 	}
     
     func navigateToHome() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.registrationType, completion: nil)
+        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
     }
 }

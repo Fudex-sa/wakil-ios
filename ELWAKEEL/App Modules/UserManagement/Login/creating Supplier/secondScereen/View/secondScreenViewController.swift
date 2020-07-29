@@ -14,7 +14,7 @@ import LocalizationFramework
 protocol IsecondScreenViewController: class {
 	var router: IsecondScreenRouter? { get set }
     func assingNewProvider(provider: secondScreenModel.newUser)
-    func moveToHome()
+    func moveToVerification(type: String)
     func showAlert(title: String, msg: String)
 }
 
@@ -223,6 +223,12 @@ extension secondScreenViewController: UITextFieldDelegate{
 }
 
 extension secondScreenViewController: IsecondScreenViewController {
+    func moveToVerification(type: String) {
+        router?.MoveToVerification(type: type)
+    }
+    
+   
+    
     func showAlert(title: String, msg: String) {
         ShowAlertView.showAlert(title: title, msg: msg, sender: self)
     }
@@ -231,9 +237,7 @@ extension secondScreenViewController: IsecondScreenViewController {
         self.provider = provider
     }
     
-    func moveToHome() {
-        router?.MoveToHome()
-    }
+   
     
 	// do someting...
 }

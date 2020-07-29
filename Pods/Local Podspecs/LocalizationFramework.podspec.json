@@ -1,0 +1,18 @@
+{
+  "name": "LocalizationFramework",
+  "version": "1.0.0",
+  "summary": "A short description of LocalizationFramework.",
+  "description": "LocalizationFramework is a small educational framework!",
+  "homepage": "http://EXAMPLE/LocalizationFramework",
+  "authors": {
+    "YOUR_NAME": "YOUR_EMAIL"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "http": "file:/Users/hamada/Desktop/wakeel/localization/"
+  },
+  "source_files": "localization/**/*.{swift,lproj,strings}",
+  "swift_version": "4.2"
+}

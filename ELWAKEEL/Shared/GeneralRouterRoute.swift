@@ -33,6 +33,10 @@ enum GeneralRouterRoute: IRouter {
     case newPassword(phone: String)
     case Home
     case sideMenu
+    case addrequest
+    case requestDetails
+    case editRequest
+    case aboutUs
     
     
 }
@@ -66,6 +70,15 @@ extension GeneralRouterRoute {
         case .sideMenu:
             return sideMenuConfiguration.setup()
             
+        case .addrequest:
+            return addrequestConfiguration.setup()
+        case .requestDetails:
+            return requestDetailsConfiguration.setup()
+        case .editRequest:
+            return editRequestConfiguration.setup()
+        
+        case .aboutUs:
+            return aboutUsConfiguration.setup()
         }
         
     }

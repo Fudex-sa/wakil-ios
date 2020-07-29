@@ -59,11 +59,11 @@ extension FirstSupplierEndPointEndpoint: IEndpoint {
         */
         switch self {
         case .register:
-        return "http://wakil.api-ksa.com/api/register"
+        return "http://wakil.dev.fudexsb.com/api/register"
         case .countries:
-            return "http://wakil.api-ksa.com/api/countries"
+            return "http://wakil.dev.fudexsb.com/api/countries"
         case .getCities:
-            return "http://wakil.api-ksa.com/api/cities"
+            return "http://wakil.dev.fudexsb.com/api/cities"
         }
     }
     
