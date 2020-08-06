@@ -73,6 +73,7 @@ class sideMenuViewController: UIViewController {
     }
     
     @IBAction func createNBT(_ sender: Any) {
+        self.navigate(type: .modal, module: GeneralRouterRoute.addrequest, completion: nil)
     }
     
 }
@@ -81,7 +82,6 @@ extension sideMenuViewController: IsideMenuViewController {
     
     func assignRequests(requests: sideMenuModel.requests?) {
         self.requests2 = requests
-        print("request 2 \(requests2)")
         
     }
     
@@ -144,20 +144,29 @@ extension sideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func logout()
     {
-     router?.login()
+        UserDefaults.standard.set(false, forKey: "login")
+        UserDefaults.standard.set("", forKey: "token")
+        self.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
+//     router?.login()
     }
     func changeLanguage()
     {
-    MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+   
+//       if Locale.current.languageCode == "en"
+//       {
+//        Locale.current.l = "ar"
+//        }
+//       else{
+//        Locale.current.languageCode = "en"
+//        }
+         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
         MOLH.reset()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-	// do someting...
 }
 
 extension sideMenuViewController {
-	// do someting...
 }

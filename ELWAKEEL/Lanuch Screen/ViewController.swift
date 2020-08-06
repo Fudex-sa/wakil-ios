@@ -17,20 +17,18 @@ class ViewController: UIViewController {
      
         
         
-//        if userDefualts.bool(forKey: "login") == true{
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//            print("log in true")
-//            self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
-//        }
-//        }
-//        else{
+        if userDefualts.bool(forKey: "login") == true{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            print("log in true")
+            self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+        }
+        }
+        else{
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.navigate(type: .modal, module: GeneralRouterRoute.aboutUs, completion: nil)}
+            self.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)}
+        }
     
-////        self.navigate(type: .modal, module: GeneralRouterRoute.aboutUs, completion: nil)
-////            self.navigate(type: .modal, module: GeneralRouterRoute.requestDetails, completion: nil)
-//            }
-//        }
+
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle{
