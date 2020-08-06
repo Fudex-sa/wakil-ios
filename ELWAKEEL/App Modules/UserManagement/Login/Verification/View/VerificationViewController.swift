@@ -66,8 +66,36 @@ class VerificationViewController: UIViewController {
         secondNUM.delegate = self
         thirdNum.delegate = self
         furthNUM.delegate = self
+        firstNUM.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        secondNUM.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        thirdNum.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        furthNUM.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+
         
         
+        
+    }
+    
+    
+    @objc func textFieldDidChange(textField: UITextField){
+        let text = textField.text
+        if text?.count == 1 {
+            switch textField{
+            case furthNUM:
+                thirdNum.becomeFirstResponder()
+            case thirdNum:
+                secondNUM.becomeFirstResponder()
+            case secondNUM:
+                firstNUM.becomeFirstResponder()
+            case firstNUM:
+                firstNUM.resignFirstResponder()
+            default:
+                break
+            }
+        }
+
+        else{
+        }
     }
     
     
@@ -83,10 +111,10 @@ class VerificationViewController: UIViewController {
     
     
     @IBAction func confirmBTN(_ sender: Any) {
-     guard let num1 = firstNUM.text,
-        let num2 = secondNUM.text,
-        let num3 = thirdNum.text,
-        let num4 = furthNUM.text,
+     guard let num4 = firstNUM.text,
+        let num3 = secondNUM.text,
+        let num2 = thirdNum.text,
+        let num1 = furthNUM.text,
         !num1.isEmpty || !num2.isEmpty || !num3.isEmpty || !num4.isEmpty
         else{
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
@@ -152,7 +180,7 @@ extension VerificationViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
-	
+   
 }
 
 extension VerificationViewController {

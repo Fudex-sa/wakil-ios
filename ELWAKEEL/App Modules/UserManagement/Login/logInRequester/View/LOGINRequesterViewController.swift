@@ -10,6 +10,7 @@
 
 import UIKit
 import LocalizationFramework
+import MOLH
 
 protocol ILOGINRequesterViewController: class {
 	var router: ILOGINRequesterRouter? { get set }
@@ -35,10 +36,11 @@ class LOGINRequesterViewController: UIViewController {
     @IBOutlet weak var passwordTXT: UITextField!
     var type = ""
     var user: LOGINRequesterModel.loginSuccess?
+    var userDefualts = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-	
+        
         setUpView()
         print("type\(type)")
         
@@ -58,6 +60,7 @@ class LOGINRequesterViewController: UIViewController {
         createNewAccount.titleLabel?.adjustsFontSizeToFitWidth = true
         phoneTXT.delegate = self
         passwordTXT.delegate = self
+        
         
     }
     

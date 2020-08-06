@@ -10,15 +10,14 @@
 
 import UIKit
 import LocalizationFramework
+import MOLH
 
 protocol IsideMenuViewController: class {
 	var router: IsideMenuRouter? { get set }
+    func assignRequests(requests: sideMenuModel.requests?)
+
 }
-enum MenuType: Int {
-    case home
-    case camera
-    case profile
-}
+
 
 class sideMenuViewController: UIViewController {
 	var interactor: IsideMenuInteractor?
@@ -31,14 +30,18 @@ class sideMenuViewController: UIViewController {
     @IBOutlet weak var edit: UIButton!
     @IBOutlet weak var createBTN: UIButton!
     @IBOutlet weak var menuTable: UITableView!
-    var didTapMenuType: ((MenuType) -> Void)?
     var menu_Items: [String] = [Localization.Main, Localization.Record_requests, Localization.Application_settings, Localization.Connect_with_us, Localization.About_the_application, Localization.common_questions, Localization.Share_the_app, Localization.Terms_and_Conditions, Localization.Logout]
-    
-    
+    var requests2: sideMenuModel.requests?
+    var requ: HomeModel.requests?
+    var id = 0
 	override func viewDidLoad() {
         super.viewDidLoad()
+
         setUpView()
 		// do someting...
+        getrequests()
+
+        print("id\(id)")
     }
     func setUpView()
     {
@@ -57,6 +60,15 @@ class sideMenuViewController: UIViewController {
         
     }
     
+    func getrequests()
+    {
+        print("request Called")
+        interactor?.getRequest()
+        print("request Called")
+
+        
+    }
+    
     @IBAction func editBTN(_ sender: Any) {
     }
     
@@ -66,6 +78,13 @@ class sideMenuViewController: UIViewController {
 }
 
 extension sideMenuViewController: IsideMenuViewController {
+    
+    func assignRequests(requests: sideMenuModel.requests?) {
+        self.requests2 = requests
+        print("request 2 \(requests2)")
+        
+    }
+    
 	// do someting...
 }
 
@@ -76,19 +95,66 @@ extension sideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuCell
+        cell.selectionStyle = .none
         cell.item.text = menu_Items[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let menuType = MenuType(rawValue: indexPath.row) else { return }
-        dismiss(animated: true) { [weak self] in
-            print("Dismissing: \(menuType)")
-            self?.didTapMenuType?(menuType)
+       
+        switch indexPath.row {
+        case 0:
+            self.router?.main()
+            
+        case 1:
+            print("recode_ request")
+            self.router?.record_requests()
+
+        case 2:
+            print("setting")
+            changeLanguage()
+//            self.router?.application_Setting()
+
+        case 3:
+            print("connect with us")
+            self.router?.connect_with_us()
+
+        case 4:
+            print("about the applicatin")
+            self.router?.about_the_application()
+
+        case 5:
+            print("commom questio")
+            self.router?.common_question()
+
+        case 6:
+            print("share app")
+            self.router?.share_the_app()
+        case 7:
+            print("terms")
+            self.router?.terms_and_conditions()
+        case 8:
+            print("logOut")
+            logout()
+
+        default:
+            print("no case selected")
         }
     }
     
+    func logout()
+    {
+     router?.login()
+    }
+    func changeLanguage()
+    {
+    MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+        MOLH.reset()
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 	// do someting...
 }
 

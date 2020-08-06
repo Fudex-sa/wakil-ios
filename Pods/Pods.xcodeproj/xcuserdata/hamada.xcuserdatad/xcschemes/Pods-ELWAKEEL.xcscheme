@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77859E3D5E891097D4FBD52F2028CAD9"
+               BlueprintIdentifier = "E020529F6F55C1D83A88D7528E850DA4"
                BuildableName = "Pods_ELWAKEEL.framework"
                BlueprintName = "Pods-ELWAKEEL"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "77859E3D5E891097D4FBD52F2028CAD9"
+            BlueprintIdentifier = "E020529F6F55C1D83A88D7528E850DA4"
             BuildableName = "Pods_ELWAKEEL.framework"
             BlueprintName = "Pods-ELWAKEEL"
             ReferencedContainer = "container:Pods.xcodeproj">

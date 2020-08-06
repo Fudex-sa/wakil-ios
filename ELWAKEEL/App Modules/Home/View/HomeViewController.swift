@@ -10,9 +10,11 @@
 
 import UIKit
 import LocalizationFramework
-
+import MOLH
 protocol IHomeViewController: class {
 	var router: IHomeRouter? { get set }
+    func assignRequests(requests: HomeModel.requests)
+    func assignAdvertizing(advertizing: [HomeModel.Advertising])
 }
 
 class HomeViewController: UIViewController {
@@ -22,6 +24,7 @@ class HomeViewController: UIViewController {
     let popUpView = UIView()
     var currentPopUpVC: UIViewController!
     let userDefault = UserDefaults.standard
+    var advertizings: [HomeModel.Advertising]?
    
     @IBOutlet weak var requestTable: UITableView!
     @IBOutlet weak var notificationLBL: UILabel!
@@ -35,32 +38,31 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var rowHeight: NSLayoutConstraint!
     
     var newReuests: [[String:Any]]?
-    var imgArr = [  UIImage(named:"topView"),
-                    UIImage(named:"topView") ,
-                    UIImage(named:"topView") ,
-                    UIImage(named:"profile") ,
-                    UIImage(named:"profile") ,
-                    UIImage(named:"profile") ,
-                    UIImage(named:"profile") ,
-                    UIImage(named:"profile") ,
-                    UIImage(named:"profile") ,
-                    UIImage(named:"profile") ]
+    var imgArr: [String] = [String]()
     
     
     var names: [String?] = ["sssss","ccccc", nil]
-    
+    var requests2: HomeModel.requests?
+    var rrrr: HomeModel.requests?
     
     var timer = Timer()
     var counter = 0
    weak var delegate: HomeDelegate?
    var hide = true
+    var id = 0
 	override func viewDidLoad() {
         super.viewDidLoad()
-    setUpView()
+        setUpView()
         getAdvertising()
+        getrequests()
+    
 
     }
-    
+    func getrequests()
+    {
+        interactor?.getRequest()
+        
+    }
     func setUpView()
     {
         
@@ -114,10 +116,35 @@ class HomeViewController: UIViewController {
     
     @IBAction func SideMenuVTN(_ sender: Any) {
 
+//        sideMenuConfiguration.setup()
         showPopUp()
+        if requests2 != nil{
+             setup()
+            
+            print("called")
+
+        }
+        else{
+            print("not Called")
+        }
+        
         
     }
-
+    
+    func setup(parameters: [String: Any] = [:]) {
+        let controller = sideMenuViewController()
+        let router = sideMenuRouter(view: controller)
+        let presenter = sideMenuPresenter(view: controller)
+        let worker = sideMenuWorker()
+        let interactor = sideMenuInteractor(presenter: presenter, worker: worker)
+        controller.interactor = interactor
+        controller.router = router
+      
+        interactor.parameters = parameters
+        
+//        return controller
+    
+    }
     
     
     
@@ -137,9 +164,32 @@ class HomeViewController: UIViewController {
         self.navigate(type: .modal, module: GeneralRouterRoute.addrequest, completion: nil)
     }
     
+    
 }
 
 extension HomeViewController: IHomeViewController {
+    func assignAdvertizing(advertizing: [HomeModel.Advertising]) {
+        self.advertizings = advertizing
+        if let advertizings = advertizings{
+        for item in advertizings{
+            var baseUrl = "http://wakil.dev.fudexsb.com"
+               baseUrl.append(contentsOf: item.image)
+            self.imgArr.append(baseUrl)
+        }
+            
+            self.imageCollection.reloadData()
+        }
+    }
+    
+    func assignRequests(requests: HomeModel.requests) {
+        self.requests2 = requests
+        
+      self.requestTable.reloadData()
+        
+
+
+    }
+    
 	// do someting...
 }
 
@@ -158,7 +208,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! cell
-        cell.image.image = imgArr[indexPath.row]
+        if let url = URL(string: imgArr[indexPath.row]) {
+        UIImage.loadFrom(url: url) { image in
+             cell.image.image = image
+        }
+        }
+        else{
+            print("no image found")
+        }
+        
         return cell
     }
 }
@@ -186,44 +244,56 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return requests2?.data.count ?? 0
     }
     
- 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell", for: indexPath) as! requestCell
         cell.layer.cornerRadius = 10
-        cell.requestNumLBL.text = "رقم الطلب"
-        cell.requestStatus.text = "قيد التنفيذ"
-        cell.requestDESLBL.text = "وصف بسيط للخدمة المطلوبة من قبل المستخدم"
-        cell.requestAddresBL.text = "الدمام - المنطقة الشرقية"
-        if names[indexPath.row] != nil{
-        cell.requesteAccept.text = names[indexPath.row]
+        cell.requestNumLBL.text = Localization.requestNum
+        id = (requests2?.data[indexPath.row].id)!
+            cell.showNumberLBL.text = String(describing: id)
+        if MOLHLanguage.currentAppleLanguage() == "ar"
+        {
+        cell.requestStatus.text = (requests2?.data[indexPath.row].status?.name)
+            cell.requestStatus.textAlignment = .left
+            
+        }
+
+        cell.requestDESLBL.text = requests2?.data[indexPath.row].description
+        var address = requests2?.data[indexPath.row].city?.name ?? ""
+        address.append(contentsOf: " - ")
+        address.append(contentsOf: requests2?.data[indexPath.row].country?.name ?? "" )
+        cell.requesteAccept.text = Localization.requestsApprove
+        cell.requestAddresBL.text = address
+        if requests2?.data[indexPath.row] != nil{
         }
         else{
             cell.containerView.isHidden = true
-            
+
         }
-        
+
         cell.selectionStyle = .none
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if names[indexPath.row] != nil{
+        if requests2?.data[indexPath.row] != nil{
             return 190
-            
+
         }
         else{
             return 140
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.navigate(type: .modal, module: GeneralRouterRoute.editRequest, completion: nil)
     }
-   
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let request_id = (requests2?.data[indexPath.row].id)!
+        self.navigate(type: .modal, module: GeneralRouterRoute.editRequest(id: request_id), completion: nil)
+    }
+
 
     
 }
@@ -239,6 +309,7 @@ extension HomeViewController{
     
     func showPopUp() {
          currentPopUpVC = sideMenuViewController(nibName: "sideMenuViewController", bundle: nil)
+        
 
         
         
@@ -276,4 +347,23 @@ extension HomeViewController{
             self.hideView.removeFromSuperview()
         })
     }
+}
+
+
+extension UIImage {
+    
+    public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> ()) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    completion(UIImage(data: data))
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
 }

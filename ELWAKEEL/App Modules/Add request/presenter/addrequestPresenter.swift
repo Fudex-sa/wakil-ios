@@ -12,10 +12,25 @@ import UIKit
 
 protocol IaddrequestPresenter: class {
     func assignOrganization(organizations: [addrequestModel.Organization])
+    func assignCountries(countries: [addrequestModel.Organization])
+    func assignCities(cities: [addrequestModel.Organization])
 	// do someting...
+    func goHome()
 }
 
 class addrequestPresenter: IaddrequestPresenter {
+    func goHome() {
+        view?.backToHome()
+    }
+    
+    func assignCountries(countries: [addrequestModel.Organization]) {
+        view?.assignCountries(countries: countries)
+    }
+    
+    func assignCities(cities: [addrequestModel.Organization]) {
+        view?.assignCities(cities: cities)
+    }
+    
     func assignOrganization(organizations: [addrequestModel.Organization]) {
         view?.assignorganization(organizations: organizations)
     }

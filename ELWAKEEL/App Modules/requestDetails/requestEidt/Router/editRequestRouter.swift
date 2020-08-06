@@ -11,10 +11,15 @@
 import UIKit
 
 protocol IeditRequestRouter: class {
+    func goHome()
 	// do someting...
 }
 
-class editRequestRouter: IeditRequestRouter {	
+class editRequestRouter: IeditRequestRouter {
+    func goHome() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+    }
+    
 	weak var view: editRequestViewController?
 	
 	init(view: editRequestViewController?) {

@@ -24,7 +24,7 @@ struct addrequestModel {
 		// do someting...
 	}
     
-    struct Organization: Codable, Equatable {
+    struct Organization: Codable {
         let id: Int?
         let name: String?
     }

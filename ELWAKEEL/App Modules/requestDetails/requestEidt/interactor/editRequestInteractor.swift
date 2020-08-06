@@ -12,9 +12,35 @@ import UIKit
 
 protocol IeditRequestInteractor: class {
 	var parameters: [String: Any]? { get set }
+    func getRequest_Datails(id: Int)
+    func cancelRequest(id: Int, reason: String)
 }
 
 class editRequestInteractor: IeditRequestInteractor {
+    func cancelRequest(id: Int, reason: String) {
+        worker?.cancelRequest(id: id, reason: reason, complition: { (success, error, response) in
+            if success{
+                self.presenter?.cancel()
+            }
+            else{
+                print("error\(error?.message)")
+            }
+        })
+    }
+    
+    
+    
+    func getRequest_Datails(id: Int) {
+        worker?.getRqeques(id: id, complition: { (success, error, respnse) in
+            if success{
+                self.presenter?.asgniRequest(requestDetails: respnse!)
+            }
+            else{
+                print("error \(error?.message)")
+            }
+        })
+    }
+    
     var presenter: IeditRequestPresenter?
     var worker: IeditRequestWorker?
     var parameters: [String: Any]?

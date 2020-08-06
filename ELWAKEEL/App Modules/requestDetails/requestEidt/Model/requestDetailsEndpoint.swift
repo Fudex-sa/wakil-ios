@@ -1,8 +1,8 @@
 //
-//  HomeEndpoint.swift
+//  requestDetailsEndpoint.swift
 //  ELWAKEEL
 //
-//  Created by HAMADA on 7/29/20.
+//  Created by HAMADA on 8/5/20.
 //  Copyright (c) 2020 Fudex. All rights reserved.
 //  Modify By:  * Ahmed Adam
 //              * ibn.abuadam@gmail.com
@@ -11,27 +11,38 @@
 import Foundation
 import Alamofire
 
-enum HomeEndpoint {
-    case advertizing
-    case getRequests
+enum requestDetailsEndpoint {
+    /*
+     Add Endpoint
+     case sample
+     case sample(parameter: [String: Any])
+    */
+    
     case requestDetails(id: Int)
-
+    case cancelRequset(id: Int, reason: String)
 }
 
-extension HomeEndpoint: IEndpoint {
+extension requestDetailsEndpoint: IEndpoint {
     var image: UIImage? {
         return nil
     }
     
     var method: HTTPMethod {
-        switch self {
-        case .advertizing:
-            return .get
-        case .getRequests:
-            return .get
+        /*
+        Do like this:
 
+        switch self {
+        case .sample:
+            return .get
+        }
+        */
+        switch self {
         case .requestDetails:
             return .get
+
+       
+        case .cancelRequset:
+          return .post
         }
     }
     
@@ -45,18 +56,13 @@ extension HomeEndpoint: IEndpoint {
         }
         */
         switch self {
-        case .advertizing:
-            return "http://wakil.dev.fudexsb.com/api/ads"
-        case .getRequests:
-            let id = UserDefaults.standard.integer(forKey: "id")
-            return "http://wakil.dev.fudexsb.com/api/clients/\(id)/requests"
-
         case .requestDetails(let id):
-            return "http://wakil.dev.fudexsb.com/api/requests/\(id)"
+            
+        return "http://wakil.dev.fudexsb.com/api/requests/\(id)"
+        case .cancelRequset(let id, _):
+            return "http://wakil.dev.fudexsb.com/api/requests/\(id)/cancel"
         }
-        
     }
-    
     var parameter: Parameters? {
         /*
         Do like this:
@@ -66,7 +72,13 @@ extension HomeEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
+        switch self {
+        case .cancelRequset(_ , let reason):
+            return ["reason": reason]
+        case .requestDetails:
+            return nil
+            
+        }
     }
     
     var header: HTTPHeaders? {
@@ -78,20 +90,18 @@ extension HomeEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
+        
         let userDefaults = UserDefaults.standard
         let token = userDefaults.string(forKey: "token")
-        
         switch self {
-           case .advertizing:
             
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
-        case .getRequests:
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
-
         case .requestDetails:
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
-        }
-    }
+           return ["Accept": "application/json", "Accept-Language":"en", "Authorization": "bearer \(token!)"]
+            
+        case .cancelRequset:
+             return ["Accept": "application/json", "Accept-Language":"en", "Authorization": "bearer \(token!)"]
+            
+        }    }
     
     var encoding: ParameterEncoding {        
         /*

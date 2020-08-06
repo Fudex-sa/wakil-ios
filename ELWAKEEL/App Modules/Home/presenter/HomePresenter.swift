@@ -12,9 +12,23 @@ import UIKit
 
 protocol IHomePresenter: class {
 	// do someting...
+    func assingRequest(requeste: HomeModel.requests)
+    func assignAdvertizing(advertizing: [HomeModel.Advertising])
 }
 
-class HomePresenter: IHomePresenter {	
+class HomePresenter: IHomePresenter {
+    func assignAdvertizing(advertizing: [HomeModel.Advertising]) {
+        view?.assignAdvertizing(advertizing: advertizing)
+    }
+    
+    func assingRequest(requeste: HomeModel.requests) {
+        view?.assignRequests(requests: requeste)
+        
+        print("presenter count \(requeste.data.count)")
+
+    }
+    
+    
 	weak var view: IHomeViewController?
 	
 	init(view: IHomeViewController?) {

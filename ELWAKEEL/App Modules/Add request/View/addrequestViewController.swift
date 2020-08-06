@@ -14,6 +14,10 @@ import  RSSelectionMenu
 protocol IaddrequestViewController: class {
 	var router: IaddrequestRouter? { get set }
     func assignorganization(organizations: [addrequestModel.Organization])
+    func assignCountries(countries: [addrequestModel.Organization])
+    func assignCities(cities: [addrequestModel.Organization])
+    func backToHome()
+    
 }
 
 class addrequestViewController: UIViewController {
@@ -47,8 +51,33 @@ class addrequestViewController: UIViewController {
     let addressBTN = UIButton(type: .custom)
     let minstryBTN = UIButton(type: .custom)
     let achieveBTN = UIButton(type: .custom)
-    var selected: [addrequestModel.Organization] = [addrequestModel.Organization]()
+    var gatData: formatData = formatData()
+    var selected_Org_Id: Int = Int()
+    var countries: [addrequestModel.Organization]?
+    var cities: [addrequestModel.Organization]?
     var organizations: [addrequestModel.Organization]?
+    var selectedEmail = ""
+    var organizationName: [String] = [String]()
+
+    
+    
+    var selectedOrgName: [String] = [String]()
+    var selectedOrgId: [Int] = [Int]()
+    var selected_Country_ID: Int = Int()
+    var seleted_City_ID: Int = Int()
+    var seleted_organization_ID: Int = Int()
+    var type = ""
+    var cities1: [addrequestModel.Organization]?
+    var interActor = getCities()
+    var provementsEmails: [String] = [String(Localization.email2), String(Localization.Registered_Mail),String(Localization.Excellent_email)]
+    var selectedEmails: [String] = [String]()
+    var selectedEmail1 = ""
+    var selected_Conutry_Name = ""
+    var selected_City_Name = ""
+    var selected_organization_Name = ""
+    var selected_Email_Name = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
@@ -60,14 +89,10 @@ class addrequestViewController: UIViewController {
         showregions()
         getOrganization()
         addTapGuester()
+        getCountries()
         
     }
     
-    
-    @IBAction func hide(_ sender: Any) {
-        
-//        container.isHidden = true
-    }
     
     
     func addTapGuester()
@@ -77,33 +102,9 @@ class addrequestViewController: UIViewController {
         minstryTxt.delegate = self
         addressTEX.delegate = self
         achieveTXT.delegate = self
+        
     }
-    
-    func showRegios()
-    {
-        let menu = RSSelectionMenu(selectionStyle: .multiple, dataSource: organizations!) { (cell, name, indexpath) in
-            cell.textLabel?.text = name.name
-        }
-        print("selected1\(selected)")
-        menu.setSelectedItems(items: selected) {[weak self] (item, index, isselected, selectedItem) in
-            self?.selected = selectedItem
-             print("selected\(self?.selected)")
-        }
-        menu.cellSelectionStyle = .checkbox
-        menu.show(style: .alert(title: "hamada", action: "hamafa", height: Double( self.view.frame.size.height * 0.50)), from: self)
-        // on dismiss handler
-        menu.onDismiss = { [weak self] items in
-            print("selected\(self?.selected)")
-            self?.selected = items
-            for item in items{
-                print(item)
-            }
-            
-        }
-       
-    }
-    
-    
+ 
     func setUpView()
     {
         
@@ -185,24 +186,22 @@ class addrequestViewController: UIViewController {
     }
     
     @IBAction func backBTN(_ sender: Any) {
-//         dismiss()
-//        container.isHidden = false
-        print("wwwww\(organizations)")
-        
+
+//        print("ssssss\(selectedOrgId)")
+        dismiss()
+
     }
     
     @IBAction func sendBTN(_ sender: Any) {
      
         validateData()
         let des = textView.text!
-        let region = regionTXT.text!
-        let city = cityTEX.text!
         let address = addressTEX.text!
-        let minstray = minstryTxt.text!
-        let provement = achieveTXT.text!
-        self.interactor?.addreuest(title: "ssss", description: des, country_id: 1, city_id: 3, organization_id: 2, address: "minia", achievement_proof: "email")
-//
-        dismiss()
+        if des != nil{
+            print("des not nil")
+        }
+        self.interactor?.addreuest(title: "ssss", description: des, country_id: self.selected_Country_ID, city_id: self.seleted_City_ID, organization_id: selected_Org_Id, address: address, achievement_proof: self.selectedEmail)
+
         
     }
     func getOrganization(){
@@ -210,11 +209,15 @@ class addrequestViewController: UIViewController {
         
         
     }
+    func getCountries()
+    {
+       self.interactor?.getCountries()
+    }
+   
+    
         func validateData(){
         guard let des = textView.text, !des.isEmpty || des.count < 360 else {
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.enter_DES, sender: self)
-           
-
             return
         }
         
@@ -253,6 +256,22 @@ class addrequestViewController: UIViewController {
 }
 
 extension addrequestViewController: IaddrequestViewController {
+    func backToHome() {
+        self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+    }
+    
+    
+    
+    
+    func assignCountries(countries: [addrequestModel.Organization]) {
+        self.countries = countries
+    }
+    
+    func assignCities(cities: [addrequestModel.Organization]) {
+//        self.cities = cities
+    }
+    
+    
     func assignorganization(organizations: [addrequestModel.Organization]) {
         self.organizations = organizations
     }
@@ -273,20 +292,53 @@ extension addrequestViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-	// do someting...
 }
 
 
 extension addrequestViewController: UITextFieldDelegate {
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
-        showRegios()
-        for item in selected{
-            print("items \(item.name)")
+
+        if textField == regionTXT{
+            
+            self.type = "countries"
+            if let cities = countries{
+                self.getOrganization1(organizations: cities, view: self)
+
+            }
+          return false
+        }
+        else if textField == cityTEX{
+            self.type = "cities"
+
+            if let cities = cities1{
+                self.getOrganization1(organizations: cities, view: self)
+            }
+            return false
+        }
+        else if textField == minstryTxt{
+        self.type = "organization"
+            if let cities = organizations{
+                self.getOrganization1(organizations: cities, view: self)
+            }
+          return false
+        }
+       else if textField == achieveTXT{
+            self.getProveEmails()
+            return false
+        }
+        else {
+            return true
+            
         }
         
-        return false
+        
+      
     }
-
+    
+    
+    
+    
 }
 
 extension addrequestViewController: UITextViewDelegate {
@@ -304,5 +356,96 @@ extension addrequestViewController: UITextViewDelegate {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
         return newText.count < 360
     }
+    func getOrganization1(organizations: [addrequestModel.Organization], view: UIViewController)
+    {
+        organizationName.removeAll()
+        
+        
+        for item in organizations{
+            organizationName.append(item.name!)
+        }
+        
+        let menu = RSSelectionMenu(selectionStyle: .single, dataSource: organizationName) { (cell, name, indexpath) in
+            cell.textLabel?.text = name
+        }
+        menu.setSelectedItems(items: selectedOrgName) {[weak self] (item, index, isselected, selectedItem) in
+            self?.selectedOrgName = selectedItem
+            
+        }
+        menu.cellSelectionStyle = .checkbox
+        
+        menu.show(style: .alert(title: "ddddd", action: "ok", height: 300.0), from: view)
+        print("hamada")
+        
+        // on dismiss handler
+        menu.onDismiss = { [weak self] items in
+            self?.selectedOrgName = items
+            var indexes: [Int] = [Int]()
+            for item in 0..<self!.selectedOrgName.count{
+                let insed = organizations.index(where: {$0.name == self?.selectedOrgName[item]})
+                indexes.append(insed!)
+                
+            }
+            
+            
+            switch self?.type {
+            case "organization":
+                self?.selected_Org_Id = organizations[indexes[0]].id!
+                self?.selected_organization_Name = organizations[indexes[0]].name!
+                self?.minstryTxt.text = self?.selected_organization_Name
+                
+                
+            case "countries":
+                self?.selected_Country_ID = organizations[indexes[0]].id!
+                self?.selected_Conutry_Name = organizations[indexes[0]].name!
+                self?.regionTXT.text = self?.selected_Conutry_Name
+                self?.interActor.getCities(Countries_IDs: [(organizations[indexes[0]].id)!], complition: { (success, error, response) in
+                    if success{
+                        print("Getting succeedd")
+                        self?.cities1 = response!
+                    }
+                        
+                    else{
+                    }
+                })
+            case "cities":
+                self?.seleted_City_ID = organizations[indexes[0]].id!
+                self?.selected_City_Name = organizations[indexes[0]].name!
+                self?.cityTEX.text = self?.selected_City_Name
+            default:
+                print("no case seleted")
+                
+                
+            }
+            
+        }
+        
+        
+        
+    }
     
+    
+    
+    func getProveEmails()
+    {
+        //        provementsEmails.removeAll()
+        
+        let menu = RSSelectionMenu(selectionStyle: .single, dataSource: provementsEmails) { (cell, name, indexpath) in
+            cell.textLabel?.text = name
+        }
+        print("selected1)")
+        menu.setSelectedItems(items: selectedEmails) {[weak self] (item, index, isselected, selectedItem) in
+            self?.selectedEmails = selectedItem
+            print("selected\(self?.selectedEmails)")
+        }
+        menu.cellSelectionStyle = .checkbox
+        
+        menu.show(style: .alert(title: "ddddd", action: "ok", height: 300.0), from: self)
+        menu.onDismiss = { [weak self] items in
+            self?.selectedEmail = (self?.selectedEmails[0])!
+            self?.achieveTXT.text = (self?.selectedEmails[0])!
+            
+            
+        }
+    }
 }

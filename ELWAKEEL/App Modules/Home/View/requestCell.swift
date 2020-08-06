@@ -31,6 +31,11 @@ class requestCell: UITableViewCell {
         requestNum2.layer.cornerRadius = requestNum2.frame.width/2
         showNumberLBL.layer.masksToBounds = true
         showNumberLBL.layer.cornerRadius = showNumberLBL.frame.width/2
+        requestNum2.adjustsFontSizeToFitWidth = true
+       showNumberLBL.adjustsFontSizeToFitWidth = true
+        requestStatus.adjustsFontSizeToFitWidth = true
+        requesteAccept.adjustsFontSizeToFitWidth = true
+
        
     }
     override func layoutSubviews() {

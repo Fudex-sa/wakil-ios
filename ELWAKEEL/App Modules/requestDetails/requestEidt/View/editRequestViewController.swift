@@ -13,6 +13,11 @@ import LocalizationFramework
 
 protocol IeditRequestViewController: class {
 	var router: IeditRequestRouter? { get set }
+    func requestDetails(id: Int)
+    func asgniDetails(requestDetail: editRequestModel.RequestDetails)
+    func cancelRequest(id: Int, reason: String)
+    func backToHome()
+    func cancle()
 }
 
 class editRequestViewController: UIViewController {
@@ -37,14 +42,24 @@ class editRequestViewController: UIViewController {
     @IBOutlet weak var edit: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
+    
+    
+    @IBOutlet weak var requestNum: UILabel!
+    
+    var id: Int?
+    var reason = ""
+    var requestDetail: editRequestModel.RequestDetails?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
         setUpView()
+        requestDetails(id: id!)
     }
     
     func setUpView(){
-        
+        requestNum.layer.masksToBounds = true
+        requestNum.layer.cornerRadius = requestNum.frame.width/2
         edit.layer.cornerRadius = 10
         cancel.layer.cornerRadius = 10
         orderNum.text = Localization.Order_number
@@ -66,10 +81,15 @@ class editRequestViewController: UIViewController {
     }
     
     @IBAction func cancelBTN(_ sender: Any) {
-        let alert = UIAlertController(title: Localization.cancel_request, message: Localization.cancel_reason, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: Localization.cancel, style: .cancel, handler: nil)
-        let sendAction = UIAlertAction(title: Localization.sendBTN, style: .default) { (action) in
-            print("send")
+        let alert = UIAlertController(title: Localization.cancelRequest, message: Localization.cancelReason, preferredStyle: .alert)
+        let sendAction = UIAlertAction(title: Localization.send, style: .default) { (action) in
+            self.reason = (alert.textFields?[0].text)!
+            self.cancelRequest(id: self.id!, reason: self.reason)
+        }
+            
+        
+        let cancelAction = UIAlertAction(title: Localization.cancel, style: .default) { (action) in
+            print("canel")
         }
         alert.addTextField()
         alert.addAction(cancelAction)
@@ -82,10 +102,63 @@ class editRequestViewController: UIViewController {
     @IBAction func backBTN(_ sender: Any) {
         dismiss()
     }
+    func configueUI()
+    {
+        if let i1d = id{
+            requestNum.text = String(describing: i1d)
+
+        }
+        
+        orderNum.text = Localization.requestNum
+        orderStatus.text = requestDetail?.status?.name
+        textView.text = requestDetail?.description
+        region1.text = requestDetail?.country.name
+        city1.text = requestDetail?.city.name
+        address1.text = requestDetail?.address
+        minstry1.text = requestDetail?.organization.name
+        achieve1.text = requestDetail?.achievement_proof
+        
+    }
     
 }
 
 extension editRequestViewController: IeditRequestViewController {
+    func cancle() {
+        let alert = AlertController(title: " ", message: Localization.canceled, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Localization.ok, style: .default) { (action) in
+            self.router?.goHome()
+        }
+        
+       
+        
+        alert.setTitleImage(UIImage(named: "infoormation"))
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func backToHome() {
+        self.router?.goHome()
+    }
+    
+    func cancelRequest(id: Int, reason: String) {
+        self.interactor?.cancelRequest(id: id, reason: reason)
+    }
+    
+    
+    func asgniDetails(requestDetail: editRequestModel.RequestDetails) {
+        self.requestDetail = requestDetail
+        configueUI()
+
+    }
+    
+    func requestDetails(id: Int) {
+        interactor?.getRequest_Datails(id: id)
+    }
+    
+    
+    
 	// do someting...
 }
 

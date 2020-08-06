@@ -12,13 +12,13 @@ import Foundation
 import UIKit
 
 class editRequestConfiguration {
-    static func setup(parameters: [String: Any] = [:]) -> UIViewController {
+    static func setup(parameters: [String: Any] = [:], id: Int) -> UIViewController {
         let controller = editRequestViewController()
         let router = editRequestRouter(view: controller)
         let presenter = editRequestPresenter(view: controller)
         let worker = editRequestWorker()
         let interactor = editRequestInteractor(presenter: presenter, worker: worker)
-        
+        controller.id = id
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters

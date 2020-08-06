@@ -34,6 +34,8 @@
 		07040B0B24B94968000837A5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07040B0A24B94968000837A5 /* Model.swift */; };
 		07040B0E24B991F0000837A5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07040B0C24B991F0000837A5 /* TableViewCell.swift */; };
 		07040B0F24B991F0000837A5 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07040B0D24B991F0000837A5 /* TableViewCell.xib */; };
+		070A897824D55E0A00438102 /* GetDataFromApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A897724D55E0A00438102 /* GetDataFromApi.swift */; };
+		070A897A24D58B9800438102 /* UIViewControllerEXtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A897924D58B9800438102 /* UIViewControllerEXtension.swift */; };
 		070ABABD24B60F090001CF5B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070ABABC24B60F090001CF5B /* NetworkService.swift */; };
 		070ABABF24B61B9A0001CF5B /* errorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070ABABE24B61B9A0001CF5B /* errorAPI.swift */; };
 		070ABAC124B6289A0001CF5B /* loginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070ABAC024B6289A0001CF5B /* loginEndpoint.swift */; };
@@ -48,8 +50,13 @@
 		071014A624C3B90800510998 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071014A424C3B90800510998 /* MenuCell.xib */; };
 		071014A724C3C50100510998 /* sideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071014A924C3C50100510998 /* sideMenuViewController.xib */; };
 		071014AF24C3CB1D00510998 /* containerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071014AE24C3CB1D00510998 /* containerView.swift */; };
+		071CCC8D24DAC8A800F5473D /* requestDetailsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CCC8C24DAC8A800F5473D /* requestDetailsEndpoint.swift */; };
+		071CCC8F24DAE69600F5473D /* sideMenuEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CCC8E24DAE69600F5473D /* sideMenuEndpoint.swift */; };
+		071CD5E224DBAF6E0095E6B3 /* container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CD5E124DBAF6E0095E6B3 /* container.swift */; };
+		071CD5E424DBB5CA0095E6B3 /* extensiond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CD5E324DBB5CA0095E6B3 /* extensiond.swift */; };
 		071D235D24C543BF001A89C8 /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D235B24C543BF001A89C8 /* cell.swift */; };
 		071D235E24C543BF001A89C8 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071D235C24C543BF001A89C8 /* cell.xib */; };
+		071E491D24D8EB8E00375F3D /* configureAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E491C24D8EB8E00375F3D /* configureAPI.swift */; };
 		0720191624B6BCCB00E7952F /* NewPasswordEndPointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720191524B6BCCB00E7952F /* NewPasswordEndPointEndpoint.swift */; };
 		0720191824B6BCF400E7952F /* ForgetPasswordEndPointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720191724B6BCF400E7952F /* ForgetPasswordEndPointEndpoint.swift */; };
 		0720191A24B6BD3600E7952F /* CreatingPasswordEndPointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720191924B6BD3600E7952F /* CreatingPasswordEndPointEndpoint.swift */; };
@@ -210,6 +217,8 @@
 		07040B0A24B94968000837A5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		07040B0C24B991F0000837A5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		07040B0D24B991F0000837A5 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		070A897724D55E0A00438102 /* GetDataFromApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFromApi.swift; sourceTree = "<group>"; };
+		070A897924D58B9800438102 /* UIViewControllerEXtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerEXtension.swift; sourceTree = "<group>"; };
 		070ABABC24B60F090001CF5B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		070ABABE24B61B9A0001CF5B /* errorAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorAPI.swift; sourceTree = "<group>"; };
 		070ABAC024B6289A0001CF5B /* loginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginEndpoint.swift; sourceTree = "<group>"; };
@@ -226,8 +235,13 @@
 		071014AB24C3C50B00510998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/sideMenuViewController.strings; sourceTree = "<group>"; };
 		071014AD24C3C51500510998 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/sideMenuViewController.strings; sourceTree = "<group>"; };
 		071014AE24C3CB1D00510998 /* containerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = containerView.swift; sourceTree = "<group>"; };
+		071CCC8C24DAC8A800F5473D /* requestDetailsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDetailsEndpoint.swift; sourceTree = "<group>"; };
+		071CCC8E24DAE69600F5473D /* sideMenuEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuEndpoint.swift; sourceTree = "<group>"; };
+		071CD5E124DBAF6E0095E6B3 /* container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = container.swift; sourceTree = "<group>"; };
+		071CD5E324DBB5CA0095E6B3 /* extensiond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensiond.swift; sourceTree = "<group>"; };
 		071D235B24C543BF001A89C8 /* cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
 		071D235C24C543BF001A89C8 /* cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
+		071E491C24D8EB8E00375F3D /* configureAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configureAPI.swift; sourceTree = "<group>"; };
 		0720191524B6BCCB00E7952F /* NewPasswordEndPointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordEndPointEndpoint.swift; sourceTree = "<group>"; };
 		0720191724B6BCF400E7952F /* ForgetPasswordEndPointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordEndPointEndpoint.swift; sourceTree = "<group>"; };
 		0720191924B6BD3600E7952F /* CreatingPasswordEndPointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingPasswordEndPointEndpoint.swift; sourceTree = "<group>"; };
@@ -933,6 +947,7 @@
 			isa = PBXGroup;
 			children = (
 				0710149224C3B28E00510998 /* sideMenuModel.swift */,
+				071CCC8E24DAE69600F5473D /* sideMenuEndpoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1068,6 +1083,8 @@
 			children = (
 				0720CBC024CF522400DEB73A /* addrequestModel.swift */,
 				0727EC9D24D160620007E420 /* addrequestEndpoint.swift */,
+				070A897724D55E0A00438102 /* GetDataFromApi.swift */,
+				071E491C24D8EB8E00375F3D /* configureAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1136,6 +1153,7 @@
 			isa = PBXGroup;
 			children = (
 				0720CBF224CFB79E00DEB73A /* editRequestModel.swift */,
+				071CCC8C24DAC8A800F5473D /* requestDetailsEndpoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1187,6 +1205,7 @@
 				072C2AAB24AFC4EE0050F83F /* ShowAlertView.swift */,
 				0720CBD124CFA51F00DEB73A /* AlertController.swift */,
 				0720CBD324CFA56400DEB73A /* alertExention.swift */,
+				070A897924D58B9800438102 /* UIViewControllerEXtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1299,6 +1318,8 @@
 				07920D2224D1BEFA0006B7AD /* aboutUsInteractor.swift */,
 				07920D2324D1BEFA0006B7AD /* aboutUsModel.swift */,
 				07920D2424D1BEFA0006B7AD /* aboutUsViewController.xib */,
+				071CD5E124DBAF6E0095E6B3 /* container.swift */,
+				071CD5E324DBB5CA0095E6B3 /* extensiond.swift */,
 			);
 			path = aboutUs;
 			sourceTree = "<group>";
@@ -1758,6 +1779,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-ELWAKEEL/Pods-ELWAKEEL-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/LocalizationFramework/LocalizationFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/MOLH/MOLH.framework",
 				"${BUILT_PRODUCTS_DIR}/RSSelectionMenu/RSSelectionMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -1767,6 +1789,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LocalizationFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOLH.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSSelectionMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -1807,6 +1830,7 @@
 				07BDC76F24B4F3A700283900 /* registraionTypeRouter.swift in Sources */,
 				07BDC7B024B50F8B00283900 /* ForgetpasswordModel.swift in Sources */,
 				07920D2524D1BEFA0006B7AD /* aboutUsConfiguration.swift in Sources */,
+				070A897824D55E0A00438102 /* GetDataFromApi.swift in Sources */,
 				070021F424C0438000C8CE31 /* HomeModel.swift in Sources */,
 				077B112724AFE710000C811B /* VerificationConfiguration.swift in Sources */,
 				0710149924C3B28E00510998 /* sideMenuInteractor.swift in Sources */,
@@ -1821,6 +1845,7 @@
 				0720CBAD24CEF63600DEB73A /* requestDetailsRouter.swift in Sources */,
 				0720CBF724CFB79E00DEB73A /* editRequestRouter.swift in Sources */,
 				072C2AA224AFC3F70050F83F /* APIError.swift in Sources */,
+				071CCC8D24DAC8A800F5473D /* requestDetailsEndpoint.swift in Sources */,
 				070021F224C0438000C8CE31 /* HomeViewController.swift in Sources */,
 				072C2AC224AFC5780050F83F /* LOGINModel.swift in Sources */,
 				07BDC7CB24B52AFC00283900 /* NewPasswordWorker.swift in Sources */,
@@ -1846,12 +1871,14 @@
 				0720CBC724CF522400DEB73A /* addrequestInteractor.swift in Sources */,
 				07AEA23B24B3CE47000C6898 /* secondScreenWorker.swift in Sources */,
 				0710149724C3B28E00510998 /* sideMenuRouter.swift in Sources */,
+				071CD5E424DBB5CA0095E6B3 /* extensiond.swift in Sources */,
 				07BDC77024B4F3A700283900 /* registraionTypeViewController.swift in Sources */,
 				07BDC78B24B5049E00283900 /* creatingPasswordConfiguration.swift in Sources */,
 				0702418724B1344A001271BC /* SupplierFirstScreenWorker.swift in Sources */,
 				07BDC7AD24B50F8B00283900 /* ForgetpasswordRouter.swift in Sources */,
 				0710149A24C3B28E00510998 /* sideMenuModel.swift in Sources */,
 				0710149624C3B28E00510998 /* sideMenuWorker.swift in Sources */,
+				071E491D24D8EB8E00375F3D /* configureAPI.swift in Sources */,
 				0720CBF824CFB79E00DEB73A /* editRequestViewController.swift in Sources */,
 				072C2AC124AFC5780050F83F /* LOGINInteractor.swift in Sources */,
 				072C2ABE24AFC5780050F83F /* LOGINWorker.swift in Sources */,
@@ -1884,6 +1911,7 @@
 				0720191624B6BCCB00E7952F /* NewPasswordEndPointEndpoint.swift in Sources */,
 				07BDC76E24B4F3A700283900 /* registraionTypeWorker.swift in Sources */,
 				07BDC78C24B5049E00283900 /* creatingPasswordPresenter.swift in Sources */,
+				071CD5E224DBAF6E0095E6B3 /* container.swift in Sources */,
 				072C2AD224AFD1A40050F83F /* LOGINRequesterWorker.swift in Sources */,
 				07040B0E24B991F0000837A5 /* TableViewCell.swift in Sources */,
 				0702417224B12E1A001271BC /* CreatingRequesterConfiguration.swift in Sources */,
@@ -1945,9 +1973,11 @@
 				0720CBC524CF522400DEB73A /* addrequestRouter.swift in Sources */,
 				072C2AD424AFD1A40050F83F /* LOGINRequesterViewController.swift in Sources */,
 				07BDC78F24B5049E00283900 /* creatingPasswordViewController.swift in Sources */,
+				070A897A24D58B9800438102 /* UIViewControllerEXtension.swift in Sources */,
 				07BDC7CA24B52AFC00283900 /* NewPasswordPresenter.swift in Sources */,
 				0720CBF624CFB79E00DEB73A /* editRequestWorker.swift in Sources */,
 				07BDC76C24B4F3A700283900 /* registraionTypeConfiguration.swift in Sources */,
+				071CCC8F24DAE69600F5473D /* sideMenuEndpoint.swift in Sources */,
 				07BDC7CF24B52AFC00283900 /* NewPasswordModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

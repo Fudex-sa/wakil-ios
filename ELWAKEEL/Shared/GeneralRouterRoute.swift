@@ -35,7 +35,7 @@ enum GeneralRouterRoute: IRouter {
     case sideMenu
     case addrequest
     case requestDetails
-    case editRequest
+    case editRequest(id: Int)
     case aboutUs
     
     
@@ -74,8 +74,8 @@ extension GeneralRouterRoute {
             return addrequestConfiguration.setup()
         case .requestDetails:
             return requestDetailsConfiguration.setup()
-        case .editRequest:
-            return editRequestConfiguration.setup()
+        case .editRequest(let id):
+            return editRequestConfiguration.setup(id: id)
         
         case .aboutUs:
             return aboutUsConfiguration.setup()

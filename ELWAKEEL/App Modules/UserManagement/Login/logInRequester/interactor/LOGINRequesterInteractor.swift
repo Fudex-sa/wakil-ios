@@ -34,7 +34,16 @@ class LOGINRequesterInteractor: ILOGINRequesterInteractor {
         worker?.loginFromApi(phone: phone, password: password, type: type, complition: { (error, success, response) in
             if success == true{
                 self.presenter?.getUser(user: response!)
+                let userdefults = UserDefaults.standard
+                userdefults.set(response?.type, forKey: "type")
+                userdefults.set(response?.accessToken, forKey: "token")
+                userdefults.set(response?.user.email, forKey: "email")
+                userdefults.set(response?.user.name, forKey: "name")
+                userdefults.set(response?.user.id, forKey: "id")
+                userdefults.set(response?.user.phone, forKey: "phone")
+                userdefults.set(true, forKey: "login")
                 self.presenter?.navigateHome()
+
             }
             if error != nil{
                 self.presenter?.showErrorAlert(title: Localization.errorLBL , msg: error?.message ?? "Error")

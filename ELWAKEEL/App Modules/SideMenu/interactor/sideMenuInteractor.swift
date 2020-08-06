@@ -12,9 +12,24 @@ import UIKit
 
 protocol IsideMenuInteractor: class {
 	var parameters: [String: Any]? { get set }
+    func getRequest()
+
 }
 
 class sideMenuInteractor: IsideMenuInteractor {
+        func getRequest() {
+            worker?.getRqeques(complition: { (success, error, reuests) in
+                if  success{
+                    self.presenter?.assingRequest(requeste: reuests!)
+                    print("interactor Data daata \(reuests?.data.count)")
+                }
+                    
+                else{
+                    print(error?.message)
+                }
+            })
+    }
+    
     var presenter: IsideMenuPresenter?
     var worker: IsideMenuWorker?
     var parameters: [String: Any]?

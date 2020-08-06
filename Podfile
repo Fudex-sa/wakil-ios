@@ -10,7 +10,8 @@ target 'ELWAKEEL' do
   pod 'LocalizationFramework', :path => '../localization'
   pod 'Alamofire'
   pod 'SwiftyJSON'
-pod 'RSSelectionMenu'
+  pod 'RSSelectionMenu'
+  pod 'MOLH'
 
 
 end

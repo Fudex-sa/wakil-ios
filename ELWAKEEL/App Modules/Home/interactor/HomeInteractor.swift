@@ -12,13 +12,34 @@ import UIKit
 
 protocol IHomeInteractor: class {
 	var parameters: [String: Any]? { get set }
-    func getDevertising()
+    func getRequest()
+   func getDevertising()
+    
 }
 
 class HomeInteractor: IHomeInteractor {
+    func getRequest() {
+        worker?.getRqeques(complition: { (success, error, reuests) in
+            if  success{
+                self.presenter?.assingRequest(requeste: reuests!)
+                print("interactor Data count \(reuests?.data.count)")
+            }
+            
+            else{
+                print(error?.message ?? "")
+            }
+        })
+    }
+    
     func getDevertising() {
         worker?.getAdvertising(complition: { (success, error, data) in
-            print(data)
+            
+            if success {
+                self.presenter?.assignAdvertizing(advertizing: data!)
+            }
+            else{
+                print("Error\(String(describing: error?.message))")
+            }
         })
        
     }

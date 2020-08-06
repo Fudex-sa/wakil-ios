@@ -12,9 +12,22 @@ import UIKit
 
 protocol IeditRequestPresenter: class {
 	// do someting...
+    func asgniRequest(requestDetails: editRequestModel.RequestDetails)
+    func cancel()
 }
 
-class editRequestPresenter: IeditRequestPresenter {	
+class editRequestPresenter: IeditRequestPresenter {
+    func cancel() {
+        view?.cancle()
+    }
+    
+    
+    
+    func asgniRequest(requestDetails: editRequestModel.RequestDetails) {
+        
+        view?.asgniDetails(requestDetail: requestDetails)
+    }
+    
 	weak var view: IeditRequestViewController?
 	
 	init(view: IeditRequestViewController?) {

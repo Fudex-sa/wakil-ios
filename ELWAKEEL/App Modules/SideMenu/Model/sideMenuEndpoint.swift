@@ -1,8 +1,8 @@
 //
-//  HomeEndpoint.swift
+//  sideMenuEndpoint.swift
 //  ELWAKEEL
 //
-//  Created by HAMADA on 7/29/20.
+//  Created by HAMADA on 8/5/20.
 //  Copyright (c) 2020 Fudex. All rights reserved.
 //  Modify By:  * Ahmed Adam
 //              * ibn.abuadam@gmail.com
@@ -11,28 +11,31 @@
 import Foundation
 import Alamofire
 
-enum HomeEndpoint {
-    case advertizing
-    case getRequests
-    case requestDetails(id: Int)
-
+enum sideMenuEndpoint {
+    /*
+     Add Endpoint
+     case sample
+     case sample(parameter: [String: Any])
+    */
+    
+    case getRequest
 }
 
-extension HomeEndpoint: IEndpoint {
+extension sideMenuEndpoint: IEndpoint {
     var image: UIImage? {
         return nil
     }
     
     var method: HTTPMethod {
-        switch self {
-        case .advertizing:
-            return .get
-        case .getRequests:
-            return .get
+        /*
+        Do like this:
 
-        case .requestDetails:
+        switch self {
+        case .sample:
             return .get
         }
+        */
+        return .get
     }
     
     var path: String {
@@ -44,17 +47,9 @@ extension HomeEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        switch self {
-        case .advertizing:
-            return "http://wakil.dev.fudexsb.com/api/ads"
-        case .getRequests:
-            let id = UserDefaults.standard.integer(forKey: "id")
-            return "http://wakil.dev.fudexsb.com/api/clients/\(id)/requests"
+        let id = UserDefaults.standard.integer(forKey: "id")
+        return "http://wakil.dev.fudexsb.com/api/clients/\(id)/requests"
 
-        case .requestDetails(let id):
-            return "http://wakil.dev.fudexsb.com/api/requests/\(id)"
-        }
-        
     }
     
     var parameter: Parameters? {
@@ -78,19 +73,12 @@ extension HomeEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
+        
+        
         let userDefaults = UserDefaults.standard
         let token = userDefaults.string(forKey: "token")
-        
-        switch self {
-           case .advertizing:
-            
             return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
-        case .getRequests:
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
-
-        case .requestDetails:
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
-        }
+       
     }
     
     var encoding: ParameterEncoding {        

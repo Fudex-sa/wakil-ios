@@ -18,7 +18,6 @@ class sideMenuConfiguration {
         let presenter = sideMenuPresenter(view: controller)
         let worker = sideMenuWorker()
         let interactor = sideMenuInteractor(presenter: presenter, worker: worker)
-        
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters

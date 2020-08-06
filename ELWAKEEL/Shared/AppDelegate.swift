@@ -7,21 +7,33 @@
 //
 
 import UIKit
+import MOLH
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
+    
+    
 
     var window: UIWindow?
-
+    func reset() {
+        
+//        self.na
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        print("lanaguae Changed")
+//        let viewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
+//        self.window?.addSubview(viewController.view)
+//
+//        //        self.window?.rootViewController = viewController
+//        self.window?.makeKeyAndVisible()
+//
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        // Override point for customization after application launch.
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        
-//        let containerViewController = HomeContainerController()
-//        
-//        window!.rootViewController = containerViewController
-//        window!.makeKeyAndVisible()
+        
+        MOLHLanguage.setDefaultLanguage("ar")
+        MOLH.shared.activate(true)
+        reset()
+        
         return true
     }
 
@@ -46,6 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
+   
 
 
 }

@@ -12,9 +12,16 @@ import UIKit
 
 protocol IsideMenuPresenter: class {
 	// do someting...
+    func assingRequest(requeste: sideMenuModel.requests)
+
 }
 
-class sideMenuPresenter: IsideMenuPresenter {	
+class sideMenuPresenter: IsideMenuPresenter {
+    func assingRequest(requeste: sideMenuModel.requests) {
+            view?.assignRequests(requests: requeste)
+        
+    }
+    
 	weak var view: IsideMenuViewController?
 	
 	init(view: IsideMenuViewController?) {

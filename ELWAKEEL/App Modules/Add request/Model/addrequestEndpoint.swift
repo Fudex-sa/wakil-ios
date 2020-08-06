@@ -20,10 +20,14 @@ enum addrequestEndpoint {
     */
     case addReuset(title: String, description: String, country_id: Int,city_id: Int, organization_id: Int, address: String, achievement_proof: String)
     case getOrganization
+    case getCountries
+    case getCities(countriesID:[Int])
+    
     
 }
 
 extension addrequestEndpoint: IEndpoint {
+   
     var image: UIImage? {
         return nil
     }
@@ -36,6 +40,10 @@ extension addrequestEndpoint: IEndpoint {
             return .post
         case .getOrganization:
             return .get
+        case .getCountries:
+            return .get
+        case .getCities:
+            return .post
         }
     }
     
@@ -50,11 +58,15 @@ extension addrequestEndpoint: IEndpoint {
         */
         switch self {
         case .addReuset:
-        
             return "http://wakil.dev.fudexsb.com/api/requests/create"
         case .getOrganization:
             return "http://wakil.dev.fudexsb.com/api/organizations"
+        case .getCountries:
+            return "http://wakil.dev.fudexsb.com/api/countries"
+        case .getCities:
+            return "http://wakil.dev.fudexsb.com/api/cities"
         }
+        
         
     }
     
@@ -73,6 +85,11 @@ extension addrequestEndpoint: IEndpoint {
             return  ["title": title,"description": description, "country_id": country_id, "city_id": city_id, "type": "public", "organization_id": organization_id, "added_by": id, "address": address, "achievement_proof":achievement_proof]
         case .getOrganization:
             return nil
+        case .getCountries:
+            return nil
+        case .getCities(let ids):
+            return ["country_ids": ids]
+        
         }
     }
     
@@ -89,11 +106,13 @@ extension addrequestEndpoint: IEndpoint {
         let token = userDefaults.string(forKey: "token")
         switch self {
         case .addReuset:
-        
-         
-            return ["Accept": "application/json", "Accept-Language":"ar", "Authorization":"bearer \(token!)"]
+            return ["Accept": "application/json", "Accept-Language": "en", "Authorization": "bearer\(token!)", "Content-Type": "application/json"]
         case .getOrganization:
             return ["Accept": "application/json", "Accept-Language":"ar", "Authorization":"bearer \(token!)"]
+        case .getCountries:
+            return ["Accept": "application/json", "Accept-Language":"ar"]
+        case .getCities:
+            return ["Accept": "application/json", "Accept-Language":"ar"]
         }
         
     }
