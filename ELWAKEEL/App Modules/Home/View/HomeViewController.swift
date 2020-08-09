@@ -25,7 +25,9 @@ class HomeViewController: UIViewController {
     var currentPopUpVC: UIViewController!
     let userDefault = UserDefaults.standard
     var advertizings: [HomeModel.Advertising]?
-   
+    var menuController: UIViewController!
+    var centerController: UIViewController!
+    var isExpanded = false
     @IBOutlet weak var requestTable: UITableView!
     @IBOutlet weak var notificationLBL: UILabel!
     @IBOutlet weak var imageCollection: UICollectionView!
@@ -55,6 +57,8 @@ class HomeViewController: UIViewController {
         setUpView()
         getAdvertising()
         getrequests()
+//        configureHomeController()
+
     
 
     }
@@ -115,19 +119,71 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func SideMenuVTN(_ sender: Any) {
-
+        configureHomeController()
+        handleMenuToggle()
 //        sideMenuConfiguration.setup()
-        showPopUp()
-        if requests2 != nil{
-             setup()
-            
-            print("called")
-
-        }
-        else{
-            print("not Called")
-        }
+//        showPopUp()
+//        if requests2 != nil{
+//             setup()
+//
+//            print("called")
+//
+//        }
+//        else{
+//            print("not Called")
+//        }
         
+        
+    }
+    
+    //MARK: - Handlers
+    
+    func configureHomeController() {
+        
+        print("config")
+        let HomeController = HomeViewController()
+//        HomeController.delegate = self
+        centerController = UINavigationController(rootViewController: HomeController)
+        view.addSubview(centerController.view)
+        addChild(centerController)
+        centerController.didMove(toParent: self)
+    }
+    
+    func configureMenuController() {
+        print("inside configuration")
+        if menuController == nil {
+            menuController = sideMenuViewController()
+            view.insertSubview(menuController.view, at: 0)
+            addChild(menuController)
+            menuController.didMove(toParent: self)
+        }
+    }
+    
+    func showMenuController(shouldExpand: Bool) {
+        if shouldExpand {
+            // show menu
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 80
+                self.tabBarController?.tabBar.isHidden = true
+            }, completion: nil)
+        } else {
+            //hide menu
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                self.centerController.view.frame.origin.x = 0
+                self.tabBarController?.tabBar.isHidden = false
+            }, completion: nil)
+        }
+    }
+
+    func handleMenuToggle() {
+        print("inside toggle")
+        if !isExpanded {
+            print("inside if")
+            configureMenuController()
+            print("inside if")
+        }
+        isExpanded = !isExpanded
+        showMenuController(shouldExpand: isExpanded)
         
     }
     

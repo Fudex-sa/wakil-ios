@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         if userDefualts.bool(forKey: "login") == true{
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             print("log in true")
-            self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+            self.navigate(type: .modal, module: GeneralRouterRoute.requestsRecord, completion: nil)
         }
         }
         else{

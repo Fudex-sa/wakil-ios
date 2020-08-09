@@ -18,23 +18,24 @@ protocol IaboutUsViewController: class {
 class aboutUsViewController: UIViewController {
 	var interactor: IaboutUsInteractor?
 	var router: IaboutUsRouter?
-    var items: [String] = ["hamada","mohamed","ali","ahmed","mostafa"]
     var selectedItems: [String] = [String]()
-    var delegate: SocialControllerDelegate?
-    var container: ContainerController?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
         
     }
+
+    
     
     
     @IBAction func bbb(_ sender: Any) {
         print("bbbb")
-        container = ContainerController()
-        delegate?.handleMenuToggle()
+        
+//        ContainerController()
+//        configureHomeController()
+//        container = ContainerController()
+//        delegate?.handleMenuToggle()
     }
     
     
