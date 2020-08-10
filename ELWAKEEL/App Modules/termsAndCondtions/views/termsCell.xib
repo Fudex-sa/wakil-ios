@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="termsCell" rowHeight="153" id="KGk-i7-Jjw" customClass="termsCell" customModule="ELWAKEEL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="153"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="152.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWd-lu-3oW">
+                        <rect key="frame" x="0.0" y="0.0" width="339" height="152.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjN-XC-QMb">
+                                <rect key="frame" x="15" y="15" width="309" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="q8g-gC-cSG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f8T-e9-Cz9">
+                                <rect key="frame" x="15" y="55" width="309" height="82.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f8T-e9-Cz9" firstAttribute="top" secondItem="HjN-XC-QMb" secondAttribute="bottom" constant="15" id="6zO-An-LXN"/>
+                            <constraint firstItem="HjN-XC-QMb" firstAttribute="leading" secondItem="rWd-lu-3oW" secondAttribute="leading" constant="15" id="FWP-gd-rbu"/>
+                            <constraint firstAttribute="trailing" secondItem="HjN-XC-QMb" secondAttribute="trailing" constant="15" id="GPO-Hr-ziE"/>
+                            <constraint firstAttribute="trailing" secondItem="f8T-e9-Cz9" secondAttribute="trailing" constant="15" id="LKT-vm-JAh"/>
+                            <constraint firstItem="HjN-XC-QMb" firstAttribute="top" secondItem="rWd-lu-3oW" secondAttribute="top" constant="15" id="LsR-qA-8ki"/>
+                            <constraint firstItem="f8T-e9-Cz9" firstAttribute="leading" secondItem="rWd-lu-3oW" secondAttribute="leading" constant="15" id="W4d-xF-ZNL"/>
+                            <constraint firstAttribute="bottom" secondItem="f8T-e9-Cz9" secondAttribute="bottom" constant="15" id="gOR-4O-HNZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="rWd-lu-3oW" secondAttribute="bottom" id="Dlc-cV-pTA"/>
+                    <constraint firstItem="rWd-lu-3oW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WeD-Cy-Pl3"/>
+                    <constraint firstItem="rWd-lu-3oW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="luY-wq-8Qu"/>
+                    <constraint firstAttribute="trailing" secondItem="rWd-lu-3oW" secondAttribute="trailing" id="qBT-hs-KgQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="content" destination="f8T-e9-Cz9" id="BJx-oA-TCk"/>
+                <outlet property="title" destination="HjN-XC-QMb" id="1LM-nU-NfE"/>
+            </connections>
+            <point key="canvasLocation" x="122.40000000000001" y="203.74812593703149"/>
+        </tableViewCell>
+    </objects>
+</document>

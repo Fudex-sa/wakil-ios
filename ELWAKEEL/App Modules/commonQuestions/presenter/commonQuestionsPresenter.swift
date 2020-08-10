@@ -12,9 +12,14 @@ import UIKit
 
 protocol IcommonQuestionsPresenter: class {
 	// do someting...
+    func assignQuestions(questions: Data)
 }
 
-class commonQuestionsPresenter: IcommonQuestionsPresenter {	
+class commonQuestionsPresenter: IcommonQuestionsPresenter {
+    func assignQuestions(questions: Data) {
+        view?.assignQuestion(questions: questions)
+    }
+    
 	weak var view: IcommonQuestionsViewController?
 	
 	init(view: IcommonQuestionsViewController?) {

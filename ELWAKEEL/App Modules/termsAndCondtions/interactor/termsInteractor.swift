@@ -12,9 +12,22 @@ import UIKit
 
 protocol ItermsInteractor: class {
 	var parameters: [String: Any]? { get set }
+    func get_terms()
+
 }
 
 class termsInteractor: ItermsInteractor {
+    func get_terms() {
+        worker?.get_terms(complition: { (success, error, response) in
+            if success{
+               self.presenter?.assign_terms(terms: response!)
+            }
+            else{
+                print("error\(error?.message)")
+            }
+        })
+    }
+    
     var presenter: ItermsPresenter?
     var worker: ItermsWorker?
     var parameters: [String: Any]?

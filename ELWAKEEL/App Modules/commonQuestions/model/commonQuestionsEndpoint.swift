@@ -17,9 +17,12 @@ enum commonQuestionsEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
+    case getQuestion
 }
 
 extension commonQuestionsEndpoint: IEndpoint {
+    
+    
     var image: UIImage? {
         return nil
     }
@@ -33,6 +36,7 @@ extension commonQuestionsEndpoint: IEndpoint {
             return .get
         }
         */
+    
         return .get
     }
     
@@ -45,7 +49,7 @@ extension commonQuestionsEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        return "http://wakil.dev.fudexsb.com/api/questions"
     }
     
     var parameter: Parameters? {
@@ -69,8 +73,9 @@ extension commonQuestionsEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
     }
+    
     
     var encoding: ParameterEncoding {        
         /*

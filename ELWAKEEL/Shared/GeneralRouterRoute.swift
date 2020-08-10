@@ -41,6 +41,11 @@ enum GeneralRouterRoute: IRouter {
     case sideMenuProvider
     case requestsRecord
     case applicationSetting
+    case contactUs
+    case commonQuestios
+    case terms
+    case wallet
+    
     
     
 }
@@ -91,6 +96,14 @@ extension GeneralRouterRoute {
             return requestrecordConfiguration.setup()
         case .applicationSetting:
             return applicationSettingConfiguration.setup()
+        case .contactUs:
+            return contactUsConfiguration.setup()
+        case .commonQuestios:
+            return commonQuestionsConfiguration.setup()
+        case .terms:
+            return termsConfiguration.setup()
+        case .wallet:
+            return walletConfiguration.setup()
         }
         
     }

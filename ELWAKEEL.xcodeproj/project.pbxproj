@@ -34,6 +34,30 @@
 		0700117724E07BCF00C3ECAA /* contactUsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700116F24E07BCF00C3ECAA /* contactUsInteractor.swift */; };
 		0700117824E07BCF00C3ECAA /* contactUsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700117024E07BCF00C3ECAA /* contactUsModel.swift */; };
 		0700117924E07BCF00C3ECAA /* contactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0700117124E07BCF00C3ECAA /* contactUsViewController.xib */; };
+		0700118224E0919200C3ECAA /* contactUsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700118124E0919200C3ECAA /* contactUsEndpoint.swift */; };
+		0700118524E1421C00C3ECAA /* FQAcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700118324E1421C00C3ECAA /* FQAcell.swift */; };
+		0700118624E1421C00C3ECAA /* FQAcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0700118424E1421C00C3ECAA /* FQAcell.xib */; };
+		0700118A24E16DDE00C3ECAA /* termsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700118824E16DDE00C3ECAA /* termsCell.swift */; };
+		0700118B24E16DDE00C3ECAA /* termsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0700118924E16DDE00C3ECAA /* termsCell.xib */; };
+		0700119424E177AD00C3ECAA /* shareAPPConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700118C24E177AD00C3ECAA /* shareAPPConfiguration.swift */; };
+		0700119524E177AD00C3ECAA /* shareAPPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700118D24E177AD00C3ECAA /* shareAPPPresenter.swift */; };
+		0700119624E177AD00C3ECAA /* shareAPPWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700118E24E177AD00C3ECAA /* shareAPPWorker.swift */; };
+		0700119724E177AD00C3ECAA /* shareAPPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700118F24E177AD00C3ECAA /* shareAPPRouter.swift */; };
+		0700119824E177AD00C3ECAA /* shareAPPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700119024E177AD00C3ECAA /* shareAPPViewController.swift */; };
+		0700119924E177AD00C3ECAA /* shareAPPInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700119124E177AD00C3ECAA /* shareAPPInteractor.swift */; };
+		0700119A24E177AD00C3ECAA /* shareAPPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700119224E177AD00C3ECAA /* shareAPPModel.swift */; };
+		0700119B24E177AD00C3ECAA /* shareAPPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0700119324E177AD00C3ECAA /* shareAPPViewController.xib */; };
+		070011A524E1796300C3ECAA /* commonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011A424E1796300C3ECAA /* commonFunctions.swift */; };
+		070011AF24E183B700C3ECAA /* walletConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011A724E183B700C3ECAA /* walletConfiguration.swift */; };
+		070011B024E183B700C3ECAA /* walletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011A824E183B700C3ECAA /* walletPresenter.swift */; };
+		070011B124E183B700C3ECAA /* walletWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011A924E183B700C3ECAA /* walletWorker.swift */; };
+		070011B224E183B700C3ECAA /* walletRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011AA24E183B700C3ECAA /* walletRouter.swift */; };
+		070011B324E183B700C3ECAA /* walletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011AB24E183B700C3ECAA /* walletViewController.swift */; };
+		070011B424E183B700C3ECAA /* walletInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011AC24E183B700C3ECAA /* walletInteractor.swift */; };
+		070011B524E183B700C3ECAA /* walletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011AD24E183B700C3ECAA /* walletModel.swift */; };
+		070011B624E183B700C3ECAA /* walletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070011AE24E183B700C3ECAA /* walletViewController.xib */; };
+		070011BA24E1871700C3ECAA /* wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070011B824E1871700C3ECAA /* wallet.swift */; };
+		070011BB24E1871700C3ECAA /* wallet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070011B924E1871700C3ECAA /* wallet.xib */; };
 		070021EE24C0438000C8CE31 /* HomeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070021E624C0438000C8CE31 /* HomeConfiguration.swift */; };
 		070021EF24C0438000C8CE31 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070021E724C0438000C8CE31 /* HomePresenter.swift */; };
 		070021F024C0438000C8CE31 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070021E824C0438000C8CE31 /* HomeWorker.swift */; };
@@ -283,6 +307,30 @@
 		0700116F24E07BCF00C3ECAA /* contactUsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsInteractor.swift; sourceTree = "<group>"; };
 		0700117024E07BCF00C3ECAA /* contactUsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsModel.swift; sourceTree = "<group>"; };
 		0700117124E07BCF00C3ECAA /* contactUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = contactUsViewController.xib; sourceTree = "<group>"; };
+		0700118124E0919200C3ECAA /* contactUsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsEndpoint.swift; sourceTree = "<group>"; };
+		0700118324E1421C00C3ECAA /* FQAcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FQAcell.swift; sourceTree = "<group>"; };
+		0700118424E1421C00C3ECAA /* FQAcell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FQAcell.xib; sourceTree = "<group>"; };
+		0700118824E16DDE00C3ECAA /* termsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = termsCell.swift; sourceTree = "<group>"; };
+		0700118924E16DDE00C3ECAA /* termsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = termsCell.xib; sourceTree = "<group>"; };
+		0700118C24E177AD00C3ECAA /* shareAPPConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareAPPConfiguration.swift; sourceTree = "<group>"; };
+		0700118D24E177AD00C3ECAA /* shareAPPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareAPPPresenter.swift; sourceTree = "<group>"; };
+		0700118E24E177AD00C3ECAA /* shareAPPWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareAPPWorker.swift; sourceTree = "<group>"; };
+		0700118F24E177AD00C3ECAA /* shareAPPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareAPPRouter.swift; sourceTree = "<group>"; };
+		0700119024E177AD00C3ECAA /* shareAPPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareAPPViewController.swift; sourceTree = "<group>"; };
+		0700119124E177AD00C3ECAA /* shareAPPInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareAPPInteractor.swift; sourceTree = "<group>"; };
+		0700119224E177AD00C3ECAA /* shareAPPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareAPPModel.swift; sourceTree = "<group>"; };
+		0700119324E177AD00C3ECAA /* shareAPPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shareAPPViewController.xib; sourceTree = "<group>"; };
+		070011A424E1796300C3ECAA /* commonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commonFunctions.swift; sourceTree = "<group>"; };
+		070011A724E183B700C3ECAA /* walletConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletConfiguration.swift; sourceTree = "<group>"; };
+		070011A824E183B700C3ECAA /* walletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletPresenter.swift; sourceTree = "<group>"; };
+		070011A924E183B700C3ECAA /* walletWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletWorker.swift; sourceTree = "<group>"; };
+		070011AA24E183B700C3ECAA /* walletRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletRouter.swift; sourceTree = "<group>"; };
+		070011AB24E183B700C3ECAA /* walletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletViewController.swift; sourceTree = "<group>"; };
+		070011AC24E183B700C3ECAA /* walletInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletInteractor.swift; sourceTree = "<group>"; };
+		070011AD24E183B700C3ECAA /* walletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletModel.swift; sourceTree = "<group>"; };
+		070011AE24E183B700C3ECAA /* walletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = walletViewController.xib; sourceTree = "<group>"; };
+		070011B824E1871700C3ECAA /* wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallet.swift; sourceTree = "<group>"; };
+		070011B924E1871700C3ECAA /* wallet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = wallet.xib; sourceTree = "<group>"; };
 		070021E624C0438000C8CE31 /* HomeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfiguration.swift; sourceTree = "<group>"; };
 		070021E724C0438000C8CE31 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		070021E824C0438000C8CE31 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
@@ -647,6 +695,8 @@
 			children = (
 				0700113824E07A0F00C3ECAA /* termsViewController.swift */,
 				0700113B24E07A0F00C3ECAA /* termsViewController.xib */,
+				0700118824E16DDE00C3ECAA /* termsCell.swift */,
+				0700118924E16DDE00C3ECAA /* termsCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -719,6 +769,8 @@
 			children = (
 				0700115024E07A8C00C3ECAA /* commonQuestionsViewController.swift */,
 				0700115324E07A8C00C3ECAA /* commonQuestionsViewController.xib */,
+				0700118324E1421C00C3ECAA /* FQAcell.swift */,
+				0700118424E1421C00C3ECAA /* FQAcell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -765,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				0700117024E07BCF00C3ECAA /* contactUsModel.swift */,
+				0700118124E0919200C3ECAA /* contactUsEndpoint.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -816,6 +869,102 @@
 				0700116C24E07BCF00C3ECAA /* contactUsWorker.swift */,
 			);
 			path = worker;
+			sourceTree = "<group>";
+		};
+		0700119C24E177B400C3ECAA /* shareApp */ = {
+			isa = PBXGroup;
+			children = (
+				0700118C24E177AD00C3ECAA /* shareAPPConfiguration.swift */,
+				0700118D24E177AD00C3ECAA /* shareAPPPresenter.swift */,
+				0700118E24E177AD00C3ECAA /* shareAPPWorker.swift */,
+				0700118F24E177AD00C3ECAA /* shareAPPRouter.swift */,
+				0700119024E177AD00C3ECAA /* shareAPPViewController.swift */,
+				0700119124E177AD00C3ECAA /* shareAPPInteractor.swift */,
+				0700119224E177AD00C3ECAA /* shareAPPModel.swift */,
+				0700119324E177AD00C3ECAA /* shareAPPViewController.xib */,
+			);
+			path = shareApp;
+			sourceTree = "<group>";
+		};
+		0700119D24E177CA00C3ECAA /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				070011A824E183B700C3ECAA /* walletPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		0700119E24E177DA00C3ECAA /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		0700119F24E177E300C3ECAA /* views */ = {
+			isa = PBXGroup;
+			children = (
+				070011AE24E183B700C3ECAA /* walletViewController.xib */,
+				070011AB24E183B700C3ECAA /* walletViewController.swift */,
+				070011B824E1871700C3ECAA /* wallet.swift */,
+				070011B924E1871700C3ECAA /* wallet.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		070011A024E177EF00C3ECAA /* iterator */ = {
+			isa = PBXGroup;
+			children = (
+				070011AC24E183B700C3ECAA /* walletInteractor.swift */,
+			);
+			path = iterator;
+			sourceTree = "<group>";
+		};
+		070011A124E177FB00C3ECAA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				070011AD24E183B700C3ECAA /* walletModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		070011A224E1780000C3ECAA /* configuraion */ = {
+			isa = PBXGroup;
+			children = (
+				070011A724E183B700C3ECAA /* walletConfiguration.swift */,
+			);
+			path = configuraion;
+			sourceTree = "<group>";
+		};
+		070011A324E1780C00C3ECAA /* worker */ = {
+			isa = PBXGroup;
+			children = (
+				070011A924E183B700C3ECAA /* walletWorker.swift */,
+			);
+			path = worker;
+			sourceTree = "<group>";
+		};
+		070011A624E1837200C3ECAA /* wallet */ = {
+			isa = PBXGroup;
+			children = (
+				070011B724E1840100C3ECAA /* router */,
+				070011A324E1780C00C3ECAA /* worker */,
+				070011A224E1780000C3ECAA /* configuraion */,
+				070011A124E177FB00C3ECAA /* model */,
+				070011A024E177EF00C3ECAA /* iterator */,
+				0700119F24E177E300C3ECAA /* views */,
+				0700119E24E177DA00C3ECAA /* interactor */,
+				0700119D24E177CA00C3ECAA /* presenter */,
+			);
+			path = wallet;
+			sourceTree = "<group>";
+		};
+		070011B724E1840100C3ECAA /* router */ = {
+			isa = PBXGroup;
+			children = (
+				070011AA24E183B700C3ECAA /* walletRouter.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 		070021E524C0434300C8CE31 /* Home */ = {
@@ -1612,6 +1761,7 @@
 				0720CBD124CFA51F00DEB73A /* AlertController.swift */,
 				0720CBD324CFA56400DEB73A /* alertExention.swift */,
 				070A897924D58B9800438102 /* UIViewControllerEXtension.swift */,
+				070011A424E1796300C3ECAA /* commonFunctions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1628,6 +1778,8 @@
 		072C2AA024AFC2720050F83F /* App Modules */ = {
 			isa = PBXGroup;
 			children = (
+				070011A624E1837200C3ECAA /* wallet */,
+				0700119C24E177B400C3ECAA /* shareApp */,
 				0700116924E07BB800C3ECAA /* contactUs */,
 				0700114B24E07A7200C3ECAA /* commonQuestions */,
 				0700113324E079EC00C3ECAA /* termsAndCondtions */,
@@ -2450,6 +2602,7 @@
 				072C2AC324AFC5780050F83F /* LOGINViewController.xib in Resources */,
 				07BFD28624DFE81A00810C78 /* sideMenuProviderViewController.xib in Resources */,
 				07BDC7D024B52AFC00283900 /* NewPasswordViewController.xib in Resources */,
+				0700118624E1421C00C3ECAA /* FQAcell.xib in Resources */,
 				0720CBDC24CFA7F600DEB73A /* addrequestViewController.xib in Resources */,
 				07F29A8F24B2ABE30061126C /* SupplierFirstScreenViewController.xib in Resources */,
 				0728F5E824B4250600DEE416 /* VerificationViewController.xib in Resources */,
@@ -2462,11 +2615,15 @@
 				07920D2C24D1BEFA0006B7AD /* aboutUsViewController.xib in Resources */,
 				0720CBFB24CFB79E00DEB73A /* editRequestViewController.xib in Resources */,
 				0783902924C55AAD00250164 /* requestCell.xib in Resources */,
+				0700118B24E16DDE00C3ECAA /* termsCell.xib in Resources */,
 				0798BE7024AFBEBC0019C7F6 /* Assets.xcassets in Resources */,
 				07BFD27124DFD54700810C78 /* acceptCell.xib in Resources */,
+				070011BB24E1871700C3ECAA /* wallet.xib in Resources */,
 				0727EC9424D121810007E420 /* tableView.xib in Resources */,
 				071D235E24C543BF001A89C8 /* cell.xib in Resources */,
 				07BDC77B24B4F83600283900 /* registraionTypeViewController.xib in Resources */,
+				070011B624E183B700C3ECAA /* walletViewController.xib in Resources */,
+				0700119B24E177AD00C3ECAA /* shareAPPViewController.xib in Resources */,
 				07BFD29124DFEC4900810C78 /* sideMenuCell.xib in Resources */,
 				0798BE6E24AFBEBB0019C7F6 /* Main.storyboard in Resources */,
 				07BDC7B924B5108900283900 /* ForgetpasswordViewController.xib in Resources */,
@@ -2559,6 +2716,7 @@
 				0700117424E07BCF00C3ECAA /* contactUsWorker.swift in Sources */,
 				0720CBC424CF522400DEB73A /* addrequestWorker.swift in Sources */,
 				07BFD29C24DFF46900810C78 /* requestrecordConfiguration.swift in Sources */,
+				070011BA24E1871700C3ECAA /* wallet.swift in Sources */,
 				07BFD26224DFC8A700810C78 /* HomeProviderRouter.swift in Sources */,
 				07BFD2C724DFFBD000810C78 /* requestRecordEndpoint.swift in Sources */,
 				07BFD28424DFE81A00810C78 /* sideMenuProviderInteractor.swift in Sources */,
@@ -2571,6 +2729,7 @@
 				0700115724E07A8C00C3ECAA /* commonQuestionsRouter.swift in Sources */,
 				0720CBF724CFB79E00DEB73A /* editRequestRouter.swift in Sources */,
 				07BFD29D24DFF46900810C78 /* requestrecordPresenter.swift in Sources */,
+				0700119624E177AD00C3ECAA /* shareAPPWorker.swift in Sources */,
 				072C2AA224AFC3F70050F83F /* APIError.swift in Sources */,
 				071CCC8D24DAC8A800F5473D /* requestDetailsEndpoint.swift in Sources */,
 				070021F224C0438000C8CE31 /* HomeViewController.swift in Sources */,
@@ -2578,15 +2737,18 @@
 				072C2AC224AFC5780050F83F /* LOGINModel.swift in Sources */,
 				07BDC7CB24B52AFC00283900 /* NewPasswordWorker.swift in Sources */,
 				07920D2824D1BEFA0006B7AD /* aboutUsRouter.swift in Sources */,
+				070011A524E1796300C3ECAA /* commonFunctions.swift in Sources */,
 				070021EE24C0438000C8CE31 /* HomeConfiguration.swift in Sources */,
 				070ABABD24B60F090001CF5B /* NetworkService.swift in Sources */,
 				0720CBB024CEF63600DEB73A /* requestDetailsModel.swift in Sources */,
 				07BFD27F24DFE81A00810C78 /* sideMenuProviderConfiguration.swift in Sources */,
 				0710149524C3B28E00510998 /* sideMenuPresenter.swift in Sources */,
 				0702417824B12E1A001271BC /* CreatingRequesterModel.swift in Sources */,
+				070011B024E183B700C3ECAA /* walletPresenter.swift in Sources */,
 				0700113E24E07A0F00C3ECAA /* termsWorker.swift in Sources */,
 				0720CBC324CF522400DEB73A /* addrequestPresenter.swift in Sources */,
 				072C2AAC24AFC4EE0050F83F /* ShowAlertView.swift in Sources */,
+				070011AF24E183B700C3ECAA /* walletConfiguration.swift in Sources */,
 				07BFD25F24DFC8A700810C78 /* HomeProviderConfiguration.swift in Sources */,
 				0727EC9E24D160620007E420 /* addrequestEndpoint.swift in Sources */,
 				0700116624E07B0700C3ECAA /* termsEndpoint.swift in Sources */,
@@ -2626,15 +2788,19 @@
 				07BDC7CD24B52AFC00283900 /* NewPasswordViewController.swift in Sources */,
 				0720CBD224CFA51F00DEB73A /* AlertController.swift in Sources */,
 				072C2AC024AFC5780050F83F /* LOGINViewController.swift in Sources */,
+				070011B224E183B700C3ECAA /* walletRouter.swift in Sources */,
 				072C2AD124AFD1A40050F83F /* LOGINRequesterPresenter.swift in Sources */,
 				07920D2724D1BEFA0006B7AD /* aboutUsWorker.swift in Sources */,
 				0727EC9C24D138700007E420 /* HomeEndpoint.swift in Sources */,
 				0700117724E07BCF00C3ECAA /* contactUsInteractor.swift in Sources */,
 				0702418924B1344A001271BC /* SupplierFirstScreenViewController.swift in Sources */,
+				070011B524E183B700C3ECAA /* walletModel.swift in Sources */,
 				0700115424E07A8C00C3ECAA /* commonQuestionsConfiguration.swift in Sources */,
+				0700119724E177AD00C3ECAA /* shareAPPRouter.swift in Sources */,
 				072C2AD524AFD1A40050F83F /* LOGINRequesterInteractor.swift in Sources */,
 				07BFD2A124DFF46900810C78 /* requestrecordInteractor.swift in Sources */,
 				07BFD2A224DFF46900810C78 /* requestrecordModel.swift in Sources */,
+				070011B124E183B700C3ECAA /* walletWorker.swift in Sources */,
 				077B112B24AFE710000C811B /* VerificationViewController.swift in Sources */,
 				0720CBAF24CEF63600DEB73A /* requestDetailsInteractor.swift in Sources */,
 				0720CBD424CFA56400DEB73A /* alertExention.swift in Sources */,
@@ -2646,7 +2812,9 @@
 				072C2ABC24AFC5780050F83F /* LOGINConfiguration.swift in Sources */,
 				0720CBAB24CEF63600DEB73A /* requestDetailsPresenter.swift in Sources */,
 				070021F324C0438000C8CE31 /* HomeInteractor.swift in Sources */,
+				0700119424E177AD00C3ECAA /* shareAPPConfiguration.swift in Sources */,
 				0720CBF524CFB79E00DEB73A /* editRequestPresenter.swift in Sources */,
+				0700118524E1421C00C3ECAA /* FQAcell.swift in Sources */,
 				0702418624B1344A001271BC /* SupplierFirstScreenPresenter.swift in Sources */,
 				0720191C24B6BD5900E7952F /* TypeEndPointEndpoint.swift in Sources */,
 				07BFD29F24DFF46900810C78 /* requestrecordRouter.swift in Sources */,
@@ -2676,13 +2844,16 @@
 				0702417324B12E1A001271BC /* CreatingRequesterPresenter.swift in Sources */,
 				0798BE6924AFBEBB0019C7F6 /* AppDelegate.swift in Sources */,
 				0720192224B6BDE200E7952F /* CreatingRequesterEndpointEndpoint.swift in Sources */,
+				0700118224E0919200C3ECAA /* contactUsEndpoint.swift in Sources */,
 				0702418524B1344A001271BC /* SupplierFirstScreenConfiguration.swift in Sources */,
 				0720CBC624CF522400DEB73A /* addrequestViewController.swift in Sources */,
 				07BFD29E24DFF46900810C78 /* requestrecordWorker.swift in Sources */,
 				07AEA23924B3CE47000C6898 /* secondScreenConfiguration.swift in Sources */,
 				07BFD28124DFE81A00810C78 /* sideMenuProviderWorker.swift in Sources */,
 				0700113D24E07A0F00C3ECAA /* termsPresenter.swift in Sources */,
+				0700119924E177AD00C3ECAA /* shareAPPInteractor.swift in Sources */,
 				0720CBC824CF522400DEB73A /* addrequestModel.swift in Sources */,
+				0700119824E177AD00C3ECAA /* shareAPPViewController.swift in Sources */,
 				0720192424B6BDFE00E7952F /* VerificationEndpointEndpoint.swift in Sources */,
 				07AEA23E24B3CE47000C6898 /* secondScreenInteractor.swift in Sources */,
 				0720CBAA24CEF63600DEB73A /* requestDetailsConfiguration.swift in Sources */,
@@ -2698,6 +2869,7 @@
 				070ABABF24B61B9A0001CF5B /* errorAPI.swift in Sources */,
 				0702417524B12E1A001271BC /* CreatingRequesterRouter.swift in Sources */,
 				0702419F24B15274001271BC /* CityCellTableViewCell.swift in Sources */,
+				0700118A24E16DDE00C3ECAA /* termsCell.swift in Sources */,
 				072C2ABD24AFC5780050F83F /* LOGINPresenter.swift in Sources */,
 				07920D2924D1BEFA0006B7AD /* aboutUsViewController.swift in Sources */,
 				0720CBF424CFB79E00DEB73A /* editRequestConfiguration.swift in Sources */,
@@ -2709,6 +2881,7 @@
 				072C2AD024AFD1A40050F83F /* LOGINRequesterConfiguration.swift in Sources */,
 				0700115924E07A8C00C3ECAA /* commonQuestionsInteractor.swift in Sources */,
 				072C2AA624AFC4820050F83F /* SencDelegate.swift in Sources */,
+				070011B424E183B700C3ECAA /* walletInteractor.swift in Sources */,
 				07AEA23D24B3CE47000C6898 /* secondScreenViewController.swift in Sources */,
 				07920D2B24D1BEFA0006B7AD /* aboutUsModel.swift in Sources */,
 				077B112924AFE710000C811B /* VerificationWorker.swift in Sources */,
@@ -2728,10 +2901,12 @@
 				07920D2624D1BEFA0006B7AD /* aboutUsPresenter.swift in Sources */,
 				07BFD26124DFC8A700810C78 /* HomeProviderWorker.swift in Sources */,
 				07447AF524C6E82A00A1B112 /* sideMenu.swift in Sources */,
+				070011B324E183B700C3ECAA /* walletViewController.swift in Sources */,
 				070021F124C0438000C8CE31 /* HomeRouter.swift in Sources */,
 				0783902824C55AAD00250164 /* requestCell.swift in Sources */,
 				072C2AD624AFD1A40050F83F /* LOGINRequesterModel.swift in Sources */,
 				0702417724B12E1A001271BC /* CreatingRequesterInteractor.swift in Sources */,
+				0700119A24E177AD00C3ECAA /* shareAPPModel.swift in Sources */,
 				077B112A24AFE710000C811B /* VerificationRouter.swift in Sources */,
 				0700115824E07A8C00C3ECAA /* commonQuestionsViewController.swift in Sources */,
 				07040B0B24B94968000837A5 /* Model.swift in Sources */,
@@ -2743,6 +2918,7 @@
 				070A897A24D58B9800438102 /* UIViewControllerEXtension.swift in Sources */,
 				07BFD27424DFD56A00810C78 /* RequestsCell.swift in Sources */,
 				07BDC7CA24B52AFC00283900 /* NewPasswordPresenter.swift in Sources */,
+				0700119524E177AD00C3ECAA /* shareAPPPresenter.swift in Sources */,
 				0720CBF624CFB79E00DEB73A /* editRequestWorker.swift in Sources */,
 				07BDC76C24B4F3A700283900 /* registraionTypeConfiguration.swift in Sources */,
 				071CCC8F24DAE69600F5473D /* sideMenuEndpoint.swift in Sources */,

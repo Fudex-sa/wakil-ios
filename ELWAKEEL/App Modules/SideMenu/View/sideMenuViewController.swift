@@ -95,6 +95,10 @@ extension sideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuCell
+        if indexPath.row == 8 {
+            cell.item.textColor = UIColor(red: 0.60, green: 0.25, blue: 0.36, alpha: 1.00)
+
+        }
         cell.selectionStyle = .none
         cell.item.text = menu_Items[indexPath.row]
         return cell
@@ -112,8 +116,9 @@ extension sideMenuViewController: UITableViewDelegate, UITableViewDataSource {
 
         case 2:
             print("setting")
-            changeLanguage()
+//            changeLanguage()
 //            self.router?.application_Setting()
+            router?.application_Setting()
 
         case 3:
             print("connect with us")
@@ -129,42 +134,32 @@ extension sideMenuViewController: UITableViewDelegate, UITableViewDataSource {
 
         case 6:
             print("share app")
-            self.router?.share_the_app()
+            commonFunctions.share.shareApp(viwe: self)
         case 7:
             print("terms")
             self.router?.terms_and_conditions()
         case 8:
             print("logOut")
-            logout()
+          commonFunctions.share.logout(view: self)
 
         default:
             print("no case selected")
         }
     }
     
-    func logout()
-    {
-        UserDefaults.standard.set(false, forKey: "login")
-        UserDefaults.standard.set("", forKey: "token")
-        self.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
-//     router?.login()
-    }
+    
+    
+    
     func changeLanguage()
     {
    
-//       if Locale.current.languageCode == "en"
-//       {
-//        Locale.current.l = "ar"
-//        }
-//       else{
-//        Locale.current.languageCode = "en"
-//        }
+
          MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
         MOLH.reset()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 60
     }
 }
 

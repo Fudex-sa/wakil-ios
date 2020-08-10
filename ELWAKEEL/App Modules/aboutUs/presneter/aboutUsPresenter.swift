@@ -11,10 +11,17 @@
 import UIKit
 
 protocol IaboutUsPresenter: class {
+    func assign_contact_Info(contact_info: aboutUsModel.About)
 	// do someting...
 }
 
-class aboutUsPresenter: IaboutUsPresenter {	
+class aboutUsPresenter: IaboutUsPresenter {
+    func assign_contact_Info(contact_info: aboutUsModel.About) {
+        view?.assignContact_info(contact_Info: contact_info)
+    }
+    
+   
+    
 	weak var view: IaboutUsViewController?
 	
 	init(view: IaboutUsViewController?) {

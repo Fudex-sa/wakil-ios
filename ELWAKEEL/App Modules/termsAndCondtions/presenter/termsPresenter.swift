@@ -12,9 +12,14 @@ import UIKit
 
 protocol ItermsPresenter: class {
 	// do someting...
+    func assign_terms(terms: termsModel.Terms)
 }
 
-class termsPresenter: ItermsPresenter {	
+class termsPresenter: ItermsPresenter {
+    func assign_terms(terms: termsModel.Terms) {
+        view?.assignTerms(trems: terms )
+    }
+    
 	weak var view: ItermsViewController?
 	
 	init(view: ItermsViewController?) {

@@ -11,9 +11,22 @@
 import Foundation
 
 protocol IcommonQuestionsWorker: class {
-	// do someting...
+    func getquestion(complition: @escaping(_ success: Bool, _ error: ErrorModel?, _ response: Data?)-> Void)
 }
+	// do someting...
+
 
 class commonQuestionsWorker: IcommonQuestionsWorker {
+    func getquestion(complition: @escaping (Bool, ErrorModel?, Data?) -> Void) {
+        NetworkService.share.request(endpoint: commonQuestionsEndpoint.getQuestion, success: { (response) in
+            print(response)
+            complition(true, nil, response)
+            
+        }) { (error) in
+            complition(false, (error as! ErrorModel), nil)
+            
+        }
+    }
+    
 	// do someting...
 }

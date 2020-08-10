@@ -80,40 +80,29 @@
                         <action selector="createNBT:" destination="-1" eventType="touchUpInside" id="nGW-WV-F4f"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IBz-47-Jrk">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IBz-47-Jrk">
                     <rect key="frame" x="20" y="265" width="335" height="402"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="SideMenuVC" image="Menubackground" translatesAutoresizingMaskIntoConstraints="NO" id="8Ld-Lo-MsA">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <accessibility key="accessibilityConfiguration" identifier="MenuViewController"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="8Ld-Lo-MsA" secondAttribute="trailing" id="2fc-Rd-reF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IBz-47-Jrk" secondAttribute="bottom" id="87t-0v-QGW"/>
                 <constraint firstItem="vYM-YO-btC" firstAttribute="top" secondItem="K4W-l9-eNK" secondAttribute="bottom" constant="50" id="APR-x8-fF1"/>
-                <constraint firstAttribute="bottom" secondItem="8Ld-Lo-MsA" secondAttribute="bottom" id="Els-6D-nvy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K4W-l9-eNK" secondAttribute="trailing" constant="20" id="FAr-nF-iLo"/>
                 <constraint firstItem="lmR-gC-haS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Fh7-9J-8IX"/>
                 <constraint firstItem="K4W-l9-eNK" firstAttribute="top" secondItem="lmR-gC-haS" secondAttribute="top" id="Fry-1j-oic"/>
                 <constraint firstItem="vYM-YO-btC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fz8-Wk-WiW"/>
-                <constraint firstItem="8Ld-Lo-MsA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I01-4C-UG4"/>
                 <constraint firstItem="vYM-YO-btC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="I6O-0j-UkS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vYM-YO-btC" secondAttribute="trailing" constant="60" id="JU9-CD-kTq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IBz-47-Jrk" secondAttribute="trailing" constant="20" id="LP2-4h-t8d"/>
                 <constraint firstItem="K4W-l9-eNK" firstAttribute="bottom" secondItem="lmR-gC-haS" secondAttribute="bottom" id="NPf-3X-uON"/>
                 <constraint firstItem="IBz-47-Jrk" firstAttribute="top" secondItem="vYM-YO-btC" secondAttribute="bottom" constant="40" id="PIz-Jg-StX"/>
                 <constraint firstItem="lmR-gC-haS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="f2T-fO-98H"/>
-                <constraint firstItem="8Ld-Lo-MsA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fi4-kE-C3r"/>
                 <constraint firstItem="IBz-47-Jrk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="q2e-hQ-YG0"/>
                 <constraint firstItem="K4W-l9-eNK" firstAttribute="leading" secondItem="lmR-gC-haS" secondAttribute="trailing" constant="20" id="tKe-bK-642"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
-    <resources>
-        <image name="Menubackground" width="2087.5" height="2165"/>
-    </resources>
 </document>

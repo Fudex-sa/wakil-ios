@@ -11,10 +11,15 @@
 import UIKit
 
 protocol IcontactUsRouter: class {
+    func backHome()
 	// do someting...
 }
 
-class contactUsRouter: IcontactUsRouter {	
+class contactUsRouter: IcontactUsRouter {
+    func backHome() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+    }
+    
 	weak var view: contactUsViewController?
 	
 	init(view: contactUsViewController?) {

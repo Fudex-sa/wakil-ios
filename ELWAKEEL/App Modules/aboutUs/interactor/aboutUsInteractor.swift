@@ -12,9 +12,21 @@ import UIKit
 
 protocol IaboutUsInteractor: class {
 	var parameters: [String: Any]? { get set }
+    func get_contact_info()
 }
 
 class aboutUsInteractor: IaboutUsInteractor {
+    func get_contact_info() {
+        worker?.getContact_info(complition: { (success, error, response) in
+            if success{
+                self.presenter?.assign_contact_Info(contact_info: response!)
+            }
+            else{
+                print("error\(error?.message)")
+            }
+        })
+    }
+    
     var presenter: IaboutUsPresenter?
     var worker: IaboutUsWorker?
     var parameters: [String: Any]?

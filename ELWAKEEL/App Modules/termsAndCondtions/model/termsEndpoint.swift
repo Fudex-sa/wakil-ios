@@ -17,6 +17,8 @@ enum termsEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
+case terms
+
 }
 
 extension termsEndpoint: IEndpoint {
@@ -45,7 +47,7 @@ extension termsEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        return "http://wakil.dev.fudexsb.com/api/terms"
     }
     
     var parameter: Parameters? {
@@ -69,7 +71,7 @@ extension termsEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        return  ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
     }
     
     var encoding: ParameterEncoding {        

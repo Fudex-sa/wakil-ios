@@ -23,4 +23,10 @@ struct termsModel {
 	struct Response {
 		// do someting...
 	}
+    
+    struct Terms: Codable {
+        let id: Int
+        let title, content: String
+    }
+
 }

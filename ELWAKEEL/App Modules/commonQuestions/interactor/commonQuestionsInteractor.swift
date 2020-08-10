@@ -12,9 +12,21 @@ import UIKit
 
 protocol IcommonQuestionsInteractor: class {
 	var parameters: [String: Any]? { get set }
+    func getQuestion()
 }
 
 class commonQuestionsInteractor: IcommonQuestionsInteractor {
+    func getQuestion() {
+        worker?.getquestion(complition: { (success, error, response) in
+            if success{
+                self.presenter?.assignQuestions(questions: response ?? Data())
+            }
+            else{
+                print("error\(error?.message)")
+            }
+        })
+    }
+    
     var presenter: IcommonQuestionsPresenter?
     var worker: IcommonQuestionsWorker?
     var parameters: [String: Any]?

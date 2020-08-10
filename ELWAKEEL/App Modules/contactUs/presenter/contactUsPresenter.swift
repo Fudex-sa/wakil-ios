@@ -11,10 +11,22 @@
 import UIKit
 
 protocol IcontactUsPresenter: class {
+    func alert()
+    func errorAlert()
 	// do someting...
 }
 
-class contactUsPresenter: IcontactUsPresenter {	
+class contactUsPresenter: IcontactUsPresenter {
+    func errorAlert() {
+        view?.errorAlert()
+    }
+    
+    func alert() {
+        view?.alert()
+    }
+    
+    
+    
 	weak var view: IcontactUsViewController?
 	
 	init(view: IcontactUsViewController?) {
