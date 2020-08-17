@@ -23,7 +23,7 @@ class editRequestInteractor: IeditRequestInteractor {
                 self.presenter?.cancel()
             }
             else{
-                print("error\(error?.message)")
+                print("error\(String(describing: error?.message))")
             }
         })
     }
@@ -36,7 +36,7 @@ class editRequestInteractor: IeditRequestInteractor {
                 self.presenter?.asgniRequest(requestDetails: respnse!)
             }
             else{
-                print("error \(error?.message)")
+                print("error \(String(describing: error?.message))")
             }
         })
     }

@@ -23,7 +23,14 @@ class requestCell: UITableViewCell {
     @IBOutlet weak var goTORequest: UIButton!
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var new: UILabel!
     
+    @IBOutlet weak var last: UILabel!
+    
+    var requests_action: ((Any) -> Void)?
+    
+    @objc func requests_pressed(sender: Any) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,12 +39,21 @@ class requestCell: UITableViewCell {
         showNumberLBL.layer.masksToBounds = true
         showNumberLBL.layer.cornerRadius = showNumberLBL.frame.width/2
         requestNum2.adjustsFontSizeToFitWidth = true
-       showNumberLBL.adjustsFontSizeToFitWidth = true
         requestStatus.adjustsFontSizeToFitWidth = true
         requesteAccept.adjustsFontSizeToFitWidth = true
+        new.layer.cornerRadius = 10
+        new.layer.masksToBounds = true
+        last.layer.cornerRadius = 10
+        last.layer.masksToBounds = true
 
        
     }
+    
+    
+    @IBAction func go_to_accepts(_ sender: Any) {
+        self.requests_action?(sender)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

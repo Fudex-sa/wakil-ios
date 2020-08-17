@@ -12,9 +12,44 @@ import UIKit
 
 protocol IrequestDetailsInteractor: class {
 	var parameters: [String: Any]? { get set }
+    func cancelRequest(id: Int, reason: String)
+    func get_request_details(request_id: Int)
+
+
 }
 
 class requestDetailsInteractor: IrequestDetailsInteractor {
+    func get_request_details(request_id: Int) {
+        
+        worker?.request_details(request_id: request_id, complition: { (success, error, response) in
+            if success{
+                if let response = response {
+                self.presenter?.assign_request(request: response)
+                }
+                else{
+                    print("No response found")
+                }
+                
+            }
+            else{
+                print("error\(String(describing: error?.message))")
+            }
+            
+            
+        })
+       
+    }
+    
+    func cancelRequest(id: Int, reason: String) {
+        worker?.cancelRequest(id: id, reason: reason, complition: { (success, error, response) in
+            if success{
+                self.presenter?.cancel()
+            }
+            else{
+                print("error\(String(describing: error?.message))")
+            }
+        })
+    }
     var presenter: IrequestDetailsPresenter?
     var worker: IrequestDetailsWorker?
     var parameters: [String: Any]?

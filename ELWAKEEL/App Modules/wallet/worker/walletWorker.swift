@@ -12,8 +12,46 @@ import Foundation
 
 protocol IwalletWorker: class {
 	// do someting...
+func get_wallet(complition: @escaping (_ success: Bool,_ error: ErrorModel?, _ data: walletModel.wallet?)-> Void)
 }
 
 class walletWorker: IwalletWorker {
-	// do someting...
+    func get_wallet(complition: @escaping (Bool, ErrorModel?, walletModel.wallet?) -> Void) {
+     NetworkService.share.request(endpoint: walletEndpoint.wallet, success: { (response) in
+            print("wallet")
+            print(response)
+            
+            do {
+                let decoder = JSONDecoder()
+                let requests = try decoder.decode(walletModel.wallet.self, from: response)
+                complition(true,nil,requests)
+                
+            } catch _ {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let error = try decoder.decode(ErrorModel.self, from: response )
+                    print(error)
+                    complition(false , error, nil)
+                } catch let error {
+                    print(error)
+                    
+                }
+            }
+            
+            
+        }, failure: { (error) in
+            do {
+                let decoder = JSONDecoder()
+                let error = try decoder.decode(ErrorModel.self, from: error as! Data )
+                print(error)
+                complition(false , error , nil)
+                
+            } catch let error {
+                print(error)
+                complition(false , (error as! ErrorModel) , nil)
+            }
+            
+        })
+    }
 }

@@ -13,6 +13,7 @@ import LocalizationFramework
 
 protocol IwalletViewController: class {
 	var router: IwalletRouter? { get set }
+    func assign_wallet(wallet: walletModel.wallet)
 }
 
 class walletViewController: UIViewController {
@@ -24,11 +25,20 @@ class walletViewController: UIViewController {
     @IBOutlet weak var advertizingImg: UIImageView!
     @IBOutlet weak var operations: UILabel!
     @IBOutlet weak var opertionsTable: UITableView!
+    var wallets: walletModel.wallet?
     
-	override func viewDidLoad() {
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var commsion: UILabel!
+    var provider_price = Localization.SR
+    let commision1 = Localization.app_commsion
+    let commision2 = Localization.app_commsion1
+    override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
         setUpView()
+        get_wallet()
+        
+        
     }
     
     func setUpView()
@@ -43,16 +53,32 @@ class walletViewController: UIViewController {
 
         
     }
-    
+    func get_wallet()
+    {
+        interactor?.get_wallet()
+    }
     
     
     @IBAction func sidemneu(_ sender: Any) {
+        router?.show_side_menu()
     }
     
     
 }
 
 extension walletViewController: IwalletViewController {
+    func assign_wallet(wallet: walletModel.wallet) {
+        self.wallets = wallet
+        print("bbbb\(wallet)")
+        
+        if let wallet_price = wallet.wallet , let commission = wallet.commissions{
+            price.text = String(describing: wallet_price) + " " + provider_price
+            commsion.text = commision1 + "%" + String(describing: commission) + commision2
+            opertionsTable.reloadData()
+        }
+       
+    }
+    
 	// do someting...
 }
 
@@ -63,10 +89,10 @@ extension walletViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wallet", for: indexPath) as! wallet
-        
-        cell.date.text = "3: 55 مساء الإثنين"
+
+//        cell.providerName.text = wallets?.requests.data[indexPath.row].client?.name
         cell.price.text = "15 ريال سعودي"
-        cell.providerName.text = "إسم طالب الخدمة"
+        cell.date.text = "3: 55 مساء الإثنين"
         cell.selectionStyle = .none
         
         return cell

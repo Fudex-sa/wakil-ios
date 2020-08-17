@@ -18,9 +18,19 @@ class ViewController: UIViewController {
         
         
         if userDefualts.bool(forKey: "login") == true{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            print("log in true")
-            self.navigate(type: .modal, module: GeneralRouterRoute.sideMenuProvider, completion: nil)
+            if userDefualts.string(forKey: "type") == "provider"{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    print("log in true")
+                    self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+                
+            }
+            }
+            else{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    print("log in true")
+                    self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+                
+                    }
         }
         }
         else{

@@ -21,7 +21,7 @@ class HomeWorker: IHomeWorker {
     func getRqeques(complition: @escaping (Bool, ErrorModel?, HomeModel.requests?) -> Void) {
         NetworkService.share.request(endpoint: HomeEndpoint.getRequests, success: { (response) in
             print(response)
-            print("secind")
+            print("secind oooo")
             
             do {
                 let decoder = JSONDecoder()
@@ -30,8 +30,8 @@ class HomeWorker: IHomeWorker {
                 print("dataCount\(requests.data.count)")
                 complition(true,nil,requests)
                 
-            } catch _ {
-                
+            } catch (let error) {
+                print("error\(error.localizedDescription)")
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: response )
@@ -53,7 +53,7 @@ class HomeWorker: IHomeWorker {
                 
             } catch let error {
                 print(error)
-                complition(false , error as! ErrorModel , nil)
+                complition(false , (error as! ErrorModel) , nil)
             }
             
         })

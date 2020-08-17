@@ -12,9 +12,18 @@ import UIKit
 
 protocol IwalletRouter: class {
 	// do someting...
+    func show_side_menu()
 }
 
-class walletRouter: IwalletRouter {	
+class walletRouter: IwalletRouter {
+    func show_side_menu() {
+       
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenuProvider, completion: nil)
+            
+       
+        
+    }
+    
 	weak var view: walletViewController?
 	
 	init(view: walletViewController?) {

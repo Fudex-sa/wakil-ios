@@ -30,6 +30,8 @@ class sideMenuViewController: UIViewController {
     @IBOutlet weak var edit: UIButton!
     @IBOutlet weak var createBTN: UIButton!
     @IBOutlet weak var menuTable: UITableView!
+    var clinet_name = ""
+    let userDefualts = UserDefaults.standard
     var menu_Items: [String] = [Localization.Main, Localization.Record_requests, Localization.Application_settings, Localization.Connect_with_us, Localization.About_the_application, Localization.common_questions, Localization.Share_the_app, Localization.Terms_and_Conditions, Localization.Logout]
     var requests2: sideMenuModel.requests?
     var requ: HomeModel.requests?
@@ -54,8 +56,19 @@ class sideMenuViewController: UIViewController {
         profile.layer.cornerRadius = profile.frame.height/2
         profile.clipsToBounds = true
         createBTN.setTitle(Localization.New_order, for: .normal)
-        userName.text = "احمد زجب خلف الله"
+        
         edit.setTitle(Localization.edit, for: .normal)
+        clinet_name = userDefualts.string(forKey: "name") ?? ""
+        userName.text = clinet_name
+        
+//        if let url = URL(string: ) {
+//            UIImage.loadFrom(url: url) { image in
+//                cell.image.image = image
+//            }
+//        }
+//        else{
+//            print("no image found")
+//        }
         
         
     }
@@ -73,7 +86,7 @@ class sideMenuViewController: UIViewController {
     }
     
     @IBAction func createNBT(_ sender: Any) {
-        self.navigate(type: .modal, module: GeneralRouterRoute.addrequest, completion: nil)
+        self.navigate(type: .modal, module: GeneralRouterRoute.addrequest(params: nil), completion: nil)
     }
     
 }

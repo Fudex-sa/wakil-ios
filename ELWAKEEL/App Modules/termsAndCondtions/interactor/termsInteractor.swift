@@ -23,7 +23,7 @@ class termsInteractor: ItermsInteractor {
                self.presenter?.assign_terms(terms: response!)
             }
             else{
-                print("error\(error?.message)")
+                print("error\(String(describing: error?.message))")
             }
         })
     }

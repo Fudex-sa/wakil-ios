@@ -115,6 +115,11 @@ class contactUsViewController: UIViewController {
         
     }
     
+    
+    @IBAction func show_side_menu(_ sender: Any) {
+        router?.show_side_menu()
+    }
+    
     func showAlert(title: String, message: String)
     {
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)

@@ -31,7 +31,7 @@ class requestrecordInteractor: IrequestrecordInteractor {
                 }
             }
             else{
-                print("error\(error?.message)")
+                print("error\(error?.message ?? " ")")
             }
         })
     }

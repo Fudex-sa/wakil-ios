@@ -32,6 +32,7 @@ extension HomeEndpoint: IEndpoint {
 
         case .requestDetails:
             return .get
+        
         }
     }
     
@@ -53,7 +54,7 @@ extension HomeEndpoint: IEndpoint {
 
         case .requestDetails(let id):
             return "http://wakil.dev.fudexsb.com/api/requests/\(id)"
-        }
+         }
         
     }
     

@@ -23,6 +23,8 @@ class sideMenuProviderViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var sideTable: UITableView!
+    var provider_name = ""
+    let userDefualts = UserDefaults.standard
     var menu_Items: [String] = [Localization.Main, Localization.wallet, Localization.Record_requests, Localization.Application_settings, Localization.Connect_with_us, Localization.About_the_application, Localization.common_questions, Localization.Share_the_app, Localization.Terms_and_Conditions, Localization.Logout]
     
 	override func viewDidLoad() {
@@ -33,14 +35,15 @@ class sideMenuProviderViewController: UIViewController {
     
     func setUpView()
     {
-        
+        provider_name = userDefualts.string(forKey: "name") ?? ""
         sideTable.delegate = self
         sideTable.dataSource = self
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.layer.masksToBounds = true
-        edit.titleLabel?.text = Localization.edit
         let Uinib = UINib(nibName: "sideMenuCell", bundle: nil)
         sideTable.register(Uinib, forCellReuseIdentifier: "sideMenuCell")
+        edit.setTitle(Localization.edit, for: .normal)
+        name.text = provider_name
         
     }
     

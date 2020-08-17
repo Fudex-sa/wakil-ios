@@ -42,7 +42,16 @@ class LOGINRequesterInteractor: ILOGINRequesterInteractor {
                 userdefults.set(response?.user.id, forKey: "id")
                 userdefults.set(response?.user.phone, forKey: "phone")
                 userdefults.set(true, forKey: "login")
-                self.presenter?.navigateHome()
+                userdefults.set(response?.user.image, forKey: "image")
+                
+                if response?.type == "client"{
+                    self.presenter?.navigateHome()
+                }
+                else{
+                    self.presenter?.provider_Home()
+                    
+                }
+                
 
             }
             if error != nil{

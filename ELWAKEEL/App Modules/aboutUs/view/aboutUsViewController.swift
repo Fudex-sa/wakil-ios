@@ -120,6 +120,7 @@ class aboutUsViewController: UIViewController {
     }
     
     @IBAction func sideMenu(_ sender: Any) {
+       router?.show_side_menu()
         
     }
     

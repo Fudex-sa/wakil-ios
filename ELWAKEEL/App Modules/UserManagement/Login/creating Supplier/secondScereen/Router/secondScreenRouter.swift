@@ -23,7 +23,7 @@ class secondScreenRouter: IsecondScreenRouter {
     }
     
     func MoveToVerification() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.addrequest, completion: nil)
+        view?.navigate(type: .modal, module: GeneralRouterRoute.addrequest(params: nil), completion: nil)
     }
     
     

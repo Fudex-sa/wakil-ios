@@ -40,10 +40,11 @@ struct secondScreenModel {
     struct User: Codable {
         let id: Int
         let name, phone, email: String
+        let image: String
         let averageRating: Int
         
         enum CodingKeys: String, CodingKey {
-            case id, name, phone, email
+            case id, name, phone, email, image
             case averageRating = "average_rating"
         }
     }

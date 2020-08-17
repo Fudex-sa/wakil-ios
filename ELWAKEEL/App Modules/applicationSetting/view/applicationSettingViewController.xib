@@ -38,6 +38,9 @@
                                 <constraint firstAttribute="height" constant="30" id="9hT-jO-bJL"/>
                             </constraints>
                             <state key="normal" image="sidemenu"/>
+                            <connections>
+                                <action selector="show_side_menu:" destination="-1" eventType="touchUpInside" id="VWs-J3-XrV"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9r-oA-WRj">
                             <rect key="frame" x="162.5" y="30" width="50" height="25"/>

@@ -70,7 +70,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkA-zS-DRU">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="50"/>
-                                        <color key="backgroundColor" white="0.66438356164383561" alpha="0.65753424657534243" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="0.65753424657534243" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -119,13 +119,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="accept" destination="m0p-gf-Zek" id="tWy-Iu-ihQ"/>
+                <outlet property="accept" destination="m0p-gf-Zek" id="k3M-Uv-dD9"/>
                 <outlet property="address" destination="7OS-mL-de9" id="HyD-vq-aqS"/>
-                <outlet property="cancel" destination="wkA-zS-DRU" id="h9L-PO-jQ6"/>
+                <outlet property="cancel" destination="wkA-zS-DRU" id="yiN-zF-ASA"/>
                 <outlet property="delivery" destination="IS2-JW-60h" id="riH-7F-P95"/>
                 <outlet property="des" destination="z8i-xC-ZXR" id="NS6-ja-4Gy"/>
                 <outlet property="requestNum" destination="dXe-Oi-mLe" id="dF6-rQ-YjE"/>
-                <outlet property="requestStatus" destination="dXe-Oi-mLe" id="OlS-be-y20"/>
+                <outlet property="requestStatus" destination="J9N-bg-kZI" id="Rcu-sR-ZFR"/>
             </connections>
             <point key="canvasLocation" x="67.200000000000003" y="263.11844077961024"/>
         </tableViewCell>

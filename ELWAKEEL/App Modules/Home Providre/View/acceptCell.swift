@@ -9,30 +9,32 @@
 import UIKit
 import LocalizationFramework
 
-protocol buttons {
-    func cancel()
-    func accept()
-}
 class acceptCell: UITableViewCell {
 
     
-    var delegate: buttons?
     @IBOutlet weak var requestNum: UILabel!
     @IBOutlet weak var requestStatus: UILabel!
     @IBOutlet weak var des: UILabel!
-    
     @IBOutlet weak var delivery: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var accept: UIButton!
+    var cancel_action: ((Any) -> Void)?
     
+    @objc func cancel_pressed(sender: Any) {
+    }
+    
+    var accept_button: ((Any) -> Void)?
+    
+    @objc func accept_pressed(sender: Any) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         cancel.layer.cornerRadius = 10
         accept.layer.cornerRadius = 10
-        cancel.titleLabel?.text = Localization.cancel
-        accept.titleLabel?.text = Localization.accept
+        cancel.setTitle(Localization.cancel, for: .normal)
+        accept.setTitle(Localization.accept, for: .normal)
         
         
     }
@@ -45,11 +47,12 @@ class acceptCell: UITableViewCell {
     }
     
     @IBAction func accept(_ sender: Any) {
-        delegate?.accept()
+          self.accept_button?(sender)
     }
     
     @IBAction func cancel(_ sender: Any) {
-        delegate?.cancel()
+        self.cancel_action?(sender)
+
     }
     
     

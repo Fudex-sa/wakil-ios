@@ -22,6 +22,7 @@ enum addrequestEndpoint {
     case getOrganization
     case getCountries
     case getCities(countriesID:[Int])
+    case add_special_request(title: String, description: String, country_id: Int,city_id: Int, organization_id: Int, address: String, achievement_proof: String, provider_id: Int, ads_id: Int)
     
     
 }
@@ -44,6 +45,8 @@ extension addrequestEndpoint: IEndpoint {
             return .get
         case .getCities:
             return .post
+        case .add_special_request:
+            return .post
         }
     }
     
@@ -65,6 +68,8 @@ extension addrequestEndpoint: IEndpoint {
             return "http://wakil.dev.fudexsb.com/api/countries"
         case .getCities:
             return "http://wakil.dev.fudexsb.com/api/cities"
+        case .add_special_request:
+            return "http://wakil.dev.fudexsb.com/api/requests/create"
         }
         
         
@@ -79,9 +84,11 @@ extension addrequestEndpoint: IEndpoint {
             return model.parameter()
         }
         */
+        
+        let id = UserDefaults.standard.integer(forKey: "id")
+
         switch self {
         case .addReuset(let title, let description, let country_id ,let city_id , let organization_id,let address, let achievement_proof):
-          let id = UserDefaults.standard.integer(forKey: "id")
             return  ["title": title,"description": description, "country_id": country_id, "city_id": city_id, "type": "public", "organization_id": organization_id, "added_by": id, "address": address, "achievement_proof":achievement_proof]
         case .getOrganization:
             return nil
@@ -90,6 +97,10 @@ extension addrequestEndpoint: IEndpoint {
         case .getCities(let ids):
             return ["country_ids": ids]
         
+        case .add_special_request(let title, let description, let country_id, let city_id, let organization_id, let address, let achievement_proof, let provider_id, let ads_id):
+            return  ["title": title,"description": description, "country_id": country_id, "city_id": city_id, "type": "special", "organization_id": organization_id, "added_by": id, "address": address, "achievement_proof":achievement_proof , "provider_id": provider_id, "ads_id": ads_id]
+        
+            
         }
     }
     
@@ -113,6 +124,8 @@ extension addrequestEndpoint: IEndpoint {
             return ["Accept": "application/json", "Accept-Language":"ar"]
         case .getCities:
             return ["Accept": "application/json", "Accept-Language":"ar"]
+        case .add_special_request:
+            return ["Accept": "application/json", "Accept-Language": "en", "Authorization": "bearer\(token!)", "Content-Type": "application/json"]
         }
         
     }

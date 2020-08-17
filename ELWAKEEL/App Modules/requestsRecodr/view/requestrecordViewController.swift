@@ -39,12 +39,18 @@ class requestrecordViewController: UIViewController {
         recordsTable.delegate = self
         recordsTable.dataSource = self
         interactor?.getrecords()
-        let userDefaults = UserDefaults.standard
-        let id = userDefaults.string(forKey: "id")
-    let token = userDefaults.string(forKey: "token")
-        print("id \(id)\(token)")
-        
+//        let userDefaults = UserDefaults.standard
+//        let id = userDefaults.string(forKey: "id")
+//    let token = userDefaults.string(forKey: "token")
+//        
     }
+    
+    
+    @IBAction func show_side_menu(_ sender: Any) {
+        router?.show_side_menu()
+    }
+    
+    
 }
 
 extension requestrecordViewController: IrequestrecordViewController {

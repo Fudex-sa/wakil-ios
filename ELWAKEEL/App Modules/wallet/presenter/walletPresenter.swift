@@ -12,9 +12,14 @@ import UIKit
 
 protocol IwalletPresenter: class {
 	// do someting...
+    func assign_walllet(wallet: walletModel.wallet)
 }
 
-class walletPresenter: IwalletPresenter {	
+class walletPresenter: IwalletPresenter {
+    func assign_walllet(wallet: walletModel.wallet) {
+        view?.assign_wallet(wallet: wallet)
+    }
+    
 	weak var view: IwalletViewController?
 	
 	init(view: IwalletViewController?) {

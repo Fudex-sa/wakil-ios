@@ -41,10 +41,10 @@ class editRequestViewController: UIViewController {
     @IBOutlet weak var achieve1: UILabel!
     @IBOutlet weak var edit: UIButton!
     @IBOutlet weak var cancel: UIButton!
+    @IBOutlet weak var editLBL: UILabel!
+    @IBOutlet weak var title1: UILabel!
+    @IBOutlet weak var titleDES: UILabel!
     
-    
-    
-    @IBOutlet weak var requestNum: UILabel!
     
     var id: Int?
     var reason = ""
@@ -58,11 +58,9 @@ class editRequestViewController: UIViewController {
     }
     
     func setUpView(){
-        requestNum.layer.masksToBounds = true
-        requestNum.layer.cornerRadius = requestNum.frame.width/2
+        editLBL.text = Localization.request_edit
         edit.layer.cornerRadius = 10
         cancel.layer.cornerRadius = 10
-        orderNum.text = Localization.Order_number
         orderDES.text = Localization.request_DES
         orderStatus.text = Localization.Under_processing
         region.text = Localization.Region
@@ -70,6 +68,7 @@ class editRequestViewController: UIViewController {
         address.text = Localization.Authority_address
         minstry.text = Localization.minstryAndAuth
         achieve.text = Localization.achievement
+        title1.text = Localization.title_name
         textView.delegate = self
         edit.setTitle(Localization.edit, for: .normal)
         cancel.setTitle(Localization.cancel, for: .normal)
@@ -77,7 +76,10 @@ class editRequestViewController: UIViewController {
     }
     
     @IBAction func editBTN(_ sender: Any) {
-        self.navigate(type: .modal, module: GeneralRouterRoute.addrequest, completion: nil)
+        if let id = self.id {
+         self.navigate(type: .modal, module: GeneralRouterRoute.edit(id: id), completion: nil)
+        }
+        
     }
     
     @IBAction func cancelBTN(_ sender: Any) {
@@ -104,12 +106,7 @@ class editRequestViewController: UIViewController {
     }
     func configueUI()
     {
-        if let i1d = id{
-            requestNum.text = String(describing: i1d)
-
-        }
-        
-        orderNum.text = Localization.requestNum
+        orderNum.text = requestDetail?.request_number
         orderStatus.text = requestDetail?.status?.name
         textView.text = requestDetail?.description
         region1.text = requestDetail?.country.name
@@ -117,6 +114,7 @@ class editRequestViewController: UIViewController {
         address1.text = requestDetail?.address
         minstry1.text = requestDetail?.organization.name
         achieve1.text = requestDetail?.achievement_proof
+        titleDES.text = requestDetail?.title
         
     }
     

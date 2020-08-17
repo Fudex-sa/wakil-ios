@@ -13,13 +13,31 @@ import Foundation
 protocol IaddrequestWorker: class {
 	// do someting...
     func addRequest(title: String, description: String, country_id: Int,city_id: Int, organization_id: Int, address: String, achievement_proof: String, complition: @escaping (Bool, _ error: ErrorModel?, _ respones: Data?)-> Void)
+    func add_special_request(title: String, description: String, country_id: Int,city_id: Int, organization_id: Int, address: String, achievement_proof: String, provider_id: Int, ads_id: Int, complition: @escaping (Bool, _ error: ErrorModel?, _ respones: Data?)-> Void)
     func getOrganization(complition: @escaping ( Bool, _ error: ErrorModel?, _ respones: [addrequestModel.Organization]?)-> Void)
     func getCountries(complition: @escaping ( Bool, _ error: ErrorModel?, _ respones: [addrequestModel.Organization]?)-> Void)
     func getCities(Countries_IDs: [Int],complition: @escaping ( Bool, _ error: ErrorModel?, _ respones: [addrequestModel.Organization]?)-> Void)
 }
 
 class addrequestWorker: IaddrequestWorker {
+    func add_special_request(title: String, description: String, country_id: Int, city_id: Int, organization_id: Int, address: String, achievement_proof: String, provider_id: Int, ads_id: Int, complition: @escaping (Bool, ErrorModel?, Data?) -> Void) {
     
+        NetworkService.share.request(endpoint: addrequestEndpoint.add_special_request(title: title, description: description, country_id: country_id, city_id: city_id, organization_id: organization_id, address: address, achievement_proof: achievement_proof, provider_id: provider_id, ads_id: ads_id), success: { (response) in
+            print("succsee")
+            if response.count == 0{
+            complition(true, nil,nil)
+            }
+            else{
+                print("error(")
+                
+            }
+            
+        }) { (error) in
+            print("errrrrr\(String(describing: error?.localizedDescription))")
+            complition(false,error as? ErrorModel,nil)
+        }
+        
+    }
     
     func getCountries(complition: @escaping (Bool, ErrorModel?, [addrequestModel.Organization]?) -> Void) {
         NetworkService.share.request(endpoint: addrequestEndpoint.getCountries, success: { (response) in
@@ -151,10 +169,17 @@ class addrequestWorker: IaddrequestWorker {
     func addRequest(title: String, description: String, country_id: Int, city_id: Int, organization_id: Int, address: String, achievement_proof: String, complition: @escaping (Bool, ErrorModel?, Data?) -> Void) {
         NetworkService.share.request(endpoint: addrequestEndpoint.addReuset(title: title, description: description, country_id: country_id, city_id: city_id, organization_id: organization_id, address: address, achievement_proof: achievement_proof), success: { (response) in
             print("succsee")
-            complition(true, nil,nil)
+            if response.count == 0{
+                complition(true, nil,nil)
+            }
+            else{
+                print("error(")
+                
+            }
+        
         }) { (error) in
-            print("errrrrr\(error?.localizedDescription)")
-            complition(false,nil,nil)
+            print("errrrrr\(String(describing: error?.localizedDescription))")
+            complition(false,error as? ErrorModel,nil)
         }
         
     }

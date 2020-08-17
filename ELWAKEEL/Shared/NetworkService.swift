@@ -54,7 +54,7 @@ class NetworkService {
                 switch response.result {
                 case .success (let value):
                     success?(value)
-                    print("mmmmm\(response.response?.statusCode)")
+                    print("mmmmm\(String(describing: response.response?.statusCode))")
                 case .failure(let error):
                     print(error)
                 }

@@ -44,11 +44,12 @@ struct HomeModel {
       
         struct info: Codable {
             var id: Int
+            var request_number: String?
             var title: String?
             var description: String?
             var address: String?
             var achievement_proof: String?
-            var provider: String?
+            var provider: clint?
             var offersCount: Int?
             var status: statu?
             var organization, country, city : organiz?
@@ -87,4 +88,7 @@ struct HomeModel {
             var total: Int?
         }
     }
+    
+    
+    
 }

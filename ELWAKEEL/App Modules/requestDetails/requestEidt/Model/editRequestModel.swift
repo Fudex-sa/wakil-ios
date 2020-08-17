@@ -26,6 +26,7 @@ struct editRequestModel {
 struct RequestDetails: Codable {
         let id: Int
         let title, description: String?
+        let request_number: String?
         let status: Status?
         let organization, city, country: City
         let address, achievement_proof: String?

@@ -107,7 +107,6 @@ class formatData{
         print("selected1)")
         menu.setSelectedItems(items: selectedEmails) {[weak self] (item, index, isselected, selectedItem) in
             self?.selectedEmails = selectedItem
-            print("selected\(self?.selectedEmails)")
         }
         menu.cellSelectionStyle = .checkbox
         

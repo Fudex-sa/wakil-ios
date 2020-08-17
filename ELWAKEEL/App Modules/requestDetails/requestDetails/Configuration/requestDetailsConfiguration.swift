@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 class requestDetailsConfiguration {
-    static func setup(parameters: [String: Any] = [:]) -> UIViewController {
+    static func setup(parameters: [String: Any] = [:], id: Int) -> UIViewController {
         let controller = requestDetailsViewController()
         let router = requestDetailsRouter(view: controller)
         let presenter = requestDetailsPresenter(view: controller)
@@ -22,6 +22,7 @@ class requestDetailsConfiguration {
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters
+        controller.id = id
         return controller
     }
 }

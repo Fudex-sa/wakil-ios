@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="168" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuW-Rm-NKg">
-                                        <rect key="frame" x="0.0" y="0.0" width="133" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="36y-s1-R3b"/>
                                         </constraints>
@@ -33,19 +33,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mF-Gf-aDG">
-                                        <rect key="frame" x="138" y="-5" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="GUB-jb-l3i"/>
-                                            <constraint firstAttribute="height" constant="30" id="HVw-Gk-fxg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="0mF-Gf-aDG" secondAttribute="trailing" id="T1L-bM-ojA"/>
                                     <constraint firstAttribute="height" constant="25" id="ccJ-TU-BPB"/>
                                 </constraints>
                             </stackView>
@@ -105,7 +94,6 @@
                 <outlet property="des" destination="tKf-53-26Y" id="qo1-Tf-TlD"/>
                 <outlet property="requestNum" destination="uuW-Rm-NKg" id="fHp-kC-o8E"/>
                 <outlet property="requestStatus" destination="j7v-W1-Za7" id="msU-bu-uO7"/>
-                <outlet property="reuestNum2" destination="0mF-Gf-aDG" id="Oph-Q2-BWw"/>
             </connections>
             <point key="canvasLocation" x="122.40000000000001" y="216.34182908545728"/>
         </tableViewCell>

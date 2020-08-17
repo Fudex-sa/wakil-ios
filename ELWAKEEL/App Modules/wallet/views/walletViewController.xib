@@ -12,9 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="walletViewController" customModule="ELWAKEEL" customModuleProvider="target">
             <connections>
                 <outlet property="advertizingImg" destination="wBL-2Y-sOK" id="mo2-hR-yVa"/>
+                <outlet property="commsion" destination="ooO-ok-4S8" id="ydI-uy-d3a"/>
                 <outlet property="homeWallet" destination="yqA-X3-hrO" id="16J-sm-oLG"/>
                 <outlet property="operations" destination="cBx-at-SsO" id="bpK-Rk-fw3"/>
                 <outlet property="opertionsTable" destination="bo6-Rh-oiu" id="Sb1-jL-SdV"/>
+                <outlet property="price" destination="GWL-9G-3vC" id="ayh-Du-kpm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wallet" destination="ICm-tu-Ztd" id="IvW-nA-cA7"/>
             </connections>
@@ -64,19 +66,43 @@
                                         <constraint firstAttribute="height" constant="180" id="iyY-6K-INF"/>
                                     </constraints>
                                 </tableView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWL-9G-3vC" userLabel="price">
+                                    <rect key="frame" x="160.5" y="105" width="54" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="MvU-Q0-cQB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooO-ok-4S8">
+                                    <rect key="frame" x="60" y="155" width="255" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Yeb-V1-K7c"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.9178082191780822" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ooO-ok-4S8" secondAttribute="trailing" constant="60" id="6D3-0g-fKL"/>
                                 <constraint firstAttribute="trailing" secondItem="wBL-2Y-sOK" secondAttribute="trailing" constant="30" id="Cm0-tt-SI9"/>
                                 <constraint firstAttribute="trailing" secondItem="bo6-Rh-oiu" secondAttribute="trailing" constant="15" id="EGt-ji-PhD"/>
+                                <constraint firstItem="GWL-9G-3vC" firstAttribute="centerX" secondItem="qpe-wc-1Uo" secondAttribute="centerX" id="Hkt-pY-Gff"/>
                                 <constraint firstItem="wBL-2Y-sOK" firstAttribute="leading" secondItem="qpe-wc-1Uo" secondAttribute="leading" constant="30" id="I9V-kd-Aeb"/>
                                 <constraint firstItem="wBL-2Y-sOK" firstAttribute="top" secondItem="ICm-tu-Ztd" secondAttribute="bottom" constant="30" id="PGe-hI-JxG"/>
+                                <constraint firstItem="ooO-ok-4S8" firstAttribute="centerX" secondItem="qpe-wc-1Uo" secondAttribute="centerX" id="QjO-55-AMo"/>
                                 <constraint firstItem="bo6-Rh-oiu" firstAttribute="top" secondItem="cBx-at-SsO" secondAttribute="bottom" constant="20" id="TI5-OE-WgU"/>
+                                <constraint firstItem="GWL-9G-3vC" firstAttribute="top" secondItem="ICm-tu-Ztd" secondAttribute="bottom" constant="60" id="WBL-vZ-tSD"/>
                                 <constraint firstAttribute="trailing" secondItem="ICm-tu-Ztd" secondAttribute="trailing" constant="15" id="YZA-d5-9Ca"/>
                                 <constraint firstItem="bo6-Rh-oiu" firstAttribute="leading" secondItem="qpe-wc-1Uo" secondAttribute="leading" constant="15" id="cej-Qn-YO9"/>
                                 <constraint firstItem="ICm-tu-Ztd" firstAttribute="leading" secondItem="qpe-wc-1Uo" secondAttribute="leading" constant="15" id="k8m-49-ynu"/>
+                                <constraint firstItem="ooO-ok-4S8" firstAttribute="top" secondItem="GWL-9G-3vC" secondAttribute="bottom" constant="20" id="meJ-eb-JWk"/>
                                 <constraint firstItem="wBL-2Y-sOK" firstAttribute="centerX" secondItem="qpe-wc-1Uo" secondAttribute="centerX" id="ngh-Wj-syq"/>
                                 <constraint firstItem="ICm-tu-Ztd" firstAttribute="top" secondItem="qpe-wc-1Uo" secondAttribute="top" constant="20" id="w7g-CT-xAj"/>
+                                <constraint firstItem="ooO-ok-4S8" firstAttribute="leading" secondItem="qpe-wc-1Uo" secondAttribute="leading" constant="60" id="wlu-Y1-Qmt"/>
                                 <constraint firstAttribute="trailing" secondItem="cBx-at-SsO" secondAttribute="trailing" constant="15" id="xYH-Q6-6dX"/>
                                 <constraint firstItem="cBx-at-SsO" firstAttribute="top" secondItem="wBL-2Y-sOK" secondAttribute="bottom" constant="20" id="ybB-2r-OUn"/>
                                 <constraint firstItem="cBx-at-SsO" firstAttribute="leading" secondItem="qpe-wc-1Uo" secondAttribute="leading" constant="15" id="zUw-s1-Ue5"/>

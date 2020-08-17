@@ -12,6 +12,7 @@ import UIKit
 
 protocol IrequestDetailsRouter: class {
 	// do someting...
+    func goHome() 
 }
 
 class requestDetailsRouter: IrequestDetailsRouter {	
@@ -20,4 +21,9 @@ class requestDetailsRouter: IrequestDetailsRouter {
 	init(view: requestDetailsViewController?) {
 		self.view = view
 	}
+    
+    func goHome() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+    }
+    
 }

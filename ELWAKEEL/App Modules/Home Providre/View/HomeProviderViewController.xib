@@ -15,8 +15,9 @@
                 <outlet property="Notifications" destination="W64-Nl-dxk" id="V6W-6n-QdV"/>
                 <outlet property="acceptTable" destination="sOK-wg-M6w" id="0gf-mh-UVA"/>
                 <outlet property="bottomView" destination="zvC-pp-hPN" id="Fbe-a9-h03"/>
-                <outlet property="requestNum" destination="QaD-bV-jVl" id="Hfc-pe-hEq"/>
+                <outlet property="request_DES" destination="QaD-bV-jVl" id="Hfc-pe-hEq"/>
                 <outlet property="requestsTable" destination="b0g-5R-amr" id="veZ-1h-y1i"/>
+                <outlet property="sea_all" destination="wut-RP-jp5" id="735-Ps-WQv"/>
                 <outlet property="servicesRequests" destination="jvN-lq-Kgj" id="2Rd-eR-NBB"/>
                 <outlet property="topView" destination="4cU-h5-RRq" id="OlF-oi-s6J"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -40,6 +41,9 @@
                                 <constraint firstAttribute="width" constant="46" id="sce-d4-4Ow"/>
                             </constraints>
                             <state key="normal" image="sidemenu"/>
+                            <connections>
+                                <action selector="show_side_menu:" destination="-1" eventType="touchUpInside" id="l4S-Hd-FRQ"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIH-uW-LKo">
                             <rect key="frame" x="164.5" y="44" width="46" height="30"/>
@@ -57,6 +61,9 @@
                                 <constraint firstAttribute="height" constant="30" id="dDz-hj-Kp3"/>
                             </constraints>
                             <state key="normal" image="Notification"/>
+                            <connections>
+                                <action selector="notifications:" destination="-1" eventType="touchUpInside" id="laU-h7-0Yt"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W64-Nl-dxk">
                             <rect key="frame" x="329" y="35" width="20" height="22"/>
@@ -97,7 +104,7 @@
                                                 <action selector="seeALl:" destination="-1" eventType="touchUpInside" id="hoY-PZ-uuM"/>
                                             </connections>
                                         </button>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sOK-wg-M6w">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sOK-wg-M6w">
                                             <rect key="frame" x="10" y="55" width="320" height="225"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableView>
@@ -127,7 +134,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b0g-5R-amr">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b0g-5R-amr">
                                             <rect key="frame" x="10" y="50" width="320" height="163"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableView>

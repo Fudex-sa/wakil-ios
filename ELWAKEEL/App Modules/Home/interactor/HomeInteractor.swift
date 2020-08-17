@@ -22,7 +22,6 @@ class HomeInteractor: IHomeInteractor {
         worker?.getRqeques(complition: { (success, error, reuests) in
             if  success{
                 self.presenter?.assingRequest(requeste: reuests!)
-                print("interactor Data count \(reuests?.data.count)")
             }
             
             else{

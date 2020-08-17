@@ -14,9 +14,14 @@ protocol ILOGINRequesterRouter: class {
 	// do someting...
     
     func navigateToHome()
+    func provider_Home()
 }
 
 class LOGINRequesterRouter: ILOGINRequesterRouter {
+    func provider_Home() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.HomeProvider, completion: nil)
+    }
+    
    
     
 	weak var view: LOGINRequesterViewController?

@@ -15,6 +15,7 @@ protocol IHomeViewController: class {
 	var router: IHomeRouter? { get set }
     func assignRequests(requests: HomeModel.requests)
     func assignAdvertizing(advertizing: [HomeModel.Advertising])
+    func go_offers(request_id: Int)
 }
 
 class HomeViewController: UIViewController {
@@ -41,17 +42,17 @@ class HomeViewController: UIViewController {
     
     var newReuests: [[String:Any]]?
     var imgArr: [String] = [String]()
-    
-    
     var names: [String?] = ["sssss","ccccc", nil]
     var requests2: HomeModel.requests?
     var rrrr: HomeModel.requests?
     
     var timer = Timer()
     var counter = 0
-   weak var delegate: HomeDelegate?
-   var hide = true
+    weak var delegate: HomeDelegate?
+    var hide = true
     var id = 0
+    var provider_id: Int?
+    var advertizing_id: Int?
 	override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -65,11 +66,12 @@ class HomeViewController: UIViewController {
     func getrequests()
     {
         interactor?.getRequest()
+        requestTable.reloadData()
         
     }
     func setUpView()
     {
-        
+
         print("sssssssss")
         print(userDefault.integer(forKey: "id") as Int)
         print(userDefault.string(forKey: "email") ?? "email")
@@ -79,14 +81,14 @@ class HomeViewController: UIViewController {
         print(userDefault.string(forKey: "type") ?? "type")
         let cellNib = UINib(nibName: "requestCell", bundle: nil)
         requestTable.register(cellNib, forCellReuseIdentifier: "requestCell")
+        
+        let nib = UINib(nibName: "advertizingCell", bundle: nil)
+        imageCollection.register(nib, forCellWithReuseIdentifier: "advertizingCell")
         requestTable.rowHeight = 190
          requestTable.delegate = self
         requestTable.dataSource = self
-        imageCollection.register(UINib(nibName: "cell", bundle: nil), forCellWithReuseIdentifier: "cell")
         notificationLBL.layer.masksToBounds = true
         notificationLBL.layer.cornerRadius = notificationLBL.frame.width/2
-        requestService.layer.masksToBounds = true
-        requestService.layer.cornerRadius = requestService.frame.height/2
         imageCollection.layer.masksToBounds = true
         imageCollection.layer.cornerRadius = 10
         imageCollection.delegate = self
@@ -118,21 +120,19 @@ class HomeViewController: UIViewController {
         
     }
     
-    @IBAction func SideMenuVTN(_ sender: Any) {
-        configureHomeController()
-        handleMenuToggle()
-//        sideMenuConfiguration.setup()
-//        showPopUp()
-//        if requests2 != nil{
-//             setup()
-//
-//            print("called")
-//
-//        }
-//        else{
-//            print("not Called")
-//        }
+    
+    @IBAction func serviceRequest(_ sender: Any) {
+        router?.addRequest()
         
+        print("private")
+        
+    }
+    
+    @IBAction func SideMenuVTN(_ sender: Any) {
+        router?.show_side_menu()
+//        configureHomeController()
+//        handleMenuToggle()
+
         
     }
     
@@ -142,7 +142,6 @@ class HomeViewController: UIViewController {
         
         print("config")
         let HomeController = HomeViewController()
-//        HomeController.delegate = self
         centerController = UINavigationController(rootViewController: HomeController)
         view.addSubview(centerController.view)
         addChild(centerController)
@@ -187,21 +186,6 @@ class HomeViewController: UIViewController {
         
     }
     
-    func setup(parameters: [String: Any] = [:]) {
-        let controller = sideMenuViewController()
-        let router = sideMenuRouter(view: controller)
-        let presenter = sideMenuPresenter(view: controller)
-        let worker = sideMenuWorker()
-        let interactor = sideMenuInteractor(presenter: presenter, worker: worker)
-        controller.interactor = interactor
-        controller.router = router
-      
-        interactor.parameters = parameters
-        
-//        return controller
-    
-    }
-    
     
     
     func getAdvertising(){
@@ -212,18 +196,23 @@ class HomeViewController: UIViewController {
     
     @IBAction func notificationBTN(_ sender: Any) {
         
+        router?.notifications()
     }
     
     
     @IBAction func newRequestBTN(_ sender: Any) {
         
-        self.navigate(type: .modal, module: GeneralRouterRoute.addrequest, completion: nil)
+        router?.addRequest()
     }
     
     
 }
 
 extension HomeViewController: IHomeViewController {
+    func go_offers(request_id: Int) {
+        self.router?.go_offer(request_id: request_id)
+    }
+    
     func assignAdvertizing(advertizing: [HomeModel.Advertising]) {
         self.advertizings = advertizing
         if let advertizings = advertizings{
@@ -263,7 +252,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "advertizingCell", for: indexPath) as! advertizingCell
+        cell.image.image = UIImage(named: imgArr[indexPath.row])
+        cell.get_provider_id = {
+        action in
+            self.provider_id = self.advertizings?[indexPath.row].providerID
+            self.advertizing_id = self.advertizings?[indexPath.row].id
+            
+            
+            if let ads_id =  self.advertizing_id, let providerID = self.provider_id{
+                self.router?.go_special_request(params: ["provider_id": providerID,"advertizing_id": ads_id])
+
+            }
+           
+            print("indexpath\(indexPath.row)")
+        
+        }
         if let url = URL(string: imgArr[indexPath.row]) {
         UIImage.loadFrom(url: url) { image in
              cell.image.image = image
@@ -299,23 +303,47 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 2
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return requests2?.data.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell", for: indexPath) as! requestCell
-        cell.layer.cornerRadius = 10
-        cell.requestNumLBL.text = Localization.requestNum
         id = (requests2?.data[indexPath.row].id)!
-            cell.showNumberLBL.text = String(describing: id)
-        if MOLHLanguage.currentAppleLanguage() == "ar"
-        {
+        cell.layer.cornerRadius = 10
+        cell.requestNumLBL.text = String(describing: id)
         cell.requestStatus.text = (requests2?.data[indexPath.row].status?.name)
-            cell.requestStatus.textAlignment = .left
+        if requests2?.data[indexPath.row].offersCount == 0{
+            cell.new.isHidden = false
+            cell.showNumberLBL.isHidden = true
             
         }
+        else{
+            cell.showNumberLBL.isHidden = false
+
+         cell.showNumberLBL.text = String(describing: requests2?.data[indexPath.row].offersCount ?? 0)
+            cell.requestNum2.text = String(describing: self.requests2?.data[indexPath.row].offersCount ?? 0)
+            
+            cell.new.isHidden = true
+            cell.requests_action = {
+                sender in
+                if let id = self.requests2?.data[indexPath.row].id
+                {
+                    self.go_offers(request_id: id)
+              
+                    
+            }
+            }
+            
+           
+            
+        }
+        
 
         cell.requestDESLBL.text = requests2?.data[indexPath.row].description
         var address = requests2?.data[indexPath.row].city?.name ?? ""
@@ -323,31 +351,43 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         address.append(contentsOf: requests2?.data[indexPath.row].country?.name ?? "" )
         cell.requesteAccept.text = Localization.requestsApprove
         cell.requestAddresBL.text = address
-        if requests2?.data[indexPath.row] != nil{
-        }
-        else{
-            cell.containerView.isHidden = true
-
-        }
+        
 
         cell.selectionStyle = .none
         return cell
     }
 
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if requests2?.data[indexPath.row] != nil{
-            return 190
+        if requests2?.data[indexPath.row].offersCount == 0{
+            return 135
 
         }
         else{
-            return 140
+            return 230
+            
         }
+
         
     }
 
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let request_id = (requests2?.data[indexPath.row].id)!
-        self.navigate(type: .modal, module: GeneralRouterRoute.editRequest(id: request_id), completion: nil)
+        if requests2?.data[indexPath.row].status?.name == "new"
+        {
+            self.navigate(type: .modal, module: GeneralRouterRoute.editRequest(id: request_id), completion: nil)
+        }
+        else if requests2?.data[indexPath.row].status?.name == "progress"{
+            self.navigate(type: .modal, module: GeneralRouterRoute.requestDetails(id: request_id), completion: nil)
+        }
+        else {
+            print("not selected")
+            
+        }
+       
     }
 
 

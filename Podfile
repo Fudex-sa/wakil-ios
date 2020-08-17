@@ -12,6 +12,10 @@ target 'ELWAKEEL' do
   pod 'SwiftyJSON'
   pod 'RSSelectionMenu'
   pod 'MOLH'
+  pod 'Cosmos', '~> 22.1'
+
+#  pod 'MGStarRatingView', '~> 1.0.0'
+#  pod 'MGStarRatingView'
 
 
 end

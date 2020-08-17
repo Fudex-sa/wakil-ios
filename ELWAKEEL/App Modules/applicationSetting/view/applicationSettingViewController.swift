@@ -84,6 +84,13 @@ class applicationSettingViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func show_side_menu(_ sender: Any) {
+        
+        router?.show_side_menu()
+    }
+    
+    
     func setImage(image: UIImage)
     {
         

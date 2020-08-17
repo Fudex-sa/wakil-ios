@@ -45,7 +45,7 @@ class termsWorker: ItermsWorker {
                 
             } catch let error {
                 print(error)
-                complition(false , error as! ErrorModel , nil)
+                complition(false , (error as! ErrorModel) , nil)
             }
             
         })

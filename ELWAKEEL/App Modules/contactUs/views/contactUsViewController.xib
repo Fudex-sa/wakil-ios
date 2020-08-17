@@ -45,6 +45,9 @@
                                 <constraint firstAttribute="width" constant="35" id="InQ-ed-utA"/>
                             </constraints>
                             <state key="normal" image="sidemenu"/>
+                            <connections>
+                                <action selector="show_side_menu:" destination="-1" eventType="touchUpInside" id="vA1-gV-0P3"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfW-fR-gxk">
                             <rect key="frame" x="163.5" y="30" width="48" height="24"/>

@@ -16,6 +16,7 @@ protocol IaddrequestViewController: class {
     func assignorganization(organizations: [addrequestModel.Organization])
     func assignCountries(countries: [addrequestModel.Organization])
     func assignCities(cities: [addrequestModel.Organization])
+    func assign_reqesut(request: editModel.edit)
     func backToHome()
     
 }
@@ -45,6 +46,8 @@ class addrequestViewController: UIViewController {
     @IBOutlet weak var achieveLBL: UILabel!
     @IBOutlet weak var achieveTXT: UITextField!
     @IBOutlet weak var sendBTN: UIButton!
+    @IBOutlet weak var titleLBL: UILabel!
+    @IBOutlet weak var titleTXT: UITextField!
     
     let regionBTN = UIButton(type: .custom)
     let cityBTN = UIButton(type: .custom)
@@ -76,7 +79,9 @@ class addrequestViewController: UIViewController {
     var selected_City_Name = ""
     var selected_organization_Name = ""
     var selected_Email_Name = ""
-    
+    var edit_request: editModel.edit?
+    var provider_id: Int?
+    var advertizing_id: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,8 +126,10 @@ class addrequestViewController: UIViewController {
         minstryLBL.text = Localization.ministry + "*"
         minstryDES.text = Localization.agency
         achieveLBL.text = Localization.achievement + "*"
+        titleLBL.text = Localization.title_of_service
         sendBTN.setTitle(Localization.send, for: .normal)
         textView.delegate = self
+        print("provider_id\(provider_id)    \(advertizing_id)")
         
     }
     
@@ -144,26 +151,26 @@ class addrequestViewController: UIViewController {
         cityBTN.setImage(UIImage(named: "downArrow"), for: .normal)
         cityBTN.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
         cityBTN.frame = CGRect(x: CGFloat(cityTEX.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-        cityBTN.addTarget(self, action: #selector(self.getRegions), for: .touchUpInside)
+        cityBTN.addTarget(self, action: #selector(self.get_city), for: .touchUpInside)
         
         cityTEX.leftView = cityBTN
         cityTEX.leftViewMode = .always
     }
-    func showrAddress(){
-        
-        addressBTN.setImage(UIImage(named: "downArrow"), for: .normal)
-        addressBTN.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
-        addressBTN.frame = CGRect(x: CGFloat(addressTEX.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-        addressBTN.addTarget(self, action: #selector(self.getRegions), for: .touchUpInside)
-        
-        addressTEX.leftView = addressBTN
-        addressTEX.leftViewMode = .always
-    }
+//    func showrAddress(){
+//
+//        addressBTN.setImage(UIImage(named: "downArrow"), for: .normal)
+//        addressBTN.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
+//        addressBTN.frame = CGRect(x: CGFloat(addressTEX.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+//        addressBTN.addTarget(self, action: #selector(self.getRegions), for: .touchUpInside)
+//
+//        addressTEX.leftView = addressBTN
+//        addressTEX.leftViewMode = .always
+//    }
     func showminstry(){
         minstryBTN.setImage(UIImage(named: "downArrow"), for: .normal)
         minstryBTN.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
         minstryBTN.frame = CGRect(x: CGFloat(minstryTxt.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-        minstryBTN.addTarget(self, action: #selector(self.getRegions), for: .touchUpInside)
+        minstryBTN.addTarget(self, action: #selector(self.get_organiziation), for: .touchUpInside)
         
         minstryTxt.leftView = minstryBTN
         minstryTxt.leftViewMode = .always
@@ -173,21 +180,16 @@ class addrequestViewController: UIViewController {
         achieveBTN.setImage(UIImage(named: "downArrow"), for: .normal)
         achieveBTN.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
         achieveBTN.frame = CGRect(x: CGFloat(achieveTXT.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-        achieveBTN.addTarget(self, action: #selector(self.getRegions), for: .touchUpInside)
+        achieveBTN.addTarget(self, action: #selector(self.get_provemnets_email), for: .touchUpInside)
         
         achieveTXT.leftView = achieveBTN
         achieveTXT.leftViewMode = .always
         
     }
     
-   @objc func getRegions()
-    {
-        print("hamaad")
-    }
-    
+   
     @IBAction func backBTN(_ sender: Any) {
 
-//        print("ssssss\(selectedOrgId)")
         dismiss()
 
     }
@@ -195,13 +197,7 @@ class addrequestViewController: UIViewController {
     @IBAction func sendBTN(_ sender: Any) {
      
         validateData()
-        let des = textView.text!
-        let address = addressTEX.text!
-        if des != nil{
-            print("des not nil")
-        }
-        self.interactor?.addreuest(title: "ssss", description: des, country_id: self.selected_Country_ID, city_id: self.seleted_City_ID, organization_id: selected_Org_Id, address: address, achievement_proof: self.selectedEmail)
-
+        
         
     }
     func getOrganization(){
@@ -215,7 +211,16 @@ class addrequestViewController: UIViewController {
     }
    
     
-        func validateData(){
+    func validateData(){
+            
+            guard let titleText = titleTXT.text, !titleText.isEmpty else{
+                ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.title_of_service, sender: self)
+                titleTXT.attributedPlaceholder =  NSAttributedString(string:Localization.requirdField, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 14)!])
+                
+                return
+            }
+            
+            
         guard let des = textView.text, !des.isEmpty || des.count < 360 else {
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.enter_DES, sender: self)
             return
@@ -251,11 +256,35 @@ class addrequestViewController: UIViewController {
 
             return
         }
+            
+       
+            let description = textView.text!
+//            let addres = addressTEX.text!
+            if let providerID = provider_id,let advertizingID = advertizing_id {
+                print("go special order")
+                self.interactor?.add_special_request(title: titleText, description: description, country_id: self.selected_Country_ID, city_id: self.seleted_City_ID, organization_id: selected_Org_Id, address: address, achievement_proof: self.selectedEmail, provider_id: providerID, ads_id: advertizingID)
+
+                
+            }
+            else{
+                print("go public oredr")
+                self.interactor?.addreuest(title: titleText, description: description, country_id: self.selected_Country_ID, city_id: self.seleted_City_ID, organization_id: selected_Org_Id, address: address, achievement_proof: self.selectedEmail)
+
+            }
+            
+            
+            
+            
     }
     
 }
 
 extension addrequestViewController: IaddrequestViewController {
+    func assign_reqesut(request: editModel.edit) {
+        self.edit_request = request
+    }
+    
+   
     func backToHome() {
         self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
     }
@@ -279,20 +308,20 @@ extension addrequestViewController: IaddrequestViewController {
 	// do someting...
 }
 
-extension addrequestViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "addRequestCell", for: indexPath) as! addRequestCell
-        
-        cell.title.text = "hamadsa"
-         return cell
-    }
-    
-    
-}
+//extension addrequestViewController: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 10
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "addRequestCell", for: indexPath) as! addRequestCell
+//
+//        cell.title.text = "hamadsa"
+//         return cell
+//    }
+//
+//
+//}
 
 
 extension addrequestViewController: UITextFieldDelegate {
@@ -340,7 +369,62 @@ extension addrequestViewController: UITextFieldDelegate {
     
     
 }
-
+extension addrequestViewController{
+    
+    
+    @objc func getRegions()
+    {
+        self.type = "countries"
+        if let country = countries{
+            self.getOrganization1(organizations: country, view: self)
+            
+        }
+    }
+    
+    @objc func get_city()
+    {
+        self.type = "cities"
+        
+        if let cities = cities1{
+            self.getOrganization1(organizations: cities, view: self)
+        
+        }
+    }
+    
+    @objc func get_organiziation()
+    {
+    self.type = "organization"
+      if let orgs = organizations{
+        self.getOrganization1(organizations: orgs, view: self)
+    }
+        
+    }
+    @objc func get_provemnets_email()
+    {
+      getProveEmails()
+        
+    }
+    
+    func getProveEmails()
+    {
+        let menu = RSSelectionMenu(selectionStyle: .single, dataSource: provementsEmails) { (cell, name, indexpath) in
+            cell.textLabel?.text = name
+        }
+        menu.setSelectedItems(items: selectedEmails) {[weak self] (item, index, isselected, selectedItem) in
+            self?.selectedEmails = selectedItem
+        }
+        menu.cellSelectionStyle = .checkbox
+        
+        menu.show(style: .alert(title: "ddddd", action: "ok", height: 300.0), from: self)
+        menu.onDismiss = { [weak self] items in
+            self?.selectedEmail = (self?.selectedEmails[0])!
+            self?.achieveTXT.text = (self?.selectedEmails[0])!
+            
+            
+        }
+    }
+    
+}
 extension addrequestViewController: UITextViewDelegate {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
@@ -375,9 +459,7 @@ extension addrequestViewController: UITextViewDelegate {
         menu.cellSelectionStyle = .checkbox
         
         menu.show(style: .alert(title: "ddddd", action: "ok", height: 300.0), from: view)
-        print("hamada")
-        
-        // on dismiss handler
+       
         menu.onDismiss = { [weak self] items in
             self?.selectedOrgName = items
             var indexes: [Int] = [Int]()
@@ -420,30 +502,6 @@ extension addrequestViewController: UITextViewDelegate {
             
         }
         
-        
-        
     }
     
-    
-    
-    func getProveEmails()
-    {
-        //        provementsEmails.removeAll()
-        
-        let menu = RSSelectionMenu(selectionStyle: .single, dataSource: provementsEmails) { (cell, name, indexpath) in
-            cell.textLabel?.text = name
-        }
-        menu.setSelectedItems(items: selectedEmails) {[weak self] (item, index, isselected, selectedItem) in
-            self?.selectedEmails = selectedItem
-        }
-        menu.cellSelectionStyle = .checkbox
-        
-        menu.show(style: .alert(title: "ddddd", action: "ok", height: 300.0), from: self)
-        menu.onDismiss = { [weak self] items in
-            self?.selectedEmail = (self?.selectedEmails[0])!
-            self?.achieveTXT.text = (self?.selectedEmails[0])!
-            
-            
-        }
-    }
 }

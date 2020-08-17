@@ -22,7 +22,7 @@ class commonQuestionsInteractor: IcommonQuestionsInteractor {
                 self.presenter?.assignQuestions(questions: response ?? Data())
             }
             else{
-                print("error\(error?.message)")
+                print("error\(String(describing: error?.message))")
             }
         })
     }

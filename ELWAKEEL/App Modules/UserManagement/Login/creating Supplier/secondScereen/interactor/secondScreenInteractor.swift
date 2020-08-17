@@ -48,6 +48,8 @@ class secondScreenInteractor: IsecondScreenInteractor {
                 userdefults.set(data?.user.name, forKey: "name")
                 userdefults.set(data?.user.id, forKey: "id")
                 userdefults.set(data?.user.phone, forKey: "phone")
+                userdefults.set(data?.user.image, forKey: "image")
+                
                 self.presenter?.moveToverification(type: data!.type)
             }
         })

@@ -18,7 +18,8 @@ class addrequestConfiguration {
         let presenter = addrequestPresenter(view: controller)
         let worker = addrequestWorker()
         let interactor = addrequestInteractor(presenter: presenter, worker: worker)
-        
+        controller.provider_id = parameters["provider_id"] as? Int
+        controller.advertizing_id = parameters["advertizing_id"] as? Int
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters

@@ -33,8 +33,8 @@ enum GeneralRouterRoute: IRouter {
     case newPassword(phone: String)
     case Home
     case sideMenu
-    case addrequest
-    case requestDetails
+    case addrequest(params: [String: Any]?)
+    case requestDetails(id: Int)
     case editRequest(id: Int)
     case aboutUs
     case HomeProvider
@@ -45,7 +45,14 @@ enum GeneralRouterRoute: IRouter {
     case commonQuestios
     case terms
     case wallet
-    
+    case provider_notifications
+    case client_notifications
+    case edit(id: Int)
+    case offer(request_id: Int)
+    case payment (params: [String: Any])
+    case accecpt_provider(request_id: Int)
+    case provider_log
+    case request_details_provider
     
     
 }
@@ -79,10 +86,10 @@ extension GeneralRouterRoute {
         case .sideMenu:
             return sideMenuConfiguration.setup()
             
-        case .addrequest:
-            return addrequestConfiguration.setup()
-        case .requestDetails:
-            return requestDetailsConfiguration.setup()
+        case .addrequest(let params):
+            return addrequestConfiguration.setup(parameters: params ?? ["": ""])
+        case .requestDetails(let id):
+            return requestDetailsConfiguration.setup(id: id)
         case .editRequest(let id):
             return editRequestConfiguration.setup(id: id)
         
@@ -104,6 +111,22 @@ extension GeneralRouterRoute {
             return termsConfiguration.setup()
         case .wallet:
             return walletConfiguration.setup()
+        case .provider_notifications:
+            return Provider_NotificationConfiguration.setup()
+        case .client_notifications:
+            return Clint_NotificationConfiguration.setup()
+        case .edit(let id):
+            return editConfiguration.setup(id: id)
+        case .offer(let request_id):
+            return Accept_RequestConfiguration.setup(request_id: request_id)
+        case .payment (let params):
+            return paymentConfiguration.setup(parameters: params)
+        case .accecpt_provider(let request_id):
+            return accept_reuestConfiguration.setup(request_id: request_id)
+        case .provider_log:
+            return provider_logConfiguration.setup()
+        case .request_details_provider:
+            return request_detailsConfiguration.setup()
         }
         
     }

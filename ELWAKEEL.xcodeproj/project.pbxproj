@@ -90,6 +90,48 @@
 		070ABABD24B60F090001CF5B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070ABABC24B60F090001CF5B /* NetworkService.swift */; };
 		070ABABF24B61B9A0001CF5B /* errorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070ABABE24B61B9A0001CF5B /* errorAPI.swift */; };
 		070ABAC124B6289A0001CF5B /* loginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070ABAC024B6289A0001CF5B /* loginEndpoint.swift */; };
+		070AD85924E24CBE00926312 /* Clint_NotificationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD85124E24CBE00926312 /* Clint_NotificationConfiguration.swift */; };
+		070AD85A24E24CBE00926312 /* Clint_NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD85224E24CBE00926312 /* Clint_NotificationPresenter.swift */; };
+		070AD85B24E24CBE00926312 /* Clint_NotificationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD85324E24CBE00926312 /* Clint_NotificationWorker.swift */; };
+		070AD85C24E24CBE00926312 /* Clint_NotificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD85424E24CBE00926312 /* Clint_NotificationRouter.swift */; };
+		070AD85D24E24CBE00926312 /* Clint_NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD85524E24CBE00926312 /* Clint_NotificationViewController.swift */; };
+		070AD85E24E24CBE00926312 /* Clint_NotificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD85624E24CBE00926312 /* Clint_NotificationInteractor.swift */; };
+		070AD85F24E24CBE00926312 /* Clint_NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD85724E24CBE00926312 /* Clint_NotificationModel.swift */; };
+		070AD86024E24CBE00926312 /* Clint_NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070AD85824E24CBE00926312 /* Clint_NotificationViewController.xib */; };
+		070AD86924E24CDE00926312 /* Provider_NotificationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD86124E24CDE00926312 /* Provider_NotificationConfiguration.swift */; };
+		070AD86A24E24CDE00926312 /* Provider_NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD86224E24CDE00926312 /* Provider_NotificationPresenter.swift */; };
+		070AD86B24E24CDE00926312 /* Provider_NotificationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD86324E24CDE00926312 /* Provider_NotificationWorker.swift */; };
+		070AD86C24E24CDE00926312 /* Provider_NotificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD86424E24CDE00926312 /* Provider_NotificationRouter.swift */; };
+		070AD86D24E24CDE00926312 /* Provider_NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD86524E24CDE00926312 /* Provider_NotificationViewController.swift */; };
+		070AD86E24E24CDE00926312 /* Provider_NotificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD86624E24CDE00926312 /* Provider_NotificationInteractor.swift */; };
+		070AD86F24E24CDE00926312 /* Provider_NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD86724E24CDE00926312 /* Provider_NotificationModel.swift */; };
+		070AD87024E24CDE00926312 /* Provider_NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070AD86824E24CDE00926312 /* Provider_NotificationViewController.xib */; };
+		070AD88024E24DE500926312 /* Client_endPointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD87F24E24DE500926312 /* Client_endPointEndpoint.swift */; };
+		070AD88524E24FB400926312 /* provider_Notifications_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD88324E24FB400926312 /* provider_Notifications_Cell.swift */; };
+		070AD88624E24FB400926312 /* provider_Notifications_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070AD88424E24FB400926312 /* provider_Notifications_Cell.xib */; };
+		070AD88924E2795C00926312 /* client_notifications_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD88724E2795C00926312 /* client_notifications_Cell.swift */; };
+		070AD88A24E2795C00926312 /* client_notifications_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070AD88824E2795C00926312 /* client_notifications_Cell.xib */; };
+		070AD88C24E292BE00926312 /* Provider_endPointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070AD88B24E292BE00926312 /* Provider_endPointEndpoint.swift */; };
+		070E375924E5484700FA7C48 /* accept_reuestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E375124E5484700FA7C48 /* accept_reuestConfiguration.swift */; };
+		070E375A24E5484700FA7C48 /* accept_reuestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E375224E5484700FA7C48 /* accept_reuestPresenter.swift */; };
+		070E375B24E5484700FA7C48 /* accept_reuestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E375324E5484700FA7C48 /* accept_reuestWorker.swift */; };
+		070E375C24E5484700FA7C48 /* accept_reuestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E375424E5484700FA7C48 /* accept_reuestRouter.swift */; };
+		070E375D24E5484700FA7C48 /* accept_reuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E375524E5484700FA7C48 /* accept_reuestViewController.swift */; };
+		070E375E24E5484700FA7C48 /* accept_reuestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E375624E5484700FA7C48 /* accept_reuestInteractor.swift */; };
+		070E375F24E5484700FA7C48 /* accept_reuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E375724E5484700FA7C48 /* accept_reuestModel.swift */; };
+		070E376024E5484700FA7C48 /* accept_reuestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E375824E5484700FA7C48 /* accept_reuestViewController.xib */; };
+		070E377124E563EF00FA7C48 /* provider_logConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E376924E563EF00FA7C48 /* provider_logConfiguration.swift */; };
+		070E377224E563EF00FA7C48 /* provider_logPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E376A24E563EF00FA7C48 /* provider_logPresenter.swift */; };
+		070E377324E563EF00FA7C48 /* provider_logWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E376B24E563EF00FA7C48 /* provider_logWorker.swift */; };
+		070E377424E563EF00FA7C48 /* provider_logRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E376C24E563EF00FA7C48 /* provider_logRouter.swift */; };
+		070E377524E563EF00FA7C48 /* provider_logViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E376D24E563EF00FA7C48 /* provider_logViewController.swift */; };
+		070E377624E563EF00FA7C48 /* provider_logInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E376E24E563EF00FA7C48 /* provider_logInteractor.swift */; };
+		070E377724E563EF00FA7C48 /* provider_logModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E376F24E563EF00FA7C48 /* provider_logModel.swift */; };
+		070E377824E563EF00FA7C48 /* provider_logViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E377024E563EF00FA7C48 /* provider_logViewController.xib */; };
+		070E378424E5662A00FA7C48 /* provider_log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E378224E5662A00FA7C48 /* provider_log.swift */; };
+		070E378524E5662A00FA7C48 /* provider_log.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E378324E5662A00FA7C48 /* provider_log.xib */; };
+		070E378724E56A4D00FA7C48 /* provider_logEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E378624E56A4D00FA7C48 /* provider_logEndpoint.swift */; };
+		070E378924E56E4900FA7C48 /* walletEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E378824E56E4900FA7C48 /* walletEndpoint.swift */; };
 		0710149424C3B28E00510998 /* sideMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710148C24C3B28E00510998 /* sideMenuConfiguration.swift */; };
 		0710149524C3B28E00510998 /* sideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710148D24C3B28E00510998 /* sideMenuPresenter.swift */; };
 		0710149624C3B28E00510998 /* sideMenuWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710148E24C3B28E00510998 /* sideMenuWorker.swift */; };
@@ -171,7 +213,29 @@
 		072C2AD524AFD1A40050F83F /* LOGINRequesterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072C2ACD24AFD1A40050F83F /* LOGINRequesterInteractor.swift */; };
 		072C2AD624AFD1A40050F83F /* LOGINRequesterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072C2ACE24AFD1A40050F83F /* LOGINRequesterModel.swift */; };
 		072C2AEA24AFDAAA0050F83F /* designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072C2AE924AFDAAA0050F83F /* designable.swift */; };
+		073EB3C024E5F3DA00A2559D /* create_offerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3BF24E5F3DA00A2559D /* create_offerEndpoint.swift */; };
+		073EB3CA24E6028A00A2559D /* request_detailsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3C224E6028A00A2559D /* request_detailsConfiguration.swift */; };
+		073EB3CB24E6028A00A2559D /* request_detailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3C324E6028A00A2559D /* request_detailsPresenter.swift */; };
+		073EB3CC24E6028A00A2559D /* request_detailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3C424E6028A00A2559D /* request_detailsWorker.swift */; };
+		073EB3CD24E6028A00A2559D /* request_detailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3C524E6028A00A2559D /* request_detailsRouter.swift */; };
+		073EB3CE24E6028A00A2559D /* request_detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3C624E6028A00A2559D /* request_detailsViewController.swift */; };
+		073EB3CF24E6028A00A2559D /* request_detailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3C724E6028A00A2559D /* request_detailsInteractor.swift */; };
+		073EB3D024E6028A00A2559D /* request_detailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3C824E6028A00A2559D /* request_detailsModel.swift */; };
+		073EB3D124E6028A00A2559D /* request_detailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073EB3C924E6028A00A2559D /* request_detailsViewController.xib */; };
+		073EB3DA24E6031C00A2559D /* request_details_providerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3D924E6031C00A2559D /* request_details_providerEndpoint.swift */; };
+		073EB3DC24E646A200A2559D /* requester_detailsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073EB3DB24E646A200A2559D /* requester_detailsEndpoint.swift */; };
 		07447AF524C6E82A00A1B112 /* sideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07447AF424C6E82A00A1B112 /* sideMenu.swift */; };
+		0766A92324EA397D00B08807 /* advertizingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766A92124EA397D00B08807 /* advertizingCell.swift */; };
+		0766A92424EA397D00B08807 /* advertizingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0766A92224EA397D00B08807 /* advertizingCell.xib */; };
+		076CA48524E3E726007E9D12 /* paymentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CA47D24E3E725007E9D12 /* paymentConfiguration.swift */; };
+		076CA48624E3E726007E9D12 /* paymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CA47E24E3E725007E9D12 /* paymentPresenter.swift */; };
+		076CA48724E3E726007E9D12 /* paymentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CA47F24E3E725007E9D12 /* paymentWorker.swift */; };
+		076CA48824E3E726007E9D12 /* paymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CA48024E3E725007E9D12 /* paymentRouter.swift */; };
+		076CA48924E3E726007E9D12 /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CA48124E3E725007E9D12 /* paymentViewController.swift */; };
+		076CA48A24E3E726007E9D12 /* paymentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CA48224E3E725007E9D12 /* paymentInteractor.swift */; };
+		076CA48B24E3E726007E9D12 /* paymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CA48324E3E725007E9D12 /* paymentModel.swift */; };
+		076CA48C24E3E726007E9D12 /* paymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076CA48424E3E725007E9D12 /* paymentViewController.xib */; };
+		076CA49524E3E79F007E9D12 /* paymentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CA49424E3E79E007E9D12 /* paymentEndpoint.swift */; };
 		077B112724AFE710000C811B /* VerificationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B111F24AFE710000C811B /* VerificationConfiguration.swift */; };
 		077B112824AFE710000C811B /* VerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B112024AFE710000C811B /* VerificationPresenter.swift */; };
 		077B112924AFE710000C811B /* VerificationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B112124AFE710000C811B /* VerificationWorker.swift */; };
@@ -202,6 +266,26 @@
 		07AEA23E24B3CE47000C6898 /* secondScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEA23624B3CE47000C6898 /* secondScreenInteractor.swift */; };
 		07AEA23F24B3CE47000C6898 /* secondScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEA23724B3CE47000C6898 /* secondScreenModel.swift */; };
 		07AEA24124B3D91F000C6898 /* secondScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AEA24324B3D91F000C6898 /* secondScreenViewController.xib */; };
+		07B0905424E3374500170C7B /* editConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0904C24E3374500170C7B /* editConfiguration.swift */; };
+		07B0905524E3374500170C7B /* editPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0904D24E3374500170C7B /* editPresenter.swift */; };
+		07B0905624E3374500170C7B /* editWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0904E24E3374500170C7B /* editWorker.swift */; };
+		07B0905724E3374500170C7B /* editRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0904F24E3374500170C7B /* editRouter.swift */; };
+		07B0905824E3374500170C7B /* editViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0905024E3374500170C7B /* editViewController.swift */; };
+		07B0905924E3374500170C7B /* editInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0905124E3374500170C7B /* editInteractor.swift */; };
+		07B0905A24E3374500170C7B /* editModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0905224E3374500170C7B /* editModel.swift */; };
+		07B0905B24E3374500170C7B /* editViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B0905324E3374500170C7B /* editViewController.xib */; };
+		07B0906424E3499F00170C7B /* edit_EndPointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0906324E3499F00170C7B /* edit_EndPointEndpoint.swift */; };
+		07B0906E24E3A3F300170C7B /* Accept_RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0906624E3A3F300170C7B /* Accept_RequestConfiguration.swift */; };
+		07B0906F24E3A3F300170C7B /* Accept_RequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0906724E3A3F300170C7B /* Accept_RequestPresenter.swift */; };
+		07B0907024E3A3F300170C7B /* Accept_RequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0906824E3A3F300170C7B /* Accept_RequestWorker.swift */; };
+		07B0907124E3A3F300170C7B /* Accept_RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0906924E3A3F300170C7B /* Accept_RequestRouter.swift */; };
+		07B0907224E3A3F300170C7B /* Accept_RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0906A24E3A3F300170C7B /* Accept_RequestViewController.swift */; };
+		07B0907324E3A3F300170C7B /* Accept_RequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0906B24E3A3F300170C7B /* Accept_RequestInteractor.swift */; };
+		07B0907424E3A3F300170C7B /* Accept_RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0906C24E3A3F300170C7B /* Accept_RequestModel.swift */; };
+		07B0907524E3A3F300170C7B /* Accept_RequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B0906D24E3A3F300170C7B /* Accept_RequestViewController.xib */; };
+		07B0907E24E3A47B00170C7B /* Accept_RequestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0907D24E3A47B00170C7B /* Accept_RequestEndpoint.swift */; };
+		07B0908124E3AD2700170C7B /* accept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0907F24E3AD2700170C7B /* accept.swift */; };
+		07B0908224E3AD2700170C7B /* accept.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B0908024E3AD2700170C7B /* accept.xib */; };
 		07BDC76C24B4F3A700283900 /* registraionTypeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BDC76424B4F3A700283900 /* registraionTypeConfiguration.swift */; };
 		07BDC76D24B4F3A700283900 /* registraionTypePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BDC76524B4F3A700283900 /* registraionTypePresenter.swift */; };
 		07BDC76E24B4F3A700283900 /* registraionTypeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BDC76624B4F3A700283900 /* registraionTypeWorker.swift */; };
@@ -275,6 +359,7 @@
 		07BFD2C424DFF6FC00810C78 /* recordRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFD2C224DFF6FC00810C78 /* recordRequests.swift */; };
 		07BFD2C524DFF6FC00810C78 /* recordRequests.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BFD2C324DFF6FC00810C78 /* recordRequests.xib */; };
 		07BFD2C724DFFBD000810C78 /* requestRecordEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFD2C624DFFBD000810C78 /* requestRecordEndpoint.swift */; };
+		07C64D0524E2A2B900EF010E /* Notification_EndpointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C64D0424E2A2B900EF010E /* Notification_EndpointEndpoint.swift */; };
 		07F29A8F24B2ABE30061126C /* SupplierFirstScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F29A9124B2ABE30061126C /* SupplierFirstScreenViewController.xib */; };
 		8EAD355EB0F8BF1C81AB3C2C /* Pods_ELWAKEEL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEC8D81973FC34E96A362CD /* Pods_ELWAKEEL.framework */; };
 /* End PBXBuildFile section */
@@ -363,6 +448,48 @@
 		070ABABC24B60F090001CF5B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		070ABABE24B61B9A0001CF5B /* errorAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorAPI.swift; sourceTree = "<group>"; };
 		070ABAC024B6289A0001CF5B /* loginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginEndpoint.swift; sourceTree = "<group>"; };
+		070AD85124E24CBE00926312 /* Clint_NotificationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clint_NotificationConfiguration.swift; sourceTree = "<group>"; };
+		070AD85224E24CBE00926312 /* Clint_NotificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clint_NotificationPresenter.swift; sourceTree = "<group>"; };
+		070AD85324E24CBE00926312 /* Clint_NotificationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clint_NotificationWorker.swift; sourceTree = "<group>"; };
+		070AD85424E24CBE00926312 /* Clint_NotificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clint_NotificationRouter.swift; sourceTree = "<group>"; };
+		070AD85524E24CBE00926312 /* Clint_NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clint_NotificationViewController.swift; sourceTree = "<group>"; };
+		070AD85624E24CBE00926312 /* Clint_NotificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clint_NotificationInteractor.swift; sourceTree = "<group>"; };
+		070AD85724E24CBE00926312 /* Clint_NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clint_NotificationModel.swift; sourceTree = "<group>"; };
+		070AD85824E24CBE00926312 /* Clint_NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Clint_NotificationViewController.xib; sourceTree = "<group>"; };
+		070AD86124E24CDE00926312 /* Provider_NotificationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider_NotificationConfiguration.swift; sourceTree = "<group>"; };
+		070AD86224E24CDE00926312 /* Provider_NotificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider_NotificationPresenter.swift; sourceTree = "<group>"; };
+		070AD86324E24CDE00926312 /* Provider_NotificationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider_NotificationWorker.swift; sourceTree = "<group>"; };
+		070AD86424E24CDE00926312 /* Provider_NotificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider_NotificationRouter.swift; sourceTree = "<group>"; };
+		070AD86524E24CDE00926312 /* Provider_NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider_NotificationViewController.swift; sourceTree = "<group>"; };
+		070AD86624E24CDE00926312 /* Provider_NotificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider_NotificationInteractor.swift; sourceTree = "<group>"; };
+		070AD86724E24CDE00926312 /* Provider_NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider_NotificationModel.swift; sourceTree = "<group>"; };
+		070AD86824E24CDE00926312 /* Provider_NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Provider_NotificationViewController.xib; sourceTree = "<group>"; };
+		070AD87F24E24DE500926312 /* Client_endPointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client_endPointEndpoint.swift; sourceTree = "<group>"; };
+		070AD88324E24FB400926312 /* provider_Notifications_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_Notifications_Cell.swift; sourceTree = "<group>"; };
+		070AD88424E24FB400926312 /* provider_Notifications_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = provider_Notifications_Cell.xib; sourceTree = "<group>"; };
+		070AD88724E2795C00926312 /* client_notifications_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = client_notifications_Cell.swift; sourceTree = "<group>"; };
+		070AD88824E2795C00926312 /* client_notifications_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = client_notifications_Cell.xib; sourceTree = "<group>"; };
+		070AD88B24E292BE00926312 /* Provider_endPointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider_endPointEndpoint.swift; sourceTree = "<group>"; };
+		070E375124E5484700FA7C48 /* accept_reuestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accept_reuestConfiguration.swift; sourceTree = "<group>"; };
+		070E375224E5484700FA7C48 /* accept_reuestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accept_reuestPresenter.swift; sourceTree = "<group>"; };
+		070E375324E5484700FA7C48 /* accept_reuestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accept_reuestWorker.swift; sourceTree = "<group>"; };
+		070E375424E5484700FA7C48 /* accept_reuestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accept_reuestRouter.swift; sourceTree = "<group>"; };
+		070E375524E5484700FA7C48 /* accept_reuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accept_reuestViewController.swift; sourceTree = "<group>"; };
+		070E375624E5484700FA7C48 /* accept_reuestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accept_reuestInteractor.swift; sourceTree = "<group>"; };
+		070E375724E5484700FA7C48 /* accept_reuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accept_reuestModel.swift; sourceTree = "<group>"; };
+		070E375824E5484700FA7C48 /* accept_reuestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = accept_reuestViewController.xib; sourceTree = "<group>"; };
+		070E376924E563EF00FA7C48 /* provider_logConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_logConfiguration.swift; sourceTree = "<group>"; };
+		070E376A24E563EF00FA7C48 /* provider_logPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_logPresenter.swift; sourceTree = "<group>"; };
+		070E376B24E563EF00FA7C48 /* provider_logWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_logWorker.swift; sourceTree = "<group>"; };
+		070E376C24E563EF00FA7C48 /* provider_logRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_logRouter.swift; sourceTree = "<group>"; };
+		070E376D24E563EF00FA7C48 /* provider_logViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_logViewController.swift; sourceTree = "<group>"; };
+		070E376E24E563EF00FA7C48 /* provider_logInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_logInteractor.swift; sourceTree = "<group>"; };
+		070E376F24E563EF00FA7C48 /* provider_logModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_logModel.swift; sourceTree = "<group>"; };
+		070E377024E563EF00FA7C48 /* provider_logViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = provider_logViewController.xib; sourceTree = "<group>"; };
+		070E378224E5662A00FA7C48 /* provider_log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_log.swift; sourceTree = "<group>"; };
+		070E378324E5662A00FA7C48 /* provider_log.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = provider_log.xib; sourceTree = "<group>"; };
+		070E378624E56A4D00FA7C48 /* provider_logEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = provider_logEndpoint.swift; sourceTree = "<group>"; };
+		070E378824E56E4900FA7C48 /* walletEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletEndpoint.swift; sourceTree = "<group>"; };
 		0710148C24C3B28E00510998 /* sideMenuConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuConfiguration.swift; sourceTree = "<group>"; };
 		0710148D24C3B28E00510998 /* sideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuPresenter.swift; sourceTree = "<group>"; };
 		0710148E24C3B28E00510998 /* sideMenuWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuWorker.swift; sourceTree = "<group>"; };
@@ -456,9 +583,31 @@
 		072C2ACD24AFD1A40050F83F /* LOGINRequesterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOGINRequesterInteractor.swift; sourceTree = "<group>"; };
 		072C2ACE24AFD1A40050F83F /* LOGINRequesterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOGINRequesterModel.swift; sourceTree = "<group>"; };
 		072C2AE924AFDAAA0050F83F /* designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designable.swift; sourceTree = "<group>"; };
+		073EB3BF24E5F3DA00A2559D /* create_offerEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = create_offerEndpoint.swift; sourceTree = "<group>"; };
+		073EB3C224E6028A00A2559D /* request_detailsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request_detailsConfiguration.swift; sourceTree = "<group>"; };
+		073EB3C324E6028A00A2559D /* request_detailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request_detailsPresenter.swift; sourceTree = "<group>"; };
+		073EB3C424E6028A00A2559D /* request_detailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request_detailsWorker.swift; sourceTree = "<group>"; };
+		073EB3C524E6028A00A2559D /* request_detailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request_detailsRouter.swift; sourceTree = "<group>"; };
+		073EB3C624E6028A00A2559D /* request_detailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request_detailsViewController.swift; sourceTree = "<group>"; };
+		073EB3C724E6028A00A2559D /* request_detailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request_detailsInteractor.swift; sourceTree = "<group>"; };
+		073EB3C824E6028A00A2559D /* request_detailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request_detailsModel.swift; sourceTree = "<group>"; };
+		073EB3C924E6028A00A2559D /* request_detailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = request_detailsViewController.xib; sourceTree = "<group>"; };
+		073EB3D924E6031C00A2559D /* request_details_providerEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request_details_providerEndpoint.swift; sourceTree = "<group>"; };
+		073EB3DB24E646A200A2559D /* requester_detailsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requester_detailsEndpoint.swift; sourceTree = "<group>"; };
 		07447AF424C6E82A00A1B112 /* sideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenu.swift; sourceTree = "<group>"; };
+		0766A92124EA397D00B08807 /* advertizingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = advertizingCell.swift; sourceTree = "<group>"; };
+		0766A92224EA397D00B08807 /* advertizingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = advertizingCell.xib; sourceTree = "<group>"; };
 		0767509924B297D700CAD7F4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0767509A24B297D700CAD7F4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		076CA47D24E3E725007E9D12 /* paymentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentConfiguration.swift; sourceTree = "<group>"; };
+		076CA47E24E3E725007E9D12 /* paymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentPresenter.swift; sourceTree = "<group>"; };
+		076CA47F24E3E725007E9D12 /* paymentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentWorker.swift; sourceTree = "<group>"; };
+		076CA48024E3E725007E9D12 /* paymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentRouter.swift; sourceTree = "<group>"; };
+		076CA48124E3E725007E9D12 /* paymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentViewController.swift; sourceTree = "<group>"; };
+		076CA48224E3E725007E9D12 /* paymentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentInteractor.swift; sourceTree = "<group>"; };
+		076CA48324E3E725007E9D12 /* paymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentModel.swift; sourceTree = "<group>"; };
+		076CA48424E3E725007E9D12 /* paymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = paymentViewController.xib; sourceTree = "<group>"; };
+		076CA49424E3E79E007E9D12 /* paymentEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentEndpoint.swift; sourceTree = "<group>"; };
 		077B111F24AFE710000C811B /* VerificationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationConfiguration.swift; sourceTree = "<group>"; };
 		077B112024AFE710000C811B /* VerificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationPresenter.swift; sourceTree = "<group>"; };
 		077B112124AFE710000C811B /* VerificationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationWorker.swift; sourceTree = "<group>"; };
@@ -493,6 +642,26 @@
 		07AEA24224B3D91F000C6898 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/secondScreenViewController.xib; sourceTree = "<group>"; };
 		07AEA24524B3D92E000C6898 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/secondScreenViewController.strings; sourceTree = "<group>"; };
 		07AEA24724B3D937000C6898 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/secondScreenViewController.strings; sourceTree = "<group>"; };
+		07B0904C24E3374500170C7B /* editConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editConfiguration.swift; sourceTree = "<group>"; };
+		07B0904D24E3374500170C7B /* editPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editPresenter.swift; sourceTree = "<group>"; };
+		07B0904E24E3374500170C7B /* editWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editWorker.swift; sourceTree = "<group>"; };
+		07B0904F24E3374500170C7B /* editRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRouter.swift; sourceTree = "<group>"; };
+		07B0905024E3374500170C7B /* editViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
+		07B0905124E3374500170C7B /* editInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editInteractor.swift; sourceTree = "<group>"; };
+		07B0905224E3374500170C7B /* editModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editModel.swift; sourceTree = "<group>"; };
+		07B0905324E3374500170C7B /* editViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = editViewController.xib; sourceTree = "<group>"; };
+		07B0906324E3499F00170C7B /* edit_EndPointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edit_EndPointEndpoint.swift; sourceTree = "<group>"; };
+		07B0906624E3A3F300170C7B /* Accept_RequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept_RequestConfiguration.swift; sourceTree = "<group>"; };
+		07B0906724E3A3F300170C7B /* Accept_RequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept_RequestPresenter.swift; sourceTree = "<group>"; };
+		07B0906824E3A3F300170C7B /* Accept_RequestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept_RequestWorker.swift; sourceTree = "<group>"; };
+		07B0906924E3A3F300170C7B /* Accept_RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept_RequestRouter.swift; sourceTree = "<group>"; };
+		07B0906A24E3A3F300170C7B /* Accept_RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept_RequestViewController.swift; sourceTree = "<group>"; };
+		07B0906B24E3A3F300170C7B /* Accept_RequestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept_RequestInteractor.swift; sourceTree = "<group>"; };
+		07B0906C24E3A3F300170C7B /* Accept_RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept_RequestModel.swift; sourceTree = "<group>"; };
+		07B0906D24E3A3F300170C7B /* Accept_RequestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Accept_RequestViewController.xib; sourceTree = "<group>"; };
+		07B0907D24E3A47B00170C7B /* Accept_RequestEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accept_RequestEndpoint.swift; sourceTree = "<group>"; };
+		07B0907F24E3AD2700170C7B /* accept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accept.swift; sourceTree = "<group>"; };
+		07B0908024E3AD2700170C7B /* accept.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = accept.xib; sourceTree = "<group>"; };
 		07BDC76424B4F3A700283900 /* registraionTypeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registraionTypeConfiguration.swift; sourceTree = "<group>"; };
 		07BDC76524B4F3A700283900 /* registraionTypePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registraionTypePresenter.swift; sourceTree = "<group>"; };
 		07BDC76624B4F3A700283900 /* registraionTypeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registraionTypeWorker.swift; sourceTree = "<group>"; };
@@ -572,6 +741,7 @@
 		07BFD2C224DFF6FC00810C78 /* recordRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordRequests.swift; sourceTree = "<group>"; };
 		07BFD2C324DFF6FC00810C78 /* recordRequests.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = recordRequests.xib; sourceTree = "<group>"; };
 		07BFD2C624DFFBD000810C78 /* requestRecordEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestRecordEndpoint.swift; sourceTree = "<group>"; };
+		07C64D0424E2A2B900EF010E /* Notification_EndpointEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification_EndpointEndpoint.swift; sourceTree = "<group>"; };
 		07F29A9024B2ABE30061126C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SupplierFirstScreenViewController.xib; sourceTree = "<group>"; };
 		07F29A9324B2ABE80061126C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SupplierFirstScreenViewController.strings; sourceTree = "<group>"; };
 		07F29A9524B2ABEF0061126C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SupplierFirstScreenViewController.strings; sourceTree = "<group>"; };
@@ -874,6 +1044,7 @@
 		0700119C24E177B400C3ECAA /* shareApp */ = {
 			isa = PBXGroup;
 			children = (
+				07CE278C24E9084D0062B4FF /* presenter */,
 				0700118C24E177AD00C3ECAA /* shareAPPConfiguration.swift */,
 				0700118D24E177AD00C3ECAA /* shareAPPPresenter.swift */,
 				0700118E24E177AD00C3ECAA /* shareAPPWorker.swift */,
@@ -924,6 +1095,7 @@
 			isa = PBXGroup;
 			children = (
 				070011AD24E183B700C3ECAA /* walletModel.swift */,
+				070E378824E56E4900FA7C48 /* walletEndpoint.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1015,6 +1187,8 @@
 				071D235C24C543BF001A89C8 /* cell.xib */,
 				0783902624C55AAD00250164 /* requestCell.swift */,
 				0783902724C55AAD00250164 /* requestCell.xib */,
+				0766A92124EA397D00B08807 /* advertizingCell.swift */,
+				0766A92224EA397D00B08807 /* advertizingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1136,6 +1310,154 @@
 			isa = PBXGroup;
 			children = (
 				07AEA23324B3CE47000C6898 /* secondScreenWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		070AD84F24E24C5E00926312 /* clint Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				070AD87724E24D2B00926312 /* Views */,
+				070AD87624E24D2100926312 /* worker */,
+				070AD87524E24D1200926312 /* interactor */,
+				070AD87424E24D0900926312 /* Configurations */,
+				070AD87324E24D0300926312 /* Model */,
+				070AD87224E24CFC00926312 /* Router */,
+				070AD87124E24CF400926312 /* presneter */,
+			);
+			path = "clint Notifications";
+			sourceTree = "<group>";
+		};
+		070AD85024E24C8900926312 /* provider Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				070AD87E24E24D7F00926312 /* Worker */,
+				070AD87D24E24D7700926312 /* Views */,
+				070AD87C24E24D6B00926312 /* Router */,
+				070AD87B24E24D6200926312 /* Configuration */,
+				070AD87A24E24D5C00926312 /* Model */,
+				070AD87924E24D5400926312 /* interactor */,
+				070AD87824E24D4700926312 /* presenter */,
+			);
+			path = "provider Notifications";
+			sourceTree = "<group>";
+		};
+		070AD87124E24CF400926312 /* presneter */ = {
+			isa = PBXGroup;
+			children = (
+				070AD85224E24CBE00926312 /* Clint_NotificationPresenter.swift */,
+			);
+			path = presneter;
+			sourceTree = "<group>";
+		};
+		070AD87224E24CFC00926312 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				070AD85424E24CBE00926312 /* Clint_NotificationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		070AD87324E24D0300926312 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				070AD85724E24CBE00926312 /* Clint_NotificationModel.swift */,
+				070AD87F24E24DE500926312 /* Client_endPointEndpoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		070AD87424E24D0900926312 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				070AD85124E24CBE00926312 /* Clint_NotificationConfiguration.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		070AD87524E24D1200926312 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				070AD85624E24CBE00926312 /* Clint_NotificationInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		070AD87624E24D2100926312 /* worker */ = {
+			isa = PBXGroup;
+			children = (
+				070AD85324E24CBE00926312 /* Clint_NotificationWorker.swift */,
+			);
+			path = worker;
+			sourceTree = "<group>";
+		};
+		070AD87724E24D2B00926312 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				070AD85524E24CBE00926312 /* Clint_NotificationViewController.swift */,
+				070AD85824E24CBE00926312 /* Clint_NotificationViewController.xib */,
+				070AD88724E2795C00926312 /* client_notifications_Cell.swift */,
+				070AD88824E2795C00926312 /* client_notifications_Cell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		070AD87824E24D4700926312 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				070AD86224E24CDE00926312 /* Provider_NotificationPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		070AD87924E24D5400926312 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				070AD86624E24CDE00926312 /* Provider_NotificationInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		070AD87A24E24D5C00926312 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				070AD86724E24CDE00926312 /* Provider_NotificationModel.swift */,
+				07C64D0424E2A2B900EF010E /* Notification_EndpointEndpoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		070AD87B24E24D6200926312 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				070AD86124E24CDE00926312 /* Provider_NotificationConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		070AD87C24E24D6B00926312 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				070AD86424E24CDE00926312 /* Provider_NotificationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		070AD87D24E24D7700926312 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				070AD86524E24CDE00926312 /* Provider_NotificationViewController.swift */,
+				070AD86824E24CDE00926312 /* Provider_NotificationViewController.xib */,
+				070AD88324E24FB400926312 /* provider_Notifications_Cell.swift */,
+				070AD88424E24FB400926312 /* provider_Notifications_Cell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		070AD87E24E24D7F00926312 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				070AD86324E24CDE00926312 /* Provider_NotificationWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -1433,6 +1755,153 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		070E375024E5480B00FA7C48 /* provider_accecpt_request */ = {
+			isa = PBXGroup;
+			children = (
+				070E376724E5488E00FA7C48 /* Router */,
+				070E376624E5487400FA7C48 /* Worker */,
+				070E376524E5486900FA7C48 /* configuration */,
+				070E376424E5485F00FA7C48 /* intersctor */,
+				070E376324E5485900FA7C48 /* Views */,
+				070E376224E5485300FA7C48 /* Model */,
+				070E376124E5484C00FA7C48 /* presenter */,
+			);
+			path = provider_accecpt_request;
+			sourceTree = "<group>";
+		};
+		070E376124E5484C00FA7C48 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				070E375224E5484700FA7C48 /* accept_reuestPresenter.swift */,
+			);
+			name = presenter;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		070E376224E5485300FA7C48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				070E375724E5484700FA7C48 /* accept_reuestModel.swift */,
+				073EB3BF24E5F3DA00A2559D /* create_offerEndpoint.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		070E376324E5485900FA7C48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				070E375524E5484700FA7C48 /* accept_reuestViewController.swift */,
+				070E375824E5484700FA7C48 /* accept_reuestViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		070E376424E5485F00FA7C48 /* intersctor */ = {
+			isa = PBXGroup;
+			children = (
+				070E375624E5484700FA7C48 /* accept_reuestInteractor.swift */,
+			);
+			name = intersctor;
+			sourceTree = "<group>";
+		};
+		070E376524E5486900FA7C48 /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				070E375124E5484700FA7C48 /* accept_reuestConfiguration.swift */,
+			);
+			name = configuration;
+			sourceTree = "<group>";
+		};
+		070E376624E5487400FA7C48 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				070E375324E5484700FA7C48 /* accept_reuestWorker.swift */,
+			);
+			name = Worker;
+			sourceTree = "<group>";
+		};
+		070E376724E5488E00FA7C48 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				070E375424E5484700FA7C48 /* accept_reuestRouter.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		070E376824E563B600FA7C48 /* provider_request_log */ = {
+			isa = PBXGroup;
+			children = (
+				070E378024E5646A00FA7C48 /* Router */,
+				070E377F24E5646000FA7C48 /* Views */,
+				070E377E24E5645700FA7C48 /* Worker */,
+				070E377D24E5644D00FA7C48 /* interactor */,
+				070E377C24E5644400FA7C48 /* configuration */,
+				070E377B24E5643E00FA7C48 /* Model */,
+				070E377924E5642200FA7C48 /* presenter */,
+			);
+			path = provider_request_log;
+			sourceTree = "<group>";
+		};
+		070E377924E5642200FA7C48 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				070E376A24E563EF00FA7C48 /* provider_logPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		070E377B24E5643E00FA7C48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				070E376F24E563EF00FA7C48 /* provider_logModel.swift */,
+				070E378624E56A4D00FA7C48 /* provider_logEndpoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		070E377C24E5644400FA7C48 /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				070E376924E563EF00FA7C48 /* provider_logConfiguration.swift */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+		070E377D24E5644D00FA7C48 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				070E376E24E563EF00FA7C48 /* provider_logInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		070E377E24E5645700FA7C48 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				070E376B24E563EF00FA7C48 /* provider_logWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		070E377F24E5646000FA7C48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				070E376D24E563EF00FA7C48 /* provider_logViewController.swift */,
+				070E377024E563EF00FA7C48 /* provider_logViewController.xib */,
+				070E378224E5662A00FA7C48 /* provider_log.swift */,
+				070E378324E5662A00FA7C48 /* provider_log.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		070E378024E5646A00FA7C48 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				070E376C24E563EF00FA7C48 /* provider_logRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		0710148B24C3B23600510998 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1528,6 +1997,7 @@
 			isa = PBXGroup;
 			children = (
 				0720CBA824CEF63600DEB73A /* requestDetailsModel.swift */,
+				073EB3DB24E646A200A2559D /* requester_detailsEndpoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1778,6 +2248,14 @@
 		072C2AA024AFC2720050F83F /* App Modules */ = {
 			isa = PBXGroup;
 			children = (
+				073EB3C124E6024500A2559D /* request_details_provider */,
+				070E376824E563B600FA7C48 /* provider_request_log */,
+				070E375024E5480B00FA7C48 /* provider_accecpt_request */,
+				076CA47C24E3E705007E9D12 /* payment */,
+				07B0906524E3A3BD00170C7B /* Requests_Accept */,
+				07B0904B24E3371800170C7B /* Edit */,
+				070AD85024E24C8900926312 /* provider Notifications */,
+				070AD84F24E24C5E00926312 /* clint Notifications */,
 				070011A624E1837200C3ECAA /* wallet */,
 				0700119C24E177B400C3ECAA /* shareApp */,
 				0700116924E07BB800C3ECAA /* contactUs */,
@@ -1858,6 +2336,151 @@
 			path = logInRequester;
 			sourceTree = "<group>";
 		};
+		073EB3C124E6024500A2559D /* request_details_provider */ = {
+			isa = PBXGroup;
+			children = (
+				073EB3D824E602D900A2559D /* interactor */,
+				073EB3D724E602D000A2559D /* Worker */,
+				073EB3D624E602C800A2559D /* Router */,
+				073EB3D524E602B300A2559D /* views */,
+				073EB3D424E602AB00A2559D /* configuration */,
+				073EB3D324E602A500A2559D /* Model */,
+				073EB3D224E6029C00A2559D /* presenter */,
+			);
+			path = request_details_provider;
+			sourceTree = "<group>";
+		};
+		073EB3D224E6029C00A2559D /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				073EB3C324E6028A00A2559D /* request_detailsPresenter.swift */,
+			);
+			name = presenter;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		073EB3D324E602A500A2559D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				073EB3C824E6028A00A2559D /* request_detailsModel.swift */,
+				073EB3D924E6031C00A2559D /* request_details_providerEndpoint.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		073EB3D424E602AB00A2559D /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				073EB3C224E6028A00A2559D /* request_detailsConfiguration.swift */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+		073EB3D524E602B300A2559D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				073EB3C624E6028A00A2559D /* request_detailsViewController.swift */,
+				073EB3C924E6028A00A2559D /* request_detailsViewController.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		073EB3D624E602C800A2559D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				073EB3C524E6028A00A2559D /* request_detailsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		073EB3D724E602D000A2559D /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				073EB3C424E6028A00A2559D /* request_detailsWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		073EB3D824E602D900A2559D /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				073EB3C724E6028A00A2559D /* request_detailsInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		076CA47C24E3E705007E9D12 /* payment */ = {
+			isa = PBXGroup;
+			children = (
+				076CA49324E3E77D007E9D12 /* rouret */,
+				076CA49224E3E760007E9D12 /* worker */,
+				076CA49124E3E758007E9D12 /* interactor */,
+				076CA49024E3E74F007E9D12 /* configuration */,
+				076CA48F24E3E749007E9D12 /* Model */,
+				076CA48E24E3E738007E9D12 /* views */,
+				076CA48D24E3E72E007E9D12 /* presenter */,
+			);
+			path = payment;
+			sourceTree = "<group>";
+		};
+		076CA48D24E3E72E007E9D12 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				076CA47E24E3E725007E9D12 /* paymentPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		076CA48E24E3E738007E9D12 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				076CA48124E3E725007E9D12 /* paymentViewController.swift */,
+				076CA48424E3E725007E9D12 /* paymentViewController.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		076CA48F24E3E749007E9D12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				076CA48324E3E725007E9D12 /* paymentModel.swift */,
+				076CA49424E3E79E007E9D12 /* paymentEndpoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		076CA49024E3E74F007E9D12 /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				076CA47D24E3E725007E9D12 /* paymentConfiguration.swift */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+		076CA49124E3E758007E9D12 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				076CA48224E3E725007E9D12 /* paymentInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		076CA49224E3E760007E9D12 /* worker */ = {
+			isa = PBXGroup;
+			children = (
+				076CA47F24E3E725007E9D12 /* paymentWorker.swift */,
+			);
+			path = worker;
+			sourceTree = "<group>";
+		};
+		076CA49324E3E77D007E9D12 /* rouret */ = {
+			isa = PBXGroup;
+			children = (
+				076CA48024E3E725007E9D12 /* paymentRouter.swift */,
+			);
+			path = rouret;
+			sourceTree = "<group>";
+		};
 		077B111E24AFE6F2000C811B /* Verification */ = {
 			isa = PBXGroup;
 			children = (
@@ -1929,6 +2552,152 @@
 				07040B0324B9488A000837A5 /* interactor */,
 			);
 			path = secondScereen;
+			sourceTree = "<group>";
+		};
+		07B0904B24E3371800170C7B /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				07B0906224E3378200170C7B /* Worker */,
+				07B0906124E3377800170C7B /* Interactor */,
+				07B0906024E3377100170C7B /* router */,
+				07B0905F24E3376600170C7B /* configuration */,
+				07B0905E24E3375E00170C7B /* model */,
+				07B0905D24E3375800170C7B /* View */,
+				07B0905C24E3375000170C7B /* presenter */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		07B0905C24E3375000170C7B /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				07B0904D24E3374500170C7B /* editPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		07B0905D24E3375800170C7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07B0905024E3374500170C7B /* editViewController.swift */,
+				07B0905324E3374500170C7B /* editViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07B0905E24E3375E00170C7B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				07B0905224E3374500170C7B /* editModel.swift */,
+				07B0906324E3499F00170C7B /* edit_EndPointEndpoint.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		07B0905F24E3376600170C7B /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				07B0904C24E3374500170C7B /* editConfiguration.swift */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+		07B0906024E3377100170C7B /* router */ = {
+			isa = PBXGroup;
+			children = (
+				07B0904F24E3374500170C7B /* editRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		07B0906124E3377800170C7B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				07B0905124E3374500170C7B /* editInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		07B0906224E3378200170C7B /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				07B0904E24E3374500170C7B /* editWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		07B0906524E3A3BD00170C7B /* Requests_Accept */ = {
+			isa = PBXGroup;
+			children = (
+				07B0907C24E3A44500170C7B /* Router */,
+				07B0907B24E3A43A00170C7B /* Worker */,
+				07B0907A24E3A43200170C7B /* interactor */,
+				07B0907924E3A42C00170C7B /* views */,
+				07B0907824E3A42700170C7B /* Model */,
+				07B0907724E3A41200170C7B /* configurations */,
+				07B0907624E3A40A00170C7B /* presentre */,
+			);
+			path = Requests_Accept;
+			sourceTree = "<group>";
+		};
+		07B0907624E3A40A00170C7B /* presentre */ = {
+			isa = PBXGroup;
+			children = (
+				07B0906724E3A3F300170C7B /* Accept_RequestPresenter.swift */,
+			);
+			path = presentre;
+			sourceTree = "<group>";
+		};
+		07B0907724E3A41200170C7B /* configurations */ = {
+			isa = PBXGroup;
+			children = (
+				07B0906624E3A3F300170C7B /* Accept_RequestConfiguration.swift */,
+			);
+			path = configurations;
+			sourceTree = "<group>";
+		};
+		07B0907824E3A42700170C7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07B0906C24E3A3F300170C7B /* Accept_RequestModel.swift */,
+				07B0907D24E3A47B00170C7B /* Accept_RequestEndpoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07B0907924E3A42C00170C7B /* views */ = {
+			isa = PBXGroup;
+			children = (
+				07B0906A24E3A3F300170C7B /* Accept_RequestViewController.swift */,
+				07B0906D24E3A3F300170C7B /* Accept_RequestViewController.xib */,
+				07B0907F24E3AD2700170C7B /* accept.swift */,
+				07B0908024E3AD2700170C7B /* accept.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		07B0907A24E3A43200170C7B /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				07B0906B24E3A3F300170C7B /* Accept_RequestInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		07B0907B24E3A43A00170C7B /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				07B0906824E3A3F300170C7B /* Accept_RequestWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		07B0907C24E3A44500170C7B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				07B0906924E3A3F300170C7B /* Accept_RequestRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		07BDC76324B4F37700283900 /* registrationType */ = {
@@ -2266,6 +3035,7 @@
 			isa = PBXGroup;
 			children = (
 				07BFD25D24DFC8A700810C78 /* HomeProviderModel.swift */,
+				070AD88B24E292BE00926312 /* Provider_endPointEndpoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2398,6 +3168,7 @@
 		07BFD2B424DFF4A200810C78 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
+				07BFD29524DFF46900810C78 /* requestrecordPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -2414,7 +3185,6 @@
 			isa = PBXGroup;
 			children = (
 				07BFD29924DFF46900810C78 /* requestrecordInteractor.swift */,
-				07BFD29524DFF46900810C78 /* requestrecordPresenter.swift */,
 			);
 			path = interactor;
 			sourceTree = "<group>";
@@ -2512,6 +3282,13 @@
 			path = worker;
 			sourceTree = "<group>";
 		};
+		07CE278C24E9084D0062B4FF /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
 		94C5225434E7C419AC8954E6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2594,10 +3371,12 @@
 				0720CBD524CFA7BD00DEB73A /* requestDetailsViewController.xib in Resources */,
 				07AEA24124B3D91F000C6898 /* secondScreenViewController.xib in Resources */,
 				07040B0F24B991F0000837A5 /* TableViewCell.xib in Resources */,
+				076CA48C24E3E726007E9D12 /* paymentViewController.xib in Resources */,
 				0702417924B12E1A001271BC /* CreatingRequesterViewController.xib in Resources */,
 				07219F6124D04A0900F81CFF /* addRequestCell.xib in Resources */,
 				07BFD26624DFC8A700810C78 /* HomeProviderViewController.xib in Resources */,
 				07BDC79A24B50CE400283900 /* creatingPasswordViewController.xib in Resources */,
+				070AD86024E24CBE00926312 /* Clint_NotificationViewController.xib in Resources */,
 				0700115B24E07A8C00C3ECAA /* commonQuestionsViewController.xib in Resources */,
 				072C2AC324AFC5780050F83F /* LOGINViewController.xib in Resources */,
 				07BFD28624DFE81A00810C78 /* sideMenuProviderViewController.xib in Resources */,
@@ -2606,6 +3385,8 @@
 				0720CBDC24CFA7F600DEB73A /* addrequestViewController.xib in Resources */,
 				07F29A8F24B2ABE30061126C /* SupplierFirstScreenViewController.xib in Resources */,
 				0728F5E824B4250600DEE416 /* VerificationViewController.xib in Resources */,
+				070AD88A24E2795C00926312 /* client_notifications_Cell.xib in Resources */,
+				070AD87024E24CDE00926312 /* Provider_NotificationViewController.xib in Resources */,
 				0700114324E07A0F00C3ECAA /* termsViewController.xib in Resources */,
 				0798BE7324AFBEBC0019C7F6 /* LaunchScreen.storyboard in Resources */,
 				0727EC9824D121F30007E420 /* region.xib in Resources */,
@@ -2615,16 +3396,23 @@
 				07920D2C24D1BEFA0006B7AD /* aboutUsViewController.xib in Resources */,
 				0720CBFB24CFB79E00DEB73A /* editRequestViewController.xib in Resources */,
 				0783902924C55AAD00250164 /* requestCell.xib in Resources */,
+				07B0905B24E3374500170C7B /* editViewController.xib in Resources */,
 				0700118B24E16DDE00C3ECAA /* termsCell.xib in Resources */,
 				0798BE7024AFBEBC0019C7F6 /* Assets.xcassets in Resources */,
+				070AD88624E24FB400926312 /* provider_Notifications_Cell.xib in Resources */,
+				070E378524E5662A00FA7C48 /* provider_log.xib in Resources */,
 				07BFD27124DFD54700810C78 /* acceptCell.xib in Resources */,
+				070E377824E563EF00FA7C48 /* provider_logViewController.xib in Resources */,
 				070011BB24E1871700C3ECAA /* wallet.xib in Resources */,
 				0727EC9424D121810007E420 /* tableView.xib in Resources */,
 				071D235E24C543BF001A89C8 /* cell.xib in Resources */,
 				07BDC77B24B4F83600283900 /* registraionTypeViewController.xib in Resources */,
+				07B0908224E3AD2700170C7B /* accept.xib in Resources */,
 				070011B624E183B700C3ECAA /* walletViewController.xib in Resources */,
 				0700119B24E177AD00C3ECAA /* shareAPPViewController.xib in Resources */,
+				0766A92424EA397D00B08807 /* advertizingCell.xib in Resources */,
 				07BFD29124DFEC4900810C78 /* sideMenuCell.xib in Resources */,
+				07B0907524E3A3F300170C7B /* Accept_RequestViewController.xib in Resources */,
 				0798BE6E24AFBEBB0019C7F6 /* Main.storyboard in Resources */,
 				07BDC7B924B5108900283900 /* ForgetpasswordViewController.xib in Resources */,
 				07BFD2B324DFF47D00810C78 /* applicationSettingViewController.xib in Resources */,
@@ -2632,7 +3420,9 @@
 				07BFD27524DFD56A00810C78 /* RequestsCell.xib in Resources */,
 				0700117924E07BCF00C3ECAA /* contactUsViewController.xib in Resources */,
 				07BFD2A324DFF46900810C78 /* requestrecordViewController.xib in Resources */,
+				070E376024E5484700FA7C48 /* accept_reuestViewController.xib in Resources */,
 				07BFD2C524DFF6FC00810C78 /* recordRequests.xib in Resources */,
+				073EB3D124E6028A00A2559D /* request_detailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2649,6 +3439,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ELWAKEEL/Pods-ELWAKEEL-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/LocalizationFramework/LocalizationFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/MOLH/MOLH.framework",
 				"${BUILT_PRODUCTS_DIR}/RSSelectionMenu/RSSelectionMenu.framework",
@@ -2659,6 +3450,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LocalizationFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOLH.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSSelectionMenu.framework",
@@ -2703,7 +3495,9 @@
 				07920D2524D1BEFA0006B7AD /* aboutUsConfiguration.swift in Sources */,
 				070A897824D55E0A00438102 /* GetDataFromApi.swift in Sources */,
 				070021F424C0438000C8CE31 /* HomeModel.swift in Sources */,
+				07B0908124E3AD2700170C7B /* accept.swift in Sources */,
 				077B112724AFE710000C811B /* VerificationConfiguration.swift in Sources */,
+				07B0905424E3374500170C7B /* editConfiguration.swift in Sources */,
 				07BFD26424DFC8A700810C78 /* HomeProviderInteractor.swift in Sources */,
 				07BFD26524DFC8A700810C78 /* HomeProviderModel.swift in Sources */,
 				0710149924C3B28E00510998 /* sideMenuInteractor.swift in Sources */,
@@ -2718,7 +3512,11 @@
 				07BFD29C24DFF46900810C78 /* requestrecordConfiguration.swift in Sources */,
 				070011BA24E1871700C3ECAA /* wallet.swift in Sources */,
 				07BFD26224DFC8A700810C78 /* HomeProviderRouter.swift in Sources */,
+				070E375A24E5484700FA7C48 /* accept_reuestPresenter.swift in Sources */,
+				070AD85A24E24CBE00926312 /* Clint_NotificationPresenter.swift in Sources */,
 				07BFD2C724DFFBD000810C78 /* requestRecordEndpoint.swift in Sources */,
+				073EB3CA24E6028A00A2559D /* request_detailsConfiguration.swift in Sources */,
+				070E375B24E5484700FA7C48 /* accept_reuestWorker.swift in Sources */,
 				07BFD28424DFE81A00810C78 /* sideMenuProviderInteractor.swift in Sources */,
 				0798BE6B24AFBEBB0019C7F6 /* ViewController.swift in Sources */,
 				07BFD2C424DFF6FC00810C78 /* recordRequests.swift in Sources */,
@@ -2732,8 +3530,11 @@
 				0700119624E177AD00C3ECAA /* shareAPPWorker.swift in Sources */,
 				072C2AA224AFC3F70050F83F /* APIError.swift in Sources */,
 				071CCC8D24DAC8A800F5473D /* requestDetailsEndpoint.swift in Sources */,
+				070E377724E563EF00FA7C48 /* provider_logModel.swift in Sources */,
 				070021F224C0438000C8CE31 /* HomeViewController.swift in Sources */,
+				070AD86E24E24CDE00926312 /* Provider_NotificationInteractor.swift in Sources */,
 				07BFD26024DFC8A700810C78 /* HomeProviderPresenter.swift in Sources */,
+				07B0906424E3499F00170C7B /* edit_EndPointEndpoint.swift in Sources */,
 				072C2AC224AFC5780050F83F /* LOGINModel.swift in Sources */,
 				07BDC7CB24B52AFC00283900 /* NewPasswordWorker.swift in Sources */,
 				07920D2824D1BEFA0006B7AD /* aboutUsRouter.swift in Sources */,
@@ -2743,20 +3544,26 @@
 				0720CBB024CEF63600DEB73A /* requestDetailsModel.swift in Sources */,
 				07BFD27F24DFE81A00810C78 /* sideMenuProviderConfiguration.swift in Sources */,
 				0710149524C3B28E00510998 /* sideMenuPresenter.swift in Sources */,
+				07B0907E24E3A47B00170C7B /* Accept_RequestEndpoint.swift in Sources */,
 				0702417824B12E1A001271BC /* CreatingRequesterModel.swift in Sources */,
 				070011B024E183B700C3ECAA /* walletPresenter.swift in Sources */,
 				0700113E24E07A0F00C3ECAA /* termsWorker.swift in Sources */,
+				073EB3CE24E6028A00A2559D /* request_detailsViewController.swift in Sources */,
+				07B0905524E3374500170C7B /* editPresenter.swift in Sources */,
 				0720CBC324CF522400DEB73A /* addrequestPresenter.swift in Sources */,
 				072C2AAC24AFC4EE0050F83F /* ShowAlertView.swift in Sources */,
 				070011AF24E183B700C3ECAA /* walletConfiguration.swift in Sources */,
 				07BFD25F24DFC8A700810C78 /* HomeProviderConfiguration.swift in Sources */,
+				073EB3CC24E6028A00A2559D /* request_detailsWorker.swift in Sources */,
 				0727EC9E24D160620007E420 /* addrequestEndpoint.swift in Sources */,
 				0700116624E07B0700C3ECAA /* termsEndpoint.swift in Sources */,
+				070E378924E56E4900FA7C48 /* walletEndpoint.swift in Sources */,
 				07AEA23A24B3CE47000C6898 /* secondScreenPresenter.swift in Sources */,
 				07BFD2B024DFF47D00810C78 /* applicationSettingViewController.swift in Sources */,
 				0702418824B1344A001271BC /* SupplierFirstScreenRouter.swift in Sources */,
 				07BDC7AC24B50F8B00283900 /* ForgetpasswordWorker.swift in Sources */,
 				07920D2A24D1BEFA0006B7AD /* aboutUsInteractor.swift in Sources */,
+				073EB3CB24E6028A00A2559D /* request_detailsPresenter.swift in Sources */,
 				070021F024C0438000C8CE31 /* HomeWorker.swift in Sources */,
 				07BFD2AE24DFF47D00810C78 /* applicationSettingWorker.swift in Sources */,
 				07BDC78E24B5049E00283900 /* creatingPasswordRouter.swift in Sources */,
@@ -2764,15 +3571,22 @@
 				07BDC79024B5049E00283900 /* creatingPasswordInteractor.swift in Sources */,
 				0720192024B6BDC400E7952F /* FirstSupplierEndPointEndpoint.swift in Sources */,
 				072C2AAA24AFC4B80050F83F /* GeneralRouterRoute.swift in Sources */,
+				070E375D24E5484700FA7C48 /* accept_reuestViewController.swift in Sources */,
 				0700117824E07BCF00C3ECAA /* contactUsModel.swift in Sources */,
 				0720CBC724CF522400DEB73A /* addrequestInteractor.swift in Sources */,
+				07C64D0524E2A2B900EF010E /* Notification_EndpointEndpoint.swift in Sources */,
 				07AEA23B24B3CE47000C6898 /* secondScreenWorker.swift in Sources */,
 				0700114024E07A0F00C3ECAA /* termsViewController.swift in Sources */,
 				0710149724C3B28E00510998 /* sideMenuRouter.swift in Sources */,
+				070E377524E563EF00FA7C48 /* provider_logViewController.swift in Sources */,
+				073EB3CF24E6028A00A2559D /* request_detailsInteractor.swift in Sources */,
+				07B0907124E3A3F300170C7B /* Accept_RequestRouter.swift in Sources */,
 				07BDC77024B4F3A700283900 /* registraionTypeViewController.swift in Sources */,
 				07BDC78B24B5049E00283900 /* creatingPasswordConfiguration.swift in Sources */,
 				0702418724B1344A001271BC /* SupplierFirstScreenWorker.swift in Sources */,
+				076CA48824E3E726007E9D12 /* paymentRouter.swift in Sources */,
 				07BDC7AD24B50F8B00283900 /* ForgetpasswordRouter.swift in Sources */,
+				070AD88024E24DE500926312 /* Client_endPointEndpoint.swift in Sources */,
 				0700113C24E07A0F00C3ECAA /* termsConfiguration.swift in Sources */,
 				0700116824E07B2200C3ECAA /* aboutUsEndpoint.swift in Sources */,
 				0710149A24C3B28E00510998 /* sideMenuModel.swift in Sources */,
@@ -2786,36 +3600,57 @@
 				07BFD28024DFE81A00810C78 /* sideMenuProviderPresenter.swift in Sources */,
 				072C2ABE24AFC5780050F83F /* LOGINWorker.swift in Sources */,
 				07BDC7CD24B52AFC00283900 /* NewPasswordViewController.swift in Sources */,
+				073EB3DC24E646A200A2559D /* requester_detailsEndpoint.swift in Sources */,
 				0720CBD224CFA51F00DEB73A /* AlertController.swift in Sources */,
+				073EB3D024E6028A00A2559D /* request_detailsModel.swift in Sources */,
 				072C2AC024AFC5780050F83F /* LOGINViewController.swift in Sources */,
 				070011B224E183B700C3ECAA /* walletRouter.swift in Sources */,
+				076CA48924E3E726007E9D12 /* paymentViewController.swift in Sources */,
+				070AD85924E24CBE00926312 /* Clint_NotificationConfiguration.swift in Sources */,
+				07B0905824E3374500170C7B /* editViewController.swift in Sources */,
+				070E375924E5484700FA7C48 /* accept_reuestConfiguration.swift in Sources */,
 				072C2AD124AFD1A40050F83F /* LOGINRequesterPresenter.swift in Sources */,
+				070AD88924E2795C00926312 /* client_notifications_Cell.swift in Sources */,
 				07920D2724D1BEFA0006B7AD /* aboutUsWorker.swift in Sources */,
 				0727EC9C24D138700007E420 /* HomeEndpoint.swift in Sources */,
+				070AD85F24E24CBE00926312 /* Clint_NotificationModel.swift in Sources */,
+				070AD85C24E24CBE00926312 /* Clint_NotificationRouter.swift in Sources */,
 				0700117724E07BCF00C3ECAA /* contactUsInteractor.swift in Sources */,
 				0702418924B1344A001271BC /* SupplierFirstScreenViewController.swift in Sources */,
 				070011B524E183B700C3ECAA /* walletModel.swift in Sources */,
+				070AD85B24E24CBE00926312 /* Clint_NotificationWorker.swift in Sources */,
 				0700115424E07A8C00C3ECAA /* commonQuestionsConfiguration.swift in Sources */,
+				070AD85D24E24CBE00926312 /* Clint_NotificationViewController.swift in Sources */,
 				0700119724E177AD00C3ECAA /* shareAPPRouter.swift in Sources */,
+				070AD85E24E24CBE00926312 /* Clint_NotificationInteractor.swift in Sources */,
 				072C2AD524AFD1A40050F83F /* LOGINRequesterInteractor.swift in Sources */,
 				07BFD2A124DFF46900810C78 /* requestrecordInteractor.swift in Sources */,
+				076CA48624E3E726007E9D12 /* paymentPresenter.swift in Sources */,
 				07BFD2A224DFF46900810C78 /* requestrecordModel.swift in Sources */,
 				070011B124E183B700C3ECAA /* walletWorker.swift in Sources */,
 				077B112B24AFE710000C811B /* VerificationViewController.swift in Sources */,
 				0720CBAF24CEF63600DEB73A /* requestDetailsInteractor.swift in Sources */,
 				0720CBD424CFA56400DEB73A /* alertExention.swift in Sources */,
+				070E377224E563EF00FA7C48 /* provider_logPresenter.swift in Sources */,
 				07BDC76D24B4F3A700283900 /* registraionTypePresenter.swift in Sources */,
 				0700115A24E07A8C00C3ECAA /* commonQuestionsModel.swift in Sources */,
 				07BDC7CE24B52AFC00283900 /* NewPasswordInteractor.swift in Sources */,
 				07BFD2AD24DFF47D00810C78 /* applicationSettingPresenter.swift in Sources */,
+				07B0907324E3A3F300170C7B /* Accept_RequestInteractor.swift in Sources */,
 				071014A524C3B90800510998 /* MenuCell.swift in Sources */,
 				072C2ABC24AFC5780050F83F /* LOGINConfiguration.swift in Sources */,
+				070E377424E563EF00FA7C48 /* provider_logRouter.swift in Sources */,
 				0720CBAB24CEF63600DEB73A /* requestDetailsPresenter.swift in Sources */,
 				070021F324C0438000C8CE31 /* HomeInteractor.swift in Sources */,
 				0700119424E177AD00C3ECAA /* shareAPPConfiguration.swift in Sources */,
 				0720CBF524CFB79E00DEB73A /* editRequestPresenter.swift in Sources */,
 				0700118524E1421C00C3ECAA /* FQAcell.swift in Sources */,
 				0702418624B1344A001271BC /* SupplierFirstScreenPresenter.swift in Sources */,
+				070AD88524E24FB400926312 /* provider_Notifications_Cell.swift in Sources */,
+				07B0906F24E3A3F300170C7B /* Accept_RequestPresenter.swift in Sources */,
+				070E377124E563EF00FA7C48 /* provider_logConfiguration.swift in Sources */,
+				07B0907024E3A3F300170C7B /* Accept_RequestWorker.swift in Sources */,
+				070AD86B24E24CDE00926312 /* Provider_NotificationWorker.swift in Sources */,
 				0720191C24B6BD5900E7952F /* TypeEndPointEndpoint.swift in Sources */,
 				07BFD29F24DFF46900810C78 /* requestrecordRouter.swift in Sources */,
 				0720CBFA24CFB79E00DEB73A /* editRequestModel.swift in Sources */,
@@ -2823,9 +3658,15 @@
 				0727EC9A24D1266F0007E420 /* region.swift in Sources */,
 				0720CBAE24CEF63600DEB73A /* requestDetailsViewController.swift in Sources */,
 				0720CBF924CFB79E00DEB73A /* editRequestInteractor.swift in Sources */,
+				070E375C24E5484700FA7C48 /* accept_reuestRouter.swift in Sources */,
+				070AD86924E24CDE00926312 /* Provider_NotificationConfiguration.swift in Sources */,
 				07BDC77124B4F3A700283900 /* registraionTypeInteractor.swift in Sources */,
 				0720191624B6BCCB00E7952F /* NewPasswordEndPointEndpoint.swift in Sources */,
+				070E377324E563EF00FA7C48 /* provider_logWorker.swift in Sources */,
+				07B0907424E3A3F300170C7B /* Accept_RequestModel.swift in Sources */,
+				076CA48724E3E726007E9D12 /* paymentWorker.swift in Sources */,
 				07BDC76E24B4F3A700283900 /* registraionTypeWorker.swift in Sources */,
+				07B0906E24E3A3F300170C7B /* Accept_RequestConfiguration.swift in Sources */,
 				07BDC78C24B5049E00283900 /* creatingPasswordPresenter.swift in Sources */,
 				07BFD27024DFD54700810C78 /* acceptCell.swift in Sources */,
 				07BFD28224DFE81A00810C78 /* sideMenuProviderRouter.swift in Sources */,
@@ -2838,14 +3679,19 @@
 				07BFD2A024DFF46900810C78 /* requestrecordViewController.swift in Sources */,
 				0720191A24B6BD3600E7952F /* CreatingPasswordEndPointEndpoint.swift in Sources */,
 				07BDC77224B4F3A700283900 /* registraionTypeModel.swift in Sources */,
+				07B0907224E3A3F300170C7B /* Accept_RequestViewController.swift in Sources */,
+				07B0905A24E3374500170C7B /* editModel.swift in Sources */,
 				07219F6024D04A0900F81CFF /* addRequestCell.swift in Sources */,
 				071D235D24C543BF001A89C8 /* cell.swift in Sources */,
 				07AEA23F24B3CE47000C6898 /* secondScreenModel.swift in Sources */,
 				0702417324B12E1A001271BC /* CreatingRequesterPresenter.swift in Sources */,
+				070AD86F24E24CDE00926312 /* Provider_NotificationModel.swift in Sources */,
 				0798BE6924AFBEBB0019C7F6 /* AppDelegate.swift in Sources */,
 				0720192224B6BDE200E7952F /* CreatingRequesterEndpointEndpoint.swift in Sources */,
 				0700118224E0919200C3ECAA /* contactUsEndpoint.swift in Sources */,
 				0702418524B1344A001271BC /* SupplierFirstScreenConfiguration.swift in Sources */,
+				070E375E24E5484700FA7C48 /* accept_reuestInteractor.swift in Sources */,
+				070AD86A24E24CDE00926312 /* Provider_NotificationPresenter.swift in Sources */,
 				0720CBC624CF522400DEB73A /* addrequestViewController.swift in Sources */,
 				07BFD29E24DFF46900810C78 /* requestrecordWorker.swift in Sources */,
 				07AEA23924B3CE47000C6898 /* secondScreenConfiguration.swift in Sources */,
@@ -2853,17 +3699,24 @@
 				0700113D24E07A0F00C3ECAA /* termsPresenter.swift in Sources */,
 				0700119924E177AD00C3ECAA /* shareAPPInteractor.swift in Sources */,
 				0720CBC824CF522400DEB73A /* addrequestModel.swift in Sources */,
+				07B0905724E3374500170C7B /* editRouter.swift in Sources */,
 				0700119824E177AD00C3ECAA /* shareAPPViewController.swift in Sources */,
+				070E378424E5662A00FA7C48 /* provider_log.swift in Sources */,
 				0720192424B6BDFE00E7952F /* VerificationEndpointEndpoint.swift in Sources */,
+				076CA48B24E3E726007E9D12 /* paymentModel.swift in Sources */,
+				076CA49524E3E79F007E9D12 /* paymentEndpoint.swift in Sources */,
 				07AEA23E24B3CE47000C6898 /* secondScreenInteractor.swift in Sources */,
 				0720CBAA24CEF63600DEB73A /* requestDetailsConfiguration.swift in Sources */,
+				070AD88C24E292BE00926312 /* Provider_endPointEndpoint.swift in Sources */,
 				0700116424E07AF400C3ECAA /* commonQuestionsEndpoint.swift in Sources */,
 				0700113F24E07A0F00C3ECAA /* termsRouter.swift in Sources */,
 				0700117324E07BCF00C3ECAA /* contactUsPresenter.swift in Sources */,
 				07BFD2AC24DFF47D00810C78 /* applicationSettingConfiguration.swift in Sources */,
+				070E377624E563EF00FA7C48 /* provider_logInteractor.swift in Sources */,
 				07BDC7AB24B50F8B00283900 /* ForgetpasswordPresenter.swift in Sources */,
 				070021EF24C0438000C8CE31 /* HomePresenter.swift in Sources */,
 				07BDC7CC24B52AFC00283900 /* NewPasswordRouter.swift in Sources */,
+				070E378724E56A4D00FA7C48 /* provider_logEndpoint.swift in Sources */,
 				07BDC7C924B52AFC00283900 /* NewPasswordConfiguration.swift in Sources */,
 				077B112C24AFE710000C811B /* VerificationInteractor.swift in Sources */,
 				070ABABF24B61B9A0001CF5B /* errorAPI.swift in Sources */,
@@ -2886,24 +3739,32 @@
 				07920D2B24D1BEFA0006B7AD /* aboutUsModel.swift in Sources */,
 				077B112924AFE710000C811B /* VerificationWorker.swift in Sources */,
 				07BFD2AF24DFF47D00810C78 /* applicationSettingRouter.swift in Sources */,
+				076CA48524E3E726007E9D12 /* paymentConfiguration.swift in Sources */,
 				07BFD29024DFEC4900810C78 /* sideMenuCell.swift in Sources */,
+				073EB3DA24E6031C00A2559D /* request_details_providerEndpoint.swift in Sources */,
 				0720CBAC24CEF63600DEB73A /* requestDetailsWorker.swift in Sources */,
+				076CA48A24E3E726007E9D12 /* paymentInteractor.swift in Sources */,
 				07BDC79124B5049E00283900 /* creatingPasswordModel.swift in Sources */,
 				07AEA23C24B3CE47000C6898 /* secondScreenRouter.swift in Sources */,
 				0702418B24B1344A001271BC /* SupplierFirstScreenModel.swift in Sources */,
 				070ABAC124B6289A0001CF5B /* loginEndpoint.swift in Sources */,
 				072C2AA824AFC4940050F83F /* AppRoute.swift in Sources */,
+				073EB3C024E5F3DA00A2559D /* create_offerEndpoint.swift in Sources */,
 				07BDC7AA24B50F8B00283900 /* ForgetpasswordConfiguration.swift in Sources */,
 				0700117524E07BCF00C3ECAA /* contactUsRouter.swift in Sources */,
 				0700117224E07BCF00C3ECAA /* contactUsConfiguration.swift in Sources */,
 				072C2AEA24AFDAAA0050F83F /* designable.swift in Sources */,
+				070E375F24E5484700FA7C48 /* accept_reuestModel.swift in Sources */,
 				072C2ABF24AFC5780050F83F /* LOGINRouter.swift in Sources */,
+				070AD86D24E24CDE00926312 /* Provider_NotificationViewController.swift in Sources */,
 				07920D2624D1BEFA0006B7AD /* aboutUsPresenter.swift in Sources */,
 				07BFD26124DFC8A700810C78 /* HomeProviderWorker.swift in Sources */,
 				07447AF524C6E82A00A1B112 /* sideMenu.swift in Sources */,
 				070011B324E183B700C3ECAA /* walletViewController.swift in Sources */,
 				070021F124C0438000C8CE31 /* HomeRouter.swift in Sources */,
 				0783902824C55AAD00250164 /* requestCell.swift in Sources */,
+				070AD86C24E24CDE00926312 /* Provider_NotificationRouter.swift in Sources */,
+				07B0905924E3374500170C7B /* editInteractor.swift in Sources */,
 				072C2AD624AFD1A40050F83F /* LOGINRequesterModel.swift in Sources */,
 				0702417724B12E1A001271BC /* CreatingRequesterInteractor.swift in Sources */,
 				0700119A24E177AD00C3ECAA /* shareAPPModel.swift in Sources */,
@@ -2912,14 +3773,17 @@
 				07040B0B24B94968000837A5 /* Model.swift in Sources */,
 				07BFD28524DFE81A00810C78 /* sideMenuProviderModel.swift in Sources */,
 				077B112D24AFE710000C811B /* VerificationModel.swift in Sources */,
+				07B0905624E3374500170C7B /* editWorker.swift in Sources */,
 				0720CBC524CF522400DEB73A /* addrequestRouter.swift in Sources */,
 				072C2AD424AFD1A40050F83F /* LOGINRequesterViewController.swift in Sources */,
 				07BDC78F24B5049E00283900 /* creatingPasswordViewController.swift in Sources */,
 				070A897A24D58B9800438102 /* UIViewControllerEXtension.swift in Sources */,
 				07BFD27424DFD56A00810C78 /* RequestsCell.swift in Sources */,
 				07BDC7CA24B52AFC00283900 /* NewPasswordPresenter.swift in Sources */,
+				073EB3CD24E6028A00A2559D /* request_detailsRouter.swift in Sources */,
 				0700119524E177AD00C3ECAA /* shareAPPPresenter.swift in Sources */,
 				0720CBF624CFB79E00DEB73A /* editRequestWorker.swift in Sources */,
+				0766A92324EA397D00B08807 /* advertizingCell.swift in Sources */,
 				07BDC76C24B4F3A700283900 /* registraionTypeConfiguration.swift in Sources */,
 				071CCC8F24DAE69600F5473D /* sideMenuEndpoint.swift in Sources */,
 				0700115624E07A8C00C3ECAA /* commonQuestionsWorker.swift in Sources */,

@@ -37,7 +37,7 @@ class contactUsWorker: IcontactUsWorker {
                 
             } catch let error {
                 print(error)
-                complition(false , error as! ErrorModel , nil)
+                complition(false , (error as! ErrorModel) , nil)
             }
             
         })

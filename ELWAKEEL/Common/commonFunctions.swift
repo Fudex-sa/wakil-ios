@@ -8,6 +8,7 @@
 
 import Foundation
 import  UIKit
+import LocalizationFramework
 class commonFunctions
 {
     public static let share = commonFunctions()
@@ -27,9 +28,35 @@ class commonFunctions
     
     func logout(view: UIViewController)
     {
-        UserDefaults.standard.set(false, forKey: "login")
-        UserDefaults.standard.set("", forKey: "token")
-        view.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
+        
+        let alert = AlertController(title: " ", message: "", preferredStyle: .alert)
+        
+        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 20)!]
+        let messageString = NSAttributedString(string: Localization.logout_DES, attributes: messageAttributes)
+        alert.setValue(messageString, forKey: "attributedMessage")
+        let sendAction = UIAlertAction(title: Localization.exit, style: .default) { (action) in
+            
+            UserDefaults.standard.set(false, forKey: "login")
+            UserDefaults.standard.set("", forKey: "token")
+            view.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
+            
+        }
+        
+        
+        let cancel = UIAlertAction(title: Localization.cancel, style: .cancel, handler: nil)
+        
+        alert.setTitleImage(UIImage(named: "notification_image"))
+        
+        alert.addAction(sendAction)
+        alert.addAction(cancel)
+        
+        
+        
+       
+        
+        
+        view.present(alert, animated: true, completion: nil)
+        
         //     router?.login()
     }
 }

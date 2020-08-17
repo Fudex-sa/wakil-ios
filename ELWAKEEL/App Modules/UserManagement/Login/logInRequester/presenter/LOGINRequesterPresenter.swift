@@ -16,9 +16,14 @@ protocol ILOGINRequesterPresenter: class {
       func showErrorAlert(title: String, msg: String)
     func navigateHome()
     func getUser(user: LOGINRequesterModel.loginSuccess)
+    func provider_Home()
 }
 
 class LOGINRequesterPresenter: ILOGINRequesterPresenter {
+    func provider_Home() {
+        view?.provider_Home()
+    }
+    
     func getUser(user: LOGINRequesterModel.loginSuccess) {
         view?.getUser(user: user)
     }
@@ -34,7 +39,7 @@ class LOGINRequesterPresenter: ILOGINRequesterPresenter {
         view?.showAlert(title: title, msg: msg)
     }
     func navigateHome() {
-        view?.navigateToHome()
+        view?.client_Home()
     }
     
 }

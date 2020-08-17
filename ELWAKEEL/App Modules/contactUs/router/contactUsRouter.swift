@@ -13,9 +13,21 @@ import UIKit
 protocol IcontactUsRouter: class {
     func backHome()
 	// do someting...
+    func show_side_menu()
 }
 
 class contactUsRouter: IcontactUsRouter {
+    func show_side_menu() {
+        if UserDefaults.standard.string(forKey: "type")  == "provider"
+        {
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenuProvider, completion: nil)
+            
+        }
+        else{
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenu, completion: nil)
+        }
+    }
+    
     func backHome() {
         view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
     }

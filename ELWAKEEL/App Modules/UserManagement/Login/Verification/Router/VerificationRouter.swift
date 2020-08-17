@@ -23,7 +23,7 @@ class VerificationRouter: IVerificationRouter {
     }
     
     func goHome() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+        view?.navigate(type: .modal, module: GeneralRouterRoute.HomeProvider, completion: nil)
     }
     
     func goNewpassword(phone: String) {

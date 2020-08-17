@@ -16,7 +16,7 @@ protocol IVerificationViewController: class {
   
     func goNewPassword(phone: String)
     func createPassword(type: String, id: Int)
-    func goHome()
+    func provider_Home()
 }
 
 class VerificationViewController: UIViewController {
@@ -130,7 +130,7 @@ class VerificationViewController: UIViewController {
         if number1 == 1 && number2 == 2 && number3 == 3 && number4 == 4{
             if type == "provider" {
                 print("provider")
-                self.goHome()
+                self.provider_Home()
  
             }
             else if type == "client" {
@@ -156,7 +156,7 @@ class VerificationViewController: UIViewController {
 }
 
 extension VerificationViewController: IVerificationViewController {
-    func goHome() {
+    func provider_Home() {
         router?.goHome()
     }
     

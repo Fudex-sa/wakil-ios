@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="provider_log" rowHeight="157" id="KGk-i7-Jjw" customClass="provider_log" customModule="ELWAKEEL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="157"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="156.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9N-OV-JkG">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="156.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMm-LI-Wu1">
+                                <rect key="frame" x="15" y="15" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="UwT-GU-fgj"/>
+                                    <constraint firstAttribute="height" constant="25" id="eZ4-5q-1qq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA2-M5-a1d">
+                                <rect key="frame" x="286" y="15" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.13725490200000001" green="0.67450980390000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6C-Ha-h2V">
+                                <rect key="frame" x="15" y="55" width="313" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="xd4-dY-FZp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpW-ZS-eWa">
+                                <rect key="frame" x="15" y="95" width="313" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ueA-yo-Zf0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uMm-LI-Wu1" firstAttribute="top" secondItem="t9N-OV-JkG" secondAttribute="top" constant="15" id="2Y8-NN-WAl"/>
+                            <constraint firstItem="k6C-Ha-h2V" firstAttribute="leading" secondItem="t9N-OV-JkG" secondAttribute="leading" constant="15" id="Omk-67-HGd"/>
+                            <constraint firstItem="bpW-ZS-eWa" firstAttribute="top" secondItem="k6C-Ha-h2V" secondAttribute="bottom" constant="15" id="Q4v-OY-9VD"/>
+                            <constraint firstItem="k6C-Ha-h2V" firstAttribute="top" secondItem="uMm-LI-Wu1" secondAttribute="bottom" constant="15" id="QAT-y0-HIZ"/>
+                            <constraint firstAttribute="trailing" secondItem="bpW-ZS-eWa" secondAttribute="trailing" constant="15" id="flZ-E0-DQU"/>
+                            <constraint firstItem="uMm-LI-Wu1" firstAttribute="leading" secondItem="t9N-OV-JkG" secondAttribute="leading" constant="15" id="gus-rr-ylK"/>
+                            <constraint firstAttribute="trailing" secondItem="BA2-M5-a1d" secondAttribute="trailing" constant="15" id="iAg-6T-dXK"/>
+                            <constraint firstItem="bpW-ZS-eWa" firstAttribute="leading" secondItem="t9N-OV-JkG" secondAttribute="leading" constant="15" id="j36-Ap-Dvl"/>
+                            <constraint firstItem="BA2-M5-a1d" firstAttribute="top" secondItem="t9N-OV-JkG" secondAttribute="top" constant="15" id="sBu-Uw-WJ4"/>
+                            <constraint firstAttribute="trailing" secondItem="k6C-Ha-h2V" secondAttribute="trailing" constant="15" id="uKy-6d-Csv"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="t9N-OV-JkG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="27j-YD-n6I"/>
+                    <constraint firstItem="t9N-OV-JkG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="E7X-x2-ugQ"/>
+                    <constraint firstAttribute="bottom" secondItem="t9N-OV-JkG" secondAttribute="bottom" id="PCP-x3-93f"/>
+                    <constraint firstAttribute="trailing" secondItem="t9N-OV-JkG" secondAttribute="trailing" id="ukX-Uk-Vi7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="address" destination="bpW-ZS-eWa" id="W4o-18-vcc"/>
+                <outlet property="request_status" destination="BA2-M5-a1d" id="0gL-dL-K3k"/>
+                <outlet property="reuest_num" destination="uMm-LI-Wu1" id="k5e-vW-Dan"/>
+                <outlet property="rquest_DES" destination="k6C-Ha-h2V" id="lF2-6I-KRZ"/>
+            </connections>
+            <point key="canvasLocation" x="119.2" y="205.54722638680661"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -15,7 +15,8 @@ import MOLH
 protocol ILOGINRequesterViewController: class {
 	var router: ILOGINRequesterRouter? { get set }
     func showAlert(title: String, msg: String)
-    func navigateToHome()
+    func client_Home()
+    func provider_Home()
     func getUser(user: LOGINRequesterModel.loginSuccess)
 }
 
@@ -117,13 +118,17 @@ extension LOGINRequesterViewController{
 
 
 extension LOGINRequesterViewController: ILOGINRequesterViewController {
+    func provider_Home() {
+        router?.provider_Home()
+    }
+    
     func getUser(user: LOGINRequesterModel.loginSuccess) {
         self.user = user
         
         print("User\(user)")
     }
     
-    func navigateToHome() {
+    func client_Home() {
         router?.navigateToHome()
     }
     

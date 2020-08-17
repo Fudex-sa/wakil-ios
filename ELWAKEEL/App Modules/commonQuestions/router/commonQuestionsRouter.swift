@@ -11,10 +11,23 @@
 import UIKit
 
 protocol IcommonQuestionsRouter: class {
+    func show_side_menu()
 	// do someting...
 }
 
-class commonQuestionsRouter: IcommonQuestionsRouter {	
+class commonQuestionsRouter: IcommonQuestionsRouter {
+    func show_side_menu() {
+        if UserDefaults.standard.string(forKey: "type")  == "provider"
+        {
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenuProvider, completion: nil)
+            
+        }
+        else{
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenu, completion: nil)
+        }
+        
+    }
+    
 	weak var view: commonQuestionsViewController?
 	
 	init(view: commonQuestionsViewController?) {

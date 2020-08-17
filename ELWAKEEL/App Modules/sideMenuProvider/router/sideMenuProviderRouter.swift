@@ -36,7 +36,7 @@ class sideMenuProviderRouter: IsideMenuProviderRouter {
     }
     
     func GO_home() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+        view?.navigate(type: .modal, module: GeneralRouterRoute.HomeProvider, completion: nil)
     }
     
     func Go_contact_us() {
@@ -52,7 +52,7 @@ class sideMenuProviderRouter: IsideMenuProviderRouter {
     }
     
     func Records() {
-    view?.navigate(type: .modal, module: GeneralRouterRoute.requestsRecord, completion: nil)
+    view?.navigate(type: .modal, module: GeneralRouterRoute.provider_log, completion: nil)
     }
     
 	weak var view: sideMenuProviderViewController?

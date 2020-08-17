@@ -12,9 +12,22 @@ import UIKit
 
 protocol IapplicationSettingRouter: class {
 	// do someting...
+    func show_side_menu()
 }
 
-class applicationSettingRouter: IapplicationSettingRouter {	
+class applicationSettingRouter: IapplicationSettingRouter {
+    func show_side_menu() {
+        
+        if UserDefaults.standard.string(forKey: "type")  == "provider"
+        {
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenuProvider, completion: nil)
+            
+        }
+        else{
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenu, completion: nil)
+        }
+    }
+    
 	weak var view: applicationSettingViewController?
 	
 	init(view: applicationSettingViewController?) {

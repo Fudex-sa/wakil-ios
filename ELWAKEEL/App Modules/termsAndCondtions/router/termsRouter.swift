@@ -12,9 +12,21 @@ import UIKit
 
 protocol ItermsRouter: class {
 	// do someting...
+    func show_side_menu()
 }
 
-class termsRouter: ItermsRouter {	
+class termsRouter: ItermsRouter {
+    func show_side_menu() {
+        if UserDefaults.standard.string(forKey: "type")  == "provider"
+        {
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenuProvider, completion: nil)
+            
+        }
+        else{
+            view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenu, completion: nil)
+        }
+    }
+    
 	weak var view: termsViewController?
 	
 	init(view: termsViewController?) {

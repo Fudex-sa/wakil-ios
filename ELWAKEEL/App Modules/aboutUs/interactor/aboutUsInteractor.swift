@@ -22,7 +22,7 @@ class aboutUsInteractor: IaboutUsInteractor {
                 self.presenter?.assign_contact_Info(contact_info: response!)
             }
             else{
-                print("error\(error?.message)")
+                print("error\(String(describing: error?.message))")
             }
         })
     }

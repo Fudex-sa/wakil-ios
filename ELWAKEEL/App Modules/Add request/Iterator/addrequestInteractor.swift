@@ -13,18 +13,38 @@ import UIKit
 protocol IaddrequestInteractor: class {
 	var parameters: [String: Any]? { get set }
     func addreuest(title: String, description: String, country_id: Int,city_id: Int, organization_id: Int, address: String, achievement_proof: String)
+    func add_special_request(title: String, description: String, country_id: Int,city_id: Int, organization_id: Int, address: String, achievement_proof: String, provider_id: Int, ads_id: Int)
     func getorganzation()
     func getCountries()
     func getCities(countries_IDs: [Int])
 }
 
 class addrequestInteractor: IaddrequestInteractor {
+    func add_special_request(title: String, description: String, country_id: Int, city_id: Int, organization_id: Int, address: String, achievement_proof: String, provider_id: Int, ads_id: Int) {
+    
+        print("ssssss    \(title)  \(description)   \(country_id)   \(city_id)   \(organization_id)   \(address)  \(achievement_proof) \(UserDefaults.standard.integer(forKey: "id"))")
+        worker?.add_special_request(title: title, description: description, country_id: country_id, city_id: city_id, organization_id: organization_id, address: address, achievement_proof: achievement_proof, provider_id: provider_id, ads_id: ads_id,complition: { (success, error, response) in
+            if success == true{
+                print("successfully allde")
+                
+                print("userid\(UserDefaults.standard.integer(forKey: "id"))")
+                
+            }
+            else{
+                print("error adding request")
+                print(error?.message ?? "error")
+            }
+            
+            
+        })
+        
+    }
+    
     
     func getCities(countries_IDs: [Int]) {
         worker?.getCities(Countries_IDs: countries_IDs, complition: { (success, error, response) in
             
-            print(response)
-            if success == true{
+            if success{
                 self.presenter?.assignCities(cities: response!)
                 self.presenter?.goHome()
                 print(response!)
@@ -59,8 +79,7 @@ class addrequestInteractor: IaddrequestInteractor {
     
     func getorganzation() {
         worker?.getOrganization(complition: { (success, error, response) in
-            print(response)
-            if success == true{
+            if success{
                 self.presenter?.assignOrganization(organizations: response!)
                 print(response!)
                 
@@ -84,7 +103,7 @@ class addrequestInteractor: IaddrequestInteractor {
             }
             else{
                 print("error adding request")
-                print(error?.message)
+                print(error?.message ?? "error")
             }
             
             
