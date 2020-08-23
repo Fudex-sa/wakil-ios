@@ -28,23 +28,28 @@ class requestrecordViewController: UIViewController {
         super.viewDidLoad()
 		// do someting...
         setUpView()
+        get_records_log()
+    print("cccc\(UserDefaults.standard.integer(forKey: "id"))")
+    
     }
     
     
      func setUpView()
      {
-        Home.text = Localization.Main
+        Home.text = Localization.Record_requests
         let unib = UINib(nibName: "recordRequests", bundle: nil)
         recordsTable.register(unib, forCellReuseIdentifier: "recordRequests")
         recordsTable.delegate = self
         recordsTable.dataSource = self
-        interactor?.getrecords()
-//        let userDefaults = UserDefaults.standard
-//        let id = userDefaults.string(forKey: "id")
-//    let token = userDefaults.string(forKey: "token")
-//        
+        recordsTable.layer.cornerRadius = 10
+        recordsTable.layer.masksToBounds = true
     }
     
+    func get_records_log()
+    {
+        interactor?.getrecords()
+
+    }
     
     @IBAction func show_side_menu(_ sender: Any) {
         router?.show_side_menu()
@@ -88,6 +93,14 @@ extension requestrecordViewController: UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let request_id = records?.data[indexPath.row].id{
+            router?.request_details(request_id: request_id)
+
+        }
+        
     }
     
 }

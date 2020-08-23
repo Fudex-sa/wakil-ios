@@ -34,7 +34,7 @@ enum GeneralRouterRoute: IRouter {
     case Home
     case sideMenu
     case addrequest(params: [String: Any]?)
-    case requestDetails(id: Int)
+    case requestDetails(id: Int, statu: String?)
     case editRequest(id: Int)
     case aboutUs
     case HomeProvider
@@ -52,7 +52,8 @@ enum GeneralRouterRoute: IRouter {
     case payment (params: [String: Any])
     case accecpt_provider(request_id: Int)
     case provider_log
-    case request_details_provider
+    case request_details_provider(request_id: Int)
+    case details(request_id: Int)
     
     
 }
@@ -88,8 +89,8 @@ extension GeneralRouterRoute {
             
         case .addrequest(let params):
             return addrequestConfiguration.setup(parameters: params ?? ["": ""])
-        case .requestDetails(let id):
-            return requestDetailsConfiguration.setup(id: id)
+        case .requestDetails(let id, let status):
+            return requestDetailsConfiguration.setup(id: id, statu: status)
         case .editRequest(let id):
             return editRequestConfiguration.setup(id: id)
         
@@ -125,8 +126,10 @@ extension GeneralRouterRoute {
             return accept_reuestConfiguration.setup(request_id: request_id)
         case .provider_log:
             return provider_logConfiguration.setup()
-        case .request_details_provider:
-            return request_detailsConfiguration.setup()
+        case .request_details_provider(let request_id):
+            return request_detailsConfiguration.setup(request_id: request_id)
+        case .details(let request_id):
+            return detailsConfiguration.setup(request_id: request_id)
         }
         
     }

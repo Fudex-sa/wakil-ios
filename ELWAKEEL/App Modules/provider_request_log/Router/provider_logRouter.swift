@@ -12,10 +12,17 @@ import UIKit
 
 protocol Iprovider_logRouter: class {
     func show_side_menu()
+    func request_details(request_id: Int)
 	// do someting...
 }
 
 class provider_logRouter: Iprovider_logRouter {
+    func request_details(request_id: Int) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.details(request_id: request_id), completion: nil)
+    }
+    
+    
+    
     func show_side_menu() {
         if UserDefaults.standard.string(forKey: "type") == "provider"
         {

@@ -51,7 +51,7 @@ struct editModel {
         let phone: String
         let email: String?
         let image: String?
-        let average_rating: Int?
+        let average_rating: String?
         
         
     }

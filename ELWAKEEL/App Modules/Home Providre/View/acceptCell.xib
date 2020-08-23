@@ -65,6 +65,14 @@
                                     <constraint firstAttribute="height" constant="105" id="182-b7-8rx"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shape" translatesAutoresizingMaskIntoConstraints="NO" id="ULp-oA-Qtz">
+                                <rect key="frame" x="335" y="100" width="40" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="C8b-PV-hah"/>
+                                    <constraint firstAttribute="width" constant="40" id="lHa-7k-Ghh"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yfz-Sm-Dmv">
                                 <rect key="frame" x="0.0" y="160" width="360" height="50"/>
                                 <subviews>
@@ -98,12 +106,14 @@
                         <constraints>
                             <constraint firstItem="dXe-Oi-mLe" firstAttribute="width" secondItem="J9N-bg-kZI" secondAttribute="width" multiplier="4" id="2Th-Pa-85o"/>
                             <constraint firstAttribute="trailing" secondItem="Yfz-Sm-Dmv" secondAttribute="trailing" id="A3S-Re-kZQ"/>
+                            <constraint firstAttribute="trailing" secondItem="ULp-oA-Qtz" secondAttribute="trailing" constant="-15" id="CwN-TH-n4H"/>
                             <constraint firstAttribute="trailing" secondItem="J9N-bg-kZI" secondAttribute="trailing" id="Mwc-JM-lOg"/>
                             <constraint firstItem="dXe-Oi-mLe" firstAttribute="top" secondItem="OeO-O8-szw" secondAttribute="top" id="Oad-qZ-EeZ"/>
                             <constraint firstItem="WlM-2I-8mK" firstAttribute="top" secondItem="dXe-Oi-mLe" secondAttribute="bottom" constant="15" id="Q5Q-b9-2M1"/>
                             <constraint firstItem="J9N-bg-kZI" firstAttribute="top" secondItem="OeO-O8-szw" secondAttribute="top" id="RAT-bU-hWy"/>
                             <constraint firstItem="WlM-2I-8mK" firstAttribute="leading" secondItem="OeO-O8-szw" secondAttribute="leading" id="Ss1-gJ-KCs"/>
                             <constraint firstAttribute="trailing" secondItem="WlM-2I-8mK" secondAttribute="trailing" id="UXf-7j-6Vt"/>
+                            <constraint firstItem="ULp-oA-Qtz" firstAttribute="centerY" secondItem="OeO-O8-szw" secondAttribute="centerY" id="Wnz-1W-wag"/>
                             <constraint firstItem="Yfz-Sm-Dmv" firstAttribute="leading" secondItem="OeO-O8-szw" secondAttribute="leading" id="eRW-e0-BaT"/>
                             <constraint firstItem="dXe-Oi-mLe" firstAttribute="leading" secondItem="OeO-O8-szw" secondAttribute="leading" id="grE-ZG-wxh"/>
                             <constraint firstItem="Yfz-Sm-Dmv" firstAttribute="top" secondItem="WlM-2I-8mK" secondAttribute="bottom" constant="15" id="vyz-vh-tqa"/>
@@ -126,8 +136,12 @@
                 <outlet property="des" destination="z8i-xC-ZXR" id="NS6-ja-4Gy"/>
                 <outlet property="requestNum" destination="dXe-Oi-mLe" id="dF6-rQ-YjE"/>
                 <outlet property="requestStatus" destination="J9N-bg-kZI" id="Rcu-sR-ZFR"/>
+                <outlet property="starimg" destination="ULp-oA-Qtz" id="22H-rm-hDq"/>
             </connections>
             <point key="canvasLocation" x="67.200000000000003" y="263.11844077961024"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="shape" width="13" height="12.5"/>
+    </resources>
 </document>

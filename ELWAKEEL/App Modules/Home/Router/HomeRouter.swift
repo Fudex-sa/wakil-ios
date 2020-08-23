@@ -18,9 +18,24 @@ protocol IHomeRouter: class {
     func go_offer(request_id: Int)
     func show_side_menu()
     func go_special_request(params:[String:Any])
+    func edit_request(request_id: Int)
+    func request_details(request_id: Int, status: String)
+    func details(request_id: Int)
 }
 
 class HomeRouter: IHomeRouter {
+    func request_details(request_id: Int, status: String) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.requestDetails(id: request_id, statu: status), completion: nil)
+    }
+    
+    func details(request_id: Int) {
+         view?.navigate(type: .modal, module: GeneralRouterRoute.details(request_id: request_id), completion: nil)
+    }
+    
+    func edit_request(request_id: Int) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.editRequest(id: request_id), completion: nil)
+    }
+    
     func go_special_request(params: [String : Any]) {
         view?.navigate(type: .modal, module: GeneralRouterRoute.addrequest(params: params), completion: nil)
     }

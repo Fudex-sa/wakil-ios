@@ -33,7 +33,7 @@ struct Accept_RequestModel {
         
         struct offer_info: Codable {
             var id: Int?
-            var price_after_tax: Double?
+            var price_after_tax: String?
             var required_paper: String?
             var duration: String?
             var provider: clint?
@@ -45,7 +45,7 @@ struct Accept_RequestModel {
             var phone: String?
             var email: String?
             var image: String?
-            var average_rating: Int?
+            var average_rating: String?
         }
         struct Links: Codable {
             var first_page_url: String?

@@ -14,10 +14,19 @@ protocol IrequestDetailsPresenter: class {
 	// do someting...
     func cancel()
     func assign_request(request: requestDetailsModel.RequestDetails?)
+    func done_request()
+    func evaluate_provider()
 
 }
 
 class requestDetailsPresenter: IrequestDetailsPresenter {
+    func evaluate_provider() {
+        view?.evaluate_provider()
+    }
+    
+    func done_request() {
+        view?.go_home()
+    }
     func assign_request(request: requestDetailsModel.RequestDetails?) {
     view?.assign_request_details(request: request)
     }

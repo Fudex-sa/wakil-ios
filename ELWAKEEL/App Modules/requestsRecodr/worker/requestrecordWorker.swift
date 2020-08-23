@@ -30,8 +30,8 @@ class requestrecordWorker: IrequestrecordWorker {
                 print("dataCount\(requests.data.count)")
                 complition(true,nil,requests)
                 
-            } catch _ {
-                
+            } catch (let error) {
+                print("ddddd\(error.localizedDescription)")
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: response )

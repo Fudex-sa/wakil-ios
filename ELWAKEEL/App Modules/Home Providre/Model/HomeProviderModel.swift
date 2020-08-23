@@ -37,7 +37,7 @@ struct HomeProviderModel {
             var request_number: String?
             var address: String?
             var achievement_proof: String?
-            var provider: String?
+            var provider: clint?
             var offersCount: Int?
             var status: statu?
             var organization, country, city : organiz?
@@ -53,13 +53,14 @@ struct HomeProviderModel {
             var name: String?
             
         }
+       
         struct clint: Codable {
             var id: Int?
             var name: String?
             var email: String?
             var image: String?
             var phone: String?
-            var average_rating: Int?
+            var average_rating: String?
         }
         struct Links: Codable {
             var first_page_url: String?
@@ -113,7 +114,7 @@ struct HomeProviderModel {
             var email: String?
             var image: String?
             var phone: String?
-            var average_rating: Int?
+            var average_rating: String?
         }
         struct Links: Codable {
             var first_page_url: String?

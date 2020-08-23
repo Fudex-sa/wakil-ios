@@ -19,16 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        MOLHLanguage.setDefaultLanguage("ar")
-        MOLH.shared.activate(true)
-        reset()
+//        MOLHLanguage.setDefaultLanguage("ar")
+//        MOLH.shared.activate(true)
+//        reset()
         
         return true
     }
     func reset() {
         
         
-    self.window?.rootViewController?.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
+        let rootViewController = HomeViewController(nibName: "HomeViewController", bundle : nil)
+        window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
+        //    self.window?.rootViewController?.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
 
 //        window?.rootViewController?.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
 //        window = UIWindow()

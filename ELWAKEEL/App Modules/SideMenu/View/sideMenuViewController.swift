@@ -75,16 +75,13 @@ class sideMenuViewController: UIViewController {
     
     func getrequests()
     {
-        print("request Called")
         interactor?.getRequest()
-        print("request Called")
 
         
     }
     
     @IBAction func editBTN(_ sender: Any) {
     }
-    
     @IBAction func createNBT(_ sender: Any) {
         self.navigate(type: .modal, module: GeneralRouterRoute.addrequest(params: nil), completion: nil)
     }

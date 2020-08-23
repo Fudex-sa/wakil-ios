@@ -12,10 +12,15 @@ import UIKit
 
 protocol IrequestrecordRouter: class {
 	// do someting...
+     func request_details(request_id: Int)
     func show_side_menu()
 }
 
 class requestrecordRouter: IrequestrecordRouter {
+    
+    func request_details(request_id: Int) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.details(request_id: request_id), completion: nil)
+    }
     func show_side_menu() {
       if UserDefaults.standard.string(forKey: "type")  == "provider"
         {

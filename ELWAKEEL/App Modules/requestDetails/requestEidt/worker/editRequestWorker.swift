@@ -26,7 +26,6 @@ class editRequestWorker: IeditRequestWorker {
             }
             
         }, failure: { (error) in
-            print("SSSSSSSERRRRor")
             do {
                 let decoder = JSONDecoder()
                 let error = try decoder.decode(ErrorModel.self, from: error as! Data )
@@ -56,8 +55,8 @@ class editRequestWorker: IeditRequestWorker {
               
                 complition(true,nil,requests)
                 
-            } catch _ {
-                
+            } catch (let error) {
+                print("dddd\(error.localizedDescription)")
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: response )

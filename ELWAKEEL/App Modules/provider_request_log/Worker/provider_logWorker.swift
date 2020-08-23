@@ -23,12 +23,13 @@ class provider_logWorker: Iprovider_logWorker {
             print(response)
             
             do {
+                print("Logs")
                 let decoder = JSONDecoder()
                 let requests = try decoder.decode(provider_logModel.Logs.self, from: response)
                 complition(true,nil,requests)
                 
-            } catch _ {
-                
+            } catch (let error) {
+                print("xxxxx\(error.localizedDescription)")
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: response )

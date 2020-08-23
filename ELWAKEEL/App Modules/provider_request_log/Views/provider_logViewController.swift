@@ -46,6 +46,9 @@ class provider_logViewController: UIViewController {
         logs_table.dataSource = self
         let nib = UINib(nibName: "provider_log", bundle: nil)
         logs_table.register(nib, forCellReuseIdentifier: "provider_log")
+        
+        logs_table.layer.cornerRadius = 10
+        logs_table.layer.masksToBounds = true
     }
 }
 
@@ -74,17 +77,23 @@ extension provider_logViewController: UITableViewDelegate, UITableViewDataSource
             cell.request_status.textColor = UIColor(red: 0.60, green: 0.25, blue: 0.36, alpha: 1.00)
 
         }
-        cell.reuest_num.text = String(describing: logs?.data[indexPath.row].id)
+        cell.reuest_num.text =  logs?.data[indexPath.row].request_number
         var address = logs?.data[indexPath.row].country?.name
         address?.append(contentsOf: " - ")
         address?.append(contentsOf: logs?.data[indexPath.row].city?.name ?? "")
         cell.address.text = address
         cell.rquest_DES.text = logs?.data[indexPath.row].description
         cell.request_status.text = logs?.data[indexPath.row].status?.name
-        
+        cell.selectionStyle = .none
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let request_id = logs?.data[indexPath.row].id
+        {
+            router?.request_details(request_id: request_id)
+        }
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
     }

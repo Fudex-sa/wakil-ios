@@ -14,7 +14,7 @@ import LocalizationFramework
 protocol Iaccept_reuestViewController: class {
 	var router: Iaccept_reuestRouter? { get set }
     func craete_offer(price: Double, required_paper: String, duration: String, service_id: Int)
-    func go_request_details()
+    func go_home()
 }
 
 class accept_reuestViewController: UIViewController {
@@ -35,6 +35,7 @@ class accept_reuestViewController: UIViewController {
     @IBOutlet weak var cost_prics: UILabel!
     var request_id: Int?
     var cost: Double?
+    var params: [String: Any]?
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
@@ -67,6 +68,7 @@ class accept_reuestViewController: UIViewController {
     func validate_data()
     {
         guard let price = priceTXT.text, !price.isEmpty else{
+            
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.required_price_field, sender: self)
             priceTXT.attributedPlaceholder =  NSAttributedString(string:Localization.requirdField, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 14)!])
             
@@ -86,13 +88,16 @@ class accept_reuestViewController: UIViewController {
             return
         }
         
-        cost = Double(price)
-        print("cost\(cost)")
-        if let id = request_id{
-            craete_offer(price: cost!, required_paper: required_papers, duration: time, service_id: id)
+        guard let cost =  Double(price) else {
+            
+            ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.vaild_value, sender: self)
+            priceTXT.attributedPlaceholder =  NSAttributedString(string:Localization.vaild_value, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 14)!])
+            return
         }
-        
-        
+       
+        if let id = request_id{
+            craete_offer(price: cost, required_paper: required_papers, duration: time, service_id: id)
+        }
     }
     
     @IBAction func sendBTN(_ sender: Any) {
@@ -109,11 +114,22 @@ class accept_reuestViewController: UIViewController {
 }
 
 extension accept_reuestViewController: Iaccept_reuestViewController {
-    func go_request_details() {
-        print("request details")
-        router?.go_request_details()
-
-    }
+    func go_home() {
+        
+        let alert = AlertController(title: " ", message: Localization.offer_added, preferredStyle: .alert)
+        
+        let sendAction = UIAlertAction(title: Localization.ok, style: .default) { (action) in
+            self.router?.go_home()
+            
+        }
+       
+        alert.addAction(sendAction)
+        present(alert, animated: true, completion: nil)
+        
+        }
+    
+    
+   
     
     func craete_offer(price: Double, required_paper: String, duration: String, service_id: Int) {
         interactor?.craete_offer(price: price, required_paper: required_paper, duration: duration, service_id: service_id)

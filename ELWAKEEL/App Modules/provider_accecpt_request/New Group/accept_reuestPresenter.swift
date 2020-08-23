@@ -12,12 +12,12 @@ import UIKit
 
 protocol Iaccept_reuestPresenter: class {
 	// do someting...
-    func go_request_details()
+    func go_home()
 }
 
 class accept_reuestPresenter: Iaccept_reuestPresenter {
-        func go_request_details() {
-            view?.go_request_details()
+        func go_home() {
+            view?.go_home()
         }
 	weak var view: Iaccept_reuestViewController?
 	

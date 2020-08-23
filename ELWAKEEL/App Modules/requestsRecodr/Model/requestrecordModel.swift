@@ -31,11 +31,12 @@ struct requestrecordModel {
         
         struct info: Codable {
             var id: Int
+            var request_number: String?
             var title: String?
             var description: String?
             var address: String?
             var achievement_proof: String?
-            var provider: String?
+            var provider: clint?
             var offersCount: Int?
             var status: statu?
             var organization, country, city : organiz?
@@ -57,7 +58,7 @@ struct requestrecordModel {
             var email: String?
             var image: String?
             var phone: String?
-            var average_rating: Int?
+            var average_rating: String?
         }
         struct Links: Codable {
             var first_page_url: String?

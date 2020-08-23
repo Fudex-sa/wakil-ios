@@ -31,8 +31,9 @@ class LOGINRequesterWorker: ILOGINRequesterWorker {
                 
                 complition(nil,true,user)
                 
-            } catch _ {
-                
+            } catch (let error) {
+                print("error2\(error.localizedDescription)")
+
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: responsData )
@@ -47,6 +48,7 @@ class LOGINRequesterWorker: ILOGINRequesterWorker {
             
         }, failure: { (error) in
             do {
+                print("error\(error?.localizedDescription)")
                 let decoder = JSONDecoder()
                 let error = try decoder.decode(ErrorModel.self, from: error as! Data )
                 print(error)

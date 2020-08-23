@@ -20,7 +20,7 @@ class accept_reuestInteractor: Iaccept_reuestInteractor {
         worker?.create_offer(price: price, required_paper: required_paper, duration: duration, service_id: service_id, complition: { (success, error, response) in
             if success{
                 if let response = response{
-                   self.presenter?.go_request_details()
+                   self.presenter?.go_home()
                     
                 }
                 else{

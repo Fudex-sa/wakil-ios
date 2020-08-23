@@ -32,7 +32,7 @@ class Accept_RequestViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
-    
+    print("sssdddd\(request_Id)")
         setUpview()
         get_offers()
     }
@@ -89,12 +89,11 @@ extension Accept_RequestViewController: UITableViewDelegate, UITableViewDataSour
             sender in
            
             if let id = self.offers?.data[indexPath.row].id, let requets_id = self.request_Id{
-                 print("hamada\(id) \(requets_id)")
                 self.showAlert(offer_id: id, request_id: requets_id)
             }
             
         }
-        cell.rating.rating = Double(offers?.data[indexPath.row].provider?.average_rating ?? 0)
+        cell.rating.rating = Double(offers?.data[indexPath.row].provider?.average_rating ?? "") ?? 0.0
         cell.rating.isUserInteractionEnabled = false
 //        cell.rating.didFinishTouchingCosmos = {
 //            action in

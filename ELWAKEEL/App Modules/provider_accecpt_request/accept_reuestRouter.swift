@@ -12,12 +12,17 @@ import UIKit
 
 protocol Iaccept_reuestRouter: class {
 	// do someting...
-    func go_request_details()
+    func go_request_details(params: [String: Any])
+    func go_home()
 }
 
 class accept_reuestRouter: Iaccept_reuestRouter {
-    func go_request_details() {
-view?.navigate(type: .modal, module: GeneralRouterRoute.request_details_provider, completion: nil)    }
+    func go_home() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.HomeProvider, completion: nil)
+    }
+    
+    func go_request_details(params: [String : Any]) {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.request_details_provider(request_id: 30), completion: nil)    }
     
     
     

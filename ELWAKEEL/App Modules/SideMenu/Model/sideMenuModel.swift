@@ -58,7 +58,7 @@ struct sideMenuModel {
             var email: String?
             var image: String?
             var phone: String?
-            var average_rating: Int?
+            var average_rating: String?
         }
         struct Links: Codable {
             var first_page_url: String?

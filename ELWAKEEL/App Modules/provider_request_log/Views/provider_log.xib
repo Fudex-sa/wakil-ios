@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="156.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMm-LI-Wu1">
-                                <rect key="frame" x="15" y="15" width="25" height="25"/>
+                                <rect key="frame" x="15" y="15" width="42" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="UwT-GU-fgj"/>
                                     <constraint firstAttribute="height" constant="25" id="eZ4-5q-1qq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

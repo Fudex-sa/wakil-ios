@@ -19,6 +19,11 @@ class acceptCell: UITableViewCell {
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var accept: UIButton!
+    
+    
+    @IBOutlet weak var starimg: UIImageView!
+    
+    
     var cancel_action: ((Any) -> Void)?
     
     @objc func cancel_pressed(sender: Any) {

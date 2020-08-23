@@ -12,9 +12,14 @@ import UIKit
 
 protocol Irequest_detailsRouter: class {
 	// do someting...
+    func go_home()
 }
 
-class request_detailsRouter: Irequest_detailsRouter {	
+class request_detailsRouter: Irequest_detailsRouter {
+    func go_home() {
+        view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+    }
+    
 	weak var view: request_detailsViewController?
 	
 	init(view: request_detailsViewController?) {

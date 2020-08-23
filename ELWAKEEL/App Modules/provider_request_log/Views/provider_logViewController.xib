@@ -30,14 +30,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N44-iP-Wl5">
                             <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                             <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cC7-ic-6tw">
-                                    <rect key="frame" x="15" y="30" width="345" height="567"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cC7-ic-6tw">
+                                    <rect key="frame" x="15" y="30" width="345" height="547"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="cC7-ic-6tw" secondAttribute="bottom" id="5G2-L4-6cE"/>
+                                <constraint firstAttribute="bottom" secondItem="cC7-ic-6tw" secondAttribute="bottom" constant="20" id="5G2-L4-6cE"/>
                                 <constraint firstAttribute="trailing" secondItem="cC7-ic-6tw" secondAttribute="trailing" constant="15" id="GvN-eG-tDd"/>
                                 <constraint firstItem="cC7-ic-6tw" firstAttribute="leading" secondItem="N44-iP-Wl5" secondAttribute="leading" constant="15" id="blt-Vh-r7X"/>
                                 <constraint firstItem="cC7-ic-6tw" firstAttribute="top" secondItem="N44-iP-Wl5" secondAttribute="top" constant="30" id="jy7-VQ-fG2"/>

@@ -54,6 +54,7 @@ class editRequestViewController: UIViewController {
         super.viewDidLoad()
 		// do someting...
         setUpView()
+        print("ssss\(id)")
         requestDetails(id: id!)
     }
     

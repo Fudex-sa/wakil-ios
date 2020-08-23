@@ -17,7 +17,10 @@ enum request_details_providerEndpoint {
      case sample
      case sample(parameter: [String: Any])
     */
-    case request_detalis()
+    case request_details(request_id: Int)
+    case cancel(request_id: Int, reason: String)
+    case done_request(request_id: Int)
+    case rate(rating: Int, user_id: Int, service_id: Int)
 }
 
 extension request_details_providerEndpoint: IEndpoint {
@@ -34,7 +37,18 @@ extension request_details_providerEndpoint: IEndpoint {
             return .get
         }
         */
-        return .get
+        switch self {
+        case .request_details:
+            
+            return .get
+        case .cancel:
+           return .post
+        case .done_request:
+            return .get
+       
+        case .rate:
+            return .post
+        }
     }
     
     var path: String {
@@ -46,7 +60,19 @@ extension request_details_providerEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        switch self {
+        case .request_details(let request_id):
+            
+            return "http://wakil.dev.fudexsb.com/api/requests/\(request_id)"
+            
+        case .cancel(let request_id, _):
+            return "http://wakil.dev.fudexsb.com/api/requests/\(request_id)/apology"
+            
+        case .done_request(let request_id):
+            return "http://wakil.dev.fudexsb.com/api/requests/\(request_id)/done"
+        case .rate:
+            return "http://wakil.dev.fudexsb.com/api/ratings/create"
+        }
     }
     
     var parameter: Parameters? {
@@ -58,8 +84,19 @@ extension request_details_providerEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
-    }
+        let id = UserDefaults.standard.integer(forKey: "id")
+        switch self {
+        case .request_details:
+            
+            return nil
+        case .cancel(_, let reason):
+            return ["reason": reason]
+        case .done_request:
+            return nil
+        case .rate(let rating, let user_id, let service_id):
+            return ["rate": rating, "rated_by": id, "user_id": user_id, "service_id": service_id]
+        }
+        }
     
     var header: HTTPHeaders? {
         /*
@@ -70,7 +107,24 @@ extension request_details_providerEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        let userDefaults = UserDefaults.standard
+        let token = userDefaults.string(forKey: "token")
+        
+        switch self {
+        case .request_details:
+            
+            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]
+            
+        case .cancel:
+            
+            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]
+            
+        case .done_request:
+            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]
+        case .rate:
+            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]
+            
+        }
     }
     
     var encoding: ParameterEncoding {        

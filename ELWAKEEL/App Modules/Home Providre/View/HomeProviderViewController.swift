@@ -41,6 +41,7 @@ class HomeProviderViewController: UIViewController {
         setUpView()
        get_provider_requests()
         get_request()
+        
     }
     
     func setUpView()
@@ -198,6 +199,7 @@ extension HomeProviderViewController: UITableViewDelegate, UITableViewDataSource
             cell.requestStatus.text = provider_requests?.data[indexPath.row].status?.name
             cell.requestNum.text = provider_requests?.data[indexPath.row].request_number
             cell.address.text = address
+            cell.selectionStyle = .none
             return cell
         }
     }
@@ -210,10 +212,25 @@ extension HomeProviderViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let request_id = provider_requests?.data[indexPath.row].id
+        {
+        if tableView == requestsTable{
+            if provider_requests?.data[indexPath.row].status?.key == "progress"{
+                router?.go_request_detail_provider(request_id: request_id)
+            }
+            
+        
+        else{
+           
+            router?.go_request_details(request_id: request_id)
+            
+            
+        }
+    }
+        }
 }
-
+    }
 extension HomeProviderViewController{
    
 }

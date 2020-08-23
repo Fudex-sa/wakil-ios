@@ -30,8 +30,12 @@ class commonFunctions
     {
         
         let alert = AlertController(title: " ", message: "", preferredStyle: .alert)
+        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        let titleString = NSAttributedString(string: "", attributes: titleAttributes)
         
-        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 20)!]
+        alert.setValue(titleString, forKey: "attributedTitle")
+
+        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 18)!]
         let messageString = NSAttributedString(string: Localization.logout_DES, attributes: messageAttributes)
         alert.setValue(messageString, forKey: "attributedMessage")
         let sendAction = UIAlertAction(title: Localization.exit, style: .default) { (action) in
@@ -41,7 +45,7 @@ class commonFunctions
             view.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
             
         }
-        
+        sendAction.setValue(UIColor(red: 0.60, green: 0.25, blue: 0.36, alpha: 1.00), forKey: "titleTextColor")
         
         let cancel = UIAlertAction(title: Localization.cancel, style: .cancel, handler: nil)
         
@@ -59,4 +63,6 @@ class commonFunctions
         
         //     router?.login()
     }
+    
+    
 }

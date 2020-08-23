@@ -12,13 +12,14 @@ import Foundation
 import UIKit
 
 class request_detailsConfiguration {
-    static func setup(parameters: [String: Any] = [:]) -> UIViewController {
+    static func setup(parameters: [String: Any] = [:], request_id: Int) -> UIViewController {
         let controller = request_detailsViewController()
         let router = request_detailsRouter(view: controller)
         let presenter = request_detailsPresenter(view: controller)
         let worker = request_detailsWorker()
         let interactor = request_detailsInteractor(presenter: presenter, worker: worker)
         
+        controller.request_id = request_id
         controller.interactor = interactor
         controller.router = router
         interactor.parameters = parameters

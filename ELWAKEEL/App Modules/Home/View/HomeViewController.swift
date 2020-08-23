@@ -318,55 +318,59 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         cell.layer.cornerRadius = 10
         cell.requestNumLBL.text = String(describing: id)
         cell.requestStatus.text = (requests2?.data[indexPath.row].status?.name)
-        if requests2?.data[indexPath.row].offersCount == 0{
+        
+        if requests2?.data[indexPath.row].status?.key == "new" &&
+            requests2?.data[indexPath.row].offersCount == 0 {
             cell.new.isHidden = false
             cell.showNumberLBL.isHidden = true
+        }
+        else if requests2?.data[indexPath.row].status?.key == "new" &&
+            requests2?.data[indexPath.row].offersCount != 0{
+            cell.showNumberLBL.isHidden = false
+                     cell.showNumberLBL.text = String(describing: requests2?.data[indexPath.row].offersCount ?? 0)
+                        cell.requestNum2.text = String(describing: self.requests2?.data[indexPath.row].offersCount ?? 0)
+            
+                        cell.new.isHidden = true
+                        cell.requests_action = {
+                            sender in
+                            if let id = self.requests2?.data[indexPath.row].id
+                            {
+                                self.go_offers(request_id: id)
+            
+            
+                        }
+            }
             
         }
         else{
-            cell.showNumberLBL.isHidden = false
-
-         cell.showNumberLBL.text = String(describing: requests2?.data[indexPath.row].offersCount ?? 0)
-            cell.requestNum2.text = String(describing: self.requests2?.data[indexPath.row].offersCount ?? 0)
-            
-            cell.new.isHidden = true
-            cell.requests_action = {
-                sender in
-                if let id = self.requests2?.data[indexPath.row].id
-                {
-                    self.go_offers(request_id: id)
-              
-                    
-            }
-            }
-            
-           
-            
+            cell.showNumberLBL.isHidden
+                = true
         }
-        
-
+   
         cell.requestDESLBL.text = requests2?.data[indexPath.row].description
         var address = requests2?.data[indexPath.row].city?.name ?? ""
         address.append(contentsOf: " - ")
         address.append(contentsOf: requests2?.data[indexPath.row].country?.name ?? "" )
         cell.requesteAccept.text = Localization.requestsApprove
         cell.requestAddresBL.text = address
-        
-
+       
         cell.selectionStyle = .none
         return cell
     }
 
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if requests2?.data[indexPath.row].offersCount == 0{
-            return 135
-
+        if requests2?.data[indexPath.row].status?.key == "new" &&
+            requests2?.data[indexPath.row].offersCount == 0 {
+        return 135
+        
         }
-        else{
+        else if requests2?.data[indexPath.row].status?.key == "new" &&
+            requests2?.data[indexPath.row].offersCount != 0 {
             return 230
+        }
+       
+        else{
+            return 135
             
         }
 
@@ -376,16 +380,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let request_id = (requests2?.data[indexPath.row].id)!
-        if requests2?.data[indexPath.row].status?.name == "new"
+        if requests2?.data[indexPath.row].status?.key == "new"
         {
-            self.navigate(type: .modal, module: GeneralRouterRoute.editRequest(id: request_id), completion: nil)
+           
+            router?.edit_request(request_id: request_id)
         }
-        else if requests2?.data[indexPath.row].status?.name == "progress"{
-            self.navigate(type: .modal, module: GeneralRouterRoute.requestDetails(id: request_id), completion: nil)
+        else if requests2?.data[indexPath.row].status?.key == "progress"{
+            
+            router?.request_details(request_id: request_id, status: "progress")
         }
         else {
-            print("not selected")
             
+            router?.request_details(request_id: request_id, status: "done")
+           
         }
        
     }

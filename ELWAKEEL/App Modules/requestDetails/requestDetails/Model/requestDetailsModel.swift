@@ -31,6 +31,7 @@ struct requestDetailsModel {
             let organization, city, country: City
             let address, achievement_proof: String?
             let client: Client?
+            let provider: Client?
             let progress_time: String?
             let offer: Offer?
 //            let progress_time: String?
@@ -51,7 +52,7 @@ struct requestDetailsModel {
             let phone: String
             let email: String?
             let image: String?
-            let average_rating: Int?
+            let average_rating: String?
             
             
         }
@@ -59,7 +60,7 @@ struct requestDetailsModel {
         // MARK: - Offer
         struct Offer: Codable {
             let id: Int
-            let price_after_tax: Double
+            let price_after_tax: String?
             let required_paper, duration: String
             let provider: Client
             
