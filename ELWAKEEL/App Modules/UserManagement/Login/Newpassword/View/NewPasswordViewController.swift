@@ -40,15 +40,14 @@ class NewPasswordViewController: UIViewController {
     
     func setUpView()
     {
-        print("dddd\(phone)")
         passwordTXT.delegate = self
         retypePasswordTXT.delegate = self
-        newPasswordLBL.text = Localization.newpassword
         NewPassword2LBL.text = Localization.newpassword
         newPasswordDES.text = Localization.newPasswordDES
         password.text = Localization.password
         retypePasseword.text = Localization.password
         saveBTN.setTitle(Localization.save, for: .normal)
+        self.navigationItem.title = Localization.newpassword
     }
     
     @IBAction func backBTN(_ sender: Any) {
@@ -62,19 +61,19 @@ class NewPasswordViewController: UIViewController {
             else{
                 ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
                 return
-                
+
         }
-        
+
         if password != confirmPassword {
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.incorrectPassword, sender: self)
             return
         }
         else{
-            
+
             interactor?.updatePassword(password: password, phone: phone)
         }
-        
-                
+
+
         }
         
     
@@ -84,7 +83,14 @@ class NewPasswordViewController: UIViewController {
 extension NewPasswordViewController: INewPasswordViewController {
     func GoHome() {
         // Go Home
-        print("GoHOme")
+        if UserDefaults.standard.string(forKey: "type") == "provider"
+        {
+            self.navigate(type: .modal, module: GeneralRouterRoute.HomeProvider, completion: nil)
+        }
+        else{
+            self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+            
+        }
     }
     
     func showAlert(title: String, msg: String) {

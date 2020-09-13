@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum loginEndpoint {
     /*
      Add Endpoint
@@ -18,7 +18,7 @@ enum loginEndpoint {
      case sample(parameter: [String: Any])
     */
     
-    case login(phone: String, password: String, type: String)
+    case login(phone: String, password: String)
 }
 
 extension loginEndpoint: IEndpoint {
@@ -70,9 +70,9 @@ extension loginEndpoint: IEndpoint {
         
         switch self {
             
-        case .login(let phone, let password, let type):
-//            let defaults = UserDefaults.standard
-//            let device_token = defaults.string(forKey: "firebase_token")
+        case .login(let phone, let password):
+            let defaults = UserDefaults.standard
+            let type = defaults.string(forKey: "type")
             return ["phone": phone , "password": password , "type": type]
         }
        
@@ -87,9 +87,11 @@ extension loginEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
+        let language = MOLHLanguage.currentAppleLanguage()
+
         switch self {
         case .login:
-            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
         }
     }
     

@@ -25,11 +25,12 @@ struct CreatingRequesterModel {
 	}
     
     struct registerCleint: Codable {
-            var id: Int?
-            var name: String?
-            var phone: String?
-            var email: String?
-            var average_rating: Int?
+            let id: Int?
+            let name: String?
+            let phone: String?
+            let email: String?
+            let image: String?
+            let average_rating: String?
             
         }  
     }

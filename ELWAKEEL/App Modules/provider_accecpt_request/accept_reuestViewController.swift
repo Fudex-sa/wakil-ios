@@ -42,12 +42,10 @@ class accept_reuestViewController: UIViewController {
         setUpView()
         delegates()
         hideKeyboardWhenTappedAround()
-        print("id\(request_id)")
     }
     func setUpView()
     {
         
-        accept_reuest.text = Localization.request_accept
         near_reuests.text = Localization.near_requests
         near_request_DES.text = Localization.request_accept_DES
         price.text = Localization.price_show
@@ -55,6 +53,8 @@ class accept_reuestViewController: UIViewController {
         required_paper.text = Localization.required_paper
         time.text = Localization.excutions_time
         sentBTN.setTitle(Localization.send, for: .normal)
+         self.navigationItem.title = Localization.request_accept
+
         
     }
     func delegates()
@@ -102,11 +102,6 @@ class accept_reuestViewController: UIViewController {
     
     @IBAction func sendBTN(_ sender: Any) {
         validate_data()
-        
-    }
-    
-    @IBAction func backBTN(_ sender: Any) {
-    dismiss()
     }
     
     

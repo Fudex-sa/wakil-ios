@@ -19,7 +19,7 @@ class accept_reuestInteractor: Iaccept_reuestInteractor {
     func craete_offer(price: Double, required_paper: String, duration: String, service_id: Int) {
         worker?.create_offer(price: price, required_paper: required_paper, duration: duration, service_id: service_id, complition: { (success, error, response) in
             if success{
-                if let response = response{
+                if response != nil{
                    self.presenter?.go_home()
                     
                 }

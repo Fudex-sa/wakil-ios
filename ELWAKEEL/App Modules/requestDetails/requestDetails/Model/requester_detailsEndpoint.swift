@@ -11,7 +11,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum requester_detailsEndpoint {
     /*
      Add Endpoint
@@ -111,11 +111,12 @@ extension requester_detailsEndpoint: IEndpoint {
         */
         let userDefaults = UserDefaults.standard
         let token = userDefaults.string(forKey: "token")
-        
+        let language = MOLHLanguage.currentAppleLanguage()
+
         switch self {
         case .request_details:
            
-                return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]
+                return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]
             
         case .rate:
             return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]

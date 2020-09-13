@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum CreatingRequesterEndpointEndpoint {
     /*
      Add Endpoint
@@ -85,9 +85,11 @@ extension CreatingRequesterEndpointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
+        let language = MOLHLanguage.currentAppleLanguage()
+
         switch self {
         case .register:
-       return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+       return ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
         }
     }
     

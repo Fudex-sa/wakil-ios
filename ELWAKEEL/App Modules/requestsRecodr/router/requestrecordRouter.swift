@@ -19,7 +19,7 @@ protocol IrequestrecordRouter: class {
 class requestrecordRouter: IrequestrecordRouter {
     
     func request_details(request_id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.details(request_id: request_id), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.details(request_id: request_id), completion: nil)
     }
     func show_side_menu() {
       if UserDefaults.standard.string(forKey: "type")  == "provider"

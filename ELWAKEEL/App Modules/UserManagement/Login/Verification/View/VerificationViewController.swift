@@ -76,6 +76,13 @@ class VerificationViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+           self.navigationController?.navigationBar.isHidden = true
+
+          }
+       
+    override func viewWillDisappear(_ animated: Bool) {
+          self.navigationController?.navigationBar.isHidden = false    }
     
     @objc func textFieldDidChange(textField: UITextField){
         let text = textField.text
@@ -107,18 +114,21 @@ class VerificationViewController: UIViewController {
     
     @IBAction func resendBTN(_ sender: Any) {
         print("send again")
+       
+//        router?.createpassword(type: "dd", id: 90)
     }
     
     
     @IBAction func confirmBTN(_ sender: Any) {
-     guard let num4 = firstNUM.text,
+//        router?.goNewpassword(phone: "01029939")
+        guard let num4 = firstNUM.text,
         let num3 = secondNUM.text,
         let num2 = thirdNum.text,
         let num1 = furthNUM.text,
         !num1.isEmpty || !num2.isEmpty || !num3.isEmpty || !num4.isEmpty
         else{
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
-            
+
             print("error Gurd")
             return
         }
@@ -126,12 +136,12 @@ class VerificationViewController: UIViewController {
         let number2 = Int(num2)
         let number3 = Int(num3)
         let number4 = Int(num4)
-        
+
         if number1 == 1 && number2 == 2 && number3 == 3 && number4 == 4{
             if type == "provider" {
                 print("provider")
                 self.provider_Home()
- 
+
             }
             else if type == "client" {
                 print("client")
@@ -141,18 +151,16 @@ class VerificationViewController: UIViewController {
                 print("forget password")
                 self.goNewPassword(phone: phone!)
             }
-            
+
         }
         else{
             print("error")
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.correctVerificationNumber, sender: self)
             return
         }
-       
+//
     }
-    
-    
-    
+
 }
 
 extension VerificationViewController: IVerificationViewController {

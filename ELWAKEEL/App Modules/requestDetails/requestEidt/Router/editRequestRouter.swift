@@ -12,10 +12,18 @@ import UIKit
 
 protocol IeditRequestRouter: class {
     func goHome()
+    func edit_request(request_id: Int)
 	// do someting...
 }
 
 class editRequestRouter: IeditRequestRouter {
+    func edit_request(request_id: Int) {
+        
+         view?.navigate(type: .push, module: GeneralRouterRoute.edit(id: request_id), completion: nil)
+    }
+    
+  
+    
     func goHome() {
         view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
     }

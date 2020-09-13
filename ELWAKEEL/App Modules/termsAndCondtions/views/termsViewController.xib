@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="termsViewController" customModule="ELWAKEEL" customModuleProvider="target">
             <connections>
                 <outlet property="language" destination="MEu-lK-44o" id="PE6-t6-gvU"/>
-                <outlet property="terms" destination="6ri-VT-Uef" id="0Rj-Va-k96"/>
                 <outlet property="termsTbale" destination="ci2-vN-ltX" id="YTP-Og-at3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wakile" destination="Rue-2f-eoJ" id="Rdm-Z0-SHm"/>
@@ -26,9 +24,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCy-Hg-EBY">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topView" translatesAutoresizingMaskIntoConstraints="NO" id="VQy-0D-vAx">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzB-Dq-pu5">
                             <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                             <subviews>
@@ -67,37 +62,12 @@
                                 <constraint firstItem="Rue-2f-eoJ" firstAttribute="width" secondItem="MEu-lK-44o" secondAttribute="width" multiplier="2:1" id="t9o-q3-cdV"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfW-QV-cw1">
-                            <rect key="frame" x="15" y="30" width="35" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="35" id="DlC-8j-MUN"/>
-                                <constraint firstAttribute="height" constant="30" id="MqK-a8-WLi"/>
-                            </constraints>
-                            <state key="normal" image="sidemenu"/>
-                            <connections>
-                                <action selector="sideMenu:" destination="-1" eventType="touchUpInside" id="qcx-cx-wv6"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ri-VT-Uef">
-                            <rect key="frame" x="164" y="30" width="47.5" height="21.5"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="VQy-0D-vAx" secondAttribute="trailing" id="3l7-bf-eNQ"/>
-                        <constraint firstAttribute="bottom" secondItem="VQy-0D-vAx" secondAttribute="bottom" id="5dh-6u-Cf4"/>
                         <constraint firstItem="RzB-Dq-pu5" firstAttribute="leading" secondItem="MCy-Hg-EBY" secondAttribute="leading" id="EiL-os-zRh"/>
-                        <constraint firstItem="6ri-VT-Uef" firstAttribute="top" secondItem="MCy-Hg-EBY" secondAttribute="top" constant="30" id="HtD-g0-CRm"/>
-                        <constraint firstItem="BfW-QV-cw1" firstAttribute="leading" secondItem="MCy-Hg-EBY" secondAttribute="leading" constant="15" id="IeD-kF-by7"/>
-                        <constraint firstItem="VQy-0D-vAx" firstAttribute="leading" secondItem="MCy-Hg-EBY" secondAttribute="leading" id="IyC-zH-dKR"/>
-                        <constraint firstItem="VQy-0D-vAx" firstAttribute="top" secondItem="MCy-Hg-EBY" secondAttribute="top" id="SEe-wb-H61"/>
-                        <constraint firstItem="6ri-VT-Uef" firstAttribute="centerX" secondItem="MCy-Hg-EBY" secondAttribute="centerX" id="Tti-rO-Avk"/>
                         <constraint firstAttribute="bottom" secondItem="RzB-Dq-pu5" secondAttribute="bottom" id="fjU-Yu-vny"/>
                         <constraint firstItem="RzB-Dq-pu5" firstAttribute="top" secondItem="MCy-Hg-EBY" secondAttribute="top" constant="70" id="qIF-6V-gVT"/>
-                        <constraint firstItem="BfW-QV-cw1" firstAttribute="top" secondItem="6ri-VT-Uef" secondAttribute="top" id="qcG-04-7MV"/>
                         <constraint firstAttribute="trailing" secondItem="RzB-Dq-pu5" secondAttribute="trailing" id="x2A-Fd-yHu"/>
                     </constraints>
                 </view>
@@ -110,10 +80,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MCy-Hg-EBY" secondAttribute="bottom" id="vkA-Gv-enG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138" y="116"/>
         </view>
     </objects>
-    <resources>
-        <image name="sidemenu" width="12" height="20"/>
-        <image name="topView" width="414" height="736"/>
-    </resources>
 </document>

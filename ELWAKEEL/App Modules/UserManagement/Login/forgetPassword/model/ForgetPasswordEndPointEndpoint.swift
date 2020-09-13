@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum ForgetPasswordEndPointEndpoint {
     /*
      Add Endpoint
@@ -87,7 +87,9 @@ extension ForgetPasswordEndPointEndpoint: IEndpoint {
         
         switch self {
         case .forgetpassword:
-            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+            let language = MOLHLanguage.currentAppleLanguage()
+
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
         }
         
     }

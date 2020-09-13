@@ -42,18 +42,20 @@ class contactUsViewController: UIViewController {
     var types: [String] = [Localization.request, Localization.complaint1, Localization.suggestion, Localization.other]
     var selecte_type: [String] = [String]()
     var selectedType = ""
+    let user_default = UserDefaults.standard
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
         setUpView()
         hideKeyboardWhenTappedAround()
+        set_up_navigation()
     }
     func setUpView()
     {
         name.text = Localization.name
         email.text = Localization.email
-        contactUs.text = Localization.contactUS
         contactUsNow.text = Localization.contactUsNow
         contactUsDES.text = Localization.contactDES
         phone.text = Localization.phone
@@ -68,16 +70,23 @@ class contactUsViewController: UIViewController {
         emailTex.delegate = self
         contactTypeTXT.delegate = self
         phoneTXT.delegate = self
-        
-//        nameTxt.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-//        emailTex.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-//        contactTypeTXT.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-//        phoneTXT.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-//        
-        
+ 
         
         
     }
+    func set_up_navigation()
+       {     self.navigationItem.title = Localization.contactUS
+           if user_default.string(forKey: "type") == "provider" {
+               self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+
+               
+           }
+           else {
+               self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
+
+           }
+           
+       }
     
     
     @objc func textFieldDidChange(textField: UITextField){

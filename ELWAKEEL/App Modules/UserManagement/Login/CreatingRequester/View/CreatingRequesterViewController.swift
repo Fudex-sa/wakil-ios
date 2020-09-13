@@ -40,11 +40,12 @@ class CreatingRequesterViewController: UIViewController {
         super.viewDidLoad()
 		// do someting...
         setUpView()
+        hideKeyboardWhenTappedAround()
     }
     func setUpView()
     {
          phoneTXT.delegate = self
-        newAccount.text = Localization.newAccount
+//        newAccount.text = Localization.newAccount
         createNewAccount.text = Localization.createAccount
         createAccountDes.text = Localization.insertPtoneNum
         phoneNumber.text = Localization.phoneNymber
@@ -56,7 +57,17 @@ class CreatingRequesterViewController: UIViewController {
         checkBTN.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.00).cgColor
         
         sendDataBTN.setTitle(Localization.send, for: .normal)
+        
+                
+
+
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+                self.navigationItem.title = Localization.newAccount
+            self.navigationController?.navigationBar.isHidden = false
+
+           }
     
     
     @IBAction func checkBTN(_ sender: UIButton) {
@@ -70,9 +81,7 @@ class CreatingRequesterViewController: UIViewController {
             unchecked = true
         }
     }
-    @IBAction func backBTN(_ sender: Any) {
-   dismiss()
-    }
+   
     
     @IBAction func sendDataBTN(_ sender: Any) {
         
@@ -89,9 +98,9 @@ class CreatingRequesterViewController: UIViewController {
             return
         }
         self.interactor?.signUP(phone: phone)
-        
+
     }
-    
+
 }
 
 extension CreatingRequesterViewController: ICreatingRequesterViewController {
@@ -115,9 +124,18 @@ extension CreatingRequesterViewController: ICreatingRequesterViewController {
 extension CreatingRequesterViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
+         self.view.endEditing(true)
+                  return false    }
+           func hideKeyboardWhenTappedAround() {
+                  let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+                  tap.cancelsTouchesInView = false
+                  view.addGestureRecognizer(tap)
+              }
+              
+              @objc func dismissKeyboard() {
+             view.endEditing(true)
+                  // dosometing...
+              }    
     
 	// do someting...
 }

@@ -17,7 +17,7 @@ protocol IAccept_RequestRouter: class {
 
 class Accept_RequestRouter: IAccept_RequestRouter {
     func go_payment(params: [String : Any]) {
-    view?.navigate(type: .modal, module: GeneralRouterRoute.payment(params: params), completion: nil)
+    view?.navigate(type: .push, module: GeneralRouterRoute.payment(params: params), completion: nil)
     }
     
 	weak var view: Accept_RequestViewController?

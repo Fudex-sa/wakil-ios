@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum detailsEndpoint {
     /*
      Add Endpoint
@@ -80,8 +80,9 @@ extension detailsEndpoint: IEndpoint {
         case .request_details:
             let userDefaults = UserDefaults.standard
             let token = userDefaults.string(forKey: "token")
-            
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]
+            let language = MOLHLanguage.currentAppleLanguage()
+
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)", "Content-Type":"application/json"]
             
         }    }
     

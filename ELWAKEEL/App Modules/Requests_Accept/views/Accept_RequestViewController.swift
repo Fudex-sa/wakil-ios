@@ -32,27 +32,23 @@ class Accept_RequestViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
-    print("sssdddd\(request_Id)")
         setUpview()
         get_offers()
     }
     
     func setUpview()
     {
+         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
         let nib = UINib(nibName: "accept", bundle: nil)
         accepts_table.register(nib, forCellReuseIdentifier: "accept")
         accepts_table.delegate = self
         accepts_table.dataSource = self
-        accept.text = Localization.requests_addmision
+      
         all_requests.text = Localization.all_provider_offers
         all_request_des.text = Localization.one_request
-        
+        self.navigationItem.title =  Localization.requests_addmision
     }
-    
-    @IBAction func back_BTN(_ sender: Any) {
-        dismiss()
-    }
-    
+   
     
     func get_offers()
     {

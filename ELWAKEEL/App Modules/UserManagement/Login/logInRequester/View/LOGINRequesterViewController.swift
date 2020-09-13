@@ -33,11 +33,13 @@ class LOGINRequesterViewController: UIViewController {
     @IBOutlet weak var passwordLBL: UILabel!
     @IBOutlet weak var phoneNumberLBL: UILabel!
     @IBOutlet weak var createNewAccountLBL: UILabel!
-    @IBOutlet weak var phoneTXT: UITextField!
+    @IBOutlet weak var phone: UITextField!
+    
     @IBOutlet weak var passwordTXT: UITextField!
     var type = ""
     var user: LOGINRequesterModel.loginSuccess?
     var userDefualts = UserDefaults.standard
+    let navigation = UINavigationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +50,6 @@ class LOGINRequesterViewController: UIViewController {
 }
     func setUpView()
     {
-        print(Localization.login)
-        loginLBL.text = Localization.login
         loginNow.text = Localization.loginNow
         loginDes.text = Localization.loginDes
         passwordLBL.text = Localization.password
@@ -59,26 +59,39 @@ class LOGINRequesterViewController: UIViewController {
         forgetpasswordBTN.setTitle(Localization.forgetPaswwor, for: .normal)
         createNewAccount.setTitle(Localization.createAccount, for: .normal)
         createNewAccount.titleLabel?.adjustsFontSizeToFitWidth = true
-        phoneTXT.delegate = self
+        phone.delegate = self
         passwordTXT.delegate = self
         
+        let window = UIApplication.shared.delegate?.window
+                     
+        let navigationVC = UINavigationController(rootViewController: self)
+
+        navigationVC.navigationBar.tintColor = .white
+        navigationController?.navigationBar.barStyle = .black
+       
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
+
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        navigationVC.navigationBar.topItem?.title = Localization.login
+                   window?!.rootViewController = navigationVC
+                   window?!.makeKeyAndVisible()
+
         
     }
     
-    
-    @IBAction func backBTN(_ sender: Any) {
-   dismiss()
-    }
     
     @IBAction func logINNow(_ sender: Any) {
+//        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+//        MOLH.reset()
         doLoginAction()
-        
+//        
     }
     
     
     @IBAction func forgetPasswordBTN(_ sender: Any) {
         
-       self.navigate(type: .modal, module: GeneralRouterRoute.forgetPassword, completion: nil)
+       self.navigate(type: .push, module: GeneralRouterRoute.forgetPassword, completion: nil)
     }
     
     
@@ -86,7 +99,7 @@ class LOGINRequesterViewController: UIViewController {
     @IBAction func CreateNewAccountBTn(_ sender: Any) {
         
         
-        self.navigate(type: .modal, module: GeneralRouterRoute.registrationType
+        self.navigate(type: .push, module: GeneralRouterRoute.registrationType
             , completion: nil)
         
     }
@@ -101,16 +114,21 @@ class LOGINRequesterViewController: UIViewController {
 }
 extension LOGINRequesterViewController{
     func doLoginAction(){
-        guard let phone = phoneTXT.text , let password = passwordTXT.text else {return}
-        if(phone.isEmpty || password.isEmpty || password.count < 4 || type == ""){
-            showAlert(title: Localization.errorLBL, msg: Localization.wrongField)
-            print(type)
+        guard let phone_number = phone.text, !phone_number.isEmpty  else{
+            showAlert(title: Localization.errorLBL, msg: Localization.phone_count)
             return
-        
-    }
-        
-        self.interactor?.dologin(phone: phone, password: password, type: type)
-        print("goTointeractor")
+        }
+        guard  let password = passwordTXT.text, !password.isEmpty else {
+            showAlert(title: Localization.errorLBL, msg: Localization.password_conut)
+            
+            return}
+       
+        let te = UserDefaults.standard.string(forKey: "type")
+        print("sss\(te)")
+        if let te = te{
+             self.interactor?.dologin(phone: phone_number, password: password)
+        }
+       
     }
     
 }
@@ -125,7 +143,6 @@ extension LOGINRequesterViewController: ILOGINRequesterViewController {
     func getUser(user: LOGINRequesterModel.loginSuccess) {
         self.user = user
         
-        print("User\(user)")
     }
     
     func client_Home() {
@@ -152,3 +169,4 @@ extension LOGINRequesterViewController: UITextFieldDelegate {
 extension LOGINRequesterViewController {
 	// do someting...
 }
+

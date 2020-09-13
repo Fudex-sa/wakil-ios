@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum walletEndpoint {
     /*
      Add Endpoint
@@ -49,7 +49,7 @@ extension walletEndpoint: IEndpoint {
         }
         */
         let id  = UserDefaults.standard.integer(forKey: "id")
-        return "http://wakil.dev.fudexsb.com/api/providers/5/wallet"
+        return "http://wakil.dev.fudexsb.com/api/providers/\(id)/wallet"
     }
     
     var parameter: Parameters? {
@@ -75,7 +75,9 @@ extension walletEndpoint: IEndpoint {
         */
         let userDefaults = UserDefaults.standard
         let token = userDefaults.string(forKey: "token")
-        return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
+        let language = MOLHLanguage.currentAppleLanguage()
+
+        return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)"]
     }
     
     var encoding: ParameterEncoding {        

@@ -26,7 +26,6 @@ class request_detailsViewController: UIViewController {
 
     
     
-    @IBOutlet weak var request_details: UILabel!
     @IBOutlet weak var requets_num: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var request_DES: UILabel!
@@ -54,29 +53,23 @@ class request_detailsViewController: UIViewController {
     @IBOutlet weak var minstry2: UILabel!
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var start: UIButton!
-    
-    
-    @IBOutlet weak var excutions: UIView!
-    
-    @IBOutlet weak var excutionsHiehgt: NSLayoutConstraint!
-    
-    
+ 
     var request_id: Int?
     var request_detail: request_detailsModel.provider_Request_Details?
     var rating: Int?
     var client_id: Int?
     var client_image_url: String?
+    var param: [String: Any]?
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
         setUpView()
         get_request_details()
-        print("reuestid\(request_id)")
     }
     
     func setUpView()
     {
-        request_details.text = Localization.Order_details
+       
         request_DES.text = Localization.request_DES
         region.text = Localization.Region
         city.text = Localization.city
@@ -98,7 +91,10 @@ class request_detailsViewController: UIViewController {
         start.layer.masksToBounds = true
         clinet_image.layer.cornerRadius = clinet_image.frame.width / 2
         clinet_image.layer.masksToBounds = true
-    
+        self.navigationItem.title = Localization.Order_details
+        price_DES.adjustsFontSizeToFitWidth = true
+        duration_DES.adjustsFontSizeToFitWidth = true
+
         
         
     }
@@ -115,7 +111,9 @@ class request_detailsViewController: UIViewController {
             minstry2.text = details.organization.name
             provemnet2.text = details.achievement_proof
             cline_name.text = details.client?.name
-            
+            required_papers_DES.text = details.offer?.required_paper
+            duration_DES.text = details.offer?.duration
+            price_DES.text = details.offer?.price_after_tax
             
         }
         
@@ -129,6 +127,11 @@ class request_detailsViewController: UIViewController {
     }
     }
     @IBAction func chat_BTN(_ sender: Any) {
+        print("chat")
+        if let parameters = param{
+            print("hamada")
+            router?.go_chat(param: parameters)
+        }
     }
     
     
@@ -261,8 +264,11 @@ extension request_detailsViewController: Irequest_detailsViewController {
                 self.client_id = request.client?.id
                 self.client_image_url = "http://wakil.dev.fudexsb.com"
                 client_image_url?.append(contentsOf: request.client?.image ?? "")
-                print("urrl\(client_image_url)")
                 configueUI()
+                if let provider_id = request.offer?.provider.id, let client_id = request.client?.id, let request_id = request_id{
+                    param = ["service_id": request_id, "client_id": client_id, "provider_id":  provider_id]
+                }
+                
             }
     }
     

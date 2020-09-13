@@ -10,6 +10,7 @@
 
 import Foundation
 import Alamofire
+import MOLH
 
 enum requestRecordEndpoint {
     /*
@@ -77,7 +78,9 @@ extension requestRecordEndpoint: IEndpoint {
         
         let userDefaults = UserDefaults.standard
         let token = userDefaults.string(forKey: "token")
-        return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
+        let language = MOLHLanguage.currentAppleLanguage()
+
+        return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)"]
     }
     
     var encoding: ParameterEncoding {        

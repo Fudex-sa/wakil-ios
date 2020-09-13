@@ -21,24 +21,24 @@ protocol IHomeProviderRouter: class {
 
 class HomeProviderRouter: IHomeProviderRouter {
     func go_request_details(request_id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.details(request_id: request_id), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.details(request_id: request_id), completion: nil)
     }
     
     func go_request_detail_provider(request_id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.request_details_provider(request_id: request_id), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.request_details_provider(request_id: request_id), completion: nil)
     }
     
     func go_side_menu() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.sideMenuProvider, completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.sideMenuProvider, completion: nil)
        
     }
     
     func accept_reuest(request_id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.accecpt_provider(request_id: request_id), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.accecpt_provider(request_id: request_id), completion: nil)
     }
     
     func notifications() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.provider_notifications, completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.client_notifications, completion: nil)
     }
     
 	weak var view: HomeProviderViewController?

@@ -28,19 +28,13 @@ class secondScreenInteractor: IsecondScreenInteractor {
     }
     
     func register(type: String, commercial_number: Int, bank_name: String, bank_iban: Int, commercial_image: UIImage, license_image: UIImage, id: Int) {
-        print("inside Interactor")
-        
+        Indicator.sharedInstance.showIndicator()
         
         worker?.registerAPI(type: type, commercial_number: commercial_number, bank_name: bank_name, bank_iban: bank_iban, commercial_image: commercial_image, license_image: license_image, id: id , complition: { (error, success, data) in
-            if error != nil{
-              self.presenter?.showAlert(title: Localization.errorLBL, msg: Localization.thereiserror)
-                
-            }
-            
             if success{
+                Indicator.sharedInstance.hideIndicator()
+
                 self.presenter?.assingNewProvider(provider: data!)
-                
-                
                 let userdefults = UserDefaults.standard
                 userdefults.set(data?.type, forKey: "type")
                 userdefults.set(data?.accessToken, forKey: "token")
@@ -51,6 +45,16 @@ class secondScreenInteractor: IsecondScreenInteractor {
                 userdefults.set(data?.user.image, forKey: "image")
                 
                 self.presenter?.moveToverification(type: data!.type)
+            }
+            else if error != nil{
+                           Indicator.sharedInstance.hideIndicator()
+
+                         self.presenter?.showAlert(title: Localization.errorLBL, msg: Localization.thereiserror)
+                           
+                       }
+            
+            else{
+                print("no error")
             }
         })
     }

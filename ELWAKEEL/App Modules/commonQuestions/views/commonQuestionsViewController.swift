@@ -25,12 +25,13 @@ class commonQuestionsViewController: UIViewController {
     @IBOutlet weak var FQA: UILabel!
     @IBOutlet weak var sidemenu: UILabel!
     var Questions: Data?
-    
+    let user_default = UserDefaults.standard
 	override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...]
         setUpView()
         getquestion()
+        set_up_navigation()
     }
     
     func setUpView()
@@ -39,8 +40,21 @@ class commonQuestionsViewController: UIViewController {
         FQAtable.dataSource = self
         let nib = UINib(nibName: "FQAcell", bundle: nil)
         FQAtable.register(nib, forCellReuseIdentifier: "FQAcell")
-        FQA.text = Localization.FQA
     }
+    func set_up_navigation()
+       {          self.navigationItem.title = Localization.FQA
+           if user_default.string(forKey: "type") == "provider" {
+               self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+
+               
+           }
+           else {
+               self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
+
+           }
+           
+       }
+    
     func getquestion()
     {
         interactor?.getQuestion()

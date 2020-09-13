@@ -10,6 +10,7 @@
 
 import Foundation
 import Alamofire
+import MOLH
 
 enum Provider_endPointEndpoint {
     /*
@@ -82,7 +83,7 @@ extension Provider_endPointEndpoint: IEndpoint {
             return nil
         case .provider_request:
             return nil
-        case .reject_request(let request_id):
+        case .reject_request:
             return ["provider_id": id]
         }
     }
@@ -99,13 +100,15 @@ extension Provider_endPointEndpoint: IEndpoint {
         
         let userDefaults = UserDefaults.standard
         let token = userDefaults.string(forKey: "token")
+        let language = MOLHLanguage.currentAppleLanguage()
+
         switch self {
         case .get_new_requests:
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)"]
         case .provider_request:
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)"]
         case .reject_request:
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)"]
             
         }
     }

@@ -23,11 +23,11 @@ class CreatingRequesterWorker: ICreatingRequesterWorker {
             do{
                 let decoder = JSONDecoder()
                 let cities = try decoder.decode(CreatingRequesterModel.registerCleint.self, from: response)
-                print("user\(cities)")
+                print("userssss\(cities)")
                 complition(nil, true,cities)
             }
-            catch _{
-                
+            catch (let error){
+                print(error.localizedDescription)
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: responseData )

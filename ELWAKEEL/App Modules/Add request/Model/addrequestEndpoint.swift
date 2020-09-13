@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum addrequestEndpoint {
     /*
      Add Endpoint
@@ -115,17 +115,19 @@ extension addrequestEndpoint: IEndpoint {
         */
         let userDefaults = UserDefaults.standard
         let token = userDefaults.string(forKey: "token")
+        let language = MOLHLanguage.currentAppleLanguage()
+
         switch self {
         case .addReuset:
-            return ["Accept": "application/json", "Accept-Language": "en", "Authorization": "bearer\(token!)", "Content-Type": "application/json"]
+            return ["Accept": "application/json", "Accept-Language": "\(language)", "Authorization": "bearer\(token!)", "Content-Type": "application/json"]
         case .getOrganization:
-            return ["Accept": "application/json", "Accept-Language":"ar", "Authorization":"bearer \(token!)"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)"]
         case .getCountries:
-            return ["Accept": "application/json", "Accept-Language":"ar"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)"]
         case .getCities:
-            return ["Accept": "application/json", "Accept-Language":"ar"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)"]
         case .add_special_request:
-            return ["Accept": "application/json", "Accept-Language": "en", "Authorization": "bearer\(token!)", "Content-Type": "application/json"]
+            return ["Accept": "application/json", "Accept-Language": "\(language)", "Authorization": "bearer\(token!)", "Content-Type": "application/json"]
         }
         
     }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,6 @@
                 <outlet property="city" destination="0Vf-wF-2Uw" id="va3-LE-AiI"/>
                 <outlet property="cityTXT" destination="xbp-mZ-f64" id="Sxi-6A-2wj"/>
                 <outlet property="editDEs" destination="xhb-kn-mOk" id="rhM-zj-cvs"/>
-                <outlet property="editLBL" destination="6KR-Ld-ryO" id="kQL-0d-FRk"/>
                 <outlet property="minstry" destination="y78-F9-G48" id="D36-mX-4PT"/>
                 <outlet property="minstryDES" destination="sJb-5X-Swk" id="Gxf-E4-No9"/>
                 <outlet property="minstryTXT" destination="1Lc-xY-fGw" id="U9l-2n-0TP"/>
@@ -42,9 +40,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJp-4P-Uhj">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topView" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-of-GNl">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
-                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbT-OB-meU">
                             <rect key="frame" x="0.0" y="70" width="375" height="1130"/>
                             <subviews>
@@ -107,7 +102,6 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QPa-HL-MB5">
                                                                     <rect key="frame" x="0.0" y="40" width="345" height="50"/>
-                                                                    <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -127,7 +121,6 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbp-mZ-f64">
                                                                     <rect key="frame" x="0.0" y="40" width="345" height="50"/>
-                                                                    <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -164,7 +157,6 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="974-2V-0ig">
                                                                     <rect key="frame" x="0.0" y="80" width="345" height="50"/>
-                                                                    <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -193,7 +185,6 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Lc-xY-fGw">
                                                                     <rect key="frame" x="0.0" y="80" width="345" height="50"/>
-                                                                    <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -218,7 +209,6 @@
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M5W-eE-r9c">
                                                             <rect key="frame" x="0.0" y="40" width="345" height="50"/>
-                                                            <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -264,7 +254,6 @@
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIt-fD-tDl">
                                                             <rect key="frame" x="0.0" y="40" width="345" height="50"/>
-                                                            <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -325,38 +314,13 @@
                                 <constraint firstItem="YDK-TP-eRc" firstAttribute="width" secondItem="mbT-OB-meU" secondAttribute="width" id="txd-Rg-Asu"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KR-Ld-ryO">
-                            <rect key="frame" x="164" y="30" width="47.5" height="23"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqT-vb-6eL">
-                            <rect key="frame" x="15" y="30" width="35" height="23"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="35" id="OeI-sC-qnE"/>
-                            </constraints>
-                            <state key="normal" image="Arrow"/>
-                            <connections>
-                                <action selector="back:" destination="-1" eventType="touchUpInside" id="xGT-k5-gNZ"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="WEA-of-GNl" firstAttribute="top" secondItem="YJp-4P-Uhj" secondAttribute="top" id="6mF-MU-OYs"/>
-                        <constraint firstItem="oqT-vb-6eL" firstAttribute="bottom" secondItem="6KR-Ld-ryO" secondAttribute="bottom" id="8zU-rj-zv7"/>
                         <constraint firstItem="mbT-OB-meU" firstAttribute="leading" secondItem="YJp-4P-Uhj" secondAttribute="leading" id="FN5-w7-NqM"/>
-                        <constraint firstItem="oqT-vb-6eL" firstAttribute="top" secondItem="6KR-Ld-ryO" secondAttribute="top" id="Gwa-PB-tsz"/>
-                        <constraint firstItem="WEA-of-GNl" firstAttribute="leading" secondItem="YJp-4P-Uhj" secondAttribute="leading" id="XeO-7G-iHT"/>
                         <constraint firstItem="mbT-OB-meU" firstAttribute="top" secondItem="YJp-4P-Uhj" secondAttribute="top" constant="70" id="YRB-Aw-j4o"/>
-                        <constraint firstItem="oqT-vb-6eL" firstAttribute="leading" secondItem="YJp-4P-Uhj" secondAttribute="leading" constant="15" id="c4l-Ez-7Hu"/>
-                        <constraint firstItem="6KR-Ld-ryO" firstAttribute="centerX" secondItem="YJp-4P-Uhj" secondAttribute="centerX" id="g2J-1N-3Rj"/>
                         <constraint firstAttribute="bottom" secondItem="mbT-OB-meU" secondAttribute="bottom" id="pAd-9u-TLd"/>
                         <constraint firstAttribute="trailing" secondItem="mbT-OB-meU" secondAttribute="trailing" id="qER-CX-caF"/>
-                        <constraint firstItem="6KR-Ld-ryO" firstAttribute="top" secondItem="YJp-4P-Uhj" secondAttribute="top" constant="30" id="uw6-Pr-jBc"/>
-                        <constraint firstAttribute="trailing" secondItem="WEA-of-GNl" secondAttribute="trailing" id="xJw-PR-VDB"/>
-                        <constraint firstAttribute="bottom" secondItem="WEA-of-GNl" secondAttribute="bottom" id="zdf-c2-PN3"/>
                     </constraints>
                 </view>
             </subviews>
@@ -369,10 +333,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138" y="154"/>
         </view>
     </objects>
-    <resources>
-        <image name="Arrow" width="11.5" height="19.5"/>
-        <image name="topView" width="414" height="736"/>
-    </resources>
 </document>

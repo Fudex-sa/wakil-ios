@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum contactUsEndpoint {
     /*
      Add Endpoint
@@ -86,7 +86,9 @@ extension contactUsEndpoint: IEndpoint {
         switch self {
         case .contact:
             let token = UserDefaults.standard.string(forKey: "token")
-            return ["Accept": "application/json", "Accept-Language":"en", "Authorization":"bearer \(token!)"]
+            let language = MOLHLanguage.currentAppleLanguage()
+
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Authorization":"bearer \(token!)"]
             }
     }
     

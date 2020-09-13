@@ -81,9 +81,18 @@ class sideMenuViewController: UIViewController {
     }
     
     @IBAction func editBTN(_ sender: Any) {
+   
+        
+        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+        langauge = MOLHLanguage.currentAppleLanguage()
+        
+        MOLH.reset()
+        
+        
+        
     }
     @IBAction func createNBT(_ sender: Any) {
-        self.navigate(type: .modal, module: GeneralRouterRoute.addrequest(params: nil), completion: nil)
+        self.navigate(type: .push, module: GeneralRouterRoute.addrequest(params: nil), completion: nil)
     }
     
 }
@@ -118,39 +127,31 @@ extension sideMenuViewController: UITableViewDelegate, UITableViewDataSource {
        
         switch indexPath.row {
         case 0:
-            self.router?.main()
-            
-        case 1:
-            print("recode_ request")
-            self.router?.record_requests()
+      self.navigate(type: .root, module: GeneralRouterRoute.Home, completion: nil)   case 1:
+          
+            self.navigate(type: .push, module: GeneralRouterRoute.requestsRecord, completion: nil)
 
         case 2:
-            print("setting")
-//            changeLanguage()
-//            self.router?.application_Setting()
-            router?.application_Setting()
+   self.navigate(type: .push, module: GeneralRouterRoute.applicationSetting, completion: nil)
 
         case 3:
-            print("connect with us")
-            self.router?.connect_with_us()
-
+            
+self.navigate(type: .push, module: GeneralRouterRoute.contactUs, completion: nil)
         case 4:
-            print("about the applicatin")
-            self.router?.about_the_application()
-
+           
+            self.navigate(type: .push, module: GeneralRouterRoute.aboutUs, completion: nil)
         case 5:
-            print("commom questio")
-            self.router?.common_question()
-
+           
+self.navigate(type: .push, module: GeneralRouterRoute.commonQuestios, completion: nil)
         case 6:
-            print("share app")
             commonFunctions.share.shareApp(viwe: self)
+           
         case 7:
-            print("terms")
-            self.router?.terms_and_conditions()
+            
+            self.navigate(type: .push, module: GeneralRouterRoute.terms, completion: nil)
         case 8:
-            print("logOut")
           commonFunctions.share.logout(view: self)
+           
 
         default:
             print("no case selected")

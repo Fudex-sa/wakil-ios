@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="provider_logViewController" customModule="ELWAKEEL" customModuleProvider="target">
             <connections>
                 <outlet property="logs_table" destination="cC7-ic-6tw" id="V3T-Ov-c3b"/>
-                <outlet property="request_log" destination="1RY-KW-tXL" id="CTp-82-DvW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,9 +22,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUb-zo-Rc7">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topView" translatesAutoresizingMaskIntoConstraints="NO" id="RWg-9H-qGd">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N44-iP-Wl5">
                             <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                             <subviews>
@@ -43,35 +38,13 @@
                                 <constraint firstItem="cC7-ic-6tw" firstAttribute="top" secondItem="N44-iP-Wl5" secondAttribute="top" constant="30" id="jy7-VQ-fG2"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RY-KW-tXL">
-                            <rect key="frame" x="164" y="30" width="47.5" height="23"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzK-62-oOZ">
-                            <rect key="frame" x="15" y="30" width="12" height="23"/>
-                            <state key="normal" image="sidemenu"/>
-                            <connections>
-                                <action selector="sideMenu:" destination="-1" eventType="touchUpInside" id="WiS-oe-JJF"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="RWg-9H-qGd" secondAttribute="trailing" id="6xI-mw-xSy"/>
                         <constraint firstItem="N44-iP-Wl5" firstAttribute="leading" secondItem="VUb-zo-Rc7" secondAttribute="leading" id="KGX-UE-5lw"/>
-                        <constraint firstItem="HzK-62-oOZ" firstAttribute="bottom" secondItem="1RY-KW-tXL" secondAttribute="bottom" id="LOF-h4-BjT"/>
-                        <constraint firstItem="RWg-9H-qGd" firstAttribute="leading" secondItem="VUb-zo-Rc7" secondAttribute="leading" id="LmS-68-7cI"/>
                         <constraint firstItem="N44-iP-Wl5" firstAttribute="top" secondItem="VUb-zo-Rc7" secondAttribute="top" constant="70" id="PVt-l6-0v7"/>
-                        <constraint firstItem="HzK-62-oOZ" firstAttribute="leading" secondItem="VUb-zo-Rc7" secondAttribute="leading" constant="15" id="fbN-hl-tfI"/>
-                        <constraint firstItem="HzK-62-oOZ" firstAttribute="top" secondItem="1RY-KW-tXL" secondAttribute="top" id="iH4-LS-foD"/>
                         <constraint firstAttribute="trailing" secondItem="N44-iP-Wl5" secondAttribute="trailing" id="nyS-Xz-YH7"/>
-                        <constraint firstItem="1RY-KW-tXL" firstAttribute="centerX" secondItem="VUb-zo-Rc7" secondAttribute="centerX" id="o1Q-ik-Qlt"/>
                         <constraint firstAttribute="bottom" secondItem="N44-iP-Wl5" secondAttribute="bottom" id="p8k-wj-Ln3"/>
-                        <constraint firstAttribute="bottom" secondItem="RWg-9H-qGd" secondAttribute="bottom" id="q2P-Wd-hSX"/>
-                        <constraint firstItem="1RY-KW-tXL" firstAttribute="top" secondItem="VUb-zo-Rc7" secondAttribute="top" constant="30" id="rfZ-df-Zox"/>
-                        <constraint firstItem="RWg-9H-qGd" firstAttribute="top" secondItem="VUb-zo-Rc7" secondAttribute="top" id="ygS-nI-lT5"/>
                     </constraints>
                 </view>
             </subviews>
@@ -83,10 +56,7 @@
                 <constraint firstItem="VUb-zo-Rc7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v8q-m1-8vW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138" y="154"/>
         </view>
     </objects>
-    <resources>
-        <image name="sidemenu" width="12" height="20"/>
-        <image name="topView" width="414" height="736"/>
-    </resources>
 </document>

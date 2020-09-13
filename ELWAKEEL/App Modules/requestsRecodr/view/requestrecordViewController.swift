@@ -29,20 +29,21 @@ class requestrecordViewController: UIViewController {
 		// do someting...
         setUpView()
         get_records_log()
-    print("cccc\(UserDefaults.standard.integer(forKey: "id"))")
     
     }
     
     
      func setUpView()
      {
-        Home.text = Localization.Record_requests
+      
         let unib = UINib(nibName: "recordRequests", bundle: nil)
         recordsTable.register(unib, forCellReuseIdentifier: "recordRequests")
         recordsTable.delegate = self
         recordsTable.dataSource = self
         recordsTable.layer.cornerRadius = 10
         recordsTable.layer.masksToBounds = true
+        self.navigationItem.title = Localization.Record_requests
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
     }
     
     func get_records_log()
@@ -51,10 +52,7 @@ class requestrecordViewController: UIViewController {
 
     }
     
-    @IBAction func show_side_menu(_ sender: Any) {
-        router?.show_side_menu()
-    }
-    
+   
     
 }
 
@@ -75,7 +73,7 @@ extension requestrecordViewController: UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recordRequests", for: indexPath) as! recordRequests
         cell.des.text = records?.data[indexPath.row].description
-        cell.requetNum1.text = Localization.requestNum
+        cell.requetNum1.text = records?.data[indexPath.row].request_number
         if let id = records?.data[indexPath.row].id{
             cell.requesrNum2.text = String(describing: id)
 

@@ -40,7 +40,7 @@ struct walletModel {
             var description: String?
             var address: String?
             var achievement_proof: String?
-            var provider: String?
+            var provider: clint?
             var offersCount: Int?
             var status: statu?
             var organization, country, city : organiz?

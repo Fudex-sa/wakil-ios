@@ -26,7 +26,6 @@ class editViewController: UIViewController {
 	var interactor: IeditInteractor?
 	var router: IeditRouter?
 
-    @IBOutlet weak var editLBL: UILabel!
     @IBOutlet weak var editDEs: UILabel!
     @IBOutlet weak var serviceDES: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -102,7 +101,7 @@ class editViewController: UIViewController {
     func setUpView()
     {
         
-        editLBL.text = Localization.request_edit
+        
         editDEs.text = Localization.edit_DES
         addressDES.text = Localization.RequestDes
         city.text = Localization.chooseCit + "*"
@@ -114,6 +113,7 @@ class editViewController: UIViewController {
         titleLBL.text = Localization.title_of_service
         OK.setTitle(Localization.ok, for: .normal)
         textView.delegate = self
+        self.navigationItem.title = Localization.edit
         
     }
     func getOrganization(){

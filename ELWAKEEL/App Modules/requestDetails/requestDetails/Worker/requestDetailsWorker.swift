@@ -55,7 +55,7 @@ class requestDetailsWorker: IrequestDetailsWorker {
             }
             
         }, failure: { (error) in
-            print("SSSSSSSERRRRor")
+        
             do {
                 let decoder = JSONDecoder()
                 let error = try decoder.decode(ErrorModel.self, from: error as! Data )
@@ -72,12 +72,10 @@ class requestDetailsWorker: IrequestDetailsWorker {
     func rate(rating: Int, user_id: Int, request_id: Int, complition: @escaping (Bool, ErrorModel?, Data?) -> Void) {
         NetworkService.share.request(endpoint: requester_detailsEndpoint.rate(rating: rating, user_id: user_id, service_id: request_id), success: { (response) in
             if  response.count == 0{
-                print("rated")
                 complition(true, nil, response)
             }
             
         }, failure: { (error) in
-            print("SSSSSSSERRRRor")
             do {
                 let decoder = JSONDecoder()
                 let error = try decoder.decode(ErrorModel.self, from: error as! Data )

@@ -40,17 +40,32 @@ class aboutUsViewController: UIViewController {
     var gmailTap: UITapGestureRecognizer = UITapGestureRecognizer()
     var facebooktap: UITapGestureRecognizer = UITapGestureRecognizer()
     var contact_info: aboutUsModel.About?
+    let user_default = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
         setUpView()
         getContact_info()
+        set_up_navigation()
         
     }
+    func set_up_navigation()
+    {
+        self.navigationItem.title = Localization.About_the_application
+           if user_default.string(forKey: "type") == "provider" {
+               self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+
+               
+           }
+           else {
+               self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
+
+           }
+           
+       }
     func setUpView()
     {
-        aboutApp.text = Localization.About_the_application
         about.text = Localization.app_Des
         contactUs.text = Localization.Contact_information
 

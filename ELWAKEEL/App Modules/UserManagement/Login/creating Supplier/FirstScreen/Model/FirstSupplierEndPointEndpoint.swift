@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum FirstSupplierEndPointEndpoint {
     /*
      Add Endpoint
@@ -98,13 +98,16 @@ extension FirstSupplierEndPointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
+        let language = MOLHLanguage.currentAppleLanguage()
+
         switch self {
+            
         case .register:
-            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
         case .countries:
-            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
         case .getCities(_):
-            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
         }
     }
     

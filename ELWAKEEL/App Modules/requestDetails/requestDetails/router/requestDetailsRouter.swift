@@ -13,11 +13,16 @@ import UIKit
 protocol IrequestDetailsRouter: class {
 	// do someting...
     func goHome()
+    func go_chat(params: [String:Any])
    
 
 }
 
 class requestDetailsRouter: IrequestDetailsRouter {
+    func go_chat(params: [String : Any]) {
+        view?.navigate(type: .push, module: GeneralRouterRoute.chat(params: params), completion: nil)
+    }
+    
   
     
 	weak var view: requestDetailsViewController?

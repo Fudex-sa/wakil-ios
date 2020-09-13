@@ -24,20 +24,37 @@ class termsViewController: UIViewController {
     @IBOutlet weak var language: UILabel!
     @IBOutlet weak var wakile: UILabel!
     var terms_modle: termsModel.Terms?
+    let user_default = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         getterms()
+        set_up_navigation()
     }
     func setUpView()
     {
-        terms.text = Localization.Terms_and_Conditions
+        
         language.text = Localization.language
         termsTbale.delegate = self
         termsTbale.dataSource = self
         let nib = UINib(nibName: "termsCell", bundle: nil)
         termsTbale.register(nib, forCellReuseIdentifier: "termsCell")
         wakile.text = "wakel-hkome@2019"
+        self.navigationItem.title = Localization.Terms_and_Conditions
+    }
+    
+    func set_up_navigation()
+    {          self.navigationItem.title = Localization.Application_settings
+        if user_default.string(forKey: "type") == "provider" {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+
+            
+        }
+        else {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
+
+        }
+        
     }
     func getterms()
     {

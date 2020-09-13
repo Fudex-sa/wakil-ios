@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="accept_reuestViewController" customModule="ELWAKEEL" customModuleProvider="target">
             <connections>
-                <outlet property="accept_reuest" destination="Nrj-w4-1L6" id="f8q-99-UFD"/>
                 <outlet property="cost_prics" destination="n89-F3-xve" id="sqy-pr-ICd"/>
                 <outlet property="near_request_DES" destination="k4K-Uf-fgs" id="J79-ab-1Oc"/>
                 <outlet property="near_reuests" destination="dek-MC-IIA" id="jwX-Y2-rCE"/>
@@ -33,9 +31,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrf-O2-qKx">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topView" translatesAutoresizingMaskIntoConstraints="NO" id="jpB-Kv-j2g">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWl-lv-wLU">
                             <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                             <subviews>
@@ -87,7 +82,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="cqk-n6-Tv6"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -108,7 +102,6 @@
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqn-20-629">
                                                     <rect key="frame" x="0.0" y="35" width="345" height="50"/>
-                                                    <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -128,7 +121,6 @@
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFf-kO-fO5">
                                                     <rect key="frame" x="0.0" y="35" width="345" height="50"/>
-                                                    <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -186,33 +178,11 @@
                                 <constraint firstItem="dek-MC-IIA" firstAttribute="top" secondItem="HWl-lv-wLU" secondAttribute="top" constant="20" id="lNV-Mr-14w"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrj-w4-1L6">
-                            <rect key="frame" x="166" y="30" width="43" height="22"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiF-eU-7PF">
-                            <rect key="frame" x="15" y="30" width="11" height="22"/>
-                            <state key="normal" image="Arrow"/>
-                            <connections>
-                                <action selector="backBTN:" destination="-1" eventType="touchUpInside" id="ff6-Cl-xwW"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Nrj-w4-1L6" firstAttribute="centerX" secondItem="hrf-O2-qKx" secondAttribute="centerX" id="0Fm-wB-Ga8"/>
-                        <constraint firstItem="jpB-Kv-j2g" firstAttribute="top" secondItem="hrf-O2-qKx" secondAttribute="top" id="CZb-6i-PCG"/>
-                        <constraint firstAttribute="bottom" secondItem="jpB-Kv-j2g" secondAttribute="bottom" id="D1K-lh-Swo"/>
                         <constraint firstItem="HWl-lv-wLU" firstAttribute="top" secondItem="hrf-O2-qKx" secondAttribute="top" constant="70" id="GbR-Qz-690"/>
-                        <constraint firstItem="YiF-eU-7PF" firstAttribute="leading" secondItem="hrf-O2-qKx" secondAttribute="leading" constant="15" id="Oqf-bX-UH3"/>
                         <constraint firstAttribute="trailing" secondItem="HWl-lv-wLU" secondAttribute="trailing" id="QRx-gp-nv6"/>
-                        <constraint firstItem="Nrj-w4-1L6" firstAttribute="top" secondItem="hrf-O2-qKx" secondAttribute="top" constant="30" id="SDx-4a-DBU"/>
-                        <constraint firstItem="YiF-eU-7PF" firstAttribute="bottom" secondItem="Nrj-w4-1L6" secondAttribute="bottom" id="cij-Uw-xdh"/>
-                        <constraint firstAttribute="trailing" secondItem="jpB-Kv-j2g" secondAttribute="trailing" id="jJw-xK-Paw"/>
-                        <constraint firstItem="jpB-Kv-j2g" firstAttribute="leading" secondItem="hrf-O2-qKx" secondAttribute="leading" id="r3n-Bh-ydI"/>
-                        <constraint firstItem="YiF-eU-7PF" firstAttribute="top" secondItem="Nrj-w4-1L6" secondAttribute="top" id="tBf-SR-Wo4"/>
                         <constraint firstAttribute="bottom" secondItem="HWl-lv-wLU" secondAttribute="bottom" id="v2o-cP-FXI"/>
                         <constraint firstItem="HWl-lv-wLU" firstAttribute="leading" secondItem="hrf-O2-qKx" secondAttribute="leading" id="wu3-pg-df0"/>
                     </constraints>
@@ -226,10 +196,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hrf-O2-qKx" secondAttribute="trailing" id="eiD-eG-q9i"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138" y="154"/>
         </view>
     </objects>
-    <resources>
-        <image name="Arrow" width="11.5" height="19.5"/>
-        <image name="topView" width="414" height="736"/>
-    </resources>
 </document>

@@ -28,7 +28,6 @@ class requestDetailsViewController: UIViewController {
 	var router: IrequestDetailsRouter?
 
     
-    @IBOutlet weak var reqDEtails: UILabel!
     @IBOutlet weak var requestNum: UILabel!
     @IBOutlet weak var requestStatus: UILabel!
     @IBOutlet weak var RequestDES: UILabel!
@@ -61,6 +60,8 @@ class requestDetailsViewController: UIViewController {
     @IBOutlet weak var not_done: UIButton!
     
     
+    @IBOutlet weak var SR: UILabel!
+    
     var reason = ""
     var id: Int?
     var request_details: requestDetailsModel.RequestDetails?
@@ -68,20 +69,22 @@ class requestDetailsViewController: UIViewController {
     var rating: Int?
     var provider_id: Int?
     var statu: String?
+    var params: [String: Any]?
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
     
         
         setUpView()
-        print("status\(statu)")
+        create_side_button()
+        set_up_navigation()
     }
     
     func setUpView()
     {
         providerIMG.layer.cornerRadius = providerIMG.frame.width/2
         providerIMG.layer.masksToBounds = true
-        reqDEtails.text = Localization.Order_details
+        
         requestNum.text = Localization.Order_number
         requestStatus.text = Localization.Under_processing
         RequestDES.text = Localization.request_DES
@@ -94,13 +97,14 @@ class requestDetailsViewController: UIViewController {
         workPeriod.text = Localization.period_of_work
         hour.text = Localization.Hours
         price.text = Localization.price
-        currency.text = Localization.SR
+//        currency.text = Localization.SR
         titleLBL.text = Localization.title_name
         serviceprovidername.text = Localization.serviceSupplierName
         required_papers1.text = Localization.required_paper
+        SR.text = Localization.SR
         done.setTitle(Localization.task_done, for: .normal)
         not_done.setTitle(Localization.not_done, for: .normal)
-        canel.setTitle(Localization.cancel, for: .normal)
+       
         done.layer.cornerRadius = 10
         done.layer.masksToBounds = true
         not_done.layer.cornerRadius = 10
@@ -120,7 +124,46 @@ class requestDetailsViewController: UIViewController {
             done.alpha = 1.0
             not_done.alpha = 1.0
         }
+        
+       
+        
     
+    }
+    func set_up_navigation()
+    { self.navigationItem.title = Localization.Order_details
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
+
+    }
+    func create_side_button()
+    {
+        
+        let side_menu_BTN = UIButton.init(type: .custom)
+        side_menu_BTN.setImage(UIImage(), for: UIControl.State.normal)
+        side_menu_BTN.addTarget(self, action: #selector(self.cancelBTN), for: UIControl.Event.touchUpInside)
+            side_menu_BTN.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
+ side_menu_BTN.setTitle(Localization.cancel, for: .normal)
+            let barButton = UIBarButtonItem(customView:side_menu_BTN)
+                         self.navigationItem.rightBarButtonItem = barButton
+               
+    }
+    @objc func cancelBTN(){
+        let alert = UIAlertController(title: Localization.cancelRequest, message: Localization.cancelReason, preferredStyle: .alert)
+               let sendAction = UIAlertAction(title: Localization.send, style: .default) { (action) in
+                   self.reason = (alert.textFields?[0].text)!
+                   self.cancelRequest(id: self.id!, reason: self.reason)
+               }
+               
+               
+               let cancelAction = UIAlertAction(title: Localization.cancel, style: .default) { (action) in
+                   print("canel")
+               }
+               alert.addTextField()
+               alert.addAction(cancelAction)
+               alert.addAction(sendAction)
+               present(alert,animated: true,completion: nil)
+              
+        
+        
     }
     
     @IBAction func done(_ sender: Any) {
@@ -151,34 +194,16 @@ class requestDetailsViewController: UIViewController {
     }
     
     @IBAction func chatBTN(_ sender: Any) {
-        
+        if let parameters = params{
+            router?.go_chat(params: parameters )
+
+        }
         
     }
-    
-    
-    @IBAction func back(_ sender: Any) {
-    
-    dismiss()
-    }
-    
     
     
     
     @IBAction func cancel(_ sender: Any) {
-        let alert = UIAlertController(title: Localization.cancelRequest, message: Localization.cancelReason, preferredStyle: .alert)
-        let sendAction = UIAlertAction(title: Localization.send, style: .default) { (action) in
-            self.reason = (alert.textFields?[0].text)!
-            self.cancelRequest(id: self.id!, reason: self.reason)
-        }
-        
-        
-        let cancelAction = UIAlertAction(title: Localization.cancel, style: .default) { (action) in
-            print("canel")
-        }
-        alert.addTextField()
-        alert.addAction(cancelAction)
-        alert.addAction(sendAction)
-        present(alert,animated: true,completion: nil)
         
     }
     @IBAction func recive(_ sender: Any) {
@@ -223,7 +248,7 @@ class requestDetailsViewController: UIViewController {
         hour.text = request_details?.progress_time
         title_des.text = request_details?.title
         if let price = request_details?.offer?.price_after_tax{
-            currency.text = String(describing: price) + " " + Localization.SR
+            currency.text = String(describing: price)
             
         }
      
@@ -285,6 +310,9 @@ extension requestDetailsViewController: IrequestDetailsViewController {
         if let request = request {
             self.request_details = request
             self.provider_id = request.provider?.id
+            if let provider_id = request.offer?.provider.id, let client_id = request.client?.id{
+                params = ["service_id": request.id, "client_id": client_id, "provider_id":  provider_id]
+            }
             DispatchQueue.global().async {
                 DispatchQueue.main.async {
                     self.configueUI()

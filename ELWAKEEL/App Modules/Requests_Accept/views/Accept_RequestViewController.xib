@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Accept_RequestViewController" customModule="ELWAKEEL" customModuleProvider="target">
             <connections>
-                <outlet property="accept" destination="SCZ-S2-uRS" id="aB8-NN-8Gy"/>
                 <outlet property="accepts_table" destination="kMi-0s-fCf" id="hB8-75-XJY"/>
                 <outlet property="all_request_des" destination="gid-qi-GbK" id="22L-aY-8Bc"/>
                 <outlet property="all_requests" destination="oRe-d7-dSe" id="FSe-Dt-Bjn"/>
@@ -26,9 +24,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpQ-ym-hKc">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topView" translatesAutoresizingMaskIntoConstraints="NO" id="SLt-PX-jU1">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-Vn-CBn">
                             <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                             <subviews>
@@ -68,35 +63,13 @@
                                 <constraint firstAttribute="bottom" secondItem="kMi-0s-fCf" secondAttribute="bottom" constant="15" id="wCd-Wl-uRb"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCZ-S2-uRS">
-                            <rect key="frame" x="166" y="30" width="43" height="22"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPr-nw-4wO">
-                            <rect key="frame" x="15" y="30" width="11" height="22"/>
-                            <state key="normal" image="Arrow"/>
-                            <connections>
-                                <action selector="back_BTN:" destination="-1" eventType="touchUpInside" id="dvE-IV-Eu3"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="SCZ-S2-uRS" firstAttribute="top" secondItem="HpQ-ym-hKc" secondAttribute="top" constant="30" id="6bL-YZ-39b"/>
-                        <constraint firstItem="GPr-nw-4wO" firstAttribute="bottom" secondItem="SCZ-S2-uRS" secondAttribute="bottom" id="C4x-Ru-7As"/>
-                        <constraint firstItem="SCZ-S2-uRS" firstAttribute="centerX" secondItem="HpQ-ym-hKc" secondAttribute="centerX" id="CbH-Ia-hRg"/>
-                        <constraint firstItem="GPr-nw-4wO" firstAttribute="top" secondItem="SCZ-S2-uRS" secondAttribute="top" id="Hrp-Z9-hiB"/>
-                        <constraint firstItem="SLt-PX-jU1" firstAttribute="top" secondItem="HpQ-ym-hKc" secondAttribute="top" id="KXs-qk-Kvp"/>
-                        <constraint firstAttribute="bottom" secondItem="SLt-PX-jU1" secondAttribute="bottom" id="KpB-Jz-9Sq"/>
                         <constraint firstAttribute="trailing" secondItem="0Ev-Vn-CBn" secondAttribute="trailing" id="MDq-Xe-mKc"/>
                         <constraint firstItem="0Ev-Vn-CBn" firstAttribute="top" secondItem="HpQ-ym-hKc" secondAttribute="top" constant="70" id="Mon-ZH-lYu"/>
                         <constraint firstAttribute="bottom" secondItem="0Ev-Vn-CBn" secondAttribute="bottom" id="NQJ-vp-LPU"/>
-                        <constraint firstAttribute="trailing" secondItem="SLt-PX-jU1" secondAttribute="trailing" id="Ogn-ch-yoQ"/>
-                        <constraint firstItem="SLt-PX-jU1" firstAttribute="leading" secondItem="HpQ-ym-hKc" secondAttribute="leading" id="Y7A-Gp-NwT"/>
                         <constraint firstItem="0Ev-Vn-CBn" firstAttribute="leading" secondItem="HpQ-ym-hKc" secondAttribute="leading" id="eu0-Sf-mn3"/>
-                        <constraint firstItem="GPr-nw-4wO" firstAttribute="leading" secondItem="HpQ-ym-hKc" secondAttribute="leading" constant="15" id="rgc-sU-54x"/>
                     </constraints>
                 </view>
             </subviews>
@@ -108,10 +81,7 @@
                 <constraint firstItem="HpQ-ym-hKc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="u8a-VF-5rs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138" y="154"/>
         </view>
     </objects>
-    <resources>
-        <image name="Arrow" width="11.5" height="19.5"/>
-        <image name="topView" width="414" height="736"/>
-    </resources>
 </document>

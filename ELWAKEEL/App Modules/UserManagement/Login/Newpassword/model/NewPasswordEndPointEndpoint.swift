@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum NewPasswordEndPointEndpoint {
     /*
      Add Endpoint
@@ -85,10 +85,11 @@ extension NewPasswordEndPointEndpoint: IEndpoint {
         
         switch self {
         case .newPassword:
-            
+            let language = MOLHLanguage.currentAppleLanguage()
+
             
         
-            return ["Accept":"application/json","Accept-Language":"ar","Content-Type":"application/json"]
+            return ["Accept":"application/json","Accept-Language":"\(language)","Content-Type":"application/json"]
     }
     }
     var encoding: ParameterEncoding {        

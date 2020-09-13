@@ -11,8 +11,9 @@
     "ios": "10.0"
   },
   "source": {
-    "http": "file:/Users/hamada/Desktop/wakeel/localization/"
+    "http": "file:/Users/boodoo/Desktop/wakeel/localization/"
   },
   "source_files": "localization/**/*.{swift,lproj,strings}",
+  "swift_versions": "4.2",
   "swift_version": "4.2"
 }

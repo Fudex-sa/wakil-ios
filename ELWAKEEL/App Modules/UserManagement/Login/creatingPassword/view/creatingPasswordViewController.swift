@@ -43,7 +43,7 @@ class creatingPasswordViewController: UIViewController {
     func setUpView()
     {
         print("RRRRR\(type)\(id)")
-        passwordLBL.text = Localization.password
+//        passwordLBL.text =
         accountPassword.text = Localization.passwordAccount
         accountPasswordDes.text = Localization.accountpasswordDes
         passwrdLBL.text = Localization.password
@@ -52,9 +52,13 @@ class creatingPasswordViewController: UIViewController {
         loginNowBTN.setTitle(Localization.enterNow, for: .normal)
         passwordTXT.delegate = self
         retypePassword.delegate = self
+        self.navigationItem.title = Localization.password
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = Localization.password
+    }
     @IBAction func backBTN(_ sender: Any) {
     
     dismiss()
@@ -62,20 +66,21 @@ class creatingPasswordViewController: UIViewController {
     
     
     @IBAction func loginBTN(_ sender: Any) {
+    
         guard let password = passwordTXT.text, !password.isEmpty,
             let confirmidPassword = retypePassword.text, !confirmidPassword.isEmpty else{
                 ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
             return
-                
+
         }
-        
+
         if password != confirmidPassword {
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.incorrectPassword, sender: self)
             return
         }
         else{
             self.interactor?.creatingPassword(password: password, type: type, id: id)
-            
+
         }
         
     }

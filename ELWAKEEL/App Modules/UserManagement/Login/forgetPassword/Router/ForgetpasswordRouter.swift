@@ -18,7 +18,7 @@ protocol IForgetpasswordRouter: class {
 
 class ForgetpasswordRouter: IForgetpasswordRouter {
     func goVerification(params: [String : Any]) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.verification(params: params), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.verification(params: params), completion: nil)
     }
     
     

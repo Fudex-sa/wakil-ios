@@ -13,7 +13,7 @@ import LocalizationFramework
 
 protocol ILOGINRequesterInteractor: class {
 	var parameters: [String: Any]? { get set }
-    func dologin(phone: String, password:String, type: String)
+    func dologin(phone: String, password:String)
 }
 
 class LOGINRequesterInteractor: ILOGINRequesterInteractor {
@@ -28,35 +28,48 @@ class LOGINRequesterInteractor: ILOGINRequesterInteractor {
     	self.worker = worker
     }
     
-    func dologin(phone: String, password: String, type: String) {
-       
-        print("type\(type)")
-        worker?.loginFromApi(phone: phone, password: password, type: type, complition: { (error, success, response) in
+    func dologin(phone: String, password: String) {
+        Indicator.sharedInstance.showIndicator()
+        worker?.loginFromApi(phone: phone, password: password, complition: { (error, success, response) in
             if success == true{
-                self.presenter?.getUser(user: response!)
-                let userdefults = UserDefaults.standard
-                userdefults.set(response?.type, forKey: "type")
-                userdefults.set(response?.accessToken, forKey: "token")
-                userdefults.set(response?.user.email, forKey: "email")
-                userdefults.set(response?.user.name, forKey: "name")
-                userdefults.set(response?.user.id, forKey: "id")
-                userdefults.set(response?.user.phone, forKey: "phone")
-                userdefults.set(true, forKey: "login")
-                userdefults.set(response?.user.image, forKey: "image")
-                
-                if response?.type == "client"{
-                    self.presenter?.navigateHome()
+                if let user = response{
+                    self.presenter?.getUser(user: user)
+                    let userdefults = UserDefaults.standard
+                        userdefults.set(response?.type, forKey: "type")
+                        userdefults.set(response?.accessToken, forKey: "token")
+                        userdefults.set(response?.user.email, forKey: "email")
+                        userdefults.set(response?.user.name, forKey: "name")
+                        userdefults.set(response?.user.id, forKey: "id")
+                        userdefults.set(response?.user.phone, forKey: "phone")
+                        userdefults.set(true, forKey: "login")
+                        userdefults.set(response?.user.image, forKey: "image")
+                        Indicator.sharedInstance.hideIndicator()
+                    if response?.type == "client"{
+                        self.presenter?.navigateHome()
+                    }
+                    else{
+                        self.presenter?.provider_Home()
+                        
+                    }
                 }
-                else{
-                    self.presenter?.provider_Home()
-                    
-                }
+               
                 
 
             }
-            if error != nil{
-                self.presenter?.showErrorAlert(title: Localization.errorLBL , msg: error?.message ?? "Error")
-                print("interactor3")
+             else if error != nil{
+                Indicator.sharedInstance.hideIndicator()
+
+                if error?.message == Localization.data_error{
+                    self.presenter?.showErrorAlert(title: Localization.errorLBL , msg: Localization.data_error)
+                }
+                else
+                {
+                    print("")
+                }
+              
+            }
+            else {
+                print("bbbbbbb")
             }
             
         })

@@ -27,6 +27,7 @@ class LOGINViewController: UIViewController {
     @IBOutlet weak var ServiceRequester: UIButton!
     
     @IBOutlet weak var serviceSupplier: UIButton!
+    let user_default = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
@@ -40,7 +41,7 @@ class LOGINViewController: UIViewController {
         descriptionLBL.text = Localization.userTypeDes
         serviceSupplier.setTitle(Localization.serviceproviders, for: .normal)
         ServiceRequester.setTitle(Localization.serviceRequester, for: .normal)
-        
+      
         
         
     }
@@ -52,16 +53,18 @@ class LOGINViewController: UIViewController {
     }
     
     @IBAction func servicesRequesterBTN(_ sender: Any) {
-
+        user_default.set("client", forKey: "type")
+       
         self.navigate(type: .modal, module: GeneralRouterRoute.login(type: "client"), completion: nil)
-        print("serviceReuester")
+        
     }
     
     
     
     @IBAction func servicesProviderBTN(_ sender: UIButton) {
+        user_default.set("provider", forKey: "type")
+
         self.navigate(type: .modal, module: GeneralRouterRoute.login(type: "provider"), completion: nil)
-        print("service Provider")
         
     }
     

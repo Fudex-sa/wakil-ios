@@ -10,7 +10,7 @@
 
 import UIKit
 import LocalizationFramework
-
+import MOLH
 protocol IHomeProviderViewController: class {
 	var router: IHomeProviderRouter? { get set }
     func get_request()
@@ -18,6 +18,7 @@ protocol IHomeProviderViewController: class {
     func assign_provider_requests(request: HomeProviderModel.provider_request)
     func reject_request_done()
 }
+
 
 class HomeProviderViewController: UIViewController {
 	var interactor: IHomeProviderInteractor?
@@ -35,27 +36,36 @@ class HomeProviderViewController: UIViewController {
     
     var near_requests: HomeProviderModel.new_requests?
     var provider_requests: HomeProviderModel.provider_request?
+    var isExpanding = false
+    let hideView = UIView()
+    let popUpView = UIView()
+    var currentPopUpVC: UIViewController!
+      
 	override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
         setUpView()
-       get_provider_requests()
+        get_provider_requests()
         get_request()
+        set_up_navigation()
+        create_buttons()
+        set_notification()
         
     }
     
+  
+    
+    
     func setUpView()
     {
+        
         servicesRequests.text = Localization.Service_requests
-        Home.text = Localization.Main
         topView.layer.cornerRadius = 8
         bottomView.layer.cornerRadius = 8
         let uib = UINib(nibName: "acceptCell", bundle: nil)
         acceptTable.register(uib, forCellReuseIdentifier: "acceptCell")
         let uib2 = UINib(nibName: "RequestsCell", bundle: nil)
         requestsTable.register(uib2, forCellReuseIdentifier: "RequestsCell")
-      Notifications.layer.cornerRadius = Notifications.frame.width / 2
-        Notifications.layer.masksToBounds = true
         request_DES.text = Localization.near_requests
         sea_all.setTitle(Localization.sea_all, for: .normal)
         acceptTable.delegate = self
@@ -63,20 +73,75 @@ class HomeProviderViewController: UIViewController {
         requestsTable.delegate = self
         requestsTable.dataSource = self
     }
-    
-    
-    @IBAction func notifications(_ sender: Any) {
-        router?.notifications()
+    func set_up_navigation()
+    {
+        let navigationVC = UINavigationController(rootViewController: self)
+        
+        navigationVC.navigationBar.tintColor = .white
+        navigationController?.navigationBar.barStyle = .black
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+        
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        navigationVC.navigationBar.topItem?.title = Localization.Main
+        let window = UIApplication.shared.delegate?.window
+        
+        window?!.rootViewController = navigationVC
+        window?!.makeKeyAndVisible()
     }
+    
+    func create_buttons()
+       {
+        let side_menu_BTN = UIButton.init(type: .custom)
+        side_menu_BTN.setImage(UIImage(named: "sidemenu"), for: UIControl.State.normal)
+        side_menu_BTN.addTarget(self, action: #selector(self.side_menu), for: UIControl.Event.touchUpInside)
+        side_menu_BTN.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
+        
+        let barButton = UIBarButtonItem(customView: side_menu_BTN)
+        self.navigationItem.leftBarButtonItem = barButton
+   
+    }
+    
+    func set_notification()
+    {
+        let notificationButton = SSBadgeButton()
+        notificationButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        notificationButton.setImage(UIImage(named: "Notification")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        notificationButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 15)
+        notificationButton.badge = "4"
+        notificationButton.addTarget(self, action: #selector(self.notification), for: UIControl.Event.touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: notificationButton)
+    }
+    
+    @objc func side_menu() {
+
+        if !isExpanding{
+            
+            showPopUp()
+        }
+        else{
+            
+            hidePopUps()
+            
+        }
+        isExpanding = !isExpanding
+        
+
+    }
+    
+    @objc func notification(){
+ router?.notifications()
+        
+    }
+   
     
     @IBAction func seeALl(_ sender: Any) {
         
     }
     
     
-    @IBAction func show_side_menu(_ sender: Any) {
-        router?.go_side_menu()
-    }
+    
     
     
 }
@@ -134,7 +199,6 @@ extension HomeProviderViewController: IHomeProviderViewController {
         router?.accept_reuest(request_id: request_id)
     }
     
-	// do someting...
 }
 
 extension HomeProviderViewController: UITableViewDelegate, UITableViewDataSource {
@@ -160,7 +224,6 @@ extension HomeProviderViewController: UITableViewDelegate, UITableViewDataSource
                     self.reject_request(request_id: id)
 
                 }
-                print("index path\(indexPath.row)")
 
             }
             cell.accept_button = {
@@ -228,9 +291,109 @@ extension HomeProviderViewController: UITableViewDelegate, UITableViewDataSource
             
         }
     }
-        }
-}
+    }
+    }
     }
 extension HomeProviderViewController{
-   
+    
+    func showPopUp() {
+        
+        currentPopUpVC = sideMenuProviderViewController(nibName: "sideMenuProviderViewController", bundle: nil)
+        hideView.frame = self.view.frame
+        hideView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        let hideBtn = UIButton()
+        hideBtn.frame = CGRect(x: 0, y: self.view.frame.minY, width: self.view.frame.width, height: self.view.frame.height)
+        hideView.addSubview(hideBtn)
+        hideBtn.addTarget(self, action: #selector(hideBtnTapped), for: .touchUpInside)
+        if MOLHLanguage.currentAppleLanguage() == "ar"{
+            popUpView.frame = CGRect(x: self.view.frame.maxX, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+        }
+        else{
+            popUpView.frame = CGRect(x: self.view.frame.minX - self.view.frame.width, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+        }
+        
+        hideView.addSubview(popUpView)
+        currentPopUpVC = sideMenuProviderViewController(nibName: "sideMenuProviderViewController", bundle: nil)
+        let vc = currentPopUpVC
+        addChild(vc!)
+        vc!.view.frame = popUpView.bounds
+        popUpView.addSubview(vc!.view)
+        vc!.didMove(toParent: self)
+        self.view.addSubview(hideView)
+        
+        UIView.animate(withDuration: 1, delay: 0, options: MOLHLanguage.currentAppleLanguage() == "ar" ? .curveEaseOut : .curveEaseOut, animations: {
+            if MOLHLanguage.currentAppleLanguage() == "ar"{
+                self.popUpView.frame = CGRect(x: 80 , y: 0, width: self.view.frame.width - 80, height: self.view.frame.height)
+                
+            }
+            else{
+                self.popUpView.frame = CGRect(x: self.view.frame.minX , y: 0, width: self.view.frame.width - 80, height: self.view.frame.height)
+                
+            }
+            
+        })
+    }
+    @objc func hideBtnTapped(sender: UIButton!) {
+        hidePopUps()
+    }
+    func hidePopUps() {
+        let previousVC = currentPopUpVC
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            if MOLHLanguage.currentAppleLanguage() == "ar"{
+                self.popUpView.frame = CGRect(x: self.view.frame.maxX, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+            }
+            else{
+                self.popUpView.frame = CGRect(x: self.view.frame.minX - self.popUpView.frame.width, y: self.view.frame.minY, width: self.view.frame.width - 100, height: self.view.frame.height)
+            }
+            
+            self.navigationItem.leftBarButtonItem?.customView?.frame.origin.x = 0
+        }, completion: { _ in
+            previousVC!.willMove(toParent: nil)
+            previousVC!.view.removeFromSuperview()
+            previousVC!.removeFromParent()
+            self.hideView.removeFromSuperview()
+            
+        })
+    }
+//            currentPopUpVC = sideMenuProviderViewController(nibName: "sideMenuProviderViewController", bundle: nil)
+//          hideView.frame = self.view.frame
+//           hideView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+//           let hideBtn = UIButton()
+//           hideBtn.frame = CGRect(x: 0, y: self.view.frame.minY, width: self.view.frame.width, height: self.view.frame.height)
+//           hideView.addSubview(hideBtn)
+//           hideBtn.addTarget(self, action: #selector(hideBtnTapped), for: .touchUpInside)
+//           popUpView.frame = CGRect(x: self.view.frame.minX - self.popUpView.frame.width, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+//           hideView.addSubview(popUpView)
+//           currentPopUpVC = sideMenuProviderViewController(nibName: "sideMenuProviderViewController", bundle: nil)
+//           let vc = currentPopUpVC
+//           addChild(vc!)
+//           vc!.view.frame = popUpView.bounds
+//           popUpView.addSubview(vc!.view)
+//           vc!.didMove(toParent: self)
+//           self.view.addSubview(hideView)
+//           UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+//
+//               self.popUpView.frame = CGRect(x: self.view.frame.minX , y: 0, width: self.view.frame.width - 80, height: self.view.frame.height)
+//
+//
+//
+//           })
+//       }
+//       @objc func hideBtnTapped(sender: UIButton!) {
+//           hidePopUps()
+//       }
+//       func hidePopUps() {
+//           let previousVC = currentPopUpVC
+//           UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+//
+//               self.popUpView.frame = CGRect(x: self.view.frame.minX - self.popUpView.frame.width, y: self.view.frame.minY, width: self.view.frame.width - 100, height: self.view.frame.height)
+//               self.navigationItem.leftBarButtonItem?.customView?.frame.origin.x = 0
+//           }, completion: { _ in
+//               previousVC!.willMove(toParent: nil)
+//               previousVC!.view.removeFromSuperview()
+//               previousVC!.removeFromParent()
+//               self.hideView.removeFromSuperview()
+//
+//           })
+//       }
 }

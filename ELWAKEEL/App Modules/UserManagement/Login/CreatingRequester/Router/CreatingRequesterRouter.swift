@@ -18,7 +18,7 @@ protocol ICreatingRequesterRouter: class {
 
 class CreatingRequesterRouter: ICreatingRequesterRouter {
     func GoVerification(type: String, id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.verification(params: ["type":type, "id": id]), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.verification(params: ["type":type, "id": id]), completion: nil)
     }
     
 	weak var view: CreatingRequesterViewController?

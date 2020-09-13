@@ -24,13 +24,16 @@ class SupplierFirstScreenWorker: ISupplierFirstScreenWorker {
         
         NetworkService.share.request(endpoint: FirstSupplierEndPointEndpoint.register(name: name, email: email, phone: phone, country_code: country_code, type: type, accepted: accepted, password: password, address: address, city_ids: city_ids, latitude: latitude, longitude: longitude), success: { (responseData) in
             let response = responseData
+            print("ddddddddd")
             do{
+                print("server")
                 let decoder = JSONDecoder()
                 let cities = try decoder.decode(SupplierFirstScreenModel.newUser.self, from: response)
+                print(cities)
                 complition(nil, true,cities)
             }
-            catch _{
-                
+            catch (let error){
+                print("xxxxx\(error.localizedDescription)")
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: responseData )

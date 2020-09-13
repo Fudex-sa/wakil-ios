@@ -20,21 +20,28 @@ protocol ISupplierFirstScreenInteractor: class {
 
 class SupplierFirstScreenInteractor: ISupplierFirstScreenInteractor {
     func getCities(countries: [Int]) {
+        Indicator.sharedInstance.showIndicator()
+
         worker?.getCities(countries: countries, complition: { (error, success, data) in
             
             if success == true{
                 self.presenter?.showCities(cities: data)
+                Indicator.sharedInstance.hideIndicator()
+
             }
         })
     }
     
     func getcountries() {
+        Indicator.sharedInstance.showIndicator()
         worker?.getcountries(complition: { (error, success, data) in
             if success == true{
         self.presenter?.showrespons(response: data)
-                
+                Indicator.sharedInstance.hideIndicator()
+
             }
             else{
+                Indicator.sharedInstance.hideIndicator()
               print("Not Successed")
             }
         })
@@ -53,13 +60,33 @@ class SupplierFirstScreenInteractor: ISupplierFirstScreenInteractor {
         worker?.registerAPI(name: name, email: email, phone:phone, country_code: country_code, type: type, accepted: accepted, password: password, city_ids: city_ids, address: address, latitude: latitude, longitude: longitude, complition: { (error, success, responsData) in
             if error != nil
             {
+                if error?.message == "قيمة الحقل الهاتف مُستخدمة من قبل"
+                {
+                     self.presenter?.showAlert(title: Localization.errorLBL, msg: "قيمة الحقل الهاتف مُستخدمة من قبل")
+                }
+                else if error?.message ==  "قيمة الحقل البريد الالكتروني مُستخدمة من قبل"
+                   {
+                    self.presenter?.showAlert(title: Localization.errorLBL, msg:  "قيمة الحقل البريد الالكتروني مُستخدمة من قبل")
+                    
+                }
+                else if error?.message == "حقل longitude مطلوب في حال ما إذا كان نوع التسجيل يساوي provider."{
+                    self.presenter?.showAlert(title: Localization.errorLBL, msg: "هناك خطا في العنوان")
+                }
                 self.presenter?.showAlert(title: Localization.errorLBL, msg: error?.message ?? "error")
             }
-            guard let response = responsData else {return}
+            else if success == true{
+                guard let response = responsData else {return}
+            self.presenter?.newuser(user: response)
+                if let id = response.id
+                {
+                  self.presenter?.navigateToNext(id: id)
+                }
             
-                self.presenter?.newuser(user: response)
-                self.presenter?.navigateToNext(id: response.id)
-            
+            }
+           
+            else{
+                print("error")
+            }
             
             
         })

@@ -8,9 +8,12 @@
 
 import UIKit
 import MOLH
-
+import UserNotifications
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
+class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     
 
@@ -19,24 +22,94 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        MOLHLanguage.setDefaultLanguage("ar")
-//        MOLH.shared.activate(true)
-//        reset()
+      
+//        application.registerForRemoteNotifications()
+         
+        FirebaseApp.configure()
+        if #available(iOS 10.0, *) {
+          // For iOS 10 display notification (sent via APNS)
+          UNUserNotificationCenter.current().delegate = self
+
+          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+          UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {_, _ in })
+        } else {
+          let settings: UIUserNotificationSettings =
+          UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+          application.registerUserNotificationSettings(settings)
+        }
+
+        application.registerForRemoteNotifications()
+Messaging.messaging().delegate = self
+        Messaging.messaging().isAutoInitEnabled = true
+
         
+        
+        MOLHLanguage.setDefaultLanguage("ar")
+        UserDefaults.standard.set("ar", forKey: "language")
+        MOLH.shared.activate(true)
+        reset()
         return true
     }
-    func reset() {
-        
-        
-        let rootViewController = HomeViewController(nibName: "HomeViewController", bundle : nil)
-        window?.rootViewController = rootViewController
-        window?.makeKeyAndVisible()
-        //    self.window?.rootViewController?.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
+   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+      // If you are receiving a notification message while your app is in the background,
+      // this callback will not be fired till the user taps on the notification launching the application.
+      // TODO: Handle data of notification
 
-//        window?.rootViewController?.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
-//        window = UIWindow()
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController = ContainerController()
+      // With swizzling disabled you must let Messaging know about the message, for Analytics
+      // Messaging.messaging().appDidReceiveMessage(userInfo)
+
+      // Print message ID.
+      if let messageID = userInfo["gcmMessageIDKey"] {
+        print("Message ID: \(messageID)")
+      }
+
+      // Print full message.
+      print(userInfo)
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+      // If you are receiving a notification message while your app is in the background,
+      // this callback will not be fired till the user taps on the notification launching the application.
+      // TODO: Handle data of notification
+
+      // With swizzling disabled you must let Messaging know about the message, for Analytics
+      // Messaging.messaging().appDidReceiveMessage(userInfo)
+
+      // Print message ID.
+      if let messageID = userInfo["gcmMessageIDKey"] {
+        print("Message ID: \(messageID)")
+      }
+
+      // Print full message.
+      print(userInfo)
+
+      completionHandler(UIBackgroundFetchResult.newData)
+    }
+    func reset() {
+        let rootViewController: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+        
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        rootViewController.rootViewController = story.instantiateViewController(withIdentifier: "ViewController")
+        
+        
+       
+    }
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        
+        InstanceID.instanceID().instanceID {(result, error) in
+            if let error = error {
+                print("Error fetching remote instance ID: \(error)")
+            } else if let result = result {
+                print("Remote instance ID token: \(result.token)")
+                print("InstanceID token: \(result.token)")
+                let def = UserDefaults.standard
+                def.set(result.token, forKey: "firebase_token")
+                def.synchronize()
+            }
+        }
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

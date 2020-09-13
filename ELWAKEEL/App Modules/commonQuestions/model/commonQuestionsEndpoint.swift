@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum commonQuestionsEndpoint {
     /*
      Add Endpoint
@@ -73,7 +73,9 @@ extension commonQuestionsEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        let language = MOLHLanguage.currentAppleLanguage()
+
+        return ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
     }
     
     

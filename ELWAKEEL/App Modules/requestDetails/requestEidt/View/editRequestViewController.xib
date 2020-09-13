@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +18,6 @@
                 <outlet property="city" destination="erk-TZ-Cop" id="r3B-aJ-Hkg"/>
                 <outlet property="city1" destination="SAM-pH-0GL" id="DmP-xP-MMd"/>
                 <outlet property="edit" destination="6sp-tz-h6D" id="R0O-px-KSf"/>
-                <outlet property="editLBL" destination="UzY-Zo-1rm" id="PRn-ZR-Kps"/>
                 <outlet property="minstry" destination="hnJ-4f-tqf" id="nwg-JK-Kh4"/>
                 <outlet property="minstry1" destination="Vgi-dW-Nhl" id="yLm-eN-zQf"/>
                 <outlet property="orderDES" destination="6Jp-RB-BD0" id="dk8-Db-XP8"/>
@@ -38,36 +36,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="1066"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topView" translatesAutoresizingMaskIntoConstraints="NO" id="W0w-6k-eYv">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="1066"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsf-hG-5lg">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzY-Zo-1rm">
-                            <rect key="frame" x="161.5" y="22" width="52.5" height="26.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndJ-KK-WYR">
-                            <rect key="frame" x="10" y="24" width="30" height="22"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="30" id="xU8-Zo-59g"/>
-                            </constraints>
-                            <state key="normal" image="Arrow"/>
-                            <connections>
-                                <action selector="backBTN:" destination="-1" eventType="touchUpInside" id="Vco-eK-jo0"/>
-                            </connections>
-                        </button>
-                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="UzY-Zo-1rm" firstAttribute="centerY" secondItem="dsf-hG-5lg" secondAttribute="centerY" id="Ua9-De-VEV"/>
-                        <constraint firstItem="UzY-Zo-1rm" firstAttribute="centerX" secondItem="dsf-hG-5lg" secondAttribute="centerX" id="V03-5Z-cWK"/>
                         <constraint firstAttribute="height" constant="70" id="p1a-yg-KqM"/>
-                        <constraint firstItem="ndJ-KK-WYR" firstAttribute="leading" secondItem="dsf-hG-5lg" secondAttribute="leading" constant="10" id="uAw-By-AGY"/>
-                        <constraint firstItem="ndJ-KK-WYR" firstAttribute="centerY" secondItem="dsf-hG-5lg" secondAttribute="centerY" id="vO9-2w-Pb5"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUL-ff-9PX" userLabel="container">
@@ -313,21 +286,13 @@
                 <constraint firstAttribute="trailing" secondItem="HUL-ff-9PX" secondAttribute="trailing" id="99O-da-R3p"/>
                 <constraint firstItem="HUL-ff-9PX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9RA-ng-gNl"/>
                 <constraint firstItem="HUL-ff-9PX" firstAttribute="top" secondItem="dsf-hG-5lg" secondAttribute="bottom" constant="15" id="Eck-SI-wwv"/>
-                <constraint firstAttribute="bottom" secondItem="W0w-6k-eYv" secondAttribute="bottom" id="Hf6-EH-WiB"/>
-                <constraint firstAttribute="trailing" secondItem="W0w-6k-eYv" secondAttribute="trailing" id="XUH-4H-fJq"/>
                 <constraint firstAttribute="bottom" secondItem="HUL-ff-9PX" secondAttribute="bottom" id="Xn9-iu-A2F"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dsf-hG-5lg" secondAttribute="trailing" id="ZD5-5R-pqa"/>
                 <constraint firstItem="dsf-hG-5lg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bFE-HC-KKj"/>
-                <constraint firstItem="W0w-6k-eYv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mdM-qq-cRo"/>
-                <constraint firstItem="W0w-6k-eYv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yDM-Ss-axn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-236" y="186.20689655172416"/>
         </view>
     </objects>
-    <resources>
-        <image name="Arrow" width="11.5" height="19.5"/>
-        <image name="topView" width="414" height="736"/>
-    </resources>
 </document>

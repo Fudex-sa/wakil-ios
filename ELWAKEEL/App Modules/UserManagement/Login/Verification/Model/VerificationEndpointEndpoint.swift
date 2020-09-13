@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import  MOLH
 enum VerificationEndpointEndpoint {
     /*
      Add Endpoint
@@ -76,10 +76,11 @@ extension VerificationEndpointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
+        let language = MOLHLanguage.currentAppleLanguage()
 
         switch self {
         case .verification:
-            return ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+            return ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
         }
         
     }

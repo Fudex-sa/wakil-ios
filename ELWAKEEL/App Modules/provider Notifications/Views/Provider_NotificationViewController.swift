@@ -20,7 +20,6 @@ class Provider_NotificationViewController: UIViewController {
 	var router: IProvider_NotificationRouter?
 
     @IBOutlet weak var Notification_Table: UITableView!
-    @IBOutlet weak var Notifications: UILabel!
     var old_Notifications: [String] = ["old","old","old","old","old", "old","old","old"]
     var new_notification: [String] = ["new","new","new", "new","new"]
     var sections: [[String]] = [[String]]()
@@ -36,17 +35,13 @@ class Provider_NotificationViewController: UIViewController {
     func setUpView()
     {   sections = [new_notification, old_Notifications]
         Notification_Table.reloadData()
-        Notifications.text = Localization.notifications
         Notification_Table.delegate = self
         Notification_Table.dataSource = self
         let nib = UINib(nibName: "provider_Notifications_Cell", bundle: nil)
         Notification_Table.register(nib, forCellReuseIdentifier: "provider_Notifications_Cell")
+        self.navigationItem.title = Localization.notifications
     }
     
-    
-    @IBAction func backBTN(_ sender: Any) {
-        dismiss()
-    }
     
 }
 

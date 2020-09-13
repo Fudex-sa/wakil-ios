@@ -40,9 +40,9 @@ struct SupplierFirstScreenModel {
         let name: String?
     }
     struct newUser: Codable {
-        let id: Int
-        let name, phone, email: String
-        let averageRating: Int
+        let id: Int?
+        let name, phone, email: String?
+        let averageRating: String?
         
         enum CodingKeys: String, CodingKey {
             case id, name, phone, email

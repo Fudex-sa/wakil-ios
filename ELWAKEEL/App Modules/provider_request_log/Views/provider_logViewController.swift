@@ -35,13 +35,11 @@ class provider_logViewController: UIViewController {
     }
     
     
-    @IBAction func sideMenu(_ sender: Any) {
-        router?.show_side_menu()
-    }
+
     
     func setUpView()
     {
-        request_log.text = Localization.Record_requests
+    
         logs_table.delegate = self
         logs_table.dataSource = self
         let nib = UINib(nibName: "provider_log", bundle: nil)
@@ -49,6 +47,7 @@ class provider_logViewController: UIViewController {
         
         logs_table.layer.cornerRadius = 10
         logs_table.layer.masksToBounds = true
+        self.navigationItem.title = Localization.Record_requests
     }
 }
 

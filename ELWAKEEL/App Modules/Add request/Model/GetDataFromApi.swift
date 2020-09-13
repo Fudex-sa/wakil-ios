@@ -49,10 +49,7 @@ class formatData{
         }
         menu.cellSelectionStyle = .checkbox
     
-            menu.show(style: .alert(title: "ddddd", action: "ok", height: 300.0), from: view)
-           print("hamada")
-    
-           // on dismiss handler
+    menu.show(style: .alert(title: Localization.select_city, action: Localization.ok, height: 300.0), from: view)
         menu.onDismiss = { [weak self] items in
             self?.selectedOrgName = items
             var indexes: [Int] = [Int]()

@@ -20,6 +20,7 @@ class creatingPasswordWorker: IcreatingPasswordWorker {
         NetworkService.share.request(endpoint: CreatingPasswordEndPointEndpoint.createNewPassword(password: password, type: type, id: id),success: { (responsData) in
             let response = responsData
             print("secind")
+            print("cretaing")
             do {
                 let decoder = JSONDecoder()
                 let user = try decoder.decode(creatingPasswordModel.NewClient.self, from: response)
@@ -28,7 +29,9 @@ class creatingPasswordWorker: IcreatingPasswordWorker {
                 complition(nil,true,user)
                 
             } catch let error {
-                
+                print("cretaing0")
+
+                print(error.localizedDescription)
                 do {
                     print(error.localizedDescription)
                     let decoder = JSONDecoder()

@@ -39,30 +39,31 @@ class ForgetpasswordViewController: UIViewController {
     {
         phoneTXT.delegate = self
         print(Localization.forgetPasswoedDEs)
-        forgetPasswordLBL.text = Localization.forgetpassword
         forgetPasswordLBL2.text = Localization.forgetPaswwor
         forgetPasswordDEs.text = Localization.forgetPasswoedDEs
         phoneLBL.text = Localization.phoneNymber
         confirmBTN.setTitle(Localization.sendverificationCode, for: .normal)
+        
+       
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+         self.navigationItem.title = Localization.forgetpassword
+    }
     
     @IBAction func confirmBTN(_ sender: Any) {
         
-        guard let phone = phoneTXT.text else{
-            
+        guard let phone = phoneTXT.text, !phone.isEmpty, phone.count == 11 else{
+
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
             return
         }
-        
+
         self.interactor?.forgetPassword(phone: phone)
-      
+
     }
     
-    
-    @IBAction func backBTN(_ sender: Any) {
-    dismiss()
-    }
+  
     
 }
 

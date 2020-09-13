@@ -26,6 +26,7 @@ class sideMenuProviderViewController: UIViewController {
     var provider_name = ""
     let userDefualts = UserDefaults.standard
     var menu_Items: [String] = [Localization.Main, Localization.wallet, Localization.Record_requests, Localization.Application_settings, Localization.Connect_with_us, Localization.About_the_application, Localization.common_questions, Localization.Share_the_app, Localization.Terms_and_Conditions, Localization.Logout]
+    let home_provider = HomeProviderViewController()
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,36 +81,35 @@ extension sideMenuProviderViewController: UITableViewDelegate, UITableViewDataSo
         
         switch indexPath.row {
         case 0:
-            router?.GO_home()
+            self.navigate(type: .root, module: GeneralRouterRoute.HomeProvider, completion: nil)
         case 1:
-            router?.GO_wallet()
-            print("recode_ request")
+           self.navigate(type: .push, module: GeneralRouterRoute.wallet, completion: nil)
         case 2:
-            router?.Records()
+             self.navigate(type: .push, module: GeneralRouterRoute.provider_log, completion: nil)
 
         case 3:
-            router?.App_setting()
+             self.navigate(type: .push, module: GeneralRouterRoute.applicationSetting, completion: nil)
             print("setting")
             //            self.router?.application_Setting()
             
         case 4:
-            router?.Go_contact_us()
+             self.navigate(type: .push, module: GeneralRouterRoute.contactUs, completion: nil)
             print("connect with us")
             
         case 5:
-            router?.About_app()
-            print("about the applicatin")
+      self.navigate(type: .push, module: GeneralRouterRoute.aboutUs, completion: nil)
+      print("about the applicatin")
             
         case 6:
-            router?.FQA()
-            print("commom questio")
+        self.navigate(type: .push, module: GeneralRouterRoute.commonQuestios, completion: nil)
+        print("commom questio")
             
         case 7:
             print("share app")
             commonFunctions.share.shareApp(viwe: self)
         case 8:
             print("terms")
-            router?.GO_terms()
+             self.navigate(type: .push, module: GeneralRouterRoute.terms, completion: nil)
         case 9:
             print("logOut")
             commonFunctions.share.logout(view: self)

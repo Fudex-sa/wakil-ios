@@ -29,7 +29,7 @@ class commonFunctions
     func logout(view: UIViewController)
     {
         
-        let alert = AlertController(title: " ", message: "", preferredStyle: .alert)
+        let alert = AlertController(title: " ", message: "", preferredStyle: .actionSheet)
         let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.black]
         let titleString = NSAttributedString(string: "", attributes: titleAttributes)
         
@@ -45,6 +45,9 @@ class commonFunctions
             view.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
             
         }
+        
+        alert.view.translatesAutoresizingMaskIntoConstraints = false
+        alert.view.heightAnchor.constraint(equalToConstant: 250).isActive = true
         sendAction.setValue(UIColor(red: 0.60, green: 0.25, blue: 0.36, alpha: 1.00), forKey: "titleTextColor")
         
         let cancel = UIAlertAction(title: Localization.cancel, style: .cancel, handler: nil)
@@ -63,6 +66,7 @@ class commonFunctions
         
         //     router?.login()
     }
+    
     
     
 }

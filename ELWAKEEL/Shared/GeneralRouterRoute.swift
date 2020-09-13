@@ -54,7 +54,14 @@ enum GeneralRouterRoute: IRouter {
     case provider_log
     case request_details_provider(request_id: Int)
     case details(request_id: Int)
-    
+    case chat(params:[String:Any])
+    case edit_profile
+    case change_name
+    case change_address
+    case change_city
+    case change_password
+    case change_phone
+
     
 }
 
@@ -130,7 +137,22 @@ extension GeneralRouterRoute {
             return request_detailsConfiguration.setup(request_id: request_id)
         case .details(let request_id):
             return detailsConfiguration.setup(request_id: request_id)
-        }
+        case .chat(let params):
+            return ChatConfiguration.setup(parameters: params)
         
-    }
+        case .edit_profile:
+            return edit_profileConfiguration.setup()
+        case .change_name:
+            return change_nameConfiguration.setup()
+        case .change_city:
+            return change_cityConfiguration.setup()
+        
+        case .change_address:
+            return change_addressConfiguration.setup()
+        case .change_password:
+            return change_passwordConfiguration.setup()
+        case .change_phone:
+            return change_phoneConfiguration.setup()
+        }
+}
 }

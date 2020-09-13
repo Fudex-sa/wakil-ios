@@ -12,12 +12,20 @@ import UIKit
 
 protocol IClint_NotificationPresenter: class {
 	// do someting...
+    func assign_notification(notifications: Clint_NotificationModel.Notification)
+
 }
 
-class Clint_NotificationPresenter: IClint_NotificationPresenter {	
+class Clint_NotificationPresenter: IClint_NotificationPresenter {
+    func assign_notification(notifications: Clint_NotificationModel.Notification) {
+        view?.assign_notification(notifications: notifications)
+    }
+    
 	weak var view: IClint_NotificationViewController?
 	
 	init(view: IClint_NotificationViewController?) {
 		self.view = view
 	}
+    
+    
 }

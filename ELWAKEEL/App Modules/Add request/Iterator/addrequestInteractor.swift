@@ -42,10 +42,14 @@ class addrequestInteractor: IaddrequestInteractor {
     
     
     func getCities(countries_IDs: [Int]) {
+        Indicator.sharedInstance.showIndicator()
+
         worker?.getCities(Countries_IDs: countries_IDs, complition: { (success, error, response) in
             
             if success{
                 self.presenter?.assignCities(cities: response!)
+                Indicator.sharedInstance.hideIndicator()
+
                 self.presenter?.goHome()
                 print(response!)
                print("success Getting data")
@@ -60,14 +64,19 @@ class addrequestInteractor: IaddrequestInteractor {
            }
     
     func getCountries() {
+        Indicator.sharedInstance.showIndicator()
         worker?.getCountries(complition: { (success, error, response) in
             
             if success == true{
                 self.presenter?.assignCountries(countries: response!)
+                Indicator.sharedInstance.hideIndicator()
+
                 print(response!)
                 
             }
             else{
+                Indicator.sharedInstance.hideIndicator()
+
                 print(error?.message ?? "")
             }
             

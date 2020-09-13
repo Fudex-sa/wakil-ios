@@ -11,15 +11,16 @@
 import UIKit
 import RSSelectionMenu
 import LocalizationFramework
+import MOLH
 
 protocol IapplicationSettingViewController: class {
-	var router: IapplicationSettingRouter? { get set }
+    var router: IapplicationSettingRouter? { get set }
 }
 
 class applicationSettingViewController: UIViewController {
-	var interactor: IapplicationSettingInteractor?
-	var router: IapplicationSettingRouter?
-
+    var interactor: IapplicationSettingInteractor?
+    var router: IapplicationSettingRouter?
+    
     
     @IBOutlet weak var alert: UILabel!
     @IBOutlet weak var selectlan: UILabel!
@@ -33,34 +34,67 @@ class applicationSettingViewController: UIViewController {
     @IBOutlet weak var notificationsSent: UILabel!
     @IBOutlet weak var notifications: UILabel!
     
+    @IBOutlet weak var lang_view: UIView!
+    
+    @IBOutlet weak var lang: UIButton!
+    
+    
     var languages:[String] = ["العربيه","english"]
     var selecteddLanguages: [String] = [String]()
     var language = ""
     var image: UIImage?
+    let user_default = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpview()
-		// do someting...
+        set_image_lang()
+        set_up_navigation()
+        // do someting...
     }
     
     func setUpview()
     {
-       main.text = Localization.Application_settings
-//        appLanguage.text = Localization.app_language
-        selectLanguage.text = Localization.select_language
+        
+        lang_view.layer.borderWidth = 1.0
+        
+        lang_view.layer.borderColor = UIColor(red: 0.58, green: 0.58, blue: 0.58, alpha: 1.00).cgColor
+        laguageTXT.borderStyle = .none
+          selectLanguage.text = Localization.select_language
         alert.text = Localization.alerts
         notificationsSent.text = Localization.send_alert
         selectlan.text = Localization.selectLanguage
         laguageTXT.delegate = self
+        
+    }
+    func set_up_navigation()
+    {          self.navigationItem.title = Localization.Application_settings
+        if user_default.string(forKey: "type") == "provider" {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+
+            
+        }
+        else {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
+
+        }
+        
+    }
+    
+    func set_image_lang(){
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            lang.setImage(UIImage(named: "suadiArabia"), for: .normal)
+        }
+        else{
+            lang.setImage(UIImage(named: "america"), for: .normal)
+        }
     }
     
     func getLanguages()
     {
-//        image = nil
+        //        image = nil
         let menu = RSSelectionMenu(selectionStyle: .single, dataSource: languages) { (cell, name, indexpath) in
             cell.textLabel?.text = name
         }
-        print("selected1)")
         menu.setSelectedItems(items: selecteddLanguages) {[weak self] (item, index, isselected, selectedItem) in
             self?.selecteddLanguages = selectedItem
         }
@@ -70,14 +104,26 @@ class applicationSettingViewController: UIViewController {
         menu.onDismiss = { [weak self] items in
             self?.language = (self?.selecteddLanguages[0])!
             self?.laguageTXT.text = self?.language
+            
             if self?.language == "العربيه"{
+                
+                self?.lang.setImage(UIImage(named: "suadiArabia"), for: .normal)
+                
+                MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+                langauge = MOLHLanguage.currentAppleLanguage()
+                UserDefaults.standard.set("en", forKey: "language")
+                MOLH.reset()
                 self?.image = UIImage(named: "suadiArabia")
-                self?.setImage(image: (self?.image)!)
                 
             }
             else{
-                self?.image = UIImage(named: "skip")
-                self?.setImage(image: (self?.image)!)
+                self?.lang.setImage(UIImage(named: "america"), for: .normal)
+                
+                MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+                langauge = MOLHLanguage.currentAppleLanguage()
+                UserDefaults.standard.set("ar", forKey: "language")
+                MOLH.reset()
+                
             }
             
             
@@ -85,44 +131,27 @@ class applicationSettingViewController: UIViewController {
     }
     
     
-    @IBAction func show_side_menu(_ sender: Any) {
-        
-        router?.show_side_menu()
-    }
     
-    
-    func setImage(image: UIImage)
-    {
-        
-        
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        imageView.image = image
-
-        laguageTXT.leftView = imageView
-        laguageTXT.leftViewMode = UITextField.ViewMode.always
-        laguageTXT.leftViewMode = .always
-        
-    }
 }
 
 extension applicationSettingViewController: IapplicationSettingViewController {
-	// do someting...
+    // do someting...
 }
 
 extension applicationSettingViewController: UITextFieldDelegate {
-     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
         getLanguages()
-    
-    return false
+        
+        return false
     }
     
     
     
     
     
-	// do someting...
+    // do someting...
 }
 
 extension applicationSettingViewController {
-	// do someting...
+    // do someting...
 }

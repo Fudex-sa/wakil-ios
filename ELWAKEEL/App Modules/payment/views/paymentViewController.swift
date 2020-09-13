@@ -37,17 +37,18 @@ class paymentViewController: UIViewController {
 		// do someting...
         setUpView()
         hideKeyboardWhenTappedAround()
-        print("token\(UserDefaults.standard.string(forKey: "token"))")
-        print("ofer_id\(offer_id) \(request_id)")
+       
     }
     func setUpView(){
-        electronic_payment.text = Localization.electronic_payment
+         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
         electronic_payment2.text = Localization.electronic_payment
         price_Des.text = Localization.electronic_payment_Des
         bank_name.text = Localization.bankName + "*"
         iban_number.text = Localization.IBANNumber + "*"
         pay_now.setTitle(Localization.pay_now, for: .normal)
+        self.navigationItem.title = Localization.electronic_payment
     }
+   
     
     @IBAction func pay_now(_ sender: Any) {
         validate_data()
@@ -81,7 +82,6 @@ class paymentViewController: UIViewController {
 
 extension paymentViewController: IpaymentViewController {
     func go_request_details() {
-        print("request_id\(request_id)")
         if let request_id = request_id {
             router?.go_request_details(request_id: request_id)
 

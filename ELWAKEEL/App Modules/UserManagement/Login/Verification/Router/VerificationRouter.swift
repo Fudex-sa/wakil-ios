@@ -19,7 +19,7 @@ protocol IVerificationRouter: class {
 
 class VerificationRouter: IVerificationRouter {
     func createpassword(type: String, id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.creatingPassword(type: type, id: id), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.creatingPassword(type: type, id: id), completion: nil)
     }
     
     func goHome() {
@@ -27,11 +27,11 @@ class VerificationRouter: IVerificationRouter {
     }
     
     func goNewpassword(phone: String) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.newPassword(phone: phone), completion: nil)
+        view?.navigate(type: .push , module: GeneralRouterRoute.newPassword(phone: phone), completion: nil)
     }
     
     func createNewPassword(phone: String) {
-view?.navigate(type: .modal, module: GeneralRouterRoute.newPassword(phone: phone), completion: nil)
+view?.navigate(type: .push, module: GeneralRouterRoute.newPassword(phone: phone), completion: nil)
         
     }
    

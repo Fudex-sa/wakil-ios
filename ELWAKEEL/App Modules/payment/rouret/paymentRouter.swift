@@ -19,7 +19,7 @@ protocol IpaymentRouter: class {
 
 class paymentRouter: IpaymentRouter {
     func go_request_details(request_id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.requestDetails(id: request_id, statu: nil), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.requestDetails(id: request_id, statu: nil), completion: nil)
     }
     
    

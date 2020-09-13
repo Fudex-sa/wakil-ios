@@ -13,9 +13,14 @@ import UIKit
 protocol Irequest_detailsRouter: class {
 	// do someting...
     func go_home()
+    func go_chat(param: [String:Any])
 }
 
 class request_detailsRouter: Irequest_detailsRouter {
+    func go_chat(param: [String : Any]) {
+        view?.navigate(type: .push, module: GeneralRouterRoute.chat(params: param), completion: nil)
+    }
+    
     func go_home() {
         view?.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
     }

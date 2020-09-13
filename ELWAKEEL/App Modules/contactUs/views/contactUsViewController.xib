@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +12,6 @@
             <connections>
                 <outlet property="contactType" destination="Ohp-bJ-Mvo" id="zRz-VJ-bqV"/>
                 <outlet property="contactTypeTXT" destination="NQV-dh-K0H" id="jI3-zN-rw6"/>
-                <outlet property="contactUs" destination="RfW-fR-gxk" id="YFC-GR-h8a"/>
                 <outlet property="contactUsDES" destination="Bjr-fC-8gU" id="mZi-w5-LRe"/>
                 <outlet property="contactUsNow" destination="Yg7-dJ-Axh" id="nP7-70-0c2"/>
                 <outlet property="email" destination="sEz-uT-ofJ" id="RGC-ap-WA8"/>
@@ -36,25 +34,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-li-Ctl" userLabel="top">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topView" translatesAutoresizingMaskIntoConstraints="NO" id="XFk-8t-BLI">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ong-VQ-yRh">
-                            <rect key="frame" x="15" y="30" width="35" height="22"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="35" id="InQ-ed-utA"/>
-                            </constraints>
-                            <state key="normal" image="sidemenu"/>
-                            <connections>
-                                <action selector="show_side_menu:" destination="-1" eventType="touchUpInside" id="vA1-gV-0P3"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfW-fR-gxk">
-                            <rect key="frame" x="163.5" y="30" width="48" height="24"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <color key="textColor" white="0.89041095889999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Uv-ao-L53">
                             <rect key="frame" x="0.0" y="70" width="375" height="1030"/>
                             <subviews>
@@ -99,7 +78,6 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fl3-Rs-Ltf">
                                                                     <rect key="frame" x="0.0" y="40" width="345" height="50"/>
-                                                                    <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -119,7 +97,6 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVi-gq-Jcx">
                                                                     <rect key="frame" x="0.0" y="40" width="345" height="49.5"/>
-                                                                    <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -139,7 +116,6 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NII-xr-X7u">
                                                                     <rect key="frame" x="0.0" y="40" width="345" height="50"/>
-                                                                    <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -159,7 +135,6 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NQV-dh-K0H">
                                                                     <rect key="frame" x="0.0" y="40" width="345" height="49.5"/>
-                                                                    <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -258,18 +233,10 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="XFk-8t-BLI" secondAttribute="trailing" id="0HR-a5-OtY"/>
                         <constraint firstItem="3Uv-ao-L53" firstAttribute="top" secondItem="Eer-li-Ctl" secondAttribute="top" constant="70" id="3aP-Ro-eQd"/>
-                        <constraint firstItem="RfW-fR-gxk" firstAttribute="centerX" secondItem="Eer-li-Ctl" secondAttribute="centerX" id="BjU-Na-dvA"/>
-                        <constraint firstItem="Ong-VQ-yRh" firstAttribute="top" secondItem="RfW-fR-gxk" secondAttribute="top" id="MIC-he-Suu"/>
-                        <constraint firstItem="Ong-VQ-yRh" firstAttribute="leading" secondItem="Eer-li-Ctl" secondAttribute="leading" constant="15" id="QBR-eS-bAw"/>
-                        <constraint firstItem="XFk-8t-BLI" firstAttribute="leading" secondItem="Eer-li-Ctl" secondAttribute="leading" id="Qfs-ET-hNF"/>
-                        <constraint firstAttribute="bottom" secondItem="XFk-8t-BLI" secondAttribute="bottom" id="Qvv-oS-M3N"/>
                         <constraint firstAttribute="trailing" secondItem="3Uv-ao-L53" secondAttribute="trailing" id="TV9-hp-br3"/>
                         <constraint firstAttribute="bottom" secondItem="3Uv-ao-L53" secondAttribute="bottom" id="cPw-sw-7cL"/>
-                        <constraint firstItem="RfW-fR-gxk" firstAttribute="top" secondItem="Eer-li-Ctl" secondAttribute="top" constant="30" id="cc7-yO-19Q"/>
                         <constraint firstItem="3Uv-ao-L53" firstAttribute="leading" secondItem="Eer-li-Ctl" secondAttribute="leading" id="hQG-iE-HoG"/>
-                        <constraint firstItem="XFk-8t-BLI" firstAttribute="top" secondItem="Eer-li-Ctl" secondAttribute="top" id="t8x-NA-ly4"/>
                     </constraints>
                 </view>
             </subviews>
@@ -282,10 +249,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138" y="115"/>
         </view>
     </objects>
-    <resources>
-        <image name="sidemenu" width="12" height="20"/>
-        <image name="topView" width="414" height="736"/>
-    </resources>
 </document>

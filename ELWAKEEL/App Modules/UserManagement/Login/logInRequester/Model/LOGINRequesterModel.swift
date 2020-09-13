@@ -28,8 +28,8 @@ struct LOGINRequesterModel {
     // MARK: - Welcome
     struct loginSuccess: Codable {
         let user: User
-        let type, accessToken, tokenType: String
-        let expiresIn: Int
+        let type, accessToken, tokenType: String?
+        let expiresIn: Int?
         
         enum CodingKeys: String, CodingKey {
             case user, type
@@ -41,8 +41,8 @@ struct LOGINRequesterModel {
     
     // MARK: - User
     struct User: Codable {
-        let id: Int
-        let name, phone, email: String
+        let id: Int?
+        let name, phone, email: String?
         let image: String?
         let averageRating: String?
         

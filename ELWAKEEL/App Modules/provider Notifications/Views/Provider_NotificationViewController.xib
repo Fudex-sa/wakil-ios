@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Provider_NotificationViewController" customModule="ELWAKEEL" customModuleProvider="target">
             <connections>
                 <outlet property="Notification_Table" destination="6Gh-f4-CaG" id="z47-if-pIG"/>
-                <outlet property="Notifications" destination="OKG-zT-GjL" id="ePM-Fm-7pP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,9 +22,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oy1-es-NbC">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topView" translatesAutoresizingMaskIntoConstraints="NO" id="sQG-gW-ml5">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSp-N5-qw4">
                             <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                             <subviews>
@@ -43,38 +38,13 @@
                                 <constraint firstAttribute="bottom" secondItem="6Gh-f4-CaG" secondAttribute="bottom" constant="15" id="fec-br-ySX"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKG-zT-GjL">
-                            <rect key="frame" x="164" y="30" width="47.5" height="23"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQz-FL-Z3a">
-                            <rect key="frame" x="15" y="30" width="30" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="30" id="JQb-rO-uhE"/>
-                                <constraint firstAttribute="height" constant="25" id="UMj-vG-VQb"/>
-                            </constraints>
-                            <state key="normal" image="Arrow"/>
-                            <connections>
-                                <action selector="backBTN:" destination="-1" eventType="touchUpInside" id="SME-Xb-jpX"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="gSp-N5-qw4" firstAttribute="top" secondItem="Oy1-es-NbC" secondAttribute="top" constant="70" id="4Dh-ke-45v"/>
-                        <constraint firstItem="sQG-gW-ml5" firstAttribute="top" secondItem="Oy1-es-NbC" secondAttribute="top" id="6LT-dx-ldC"/>
-                        <constraint firstAttribute="bottom" secondItem="sQG-gW-ml5" secondAttribute="bottom" id="Cns-FR-0a4"/>
-                        <constraint firstItem="sQG-gW-ml5" firstAttribute="leading" secondItem="Oy1-es-NbC" secondAttribute="leading" id="J7R-gf-eXI"/>
                         <constraint firstAttribute="trailing" secondItem="gSp-N5-qw4" secondAttribute="trailing" id="RWQ-jU-f8N"/>
-                        <constraint firstItem="iQz-FL-Z3a" firstAttribute="leading" secondItem="Oy1-es-NbC" secondAttribute="leading" constant="15" id="Ugt-aA-lpm"/>
                         <constraint firstItem="gSp-N5-qw4" firstAttribute="leading" secondItem="Oy1-es-NbC" secondAttribute="leading" id="gti-6Q-ZWR"/>
-                        <constraint firstItem="OKG-zT-GjL" firstAttribute="centerX" secondItem="Oy1-es-NbC" secondAttribute="centerX" id="h8U-T9-bbD"/>
-                        <constraint firstAttribute="trailing" secondItem="sQG-gW-ml5" secondAttribute="trailing" id="htu-zc-pxH"/>
                         <constraint firstAttribute="bottom" secondItem="gSp-N5-qw4" secondAttribute="bottom" id="mWm-a6-1bM"/>
-                        <constraint firstItem="OKG-zT-GjL" firstAttribute="top" secondItem="Oy1-es-NbC" secondAttribute="top" constant="30" id="pEb-na-LmQ"/>
-                        <constraint firstItem="iQz-FL-Z3a" firstAttribute="top" secondItem="OKG-zT-GjL" secondAttribute="top" id="xga-O8-3Bu"/>
                     </constraints>
                 </view>
             </subviews>
@@ -86,10 +56,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Oy1-es-NbC" secondAttribute="trailing" id="pXZ-Yn-8KP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138" y="154"/>
         </view>
     </objects>
-    <resources>
-        <image name="Arrow" width="11.5" height="19.5"/>
-        <image name="topView" width="414" height="736"/>
-    </resources>
 </document>

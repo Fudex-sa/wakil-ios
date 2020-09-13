@@ -20,7 +20,6 @@ class walletViewController: UIViewController {
 	var interactor: IwalletInteractor?
 	var router: IwalletRouter?
 
-    @IBOutlet weak var homeWallet: UILabel!
     @IBOutlet weak var wallet: UILabel!
     @IBOutlet weak var advertizingImg: UIImageView!
     @IBOutlet weak var operations: UILabel!
@@ -43,14 +42,13 @@ class walletViewController: UIViewController {
     
     func setUpView()
     {
-        homeWallet.text = Localization.wallet
         wallet.text = Localization.your_wallet
         opertionsTable.delegate = self
         opertionsTable.dataSource = self
         let nib = UINib(nibName: "wallet", bundle: nil)
         opertionsTable.register(nib, forCellReuseIdentifier: "wallet")
         operations.text = Localization.operations
-
+    self.navigationItem.title = Localization.wallet
         
     }
     func get_wallet()
@@ -58,19 +56,13 @@ class walletViewController: UIViewController {
         interactor?.get_wallet()
     }
     
-    
-    @IBAction func sidemneu(_ sender: Any) {
-        router?.show_side_menu()
-    }
-    
+   
     
 }
 
 extension walletViewController: IwalletViewController {
     func assign_wallet(wallet: walletModel.wallet) {
         self.wallets = wallet
-        print("bbbb\(wallet)")
-        
         if let wallet_price = wallet.wallet , let commission = wallet.commissions{
             price.text = String(describing: wallet_price) + " " + provider_price
             commsion.text = commision1 + "%" + String(describing: commission) + commision2
@@ -84,15 +76,21 @@ extension walletViewController: IwalletViewController {
 
 extension walletViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return wallets?.requests.data.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wallet", for: indexPath) as! wallet
 
-//        cell.providerName.text = wallets?.requests.data[indexPath.row].client?.name
-        cell.price.text = "15 ريال سعودي"
-        cell.date.text = "3: 55 مساء الإثنين"
+        cell.providerName.text = wallets?.requests.data[indexPath.row].client?.name
+        cell.price.text = String(describing: 15) + " " + Localization.SR
+        cell.date.text = "12-5"
+        var  url = "http://wakil.dev.fudexsb.com"
+        url.append(contentsOf: wallets?.requests.data[indexPath.row].client?.image ?? "")
+        UIImage.loadFrom(url: URL(string: url)!) { (image) in
+            cell.profileImg.image = image
+              
+                          }
         cell.selectionStyle = .none
         
         return cell

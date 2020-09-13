@@ -91,15 +91,15 @@ class NetworkService {
 //MARK:-  Upload Request
 extension NetworkService {
     
-    func uploadToServerWith<T: IEndpoint>(endpoint: T , success: ((_ data: Data)->Void)? = nil, failure: ((_ error: Error?)->Void)? = nil) {
+    func uploadToServerWith<T: IEndpoint>(endpoint: T , image: UIImage, success: ((_ data: Data)->Void)? = nil, failure: ((_ error: Error?)->Void)? = nil) {
         DispatchQueue.global(qos: .background).async {
             
             
 
-            let image = endpoint.image!
+//            let image = endpoint.image!
            let imgData = image.jpegData(compressionQuality: 0.3)!
             Alamofire.upload(multipartFormData: { multipartFormData in
-                multipartFormData.append(imgData, withName: "commercial_image   ",fileName: "commercial_image.jpeg", mimeType: "image/jpeg")
+                multipartFormData.append(imgData, withName: "chat_image",fileName: "chat_image.jpeg", mimeType: "chat_image/jpeg")
                 print(endpoint.path)
                 for (key, value) in endpoint.parameter ?? ["":""] {
                     print(value)
@@ -161,25 +161,7 @@ extension NetworkService {
                     compition(error, false, nil)
                     
                     case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
-//                    
-//                        upload.responseJSON(completionHandler: { (response) in
-//                            print("Response\(response)")
-//                            switch result{
-//                            case .success:
-//                                print("success")
-//                                do {
-//                                let decode = JSONDecoder()
-//                                let data =  try decode.decode(secondScreenModel.newUser.self, from: response.data!)
-//                                    compition(nil,true, data)}
-//                                catch(let error){
-//                                    print("error Parsing \(error.localizedDescription)")
-//                                    compition(error,false, nil)
-//                                }
-//                            case .failure(let error):
-//                                print("error\(error.localizedDescription)")
-//                                compition(error, false, nil)
-//                            }
-//                        })
+
                     upload.uploadProgress(closure: { (progress: Progress) in
                         print(progress)
                     })

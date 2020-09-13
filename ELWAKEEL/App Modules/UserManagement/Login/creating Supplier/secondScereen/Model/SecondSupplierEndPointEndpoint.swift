@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum SecondSupplierEndPointEndpoint {
     /*
      Add Endpoint
@@ -88,8 +88,9 @@ extension SecondSupplierEndPointEndpoint: IEndpoint {
         */
         switch self {
         case .register:
-         
-            return ["Accept": "application/json", "Accept-Language":"en"]
+         let language = MOLHLanguage.currentAppleLanguage()
+
+            return ["Accept": "application/json", "Accept-Language":"\(language)"]
         }
     }
     

@@ -47,9 +47,7 @@ class requestDetailsInteractor: IrequestDetailsInteractor {
     func rating(rate: Int, user_id: Int, request_id: Int) {
         worker?.rate(rating: rate, user_id: user_id, request_id: request_id, complition: { (success, error, response) in
             if success{
-                print("token\(UserDefaults.standard.string(forKey: "token"))")
-                print("rating \(rate),\(user_id),\(request_id)")
-                print("success rateing")
+                
                 self.presenter?.done_request()
             }
             else{

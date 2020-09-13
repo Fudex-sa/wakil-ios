@@ -19,13 +19,10 @@ protocol IsecondScreenRouter: class {
 
 class secondScreenRouter: IsecondScreenRouter {
     func MoveToVerification(type: String) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.verification(params: ["type": type]), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.verification(params: ["type": type]), completion: nil)
     }
     
-    func MoveToVerification() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.addrequest(params: nil), completion: nil)
-    }
-    
+  
     
 	weak var view: secondScreenViewController?
 	

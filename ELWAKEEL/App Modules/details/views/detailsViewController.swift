@@ -39,18 +39,18 @@ class detailsViewController: UIViewController {
     @IBOutlet weak var prove_des: UILabel!
     var request_id: Int?
     var request_detail: detailsModel.Request_Details?
-
+    let user_default = UserDefaults.standard
 	override func viewDidLoad() {
         super.viewDidLoad()
 		// do someting...
         setUpView()
-        
+        set_up_navigation()
         get_request_details()
     }
     
     func setUpView()
     {
-        request_details.text = Localization.Order_details
+        
         des.text = Localization.request_DES
         region.text = Localization.Region
         city.text = Localization.city
@@ -58,8 +58,22 @@ class detailsViewController: UIViewController {
         minstry.text = Localization.minstryAndAuth
         prove.text = Localization.achievement
         title1.text = Localization.title_name
+      
     }
-    
+    func set_up_navigation()
+    {   print("vvvv\(user_default.string(forKey: "type"))")
+          self.navigationItem.title = Localization.Order_details
+        if user_default.string(forKey: "type") == "provider" {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+
+            
+        }
+        else {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
+
+        }
+        
+    }
     
     func configueUI()
     {

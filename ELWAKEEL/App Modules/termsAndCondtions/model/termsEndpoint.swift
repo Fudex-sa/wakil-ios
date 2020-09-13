@@ -10,7 +10,7 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum termsEndpoint {
     /*
      Add Endpoint
@@ -71,7 +71,10 @@ extension termsEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return  ["Accept": "application/json", "Accept-Language":"ar", "Content-Type":"application/json"]
+        
+        let language = MOLHLanguage.currentAppleLanguage()
+
+        return  ["Accept": "application/json", "Accept-Language":"\(language)", "Content-Type":"application/json"]
     }
     
     var encoding: ParameterEncoding {        

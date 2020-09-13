@@ -11,13 +11,14 @@
 
 import Foundation
 import Alamofire
-
+import MOLH
 enum Client_endPointEndpoint {
     /*
      Add Endpoint
      case sample
      case sample(parameter: [String: Any])
     */
+    case notification
 }
 
 extension Client_endPointEndpoint: IEndpoint {
@@ -34,7 +35,12 @@ extension Client_endPointEndpoint: IEndpoint {
             return .get
         }
         */
-        return .get
+        switch self {
+        case .notification:
+            return .get
+            
+       
+        }
     }
     
     var path: String {
@@ -46,9 +52,12 @@ extension Client_endPointEndpoint: IEndpoint {
             return "https://httpbin.org/get"
         }
         */
-        return ""
+        switch self {
+         case .notification:
+            let id = UserDefaults.standard.integer(forKey: "id")
+        return "http://wakil.dev.fudexsb.com/api/notifications/\(id)"
     }
-    
+    }
     var parameter: Parameters? {
         /*
         Do like this:
@@ -58,7 +67,10 @@ extension Client_endPointEndpoint: IEndpoint {
             return model.parameter()
         }
         */
-        return nil
+        switch self {
+         case .notification:
+            return nil
+         }
     }
     
     var header: HTTPHeaders? {
@@ -70,7 +82,17 @@ extension Client_endPointEndpoint: IEndpoint {
             return ["key": Any]
         }
         */
-        return nil
+        let userDefaults = UserDefaults.standard
+        let token = userDefaults.string(forKey: "token")
+//            userDefaults.string(forKey: "token")
+        let language = MOLHLanguage.currentAppleLanguage()
+
+        switch self {
+         case .notification:
+             return  ["Accept": "application/json", "Accept-Language": "\(language)", "Authorization": "bearer\(token!)", "Content-Type": "application/json"]
+             
+        
+         }
     }
     
     var encoding: ParameterEncoding {        

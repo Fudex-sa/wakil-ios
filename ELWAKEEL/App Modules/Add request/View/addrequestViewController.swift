@@ -113,7 +113,6 @@ class addrequestViewController: UIViewController {
     func setUpView()
     {
         
-       HomeLBL.text = Localization.addRequest
         addREQ.text = Localization.addRequest
         addReqDES.text = Localization.RequestDes
         addressDES.text = Localization.RequestDes
@@ -129,7 +128,8 @@ class addrequestViewController: UIViewController {
         titleLBL.text = Localization.title_of_service
         sendBTN.setTitle(Localization.send, for: .normal)
         textView.delegate = self
-        print("provider_id\(provider_id)    \(advertizing_id)")
+        self.navigationItem.title = Localization.addRequest
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
         
     }
     
@@ -156,16 +156,7 @@ class addrequestViewController: UIViewController {
         cityTEX.leftView = cityBTN
         cityTEX.leftViewMode = .always
     }
-//    func showrAddress(){
-//
-//        addressBTN.setImage(UIImage(named: "downArrow"), for: .normal)
-//        addressBTN.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
-//        addressBTN.frame = CGRect(x: CGFloat(addressTEX.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-//        addressBTN.addTarget(self, action: #selector(self.getRegions), for: .touchUpInside)
-//
-//        addressTEX.leftView = addressBTN
-//        addressTEX.leftViewMode = .always
-//    }
+
     func showminstry(){
         minstryBTN.setImage(UIImage(named: "downArrow"), for: .normal)
         minstryBTN.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
@@ -261,13 +252,11 @@ class addrequestViewController: UIViewController {
             let description = textView.text!
 //            let addres = addressTEX.text!
             if let providerID = provider_id,let advertizingID = advertizing_id {
-                print("go special order")
                 self.interactor?.add_special_request(title: titleText, description: description, country_id: self.selected_Country_ID, city_id: self.seleted_City_ID, organization_id: selected_Org_Id, address: address, achievement_proof: self.selectedEmail, provider_id: providerID, ads_id: advertizingID)
 
                 
             }
             else{
-                print("go public oredr")
                 self.interactor?.addreuest(title: titleText, description: description, country_id: self.selected_Country_ID, city_id: self.seleted_City_ID, organization_id: selected_Org_Id, address: address, achievement_proof: self.selectedEmail)
 
             }
@@ -308,21 +297,6 @@ extension addrequestViewController: IaddrequestViewController {
 	// do someting...
 }
 
-//extension addrequestViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 10
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "addRequestCell", for: indexPath) as! addRequestCell
-//
-//        cell.title.text = "hamadsa"
-//         return cell
-//    }
-//
-//
-//}
-
 
 extension addrequestViewController: UITextFieldDelegate {
     
@@ -340,9 +314,15 @@ extension addrequestViewController: UITextFieldDelegate {
         else if textField == cityTEX{
             self.type = "cities"
 
-            if let cities = cities1{
-                self.getOrganization1(organizations: cities, view: self)
+            if regionTXT.text?.isEmpty == true{
+                ShowAlertView.showAlert(title: "", msg: Localization.choose_regin, sender: self)
             }
+            else {
+                if let cities = cities1{
+                    self.getOrganization1(organizations: cities, view: self)
+                }
+            }
+            
             return false
         }
         else if textField == minstryTxt{
@@ -415,7 +395,7 @@ extension addrequestViewController{
         }
         menu.cellSelectionStyle = .checkbox
         
-        menu.show(style: .alert(title: "ddddd", action: "ok", height: 300.0), from: self)
+        menu.show(style: .alert(title: Localization.select_email, action: Localization.ok, height: 300.0), from: self)
         menu.onDismiss = { [weak self] items in
             self?.selectedEmail = (self?.selectedEmails[0])!
             self?.achieveTXT.text = (self?.selectedEmails[0])!
@@ -457,8 +437,18 @@ extension addrequestViewController: UITextViewDelegate {
             
         }
         menu.cellSelectionStyle = .checkbox
-        
-        menu.show(style: .alert(title: "ddddd", action: "ok", height: 300.0), from: view)
+        if self.type == "organization" {
+             menu.show(style: .alert(title: "organization", action: "ok", height: 300.0), from: view)
+        }
+        else if self.type == "countries" {
+            menu.show(style: .alert(title: Localization.select_city, action: "ok", height: 300.0), from: view)
+            
+        }
+        else if self.type == "cities" {
+            menu.show(style: .alert(title: Localization.select_twon, action: "ok", height: 300.0), from: view)
+            
+        }
+       
        
         menu.onDismiss = { [weak self] items in
             self?.selectedOrgName = items
@@ -483,7 +473,6 @@ extension addrequestViewController: UITextViewDelegate {
                 self?.regionTXT.text = self?.selected_Conutry_Name
                 self?.interActor.getCities(Countries_IDs: [(organizations[indexes[0]].id)!], complition: { (success, error, response) in
                     if success{
-                        print("Getting succeedd")
                         self?.cities1 = response!
                     }
                         

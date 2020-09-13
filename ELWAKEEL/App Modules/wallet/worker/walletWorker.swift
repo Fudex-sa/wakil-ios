@@ -18,16 +18,14 @@ func get_wallet(complition: @escaping (_ success: Bool,_ error: ErrorModel?, _ d
 class walletWorker: IwalletWorker {
     func get_wallet(complition: @escaping (Bool, ErrorModel?, walletModel.wallet?) -> Void) {
      NetworkService.share.request(endpoint: walletEndpoint.wallet, success: { (response) in
-            print("wallet")
-            print(response)
             
             do {
                 let decoder = JSONDecoder()
                 let requests = try decoder.decode(walletModel.wallet.self, from: response)
                 complition(true,nil,requests)
                 
-            } catch _ {
-                
+            } catch (let error) {
+              
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: response )

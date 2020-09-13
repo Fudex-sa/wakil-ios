@@ -36,21 +36,32 @@ class registraionTypeViewController: UIViewController {
         descriptionLB.text = Localization.userTypeDes
         providerBTN.setTitle(Localization.serviceproviders, for: .normal)
         requesterBTN.setTitle(Localization.serviceRequester, for: .normal)
+    
+        
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+
+       }
     
+    override func viewWillDisappear(_ animated: Bool) {
+       self.navigationController?.navigationBar.isHidden = false
+    }
+   
     @IBAction func backBTN(_ sender: Any) {
     
     dismiss()
     }
     
     @IBAction func ReuesterBTN(_ sender: Any) {
-self.navigate(type: .modal, module: GeneralRouterRoute.LoginRequester(type: "client"), completion: nil)
+self.navigate(type: .push, module: GeneralRouterRoute.LoginRequester(type: "client"), completion: nil)
         
     }
     
     @IBAction func providerBTN(_ sender: Any) {
-        self.navigate(type: .modal, module: GeneralRouterRoute.supplierFirst(type: "provider"), completion: nil)
+        self.navigate(type: .push, module: GeneralRouterRoute.supplierFirst(type: "provider"), completion: nil)
         
     }
     

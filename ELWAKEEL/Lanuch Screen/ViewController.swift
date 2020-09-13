@@ -19,16 +19,14 @@ class ViewController: UIViewController {
         if userDefualts.bool(forKey: "login") == true{
             if userDefualts.string(forKey: "type") == "provider"{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    print("log in true")
-                    self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+                    self.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
                 
             }
             }
                 
                else{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    print("log in true")
-                    self.navigate(type: .modal, module: GeneralRouterRoute.Home, completion: nil)
+                    self.navigate(type: .modal, module: GeneralRouterRoute.HomeLogIn, completion: nil)
                 
                     }
         }

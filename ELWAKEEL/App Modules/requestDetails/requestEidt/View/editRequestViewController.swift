@@ -54,12 +54,11 @@ class editRequestViewController: UIViewController {
         super.viewDidLoad()
 		// do someting...
         setUpView()
-        print("ssss\(id)")
         requestDetails(id: id!)
     }
     
     func setUpView(){
-        editLBL.text = Localization.request_edit
+        
         edit.layer.cornerRadius = 10
         cancel.layer.cornerRadius = 10
         orderDES.text = Localization.request_DES
@@ -73,12 +72,14 @@ class editRequestViewController: UIViewController {
         textView.delegate = self
         edit.setTitle(Localization.edit, for: .normal)
         cancel.setTitle(Localization.cancel, for: .normal)
+        self.navigationItem.title = Localization.request_edit
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "topView"), for: UIBarMetrics.default)
         
     }
     
     @IBAction func editBTN(_ sender: Any) {
         if let id = self.id {
-         self.navigate(type: .modal, module: GeneralRouterRoute.edit(id: id), completion: nil)
+            router?.edit_request(request_id: id)
         }
         
     }
@@ -102,9 +103,7 @@ class editRequestViewController: UIViewController {
         
     }
     
-    @IBAction func backBTN(_ sender: Any) {
-        dismiss()
-    }
+    
     func configueUI()
     {
         orderNum.text = requestDetail?.request_number

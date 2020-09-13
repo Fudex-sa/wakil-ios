@@ -26,6 +26,6 @@ class SupplierFirstScreenRouter: ISupplierFirstScreenRouter {
 		self.view = view
 	}
     func goNext(id: Int) {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.suppilerSecond(id: id), completion: nil)
+        view?.navigate(type: .push, module: GeneralRouterRoute.suppilerSecond(id: id), completion: nil)
     }
 }

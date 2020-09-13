@@ -12,25 +12,26 @@ import UIKit
 import LocalizationFramework
 import MOLH
 protocol IHomeViewController: class {
-	var router: IHomeRouter? { get set }
+    var router: IHomeRouter? { get set }
     func assignRequests(requests: HomeModel.requests)
     func assignAdvertizing(advertizing: [HomeModel.Advertising])
     func go_offers(request_id: Int)
 }
+protocol HomePrivderCenterControllerDelegate {
+    func handleMenuToggle()
+    func handleCenter()
+}
 
 class HomeViewController: UIViewController {
-	var interactor: IHomeInteractor?
-	var router: IHomeRouter?
+    var interactor: IHomeInteractor?
+    var router: IHomeRouter?
     let hideView = UIView()
     let popUpView = UIView()
     var currentPopUpVC: UIViewController!
     let userDefault = UserDefaults.standard
     var advertizings: [HomeModel.Advertising]?
-    var menuController: UIViewController!
-    var centerController: UIViewController!
-    var isExpanded = false
+    
     @IBOutlet weak var requestTable: UITableView!
-    @IBOutlet weak var notificationLBL: UILabel!
     @IBOutlet weak var imageCollection: UICollectionView!
     @IBOutlet weak var imagePageControl: UIPageControl!
     @IBOutlet weak var requestService: UIButton!
@@ -48,21 +49,29 @@ class HomeViewController: UIViewController {
     
     var timer = Timer()
     var counter = 0
-    weak var delegate: HomeDelegate?
     var hide = true
     var id = 0
     var provider_id: Int?
     var advertizing_id: Int?
-	override func viewDidLoad() {
+    var isExpanding = false
+    var barButton : UIBarButtonItem?
+    override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         getAdvertising()
         getrequests()
-//        configureHomeController()
-
-    
-
+        create_buttons()
+        set_notification()
+        
     }
+    
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        if isExpanding{
+    //            hidePopUps()
+    //        }
+    //    }
+    
+    
     func getrequests()
     {
         interactor?.getRequest()
@@ -71,38 +80,92 @@ class HomeViewController: UIViewController {
     }
     func setUpView()
     {
-
-        print("sssssssss")
-        print(userDefault.integer(forKey: "id") as Int)
-        print(userDefault.string(forKey: "email") ?? "email")
-        print(userDefault.string(forKey: "token") ?? "token")
-        print(userDefault.string(forKey: "phone") ?? "phone")
         
-        print(userDefault.string(forKey: "type") ?? "type")
+        let navigationVC = UINavigationController(rootViewController: self)
+        
+        navigationVC.navigationBar.tintColor = .white
+        navigationController?.navigationBar.barStyle = .black
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+        
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        navigationVC.navigationBar.topItem?.title = Localization.login
+        let window = UIApplication.shared.delegate?.window
+        
+        window?!.rootViewController = navigationVC
+        window?!.makeKeyAndVisible()
+        
         let cellNib = UINib(nibName: "requestCell", bundle: nil)
         requestTable.register(cellNib, forCellReuseIdentifier: "requestCell")
         
         let nib = UINib(nibName: "advertizingCell", bundle: nil)
         imageCollection.register(nib, forCellWithReuseIdentifier: "advertizingCell")
         requestTable.rowHeight = 190
-         requestTable.delegate = self
+        requestTable.delegate = self
         requestTable.dataSource = self
-        notificationLBL.layer.masksToBounds = true
-        notificationLBL.layer.cornerRadius = notificationLBL.frame.width/2
         imageCollection.layer.masksToBounds = true
         imageCollection.layer.cornerRadius = 10
         imageCollection.delegate = self
         imageCollection.dataSource = self
         imagePageControl.numberOfPages = imgArr.count
         imagePageControl.currentPage = 0
-        home.text = Localization.Main
+        self.navigationItem.title = Localization.Main
+        
         service_Reques.text = Localization.Service_requests
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
         
-
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BackGround"), for: UIBarMetrics.default)
+       }
+    
+    func create_buttons()
+    {
+        let side_menu_BTN = UIButton.init(type: .custom)
+        side_menu_BTN.setImage(UIImage(named: "sidemenu"), for: UIControl.State.normal)
+        side_menu_BTN.addTarget(self, action: #selector(self.side_menu), for: UIControl.Event.touchUpInside)
+        side_menu_BTN.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
+        
+        barButton = UIBarButtonItem(customView: side_menu_BTN)
+        self.navigationItem.leftBarButtonItem = barButton
+         
+    }
+    
+    func set_notification()
+    {
+        let notificationButton = SSBadgeButton()
+        notificationButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        notificationButton.setImage(UIImage(named: "Notification")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        notificationButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 15)
+        notificationButton.badge = "4"
+          notificationButton.addTarget(self, action: #selector(self.notification), for: UIControl.Event.touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: notificationButton)
+    }
+    
+    @objc func side_menu() {
+        
+        if !isExpanding{
+            
+            showPopUp()
+        }
+        else{
+            
+            hidePopUps()
+            
+        }
+        isExpanding = !isExpanding
+        
+        
+    }
+    
+    @objc func notification(){
+        router?.notifications()
+    }
+    
     @objc func changeImage() {
         
         if counter < imgArr.count {
@@ -128,68 +191,9 @@ class HomeViewController: UIViewController {
         
     }
     
-    @IBAction func SideMenuVTN(_ sender: Any) {
-        router?.show_side_menu()
-//        configureHomeController()
-//        handleMenuToggle()
-
-        
-    }
-    
-    //MARK: - Handlers
-    
-    func configureHomeController() {
-        
-        print("config")
-        let HomeController = HomeViewController()
-        centerController = UINavigationController(rootViewController: HomeController)
-        view.addSubview(centerController.view)
-        addChild(centerController)
-        centerController.didMove(toParent: self)
-    }
-    
-    func configureMenuController() {
-        print("inside configuration")
-        if menuController == nil {
-            menuController = sideMenuViewController()
-            view.insertSubview(menuController.view, at: 0)
-            addChild(menuController)
-            menuController.didMove(toParent: self)
-        }
-    }
-    
-    func showMenuController(shouldExpand: Bool) {
-        if shouldExpand {
-            // show menu
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 80
-                self.tabBarController?.tabBar.isHidden = true
-            }, completion: nil)
-        } else {
-            //hide menu
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.centerController.view.frame.origin.x = 0
-                self.tabBarController?.tabBar.isHidden = false
-            }, completion: nil)
-        }
-    }
-
-    func handleMenuToggle() {
-        print("inside toggle")
-        if !isExpanded {
-            print("inside if")
-            configureMenuController()
-            print("inside if")
-        }
-        isExpanded = !isExpanded
-        showMenuController(shouldExpand: isExpanded)
-        
-    }
-    
-    
     
     func getAdvertising(){
-     self.interactor?.getDevertising()
+        self.interactor?.getDevertising()
         
     }
     
@@ -216,11 +220,11 @@ extension HomeViewController: IHomeViewController {
     func assignAdvertizing(advertizing: [HomeModel.Advertising]) {
         self.advertizings = advertizing
         if let advertizings = advertizings{
-        for item in advertizings{
-            var baseUrl = "http://wakil.dev.fudexsb.com"
-               baseUrl.append(contentsOf: item.image)
-            self.imgArr.append(baseUrl)
-        }
+            for item in advertizings{
+                var baseUrl = "http://wakil.dev.fudexsb.com"
+                baseUrl.append(contentsOf: item.image)
+                self.imgArr.append(baseUrl)
+            }
             
             self.imageCollection.reloadData()
         }
@@ -229,22 +233,22 @@ extension HomeViewController: IHomeViewController {
     func assignRequests(requests: HomeModel.requests) {
         self.requests2 = requests
         
-      self.requestTable.reloadData()
+        self.requestTable.reloadData()
         
-
-
+        
+        
     }
     
-	// do someting...
+    // do someting...
 }
 
 extension HomeViewController {
     
-	// do someting...
+    // do someting...
 }
 
 extension HomeViewController {
-	// do someting...
+    // do someting...
 }
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -255,23 +259,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "advertizingCell", for: indexPath) as! advertizingCell
         cell.image.image = UIImage(named: imgArr[indexPath.row])
         cell.get_provider_id = {
-        action in
+            action in
             self.provider_id = self.advertizings?[indexPath.row].providerID
             self.advertizing_id = self.advertizings?[indexPath.row].id
             
             
             if let ads_id =  self.advertizing_id, let providerID = self.provider_id{
                 self.router?.go_special_request(params: ["provider_id": providerID,"advertizing_id": ads_id])
-
+                
             }
-           
-            print("indexpath\(indexPath.row)")
-        
+            
+            
         }
         if let url = URL(string: imgArr[indexPath.row]) {
-        UIImage.loadFrom(url: url) { image in
-             cell.image.image = image
-        }
+            UIImage.loadFrom(url: url) { image in
+                cell.image.image = image
+            }
         }
         else{
             print("no image found")
@@ -303,20 +306,17 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 2
-//    }
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return requests2?.data.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell", for: indexPath) as! requestCell
-        id = (requests2?.data[indexPath.row].id)!
         cell.layer.cornerRadius = 10
-        cell.requestNumLBL.text = String(describing: id)
+        cell.requestNumLBL.text = requests2?.data[indexPath.row].request_number
         cell.requestStatus.text = (requests2?.data[indexPath.row].status?.name)
         
         if requests2?.data[indexPath.row].status?.key == "new" &&
@@ -327,18 +327,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         else if requests2?.data[indexPath.row].status?.key == "new" &&
             requests2?.data[indexPath.row].offersCount != 0{
             cell.showNumberLBL.isHidden = false
-                     cell.showNumberLBL.text = String(describing: requests2?.data[indexPath.row].offersCount ?? 0)
-                        cell.requestNum2.text = String(describing: self.requests2?.data[indexPath.row].offersCount ?? 0)
+            cell.showNumberLBL.text = String(describing: requests2?.data[indexPath.row].offersCount ?? 0)
+            cell.requestNum2.text = String(describing: self.requests2?.data[indexPath.row].offersCount ?? 0)
             
-                        cell.new.isHidden = true
-                        cell.requests_action = {
-                            sender in
-                            if let id = self.requests2?.data[indexPath.row].id
-                            {
-                                self.go_offers(request_id: id)
-            
-            
-                        }
+            cell.new.isHidden = true
+            cell.requests_action = {
+                sender in
+                if let id = self.requests2?.data[indexPath.row].id
+                {
+                    self.go_offers(request_id: id)
+                    
+                    
+                }
             }
             
         }
@@ -346,43 +346,43 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             cell.showNumberLBL.isHidden
                 = true
         }
-   
+        
         cell.requestDESLBL.text = requests2?.data[indexPath.row].description
         var address = requests2?.data[indexPath.row].city?.name ?? ""
         address.append(contentsOf: " - ")
         address.append(contentsOf: requests2?.data[indexPath.row].country?.name ?? "" )
         cell.requesteAccept.text = Localization.requestsApprove
         cell.requestAddresBL.text = address
-       
+        
         cell.selectionStyle = .none
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if requests2?.data[indexPath.row].status?.key == "new" &&
             requests2?.data[indexPath.row].offersCount == 0 {
-        return 135
-        
+            return 135
+            
         }
         else if requests2?.data[indexPath.row].status?.key == "new" &&
             requests2?.data[indexPath.row].offersCount != 0 {
             return 230
         }
-       
+            
         else{
             return 135
             
         }
-
+        
         
     }
-
-
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let request_id = (requests2?.data[indexPath.row].id)!
         if requests2?.data[indexPath.row].status?.key == "new"
         {
-           
+            
             router?.edit_request(request_id: request_id)
         }
         else if requests2?.data[indexPath.row].status?.key == "progress"{
@@ -392,15 +392,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         else {
             
             router?.request_details(request_id: request_id, status: "done")
-           
+            
         }
-       
+        
     }
-
-
+    
+    
     
 }
-
 
 
 
@@ -408,22 +407,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 extension HomeViewController{
     
     
-    ///////////////////////////////////////////// popUps ////////////////////////////////////////////
     
     func showPopUp() {
-         currentPopUpVC = sideMenuViewController(nibName: "sideMenuViewController", bundle: nil)
         
-
-        
-        
-//        let storyBoard = UIStoryboard(name: "SideMenu", bundle: nil)
+        currentPopUpVC = sideMenuViewController(nibName: "sideMenuViewController", bundle: nil)
         hideView.frame = self.view.frame
         hideView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         let hideBtn = UIButton()
         hideBtn.frame = CGRect(x: 0, y: self.view.frame.minY, width: self.view.frame.width, height: self.view.frame.height)
         hideView.addSubview(hideBtn)
         hideBtn.addTarget(self, action: #selector(hideBtnTapped), for: .touchUpInside)
-        popUpView.frame = CGRect(x: self.view.frame.minX - self.popUpView.frame.width, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+        if MOLHLanguage.currentAppleLanguage() == "ar"{
+            popUpView.frame = CGRect(x: self.view.frame.maxX, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+        }
+        else{
+            popUpView.frame = CGRect(x: self.view.frame.minX - self.view.frame.width, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+        }
+        //        popUpView.frame = CGRect(x: self.view.frame.minX - self.popUpView.frame.width, y: self.view.frame.minY, width: 0, height: self.view.frame.height)
         hideView.addSubview(popUpView)
         currentPopUpVC = sideMenuViewController(nibName: "sideMenuViewController", bundle: nil)
         let vc = currentPopUpVC
@@ -432,8 +432,20 @@ extension HomeViewController{
         popUpView.addSubview(vc!.view)
         vc!.didMove(toParent: self)
         self.view.addSubview(hideView)
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
-            self.popUpView.frame = CGRect(x: self.view.frame.minX, y: 0, width: self.view.frame.width - 80, height: self.view.frame.height)
+        
+        UIView.animate(withDuration: 1, delay: 0, options: MOLHLanguage.currentAppleLanguage() == "ar" ? .curveEaseOut : .curveEaseOut, animations: {
+            if MOLHLanguage.currentAppleLanguage() == "ar"{
+                self.popUpView.frame = CGRect(x: 80 , y: 0, width: self.view.frame.width - 80, height: self.view.frame.height)
+                
+            }
+            else{
+                self.popUpView.frame = CGRect(x: self.view.frame.minX , y: 0, width: self.view.frame.width - 80, height: self.view.frame.height)
+                
+            }
+            
+            
+            
+            
         })
     }
     @objc func hideBtnTapped(sender: UIButton!) {
@@ -442,12 +454,20 @@ extension HomeViewController{
     func hidePopUps() {
         let previousVC = currentPopUpVC
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-            self.popUpView.frame = CGRect(x: self.view.frame.minX - self.popUpView.frame.width, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+            if MOLHLanguage.currentAppleLanguage() == "ar"{
+                 self.popUpView.frame = CGRect(x: self.view.frame.maxX, y: self.view.frame.minY, width: self.view.frame.width - 80, height: self.view.frame.height)
+            }
+            else{
+                self.popUpView.frame = CGRect(x: self.view.frame.minX - self.popUpView.frame.width, y: self.view.frame.minY, width: self.view.frame.width - 100, height: self.view.frame.height)
+            }
+           
+            self.navigationItem.leftBarButtonItem?.customView?.frame.origin.x = 0
         }, completion: { _ in
             previousVC!.willMove(toParent: nil)
             previousVC!.view.removeFromSuperview()
             previousVC!.removeFromParent()
             self.hideView.removeFromSuperview()
+            
         })
     }
 }
@@ -468,5 +488,8 @@ extension UIImage {
             }
         }
     }
+    
+    
+    
     
 }

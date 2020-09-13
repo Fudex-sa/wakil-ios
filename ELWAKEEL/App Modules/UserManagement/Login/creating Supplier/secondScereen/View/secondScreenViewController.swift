@@ -43,7 +43,7 @@ class secondScreenViewController: UIViewController {
  
     var pickerLicence = UIImagePickerController()
     var pickerCommercial = UIImagePickerController()
-    var id: Int = 9
+    var id: Int = 0
     var comerialImage: UIImage?
     var licenceImage: UIImage?
     var unchecked = true
@@ -52,10 +52,8 @@ class secondScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ID\(id)")
-        setUpView()
         setUpcompoents()
         setUpTEXTFEILD()
-        addBTN2()
         
     }
     
@@ -72,7 +70,6 @@ class secondScreenViewController: UIViewController {
     func setUpcompoents()
     {
         
-        newaccount.text = Localization.newAccount
         createNewAccountLBL.text = Localization.createAccount
         accountDescriptionLBL.text = Localization.accountDescription
         bankNameLBL.text = Localization.bankName + "*"
@@ -84,36 +81,10 @@ class secondScreenViewController: UIViewController {
         recordImage2LBL.text = Localization.clearancelicense
         SendBTN.setTitle(Localization.send, for: .normal)
         checkBTN.layer.borderWidth = 1.0
+        recordImageTXt.placeholder = Localization.press_to_upload
+        recordImage2TXT.placeholder = Localization.press_to_upload
+      
         
-        
-    }
-    
-    @IBAction func BackBTN(_ sender: Any) {
-        dismiss()
-    }
-    
-    func setUpView()
-    {
-        let button1 = UIButton(type: .custom)
-        button1.setImage(UIImage(named: "upload"), for: .normal)
-        button1.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
-        button1.frame = CGRect(x: CGFloat(recordImageTXt.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-        button1.addTarget(self, action: #selector(self.upload), for: .touchUpInside)
-        
-             recordImageTXt.leftView = button1
-            recordImageTXt.leftViewMode = .always
-        
-        
-    }
-    func addBTN2(){
-        let button2 = UIButton(type: .custom)
-        button2.setImage(UIImage(named: "upload"), for: .normal)
-        button2.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 7)
-        button2.frame = CGRect(x: CGFloat(recordImage2TXT.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-        button2.addTarget(self, action: #selector(self.uploadimage), for: .touchUpInside)
-
-        recordImage2TXT.leftView = button2
-        recordImage2TXT.leftViewMode = .always
         
     }
     
@@ -131,49 +102,70 @@ class secondScreenViewController: UIViewController {
     }
     
     
-    @objc func upload()
+    func validate()
     {
 
-        showAlert(picker: pickerCommercial)
-    }
-    @objc func uploadimage()
-    {
-        showAlert(picker: pickerLicence)
-        
+            guard let bankName = bankNameTXT.text, !bankName.isEmpty else{
+                ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.enter_bank_name, sender: self)
+                    bankNameTXT.attributedPlaceholder =  NSAttributedString(string:Localization.requirdField, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 14)!])
+
+                       
+                return
+            }
+              
+            guard let ibanNumber = numberTXT.text, !ibanNumber.isEmpty else{
+        ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.enter_iban_number, sender: self)
+        numberTXT.attributedPlaceholder =  NSAttributedString(string:Localization.requirdField, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 14)!])
+
+                return
+                
+            }
+            guard let comercialNumber = recordNumTXT.text, !comercialNumber.isEmpty else{
+        ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.enter_record_num, sender: self)
+        recordNumTXT.attributedPlaceholder =  NSAttributedString(string:Localization.requirdField, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 14)!])
+
+                return
+                
+            }
+            guard let commerial_image = recordImageTXt.text, !commerial_image.isEmpty else{
+        ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.enter_record_img, sender: self)
+        recordImageTXt.attributedPlaceholder =  NSAttributedString(string:Localization.requirdField, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 14)!])
+
+                return
+                
+            }
+            guard let record_image = recordImage2TXT.text, !record_image.isEmpty else{
+        ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.enter_record_img, sender: self)
+        recordImage2TXT.attributedPlaceholder =  NSAttributedString(string:Localization.requirdField, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 14)!])
+
+                      return
+                   }
+           
+            let iban = Int(ibanNumber)!
+            let comNumber = Int(comercialNumber)
+            if comerialImage == nil || licenceImage == nil{
+                ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
+                print("Error If")
+                return
+        }
+            else if unchecked == true{
+               
+                    ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.acceptTerms, sender: self)
+                    return
+                }
+            
+            else{
+                
+                 self.interactor?.register(type: "provider", commercial_number: comNumber!, bank_name: bankName, bank_iban: iban, commercial_image: comerialImage!, license_image: licenceImage!, id: id)
+        }
     }
     
     @IBAction func sendBTN(_ sender: Any) {
-        
-        guard let bankName = bankNameTXT.text,
-              let ibanNumber = numberTXT.text,
-              let comercialNumber = recordNumTXT.text
-        else {
-            ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
-            
-            print("error Gurd")
-            return
-        }
-        let iban = Int(ibanNumber)!
-        let comNumber = Int(comercialNumber)
-        if comerialImage == nil || licenceImage == nil{
-            ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)
-            print("Error If")
-            return
-    }
-        else if unchecked == true{
-           
-                ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.acceptTerms, sender: self)
-                return
-            }
-        
-        else{
-            
-             self.interactor?.register(type: "provider", commercial_number: comNumber!, bank_name: bankName, bank_iban: iban, commercial_image: comerialImage!, license_image: licenceImage!, id: id)
-    }
+        validate()
     }
   
     
-    private func showAlert(picker: UIImagePickerController) {
+    private func pick_image(picker: UIImagePickerController) {
         
         let alert = UIAlertController(title: Localization.chooseImageALert, message: Localization.alertMSG, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: Localization.camara, style: .default, handler: {(action: UIAlertAction) in
@@ -220,6 +212,22 @@ extension secondScreenViewController: UITextFieldDelegate{
             return false
         
 }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        if textField == recordImageTXt{
+            pick_image(picker: pickerCommercial)
+
+           return false
+        }
+        else if textField == recordImage2TXT{
+            pick_image(picker: pickerLicence)
+
+            return false
+        }
+    
+    return true
+    }
+    
+    
 }
 
 extension secondScreenViewController: IsecondScreenViewController {
@@ -244,6 +252,7 @@ extension secondScreenViewController: IsecondScreenViewController {
 
 extension secondScreenViewController {
     
+      
     
 	// do someting...
 }

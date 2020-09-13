@@ -32,13 +32,11 @@ class NewPasswordInteractor: INewPasswordInteractor {
         worker?.updatePasswordAPI(password: password, Phone: phone, complition: { (error, success, responseData) in
             
             if error != nil{
-                print("error1")
                 self.presenter?.showAlert(title: Localization.errorLBL, msg: Localization.thereiserror)
                 
             }
             
                 if responseData?.count == 0{
-                    print("error2")
                     self.presenter?.showAlert(title: Localization.information, msg: Localization.passwordUpdated)
                     self.presenter?.GoHome()
                     
