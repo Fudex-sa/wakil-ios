@@ -39,6 +39,7 @@ class VerificationViewController: UIViewController {
         super.viewDidLoad()
 		// do someting...
         setUpView()
+        hideKeyboardWhenTappedAround()
     }
     
     func setUpView()
@@ -88,14 +89,14 @@ class VerificationViewController: UIViewController {
         let text = textField.text
         if text?.count == 1 {
             switch textField{
-            case furthNUM:
-                thirdNum.becomeFirstResponder()
-            case thirdNum:
+            case firstNUM:
                 secondNUM.becomeFirstResponder()
             case secondNUM:
-                firstNUM.becomeFirstResponder()
-            case firstNUM:
-                firstNUM.resignFirstResponder()
+                thirdNum.becomeFirstResponder()
+            case thirdNum:
+                furthNUM.becomeFirstResponder()
+            case furthNUM:
+                furthNUM.resignFirstResponder()
             default:
                 break
             }
@@ -117,14 +118,24 @@ class VerificationViewController: UIViewController {
        
 //        router?.createpassword(type: "dd", id: 90)
     }
+  func hideKeyboardWhenTappedAround() {
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+         tap.cancelsTouchesInView = false
+         view.addGestureRecognizer(tap)
+     }
+     
+     @objc func dismissKeyboard() {
+    view.endEditing(true)
+         // do someting...
+     }
     
     
     @IBAction func confirmBTN(_ sender: Any) {
 //        router?.goNewpassword(phone: "01029939")
-        guard let num4 = firstNUM.text,
-        let num3 = secondNUM.text,
-        let num2 = thirdNum.text,
-        let num1 = furthNUM.text,
+        guard let num1 = firstNUM.text,
+        let num2 = secondNUM.text,
+        let num3 = thirdNum.text,
+        let num4 = furthNUM.text,
         !num1.isEmpty || !num2.isEmpty || !num3.isEmpty || !num4.isEmpty
         else{
             ShowAlertView.showAlert(title: Localization.errorLBL, msg: Localization.wrongField, sender: self)

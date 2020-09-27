@@ -18,6 +18,7 @@ protocol IaddrequestViewController: class {
     func assignCities(cities: [addrequestModel.Organization])
     func assign_reqesut(request: editModel.edit)
     func backToHome()
+    func  showAlert()
     
 }
 
@@ -269,6 +270,10 @@ class addrequestViewController: UIViewController {
 }
 
 extension addrequestViewController: IaddrequestViewController {
+    func showAlert() {
+        ShowAlertView.showAlert(title: "" , msg: Localization.request_added, sender: self)
+    }
+    
     func assign_reqesut(request: editModel.edit) {
         self.edit_request = request
     }

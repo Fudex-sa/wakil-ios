@@ -16,9 +16,13 @@ protocol IaddrequestPresenter: class {
     func assignCities(cities: [addrequestModel.Organization])
 	// do someting...
     func goHome()
+    func showAlert()
 }
 
 class addrequestPresenter: IaddrequestPresenter {
+    func showAlert(){
+        view?.showAlert()
+    }
     func goHome() {
         view?.backToHome()
     }

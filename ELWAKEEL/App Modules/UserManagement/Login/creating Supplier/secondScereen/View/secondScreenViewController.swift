@@ -83,11 +83,18 @@ class secondScreenViewController: UIViewController {
         checkBTN.layer.borderWidth = 1.0
         recordImageTXt.placeholder = Localization.press_to_upload
         recordImage2TXT.placeholder = Localization.press_to_upload
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.Go_terms))
+               termsLBL.addGestureRecognizer(tap)
+           }
+
+           
       
-        
-        
-    }
-    
+@objc func Go_terms() {
+         print("tap working")
+    self.router?.move_to_terms()
+     }
+
+  
     @IBAction func chechBTN(_ sender: UIButton) {
        
         if unchecked {

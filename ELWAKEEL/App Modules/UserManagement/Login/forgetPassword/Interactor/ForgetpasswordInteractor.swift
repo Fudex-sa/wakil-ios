@@ -29,17 +29,22 @@ class ForgetpasswordInteractor: IForgetpasswordInteractor {
     	self.worker = worker
     }
     func forgetPassword(phone: String) {
-        
+        Indicator.sharedInstance.showIndicator()
         worker?.forgetPasswordAPI(phone: phone, Complition: { (error, success,reponse)  in
             if error != nil{
+                Indicator.sharedInstance.hideIndicator()
+
                 self.presenter?.showAlert(title: Localization.errorLBL, msg: (error?.message)!)
             }
             else{
                 if let reponse = reponse {
                     if reponse.count > 0{
+                        Indicator.sharedInstance.hideIndicator()
+
                        self.presenter?.showAlert(title: Localization.errorLBL, msg: (error?.message)!)
                     }
                     else{
+                        Indicator.sharedInstance.hideIndicator()
                         self.presenter?.goVerification(params: ["phone": phone])
 
                     }

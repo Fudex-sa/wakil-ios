@@ -58,9 +58,14 @@ class CreatingRequesterViewController: UIViewController {
         
         sendDataBTN.setTitle(Localization.send, for: .normal)
         
-                
-
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.Go_terms))
+        conditonsLBL.addGestureRecognizer(tap)
+        
+        
+    }
+    @objc func Go_terms() {
+        print("tap working")
+        self.router?.move_to_terms()
     }
     
     override func viewWillAppear(_ animated: Bool) {

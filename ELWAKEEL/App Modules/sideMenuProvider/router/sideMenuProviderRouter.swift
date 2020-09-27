@@ -12,48 +12,11 @@ import UIKit
 
 protocol IsideMenuProviderRouter: class {
 	// do someting...
-    func GO_terms()
-    func GO_home()
-    func Go_contact_us()
-    func FQA()
-    func About_app()
-    func Records()
-    func App_setting()
-    func GO_wallet()
+   
 }
 
 class sideMenuProviderRouter: IsideMenuProviderRouter {
-    func GO_wallet() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.wallet, completion: nil)
-    }
-    
-    func App_setting() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.applicationSetting, completion: nil)
-    }
-    
-    func GO_terms() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.terms, completion: nil)
-    }
-    
-    func GO_home() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.HomeProvider, completion: nil)
-    }
-    
-    func Go_contact_us() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.contactUs, completion: nil)
-    }
-    
-    func FQA() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.commonQuestios, completion: nil)
-    }
-    
-    func About_app() {
-        view?.navigate(type: .modal, module: GeneralRouterRoute.aboutUs, completion: nil)
-    }
-    
-    func Records() {
-    view?.navigate(type: .modal, module: GeneralRouterRoute.provider_log, completion: nil)
-    }
+ 
     
 	weak var view: sideMenuProviderViewController?
 	

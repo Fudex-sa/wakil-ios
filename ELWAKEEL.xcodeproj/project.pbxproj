@@ -365,6 +365,7 @@
 		07BFD2C724DFFBD000810C78 /* requestRecordEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFD2C624DFFBD000810C78 /* requestRecordEndpoint.swift */; };
 		07C64D0524E2A2B900EF010E /* Notification_EndpointEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C64D0424E2A2B900EF010E /* Notification_EndpointEndpoint.swift */; };
 		07F29A8F24B2ABE30061126C /* SupplierFirstScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F29A9124B2ABE30061126C /* SupplierFirstScreenViewController.xib */; };
+		852E178D2520A9C400F95FDA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E178C2520A9C400F95FDA /* Reachability.swift */; };
 		853BBF8E250126FA0019B6B5 /* uploadfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BBF8D250126FA0019B6B5 /* uploadfiles.swift */; };
 		853BBF992505C3690019B6B5 /* edit_profileConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BBF912505C3690019B6B5 /* edit_profileConfiguration.swift */; };
 		853BBF9A2505C3690019B6B5 /* edit_profilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BBF922505C3690019B6B5 /* edit_profilePresenter.swift */; };
@@ -828,6 +829,7 @@
 		07F29A9324B2ABE80061126C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SupplierFirstScreenViewController.strings; sourceTree = "<group>"; };
 		07F29A9524B2ABEF0061126C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SupplierFirstScreenViewController.strings; sourceTree = "<group>"; };
 		408587ED199E3D3DFD086B0C /* Pods-ELWAKEEL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELWAKEEL.release.xcconfig"; path = "Target Support Files/Pods-ELWAKEEL/Pods-ELWAKEEL.release.xcconfig"; sourceTree = "<group>"; };
+		852E178C2520A9C400F95FDA /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		853BBF8D250126FA0019B6B5 /* uploadfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadfiles.swift; sourceTree = "<group>"; };
 		853BBF912505C3690019B6B5 /* edit_profileConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edit_profileConfiguration.swift; sourceTree = "<group>"; };
 		853BBF922505C3690019B6B5 /* edit_profilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edit_profilePresenter.swift; sourceTree = "<group>"; };
@@ -2442,7 +2444,6 @@
 				072C2AA724AFC4940050F83F /* AppRoute.swift */,
 				072C2AA924AFC4B80050F83F /* GeneralRouterRoute.swift */,
 				070ABABC24B60F090001CF5B /* NetworkService.swift */,
-				070ABABE24B61B9A0001CF5B /* errorAPI.swift */,
 				07447AF424C6E82A00A1B112 /* sideMenu.swift */,
 				8594DC3D24FD93B300B138AB /* Localizable.strings */,
 				853BBF8D250126FA0019B6B5 /* uploadfiles.swift */,
@@ -2460,6 +2461,8 @@
 				070011A424E1796300C3ECAA /* commonFunctions.swift */,
 				85AF566E24F9D9450001414B /* indicator.swift */,
 				853BC02C2506F05B0019B6B5 /* notification.swift */,
+				070ABABE24B61B9A0001CF5B /* errorAPI.swift */,
+				852E178C2520A9C400F95FDA /* Reachability.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -4539,6 +4542,7 @@
 				076CA48524E3E726007E9D12 /* paymentConfiguration.swift in Sources */,
 				07BFD29024DFEC4900810C78 /* sideMenuCell.swift in Sources */,
 				853BC01C25063DAA0019B6B5 /* change_nameWorker.swift in Sources */,
+				852E178D2520A9C400F95FDA /* Reachability.swift in Sources */,
 				073EB3DA24E6031C00A2559D /* request_details_providerEndpoint.swift in Sources */,
 				0707B82C24ECF142008CA26D /* detailsViewController.swift in Sources */,
 				0720CBAC24CEF63600DEB73A /* requestDetailsWorker.swift in Sources */,
@@ -4878,12 +4882,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ELWAKEEL/ELWAKEEL.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/ELWAKEEL/supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Fudex.ELWAKEEL-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -4898,12 +4904,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ELWAKEEL/ELWAKEEL.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/ELWAKEEL/supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Fudex.ELWAKEEL-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

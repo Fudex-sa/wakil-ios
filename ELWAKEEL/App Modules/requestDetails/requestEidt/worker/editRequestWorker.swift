@@ -45,23 +45,19 @@ class editRequestWorker: IeditRequestWorker {
     
     func getRqeques(id: Int, complition: @escaping (Bool, ErrorModel?, editRequestModel.RequestDetails?) -> Void) {
         NetworkService.share.request(endpoint: requestDetailsEndpoint.requestDetails(id: id), success: { (response) in
-            print(response)
-            print("secind")
+            
             
             do {
                 let decoder = JSONDecoder()
                 let requests = try decoder.decode(editRequestModel.RequestDetails.self, from: response)
-                print("hamada\(requests)")
-              
+             
                 complition(true,nil,requests)
                 
-            } catch (let error) {
-                print("dddd\(error.localizedDescription)")
+            } catch _ {
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: response )
-                    print(error)
-                    print("pppppp")
+                 
                     complition(false , error, nil)
                 } catch let error {
                     print(error)

@@ -19,6 +19,7 @@ protocol ILOGINRequesterWorker: class {
 class LOGINRequesterWorker: ILOGINRequesterWorker {
     func loginFromApi(phone: String, password: String, complition: @escaping (ErrorModel?, Bool, LOGINRequesterModel.loginSuccess?) -> Void) {
         NetworkService.share.request(endpoint: loginEndpoint.login(phone: phone, password: password ),success: { (responsData) in
+            print("response",(responsData))
             let response = responsData
             do {
                 let decoder = JSONDecoder()
@@ -26,11 +27,12 @@ class LOGINRequesterWorker: ILOGINRequesterWorker {
                 print(user)
                 complition(nil,true,user)
                 
-            } catch _{
-              
+            } catch (let error){
+                print("error",(error.localizedDescription))
                 do {
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(ErrorModel.self, from: responsData )
+                    print(error.message)
                     complition(error , false, nil)
                 } catch let error {
                     print(error)

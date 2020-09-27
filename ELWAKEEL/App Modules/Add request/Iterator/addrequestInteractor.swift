@@ -102,13 +102,12 @@ class addrequestInteractor: IaddrequestInteractor {
     
     func addreuest(title: String, description: String, country_id: Int, city_id: Int, organization_id: Int, address: String, achievement_proof: String) {
         
-        print("ssssss    \(title)  \(description)   \(country_id)   \(city_id)   \(organization_id)   \(address)  \(achievement_proof) \(UserDefaults.standard.integer(forKey: "id"))")
+        
         worker?.addRequest(title: title, description: description, country_id: country_id, city_id: city_id, organization_id: organization_id, address: address, achievement_proof: achievement_proof, complition: { (success, error, response) in
             if success == true{
-                print("successfully allde")
-                
-                print("userid\(UserDefaults.standard.integer(forKey: "id"))")
-                
+             
+                self.presenter?.showAlert()
+                print()
             }
             else{
                 print("error adding request")

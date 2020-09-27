@@ -34,6 +34,7 @@ class ForgetpasswordViewController: UIViewController {
         super.viewDidLoad()
 		// do someting...
         setUpView()
+        hideKeyboardWhenTappedAround()
     }
     func setUpView()
     {
@@ -63,7 +64,17 @@ class ForgetpasswordViewController: UIViewController {
 
     }
     
-  
+  func hideKeyboardWhenTappedAround() {
+          let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+          tap.cancelsTouchesInView = false
+          view.addGestureRecognizer(tap)
+      }
+      
+      @objc func dismissKeyboard() {
+     view.endEditing(true)
+          // do someting...
+      }
+     
     
 }
 

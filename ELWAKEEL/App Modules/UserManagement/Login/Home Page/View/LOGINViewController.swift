@@ -41,8 +41,10 @@ class LOGINViewController: UIViewController {
         descriptionLBL.text = Localization.userTypeDes
         serviceSupplier.setTitle(Localization.serviceproviders, for: .normal)
         ServiceRequester.setTitle(Localization.serviceRequester, for: .normal)
-      
-        
+//        print("macs\([UIDevice.currentDevice.uniqueIdentifier])")
+        print("mac\(String(describing: UIDevice.current.identifierForVendor?.uuidString))")
+        let mac_id = UIDevice.current.identifierForVendor?.uuidString
+        user_default.set(mac_id, forKey: "mac")
         
     }
     

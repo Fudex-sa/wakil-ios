@@ -13,11 +13,16 @@ import UIKit
 protocol IsecondScreenRouter: class {
 	// do someting...
     func MoveToVerification(type: String)
+    func move_to_terms()
 
     
 }
 
 class secondScreenRouter: IsecondScreenRouter {
+    func move_to_terms() {
+        view?.navigate(type: .push, module: GeneralRouterRoute.terms, completion: nil)
+    }
+    
     func MoveToVerification(type: String) {
         view?.navigate(type: .push, module: GeneralRouterRoute.verification(params: ["type": type]), completion: nil)
     }

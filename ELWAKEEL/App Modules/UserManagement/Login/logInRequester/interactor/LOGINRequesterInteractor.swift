@@ -58,15 +58,17 @@ class LOGINRequesterInteractor: ILOGINRequesterInteractor {
             }
              else if error != nil{
                 Indicator.sharedInstance.hideIndicator()
-
-                if error?.message == Localization.data_error{
-                    self.presenter?.showErrorAlert(title: Localization.errorLBL , msg: Localization.data_error)
-                }
-                else
-                {
-                    print("")
-                }
-              
+                self.presenter?.showErrorAlert(title: Localization.errorLBL , msg: error?.message ?? Localization.data_error )
+//                print("message\(error?.message)")
+//                print("\(Localization.data_error)")
+//                if error?.message == Localization.data_error{
+//                    self.presenter?.showErrorAlert(title: Localization.errorLBL , msg: Localization.data_error)
+//                }
+//                else
+//                {
+//                    print("")
+//                }
+//
             }
             else {
                 print("bbbbbbb")

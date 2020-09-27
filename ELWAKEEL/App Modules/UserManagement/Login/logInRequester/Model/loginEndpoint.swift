@@ -73,7 +73,12 @@ extension loginEndpoint: IEndpoint {
         case .login(let phone, let password):
             let defaults = UserDefaults.standard
             let type = defaults.string(forKey: "type")
-            return ["phone": phone , "password": password , "type": type]
+            let mac = defaults.string(forKey: "mac")
+            let firebabe_token = defaults.string(forKey: "firebase_token")
+
+            print("mace",(mac))
+            print("fire_base",(firebabe_token))
+            return ["phone": phone , "password": password , "type": type!, "token": firebabe_token! , "mac": mac!]
         }
        
     }

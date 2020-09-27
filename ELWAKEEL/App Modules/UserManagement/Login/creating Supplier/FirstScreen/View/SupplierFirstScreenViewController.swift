@@ -53,6 +53,11 @@ class SupplierFirstScreenViewController: UIViewController {
     
     @IBOutlet weak var twon: UILabel!
     
+    @IBOutlet weak var containerCity: UIView!
+    
+    @IBOutlet weak var container_twon: UIView!
+    
+    @IBOutlet weak var container_address: UIView!
     
     var items: [String] = []
     var value: String = " "
@@ -78,9 +83,9 @@ class SupplierFirstScreenViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
         setcomponets()
-        showTableView()
+//        showTableView()
 //        addAddress()
-        showtwonTable()
+//        showtwonTable()
         self.interactor?.getcountries()
       
     }
@@ -110,27 +115,45 @@ class SupplierFirstScreenViewController: UIViewController {
         AddressTXT.placeholder = Localization.press_location
         CityTXT.placeholder = Localization.press_region
         twonTXT.placeholder = Localization.press_city
-        
+        containerCity.layer.cornerRadius = 10
+        containerCity.layer.masksToBounds = true
+        containerCity.layer.borderWidth = 1
+        containerCity.layer.borderColor =  UIColor(white: 0, alpha: 0.2).cgColor
+        container_twon.layer.cornerRadius = 10
+        container_twon.layer.masksToBounds = true
+        container_twon.layer.borderWidth = 1
+        container_twon.layer.borderColor =  UIColor(white: 0, alpha: 0.2).cgColor
+        container_address.layer.cornerRadius = 10
+        container_address.layer.masksToBounds = true
+        container_address.layer.borderWidth = 1
+        container_address.layer.borderColor =  UIColor(white: 0, alpha: 0.2).cgColor
     }
     
-//    func addAddress(){
-//        let button2 = UIButton(type: .custom)
-//        button2.setImage(UIImage(named: "upload"), for: .normal)
-//        button2.imageEdgeInsets = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: -10)
-//        button2.frame = CGRect(x: CGFloat(AddressTXT.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-//        button2.addTarget(self, action: #selector(self.upload), for: .touchUpInside)
-//        AddressTXT.leftView = button2
-//        AddressTXT.leftViewMode = .always
-//
-//    }
-//
-//    @objc func upload()
-//    {
-//        get_location()
-//    }
+    
+    @IBAction func add_address(_ sender: Any) {
+        get_location()
+    }
+    
+    @IBAction func add_twon(_ sender: Any) {
+         get_data(array: city_array_data_source, textField: CityTXT)
+    }
+    
+    
+    @IBAction func add_city(_ sender: Any) {
+        if CityTXT.text?.isEmpty == true {
+            ShowAlertView.showAlert(title: "", msg: Localization.choose_regin, sender: self)
+            
+        }
+        else
+        {
+            get_data(array: town_array_data_source, textField: twonTXT)
+            
+        }
+       
+    }
+   
     
     func setUpView(){
-//        CityTXT.text = value
         locManager.requestWhenInUseAuthorization()
     }
     func get_location()
@@ -157,40 +180,7 @@ class SupplierFirstScreenViewController: UIViewController {
         }
         
     }
-    func showTableView()
-    {
-      
-        tableViewBTN.setImage(UIImage(named: "downArrow"), for: .normal)
-        tableViewBTN.imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 7)
-        tableViewBTN.frame = CGRect(x: CGFloat(CityTXT.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-        tableViewBTN.addTarget(self, action: #selector(self.refresh), for: .touchUpInside)
-        
-        CityTXT.leftView = tableViewBTN
-        CityTXT.leftViewMode = .always
-    }
-    
-    func showtwonTable()
-    {
-      
-        twonTableBTN.setImage(UIImage(named: "downArrow"), for: .normal)
-        twonTableBTN.imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 7)
-        twonTableBTN.frame = CGRect(x: CGFloat(twonTXT.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-        twonTableBTN.addTarget(self, action: #selector(self.showtwonTablwViwe), for: .touchUpInside)
-        
-        twonTXT.leftView = twonTableBTN
-        twonTXT.leftViewMode = .always
-        
-    }
-    @objc func showtwonTablwViwe()
-    {
-        
-    }
-    
-  
-    
-    @IBAction func refresh(_ sender: Any) {
-       
-    }
+
     func validate()
     {
         guard let name = suppliernameTXT.text, !name.isEmpty else{
@@ -420,7 +410,6 @@ extension SupplierFirstScreenViewController: UITextFieldDelegate {
           return false
         }
         else if textField == twonTXT{
-            print("ssss\(CityTXT.text)")
             if CityTXT.text?.isEmpty == true {
                 print("empy\ty")
                     ShowAlertView.showAlert(title: "", msg: Localization.choose_regin, sender: self)
