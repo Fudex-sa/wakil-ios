@@ -1,53 +1,27 @@
 ## New Release 
-## MABDU Helper for Swift
+## Base MVVM Project for Swift
 
 ## Last Version for Using Now 
 
-## Change logs 
+## Steps for use it 
+1. First open this Go to: Finder → Applications → Xcode → right-click and select “Show Package Content” → Contents → Developer → Library → Xcode → Templates → File Templates → Source 
+2. Open the template dir in project and copy M-MVVM & paste in it Source folder
+3. Now Congratulations!!! you can use this project 
 
-1. Structure mvvm with example
-2. Support animation of views
-3. Support animation of navigation
-4. Support snackbar 
-5. IQ keyboard
-6. Custom animations
-7. Set core of cells protcol
-8. Full socilate 
-9. Add validation helper
-10.  New Side menu
-11. UI Helpers
-12. Notificaiton Helper
-13. Localization Helper
-14. HTTP Helper
-15. Paginator Helper
-16. Downloader Helper
-17. Date Helper
-18. Most usage extenstions
-19. Add Downloader Files
-20. Add Swipe To refresh
-21. Custmization of Google map
-22. Muliselect Images
-23. Adding CardHolder
-24. Adding Lottie Animation
-25. Adding Swift Lint
-26. Refactor Of structure files
+## Structure 
+1. Application -> Combine, Core, SupportedFiles, Theme
+2. Extensions 
+3. Helpers -> NetworkLayer, Router, Notification, UIKit, Common, Localization
+4. Modules 
+
+## Create your own module 
+1. First go to Modules Group and right click make new group with your module name 
+2. Second step go to your module group and click new file and select MVVM 
+3. Hope that helpful & I hope that this explanation was useful to you
 
 ## Logs
-1. 1.00
-2. 2.00
-3. 3.00
-4. 3.1.0
-5. 3.2.0
-6. 3.3.0
-7. 3.7.0
-8. 3.9.0
-9. 4.0.0
-10. 4.1.0
-11. 4.2.0
-12. 4.8.0
-13. 4.9.0
-14. 5.0.1
+1. 6.00
 
 ## License
 
-This Helper software licensed under the Mohamed abdu.
+This Helper software licensed under the M.Abdu.

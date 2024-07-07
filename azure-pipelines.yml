@@ -1,0 +1,98 @@
+# Xcode
+# Build, test, and archive an Xcode workspace on macOS.
+# Add steps that install certificates, test, sign, and distribute an app, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
+
+trigger:
+- Development
+
+pr:
+  paths:
+    include:
+      - Wndo/*
+      
+pool:
+  vmImage: 'macos-latest'
+
+variables:
+  sdk: 'iphoneos'
+  projectPath: 'Wndo.xcodeproj'
+  workspacePath: 'Wndo.xcworkspace'
+  scheme: 'Wndo'
+  configuration: 'Testing'
+  coveragePath: '$(agent.buildDirectory)/coverage/'
+  artifactName: 'ArtifactName'
+  
+steps:
+
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'WndoDevP12.p12'
+    certPwd: '123456'
+      
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provProfileSecureFile: 'WndoProfile.mobileprovision'
+    
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'WndoProdP12.p12'
+    certPwd: '123456'
+      
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provProfileSecureFile: 'WndoProdProfile.mobileprovision'
+
+- task: CocoaPods@0
+  inputs:
+    #workingDirectory: # Optional
+    forceRepoUpdate: false
+    #projectDirectory: # Optional
+    
+- task: Xcode@5
+  displayName: 'Build and Sign'
+  inputs:
+    actions: 'clean'
+    sdk: '$(sdk)'
+    scheme: '$(scheme)'
+    signingOption: 'manual'
+    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+    provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+    teamId: 'UL4L86WK78'
+    packageApp: true
+    exportMethod: "app-store"
+    #destinationPlatformOption: 'Default'
+    xcWorkspacePath: '$(workspacePath)'
+    xcodeVersion: 'default'
+    args: '-allowProvisioningUpdates'
+    
+# with this task upload ipa with deploy on public testing
+- task: AppStoreRelease@1
+  inputs:
+    serviceEndpoint: 'app-store'
+    releaseTrack: 'TestFlight'
+    appIdentifier: 'com.wndo'
+    appType: 'iOS'
+    #shouldSkipWaitingForProcessing: false
+    #shouldSkipSubmission: true
+    releaseNotes: 'notes.txt'
+    appSpecificId: '1588238250'
+    distributedToExternalTesters: true
+    externalTestersGroups: 'testers'
+ 
+# with this task upload ipa without deploy on public testing
+#- task: AppStoreRelease@1
+  #inputs:
+    #serviceEndpoint: 'app-store'
+    #releaseTrack: 'TestFlight'
+    #appIdentifier: 'com.wndo'
+    #appType: 'iOS'
+    #shouldSkipWaitingForProcessing: true
+    #shouldSkipSubmission: true
+    #appSpecificId: '1588238250'
+    
+#- task: AppStorePromote@1
+  #inputs:
+    #serviceEndpoint: 'app-store'
+    #appIdentifier: 'com.wndo'
+    #shouldAutoRelease: true

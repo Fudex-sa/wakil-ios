@@ -1,0 +1,26 @@
+//
+//  Config.xcconfig
+//  SchemaTarget
+//
+//  Created by M.abdu on 11/2/20.
+//  Copyright © 2020 com. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BUNDLE_ID = com.wndo
+
+APP_NAME = Wndo
+
+BASE_URL = https:/$()/
+
+ENV = 
+
+VERSION = 1.1.2
+
+BUILD = 158
+
+S3_ACCESS = AKIAQZNMRRW7J665GD4S
+
+S3_SECRET = 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
