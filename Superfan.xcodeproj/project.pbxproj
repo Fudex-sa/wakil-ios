@@ -452,7 +452,7 @@
 		667FD7F128917A270005254B /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		667FD7F228917A270005254B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		6681403B279055480018ECAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		66CEF1532781A00C0080DD1F /* Speed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Speed.entitlements; sourceTree = "<group>"; };
+		66CEF1532781A00C0080DD1F /* Superfan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Superfan.entitlements; sourceTree = "<group>"; };
 		66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		66F7C2F0278C68D800E449F6 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -1211,7 +1211,7 @@
 		77C5F4992534814100E70C4C /* Superfan */ = {
 			isa = PBXGroup;
 			children = (
-				66CEF1532781A00C0080DD1F /* Speed.entitlements */,
+				66CEF1532781A00C0080DD1F /* Superfan.entitlements */,
 				E8339CA727CD262D000D5A6E /* Loading-Dark.gif */,
 				E8339CA627CD262D000D5A6E /* Loading-Light.gif */,
 				7756A1212534856900BFE53C /* Application */,
@@ -2453,7 +2453,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
