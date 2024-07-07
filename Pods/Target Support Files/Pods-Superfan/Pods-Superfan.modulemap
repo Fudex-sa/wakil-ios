@@ -1,0 +1,6 @@
+framework module Pods_Superfan {
+  umbrella header "Pods-Superfan-umbrella.h"
+
+  export *
+  module * { export * }
+}
