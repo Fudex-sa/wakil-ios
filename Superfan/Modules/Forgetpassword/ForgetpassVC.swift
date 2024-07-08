@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ForgetpassVC: BaseController {
+    @IBOutlet weak var phoneTxf: UITextField!
+    @IBOutlet weak var forgetBtn: UIButton!
     var viewModel: ForgetpassViewModel?
     var coordinator: ForgetpassCoordinator?
 }

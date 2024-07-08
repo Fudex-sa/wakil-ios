@@ -11,6 +11,22 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class SignupVC: BaseController {
+    @IBOutlet weak var regBtn: UIButton!
+    @IBOutlet weak var termsLbl: UILabel!
+    @IBOutlet weak var checkBtn: CheckBoxButton!
+    @IBOutlet weak var confirmEyeBtn: UIButton!
+    @IBOutlet weak var confirmPassTxf: UITextField!
+    @IBOutlet weak var eyeBtn: UIButton!
+    @IBOutlet weak var passwordTxf: UITextField!
+    @IBOutlet weak var mapLbl: UILabel!
+    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var cityLbl: UILabel!
+    @IBOutlet weak var cityView: UIView!
+    @IBOutlet weak var countryLbl: UILabel!
+    @IBOutlet weak var countryView: UIView!
+    @IBOutlet weak var phoneTxf: UITextField!
+    @IBOutlet weak var emailTxf: UITextField!
+    @IBOutlet weak var userTxf: UITextField!
     var viewModel: SignupViewModel?
     var coordinator: SignupCoordinator?
 }

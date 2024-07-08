@@ -11,6 +11,14 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class VerifyCodeVC: BaseController {
+    @IBOutlet weak var verifyBtn: UIButton!
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var resendBtn: UIButton!
+    @IBOutlet weak var verfiy4Txf: UITextField!
+    @IBOutlet weak var verfiy3Txf: UITextField!
+    @IBOutlet weak var verfiy2Txf: UITextField!
+    @IBOutlet weak var verfiy1Txf: UITextField!
+    @IBOutlet weak var phoneLbl: UILabel!
     var viewModel: VerifyCodeViewModel?
     var coordinator: VerifyCodeCoordinator?
 }

@@ -11,6 +11,11 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ResetpasswordVC: BaseController {
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var confirmEyeBtn: UIButton!
+    @IBOutlet weak var confirmPassTxf: UITextField!
+    @IBOutlet weak var eyeBtn: UIButton!
+    @IBOutlet weak var passwordTxf: UITextField!
     var viewModel: ResetpasswordViewModel?
     var coordinator: ResetpasswordCoordinator?
 }
