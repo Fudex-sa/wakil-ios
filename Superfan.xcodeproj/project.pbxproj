@@ -41,6 +41,7 @@
 		664DCAFE2C3BC2460011DB96 /* TajawalRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFA2C3BC2460011DB96 /* TajawalRegular.ttf */; };
 		664DCAFF2C3BC2460011DB96 /* TajawalLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFB2C3BC2460011DB96 /* TajawalLight.ttf */; };
 		664DCB002C3BC2460011DB96 /* TajawalMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFC2C3BC2460011DB96 /* TajawalMedium.ttf */; };
+		664FE17F2C3BEB620081C90B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FE17E2C3BEB620081C90B /* PaddingLabel.swift */; };
 		667FD7F328917A270005254B /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FD7EE28917A270005254B /* OnboardingCoordinator.swift */; };
 		667FD7F428917A270005254B /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667FD7EF28917A270005254B /* OnboardingStoryboard.storyboard */; };
 		667FD7F528917A270005254B /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FD7F028917A270005254B /* OnboardingModel.swift */; };
@@ -49,6 +50,11 @@
 		6681403C279055490018ECAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6681403B279055480018ECAD /* GoogleService-Info.plist */; };
 		66B6AA8B2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66B6AA8A2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib */; };
 		66B6AA8C2C3BCF1400BC277C /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA892C3BCF1400BC277C /* OnboardingCollectionViewCell.swift */; };
+		66B6AA932C3BD41200BC277C /* SelectclubStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B6AA8F2C3BD41200BC277C /* SelectclubStoryboard.storyboard */; };
+		66B6AA942C3BD41200BC277C /* SelectclubCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA8E2C3BD41200BC277C /* SelectclubCoordinator.swift */; };
+		66B6AA952C3BD41200BC277C /* SelectclubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA902C3BD41200BC277C /* SelectclubModel.swift */; };
+		66B6AA962C3BD41200BC277C /* SelectclubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA912C3BD41200BC277C /* SelectclubVC.swift */; };
+		66B6AA972C3BD41200BC277C /* SelectclubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA922C3BD41200BC277C /* SelectclubViewModel.swift */; };
 		66DE7D9D2738008700CAD557 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */; };
 		66DE7D9E2738008700CAD557 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */; };
 		66F7C2F3278C68D800E449F6 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66F7C2F0278C68D800E449F6 /* Muli-SemiBold.ttf */; };
@@ -506,6 +512,7 @@
 		664DCAFA2C3BC2460011DB96 /* TajawalRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TajawalRegular.ttf; sourceTree = "<group>"; };
 		664DCAFB2C3BC2460011DB96 /* TajawalLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TajawalLight.ttf; sourceTree = "<group>"; };
 		664DCAFC2C3BC2460011DB96 /* TajawalMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TajawalMedium.ttf; sourceTree = "<group>"; };
+		664FE17E2C3BEB620081C90B /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		667FD7EE28917A270005254B /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		667FD7EF28917A270005254B /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
 		667FD7F028917A270005254B /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
@@ -514,6 +521,11 @@
 		6681403B279055480018ECAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		66B6AA892C3BCF1400BC277C /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		66B6AA8A2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		66B6AA8E2C3BD41200BC277C /* SelectclubCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubCoordinator.swift; sourceTree = "<group>"; };
+		66B6AA8F2C3BD41200BC277C /* SelectclubStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectclubStoryboard.storyboard; sourceTree = "<group>"; };
+		66B6AA902C3BD41200BC277C /* SelectclubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubModel.swift; sourceTree = "<group>"; };
+		66B6AA912C3BD41200BC277C /* SelectclubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubVC.swift; sourceTree = "<group>"; };
+		66B6AA922C3BD41200BC277C /* SelectclubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubViewModel.swift; sourceTree = "<group>"; };
 		66CEF1532781A00C0080DD1F /* Superfan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Superfan.entitlements; sourceTree = "<group>"; };
 		66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -1080,6 +1092,18 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		66B6AA8D2C3BD3F700BC277C /* Selectclub */ = {
+			isa = PBXGroup;
+			children = (
+				66B6AA8E2C3BD41200BC277C /* SelectclubCoordinator.swift */,
+				66B6AA8F2C3BD41200BC277C /* SelectclubStoryboard.storyboard */,
+				66B6AA902C3BD41200BC277C /* SelectclubModel.swift */,
+				66B6AA912C3BD41200BC277C /* SelectclubVC.swift */,
+				66B6AA922C3BD41200BC277C /* SelectclubViewModel.swift */,
+			);
+			path = Selectclub;
+			sourceTree = "<group>";
+		};
 		77021ABF2537455C006F720B /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1139,6 +1163,7 @@
 		77569F7B253482EE00BFE53C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				664FE17E2C3BEB620081C90B /* PaddingLabel.swift */,
 				C871C8EE272FF00300DCBD2D /* BaseController+EX.swift */,
 				C871C930272FFACC00DCBD2D /* TimerHelper.swift */,
 				C871C9A3273029D900DCBD2D /* RangeSeekSlider */,
@@ -2240,6 +2265,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66B6AA8D2C3BD3F700BC277C /* Selectclub */,
 				6636D7F02C3AE40C007116F7 /* VerifyCode */,
 				6636D7E52C3AE3D6007116F7 /* Resetpassword */,
 				6636D7DA2C3AE3B0007116F7 /* Forgetpassword */,
@@ -2531,6 +2557,7 @@
 				C86BF99C266947F0002D87BC /* successIcon.png in Resources */,
 				C84539A92729887000004173 /* NeoSansArabic-Medium.ttf in Resources */,
 				C871C724272FEB7B00DCBD2D /* Muli-ExtraLight.ttf in Resources */,
+				66B6AA932C3BD41200BC277C /* SelectclubStoryboard.storyboard in Resources */,
 				C86BF982266947F0002D87BC /* errorIconSubtle.png in Resources */,
 				C86BF981266947F0002D87BC /* MessageView.xib in Resources */,
 				C871C72C272FEB7C00DCBD2D /* Muli-Bold.ttf in Resources */,
@@ -2683,6 +2710,7 @@
 				C8978F832669520C00021B0C /* NotificationBuilder.swift in Sources */,
 				C8C0930B272ABDA200E2270A /* UISwitch+Combine.swift in Sources */,
 				7756A097253482EF00BFE53C /* RadioButton.swift in Sources */,
+				664FE17F2C3BEB620081C90B /* PaddingLabel.swift in Sources */,
 				C871C98D2730231300DCBD2D /* UILabel+Multiline.swift in Sources */,
 				C86BF9B9266947F0002D87BC /* MessageView.swift in Sources */,
 				7756A089253482EF00BFE53C /* Downloader.swift in Sources */,
@@ -2715,6 +2743,10 @@
 				C871C98E2730231300DCBD2D /* ContainsMultilineText.swift in Sources */,
 				7756A16825348AD400BFE53C /* UIViewControllerExtensions.swift in Sources */,
 				C871C8E5272FED5900DCBD2D /* GoogleMapProtocolHelper.swift in Sources */,
+				66B6AA942C3BD41200BC277C /* SelectclubCoordinator.swift in Sources */,
+				66B6AA952C3BD41200BC277C /* SelectclubModel.swift in Sources */,
+				66B6AA962C3BD41200BC277C /* SelectclubVC.swift in Sources */,
+				66B6AA972C3BD41200BC277C /* SelectclubViewModel.swift in Sources */,
 				C8F358EA266E669700FEE18B /* NetworkFailScreenContract.swift in Sources */,
 				C84539812729880600004173 /* ExtensionUITableViewCell.swift in Sources */,
 				C86A6A42266D240D0030504A /* ValidatorUI.swift in Sources */,

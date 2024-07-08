@@ -1,26 +1,26 @@
 //
-//  OnboardingVC.swift
-//  Wndo
+//  SelectclubVC.swift
+//  Superfan
 //
-//  Created by Adam on 27/07/2022.
-//  Copyright © 2022 com.M.Abdu. All rights reserved.
+//  Created by ADAM on 08/07/2024.
+//  Copyright © 2024 com.M.Abdu. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class OnboardingVC: BaseController {
-    @IBOutlet weak var langLbl: UILabel!
-    @IBOutlet weak var langView: UIView!
-    @IBOutlet weak var skipLbl: UILabel!
-    @IBOutlet weak var onboardingCollection: UICollectionView!
-    var viewModel: OnboardingViewModel?
-    var coordinator: OnboardingCoordinator?
+class SelectclubVC: BaseController {
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var skipBtn: UIButton!
+    @IBOutlet weak var clubsTbl: UITableView!
+
+    var viewModel: SelectclubViewModel?
+    var coordinator: SelectclubCoordinator?
 }
 
 // MARK: - ...  LifeCycle
-extension OnboardingVC {
+extension SelectclubVC {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -37,10 +37,10 @@ extension OnboardingVC {
     }
 }
 // MARK: - ...  Functions
-extension OnboardingVC {
+extension SelectclubVC {
     func setup() {
     }
 }
 // MARK: - ...  View Contract
-extension OnboardingVC {
+extension SelectclubVC {
 }

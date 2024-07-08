@@ -11,6 +11,16 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class LoginVC: BaseController {
+    @IBOutlet weak var regBtn: UILabel!
+    @IBOutlet weak var appleView: UIView!
+    @IBOutlet weak var googleView: UIView!
+    @IBOutlet weak var skipBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var forgetBtn: UIButton!
+    @IBOutlet weak var eyeBtn: UIButton!
+    @IBOutlet weak var passwordTxf: UITextField!
+    @IBOutlet weak var loginTxf: UITextField!
+    @IBOutlet weak var langView: UIView!
     var viewModel: LoginViewModel?
     var coordinator: LoginCoordinator?
 }
