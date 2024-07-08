@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ClubCollectionViewCell" customModule="Superfan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="192" height="111"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="192" height="111"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTV-q1-4QD">
+                        <rect key="frame" x="0.0" y="0.0" width="192" height="111"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-Vr-D4Z">
+                                <rect key="frame" x="68" y="12" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="KC1-dJ-WEp"/>
+                                    <constraint firstAttribute="height" constant="56" id="RLq-eq-DBR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fww-RB-0Hv">
+                                <rect key="frame" x="4" y="74" width="184" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Black1"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q5N-Vr-D4Z" firstAttribute="top" secondItem="HTV-q1-4QD" secondAttribute="top" constant="12" id="IvP-rJ-RRt"/>
+                            <constraint firstItem="fww-RB-0Hv" firstAttribute="top" secondItem="q5N-Vr-D4Z" secondAttribute="bottom" constant="6" id="KYf-Sr-UlN"/>
+                            <constraint firstAttribute="trailing" secondItem="fww-RB-0Hv" secondAttribute="trailing" constant="4" id="Pif-td-lgl"/>
+                            <constraint firstItem="fww-RB-0Hv" firstAttribute="leading" secondItem="HTV-q1-4QD" secondAttribute="leading" constant="4" id="Smq-rr-2dv"/>
+                            <constraint firstItem="q5N-Vr-D4Z" firstAttribute="centerX" secondItem="HTV-q1-4QD" secondAttribute="centerX" id="uHh-a8-my4"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="borderprimary"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HTV-q1-4QD" secondAttribute="trailing" id="3UV-Tq-LRx"/>
+                <constraint firstAttribute="bottom" secondItem="HTV-q1-4QD" secondAttribute="bottom" id="BWs-Np-DlF"/>
+                <constraint firstItem="HTV-q1-4QD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vmn-nW-PLE"/>
+                <constraint firstItem="HTV-q1-4QD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ke8-8k-2Va"/>
+            </constraints>
+            <size key="customSize" width="192" height="111"/>
+            <connections>
+                <outlet property="clubImg" destination="q5N-Vr-D4Z" id="Xb5-fP-A2Y"/>
+                <outlet property="clubLbl" destination="fww-RB-0Hv" id="lRa-xC-Kqo"/>
+                <outlet property="containerView" destination="HTV-q1-4QD" id="hwE-9i-X6E"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="10.211267605633804"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Black1">
+            <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="borderprimary">
+            <color red="0.9882352941176471" green="0.90980392156862744" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

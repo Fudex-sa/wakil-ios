@@ -55,6 +55,8 @@
 		66B6AA952C3BD41200BC277C /* SelectclubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA902C3BD41200BC277C /* SelectclubModel.swift */; };
 		66B6AA962C3BD41200BC277C /* SelectclubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA912C3BD41200BC277C /* SelectclubVC.swift */; };
 		66B6AA972C3BD41200BC277C /* SelectclubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA922C3BD41200BC277C /* SelectclubViewModel.swift */; };
+		66DB2DE72C3C172B00BE155C /* ClubCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DB2DE62C3C172B00BE155C /* ClubCollectionViewCell.xib */; };
+		66DB2DE82C3C172B00BE155C /* ClubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DB2DE52C3C172B00BE155C /* ClubCollectionViewCell.swift */; };
 		66DE7D9D2738008700CAD557 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */; };
 		66DE7D9E2738008700CAD557 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */; };
 		66F7C2F3278C68D800E449F6 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66F7C2F0278C68D800E449F6 /* Muli-SemiBold.ttf */; };
@@ -527,6 +529,8 @@
 		66B6AA912C3BD41200BC277C /* SelectclubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubVC.swift; sourceTree = "<group>"; };
 		66B6AA922C3BD41200BC277C /* SelectclubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubViewModel.swift; sourceTree = "<group>"; };
 		66CEF1532781A00C0080DD1F /* Superfan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Superfan.entitlements; sourceTree = "<group>"; };
+		66DB2DE52C3C172B00BE155C /* ClubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCollectionViewCell.swift; sourceTree = "<group>"; };
+		66DB2DE62C3C172B00BE155C /* ClubCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubCollectionViewCell.xib; sourceTree = "<group>"; };
 		66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		66F7C2F0278C68D800E449F6 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -1095,6 +1099,7 @@
 		66B6AA8D2C3BD3F700BC277C /* Selectclub */ = {
 			isa = PBXGroup;
 			children = (
+				66DB2DE02C3C16AC00BE155C /* cells */,
 				66B6AA8E2C3BD41200BC277C /* SelectclubCoordinator.swift */,
 				66B6AA8F2C3BD41200BC277C /* SelectclubStoryboard.storyboard */,
 				66B6AA902C3BD41200BC277C /* SelectclubModel.swift */,
@@ -1102,6 +1107,15 @@
 				66B6AA922C3BD41200BC277C /* SelectclubViewModel.swift */,
 			);
 			path = Selectclub;
+			sourceTree = "<group>";
+		};
+		66DB2DE02C3C16AC00BE155C /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				66DB2DE52C3C172B00BE155C /* ClubCollectionViewCell.swift */,
+				66DB2DE62C3C172B00BE155C /* ClubCollectionViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		77021ABF2537455C006F720B /* SupportFiles */ = {
@@ -2495,6 +2509,7 @@
 			files = (
 				C86BF98A266947F0002D87BC /* StatusLine.xib in Resources */,
 				C871C729272FEB7B00DCBD2D /* SFPRODISPLAYBLACKITALIC.OTF in Resources */,
+				66DB2DE72C3C172B00BE155C /* ClubCollectionViewCell.xib in Resources */,
 				C86BF9A5266947F0002D87BC /* warningIcon.png in Resources */,
 				C86BF980266947F0002D87BC /* infoIconSubtle.png in Resources */,
 				C86BF9A1266947F0002D87BC /* CardView.xib in Resources */,
@@ -2823,6 +2838,7 @@
 				C8C09310272ABDA200E2270A /* UISegmentedControl+Combine.swift in Sources */,
 				E78C27D528725F4C00B345AC /* AVFileType+FileExtension.swift in Sources */,
 				C871C9822730231300DCBD2D /* Base+SkeletonEX.swift in Sources */,
+				66DB2DE82C3C172B00BE155C /* ClubCollectionViewCell.swift in Sources */,
 				7756A16125348AD400BFE53C /* UIConstraintLayoutExtension.swift in Sources */,
 				C871C9752730231300DCBD2D /* SkeletonGradient.swift in Sources */,
 				C86BF9CF26694943002D87BC /* UserDefault.swift in Sources */,
