@@ -90,17 +90,41 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
+    /// Storyboard `ForgetpassStoryboard`.
+    static let forgetpassStoryboard = _R.storyboard.forgetpassStoryboard()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `LoginStoryboard`.
+    static let loginStoryboard = _R.storyboard.loginStoryboard()
     /// Storyboard `OnboardingStoryboard`.
     static let onboardingStoryboard = _R.storyboard.onboardingStoryboard()
+    /// Storyboard `ResetpasswordStoryboard`.
+    static let resetpasswordStoryboard = _R.storyboard.resetpasswordStoryboard()
+    /// Storyboard `SignupStoryboard`.
+    static let signupStoryboard = _R.storyboard.signupStoryboard()
+    /// Storyboard `VerifyCodeStoryboard`.
+    static let verifyCodeStoryboard = _R.storyboard.verifyCodeStoryboard()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ForgetpassStoryboard", bundle: ...)`
+    static func forgetpassStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.forgetpassStoryboard)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LoginStoryboard", bundle: ...)`
+    static func loginStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.loginStoryboard)
     }
     #endif
 
@@ -111,304 +135,39 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ResetpasswordStoryboard", bundle: ...)`
+    static func resetpasswordStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.resetpasswordStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SignupStoryboard", bundle: ...)`
+    static func signupStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.signupStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "VerifyCodeStoryboard", bundle: ...)`
+    static func verifyCodeStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.verifyCodeStoryboard)
+    }
+    #endif
+
     fileprivate init() {}
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 74 colors.
+  /// This `R.color` struct is generated, and contains static references to 3 colors.
   struct color {
-    /// Color `Brown`.
-    static let brown = Rswift.ColorResource(bundle: R.hostingBundle, name: "Brown")
-    /// Color `DeliveredColor`.
-    static let deliveredColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "DeliveredColor")
-    /// Color `GrayTextColorLight`.
-    static let grayTextColorLight = Rswift.ColorResource(bundle: R.hostingBundle, name: "GrayTextColorLight")
-    /// Color `GrayTextColor`.
-    static let grayTextColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "GrayTextColor")
-    /// Color `LikeColor`.
-    static let likeColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "LikeColor")
-    /// Color `OnlineColor`.
-    static let onlineColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "OnlineColor")
-    /// Color `PlacedColor`.
-    static let placedColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "PlacedColor")
-    /// Color `RedTransparent`.
-    static let redTransparent = Rswift.ColorResource(bundle: R.hostingBundle, name: "RedTransparent")
-    /// Color `ShippingColor`.
-    static let shippingColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "ShippingColor")
-    /// Color `StatisticsBlue`.
-    static let statisticsBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "StatisticsBlue")
-    /// Color `StatisticsRed`.
-    static let statisticsRed = Rswift.ColorResource(bundle: R.hostingBundle, name: "StatisticsRed")
-    /// Color `StatisticsYellow`.
-    static let statisticsYellow = Rswift.ColorResource(bundle: R.hostingBundle, name: "StatisticsYellow")
-    /// Color `TabBarShadow`.
-    static let tabBarShadow = Rswift.ColorResource(bundle: R.hostingBundle, name: "TabBarShadow")
-    /// Color `backgroundGrayView`.
-    static let backgroundGrayView = Rswift.ColorResource(bundle: R.hostingBundle, name: "backgroundGrayView")
-    /// Color `backgroundSelectView`.
-    static let backgroundSelectView = Rswift.ColorResource(bundle: R.hostingBundle, name: "backgroundSelectView")
-    /// Color `backorder`.
-    static let backorder = Rswift.ColorResource(bundle: R.hostingBundle, name: "backorder")
-    /// Color `blackOpacity10-1`.
-    static let blackOpacity101 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity10-1")
-    /// Color `blackOpacity10`.
-    static let blackOpacity10 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity10")
-    /// Color `blackOpacity16`.
-    static let blackOpacity16 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity16")
-    /// Color `blackOpacity20`.
-    static let blackOpacity20 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity20")
-    /// Color `blackOpacity24`.
-    static let blackOpacity24 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity24")
-    /// Color `blackOpacity30-1`.
-    static let blackOpacity301 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity30-1")
-    /// Color `blackOpacity30`.
-    static let blackOpacity30 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity30")
-    /// Color `blackOpacity40-1`.
-    static let blackOpacity401 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity40-1")
-    /// Color `blackOpacity40`.
-    static let blackOpacity40 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity40")
-    /// Color `blackOpacity50`.
-    static let blackOpacity50 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity50")
-    /// Color `blackOpacity5`.
-    static let blackOpacity5 = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacity5")
-    /// Color `blackOpacityaddress`.
-    static let blackOpacityaddress = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackOpacityaddress")
     /// Color `black`.
     static let black = Rswift.ColorResource(bundle: R.hostingBundle, name: "black")
-    /// Color `blackwithnodark`.
-    static let blackwithnodark = Rswift.ColorResource(bundle: R.hostingBundle, name: "blackwithnodark")
-    /// Color `borderColor1`.
-    static let borderColor1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "borderColor1")
-    /// Color `borderColorPurple`.
-    static let borderColorPurple = Rswift.ColorResource(bundle: R.hostingBundle, name: "borderColorPurple")
-    /// Color `borderColor`.
-    static let borderColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "borderColor")
-    /// Color `bordergray`.
-    static let bordergray = Rswift.ColorResource(bundle: R.hostingBundle, name: "bordergray")
-    /// Color `cobaltBlue`.
-    static let cobaltBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "cobaltBlue")
-    /// Color `darkblue`.
-    static let darkblue = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkblue")
-    /// Color `darkgray-1`.
-    static let darkgray1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray-1")
-    /// Color `darkgray`.
-    static let darkgray = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray")
-    /// Color `darkgrayonboard`.
-    static let darkgrayonboard = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgrayonboard")
-    /// Color `darkred`.
-    static let darkred = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkred")
-    /// Color `darkyellow`.
-    static let darkyellow = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkyellow")
-    /// Color `dialogwhite`.
-    static let dialogwhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "dialogwhite")
-    /// Color `favshadow`.
-    static let favshadow = Rswift.ColorResource(bundle: R.hostingBundle, name: "favshadow")
-    /// Color `favtxt`.
-    static let favtxt = Rswift.ColorResource(bundle: R.hostingBundle, name: "favtxt")
-    /// Color `hashtagColor`.
-    static let hashtagColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "hashtagColor")
-    /// Color `hintColorDark`.
-    static let hintColorDark = Rswift.ColorResource(bundle: R.hostingBundle, name: "hintColorDark")
-    /// Color `hintColor`.
-    static let hintColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "hintColor")
-    /// Color `insidecolor`.
-    static let insidecolor = Rswift.ColorResource(bundle: R.hostingBundle, name: "insidecolor")
-    /// Color `lightblack`.
-    static let lightblack = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightblack")
-    /// Color `lightgray`.
-    static let lightgray = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightgray")
-    /// Color `mainColor`.
-    static let mainColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "mainColor")
-    /// Color `marketer`.
-    static let marketer = Rswift.ColorResource(bundle: R.hostingBundle, name: "marketer")
-    /// Color `offWhiteColor`.
-    static let offWhiteColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "offWhiteColor")
-    /// Color `rateColorFullOpacity`.
-    static let rateColorFullOpacity = Rswift.ColorResource(bundle: R.hostingBundle, name: "rateColorFullOpacity")
-    /// Color `rateColor`.
-    static let rateColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "rateColor")
-    /// Color `rategray`.
-    static let rategray = Rswift.ColorResource(bundle: R.hostingBundle, name: "rategray")
-    /// Color `secondColor`.
-    static let secondColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "secondColor")
-    /// Color `secondTextColor`.
-    static let secondTextColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "secondTextColor")
-    /// Color `shadowColor`.
-    static let shadowColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "shadowColor")
-    /// Color `shadowcat`.
-    static let shadowcat = Rswift.ColorResource(bundle: R.hostingBundle, name: "shadowcat")
-    /// Color `shadowedit`.
-    static let shadowedit = Rswift.ColorResource(bundle: R.hostingBundle, name: "shadowedit")
-    /// Color `textColor`.
-    static let textColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "textColor")
-    /// Color `textcolorblack`.
-    static let textcolorblack = Rswift.ColorResource(bundle: R.hostingBundle, name: "textcolorblack")
-    /// Color `thirdColor`.
-    static let thirdColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "thirdColor")
-    /// Color `thirdTextColor`.
-    static let thirdTextColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "thirdTextColor")
-    /// Color `titlesGray`.
-    static let titlesGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "titlesGray")
     /// Color `txtblue`.
     static let txtblue = Rswift.ColorResource(bundle: R.hostingBundle, name: "txtblue")
-    /// Color `txtlightgray`.
-    static let txtlightgray = Rswift.ColorResource(bundle: R.hostingBundle, name: "txtlightgray")
-    /// Color `walletRed`.
-    static let walletRed = Rswift.ColorResource(bundle: R.hostingBundle, name: "walletRed")
     /// Color `whiteColor`.
     static let whiteColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "whiteColor")
-    /// Color `whiteOpacity20`.
-    static let whiteOpacity20 = Rswift.ColorResource(bundle: R.hostingBundle, name: "whiteOpacity20")
-    /// Color `whiteOpacity30`.
-    static let whiteOpacity30 = Rswift.ColorResource(bundle: R.hostingBundle, name: "whiteOpacity30")
-    /// Color `whiteOpacity50`.
-    static let whiteOpacity50 = Rswift.ColorResource(bundle: R.hostingBundle, name: "whiteOpacity50")
-    /// Color `whitetransperenet`.
-    static let whitetransperenet = Rswift.ColorResource(bundle: R.hostingBundle, name: "whitetransperenet")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "Brown", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func brown(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.brown, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "DeliveredColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func deliveredColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.deliveredColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "GrayTextColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func grayTextColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.grayTextColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "GrayTextColorLight", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func grayTextColorLight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.grayTextColorLight, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "LikeColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func likeColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.likeColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "OnlineColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func onlineColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.onlineColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "PlacedColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func placedColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.placedColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "RedTransparent", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func redTransparent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.redTransparent, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "ShippingColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func shippingColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.shippingColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "StatisticsBlue", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func statisticsBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.statisticsBlue, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "StatisticsRed", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func statisticsRed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.statisticsRed, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "StatisticsYellow", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func statisticsYellow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.statisticsYellow, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "TabBarShadow", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func tabBarShadow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.tabBarShadow, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "backgroundGrayView", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func backgroundGrayView(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.backgroundGrayView, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "backgroundSelectView", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func backgroundSelectView(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.backgroundSelectView, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "backorder", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func backorder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.backorder, compatibleWith: traitCollection)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "black", bundle: ..., traitCollection: ...)`
@@ -416,447 +175,6 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func black(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.black, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity10", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity10(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity10, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity10-1", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity101(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity101, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity16", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity16, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity20", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity20(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity20, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity24", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity24, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity30", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity30(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity30, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity30-1", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity301(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity301, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity40", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity40(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity40, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity40-1", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity401(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity401, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity5", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity5, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacity50", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacity50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacity50, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackOpacityaddress", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackOpacityaddress(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackOpacityaddress, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "blackwithnodark", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func blackwithnodark(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.blackwithnodark, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "borderColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func borderColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.borderColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "borderColor1", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func borderColor1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.borderColor1, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "borderColorPurple", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func borderColorPurple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.borderColorPurple, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "bordergray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func bordergray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.bordergray, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "cobaltBlue", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func cobaltBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.cobaltBlue, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "darkblue", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func darkblue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.darkblue, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "darkgray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func darkgray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.darkgray, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "darkgray-1", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func darkgray1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.darkgray1, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "darkgrayonboard", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func darkgrayonboard(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.darkgrayonboard, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "darkred", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func darkred(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.darkred, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "darkyellow", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func darkyellow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.darkyellow, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "dialogwhite", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func dialogwhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.dialogwhite, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "favshadow", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func favshadow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.favshadow, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "favtxt", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func favtxt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.favtxt, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "hashtagColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func hashtagColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.hashtagColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "hintColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func hintColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.hintColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "hintColorDark", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func hintColorDark(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.hintColorDark, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "insidecolor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func insidecolor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.insidecolor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "lightblack", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func lightblack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.lightblack, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "lightgray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func lightgray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.lightgray, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "mainColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func mainColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.mainColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "marketer", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func marketer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.marketer, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "offWhiteColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func offWhiteColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.offWhiteColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "rateColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func rateColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.rateColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "rateColorFullOpacity", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func rateColorFullOpacity(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.rateColorFullOpacity, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "rategray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func rategray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.rategray, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "secondColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func secondColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.secondColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "secondTextColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func secondTextColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.secondTextColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "shadowColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func shadowColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.shadowColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "shadowcat", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func shadowcat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.shadowcat, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "shadowedit", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func shadowedit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.shadowedit, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "textColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func textColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.textColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "textcolorblack", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func textcolorblack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.textcolorblack, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "thirdColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func thirdColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.thirdColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "thirdTextColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func thirdTextColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.thirdTextColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "titlesGray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func titlesGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.titlesGray, compatibleWith: traitCollection)
     }
     #endif
 
@@ -870,193 +188,11 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "txtlightgray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func txtlightgray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.txtlightgray, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "walletRed", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func walletRed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.walletRed, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "whiteColor", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func whiteColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.whiteColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "whiteOpacity20", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func whiteOpacity20(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.whiteOpacity20, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "whiteOpacity30", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func whiteOpacity30(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.whiteOpacity30, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "whiteOpacity50", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func whiteOpacity50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.whiteOpacity50, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "whitetransperenet", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func whitetransperenet(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.whitetransperenet, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "Brown", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func brown(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.brown.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "DeliveredColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func deliveredColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.deliveredColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "GrayTextColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func grayTextColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.grayTextColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "GrayTextColorLight", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func grayTextColorLight(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.grayTextColorLight.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "LikeColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func likeColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.likeColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "OnlineColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func onlineColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.onlineColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "PlacedColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func placedColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.placedColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "RedTransparent", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func redTransparent(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.redTransparent.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "ShippingColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func shippingColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.shippingColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "StatisticsBlue", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func statisticsBlue(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.statisticsBlue.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "StatisticsRed", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func statisticsRed(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.statisticsRed.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "StatisticsYellow", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func statisticsYellow(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.statisticsYellow.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "TabBarShadow", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func tabBarShadow(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.tabBarShadow.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "backgroundGrayView", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func backgroundGrayView(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.backgroundGrayView.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "backgroundSelectView", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func backgroundSelectView(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.backgroundSelectView.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "backorder", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func backorder(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.backorder.name)
     }
     #endif
 
@@ -1069,398 +205,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "blackOpacity10", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity10(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity10.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity10-1", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity101(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity101.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity16", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity16(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity16.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity20", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity20(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity20.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity24", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity24(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity24.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity30", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity30(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity30.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity30-1", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity301(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity301.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity40", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity40(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity40.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity40-1", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity401(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity401.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity5", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity5(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity5.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacity50", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacity50(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacity50.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackOpacityaddress", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackOpacityaddress(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackOpacityaddress.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "blackwithnodark", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func blackwithnodark(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.blackwithnodark.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "borderColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func borderColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.borderColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "borderColor1", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func borderColor1(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.borderColor1.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "borderColorPurple", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func borderColorPurple(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.borderColorPurple.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "bordergray", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func bordergray(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.bordergray.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "cobaltBlue", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func cobaltBlue(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.cobaltBlue.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "darkblue", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func darkblue(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.darkblue.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "darkgray", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func darkgray(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.darkgray.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "darkgray-1", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func darkgray1(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.darkgray1.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "darkgrayonboard", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func darkgrayonboard(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.darkgrayonboard.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "darkred", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func darkred(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.darkred.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "darkyellow", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func darkyellow(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.darkyellow.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "dialogwhite", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func dialogwhite(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.dialogwhite.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "favshadow", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func favshadow(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.favshadow.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "favtxt", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func favtxt(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.favtxt.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "hashtagColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func hashtagColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.hashtagColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "hintColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func hintColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.hintColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "hintColorDark", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func hintColorDark(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.hintColorDark.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "insidecolor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func insidecolor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.insidecolor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "lightblack", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func lightblack(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.lightblack.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "lightgray", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func lightgray(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.lightgray.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "mainColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func mainColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.mainColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "marketer", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func marketer(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.marketer.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "offWhiteColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func offWhiteColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.offWhiteColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "rateColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func rateColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.rateColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "rateColorFullOpacity", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func rateColorFullOpacity(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.rateColorFullOpacity.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "rategray", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func rategray(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.rategray.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "secondColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func secondColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.secondColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "secondTextColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func secondTextColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.secondTextColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "shadowColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func shadowColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.shadowColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "shadowcat", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func shadowcat(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.shadowcat.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "shadowedit", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func shadowedit(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.shadowedit.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "textColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func textColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.textColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "textcolorblack", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func textcolorblack(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.textcolorblack.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "thirdColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func thirdColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.thirdColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "thirdTextColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func thirdTextColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.thirdTextColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "titlesGray", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func titlesGray(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.titlesGray.name)
-    }
-    #endif
-
-    #if os(watchOS)
     /// `UIColor(named: "txtblue", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func txtblue(_: Void = ()) -> UIKit.UIColor? {
@@ -1469,58 +213,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "txtlightgray", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func txtlightgray(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.txtlightgray.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "walletRed", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func walletRed(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.walletRed.name)
-    }
-    #endif
-
-    #if os(watchOS)
     /// `UIColor(named: "whiteColor", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func whiteColor(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.whiteColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "whiteOpacity20", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func whiteOpacity20(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.whiteOpacity20.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "whiteOpacity30", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func whiteOpacity30(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.whiteOpacity30.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "whiteOpacity50", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func whiteOpacity50(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.whiteOpacity50.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "whitetransperenet", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func whitetransperenet(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.whitetransperenet.name)
     }
     #endif
 
@@ -22272,12 +20968,49 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try forgetpassStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try loginStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try onboardingStoryboard.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try resetpasswordStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try signupStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try verifyCodeStoryboard.validate()
+      #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct forgetpassStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ForgetpassVC
+
+      let bundle = R.hostingBundle
+      let forgetpassVC = StoryboardViewControllerResource<ForgetpassVC>(identifier: "ForgetpassVC")
+      let name = "ForgetpassStoryboard"
+
+      func forgetpassVC(_: Void = ()) -> ForgetpassVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: forgetpassVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.forgetpassStoryboard().forgetpassVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'forgetpassVC' could not be loaded from storyboard 'ForgetpassStoryboard' as 'ForgetpassVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -22290,6 +21023,28 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct loginStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LoginVC
+
+      let bundle = R.hostingBundle
+      let loginVC = StoryboardViewControllerResource<LoginVC>(identifier: "LoginVC")
+      let name = "LoginStoryboard"
+
+      func loginVC(_: Void = ()) -> LoginVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.loginStoryboard().loginVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginVC' could not be loaded from storyboard 'LoginStoryboard' as 'LoginVC'.") }
       }
 
       fileprivate init() {}
@@ -22312,6 +21067,72 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.onboardingStoryboard().onboardingVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'onboardingVC' could not be loaded from storyboard 'OnboardingStoryboard' as 'OnboardingVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct resetpasswordStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ResetpasswordVC
+
+      let bundle = R.hostingBundle
+      let name = "ResetpasswordStoryboard"
+      let resetpasswordVC = StoryboardViewControllerResource<ResetpasswordVC>(identifier: "ResetpasswordVC")
+
+      func resetpasswordVC(_: Void = ()) -> ResetpasswordVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: resetpasswordVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.resetpasswordStoryboard().resetpasswordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'resetpasswordVC' could not be loaded from storyboard 'ResetpasswordStoryboard' as 'ResetpasswordVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct signupStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SignupVC
+
+      let bundle = R.hostingBundle
+      let name = "SignupStoryboard"
+      let signupVC = StoryboardViewControllerResource<SignupVC>(identifier: "SignupVC")
+
+      func signupVC(_: Void = ()) -> SignupVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: signupVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.signupStoryboard().signupVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'signupVC' could not be loaded from storyboard 'SignupStoryboard' as 'SignupVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct verifyCodeStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = VerifyCodeVC
+
+      let bundle = R.hostingBundle
+      let name = "VerifyCodeStoryboard"
+      let verifyCodeVC = StoryboardViewControllerResource<VerifyCodeVC>(identifier: "VerifyCodeVC")
+
+      func verifyCodeVC(_: Void = ()) -> VerifyCodeVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: verifyCodeVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.verifyCodeStoryboard().verifyCodeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'verifyCodeVC' could not be loaded from storyboard 'VerifyCodeStoryboard' as 'VerifyCodeVC'.") }
       }
 
       fileprivate init() {}

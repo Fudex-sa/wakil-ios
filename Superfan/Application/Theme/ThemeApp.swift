@@ -10,16 +10,16 @@ import UIKit
 struct ThemeApp {
     struct Fonts {
         static func lightFont(size: CGFloat) -> UIFont {
-            return  UIFont.init(name: "Muli-Light", size: size) ?? UIFont.systemFont(ofSize: size , weight: .light)
+            return  UIFont.init(name: "TajawalLight", size: size) ?? UIFont.systemFont(ofSize: size , weight: .light)
         }
         static func regularFont(size: CGFloat) -> UIFont {
-            return UIFont.init(name: "Muli", size: size) ?? UIFont.systemFont(ofSize: size , weight: .regular)
+            return UIFont.init(name: "TajawalRegular", size: size) ?? UIFont.systemFont(ofSize: size , weight: .regular)
         }
         static func mediumFont(size: CGFloat) -> UIFont {
-            return UIFont.init(name: "Muli-SemiBold", size: size) ??  UIFont.systemFont(ofSize: size  , weight: .medium)
+            return UIFont.init(name: "TajawalMedium", size: size) ??  UIFont.systemFont(ofSize: size  , weight: .medium)
         }
         static func boldFont(size: CGFloat) -> UIFont {
-            return UIFont.init(name: "Muli-Bold", size: size) ??   UIFont.systemFont(ofSize: size , weight: .bold)
+            return UIFont.init(name: "TajawalBold", size: size) ??   UIFont.systemFont(ofSize: size , weight: .bold)
         }
         static func mainFont() -> UIFont {
             return UIFont.systemFont(ofSize: 17)
