@@ -30,7 +30,6 @@ pod 'FBSDKLoginKit', '~> 14.0'
 pod 'FBSDKShareKit', '~> 14.0'
 pod 'GoogleSignIn'
 pod 'Cache'
-pod 'ESTabBarController'
 pod 'FloatingTabBarController'
 end
 
