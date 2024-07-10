@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import ESTabBarController
 import FloatingTabBarController
 
 // MARK: - ...  ViewController - Vars
