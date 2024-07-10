@@ -11,6 +11,11 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ChangelanguageVC: BaseController {
+    @IBOutlet weak var englishBtn: RadioButton!
+    @IBOutlet weak var arabicBtn: RadioButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var englishView: UIView!
+    @IBOutlet weak var arabicView: UIView!
     var viewModel: ChangelanguageViewModel?
     var coordinator: ChangelanguageCoordinator?
 }
