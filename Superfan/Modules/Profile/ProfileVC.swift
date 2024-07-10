@@ -11,6 +11,14 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ProfileVC: BaseController {
+    @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var editPassBtn: UIButton!
+    @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var mapLbl: UILabel!
+    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var phoneTxf: UITextField!
+    @IBOutlet weak var emailTxf: UITextField!
+    @IBOutlet weak var userTxf: UITextField!
     var viewModel: ProfileViewModel?
     var coordinator: ProfileCoordinator?
 }
