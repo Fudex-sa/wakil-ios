@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class EditemailVC: BaseController {
+    @IBOutlet weak var emailTxf: UITextField!
+    @IBOutlet weak var editBtn: UIButton!
     var viewModel: EditemailViewModel?
     var coordinator: EditemailCoordinator?
 }

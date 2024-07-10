@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class EditphoneVC: BaseController {
+    @IBOutlet weak var phoneTxf: UITextField!
+    @IBOutlet weak var editBtn: UIButton!
     var viewModel: EditphoneViewModel?
     var coordinator: EditphoneCoordinator?
 }
