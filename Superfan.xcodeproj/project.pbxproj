@@ -118,6 +118,26 @@
 		66DB2DE82C3C172B00BE155C /* ClubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DB2DE52C3C172B00BE155C /* ClubCollectionViewCell.swift */; };
 		66DE7D9D2738008700CAD557 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */; };
 		66DE7D9E2738008700CAD557 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */; };
+		66EA910D2C3EC36F0027154F /* EditprofileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EA91092C3EC36F0027154F /* EditprofileStoryboard.storyboard */; };
+		66EA910E2C3EC36F0027154F /* EditprofileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91082C3EC36F0027154F /* EditprofileCoordinator.swift */; };
+		66EA910F2C3EC36F0027154F /* EditprofileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA910A2C3EC36F0027154F /* EditprofileModel.swift */; };
+		66EA91102C3EC36F0027154F /* EditprofileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA910B2C3EC36F0027154F /* EditprofileVC.swift */; };
+		66EA91112C3EC36F0027154F /* EditprofileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA910C2C3EC36F0027154F /* EditprofileViewModel.swift */; };
+		66EA91182C3EC3950027154F /* EditphoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EA91142C3EC3950027154F /* EditphoneStoryboard.storyboard */; };
+		66EA91192C3EC3950027154F /* EditphoneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91132C3EC3950027154F /* EditphoneCoordinator.swift */; };
+		66EA911A2C3EC3950027154F /* EditphoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91152C3EC3950027154F /* EditphoneModel.swift */; };
+		66EA911B2C3EC3950027154F /* EditphoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91162C3EC3950027154F /* EditphoneVC.swift */; };
+		66EA911C2C3EC3950027154F /* EditphoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91172C3EC3950027154F /* EditphoneViewModel.swift */; };
+		66EA91232C3EC3C20027154F /* EditemailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EA911F2C3EC3C20027154F /* EditemailStoryboard.storyboard */; };
+		66EA91242C3EC3C20027154F /* EditemailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA911E2C3EC3C20027154F /* EditemailCoordinator.swift */; };
+		66EA91252C3EC3C20027154F /* EditemailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91202C3EC3C20027154F /* EditemailModel.swift */; };
+		66EA91262C3EC3C20027154F /* EditemailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91212C3EC3C20027154F /* EditemailVC.swift */; };
+		66EA91272C3EC3C20027154F /* EditemailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91222C3EC3C20027154F /* EditemailViewModel.swift */; };
+		66EA912E2C3EC3EE0027154F /* EditpasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EA912A2C3EC3EE0027154F /* EditpasswordStoryboard.storyboard */; };
+		66EA912F2C3EC3EE0027154F /* EditpasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91292C3EC3EE0027154F /* EditpasswordCoordinator.swift */; };
+		66EA91302C3EC3EE0027154F /* EditpasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA912B2C3EC3EE0027154F /* EditpasswordModel.swift */; };
+		66EA91312C3EC3EE0027154F /* EditpasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA912C2C3EC3EE0027154F /* EditpasswordVC.swift */; };
+		66EA91322C3EC3EE0027154F /* EditpasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA912D2C3EC3EE0027154F /* EditpasswordViewModel.swift */; };
 		66F7C2F3278C68D800E449F6 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66F7C2F0278C68D800E449F6 /* Muli-SemiBold.ttf */; };
 		66F7C2F4278C68D800E449F6 /* Muli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66F7C2F1278C68D800E449F6 /* Muli.ttf */; };
 		66F7C2F5278C68D800E449F6 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66F7C2F2278C68D800E449F6 /* Muli-Bold.ttf */; };
@@ -651,6 +671,26 @@
 		66DB2DE62C3C172B00BE155C /* ClubCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubCollectionViewCell.xib; sourceTree = "<group>"; };
 		66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		66EA91082C3EC36F0027154F /* EditprofileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditprofileCoordinator.swift; sourceTree = "<group>"; };
+		66EA91092C3EC36F0027154F /* EditprofileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditprofileStoryboard.storyboard; sourceTree = "<group>"; };
+		66EA910A2C3EC36F0027154F /* EditprofileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditprofileModel.swift; sourceTree = "<group>"; };
+		66EA910B2C3EC36F0027154F /* EditprofileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditprofileVC.swift; sourceTree = "<group>"; };
+		66EA910C2C3EC36F0027154F /* EditprofileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditprofileViewModel.swift; sourceTree = "<group>"; };
+		66EA91132C3EC3950027154F /* EditphoneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditphoneCoordinator.swift; sourceTree = "<group>"; };
+		66EA91142C3EC3950027154F /* EditphoneStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditphoneStoryboard.storyboard; sourceTree = "<group>"; };
+		66EA91152C3EC3950027154F /* EditphoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditphoneModel.swift; sourceTree = "<group>"; };
+		66EA91162C3EC3950027154F /* EditphoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditphoneVC.swift; sourceTree = "<group>"; };
+		66EA91172C3EC3950027154F /* EditphoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditphoneViewModel.swift; sourceTree = "<group>"; };
+		66EA911E2C3EC3C20027154F /* EditemailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditemailCoordinator.swift; sourceTree = "<group>"; };
+		66EA911F2C3EC3C20027154F /* EditemailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditemailStoryboard.storyboard; sourceTree = "<group>"; };
+		66EA91202C3EC3C20027154F /* EditemailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditemailModel.swift; sourceTree = "<group>"; };
+		66EA91212C3EC3C20027154F /* EditemailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditemailVC.swift; sourceTree = "<group>"; };
+		66EA91222C3EC3C20027154F /* EditemailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditemailViewModel.swift; sourceTree = "<group>"; };
+		66EA91292C3EC3EE0027154F /* EditpasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditpasswordCoordinator.swift; sourceTree = "<group>"; };
+		66EA912A2C3EC3EE0027154F /* EditpasswordStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditpasswordStoryboard.storyboard; sourceTree = "<group>"; };
+		66EA912B2C3EC3EE0027154F /* EditpasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditpasswordModel.swift; sourceTree = "<group>"; };
+		66EA912C2C3EC3EE0027154F /* EditpasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditpasswordVC.swift; sourceTree = "<group>"; };
+		66EA912D2C3EC3EE0027154F /* EditpasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditpasswordViewModel.swift; sourceTree = "<group>"; };
 		66F7C2F0278C68D800E449F6 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
 		66F7C2F1278C68D800E449F6 /* Muli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Muli.ttf; sourceTree = "<group>"; };
 		66F7C2F2278C68D800E449F6 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
@@ -1385,6 +1425,54 @@
 				66DB2DE62C3C172B00BE155C /* ClubCollectionViewCell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		66EA91072C3EC3460027154F /* Editprofile */ = {
+			isa = PBXGroup;
+			children = (
+				66EA91082C3EC36F0027154F /* EditprofileCoordinator.swift */,
+				66EA91092C3EC36F0027154F /* EditprofileStoryboard.storyboard */,
+				66EA910A2C3EC36F0027154F /* EditprofileModel.swift */,
+				66EA910B2C3EC36F0027154F /* EditprofileVC.swift */,
+				66EA910C2C3EC36F0027154F /* EditprofileViewModel.swift */,
+			);
+			path = Editprofile;
+			sourceTree = "<group>";
+		};
+		66EA91122C3EC37C0027154F /* Editphone */ = {
+			isa = PBXGroup;
+			children = (
+				66EA91132C3EC3950027154F /* EditphoneCoordinator.swift */,
+				66EA91142C3EC3950027154F /* EditphoneStoryboard.storyboard */,
+				66EA91152C3EC3950027154F /* EditphoneModel.swift */,
+				66EA91162C3EC3950027154F /* EditphoneVC.swift */,
+				66EA91172C3EC3950027154F /* EditphoneViewModel.swift */,
+			);
+			path = Editphone;
+			sourceTree = "<group>";
+		};
+		66EA911D2C3EC3A80027154F /* Editemail */ = {
+			isa = PBXGroup;
+			children = (
+				66EA911E2C3EC3C20027154F /* EditemailCoordinator.swift */,
+				66EA911F2C3EC3C20027154F /* EditemailStoryboard.storyboard */,
+				66EA91202C3EC3C20027154F /* EditemailModel.swift */,
+				66EA91212C3EC3C20027154F /* EditemailVC.swift */,
+				66EA91222C3EC3C20027154F /* EditemailViewModel.swift */,
+			);
+			path = Editemail;
+			sourceTree = "<group>";
+		};
+		66EA91282C3EC3CF0027154F /* Editpassword */ = {
+			isa = PBXGroup;
+			children = (
+				66EA91292C3EC3EE0027154F /* EditpasswordCoordinator.swift */,
+				66EA912A2C3EC3EE0027154F /* EditpasswordStoryboard.storyboard */,
+				66EA912B2C3EC3EE0027154F /* EditpasswordModel.swift */,
+				66EA912C2C3EC3EE0027154F /* EditpasswordVC.swift */,
+				66EA912D2C3EC3EE0027154F /* EditpasswordViewModel.swift */,
+			);
+			path = Editpassword;
 			sourceTree = "<group>";
 		};
 		77021ABF2537455C006F720B /* SupportFiles */ = {
@@ -2549,6 +2637,10 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66EA91282C3EC3CF0027154F /* Editpassword */,
+				66EA911D2C3EC3A80027154F /* Editemail */,
+				66EA91122C3EC37C0027154F /* Editphone */,
+				66EA91072C3EC3460027154F /* Editprofile */,
 				663382842C3EAB4300160379 /* Changelanguage */,
 				663382792C3EAB1E00160379 /* Contactus */,
 				6633826E2C3EAAFE00160379 /* Aboutus */,
@@ -2816,6 +2908,7 @@
 				C86BF983266947F0002D87BC /* warningIcon@3x.png in Resources */,
 				664DCB002C3BC2460011DB96 /* TajawalMedium.ttf in Resources */,
 				6636D7EF2C3AE3F4007116F7 /* ResetpasswordStoryboard.storyboard in Resources */,
+				66EA91232C3EC3C20027154F /* EditemailStoryboard.storyboard in Resources */,
 				77228EB2275667F8008F11B3 /* CalendarDateRangePickerHeaderView.xib in Resources */,
 				C83A503D272F439B00996984 /* Config.xcconfig in Resources */,
 				66293C102C3D67EC008F3FB8 /* SelectclubTableViewCell.xib in Resources */,
@@ -2838,6 +2931,7 @@
 				C86BF995266947F0002D87BC /* CenteredView.xib in Resources */,
 				C86BF990266947F0002D87BC /* successIcon@2x.png in Resources */,
 				C871C72A272FEB7B00DCBD2D /* SFPRODISPLAYREGULAR.OTF in Resources */,
+				66EA910D2C3EC36F0027154F /* EditprofileStoryboard.storyboard in Resources */,
 				6636D7D92C3AE3A0007116F7 /* SignupStoryboard.storyboard in Resources */,
 				C86BF9A3266947F0002D87BC /* successIconLight@3x.png in Resources */,
 				C871C737272FEB7C00DCBD2D /* SFPRODISPLAYULTRALIGHTITALIC.OTF in Resources */,
@@ -2848,9 +2942,11 @@
 				C86BF99A266947F0002D87BC /* warningIconSubtle@3x.png in Resources */,
 				C84539AA2729887000004173 /* NeoSansArabic-Regular.ttf in Resources */,
 				C871C732272FEB7C00DCBD2D /* SFPRODISPLAYBOLD.OTF in Resources */,
+				66EA912E2C3EC3EE0027154F /* EditpasswordStoryboard.storyboard in Resources */,
 				6636D7CE2C3AE370007116F7 /* LoginStoryboard.storyboard in Resources */,
 				C871C726272FEB7B00DCBD2D /* Muli-BoldItalic.ttf in Resources */,
 				C84539A82729887000004173 /* NeoSansArabic-Light.ttf in Resources */,
+				66EA91182C3EC3950027154F /* EditphoneStoryboard.storyboard in Resources */,
 				66950BE82C3D3BBE00522EE0 /* NotificationStoryboard.storyboard in Resources */,
 				6636D7FA2C3AE429007116F7 /* VerifyCodeStoryboard.storyboard in Resources */,
 				77C5F4A72534814200E70C4C /* Assets.xcassets in Resources */,
@@ -3072,6 +3168,10 @@
 				66B6AA952C3BD41200BC277C /* SelectclubModel.swift in Sources */,
 				66B6AA962C3BD41200BC277C /* SelectclubVC.swift in Sources */,
 				66B6AA972C3BD41200BC277C /* SelectclubViewModel.swift in Sources */,
+				66EA912F2C3EC3EE0027154F /* EditpasswordCoordinator.swift in Sources */,
+				66EA91302C3EC3EE0027154F /* EditpasswordModel.swift in Sources */,
+				66EA91312C3EC3EE0027154F /* EditpasswordVC.swift in Sources */,
+				66EA91322C3EC3EE0027154F /* EditpasswordViewModel.swift in Sources */,
 				C8F358EA266E669700FEE18B /* NetworkFailScreenContract.swift in Sources */,
 				C84539812729880600004173 /* ExtensionUITableViewCell.swift in Sources */,
 				C86A6A42266D240D0030504A /* ValidatorUI.swift in Sources */,
@@ -3120,6 +3220,10 @@
 				66DE7D9D2738008700CAD557 /* BaseCollectionViewCell.swift in Sources */,
 				C8C09318272ABDA200E2270A /* UIBarButtonItem+Combine.swift in Sources */,
 				C8BABEE526663D100080B058 /* ThemeApp.swift in Sources */,
+				66EA91192C3EC3950027154F /* EditphoneCoordinator.swift in Sources */,
+				66EA911A2C3EC3950027154F /* EditphoneModel.swift in Sources */,
+				66EA911B2C3EC3950027154F /* EditphoneVC.swift in Sources */,
+				66EA911C2C3EC3950027154F /* EditphoneViewModel.swift in Sources */,
 				66B6AA8C2C3BCF1400BC277C /* OnboardingCollectionViewCell.swift in Sources */,
 				C871C9792730231300DCBD2D /* SkeletonFlow.swift in Sources */,
 				667FD7F328917A270005254B /* OnboardingCoordinator.swift in Sources */,
@@ -3323,6 +3427,14 @@
 				C853B96726D7F9450008F09D /* OpenService.swift in Sources */,
 				C871C8A3272FECF200DCBD2D /* FacebookDriver.swift in Sources */,
 				C84539932729882800004173 /* BaseViewControllerProtocol.swift in Sources */,
+				66EA910E2C3EC36F0027154F /* EditprofileCoordinator.swift in Sources */,
+				66EA91242C3EC3C20027154F /* EditemailCoordinator.swift in Sources */,
+				66EA91252C3EC3C20027154F /* EditemailModel.swift in Sources */,
+				66EA91262C3EC3C20027154F /* EditemailVC.swift in Sources */,
+				66EA91272C3EC3C20027154F /* EditemailViewModel.swift in Sources */,
+				66EA910F2C3EC36F0027154F /* EditprofileModel.swift in Sources */,
+				66EA91102C3EC36F0027154F /* EditprofileVC.swift in Sources */,
+				66EA91112C3EC36F0027154F /* EditprofileViewModel.swift in Sources */,
 				C853B94B26D7F9450008F09D /* SPPermissionsNativeController.swift in Sources */,
 				C871C8CA272FED0600DCBD2D /* SwipeTableViewCell+Display.swift in Sources */,
 				77228EB82756680E008F11B3 /* Configration.swift in Sources */,

@@ -124,6 +124,15 @@
                                                             <constraint firstAttribute="height" constant="24" id="Lqu-2W-Rii"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kk-mw-NZt">
+                                                        <rect key="frame" x="350" y="12" width="24" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="24" id="2SH-5V-nMl"/>
+                                                            <constraint firstAttribute="height" constant="24" id="yIl-ou-TFJ"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="edit"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="bordergray"/>
                                                 <constraints>
@@ -134,6 +143,8 @@
                                                     <constraint firstItem="Hna-Co-muh" firstAttribute="centerY" secondItem="fAh-dT-ewC" secondAttribute="centerY" id="eTJ-9w-Nfq"/>
                                                     <constraint firstItem="Hna-Co-muh" firstAttribute="leading" secondItem="fAh-dT-ewC" secondAttribute="leading" constant="12" id="scT-2M-XZp"/>
                                                     <constraint firstAttribute="height" constant="48" id="tG1-0s-AqK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4Kk-mw-NZt" secondAttribute="trailing" constant="8" id="xFn-xO-m5w"/>
+                                                    <constraint firstItem="4Kk-mw-NZt" firstAttribute="centerY" secondItem="fAh-dT-ewC" secondAttribute="centerY" id="zx1-c0-INU"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -164,6 +175,15 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59l-Kg-ONS">
+                                                        <rect key="frame" x="350" y="12" width="24" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="FYo-PI-8QO"/>
+                                                            <constraint firstAttribute="width" constant="24" id="FrT-Jy-lWc"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="edit"/>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Call" translatesAutoresizingMaskIntoConstraints="NO" id="MIk-wI-Z1W">
                                                         <rect key="frame" x="12" y="12" width="24" height="24"/>
                                                         <constraints>
@@ -176,10 +196,12 @@
                                                 <constraints>
                                                     <constraint firstItem="MIk-wI-Z1W" firstAttribute="leading" secondItem="bIT-hO-KVl" secondAttribute="leading" constant="12" id="6mx-vA-EnG"/>
                                                     <constraint firstItem="bIa-ZH-7xA" firstAttribute="top" secondItem="bIT-hO-KVl" secondAttribute="top" id="HuB-ge-ECb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="59l-Kg-ONS" secondAttribute="trailing" constant="8" id="I1x-21-vtS"/>
                                                     <constraint firstItem="bIa-ZH-7xA" firstAttribute="leading" secondItem="MIk-wI-Z1W" secondAttribute="trailing" constant="7.5" id="WUc-Ro-UL0"/>
                                                     <constraint firstAttribute="bottom" secondItem="bIa-ZH-7xA" secondAttribute="bottom" id="WWC-Ma-oxp"/>
                                                     <constraint firstItem="MIk-wI-Z1W" firstAttribute="centerY" secondItem="bIT-hO-KVl" secondAttribute="centerY" id="e23-bw-Lrq"/>
                                                     <constraint firstAttribute="trailing" secondItem="bIa-ZH-7xA" secondAttribute="trailing" constant="10" id="j36-8U-KHS"/>
+                                                    <constraint firstItem="59l-Kg-ONS" firstAttribute="centerY" secondItem="bIT-hO-KVl" secondAttribute="centerY" id="uSe-0B-Nfp"/>
                                                     <constraint firstAttribute="height" constant="48" id="xOi-MN-1DK"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -341,6 +363,7 @@
     </scenes>
     <resources>
         <image name="Call" width="24" height="24"/>
+        <image name="edit" width="16" height="16"/>
         <image name="email" width="20" height="16"/>
         <image name="map" width="24" height="24"/>
         <image name="user" width="18" height="18"/>
