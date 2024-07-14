@@ -9,7 +9,7 @@ import UIKit
 class UserRoot: Codable {
 
     var responseData: Token?
-    var data: User?
+    var data: UserData?
     var expires_in: Int?
     var access_token: String?
     //var token: String?
@@ -22,20 +22,49 @@ class UserRoot: Codable {
 }
 // MARK: - ...  User Codable from API
 extension UserRoot {
+    class UserData: Codable {
+        var user: User?
+        var token: String?
+    }
     class User: Codable {
-        
         var email: String?
         var dialCode: String?
+        var youtubeLink: String?
         var name: String?
-        var logo: String?
+        var photo: String?
         var description: String?
         var mobile: String?
         var images: [String]?
+        var whatsmobile: String?
+        var birthdate: String?
+        var countryId: Int?
+        var positionId: Int?
+        var age: Int?
+        var birthyear: Int?
+        var clubName: String?
+        var prferedfoot: Int?
+        var isverified: Int?
+        var isSocial: Int?
+        var city: DatumSelectCountryModel?
+        var country: DatumSelectCountryModel?
         var companyOffers: [CompanyOffer]?
         enum CodingKeys: String, CodingKey {
             case email
+            case age
+            case youtubeLink = "youtube_link"
+            case isSocial = "is_social"
+            case clubName = "club_name"
+            case birthyear = "birth_year"
+            case city
+            case country
             case name
-            case logo
+            case photo
+            case whatsmobile = "whats_mobile"
+            case birthdate = "birth_date"
+            case countryId = "country_id"
+            case prferedfoot = "prfered_foot"
+            case positionId = "position_id"
+            case isverified = "is_verified"
             case description
             case mobile
             case images
@@ -138,10 +167,10 @@ extension UserRoot {
         let user = UD.user
         return user
     }
-    // MARK: - ...  Function for fetch token 
+    // MARK: - ...  Function for fetch token
     public static func token() -> String? {
         let user = UD.user
-        return user?.responseData?.access_Token
+        return user?.data?.token
     }
     // MARK: - ...  Function for logout user
     public static func logout() {
@@ -154,7 +183,7 @@ extension UserRoot {
     // MARK: - ...  Function for fetch user data
     public static func user() -> User? {
         let user = UD.user
-        return user?.data
+        return user?.data?.user
     }
     
 //    public static func savesaller( remember: Bool = false) {

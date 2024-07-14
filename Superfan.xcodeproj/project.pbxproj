@@ -69,10 +69,10 @@
 		6636D7F82C3AE429007116F7 /* VerifyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6636D7F42C3AE429007116F7 /* VerifyCodeVC.swift */; };
 		6636D7F92C3AE429007116F7 /* VerifyCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6636D7F52C3AE429007116F7 /* VerifyCodeViewModel.swift */; };
 		6636D7FA2C3AE429007116F7 /* VerifyCodeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6636D7F22C3AE429007116F7 /* VerifyCodeStoryboard.storyboard */; };
-		664DCAFD2C3BC2460011DB96 /* TajawalBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAF92C3BC2450011DB96 /* TajawalBold.ttf */; };
-		664DCAFE2C3BC2460011DB96 /* TajawalRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFA2C3BC2460011DB96 /* TajawalRegular.ttf */; };
-		664DCAFF2C3BC2460011DB96 /* TajawalLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFB2C3BC2460011DB96 /* TajawalLight.ttf */; };
-		664DCB002C3BC2460011DB96 /* TajawalMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFC2C3BC2460011DB96 /* TajawalMedium.ttf */; };
+		664DCAFD2C3BC2460011DB96 /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */; };
+		664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */; };
+		664DCAFF2C3BC2460011DB96 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */; };
+		664DCB002C3BC2460011DB96 /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */; };
 		664FE17F2C3BEB620081C90B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FE17E2C3BEB620081C90B /* PaddingLabel.swift */; };
 		66762D2E2C3EB79E00D36BC6 /* contact.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66762D2D2C3EB79D00D36BC6 /* contact.gif */; };
 		667FD7F328917A270005254B /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FD7EE28917A270005254B /* OnboardingCoordinator.swift */; };
@@ -100,6 +100,11 @@
 		66950BE82C3D3BBE00522EE0 /* NotificationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66950BE02C3D3BBD00522EE0 /* NotificationStoryboard.storyboard */; };
 		66950BEC2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66950BEB2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib */; };
 		66950BED2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66950BEA2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift */; };
+		66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */; };
+		66AEC2D12C43BF9D00BC260E /* AppleDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */; };
+		66AEC2D62C43C49900BC260E /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */; };
+		66AEC2D72C43C49900BC260E /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D42C43C49800BC260E /* JWT.swift */; };
+		66AEC2D82C43C49900BC260E /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D52C43C49900BC260E /* JWTDecode.swift */; };
 		66B6AA8B2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66B6AA8A2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib */; };
 		66B6AA8C2C3BCF1400BC277C /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA892C3BCF1400BC277C /* OnboardingCollectionViewCell.swift */; };
 		66B6AA932C3BD41200BC277C /* SelectclubStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B6AA8F2C3BD41200BC277C /* SelectclubStoryboard.storyboard */; };
@@ -621,10 +626,10 @@
 		6636D7F32C3AE429007116F7 /* VerifyCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeModel.swift; sourceTree = "<group>"; };
 		6636D7F42C3AE429007116F7 /* VerifyCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeVC.swift; sourceTree = "<group>"; };
 		6636D7F52C3AE429007116F7 /* VerifyCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewModel.swift; sourceTree = "<group>"; };
-		664DCAF92C3BC2450011DB96 /* TajawalBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TajawalBold.ttf; sourceTree = "<group>"; };
-		664DCAFA2C3BC2460011DB96 /* TajawalRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TajawalRegular.ttf; sourceTree = "<group>"; };
-		664DCAFB2C3BC2460011DB96 /* TajawalLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TajawalLight.ttf; sourceTree = "<group>"; };
-		664DCAFC2C3BC2460011DB96 /* TajawalMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TajawalMedium.ttf; sourceTree = "<group>"; };
+		664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
+		664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
+		664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
+		664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
 		664FE17E2C3BEB620081C90B /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		66762D2D2C3EB79D00D36BC6 /* contact.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = contact.gif; sourceTree = "<group>"; };
 		667FD7EE28917A270005254B /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -652,6 +657,11 @@
 		66950BE32C3D3BBD00522EE0 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		66950BEA2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchsHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		66950BEB2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchsHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleModel.swift; sourceTree = "<group>"; };
+		66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleDriver.swift; sourceTree = "<group>"; };
+		66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
+		66AEC2D42C43C49800BC260E /* JWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
+		66AEC2D52C43C49900BC260E /* JWTDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecode.swift; sourceTree = "<group>"; };
 		66B6AA892C3BCF1400BC277C /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		66B6AA8A2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		66B6AA8E2C3BD41200BC277C /* SelectclubCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubCoordinator.swift; sourceTree = "<group>"; };
@@ -1383,6 +1393,25 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		66AEC2CD2C43BF7400BC260E /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */,
+				66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */,
+			);
+			path = Apple;
+			sourceTree = "<group>";
+		};
+		66AEC2D22C43C46000BC260E /* JWTDecode */ = {
+			isa = PBXGroup;
+			children = (
+				66AEC2D42C43C49800BC260E /* JWT.swift */,
+				66AEC2D52C43C49900BC260E /* JWTDecode.swift */,
+				66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */,
+			);
+			path = JWTDecode;
+			sourceTree = "<group>";
+		};
 		66B6AA882C3BCEE100BC277C /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1534,6 +1563,7 @@
 		77569F7B253482EE00BFE53C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				66AEC2D22C43C46000BC260E /* JWTDecode */,
 				664FE17E2C3BEB620081C90B /* PaddingLabel.swift */,
 				C871C8EE272FF00300DCBD2D /* BaseController+EX.swift */,
 				C871C930272FFACC00DCBD2D /* TimerHelper.swift */,
@@ -2305,10 +2335,10 @@
 				C871C718272FEB7B00DCBD2D /* Muli-Italic.ttf */,
 				C871C719272FEB7B00DCBD2D /* Muli-SemiBold.ttf */,
 				C871C71A272FEB7B00DCBD2D /* SFPRODISPLAYTHINITALIC.OTF */,
-				664DCAF92C3BC2450011DB96 /* TajawalBold.ttf */,
-				664DCAFB2C3BC2460011DB96 /* TajawalLight.ttf */,
-				664DCAFC2C3BC2460011DB96 /* TajawalMedium.ttf */,
-				664DCAFA2C3BC2460011DB96 /* TajawalRegular.ttf */,
+				664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */,
+				664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */,
+				664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */,
+				664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */,
 				C871C71C272FEB7B00DCBD2D /* all_round.ttf */,
 				C871C71D272FEB7B00DCBD2D /* SFPRODISPLAYBOLD.OTF */,
 				C871C71E272FEB7B00DCBD2D /* Muli-Light.ttf */,
@@ -2323,6 +2353,7 @@
 		C871C888272FECF200DCBD2D /* Socialite */ = {
 			isa = PBXGroup;
 			children = (
+				66AEC2CD2C43BF7400BC260E /* Apple */,
 				C871C889272FECF200DCBD2D /* Twitter */,
 				C871C88D272FECF200DCBD2D /* Core */,
 				C871C891272FECF200DCBD2D /* Google */,
@@ -2906,7 +2937,7 @@
 				C86BF99D266947F0002D87BC /* successIconSubtle@2x.png in Resources */,
 				66F7C2F4278C68D800E449F6 /* Muli.ttf in Resources */,
 				C86BF983266947F0002D87BC /* warningIcon@3x.png in Resources */,
-				664DCB002C3BC2460011DB96 /* TajawalMedium.ttf in Resources */,
+				664DCB002C3BC2460011DB96 /* Tajawal-Medium.ttf in Resources */,
 				6636D7EF2C3AE3F4007116F7 /* ResetpasswordStoryboard.storyboard in Resources */,
 				66EA91232C3EC3C20027154F /* EditemailStoryboard.storyboard in Resources */,
 				77228EB2275667F8008F11B3 /* CalendarDateRangePickerHeaderView.xib in Resources */,
@@ -2924,7 +2955,7 @@
 				6636D7E42C3AE3CB007116F7 /* ForgetpassStoryboard.storyboard in Resources */,
 				C86BF985266947F0002D87BC /* infoIconSubtle@2x.png in Resources */,
 				66B6AA8B2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib in Resources */,
-				664DCAFE2C3BC2460011DB96 /* TajawalRegular.ttf in Resources */,
+				664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */,
 				C86BF97E266947F0002D87BC /* warningIcon@2x.png in Resources */,
 				C8F358F2266E670A00FEE18B /* NetworkFailScreen.xib in Resources */,
 				C871C723272FEB7B00DCBD2D /* SFPRODISPLAYSEMIBOLDITALIC.OTF in Resources */,
@@ -2951,7 +2982,7 @@
 				6636D7FA2C3AE429007116F7 /* VerifyCodeStoryboard.storyboard in Resources */,
 				77C5F4A72534814200E70C4C /* Assets.xcassets in Resources */,
 				C86BF998266947F0002D87BC /* warningIconLight@3x.png in Resources */,
-				664DCAFF2C3BC2460011DB96 /* TajawalLight.ttf in Resources */,
+				664DCAFF2C3BC2460011DB96 /* Tajawal-Light.ttf in Resources */,
 				C86BF987266947F0002D87BC /* successIconSubtle.png in Resources */,
 				C853B95926D7F9450008F09D /* Assets.xcassets in Resources */,
 				C86BF99C266947F0002D87BC /* successIcon.png in Resources */,
@@ -2999,7 +3030,7 @@
 				C86BF984266947F0002D87BC /* infoIcon@3x.png in Resources */,
 				E846000427A9786700007A44 /* Pull_To_Refresh.mp3 in Resources */,
 				C86BF98E266947F0002D87BC /* infoIconLight.png in Resources */,
-				664DCAFD2C3BC2460011DB96 /* TajawalBold.ttf in Resources */,
+				664DCAFD2C3BC2460011DB96 /* Tajawal-Bold.ttf in Resources */,
 				C86BF986266947F0002D87BC /* errorIcon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3132,6 +3163,7 @@
 				C86BF9B9266947F0002D87BC /* MessageView.swift in Sources */,
 				7756A089253482EF00BFE53C /* Downloader.swift in Sources */,
 				7756A17025348AD400BFE53C /* UIApplicationExtensions.swift in Sources */,
+				66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */,
 				C84539822729880600004173 /* CellProtocol.swift in Sources */,
 				E78C27D428725F4C00B345AC /* URL+FileSize.swift in Sources */,
 				C86A6A45266D241D0030504A /* ValidatorGuard.swift in Sources */,
@@ -3155,6 +3187,7 @@
 				C86BF91B2669473D002D87BC /* DateHelper.swift in Sources */,
 				7756A18225348AD400BFE53C /* IntExtensions.swift in Sources */,
 				C84539912729882800004173 /* BaseController.swift in Sources */,
+				66AEC2D62C43C49900BC260E /* JWTDecodeError.swift in Sources */,
 				C871480D266E691600AD75E8 /* Reachability.swift in Sources */,
 				C871C8BD272FED0600DCBD2D /* SwipeTableViewCellDelegate.swift in Sources */,
 				7756A0F6253482EF00BFE53C /* PublicHelper.swift in Sources */,
@@ -3275,6 +3308,7 @@
 				C86BF9A8266947F0002D87BC /* NSLayoutConstraint+Extensions.swift in Sources */,
 				66950BE42C3D3BBD00522EE0 /* NotificationCoordinator.swift in Sources */,
 				66950BE52C3D3BBD00522EE0 /* NotificationModel.swift in Sources */,
+				66AEC2D72C43C49900BC260E /* JWT.swift in Sources */,
 				66950BE62C3D3BBE00522EE0 /* NotificationVC.swift in Sources */,
 				66950BE72C3D3BBE00522EE0 /* NotificationViewModel.swift in Sources */,
 				C853B94A26D7F9450008F09D /* Depricated.swift in Sources */,
@@ -3303,6 +3337,7 @@
 				C871C99A2730231300DCBD2D /* UIView+CollectionSkeleton.swift in Sources */,
 				C871C8CC272FED0600DCBD2D /* SwipeCollectionViewCell+Accessibility.swift in Sources */,
 				23E16A2B2667A843001048E5 /* GalleryPickerDelegate.swift in Sources */,
+				66AEC2D12C43BF9D00BC260E /* AppleDriver.swift in Sources */,
 				C853B95526D7F9450008F09D /* SPPermissionsDialogView.swift in Sources */,
 				C871C99F2730231300DCBD2D /* AssociationPolicy.swift in Sources */,
 				7756A18325348AD400BFE53C /* OptionalExtensions.swift in Sources */,
@@ -3487,6 +3522,7 @@
 				C86BF9AA266947F0002D87BC /* Animator.swift in Sources */,
 				C871C9922730231300DCBD2D /* UIView+Transitions.swift in Sources */,
 				C871C931272FFACC00DCBD2D /* TimerHelper.swift in Sources */,
+				66AEC2D82C43C49900BC260E /* JWTDecode.swift in Sources */,
 				C84539842729880600004173 /* User.swift in Sources */,
 				C871C9842730231300DCBD2D /* UIView+Extension.swift in Sources */,
 				667FD7F728917A270005254B /* OnboardingViewModel.swift in Sources */,

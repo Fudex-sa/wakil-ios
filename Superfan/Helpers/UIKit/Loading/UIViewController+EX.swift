@@ -25,27 +25,32 @@ extension BaseController: LoadingContract {
 //        self.navigationController?.navigationBar.isUserInteractionEnabled = false
 //        self.tabBarController?.tabBar.isUserInteractionEnabled = false
 //        self.view.isUserInteractionEnabled = false
-        if imageContainerLoader?.superview != nil && imageContainerLoader?.superview == view {
-            return
-        } else {
-            imageContainerLoader?.removeFromSuperview()
-        }
-        imageContainerLoader = UIImageView()
-        view.addSubview(imageContainerLoader ?? UIView())
-        imageContainerLoader?.addWidthConstraint(toView: nil, constant: 200)
-        imageContainerLoader?.addHeightConstraint(toView: nil, constant: 200)
-        imageContainerLoader?.addCenterXConstraint(toView: view)
-        imageContainerLoader?.addCenterYConstraint(toView: view)
-        do {
-            loaderGIF = try UIImage(gifName: "Loading-Light.gif")
-            if UD.APP_MODE == ThemeApp.Mode.dark.rawValue {
-                loaderGIF = try UIImage(gifName: "Loading-Dark.gif")
-            }
-            imageContainerLoader?.setGifImage(loaderGIF)
-        } catch {
-            print(error.localizedDescription)
-        }
+//        if imageContainerLoader?.superview != nil && imageContainerLoader?.superview == view {
+//            return
+//        } else {
+//            imageContainerLoader?.removeFromSuperview()
+//        }
+//        imageContainerLoader = UIImageView()
+//        view.addSubview(imageContainerLoader ?? UIView())
+//        imageContainerLoader?.addWidthConstraint(toView: nil, constant: 200)
+//        imageContainerLoader?.addHeightConstraint(toView: nil, constant: 200)
+//        imageContainerLoader?.addCenterXConstraint(toView: view)
+//        imageContainerLoader?.addCenterYConstraint(toView: view)
+//        do {
+//            loaderGIF = try UIImage(gifName: "Loading-Light.gif")
+//            if UD.APP_MODE == ThemeApp.Mode.dark.rawValue {
+//                loaderGIF = try UIImage(gifName: "Loading-Dark.gif")
+//            }
+//            imageContainerLoader?.setGifImage(loaderGIF)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//        self.view.isUserInteractionEnabled = false
+        let progress = MBProgressHUD.showAdded(to: self.view, animated: true)
+        progress.mode = .indeterminate
         self.view.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        progress.show(animated: true)
 
 //        let progress = MBProgressHUD.showAdded(to: self.view, animated: true)
 //        progress.mode = .annularDeterminate
@@ -58,9 +63,11 @@ extension BaseController: LoadingContract {
 //        self.navigationController?.navigationBar.isUserInteractionEnabled = true
 //        self.tabBarController?.tabBar.isUserInteractionEnabled = true
         //MBProgressHUD.hide(for: self.view, animated: true)
-        imageContainerLoader?.removeFromSuperview()
+//        imageContainerLoader?.removeFromSuperview()
+//        self.view.isUserInteractionEnabled = true
+        MBProgressHUD.hide(for: self.view, animated: true)
         self.view.isUserInteractionEnabled = true
-        
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
     }
 }
 
@@ -90,7 +97,7 @@ extension BaseController: LoadingContract {
 //    func stopLoading() {
 //        imageContainerLoader?.removeFromSuperview()
 //        self.contentView.isUserInteractionEnabled = true
-//        
+//
 //    }
 //}
 extension BaseTableViewCell: LoadingContract {

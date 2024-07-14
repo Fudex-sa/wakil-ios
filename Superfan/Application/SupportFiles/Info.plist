@@ -92,10 +92,10 @@
     <true/>
     <key>UIAppFonts</key>
     <array>
-        <string>TajawalMedium.ttf</string>
-        <string>TajawalRegular.ttf</string>
-        <string>TajawalLight.ttf</string>
-        <string>TajawalBold.ttf</string>
+        <string>Tajawal-Medium.ttf</string>
+        <string>Tajawal-Regular.ttf</string>
+        <string>Tajawal-Light.ttf</string>
+        <string>Tajawal-Bold.ttf</string>
         <string>AlGhadTV-Regular.ttf</string>
         <string>AlGhadTV-Bold.ttf</string>
         <string>AraHamahHoms-Regular.ttf</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="60L-v6-ozs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePD-eB-2ib">
-                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="804"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdX-uj-jCj">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
@@ -157,7 +157,7 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                                 <color key="value" name="Black1"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                 </subviews>
@@ -195,7 +195,7 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                                 <color key="value" name="Black1"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="647-Ga-cQU">
@@ -251,7 +251,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Forgot your password?"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m16"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r16"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
@@ -306,7 +306,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Skip"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m16"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r16"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
@@ -494,7 +494,7 @@
                                                                 <color key="textColor" name="Black1"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m16"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r16"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Don't have an account?"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
@@ -525,12 +525,6 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" name="gray"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -557,11 +551,13 @@
                             <constraint firstItem="ePD-eB-2ib" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" id="oyB-2O-iGu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="W9Q-Oi-Tra"/>
                     <connections>
                         <outlet property="appleView" destination="k5F-HF-CzN" id="3e5-ao-RlZ"/>
                         <outlet property="eyeBtn" destination="dxu-xi-4UY" id="4q5-eQ-aO1"/>
                         <outlet property="forgetBtn" destination="4ln-Hu-qgr" id="Zu8-8I-ryu"/>
                         <outlet property="googleView" destination="hII-EZ-AbB" id="5uo-OV-hs5"/>
+                        <outlet property="langLbl" destination="f7E-Qx-hEP" id="9iA-x6-aAe"/>
                         <outlet property="langView" destination="OmF-5h-kZi" id="1Zm-zT-dAw"/>
                         <outlet property="loginBtn" destination="gS7-sS-HJO" id="aaa-SM-7kb"/>
                         <outlet property="loginTxf" destination="FAo-Jp-1hN" id="PfI-94-2vX"/>
@@ -571,6 +567,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-za-4cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033.3333333333335" y="-108.48214285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yma-qA-tva">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="60L-v6-ozs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3b1-s1-nLw">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="v1z-F3-ot6" kind="relationship" relationship="rootViewController" id="hOB-Th-wC7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wH5-t7-q63" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="123.18840579710145" y="-108.48214285714285"/>
         </scene>

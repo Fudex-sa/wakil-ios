@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class LoginVC: BaseController {
+    @IBOutlet weak var langLbl: UILabel!
     @IBOutlet weak var regBtn: UILabel!
     @IBOutlet weak var appleView: UIView!
     @IBOutlet weak var googleView: UIView!
@@ -23,6 +24,13 @@ class LoginVC: BaseController {
     @IBOutlet weak var langView: UIView!
     var viewModel: LoginViewModel?
     var coordinator: LoginCoordinator?
+    let appleDriver = AppleDriver()
+    lazy var validator: Validator? = {
+        let validator = Validator(guardOnSuperViewOfTextField: true)
+        validator.setUIType(.message).append(loginTxf, rules: [GuardRequired() , GuardNumeric()], title: "Mobile number or email".localized).holdColor()
+        validator.setUIType(.message).append(passwordTxf, rules: [GuardRequired() ], title: "password".localized).holdColor()
+        return validator
+    }()
 }
 
 // MARK: - ...  LifeCycle
@@ -35,16 +43,79 @@ extension LoginVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        setup()
+        bind()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.userdata.listen(on: { [weak self] value in
+            if self?.viewModel?.userdata.value?.data != nil {
+                if self?.viewModel?.userdata.value?.data?.user?.isverified ?? 0 == 1 {
+                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                }else {
+                    self?.coordinator?.verify()
+                }
+            }else {
+                self?.coordinator?.registersocail()
+            }
+        })
+       
+    }
 }
 // MARK: - ...  Functions
 extension LoginVC {
     func setup() {
+        regBtn.UIViewAction {
+            self.coordinator?.register()
+        }
+        forgetBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.forgetpass()
+        }).store(self)
+        loginBtn.publisher.listen(on: {[weak self] _ in
+            if self?.validator?.build() == false {
+                return
+            }
+            self?.startLoading()
+            var phone = self?.loginTxf.text ?? ""
+            self?.viewModel?.phone.send(self?.loginTxf.text ?? "")
+            self?.viewModel?.countryCode.send("+966")
+            self?.viewModel?.password.send(self?.passwordTxf.text ?? "")
+            self?.viewModel?.login()
+        }).store(self)
+        eyeBtn.publisher.listen(on: {[weak self] _ in
+            if self?.passwordTxf.isSecureTextEntry == true {
+                self?.passwordTxf.isSecureTextEntry = false
+                self?.eyeBtn.setImage(#imageLiteral(resourceName: "eye Active"), for: .normal)
+            } else {
+                self?.passwordTxf.isSecureTextEntry = true
+                self?.eyeBtn.setImage(#imageLiteral(resourceName: "eye"), for: .normal)
+            }
+        }).store(self)
+        skipBtn.publisher.listen(on: {[weak self] _ in
+            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+        }).store(self)
+        langView.publisherGesture.listen(on: {[weak self] _ in
+            if self?.langLbl.text == "AR".localized {
+                Localizer.instance.language.send(.arabic)
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+                    Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())}
+            }else {
+                Localizer.instance.language.send(.english)
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())}
+            }
+            
+        }).store(self)
     }
 }
 // MARK: - ...  View Contract

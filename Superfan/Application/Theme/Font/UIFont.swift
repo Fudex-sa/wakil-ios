@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 public enum Fonts: String {
-    case regular = "TajawalRegular"
-    case bold = "TajawalBold"
-    case italic = "TajawalLight"
-    case medium = "TajawalMedium"
+    case regular = "Tajawal-Regular"
+    case bold = "Tajawal-Bold"
+    case italic = "Tajawal-Light"
+    case medium = "Tajawal-Medium"
 }
 
 extension UIFontDescriptor.AttributeName {

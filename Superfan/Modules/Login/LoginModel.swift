@@ -9,5 +9,9 @@
 import Foundation
 
 // MARK: - ...  Entity
-class LoginModel: Codable {
+
+struct DatumSelectCountryModel: Codable {
+    let id: Int?
+    let code, image, name: String?
+    let mobile_length: Int?
 }

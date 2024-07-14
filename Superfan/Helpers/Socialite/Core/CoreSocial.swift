@@ -14,6 +14,7 @@ enum Socials: Int {
     case twitter = 2
     case google = 3
     case instagram = 4
+    case apple = 5
 }
 class SocialModel {
     var type: Socials?

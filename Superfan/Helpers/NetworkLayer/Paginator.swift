@@ -44,6 +44,7 @@ extension Paginator {
     }
     func paginate() {
        NetworkManager.instance.paramaters["page"] = paginator
+        NetworkManager.instance.paramaters["pagination"] = 10
         if NetworkManager.instance.paramaters["custom_page"] != nil {
             NetworkManager.instance.paramaters["page"] = NetworkManager.instance.paramaters["custom_page"]
         }
