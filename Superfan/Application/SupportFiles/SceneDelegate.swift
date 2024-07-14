@@ -24,17 +24,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        } else {
 //            window?.overrideUserInterfaceStyle = .light
 //        }
-//        if UD.onboarding == true {
-//            if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
-//                Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
-//            }else {
-//                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-//            }
-//        }else {
-//            Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())
-//
-//        }
-        Coordinator.instance.restart(storyboard: R.storyboard.contactusStoryboard())
+        if UD.onboarding == true {
+            if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
+                Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
+            }else {
+                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+            }
+        }else {
+            Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())
+
+        }
+        //Coordinator.instance.restart(storyboard: R.storyboard.broadcastLiveStoryboard())
         
 //        for family in UIFont.familyNames {
 //            print("\(family)")
