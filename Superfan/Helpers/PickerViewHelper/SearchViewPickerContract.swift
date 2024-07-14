@@ -11,10 +11,10 @@ import Foundation
 
 // MARK: - ...  Keyword protocol must every source implement this keyword
 protocol Keyword {
-    var title: String? { get set }
+    var name: String? { get set }
 }
 extension String: Keyword {
-    var title: String? {
+    var name: String? {
         get {
             return self
         }
@@ -26,12 +26,12 @@ extension String: Keyword {
 // MARK: - ...  SearchViewPicker delegate
 protocol SearchViewPickerDelegate: AnyObject {
     func searchViewPicker(_ searchViewPicker: SearchViewPicker?, didSelect item: Int)
-    func searchViewPicker(_ searchViewPicker: SearchViewPicker?, didSelect item: Keyword)
+    func searchViewPicker(_ searchViewPicker: SearchViewPicker?, didSelect item: RegisterModel)
 }
 extension SearchViewPickerDelegate {
     func searchViewPicker(_ searchViewPicker: SearchViewPicker?, didSelect item: Int) { }
-    func searchViewPicker(_ searchViewPicker: SearchViewPicker?, didSelect item: Keyword) { }
+    func searchViewPicker(_ searchViewPicker: SearchViewPicker?, didSelect item: RegisterModel) { }
 }
 
 typealias PickerDidSelectPath = (Int) -> Void
-typealias PickerDidSelectItem = (Keyword) -> Void
+typealias PickerDidSelectItem = (RegisterModel) -> Void

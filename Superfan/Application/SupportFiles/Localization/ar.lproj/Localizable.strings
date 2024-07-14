@@ -301,7 +301,7 @@
 "Locate on map" = "حدد الموقع على الخريطة";
 "Confirm Password" = "تاكيد كلمة المرور";
 "I agree to" = "اوافق على";
-"terms and conditions" = "لشروط و الاحكام";
+"terms and conditions" = "الشروط و الاحكام";
 "Enter verification code" = "ادخل رمز التحقق";
 "Please enter the verification code sent to" = "يرجي ادخال رمز التحقق المرسل على رقم";
 "Code expires after" = "تنتهى صلاحية الرمز بعد";
@@ -346,3 +346,6 @@
 "Customize your alerts to receive the latest news and results directly" = "قم بتخصيص تنبيهاتك لتصلك أحدث الأخبار والنتائج مباشرةً";
 "Customize your experience" = "تخصيص تجربتك";
 "Choose your favorite teams and sports to personalize your content" = "اختر الفرق والرياضات المفضلة لديك لتخصيص محتواك";
+"select city" = "اختر المدينه";
+"lenght must be" = "عدد الارقام يساوى";
+"agree to" = "لابد من الموافقه على";

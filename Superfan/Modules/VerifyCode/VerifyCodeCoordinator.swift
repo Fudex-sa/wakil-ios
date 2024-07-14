@@ -18,5 +18,12 @@ class VerifyCodeCoordinator: Coordinator {
 }
 
 extension VerifyCodeCoordinator {
-    
+    func resetpass() {
+        guard let scene = R.storyboard.resetpasswordStoryboard.resetpasswordVC() else { return }
+        let code = view?.verifyCodeInputs?.code?.cut(charSplit: "-", charWith: "")
+//        scene.otp = code ?? ""
+//        scene.mobile = view?.mobile ?? ""
+//        scene.code = view?.code ?? ""
+        view?.push(scene)
+    }
 }

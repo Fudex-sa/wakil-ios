@@ -105,6 +105,7 @@
 		66AEC2D62C43C49900BC260E /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */; };
 		66AEC2D72C43C49900BC260E /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D42C43C49800BC260E /* JWT.swift */; };
 		66AEC2D82C43C49900BC260E /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D52C43C49900BC260E /* JWTDecode.swift */; };
+		66AEC2DA2C43D3FB00BC260E /* VerifyCodeInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D92C43D3FB00BC260E /* VerifyCodeInputs.swift */; };
 		66B6AA8B2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66B6AA8A2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib */; };
 		66B6AA8C2C3BCF1400BC277C /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6AA892C3BCF1400BC277C /* OnboardingCollectionViewCell.swift */; };
 		66B6AA932C3BD41200BC277C /* SelectclubStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B6AA8F2C3BD41200BC277C /* SelectclubStoryboard.storyboard */; };
@@ -662,6 +663,7 @@
 		66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
 		66AEC2D42C43C49800BC260E /* JWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
 		66AEC2D52C43C49900BC260E /* JWTDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecode.swift; sourceTree = "<group>"; };
+		66AEC2D92C43D3FB00BC260E /* VerifyCodeInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeInputs.swift; sourceTree = "<group>"; };
 		66B6AA892C3BCF1400BC277C /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		66B6AA8A2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		66B6AA8E2C3BD41200BC277C /* SelectclubCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubCoordinator.swift; sourceTree = "<group>"; };
@@ -1314,6 +1316,7 @@
 		6636D7F02C3AE40C007116F7 /* VerifyCode */ = {
 			isa = PBXGroup;
 			children = (
+				66AEC2D92C43D3FB00BC260E /* VerifyCodeInputs.swift */,
 				6636D7F12C3AE429007116F7 /* VerifyCodeCoordinator.swift */,
 				6636D7F22C3AE429007116F7 /* VerifyCodeStoryboard.storyboard */,
 				6636D7F32C3AE429007116F7 /* VerifyCodeModel.swift */,
@@ -3321,6 +3324,7 @@
 				C871C99E2730231300DCBD2D /* Swizzling.swift in Sources */,
 				C8265E4A266CE19D00E099C1 /* GuardPhone.swift in Sources */,
 				C86BF911266945C4002D87BC /* LocationHelper.swift in Sources */,
+				66AEC2DA2C43D3FB00BC260E /* VerifyCodeInputs.swift in Sources */,
 				E875CDEE27A17FDF001C35F6 /* CameraRecoder.swift in Sources */,
 				C8265E3E266CE15D00E099C1 /* Guard.swift in Sources */,
 				C871C933273000C800DCBD2D /* Authentication.swift in Sources */,

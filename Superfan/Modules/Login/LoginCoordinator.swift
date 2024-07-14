@@ -29,10 +29,10 @@ extension LoginCoordinator {
     }
     func registersocail(){
         guard let scene = R.storyboard.signupStoryboard.signupVC() else { return }
-//        scene.email = view?.viewModel?.email.value ?? ""
-//        scene.socailId = view?.viewModel?.socailId.value ?? ""
-//        scene.type = view?.viewModel?.socialType.value ?? 0
-//        scene.name = view?.viewModel?.name.value ?? ""
+        scene.email = view?.viewModel?.email.value ?? ""
+        scene.socailId = view?.viewModel?.socailId.value ?? ""
+        scene.type = view?.viewModel?.socialType.value ?? 0
+        scene.name = view?.viewModel?.name.value ?? ""
         view?.push(scene)
     }
     func verify(){

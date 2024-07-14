@@ -9,5 +9,15 @@
 import Foundation
 
 // MARK: - ...  Entity
-class SignupModel: Codable {
+
+struct Registerstep1Model: Codable {
+    let data: [RegisterModel]?
+}
+class RegisterModel: Codable {
+    let id: Int?
+    let name: String?
+    init(id: Int?,name: String? ) {
+        self.id = id
+        self.name = name
+    }
 }

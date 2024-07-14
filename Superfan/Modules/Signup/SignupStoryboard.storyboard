@@ -248,8 +248,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e5h-sN-ewD">
                                                 <rect key="frame" x="0.0" y="315" width="382" height="48"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-Ix-OSJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="48"/>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-Ix-OSJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="48"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adB-9R-sWf">
                                                                 <rect key="frame" x="13.5" y="14" width="61" height="20.5"/>
@@ -262,7 +262,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="4cn-41-XXn">
-                                                                <rect key="frame" x="150" y="22" width="10" height="4.5"/>
+                                                                <rect key="frame" x="-37" y="22" width="10" height="4.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="4.5" id="eYp-ZG-qJ4"/>
                                                                     <constraint firstAttribute="width" constant="10" id="x6J-UI-Won"/>
@@ -284,7 +284,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edH-aa-A3G">
-                                                        <rect key="frame" x="195" y="0.0" width="187" height="48"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts8-nD-4v4">
                                                                 <rect key="frame" x="13.5" y="14" width="30.5" height="20.5"/>
@@ -297,7 +297,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="NLB-t0-o8p">
-                                                                <rect key="frame" x="150" y="22" width="10" height="4.5"/>
+                                                                <rect key="frame" x="345" y="22" width="10" height="4.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="4.5" id="C1F-kb-g8b"/>
                                                                     <constraint firstAttribute="width" constant="10" id="sbm-A4-6yg"/>
@@ -498,8 +498,8 @@
                                                             <constraint firstAttribute="width" constant="20" id="4Ux-uo-b2N"/>
                                                             <constraint firstAttribute="height" constant="20" id="mfW-hw-9xh"/>
                                                         </constraints>
+                                                        <color key="tintColor" name="Primary"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" image="Checkbox"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-1C-jYf">
                                                         <rect key="frame" x="28" y="2" width="71.5" height="20.5"/>
@@ -592,13 +592,16 @@
                         <outlet property="cityView" destination="edH-aa-A3G" id="Ob9-yL-ZcH"/>
                         <outlet property="confirmEyeBtn" destination="8tb-K9-2L0" id="8ZY-EM-tkE"/>
                         <outlet property="confirmPassTxf" destination="vB7-M1-Oun" id="uqc-Nk-iSj"/>
+                        <outlet property="confirmpassView" destination="n3p-4p-GIZ" id="Sbt-Lg-jn1"/>
                         <outlet property="countryLbl" destination="adB-9R-sWf" id="wdz-Y9-c3V"/>
                         <outlet property="countryView" destination="FbQ-Ix-OSJ" id="1aI-wB-OQl"/>
                         <outlet property="emailTxf" destination="UQL-BM-AAZ" id="bLg-Ro-OMF"/>
                         <outlet property="eyeBtn" destination="JEm-fF-iGQ" id="aui-ao-57c"/>
                         <outlet property="mapLbl" destination="vDY-V7-r92" id="kqs-Kg-Pac"/>
                         <outlet property="mapView" destination="xOK-Jx-NCj" id="hnw-T9-88C"/>
+                        <outlet property="passspaceView" destination="jeX-XQ-yO7" id="8S4-A2-Ndk"/>
                         <outlet property="passwordTxf" destination="gVt-Qf-Gk3" id="jh6-Xb-L73"/>
+                        <outlet property="passwordView" destination="b1R-Wb-4VP" id="Fdh-TO-kOs"/>
                         <outlet property="phoneTxf" destination="JSf-IU-BNc" id="8EP-Bq-L2P"/>
                         <outlet property="regBtn" destination="9mx-82-CW5" id="7Qe-Jv-cMF"/>
                         <outlet property="termsLbl" destination="xgs-rw-Q9t" id="XQk-lP-MWd"/>
@@ -612,7 +615,6 @@
     </scenes>
     <resources>
         <image name="Call" width="24" height="24"/>
-        <image name="Checkbox" width="16" height="17"/>
         <image name="arrowleft" width="25" height="25"/>
         <image name="dropdown" width="11" height="7"/>
         <image name="email" width="20" height="16"/>

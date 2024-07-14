@@ -23,11 +23,11 @@ class SearchViewPicker: BaseController {
             sourceTbl.dataSource = self
         }
     }
-    private (set) var searchSource: [Keyword] = []
+    private (set) var searchSource: [RegisterModel] = []
     public weak var delegate: SearchViewPickerDelegate?
-    public var source: [Keyword] = []
+    public var source: [RegisterModel] = []
     public var pickTitle: Publisher<String> = .init()
-    public var didSelectItem: Publisher<(Int, Keyword)> = .init()
+    public var didSelectItem: Publisher<(Int, RegisterModel)> = .init()
     public var selectedRow: Publisher<IndexPath> = .init()
     public var showSearchBar: Publisher<Bool> = .init()
     
@@ -112,8 +112,14 @@ extension SearchViewPicker {
         guard let text = text else { return }
         searchSource.removeAll()
         source.forEach { [weak self] (keyword) in
-            if keyword.title?.lowercased().contains(text.lowercased()) ?? false {
-                self?.searchSource.append(keyword)
+            if keyword.name ?? "" != ""  {
+                if keyword.name?.lowercased().contains(text.lowercased()) ?? false {
+                    self?.searchSource.append(keyword)
+                }
+            }else {
+//                if keyword.name?.lowercased().contains(text.lowercased()) ?? false {
+//                    self?.searchSource.append(keyword)
+//                }
             }
         }
         sourceTbl.reloadData()
@@ -132,7 +138,7 @@ extension SearchViewPicker: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = searchSource[indexPath.row].title
+        cell.textLabel?.text = searchSource[indexPath.row].name
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

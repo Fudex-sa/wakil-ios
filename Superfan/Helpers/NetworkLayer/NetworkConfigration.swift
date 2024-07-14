@@ -37,7 +37,7 @@ struct NetworkConfigration {
         case forceUpdate = "/api/app/register/force-update"
         case login = "fan/login"
         case countries
-        case states
+        case states = "cities"
         case validteregister = "checkRegisterValidation"
         case register = "fan/register"
         case confirmotp = "fan/confirm-otp"

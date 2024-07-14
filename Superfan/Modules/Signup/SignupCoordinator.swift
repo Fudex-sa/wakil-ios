@@ -18,5 +18,12 @@ class SignupCoordinator: Coordinator {
 }
 
 extension SignupCoordinator {
-    
+    func verify(){
+        guard let scene = R.storyboard.verifyCodeStoryboard.verifyCodeVC() else { return }
+        view?.push(scene)
+    }
+    func terms() {
+        guard let scene = R.storyboard.termsStoryboard.termsVC() else { return }
+        view?.push(scene)
+    }
 }

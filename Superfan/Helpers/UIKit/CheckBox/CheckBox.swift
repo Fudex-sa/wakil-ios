@@ -26,7 +26,7 @@ class CheckBoxButton: UIButton {
                 tintColor = tintColor
                 setBackgroundImage(image, for: .normal)
             } else {
-                let image = #imageLiteral(resourceName: "blank-check-box.pdf").withRenderingMode(.alwaysTemplate)
+                let image = #imageLiteral(resourceName: "unchecked-box").withRenderingMode(.alwaysTemplate)
                 tintColor = tintColor
                 setBackgroundImage(image, for: .normal)
             }
