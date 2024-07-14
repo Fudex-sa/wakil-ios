@@ -11,25 +11,24 @@ import UIKit
 import FloatingTabBarController
 
 // MARK: - ...  ViewController - Vars
-class MainVC: FloatingTabBarController {
+class MainVC: UITabBarController {
 }
 
 // MARK: - ...  LifeCycle
 extension MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.tintColor = R.color.primary()
-        guard let homeVC = UIStoryboard(name: "HomeStoryboard", bundle: nil).instantiateViewController(identifier: "HomeVC") as? UIViewController else {}
-        let notificationVC = NotificationVC()
-        let profileVC =  ProfileVC()
-                homeVC.title = "Home".localized
-        homeVC.floatingTabItem = FloatingTabItem(selectedImage: UIImage(named: "hometab")!, normalImage:  UIImage(named: "hometab1")!)
-        profileVC.title = "Profile".localized
-        profileVC.floatingTabItem = FloatingTabItem(selectedImage: UIImage(named: "usertab")!, normalImage:  UIImage(named: "usertab1")!)
-        notificationVC.title = "Notification".localized
-        notificationVC.floatingTabItem = FloatingTabItem(selectedImage: UIImage(named: "notificationtab")!, normalImage:  UIImage(named: "notificationtab1")!)
-        viewControllers = [homeVC,profileVC,notificationVC]
-
+//        tabBar.tintColor = R.color.primary()
+//        guard let homeVC = UIStoryboard(name: "HomeStoryboard", bundle: nil).instantiateViewController(identifier: "HomeVC") as? UIViewController else {}
+//        let notificationVC = NotificationVC()
+//        let profileVC =  ProfileVC()
+//                homeVC.title = "Home".localized
+//        homeVC.floatingTabItem = FloatingTabItem(selectedImage: UIImage(named: "hometab")!, normalImage:  UIImage(named: "hometab1")!)
+//        profileVC.title = "Profile".localized
+//        profileVC.floatingTabItem = FloatingTabItem(selectedImage: UIImage(named: "usertab")!, normalImage:  UIImage(named: "usertab1")!)
+//        notificationVC.title = "Notification".localized
+//        notificationVC.floatingTabItem = FloatingTabItem(selectedImage: UIImage(named: "notificationtab")!, normalImage:  UIImage(named: "notificationtab1")!)
+//        viewControllers = [homeVC,profileVC,notificationVC]
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

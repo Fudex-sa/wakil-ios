@@ -18,5 +18,11 @@ class EditphoneCoordinator: Coordinator {
 }
 
 extension EditphoneCoordinator {
-    
+    func verify() {
+        guard let scene = R.storyboard.verifyCodeStoryboard.verifyCodeVC() else { return }
+        scene.mobile = view?.viewModel?.phone.value ?? ""
+        scene.code = view?.viewModel?.countryCode.value ?? ""
+        scene.type = .update
+        view?.push(scene)
+    }
 }

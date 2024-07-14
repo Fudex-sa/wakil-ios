@@ -26,16 +26,37 @@ extension AboutusVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        setup()
+        bind()
+        self.tabBarController?.tabBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.setting.listen(on: { [weak self] value in
+            self?.reload()
+        })
+    }
 }
 // MARK: - ...  Functions
 extension AboutusVC {
     func setup() {
+        startLoading()
+        viewModel?.fetchsetting()
+    }
+    func reload(){
+        stopLoading()
+        aboutLbl.text = viewModel?.setting.value?.about_tifo?.htmlToString ?? ""
+
     }
 }
 // MARK: - ...  View Contract

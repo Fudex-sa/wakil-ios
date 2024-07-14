@@ -35,7 +35,7 @@ class SignupVC: BaseController {
     lazy var validator: Validator? = {
         let validator = Validator(guardOnSuperViewOfTextField: true)
         validator.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "mobile number".localized).holdColor()
-        validator.setUIType(.message).append(userTxf, rules: [GuardRequired() ], title: "Full Name".localized).holdColor()
+        validator.setUIType(.message).append(userTxf, rules: [GuardRequired() ], title: "Username".localized).holdColor()
         validator.setUIType(.message).append(emailTxf, rules: [GuardRequired() , GuardEmail() ], title: "Email".localized).holdColor()
         return validator
     }()

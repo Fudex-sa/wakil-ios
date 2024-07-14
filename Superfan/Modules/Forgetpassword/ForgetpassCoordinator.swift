@@ -18,5 +18,11 @@ class ForgetpassCoordinator: Coordinator {
 }
 
 extension ForgetpassCoordinator {
-    
+    func verify() {
+        guard let scene = R.storyboard.verifyCodeStoryboard.verifyCodeVC() else { return }
+        scene.mobile = view?.phoneTxf.text ?? ""
+        scene.code = "+966"
+        scene.type = .forget
+        view?.push(scene)
+    }
 }

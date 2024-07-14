@@ -1441,7 +1441,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 73 images.
+  /// This `R.image` struct is generated, and contains static references to 75 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1507,6 +1507,8 @@ struct R: Rswift.Validatable {
     static let apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "apple")
     /// Image `arrowleft`.
     static let arrowleft = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowleft")
+    /// Image `check-box`.
+    static let checkBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "check-box")
     /// Image `close`.
     static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "close")
     /// Image `contact.gif`.
@@ -1577,6 +1579,8 @@ struct R: Rswift.Validatable {
     static let successIconSubtle = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIconSubtle")
     /// Image `successIcon`.
     static let successIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIcon")
+    /// Image `unchecked-box`.
+    static let uncheckedBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "unchecked-box")
     /// Image `user`.
     static let user = Rswift.ImageResource(bundle: R.hostingBundle, name: "user")
     /// Image `usertab1`.
@@ -1811,6 +1815,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "arrowleft", bundle: ..., traitCollection: ...)`
     static func arrowleft(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.arrowleft, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "check-box", bundle: ..., traitCollection: ...)`
+    static func checkBox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.checkBox, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2056,6 +2067,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "successIconSubtle", bundle: ..., traitCollection: ...)`
     static func successIconSubtle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.successIconSubtle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "unchecked-box", bundle: ..., traitCollection: ...)`
+    static func uncheckedBox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uncheckedBox, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2400,7 +2418,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 278 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 281 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3462,6 +3480,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let isRequired = Rswift.StringResource(key: "is required", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: lenght must be
+      ///
+      /// Locales: ar, en
+      static let lenghtMustBe = Rswift.StringResource(key: "lenght must be", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: location error
       ///
       /// Locales: ar, en
@@ -3470,6 +3492,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let maleLan = Rswift.StringResource(key: "male.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: must agree to
+      ///
+      /// Locales: ar, en
+      static let agreeTo = Rswift.StringResource(key: "agree to", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: must be a valid email address
       ///
       /// Locales: ar, en
@@ -3478,6 +3504,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let not_foundLan = Rswift.StringResource(key: "not_found.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: select city
+      ///
+      /// Locales: ar, en
+      static let selectCity = Rswift.StringResource(key: "select city", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: the length has error
       ///
       /// Locales: ar, en
@@ -7490,6 +7520,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("is required", bundle: bundle, comment: "")
       }
 
+      /// en translation: lenght must be
+      ///
+      /// Locales: ar, en
+      static func lenghtMustBe(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("lenght must be", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "lenght must be"
+        }
+
+        return NSLocalizedString("lenght must be", bundle: bundle, comment: "")
+      }
+
       /// en translation: location error
       ///
       /// Locales: ar, en
@@ -7520,6 +7565,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("male.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: must agree to
+      ///
+      /// Locales: ar, en
+      static func agreeTo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("agree to", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "agree to"
+        }
+
+        return NSLocalizedString("agree to", bundle: bundle, comment: "")
+      }
+
       /// en translation: must be a valid email address
       ///
       /// Locales: ar, en
@@ -7548,6 +7608,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("not_found.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: select city
+      ///
+      /// Locales: ar, en
+      static func selectCity(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("select city", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "select city"
+        }
+
+        return NSLocalizedString("select city", bundle: bundle, comment: "")
       }
 
       /// en translation: the length has error
@@ -8267,11 +8342,11 @@ struct _R: Rswift.Validatable {
     #if os(iOS) || os(tvOS)
     struct editprofileStoryboard: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
+      let editprofileVC = StoryboardViewControllerResource<EditprofileVC>(identifier: "EditprofileVC")
       let name = "EditprofileStoryboard"
-      let profileVC = StoryboardViewControllerResource<EditprofileVC>(identifier: "ProfileVC")
 
-      func profileVC(_: Void = ()) -> EditprofileVC? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: profileVC)
+      func editprofileVC(_: Void = ()) -> EditprofileVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: editprofileVC)
       }
 
       static func validate() throws {
@@ -8289,7 +8364,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
         }
-        if _R.storyboard.editprofileStoryboard().profileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'profileVC' could not be loaded from storyboard 'EditprofileStoryboard' as 'EditprofileVC'.") }
+        if _R.storyboard.editprofileStoryboard().editprofileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editprofileVC' could not be loaded from storyboard 'EditprofileStoryboard' as 'EditprofileVC'.") }
       }
 
       fileprivate init() {}
@@ -8328,7 +8403,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct homeStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = HomeVC
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let homeVC = StoryboardViewControllerResource<HomeVC>(identifier: "HomeVC")
@@ -8341,6 +8416,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Group 9", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Group 9' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "dropdown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dropdown' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "hometab", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hometab' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "menu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'menu' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
@@ -8422,7 +8498,13 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "carbon_user-avatar", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'carbon_user-avatar' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "chart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chart' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "hometab", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hometab' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "blackshadow8", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blackshadow8' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.mainStoryboard().mainVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainVC' could not be loaded from storyboard 'MainStoryboard' as 'MainVC'.") }
       }
@@ -8482,7 +8564,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct notificationStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = NotificationVC
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let name = "NotificationStoryboard"
@@ -8493,6 +8575,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "notificationtab1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'notificationtab1' is used in storyboard 'NotificationStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.notificationStoryboard().notificationVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'notificationVC' could not be loaded from storyboard 'NotificationStoryboard' as 'NotificationVC'.") }
@@ -8530,7 +8613,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct profileStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ProfileVC
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let name = "ProfileStoryboard"
@@ -8546,6 +8629,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "email", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'email' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "map", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "usertab", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'usertab' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
@@ -8630,7 +8714,6 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Checkbox", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Checkbox' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "dropdown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dropdown' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "email", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'email' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }

@@ -15,6 +15,12 @@ class EditphoneVC: BaseController {
     @IBOutlet weak var editBtn: UIButton!
     var viewModel: EditphoneViewModel?
     var coordinator: EditphoneCoordinator?
+    lazy var validator: Validator? = {
+        let validator = Validator(guardOnSuperViewOfTextField: true)
+        validator.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "Mobile number".localized).holdColor()
+        return validator
+    }()
+    var user: ProfileModel?
 }
 
 // MARK: - ...  LifeCycle
@@ -27,16 +33,67 @@ extension EditphoneVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        setup()
+        bind()
+        self.tabBarController?.tabBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.resenddata.listen(on: { [weak self] value in
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.resenddata.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+            self?.coordinator?.verify()
+        })
+       
+    }
 }
 // MARK: - ...  Functions
 extension EditphoneVC {
     func setup() {
+        phoneTxf.text = user?.data?.mobile ?? ""
+        editBtn.publisher.listen(on: {[weak self] _ in
+            if self?.validator?.build() == false {
+                return
+            }
+            var error = ""
+            var phone = self?.phoneTxf.text ?? ""
+            if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
+                if phone.count != (UD.user?.data?.user?.country?.mobile_length ?? 0) + 1 {
+                    error = "\(error)\n\("mobile number".localized) \("lenght must be") \((UD.user?.data?.user?.country?.mobile_length ?? 0) + 1)"
+                }
+            }else {
+                if phone.count != (UD.user?.data?.user?.country?.mobile_length ?? 0) {
+                    error = "\(error)\n\("mobile number".localized) \("lenght must be") \((UD.user?.data?.user?.country?.mobile_length ?? 0))"
+                }
+            }
+            if error != "" {
+                self?.didError(error: error)
+                return
+            }
+            self?.startLoading()
+            self?.viewModel?.countryCode.send("+966")
+            if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
+                let index = phone.index(phone.startIndex, offsetBy: 1)
+                phone = String(phone.suffix(from: index))
+                self?.viewModel?.phone.send(phone)
+            }else {
+                self?.viewModel?.phone.send(self?.phoneTxf.text ?? "")
+            }
+            self?.viewModel?.resendotp()
+        }).store(self)
     }
 }
 // MARK: - ...  View Contract

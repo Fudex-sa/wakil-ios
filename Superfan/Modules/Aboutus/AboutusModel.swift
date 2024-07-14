@@ -9,5 +9,18 @@
 import Foundation
 
 // MARK: - ...  Entity
-class AboutusModel: Codable {
+struct SettingModel: Codable {
+    let status: Bool?
+    let message: String?
+    let data: SettingData?
+}
+
+struct SettingData: Codable  {
+    let privacy_policy: String?
+    let refund_policy: String?
+    let about_tifo: String?
+    let terms_condition: String?
+    let app_status: String?
+    let android_last_stable_version: String?
+    let ios_last_stable_version: String?
 }

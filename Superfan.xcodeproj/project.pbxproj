@@ -100,6 +100,7 @@
 		66950BE82C3D3BBE00522EE0 /* NotificationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66950BE02C3D3BBD00522EE0 /* NotificationStoryboard.storyboard */; };
 		66950BEC2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66950BEB2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib */; };
 		66950BED2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66950BEA2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift */; };
+		66A040E42C43EC8F00B05221 /* RTLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A040E32C43EC8F00B05221 /* RTLTabBarController.swift */; };
 		66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */; };
 		66AEC2D12C43BF9D00BC260E /* AppleDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */; };
 		66AEC2D62C43C49900BC260E /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */; };
@@ -658,6 +659,7 @@
 		66950BE32C3D3BBD00522EE0 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		66950BEA2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchsHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		66950BEB2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchsHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		66A040E32C43EC8F00B05221 /* RTLTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTLTabBarController.swift; sourceTree = "<group>"; };
 		66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleModel.swift; sourceTree = "<group>"; };
 		66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleDriver.swift; sourceTree = "<group>"; };
 		66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
@@ -1344,6 +1346,7 @@
 			children = (
 				66950BBF2C3D3B3A00522EE0 /* MainStoryboard.storyboard */,
 				66950BC12C3D3B3A00522EE0 /* MainVC.swift */,
+				66A040E32C43EC8F00B05221 /* RTLTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -3185,6 +3188,7 @@
 				66950BD02C3D3B7100522EE0 /* HomeVC.swift in Sources */,
 				66950BD12C3D3B7100522EE0 /* HomeViewModel.swift in Sources */,
 				C853B96A26D7F9450008F09D /* Haptic.swift in Sources */,
+				66A040E42C43EC8F00B05221 /* RTLTabBarController.swift in Sources */,
 				C871C8C1272FED0600DCBD2D /* SwipeAccessibilityCustomAction.swift in Sources */,
 				C8C09340272AC8E500E2270A /* Types.swift in Sources */,
 				C86BF91B2669473D002D87BC /* DateHelper.swift in Sources */,

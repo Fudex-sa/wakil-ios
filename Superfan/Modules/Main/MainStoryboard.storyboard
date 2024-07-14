@@ -1,26 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hS0-dM-Mug">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--MainVC-->
-        <scene sceneID="HEa-m2-jab">
+        <scene sceneID="zyN-1w-rcZ">
             <objects>
-                <viewController storyboardIdentifier="MainVC" id="v1z-F3-ot6" customClass="MainVC" customModule="BaseIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wn8-wF-9xc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ckT-Oz-gwY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-za-4cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController storyboardIdentifier="MainVC" id="hS0-dM-Mug" customClass="MainVC" customModule="Tifo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DMq-9i-yHa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="whiteColor"/>
+                        <color key="barTintColor" name="whiteColor"/>
+                        <color key="selectedImageTintColor" name="Primary"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" name="blackshadow8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XoM-1D-NR3" kind="relationship" relationship="viewControllers" id="fCh-KZ-rKw"/>
+                        <segue destination="Njt-V1-KVj" kind="relationship" relationship="viewControllers" id="DVl-f2-cnB"/>
+                        <segue destination="eOT-Ii-uCH" kind="relationship" relationship="viewControllers" id="b01-D1-DMR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4P-Pq-cYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="-108"/>
+            <point key="canvasLocation" x="-701" y="-5"/>
+        </scene>
+        <!--HomeStoryboard-->
+        <scene sceneID="eK4-gx-fyR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeStoryboard" id="XoM-1D-NR3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="hometab" id="VZ8-kA-1aT">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Home"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgp-gf-gXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="-352"/>
+        </scene>
+        <!--ProfileStoryboard-->
+        <scene sceneID="ewZ-rF-Uzr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileStoryboard" id="Njt-V1-KVj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My tests" image="chart" id="Ucp-Q6-ziC">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="My tests"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QHi-1Q-jL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51" y="-138"/>
+        </scene>
+        <!--NotificationStoryboard-->
+        <scene sceneID="tmC-1H-H4c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NotificationStoryboard" id="eOT-Ii-uCH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My profile" image="carbon_user-avatar" id="0mF-Fz-nDK">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="My profile"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVr-op-vx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="151"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="carbon_user-avatar" width="28" height="29"/>
+        <image name="chart" width="20" height="21"/>
+        <image name="hometab" width="32" height="33"/>
+        <namedColor name="Primary">
+            <color red="0.89803921568627454" green="0.11372549019607843" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="blackshadow8">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.079999998211860657" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

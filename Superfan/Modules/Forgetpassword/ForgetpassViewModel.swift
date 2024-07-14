@@ -10,11 +10,23 @@ import Foundation
 
 // MARK: - ...  ViewModel
 class ForgetpassViewModel: BaseViewModel {
+    var phone: Publisher<String> = .init()
+    var countryCode: Publisher<String> = .init()
+    var resenddata: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension ForgetpassViewModel {
 }
 // MARK: - ...  Example of network response
 extension ForgetpassViewModel {
-    
+    func resendotp() {
+        NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
+        NetworkManager.instance.paramaters["country_code"] = countryCode.value ?? ""
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.resenddata.send(model)
+        }).store(self)
+    }
 }

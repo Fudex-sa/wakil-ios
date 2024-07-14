@@ -21,28 +21,90 @@ class EditprofileVC: BaseController {
     @IBOutlet weak var userTxf: UITextField!
     var viewModel: EditprofileViewModel?
     var coordinator: EditprofileCoordinator?
+    lazy var validator: Validator? = {
+        let validator = Validator(guardOnSuperViewOfTextField: true)
+        validator.setUIType(.message).append(userTxf, rules: [GuardRequired() ], title: "Username".localized).holdColor()
+        return validator
+    }()
+    var user: ProfileModel?
+    var picker: GalleryPickerHelper?
+    var photoURL: URL?
+    var registertype = 0
 }
 
 // MARK: - ...  LifeCycle
 extension EditprofileVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = .init()
+        setup()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        actions()
+        bind()
+        self.tabBarController?.tabBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        viewModel = nil
+        viewModel?.userdata = .init()
         coordinator = nil
+    }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.userdata.listen(on: { [weak self] value in
+            self?.stopLoading()
+            self?.navigationController?.popViewController(animated: true)
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.userdata.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+        })
     }
 }
 // MARK: - ...  Functions
 extension EditprofileVC {
     func setup() {
+        userTxf.text = user?.data?.name ?? ""
+        mapLbl.text = user?.data?.location ?? ""
+        userImg.setImage(url: user?.data?.photo ?? "")
+    }
+    func actions(){
+        picker = .init()
+        picker?.onPickImageURL = { [self] url in
+            self.photoURL = url
+                    
+        }
+        picker?.onPickImage = { [self] image in
+            self.userImg.image = image
+        }
+        editImgBtn.publisher.listen(on: {[weak self] _ in
+            self?.picker?.pick(in: self)
+        }).store(self)
+        editBtn.publisher.listen(on: {[weak self] _ in
+            if self?.validator?.build() == false {
+                return
+            }
+            var error = ""
+            if error == "" {
+                self?.viewModel?.name.send(self?.userTxf.text ?? "")
+                self?.viewModel?.userImg.send(self?.userImg.image ?? UIImage())
+                self?.viewModel?.lat.send("29.66464")
+                self?.viewModel?.lng.send("31.74646")
+                self?.startLoading()
+                self?.viewModel?.updateprofile()
+            }else {
+                self?.didError(error: error)
+            }
+        }).store(self)
     }
 }
 // MARK: - ...  View Contract

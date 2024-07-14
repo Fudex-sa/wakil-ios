@@ -18,5 +18,23 @@ class ProfileCoordinator: Coordinator {
 }
 
 extension ProfileCoordinator {
-    
+    func editprofile() {
+        guard let scene = R.storyboard.editprofileStoryboard.editprofileVC() else { return }
+        scene.user = view?.viewModel?.userddata.value
+        view?.push(scene)
+    }
+    func editemail() {
+        guard let scene = R.storyboard.editemailStoryboard.editemailVC() else { return }
+        scene.user = view?.viewModel?.userddata.value
+        view?.push(scene)
+    }
+    func editphone() {
+        guard let scene = R.storyboard.editphoneStoryboard.editphoneVC() else { return }
+        scene.user = view?.viewModel?.userddata.value
+        view?.push(scene)
+    }
+    func editpassword() {
+        guard let scene = R.storyboard.editpasswordStoryboard.editpasswordVC() else { return }
+        view?.push(scene)
+    }
 }

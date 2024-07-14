@@ -15,6 +15,11 @@ class ForgetpassVC: BaseController {
     @IBOutlet weak var forgetBtn: UIButton!
     var viewModel: ForgetpassViewModel?
     var coordinator: ForgetpassCoordinator?
+    lazy var validator: Validator? = {
+        let validator = Validator(guardOnSuperViewOfTextField: true)
+        validator.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "mobile number".localized).holdColor()
+        return validator
+    }()
 }
 
 // MARK: - ...  LifeCycle
@@ -27,16 +32,51 @@ extension ForgetpassVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        setup()
+        bind()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.resenddata.listen(on: { [weak self] value in
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.resenddata.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+            self?.coordinator?.verify()
+        })
+       
+    }
 }
 // MARK: - ...  Functions
 extension ForgetpassVC {
     func setup() {
+        forgetBtn.publisher.listen(on: {[weak self] _ in
+            if self?.validator?.build() == false {
+                return
+            }
+            self?.startLoading()
+            var phone = self?.phoneTxf.text ?? ""
+            if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
+                let index = phone.index(phone.startIndex, offsetBy: 1)
+                phone = String(phone.suffix(from: index))
+                self?.viewModel?.phone.send(phone)
+            }else {
+                self?.viewModel?.phone.send(self?.phoneTxf.text ?? "")
+            }
+            self?.viewModel?.countryCode.send("+966")
+            self?.viewModel?.resendotp()
+        }).store(self)
     }
 }
 // MARK: - ...  View Contract

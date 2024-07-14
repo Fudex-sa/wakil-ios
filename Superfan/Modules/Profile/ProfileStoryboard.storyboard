@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aW6-8F-dea">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qEY-5c-z0S">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-4X-xsh">
-                                <rect key="frame" x="0.0" y="108" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="152" width="414" height="744"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7h-wl-a1J">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
@@ -323,7 +323,7 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaP-Xy-jpm">
-                                <rect key="frame" x="16" y="76" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="120" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Darkerblack"/>
                                 <nil key="highlightedColor"/>
@@ -345,9 +345,12 @@
                             <constraint firstItem="bkS-4X-xsh" firstAttribute="top" secondItem="MGz-jk-0Hs" secondAttribute="top" constant="60" id="zFn-sX-qpx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Npk-Kt-KSY"/>
                     <connections>
                         <outlet property="editBtn" destination="Dp1-up-BdJ" id="knp-8Z-P8i"/>
+                        <outlet property="editEmailBtn" destination="4Kk-mw-NZt" id="iFe-X2-cNF"/>
                         <outlet property="editPassBtn" destination="Mw6-3i-zKk" id="bob-QM-SyW"/>
+                        <outlet property="editPhoneBtn" destination="59l-Kg-ONS" id="JoE-Xo-Y8v"/>
                         <outlet property="emailTxf" destination="Dbd-gB-LOh" id="Vss-XK-MZM"/>
                         <outlet property="mapLbl" destination="nP3-2D-niq" id="vj6-gF-cBx"/>
                         <outlet property="mapView" destination="GiS-Ch-0Lc" id="e9m-FD-otZ"/>
@@ -358,6 +361,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG2-VF-Pzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1033.3333333333335" y="-108.48214285714285"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="7ZV-nw-0To">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qEY-5c-z0S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="usertab" id="Eg3-di-aUh">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Profile"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lix-Du-Rzg">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aW6-8F-dea" kind="relationship" relationship="rootViewController" id="a8Q-oS-b1s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yqg-lO-lIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="123.18840579710145" y="-108.48214285714285"/>
         </scene>
     </scenes>
@@ -367,6 +394,7 @@
         <image name="email" width="20" height="16"/>
         <image name="map" width="24" height="24"/>
         <image name="user" width="18" height="18"/>
+        <image name="usertab" width="26" height="32"/>
         <namedColor name="Black1">
             <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
