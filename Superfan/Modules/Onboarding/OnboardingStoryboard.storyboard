@@ -22,7 +22,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iPE-hK-Vn1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yio-J1-D4G">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yio-J1-D4G">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -40,7 +40,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uc-ah-98o">
-                                <rect key="frame" x="15" y="68" width="33" height="21"/>
+                                <rect key="frame" x="15" y="63" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Darkerblack"/>
                                 <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCJ-ei-F8O">
-                                <rect key="frame" x="336.5" y="66.5" width="62.5" height="24"/>
+                                <rect key="frame" x="336.5" y="61.5" width="62.5" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdB-kr-xMe">
                                         <rect key="frame" x="4" y="1.5" width="34.5" height="21"/>
@@ -89,7 +89,7 @@
                         <viewLayoutGuide key="safeArea" id="ckT-Oz-gwY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5uc-ah-98o" firstAttribute="top" secondItem="ckT-Oz-gwY" secondAttribute="top" constant="20" id="75Y-ix-Itc"/>
+                            <constraint firstItem="5uc-ah-98o" firstAttribute="top" secondItem="ckT-Oz-gwY" secondAttribute="top" constant="15" id="75Y-ix-Itc"/>
                             <constraint firstAttribute="bottom" secondItem="iPE-hK-Vn1" secondAttribute="bottom" id="CDI-6W-sq5"/>
                             <constraint firstItem="iPE-hK-Vn1" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" id="a53-bH-uIY"/>
                             <constraint firstItem="kCJ-ei-F8O" firstAttribute="centerY" secondItem="5uc-ah-98o" secondAttribute="centerY" id="aIy-O8-bLd"/>

@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 19 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 23 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -100,6 +100,14 @@ struct R: Rswift.Validatable {
     static let changelanguageStoryboard = _R.storyboard.changelanguageStoryboard()
     /// Storyboard `ContactusStoryboard`.
     static let contactusStoryboard = _R.storyboard.contactusStoryboard()
+    /// Storyboard `EditemailStoryboard`.
+    static let editemailStoryboard = _R.storyboard.editemailStoryboard()
+    /// Storyboard `EditpasswordStoryboard`.
+    static let editpasswordStoryboard = _R.storyboard.editpasswordStoryboard()
+    /// Storyboard `EditphoneStoryboard`.
+    static let editphoneStoryboard = _R.storyboard.editphoneStoryboard()
+    /// Storyboard `EditprofileStoryboard`.
+    static let editprofileStoryboard = _R.storyboard.editprofileStoryboard()
     /// Storyboard `ForgetpassStoryboard`.
     static let forgetpassStoryboard = _R.storyboard.forgetpassStoryboard()
     /// Storyboard `HomeStoryboard`.
@@ -156,6 +164,34 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ContactusStoryboard", bundle: ...)`
     static func contactusStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.contactusStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "EditemailStoryboard", bundle: ...)`
+    static func editemailStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.editemailStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "EditpasswordStoryboard", bundle: ...)`
+    static func editpasswordStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.editpasswordStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "EditphoneStoryboard", bundle: ...)`
+    static func editphoneStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.editphoneStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "EditprofileStoryboard", bundle: ...)`
+    static func editprofileStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.editprofileStoryboard)
     }
     #endif
 
@@ -268,7 +304,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 18 colors.
+  /// This `R.color` struct is generated, and contains static references to 17 colors.
   struct color {
     /// Color `Black1`.
     static let black1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "Black1")
@@ -278,8 +314,6 @@ struct R: Rswift.Validatable {
     static let darkerblack = Rswift.ColorResource(bundle: R.hostingBundle, name: "Darkerblack")
     /// Color `LIGHT`.
     static let lighT = Rswift.ColorResource(bundle: R.hostingBundle, name: "LIGHT")
-    /// Color `Lightgray`.
-    static let lightgray = Rswift.ColorResource(bundle: R.hostingBundle, name: "Lightgray")
     /// Color `Primary`.
     static let primary = Rswift.ColorResource(bundle: R.hostingBundle, name: "Primary")
     /// Color `Secondary`.
@@ -340,15 +374,6 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func lighT(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.lighT, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "Lightgray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func lightgray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.lightgray, compatibleWith: traitCollection)
     }
     #endif
 
@@ -502,14 +527,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "Lightgray", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func lightgray(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.lightgray.name)
-    }
-    #endif
-
-    #if os(watchOS)
     /// `UIColor(named: "Primary", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func primary(_: Void = ()) -> UIKit.UIColor? {
@@ -612,6 +629,23 @@ struct R: Rswift.Validatable {
       return UIKit.UIColor(named: R.color.whiteColor.name)
     }
     #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.entitlements` struct is generated, and contains static references to 3 properties.
+  struct entitlements {
+    static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
+
+    struct comAppleDeveloperApplesignin {
+      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    struct keychainAccessGroups {
+      fileprivate init() {}
+    }
 
     fileprivate init() {}
   }
@@ -1407,7 +1441,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 70 images.
+  /// This `R.image` struct is generated, and contains static references to 72 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1481,6 +1515,10 @@ struct R: Rswift.Validatable {
     static let done = Rswift.ImageResource(bundle: R.hostingBundle, name: "done")
     /// Image `dropdown`.
     static let dropdown = Rswift.ImageResource(bundle: R.hostingBundle, name: "dropdown")
+    /// Image `edit`.
+    static let edit = Rswift.ImageResource(bundle: R.hostingBundle, name: "edit")
+    /// Image `editprofile`.
+    static let editprofile = Rswift.ImageResource(bundle: R.hostingBundle, name: "editprofile")
     /// Image `email`.
     static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "email")
     /// Image `errorIconLight`.
@@ -1799,6 +1837,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "dropdown", bundle: ..., traitCollection: ...)`
     static func dropdown(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.dropdown, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "edit", bundle: ..., traitCollection: ...)`
+    static func edit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.edit, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "editprofile", bundle: ..., traitCollection: ...)`
+    static func editprofile(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.editprofile, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2339,7 +2391,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 259 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 272 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -2437,6 +2489,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let applyLan = Rswift.StringResource(key: "apply.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Arabic languge
+      ///
+      /// Locales: ar, en
+      static let arabicLanguge = Rswift.StringResource(key: "Arabic languge", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Are you sure decativate your account ?
       ///
       /// Locales: ar, en
@@ -2492,7 +2548,19 @@ struct R: Rswift.Validatable {
       /// en translation: Change Password
       ///
       /// Locales: ar, en
+      static let changePassword = Rswift.StringResource(key: "Change Password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Change Password
+      ///
+      /// Locales: ar, en
       static let changePasswordLan = Rswift.StringResource(key: "change.password.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Change email
+      ///
+      /// Locales: ar, en
+      static let changeEmail = Rswift.StringResource(key: "Change email", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Change mobile number
+      ///
+      /// Locales: ar, en
+      static let changeMobileNumber = Rswift.StringResource(key: "Change mobile number", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Child Details
       ///
       /// Locales: ar, en
@@ -2640,7 +2708,15 @@ struct R: Rswift.Validatable {
       /// en translation: Edit
       ///
       /// Locales: ar, en
+      static let edit = Rswift.StringResource(key: "Edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Edit
+      ///
+      /// Locales: ar, en
       static let editLan = Rswift.StringResource(key: "edit.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Edit Profile
+      ///
+      /// Locales: ar, en
+      static let editProfile = Rswift.StringResource(key: "Edit Profile", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Email
       ///
       /// Locales: ar, en
@@ -2649,6 +2725,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let emailLan = Rswift.StringResource(key: "email.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: English language
+      ///
+      /// Locales: ar, en
+      static let englishLanguage = Rswift.StringResource(key: "English language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Enter the phone number to send the confirmation code
       ///
       /// Locales: ar, en
@@ -2777,6 +2857,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let langLan = Rswift.StringResource(key: "lang.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Language settings
+      ///
+      /// Locales: ar, en
+      static let languageSettings = Rswift.StringResource(key: "Language settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Last name
       ///
       /// Locales: ar, en
@@ -2985,6 +3069,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let samePhoneLan = Rswift.StringResource(key: "same.phone.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Please enter a suitable password
+      ///
+      /// Locales: ar, en
+      static let pleaseEnterASuitablePassword = Rswift.StringResource(key: "Please enter a suitable password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Please enter the new email
+      ///
+      /// Locales: ar, en
+      static let pleaseEnterTheNewEmail = Rswift.StringResource(key: "Please enter the new email", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Please enter the new mobile number
+      ///
+      /// Locales: ar, en
+      static let pleaseEnterTheNewMobileNumber = Rswift.StringResource(key: "Please enter the new mobile number", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Please enter the verification code sent to
       ///
       /// Locales: ar, en
@@ -3013,6 +3109,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let professionLan = Rswift.StringResource(key: "profession.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Profile
+      ///
+      /// Locales: ar, en
+      static let profile = Rswift.StringResource(key: "Profile", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Profile
       ///
       /// Locales: ar, en
@@ -3077,6 +3177,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let saveSearchLan = Rswift.StringResource(key: "save.search.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Save edits
+      ///
+      /// Locales: ar, en
+      static let saveEdits = Rswift.StringResource(key: "Save edits", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Saved
       ///
       /// Locales: ar, en
@@ -3738,6 +3842,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("apply.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Arabic languge
+      ///
+      /// Locales: ar, en
+      static func arabicLanguge(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Arabic languge", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Arabic languge"
+        }
+
+        return NSLocalizedString("Arabic languge", bundle: bundle, comment: "")
+      }
+
       /// en translation: Are you sure decativate your account ?
       ///
       /// Locales: ar, en
@@ -3936,6 +4055,21 @@ struct R: Rswift.Validatable {
       /// en translation: Change Password
       ///
       /// Locales: ar, en
+      static func changePassword(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Change Password", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Change Password"
+        }
+
+        return NSLocalizedString("Change Password", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change Password
+      ///
+      /// Locales: ar, en
       static func changePasswordLan(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("change.password.lan", bundle: hostingBundle, comment: "")
@@ -3946,6 +4080,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("change.password.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change email
+      ///
+      /// Locales: ar, en
+      static func changeEmail(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Change email", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Change email"
+        }
+
+        return NSLocalizedString("Change email", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change mobile number
+      ///
+      /// Locales: ar, en
+      static func changeMobileNumber(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Change mobile number", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Change mobile number"
+        }
+
+        return NSLocalizedString("Change mobile number", bundle: bundle, comment: "")
       }
 
       /// en translation: Child Details
@@ -4491,6 +4655,21 @@ struct R: Rswift.Validatable {
       /// en translation: Edit
       ///
       /// Locales: ar, en
+      static func edit(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Edit", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Edit"
+        }
+
+        return NSLocalizedString("Edit", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Edit
+      ///
+      /// Locales: ar, en
       static func editLan(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("edit.lan", bundle: hostingBundle, comment: "")
@@ -4501,6 +4680,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("edit.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Edit Profile
+      ///
+      /// Locales: ar, en
+      static func editProfile(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Edit Profile", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Edit Profile"
+        }
+
+        return NSLocalizedString("Edit Profile", bundle: bundle, comment: "")
       }
 
       /// en translation: Email
@@ -4531,6 +4725,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("email.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: English language
+      ///
+      /// Locales: ar, en
+      static func englishLanguage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("English language", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "English language"
+        }
+
+        return NSLocalizedString("English language", bundle: bundle, comment: "")
       }
 
       /// en translation: Enter the phone number to send the confirmation code
@@ -5011,6 +5220,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("lang.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Language settings
+      ///
+      /// Locales: ar, en
+      static func languageSettings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Language settings", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Language settings"
+        }
+
+        return NSLocalizedString("Language settings", bundle: bundle, comment: "")
       }
 
       /// en translation: Last name
@@ -5793,6 +6017,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("same.phone.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Please enter a suitable password
+      ///
+      /// Locales: ar, en
+      static func pleaseEnterASuitablePassword(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Please enter a suitable password", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Please enter a suitable password"
+        }
+
+        return NSLocalizedString("Please enter a suitable password", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please enter the new email
+      ///
+      /// Locales: ar, en
+      static func pleaseEnterTheNewEmail(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Please enter the new email", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Please enter the new email"
+        }
+
+        return NSLocalizedString("Please enter the new email", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please enter the new mobile number
+      ///
+      /// Locales: ar, en
+      static func pleaseEnterTheNewMobileNumber(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Please enter the new mobile number", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Please enter the new mobile number"
+        }
+
+        return NSLocalizedString("Please enter the new mobile number", bundle: bundle, comment: "")
+      }
+
       /// en translation: Please enter the verification code sent to
       ///
       /// Locales: ar, en
@@ -5896,6 +6165,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("profession.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Profile
+      ///
+      /// Locales: ar, en
+      static func profile(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Profile", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Profile"
+        }
+
+        return NSLocalizedString("Profile", bundle: bundle, comment: "")
       }
 
       /// en translation: Profile
@@ -6136,6 +6420,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("save.search.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Save edits
+      ///
+      /// Locales: ar, en
+      static func saveEdits(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Save edits", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Save edits"
+        }
+
+        return NSLocalizedString("Save edits", bundle: bundle, comment: "")
       }
 
       /// en translation: Saved
@@ -7582,6 +7881,18 @@ struct _R: Rswift.Validatable {
       try contactusStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try editemailStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try editpasswordStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try editphoneStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try editprofileStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try forgetpassStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -7694,10 +8005,9 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "lightwhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightwhite' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "secoddcolor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'secoddcolor' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "transparent", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'transparent' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
         }
@@ -7736,6 +8046,127 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ContactusStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.contactusStoryboard().contactusVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'contactusVC' could not be loaded from storyboard 'ContactusStoryboard' as 'ContactusVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct editemailStoryboard: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let editemailVC = StoryboardViewControllerResource<EditemailVC>(identifier: "EditemailVC")
+      let name = "EditemailStoryboard"
+
+      func editemailVC(_: Void = ()) -> EditemailVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: editemailVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.editemailStoryboard().editemailVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editemailVC' could not be loaded from storyboard 'EditemailStoryboard' as 'EditemailVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct editpasswordStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = EditpasswordVC
+
+      let bundle = R.hostingBundle
+      let editpasswordVC = StoryboardViewControllerResource<EditpasswordVC>(identifier: "EditpasswordVC")
+      let name = "EditpasswordStoryboard"
+
+      func editpasswordVC(_: Void = ()) -> EditpasswordVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: editpasswordVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "eye", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'eye' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'lock' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.editpasswordStoryboard().editpasswordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editpasswordVC' could not be loaded from storyboard 'EditpasswordStoryboard' as 'EditpasswordVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct editphoneStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = EditphoneVC
+
+      let bundle = R.hostingBundle
+      let editphoneVC = StoryboardViewControllerResource<EditphoneVC>(identifier: "EditphoneVC")
+      let name = "EditphoneStoryboard"
+
+      func editphoneVC(_: Void = ()) -> EditphoneVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: editphoneVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.editphoneStoryboard().editphoneVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editphoneVC' could not be loaded from storyboard 'EditphoneStoryboard' as 'EditphoneVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct editprofileStoryboard: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "EditprofileStoryboard"
+      let profileVC = StoryboardViewControllerResource<EditprofileVC>(identifier: "ProfileVC")
+
+      func profileVC(_: Void = ()) -> EditprofileVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: profileVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "editprofile", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'editprofile' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "email", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'email' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "map", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.editprofileStoryboard().profileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'profileVC' could not be loaded from storyboard 'EditprofileStoryboard' as 'EditprofileVC'.") }
       }
 
       fileprivate init() {}
@@ -7987,7 +8418,17 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "email", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'email' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "map", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.profileStoryboard().profileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'profileVC' could not be loaded from storyboard 'ProfileStoryboard' as 'ProfileVC'.") }
       }

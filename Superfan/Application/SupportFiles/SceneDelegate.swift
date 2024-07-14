@@ -24,7 +24,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        } else {
 //            window?.overrideUserInterfaceStyle = .light
 //        }
-        Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+        if UD.onboarding == true {
+            if UD.user == nil {
+                Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
+            }else {
+                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+            }
+        }else {
+            Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())
+
+        }
         //Coordinator.instance.restart(storyboard: R.storyboard.broadcastLiveStoryboard())
         
 //        for family in UIFont.familyNames {

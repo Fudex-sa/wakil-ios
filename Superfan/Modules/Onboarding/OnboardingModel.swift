@@ -9,5 +9,7 @@
 import Foundation
 
 // MARK: - ...  Entity
-class OnboardingModel: Codable {
+struct OnboardingModel: Codable {
+    let id: Int
+    let title, des, image: String
 }
