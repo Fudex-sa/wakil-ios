@@ -3660,7 +3660,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 107;
-				DEVELOPMENT_TEAM = UL4L86WK78;
+				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3668,7 +3668,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wndo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Superfan/Application/Combine/Controls/Runtime/Combine-bridge.h";
@@ -3745,7 +3745,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 107;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = UL4L86WK78;
+				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3755,7 +3755,7 @@
 				);
 				MARKETING_VERSION = 0.3.3;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wndo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -3833,7 +3833,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 107;
-				DEVELOPMENT_TEAM = UL4L86WK78;
+				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3841,7 +3841,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wndo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Superfan/Application/Combine/Controls/Runtime/Combine-bridge.h";
@@ -3916,7 +3916,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 107;
-				DEVELOPMENT_TEAM = UL4L86WK78;
+				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3924,7 +3924,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wndo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Superfan/Application/Combine/Controls/Runtime/Combine-bridge.h";

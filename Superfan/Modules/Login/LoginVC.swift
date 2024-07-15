@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GoogleSignIn
 
 // MARK: - ...  ViewController - Vars
 class LoginVC: BaseController {
@@ -116,6 +117,41 @@ extension LoginVC {
             }
             
         }).store(self)
+        
+        googleView.publisherGesture.listen(on: {[weak self] _ in
+            let signInConfig = GIDConfiguration.init(clientID: SocialConstant.googleId)
+                       GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self!) { user, error in
+                           if ((user?.userID != nil)) {
+                               self?.startLoading()
+                               self?.viewModel?.name.send(user?.profile?.name ?? "")
+                               self?.viewModel?.email.send(user?.profile?.email ?? "")
+                               self?.viewModel?.socailId.send(user?.userID ?? "")
+                               self?.viewModel?.socialType.send(1)
+                               self?.viewModel?.loginsocail()
+                           }
+                       }
+        }).store(self)
+       
+        appleView.publisherGesture.listen { [weak self] _ in
+            self?.startLoading()
+            self?.loginWithApple()
+        }.store(self)
+    }
+    func loginWithApple() {
+        appleDriver.closure = { [weak self] model, error in
+            if error != nil {
+                self?.stopLoading()
+                self?.didError(error: error)
+                return
+            }
+            self?.startLoading()
+            self?.viewModel?.name.send(model?.fullName ?? "")
+            self?.viewModel?.email.send(model?.email ?? "")
+            self?.viewModel?.socailId.send(model?.id ?? "")
+            self?.viewModel?.socialType.send(3)
+            self?.viewModel?.loginsocail()
+        }
+        appleDriver.fetch()
     }
 }
 // MARK: - ...  View Contract
