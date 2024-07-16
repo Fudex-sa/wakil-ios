@@ -105,6 +105,11 @@
 		66950BE82C3D3BBE00522EE0 /* NotificationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66950BE02C3D3BBD00522EE0 /* NotificationStoryboard.storyboard */; };
 		66950BEC2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66950BEB2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib */; };
 		66950BED2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66950BEA2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift */; };
+		6699E65D2C466A16003606DE /* SlideMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699E6582C466A16003606DE /* SlideMenuCoordinator.swift */; };
+		6699E65E2C466A16003606DE /* SlideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699E65A2C466A16003606DE /* SlideMenuModel.swift */; };
+		6699E65F2C466A16003606DE /* SlideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699E65B2C466A16003606DE /* SlideMenuVC.swift */; };
+		6699E6602C466A16003606DE /* SlideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699E65C2C466A16003606DE /* SlideMenuViewModel.swift */; };
+		6699E6612C466A16003606DE /* SlideMenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6699E6592C466A16003606DE /* SlideMenuStoryboard.storyboard */; };
 		66A040E42C43EC8F00B05221 /* RTLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A040E32C43EC8F00B05221 /* RTLTabBarController.swift */; };
 		66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */; };
 		66AEC2D12C43BF9D00BC260E /* AppleDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */; };
@@ -666,6 +671,11 @@
 		66950BE32C3D3BBD00522EE0 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		66950BEA2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchsHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		66950BEB2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchsHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		6699E6582C466A16003606DE /* SlideMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCoordinator.swift; sourceTree = "<group>"; };
+		6699E6592C466A16003606DE /* SlideMenuStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlideMenuStoryboard.storyboard; sourceTree = "<group>"; };
+		6699E65A2C466A16003606DE /* SlideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuModel.swift; sourceTree = "<group>"; };
+		6699E65B2C466A16003606DE /* SlideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuVC.swift; sourceTree = "<group>"; };
+		6699E65C2C466A16003606DE /* SlideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewModel.swift; sourceTree = "<group>"; };
 		66A040E32C43EC8F00B05221 /* RTLTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTLTabBarController.swift; sourceTree = "<group>"; };
 		66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleModel.swift; sourceTree = "<group>"; };
 		66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleDriver.swift; sourceTree = "<group>"; };
@@ -1403,6 +1413,18 @@
 				66C773BF2C3D5FB200E872CA /* NewsTableViewCell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		6699E6572C4669FC003606DE /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				6699E6582C466A16003606DE /* SlideMenuCoordinator.swift */,
+				6699E6592C466A16003606DE /* SlideMenuStoryboard.storyboard */,
+				6699E65A2C466A16003606DE /* SlideMenuModel.swift */,
+				6699E65B2C466A16003606DE /* SlideMenuVC.swift */,
+				6699E65C2C466A16003606DE /* SlideMenuViewModel.swift */,
+			);
+			path = SlideMenu;
 			sourceTree = "<group>";
 		};
 		66AEC2CD2C43BF7400BC260E /* Apple */ = {
@@ -2680,6 +2702,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6699E6572C4669FC003606DE /* SlideMenu */,
 				660A62F12C4649D50094B92E /* SelectLoc */,
 				66EA91282C3EC3CF0027154F /* Editpassword */,
 				66EA911D2C3EC3A80027154F /* Editemail */,
@@ -2939,6 +2962,7 @@
 				6633826D2C3EAAF500160379 /* TermsStoryboard.storyboard in Resources */,
 				66950BD22C3D3B7100522EE0 /* HomeStoryboard.storyboard in Resources */,
 				C871C72E272FEB7C00DCBD2D /* Muli-SemiBold.ttf in Resources */,
+				6699E6612C466A16003606DE /* SlideMenuStoryboard.storyboard in Resources */,
 				77228EBE2756681F008F11B3 /* CalendarPickerView.xib in Resources */,
 				C871C72F272FEB7C00DCBD2D /* SFPRODISPLAYTHINITALIC.OTF in Resources */,
 				C86BF97D266947F0002D87BC /* infoIcon@2x.png in Resources */,
@@ -3214,6 +3238,10 @@
 				C871C8E5272FED5900DCBD2D /* GoogleMapProtocolHelper.swift in Sources */,
 				66B6AA942C3BD41200BC277C /* SelectclubCoordinator.swift in Sources */,
 				66B6AA952C3BD41200BC277C /* SelectclubModel.swift in Sources */,
+				6699E65D2C466A16003606DE /* SlideMenuCoordinator.swift in Sources */,
+				6699E65E2C466A16003606DE /* SlideMenuModel.swift in Sources */,
+				6699E65F2C466A16003606DE /* SlideMenuVC.swift in Sources */,
+				6699E6602C466A16003606DE /* SlideMenuViewModel.swift in Sources */,
 				66B6AA962C3BD41200BC277C /* SelectclubVC.swift in Sources */,
 				66B6AA972C3BD41200BC277C /* SelectclubViewModel.swift in Sources */,
 				66EA912F2C3EC3EE0027154F /* EditpasswordCoordinator.swift in Sources */,
@@ -3687,7 +3715,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 107;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3695,7 +3723,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.3;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3771,7 +3799,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 107;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -3781,7 +3809,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.3;
+				MARKETING_VERSION = 1.0.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3860,7 +3888,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 107;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3868,7 +3896,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.3;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3943,7 +3971,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 107;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3951,7 +3979,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.3;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

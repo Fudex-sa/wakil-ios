@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 24 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 25 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -136,6 +136,8 @@ struct R: Rswift.Validatable {
     static let selectclubStoryboard = _R.storyboard.selectclubStoryboard()
     /// Storyboard `SignupStoryboard`.
     static let signupStoryboard = _R.storyboard.signupStoryboard()
+    /// Storyboard `SlideMenuStoryboard`.
+    static let slideMenuStoryboard = _R.storyboard.slideMenuStoryboard()
     /// Storyboard `TermsStoryboard`.
     static let termsStoryboard = _R.storyboard.termsStoryboard()
     /// Storyboard `VerifyCodeStoryboard`.
@@ -292,6 +294,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SignupStoryboard", bundle: ...)`
     static func signupStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.signupStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SlideMenuStoryboard", bundle: ...)`
+    static func slideMenuStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.slideMenuStoryboard)
     }
     #endif
 
@@ -1450,7 +1459,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 77 images.
+  /// This `R.image` struct is generated, and contains static references to 84 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1512,6 +1521,8 @@ struct R: Rswift.Validatable {
     static let splash2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Splash-2")
     /// Image `Tracking`.
     static let tracking = Rswift.ImageResource(bundle: R.hostingBundle, name: "Tracking")
+    /// Image `aboutus`.
+    static let aboutus = Rswift.ImageResource(bundle: R.hostingBundle, name: "aboutus")
     /// Image `apple`.
     static let apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "apple")
     /// Image `arrowleft`.
@@ -1520,8 +1531,12 @@ struct R: Rswift.Validatable {
     static let checkBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "check-box")
     /// Image `close`.
     static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "close")
+    /// Image `closemenu`.
+    static let closemenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "closemenu")
     /// Image `contact.gif`.
     static let contactGif = Rswift.ImageResource(bundle: R.hostingBundle, name: "contact.gif")
+    /// Image `contactus`.
+    static let contactus = Rswift.ImageResource(bundle: R.hostingBundle, name: "contactus")
     /// Image `done`.
     static let done = Rswift.ImageResource(bundle: R.hostingBundle, name: "done")
     /// Image `dropdown`.
@@ -1558,6 +1573,8 @@ struct R: Rswift.Validatable {
     static let infoIconSubtle = Rswift.ImageResource(bundle: R.hostingBundle, name: "infoIconSubtle")
     /// Image `infoIcon`.
     static let infoIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "infoIcon")
+    /// Image `language 1`.
+    static let language1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "language 1")
     /// Image `language`.
     static let language = Rswift.ImageResource(bundle: R.hostingBundle, name: "language")
     /// Image `lock`.
@@ -1566,6 +1583,8 @@ struct R: Rswift.Validatable {
     static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
     /// Image `logofull`.
     static let logofull = Rswift.ImageResource(bundle: R.hostingBundle, name: "logofull")
+    /// Image `logout`.
+    static let logout = Rswift.ImageResource(bundle: R.hostingBundle, name: "logout")
     /// Image `map`.
     static let map = Rswift.ImageResource(bundle: R.hostingBundle, name: "map")
     /// Image `marker2`.
@@ -1586,12 +1605,16 @@ struct R: Rswift.Validatable {
     static let placeHolder = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeHolder")
     /// Image `rectangle7`.
     static let rectangle7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "rectangle7")
+    /// Image `setting`.
+    static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
     /// Image `successIconLight`.
     static let successIconLight = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIconLight")
     /// Image `successIconSubtle`.
     static let successIconSubtle = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIconSubtle")
     /// Image `successIcon`.
     static let successIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIcon")
+    /// Image `terms`.
+    static let terms = Rswift.ImageResource(bundle: R.hostingBundle, name: "terms")
     /// Image `unchecked-box`.
     static let uncheckedBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "unchecked-box")
     /// Image `user`.
@@ -1818,6 +1841,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "aboutus", bundle: ..., traitCollection: ...)`
+    static func aboutus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.aboutus, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "apple", bundle: ..., traitCollection: ...)`
     static func apple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.apple, compatibleWith: traitCollection)
@@ -1846,9 +1876,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "closemenu", bundle: ..., traitCollection: ...)`
+    static func closemenu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.closemenu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "contact.gif", bundle: ..., traitCollection: ...)`
     static func contactGif(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.contactGif, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "contactus", bundle: ..., traitCollection: ...)`
+    static func contactus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.contactus, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1979,6 +2023,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "language 1", bundle: ..., traitCollection: ...)`
+    static func language1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.language1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "language", bundle: ..., traitCollection: ...)`
     static func language(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.language, compatibleWith: traitCollection)
@@ -2003,6 +2054,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "logofull", bundle: ..., traitCollection: ...)`
     static func logofull(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.logofull, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "logout", bundle: ..., traitCollection: ...)`
+    static func logout(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.logout, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2077,6 +2135,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "setting", bundle: ..., traitCollection: ...)`
+    static func setting(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.setting, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "successIcon", bundle: ..., traitCollection: ...)`
     static func successIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.successIcon, compatibleWith: traitCollection)
@@ -2094,6 +2159,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "successIconSubtle", bundle: ..., traitCollection: ...)`
     static func successIconSubtle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.successIconSubtle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "terms", bundle: ..., traitCollection: ...)`
+    static func terms(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.terms, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2445,7 +2517,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 284 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 286 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -2990,6 +3062,10 @@ struct R: Rswift.Validatable {
       /// en translation: Logout
       ///
       /// Locales: ar, en
+      static let logout = Rswift.StringResource(key: "Logout", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Logout
+      ///
+      /// Locales: ar, en
       static let logoutLan = Rswift.StringResource(key: "logout.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Low to high
       ///
@@ -3079,6 +3155,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let permissionNotificationName = Rswift.StringResource(key: "permission notification name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Notification settings
+      ///
+      /// Locales: ar, en
+      static let notificationSettings = Rswift.StringResource(key: "Notification settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Notifications
       ///
       /// Locales: ar, en
@@ -5612,6 +5692,21 @@ struct R: Rswift.Validatable {
       /// en translation: Logout
       ///
       /// Locales: ar, en
+      static func logout(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Logout", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Logout"
+        }
+
+        return NSLocalizedString("Logout", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Logout
+      ///
+      /// Locales: ar, en
       static func logoutLan(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("logout.lan", bundle: hostingBundle, comment: "")
@@ -5952,6 +6047,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("permission notification name", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Notification settings
+      ///
+      /// Locales: ar, en
+      static func notificationSettings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Notification settings", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Notification settings"
+        }
+
+        return NSLocalizedString("Notification settings", bundle: bundle, comment: "")
       }
 
       /// en translation: Notifications
@@ -8217,6 +8327,9 @@ struct _R: Rswift.Validatable {
       try signupStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try slideMenuStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try termsStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -8844,6 +8957,37 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.signupStoryboard().signupVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'signupVC' could not be loaded from storyboard 'SignupStoryboard' as 'SignupVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct slideMenuStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SlideMenuVC
+
+      let bundle = R.hostingBundle
+      let name = "SlideMenuStoryboard"
+      let slideMenuVC = StoryboardViewControllerResource<SlideMenuVC>(identifier: "SlideMenuVC")
+
+      func slideMenuVC(_: Void = ()) -> SlideMenuVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: slideMenuVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "aboutus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'aboutus' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "closemenu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closemenu' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "contactus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'contactus' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "language 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'language 1' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logout", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logout' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "setting", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'setting' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "terms", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'terms' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.slideMenuStoryboard().slideMenuVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'slideMenuVC' could not be loaded from storyboard 'SlideMenuStoryboard' as 'SlideMenuVC'.") }
       }
 
       fileprivate init() {}
