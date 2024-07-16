@@ -11,6 +11,11 @@
 		236E198D2670F380001A9C46 /* UICollectionViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E198B2670F380001A9C46 /* UICollectionViewEx.swift */; };
 		23E16A232667A819001048E5 /* GalleryPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E16A202667A819001048E5 /* GalleryPickerHelper.swift */; };
 		23E16A2B2667A843001048E5 /* GalleryPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E16A2A2667A843001048E5 /* GalleryPickerDelegate.swift */; };
+		660A62F72C464A020094B92E /* SelectLocCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A62F22C464A020094B92E /* SelectLocCoordinator.swift */; };
+		660A62F82C464A020094B92E /* SelectLocModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A62F42C464A020094B92E /* SelectLocModel.swift */; };
+		660A62F92C464A020094B92E /* SelectLocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A62F52C464A020094B92E /* SelectLocVC.swift */; };
+		660A62FA2C464A020094B92E /* SelectLocViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A62F62C464A020094B92E /* SelectLocViewModel.swift */; };
+		660A62FB2C464A020094B92E /* SelectLocStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660A62F32C464A020094B92E /* SelectLocStoryboard.storyboard */; };
 		6627E36C277099AF00A4A6A6 /* GuardPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6627E36B277099AF00A4A6A6 /* GuardPassword.swift */; };
 		66293C0F2C3D67EB008F3FB8 /* SelectclubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66293C0D2C3D67EB008F3FB8 /* SelectclubTableViewCell.swift */; };
 		66293C102C3D67EC008F3FB8 /* SelectclubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66293C0E2C3D67EB008F3FB8 /* SelectclubTableViewCell.xib */; };
@@ -567,6 +572,11 @@
 		23E16A2A2667A843001048E5 /* GalleryPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerDelegate.swift; sourceTree = "<group>"; };
 		378F1F3DA3007C105AF4F087 /* Pods-Superfan.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Superfan.development.xcconfig"; path = "Target Support Files/Pods-Superfan/Pods-Superfan.development.xcconfig"; sourceTree = "<group>"; };
 		3B1176A038184DAE26ED85FA /* Pods_Superfan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Superfan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		660A62F22C464A020094B92E /* SelectLocCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocCoordinator.swift; sourceTree = "<group>"; };
+		660A62F32C464A020094B92E /* SelectLocStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectLocStoryboard.storyboard; sourceTree = "<group>"; };
+		660A62F42C464A020094B92E /* SelectLocModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocModel.swift; sourceTree = "<group>"; };
+		660A62F52C464A020094B92E /* SelectLocVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocVC.swift; sourceTree = "<group>"; };
+		660A62F62C464A020094B92E /* SelectLocViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocViewModel.swift; sourceTree = "<group>"; };
 		6627E36B277099AF00A4A6A6 /* GuardPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardPassword.swift; sourceTree = "<group>"; };
 		66293C0D2C3D67EB008F3FB8 /* SelectclubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubTableViewCell.swift; sourceTree = "<group>"; };
 		66293C0E2C3D67EB008F3FB8 /* SelectclubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectclubTableViewCell.xib; sourceTree = "<group>"; };
@@ -1168,6 +1178,18 @@
 				7317042742C0ED539302BE74 /* Pods-Superfan.testing.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		660A62F12C4649D50094B92E /* SelectLoc */ = {
+			isa = PBXGroup;
+			children = (
+				660A62F22C464A020094B92E /* SelectLocCoordinator.swift */,
+				660A62F32C464A020094B92E /* SelectLocStoryboard.storyboard */,
+				660A62F42C464A020094B92E /* SelectLocModel.swift */,
+				660A62F52C464A020094B92E /* SelectLocVC.swift */,
+				660A62F62C464A020094B92E /* SelectLocViewModel.swift */,
+			);
+			path = SelectLoc;
 			sourceTree = "<group>";
 		};
 		66293C0C2C3D6768008F3FB8 /* cells */ = {
@@ -2658,6 +2680,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				660A62F12C4649D50094B92E /* SelectLoc */,
 				66EA91282C3EC3CF0027154F /* Editpassword */,
 				66EA911D2C3EC3A80027154F /* Editemail */,
 				66EA91122C3EC37C0027154F /* Editphone */,
@@ -2903,6 +2926,7 @@
 			files = (
 				C86BF98A266947F0002D87BC /* StatusLine.xib in Resources */,
 				C871C729272FEB7B00DCBD2D /* SFPRODISPLAYBLACKITALIC.OTF in Resources */,
+				660A62FB2C464A020094B92E /* SelectLocStoryboard.storyboard in Resources */,
 				66DB2DE72C3C172B00BE155C /* ClubCollectionViewCell.xib in Resources */,
 				C86BF9A5266947F0002D87BC /* warningIcon.png in Resources */,
 				C86BF980266947F0002D87BC /* infoIconSubtle.png in Resources */,
@@ -3324,6 +3348,10 @@
 				C871C899272FECF200DCBD2D /* TwitterModel.swift in Sources */,
 				C86BF9A9266947F0002D87BC /* CornerRoundingView.swift in Sources */,
 				7756A17B25348AD400BFE53C /* SignedNumericExtensions.swift in Sources */,
+				660A62F72C464A020094B92E /* SelectLocCoordinator.swift in Sources */,
+				660A62F82C464A020094B92E /* SelectLocModel.swift in Sources */,
+				660A62F92C464A020094B92E /* SelectLocVC.swift in Sources */,
+				660A62FA2C464A020094B92E /* SelectLocViewModel.swift in Sources */,
 				C84539872729880600004173 /* Coordinator.swift in Sources */,
 				7756A08E253482EF00BFE53C /* NetworkConfigration.swift in Sources */,
 				C871C99A2730231300DCBD2D /* UIView+CollectionSkeleton.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class SignupCoordinator: Coordinator {
+class SignupCoordinator: Coordinator, SelectLocVCDelegate {
     typealias PresentingView = SignupVC
     weak var view: PresentingView?
     deinit {
@@ -25,5 +25,23 @@ extension SignupCoordinator {
     func terms() {
         guard let scene = R.storyboard.termsStoryboard.termsVC() else { return }
         view?.push(scene)
+    }
+    func locate(){
+        guard let scene = R.storyboard.selectLocStoryboard.selectLocVC() else { return }
+        scene.lat = view?.viewModel?.lat.value?.double() ?? 0
+        scene.lng = view?.viewModel?.lng.value?.double() ?? 0
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
+    func locate(lat: Double, lng: Double, loc: String) {
+        view?.viewModel?.lat.send(lat.string)
+        view?.viewModel?.lng.send(lng.string)
+        view?.mapLbl.text = loc
+        if loc != "Locate on map".localized {
+            view?.mapLbl.textColor = R.color.black()
+        }else {
+            view?.mapLbl.textColor = R.color.black1()
+
+        }
     }
 }

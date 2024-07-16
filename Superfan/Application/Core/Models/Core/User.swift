@@ -40,6 +40,8 @@ extension UserRoot {
         var countryId: Int?
         var positionId: Int?
         var age: Int?
+        var lat: String?
+        var lng: String?
         var location: String?
         var birthyear: Int?
         var clubName: String?
@@ -52,6 +54,8 @@ extension UserRoot {
         enum CodingKeys: String, CodingKey {
             case email
             case age
+            case lat
+            case lng
             case location
             case youtubeLink = "youtube_link"
             case isSocial = "is_social"

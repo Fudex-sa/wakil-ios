@@ -115,6 +115,9 @@ extension SignupVC {
         termsLbl.UIViewAction {
             self.coordinator?.terms()
         }
+        mapView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.locate()
+        }).store(self)
         eyeBtn.publisher.listen(on: {[weak self] _ in
             if self?.passwordTxf.isSecureTextEntry == true {
                 self?.passwordTxf.isSecureTextEntry = false
@@ -153,6 +156,9 @@ extension SignupVC {
             if self?.checkBtn.isOn == false {
                 error = "\(error)\n\("agree to".localized) \("terms and conditions".localized)"
             }
+            if self?.viewModel?.lat.value ?? "" == "" {
+                error = "\(error)\n\("Locate on map".localized)"
+            }
             var phone = self?.phoneTxf.text ?? ""
             if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
                 if phone.count != 10 {
@@ -171,11 +177,10 @@ extension SignupVC {
                 }else {
                     self?.viewModel?.phone.send(self?.phoneTxf.text ?? "")
                 }
+               
                 self?.viewModel?.name.send(self?.userTxf.text ?? "")
                 self?.viewModel?.email.send(self?.emailTxf.text ?? "")
                 self?.viewModel?.password.send(self?.passwordTxf.text ?? "")
-                self?.viewModel?.lat.send("29.66464")
-                self?.viewModel?.lng.send("31.74646")
                 self?.viewModel?.countryCode.send("+966")
                 self?.startLoading()
                 self?.viewModel?.checkregister()

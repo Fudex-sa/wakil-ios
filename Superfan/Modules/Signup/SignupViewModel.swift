@@ -19,6 +19,7 @@ class SignupViewModel: BaseViewModel , DataSourceViewModel{
     var name: Publisher<String> = .init()
     var lat: Publisher<String> = .init()
     var lng: Publisher<String> = .init()
+    var location: Publisher<String> = .init()
     var socailType: Publisher<Int> = .init()
     var socailId: Publisher<String> = .init()
     var password: Publisher<String> = .init()
@@ -48,6 +49,7 @@ extension SignupViewModel {
         NetworkManager.instance.paramaters["city_id"] = stateId.value ?? 0
         NetworkManager.instance.paramaters["lat"] = lat.value ?? ""
         NetworkManager.instance.paramaters["lng"] = lng.value ?? ""
+        NetworkManager.instance.paramaters["location"] = location.value ?? ""
         NetworkManager.instance.paramaters["device_type"] = Constants.FCMTYPE
         NetworkManager.instance.paramaters["fcm_token"] = Constants.FCMTOKEN
         NetworkManager.instance.paramaters["device_id"] = Constants.DEVICEID

@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 23 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 24 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -130,6 +130,8 @@ struct R: Rswift.Validatable {
     static let profileStoryboard = _R.storyboard.profileStoryboard()
     /// Storyboard `ResetpasswordStoryboard`.
     static let resetpasswordStoryboard = _R.storyboard.resetpasswordStoryboard()
+    /// Storyboard `SelectLocStoryboard`.
+    static let selectLocStoryboard = _R.storyboard.selectLocStoryboard()
     /// Storyboard `SelectclubStoryboard`.
     static let selectclubStoryboard = _R.storyboard.selectclubStoryboard()
     /// Storyboard `SignupStoryboard`.
@@ -269,6 +271,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ResetpasswordStoryboard", bundle: ...)`
     static func resetpasswordStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.resetpasswordStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SelectLocStoryboard", bundle: ...)`
+    static func selectLocStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.selectLocStoryboard)
     }
     #endif
 
@@ -1441,7 +1450,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 76 images.
+  /// This `R.image` struct is generated, and contains static references to 77 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1561,6 +1570,8 @@ struct R: Rswift.Validatable {
     static let map = Rswift.ImageResource(bundle: R.hostingBundle, name: "map")
     /// Image `marker2`.
     static let marker2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "marker2")
+    /// Image `marker`.
+    static let marker = Rswift.ImageResource(bundle: R.hostingBundle, name: "marker")
     /// Image `menu`.
     static let menu = Rswift.ImageResource(bundle: R.hostingBundle, name: "menu")
     /// Image `next1`.
@@ -2003,6 +2014,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "marker", bundle: ..., traitCollection: ...)`
+    static func marker(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.marker, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "marker2", bundle: ..., traitCollection: ...)`
     static func marker2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.marker2, compatibleWith: traitCollection)
@@ -2427,7 +2445,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 283 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 284 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3401,6 +3419,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let verifyLan = Rswift.StringResource(key: "verify.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: View on map
+      ///
+      /// Locales: ar, en
+      static let viewOnMap = Rswift.StringResource(key: "View on map", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: We have a dedicated team here to help you with any question
       ///
       /// Locales: ar, en
@@ -7207,6 +7229,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("verify.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: View on map
+      ///
+      /// Locales: ar, en
+      static func viewOnMap(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("View on map", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "View on map"
+        }
+
+        return NSLocalizedString("View on map", bundle: bundle, comment: "")
+      }
+
       /// en translation: We have a dedicated team here to help you with any question
       ///
       /// Locales: ar, en
@@ -8171,6 +8208,9 @@ struct _R: Rswift.Validatable {
       try resetpasswordStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try selectLocStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try selectclubStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -8712,6 +8752,35 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.resetpasswordStoryboard().resetpasswordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'resetpasswordVC' could not be loaded from storyboard 'ResetpasswordStoryboard' as 'ResetpasswordVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct selectLocStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SelectLocVC
+
+      let bundle = R.hostingBundle
+      let name = "SelectLocStoryboard"
+      let selectLocVC = StoryboardViewControllerResource<SelectLocVC>(identifier: "SelectLocVC")
+
+      func selectLocVC(_: Void = ()) -> SelectLocVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: selectLocVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'SelectLocStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "map", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map' is used in storyboard 'SelectLocStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'SelectLocStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SelectLocStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'SelectLocStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'SelectLocStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SelectLocStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.selectLocStoryboard().selectLocVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectLocVC' could not be loaded from storyboard 'SelectLocStoryboard' as 'SelectLocVC'.") }
       }
 
       fileprivate init() {}

@@ -9,7 +9,9 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class EditprofileCoordinator: Coordinator {
+class EditprofileCoordinator: Coordinator, SelectLocVCDelegate {
+   
+    
     typealias PresentingView = EditprofileVC
     weak var view: PresentingView?
     deinit {
@@ -18,5 +20,16 @@ class EditprofileCoordinator: Coordinator {
 }
 
 extension EditprofileCoordinator {
-    
+    func locate(){
+        guard let scene = R.storyboard.selectLocStoryboard.selectLocVC() else { return }
+        scene.lat = view?.viewModel?.lat.value?.double() ?? 0
+        scene.lng = view?.viewModel?.lng.value?.double() ?? 0
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
+    func locate(lat: Double, lng: Double, loc: String) {
+        view?.viewModel?.lat.send(lat.string)
+        view?.viewModel?.lng.send(lng.string)
+        view?.mapLbl.text = loc
+    }
 }

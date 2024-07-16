@@ -76,6 +76,8 @@ extension EditprofileVC {
         userTxf.text = user?.data?.name ?? ""
         mapLbl.text = user?.data?.location ?? ""
         userImg.setImage(url: user?.data?.photo ?? "")
+        viewModel?.lat.send(user?.data?.lat ?? "")
+        viewModel?.lng.send(user?.data?.lng ?? "")
     }
     func actions(){
         picker = .init()
@@ -89,16 +91,21 @@ extension EditprofileVC {
         editImgBtn.publisher.listen(on: {[weak self] _ in
             self?.picker?.pick(in: self)
         }).store(self)
+        mapView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.locate()
+        }).store(self)
         editBtn.publisher.listen(on: {[weak self] _ in
             if self?.validator?.build() == false {
                 return
             }
             var error = ""
+            if self?.viewModel?.lat.value ?? "" == "" {
+                error = "Locate on map".localized
+            }
             if error == "" {
                 self?.viewModel?.name.send(self?.userTxf.text ?? "")
                 self?.viewModel?.userImg.send(self?.userImg.image ?? UIImage())
-                self?.viewModel?.lat.send("29.66464")
-                self?.viewModel?.lng.send("31.74646")
+                self?.viewModel?.location.send(self?.mapLbl.text ?? "")
                 self?.startLoading()
                 self?.viewModel?.updateprofile()
             }else {
