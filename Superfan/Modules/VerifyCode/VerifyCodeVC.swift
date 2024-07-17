@@ -84,7 +84,7 @@ extension VerifyCodeVC {
                 .setBody(self?.viewModel?.editphonedata.value?.message ?? "")
                 .setTheme(.success)
                 .bulid()
-            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+            Coordinator.instance.restart(storyboard: R.storyboard.selectclubStoryboard())
         })
         viewModel?.checkotp.listen(on: { [weak self] value in
             self?.coordinator?.resetpass()

@@ -28,6 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
                 Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
             }else {
+                if UD.user?.data?.user?.club != nil {
+                    UD.club = UD.user?.data?.user?.club
+                }
                 Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
             }
         }else {

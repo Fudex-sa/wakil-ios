@@ -129,6 +129,7 @@
                 <outlet property="ContainerView" destination="9qJ-DU-jHf" id="hnY-o5-asX"/>
                 <outlet property="clubImg" destination="eOt-cw-dor" id="uTf-wh-x7S"/>
                 <outlet property="clubLbl" destination="74G-W5-YjA" id="FXz-jN-Mnv"/>
+                <outlet property="imageHight" destination="LwS-TT-A4b" id="pbv-Va-Rbw"/>
                 <outlet property="newImg" destination="KMM-P7-tbx" id="QmN-vo-Oz5"/>
                 <outlet property="timeLbl" destination="ClY-oO-Ohe" id="WwH-eG-veu"/>
                 <outlet property="titlelbl" destination="GNf-jS-211" id="vYa-5J-fXc"/>
@@ -141,7 +142,7 @@
             <color red="0.074509803921568626" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blackshadow8">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.079999998211860657" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="gray1">
             <color red="0.67450980392156867" green="0.67450980392156867" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

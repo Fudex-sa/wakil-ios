@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - ...  ViewModel
 class SignupViewModel: BaseViewModel , DataSourceViewModel{
@@ -23,6 +24,7 @@ class SignupViewModel: BaseViewModel , DataSourceViewModel{
     var socailType: Publisher<Int> = .init()
     var socailId: Publisher<String> = .init()
     var password: Publisher<String> = .init()
+    var userImg: Publisher<UIImage> = .init()
     var userdata: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
@@ -60,7 +62,9 @@ extension SignupViewModel {
             NetworkManager.instance.paramaters["password"] = password.value ?? ""
             NetworkManager.instance.paramaters["password_confirmation"] = password.value ?? ""
         }
-        NetworkManager.instance.request(NetworkConfigration.EndPoint.register.rawValue, type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        var images: [String: UIImage] = [:]
+        images["photo"] = userImg.value ?? UIImage()
+        NetworkManager.instance.uploadMultiImagesWithKey(NetworkConfigration.EndPoint.register.rawValue, type: .post,files: images, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }

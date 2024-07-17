@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class NewsVC: BaseController {
+    @IBOutlet weak var newsTbl: UITableView!
     var viewModel: NewsViewModel?
     var coordinator: NewsCoordinator?
 }
@@ -25,18 +26,75 @@ extension NewsVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        setup()
+        bind()
+        self.tabBarController?.tabBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.reload()
+        })
+       
+    }
 }
 // MARK: - ...  Functions
 extension NewsVC {
     func setup() {
+        newsTbl.delegate = self
+        newsTbl.dataSource = self
+        viewModel?.countryId.send(1)
+        newsTbl.observe()
+        newsTbl.skeleton()
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
+        viewModel?.fetchnews()
+    }
+    func reload(){
+        if viewModel?.items.value?.count ?? 0 == 0 {
+            newsTbl.isHidden = true
+            showEmptyScreen(for: 400 , title: "There are no news available".localized)
+        }else {
+            newsTbl.isHidden = false
+            hideEmptyScreen()
+        }
+        newsTbl.reloadData()
+        newsTbl.stopSwipeButtom()
+
     }
 }
 // MARK: - ...  View Contract
 extension NewsVC {
+}
+extension NewsVC:UITableViewDelegate , UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.dataSource()?.count ?? 2
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.cell(type: NewsTableViewCell.self, indexPath)
+        cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+        cell.setup()
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if viewModel?.items.value?.count ?? 0 == 0 {
+            return
+        }
+        self.coordinator?.detailsnews(id: viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
+    }
+
 }

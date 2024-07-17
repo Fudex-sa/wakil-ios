@@ -9,12 +9,24 @@
 import Foundation
 
 // MARK: - ...  ViewModel
-class ChangeClubViewModel: BaseViewModel {
+class ChangeClubViewModel: BaseViewModel , DataSourceViewModel{
+    var countryId: Publisher<Int> = .init()
+    var items: Publisher<[SelectclubDatum]> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension ChangeClubViewModel {
 }
 // MARK: - ...  Example of network response
 extension ChangeClubViewModel {
-   
+    func fetchclubs() {
+        NetworkManager.instance.paramaters["country_id"] = countryId.value ?? 0
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.clubs.rawValue, type: .get, SelectclubModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.append(contentsOf: model.data ?? [])
+            self?.paginator(respnod: model.data)
+            self?.publisher()
+        }).store(self)
+    }
 }

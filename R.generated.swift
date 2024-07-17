@@ -1459,7 +1459,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 84 images.
+  /// This `R.image` struct is generated, and contains static references to 87 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1603,6 +1603,10 @@ struct R: Rswift.Validatable {
     static let notificationtab = Rswift.ImageResource(bundle: R.hostingBundle, name: "notificationtab")
     /// Image `placeHolder`.
     static let placeHolder = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeHolder")
+    /// Image `radiooff`.
+    static let radiooff = Rswift.ImageResource(bundle: R.hostingBundle, name: "radiooff")
+    /// Image `radioon`.
+    static let radioon = Rswift.ImageResource(bundle: R.hostingBundle, name: "radioon")
     /// Image `rectangle7`.
     static let rectangle7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "rectangle7")
     /// Image `setting`.
@@ -1617,6 +1621,8 @@ struct R: Rswift.Validatable {
     static let terms = Rswift.ImageResource(bundle: R.hostingBundle, name: "terms")
     /// Image `unchecked-box`.
     static let uncheckedBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "unchecked-box")
+    /// Image `user 1`.
+    static let user1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "user 1")
     /// Image `user`.
     static let user = Rswift.ImageResource(bundle: R.hostingBundle, name: "user")
     /// Image `usertab1`.
@@ -2128,6 +2134,20 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "radiooff", bundle: ..., traitCollection: ...)`
+    static func radiooff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.radiooff, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "radioon", bundle: ..., traitCollection: ...)`
+    static func radioon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.radioon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "rectangle7", bundle: ..., traitCollection: ...)`
     static func rectangle7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.rectangle7, compatibleWith: traitCollection)
@@ -2173,6 +2193,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "unchecked-box", bundle: ..., traitCollection: ...)`
     static func uncheckedBox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.uncheckedBox, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "user 1", bundle: ..., traitCollection: ...)`
+    static func user1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.user1, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2252,7 +2279,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 18 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 19 nibs.
   struct nib {
     /// Nib `CalendarDateRangePickerHeaderView`.
     static let calendarDateRangePickerHeaderView = _R.nib._CalendarDateRangePickerHeaderView()
@@ -2266,6 +2293,8 @@ struct R: Rswift.Validatable {
     static let clubCollectionViewCell = _R.nib._ClubCollectionViewCell()
     /// Nib `EmptyScreen`.
     static let emptyScreen = _R.nib._EmptyScreen()
+    /// Nib `ImagesCollectionViewCell`.
+    static let imagesCollectionViewCell = _R.nib._ImagesCollectionViewCell()
     /// Nib `MaintanceScreen`.
     static let maintanceScreen = _R.nib._MaintanceScreen()
     /// Nib `MatchsHomeCollectionViewCell`.
@@ -2336,6 +2365,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.emptyScreen) instead")
     static func emptyScreen(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.emptyScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ImagesCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.imagesCollectionViewCell) instead")
+    static func imagesCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.imagesCollectionViewCell)
     }
     #endif
 
@@ -2459,6 +2496,10 @@ struct R: Rswift.Validatable {
       return R.nib.emptyScreen.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func imagesCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ImagesCollectionViewCell? {
+      return R.nib.imagesCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ImagesCollectionViewCell
+    }
+
     static func maintanceScreen(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.maintanceScreen.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2517,7 +2558,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 286 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 290 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -2723,6 +2764,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let clubs = Rswift.StringResource(key: "Clubs", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Clubs
+      ///
+      /// Locales: ar, en
+      static let clubs1 = Rswift.StringResource(key: "Clubs1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Code expires after
       ///
       /// Locales: ar, en
@@ -2823,6 +2868,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let actionDenied = Rswift.StringResource(key: "action denied", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Details
+      ///
+      /// Locales: ar, en
+      static let details = Rswift.StringResource(key: "Details", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Do you want to activate location service?
       ///
       /// Locales: ar, en
@@ -3455,6 +3504,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let termsLan = Rswift.StringResource(key: "terms.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: There are no clubs available
+      ///
+      /// Locales: ar, en
+      static let thereAreNoClubsAvailable = Rswift.StringResource(key: "There are no clubs available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: There are no news available
+      ///
+      /// Locales: ar, en
+      static let thereAreNoNewsAvailable = Rswift.StringResource(key: "There are no news available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: These are the permissions the app requires to work properly. Please see description for each permission.
       ///
       /// Locales: ar, en
@@ -4429,6 +4486,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Clubs", bundle: bundle, comment: "")
       }
 
+      /// en translation: Clubs
+      ///
+      /// Locales: ar, en
+      static func clubs1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Clubs1", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Clubs1"
+        }
+
+        return NSLocalizedString("Clubs1", bundle: bundle, comment: "")
+      }
+
       /// en translation: Code expires after
       ///
       /// Locales: ar, en
@@ -4802,6 +4874,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("action denied", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Details
+      ///
+      /// Locales: ar, en
+      static func details(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Details", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Details"
+        }
+
+        return NSLocalizedString("Details", bundle: bundle, comment: "")
       }
 
       /// en translation: Do you want to activate location service?
@@ -7174,6 +7261,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("terms.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: There are no clubs available
+      ///
+      /// Locales: ar, en
+      static func thereAreNoClubsAvailable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("There are no clubs available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "There are no clubs available"
+        }
+
+        return NSLocalizedString("There are no clubs available", bundle: bundle, comment: "")
+      }
+
+      /// en translation: There are no news available
+      ///
+      /// Locales: ar, en
+      static func thereAreNoNewsAvailable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("There are no news available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "There are no news available"
+        }
+
+        return NSLocalizedString("There are no news available", bundle: bundle, comment: "")
+      }
+
       /// en translation: These are the permissions the app requires to work properly. Please see description for each permission.
       ///
       /// Locales: ar, en
@@ -7988,6 +8105,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _CardView.validate()
       try _CenteredView.validate()
+      try _EmptyScreen.validate()
       try _MaintanceScreen.validate()
       try _MessageView.validate()
       try _NetworkFailScreen.validate()
@@ -8063,12 +8181,30 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _EmptyScreen: Rswift.NibResourceType {
+    struct _EmptyScreen: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "EmptyScreen"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in nib 'EmptyScreen', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in nib 'EmptyScreen', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ImagesCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ImagesCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ImagesCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ImagesCollectionViewCell
       }
 
       fileprivate init() {}
@@ -8799,8 +8935,9 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "language", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'language' is used in storyboard 'OnboardingStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Borderblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Borderblack' is used in storyboard 'OnboardingStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'OnboardingStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Lightgray' is used in storyboard 'OnboardingStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'OnboardingStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'OnboardingStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.onboardingStoryboard().onboardingVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'onboardingVC' could not be loaded from storyboard 'OnboardingStoryboard' as 'OnboardingVC'.") }
       }
@@ -8943,12 +9080,14 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "dropdown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dropdown' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "editImg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'editImg' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "email", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'email' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "eye", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'eye' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'lock' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "map", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "user 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user 1' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }

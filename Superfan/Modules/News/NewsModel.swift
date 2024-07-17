@@ -9,5 +9,9 @@
 import Foundation
 
 // MARK: - ...  Entity
-class NewsModel: Codable {
+
+struct NewsModel: Codable {
+    let status: Bool?
+    let message: String?
+    let data: [NewsModelData]?
 }

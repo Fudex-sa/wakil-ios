@@ -62,7 +62,12 @@ extension LoginVC {
         viewModel?.userdata.listen(on: { [weak self] value in
             if self?.viewModel?.userdata.value?.data != nil {
                 if self?.viewModel?.userdata.value?.data?.user?.isverified ?? 0 == 1 {
-                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                    if UD.user?.data?.user?.club == nil {
+                        Coordinator.instance.restart(storyboard: R.storyboard.selectclubStoryboard())
+                    }else {
+                        UD.club = UD.user?.data?.user?.club
+                        Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                    }
                 }else {
                     self?.coordinator?.verify()
                 }

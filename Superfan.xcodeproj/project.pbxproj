@@ -110,6 +110,10 @@
 		6699E65F2C466A16003606DE /* SlideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699E65B2C466A16003606DE /* SlideMenuVC.swift */; };
 		6699E6602C466A16003606DE /* SlideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6699E65C2C466A16003606DE /* SlideMenuViewModel.swift */; };
 		6699E6612C466A16003606DE /* SlideMenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6699E6592C466A16003606DE /* SlideMenuStoryboard.storyboard */; };
+		669E1B3F2C47E91300950373 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B3D2C47E91300950373 /* ImagesCollectionViewCell.swift */; };
+		669E1B402C47E91300950373 /* ImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 669E1B3E2C47E91300950373 /* ImagesCollectionViewCell.xib */; };
+		669E1B422C47F11B00950373 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B412C47F11B00950373 /* RoundedView.swift */; };
+		669E1B442C47F15700950373 /* RoundedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B432C47F15700950373 /* RoundedBottomView.swift */; };
 		66A040E42C43EC8F00B05221 /* RTLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A040E32C43EC8F00B05221 /* RTLTabBarController.swift */; };
 		66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */; };
 		66AEC2D12C43BF9D00BC260E /* AppleDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */; };
@@ -676,6 +680,10 @@
 		6699E65A2C466A16003606DE /* SlideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuModel.swift; sourceTree = "<group>"; };
 		6699E65B2C466A16003606DE /* SlideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuVC.swift; sourceTree = "<group>"; };
 		6699E65C2C466A16003606DE /* SlideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewModel.swift; sourceTree = "<group>"; };
+		669E1B3D2C47E91300950373 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		669E1B3E2C47E91300950373 /* ImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesCollectionViewCell.xib; sourceTree = "<group>"; };
+		669E1B412C47F11B00950373 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		669E1B432C47F15700950373 /* RoundedBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBottomView.swift; sourceTree = "<group>"; };
 		66A040E32C43EC8F00B05221 /* RTLTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTLTabBarController.swift; sourceTree = "<group>"; };
 		66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleModel.swift; sourceTree = "<group>"; };
 		66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleDriver.swift; sourceTree = "<group>"; };
@@ -1226,6 +1234,7 @@
 		66293C1C2C3D6E3B008F3FB8 /* NewsDetails */ = {
 			isa = PBXGroup;
 			children = (
+				669E1B3C2C47E8EB00950373 /* cells */,
 				66293C1D2C3D6E52008F3FB8 /* NewsDetailsCoordinator.swift */,
 				66293C1E2C3D6E52008F3FB8 /* NewsDetailsStoryboard.storyboard */,
 				66293C1F2C3D6E52008F3FB8 /* NewsDetailsModel.swift */,
@@ -1427,6 +1436,15 @@
 			path = SlideMenu;
 			sourceTree = "<group>";
 		};
+		669E1B3C2C47E8EB00950373 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				669E1B3D2C47E91300950373 /* ImagesCollectionViewCell.swift */,
+				669E1B3E2C47E91300950373 /* ImagesCollectionViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		66AEC2CD2C43BF7400BC260E /* Apple */ = {
 			isa = PBXGroup;
 			children = (
@@ -1626,6 +1644,8 @@
 				C86BF90F266945C4002D87BC /* LocationHelper */,
 				C86BF9172669473D002D87BC /* DateHelper */,
 				C8C9D01F266CD56000E66D46 /* Validator */,
+				669E1B412C47F11B00950373 /* RoundedView.swift */,
+				669E1B432C47F15700950373 /* RoundedBottomView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -3005,6 +3025,7 @@
 				C86BF9A3266947F0002D87BC /* successIconLight@3x.png in Resources */,
 				C871C737272FEB7C00DCBD2D /* SFPRODISPLAYULTRALIGHTITALIC.OTF in Resources */,
 				C86BF992266947F0002D87BC /* errorIcon.png in Resources */,
+				669E1B402C47E91300950373 /* ImagesCollectionViewCell.xib in Resources */,
 				C86BF98B266947F0002D87BC /* warningIconLight.png in Resources */,
 				C86BF999266947F0002D87BC /* warningIconSubtle@2x.png in Resources */,
 				C871C735272FEB7C00DCBD2D /* Muli.ttf in Resources */,
@@ -3243,6 +3264,7 @@
 				6699E65F2C466A16003606DE /* SlideMenuVC.swift in Sources */,
 				6699E6602C466A16003606DE /* SlideMenuViewModel.swift in Sources */,
 				66B6AA962C3BD41200BC277C /* SelectclubVC.swift in Sources */,
+				669E1B3F2C47E91300950373 /* ImagesCollectionViewCell.swift in Sources */,
 				66B6AA972C3BD41200BC277C /* SelectclubViewModel.swift in Sources */,
 				66EA912F2C3EC3EE0027154F /* EditpasswordCoordinator.swift in Sources */,
 				66EA91302C3EC3EE0027154F /* EditpasswordModel.swift in Sources */,
@@ -3349,6 +3371,7 @@
 				7756A15F25348AD400BFE53C /* UICollectionViewExtensions.swift in Sources */,
 				C871C70C272FEAC200DCBD2D /* DarkMode.swift in Sources */,
 				C86BF9A8266947F0002D87BC /* NSLayoutConstraint+Extensions.swift in Sources */,
+				669E1B442C47F15700950373 /* RoundedBottomView.swift in Sources */,
 				66950BE42C3D3BBD00522EE0 /* NotificationCoordinator.swift in Sources */,
 				66950BE52C3D3BBD00522EE0 /* NotificationModel.swift in Sources */,
 				66AEC2D72C43C49900BC260E /* JWT.swift in Sources */,
@@ -3508,6 +3531,7 @@
 				C86BF97B266947F0002D87BC /* WindowViewController.swift in Sources */,
 				C853B95826D7F9450008F09D /* SPPermissionsDialogGradeBlurView.swift in Sources */,
 				C853B96726D7F9450008F09D /* OpenService.swift in Sources */,
+				669E1B422C47F11B00950373 /* RoundedView.swift in Sources */,
 				C871C8A3272FECF200DCBD2D /* FacebookDriver.swift in Sources */,
 				C84539932729882800004173 /* BaseViewControllerProtocol.swift in Sources */,
 				66EA910E2C3EC36F0027154F /* EditprofileCoordinator.swift in Sources */,
@@ -3715,7 +3739,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3799,7 +3823,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -3888,7 +3912,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3971,7 +3995,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;

@@ -31,5 +31,16 @@ public extension UIViewController {
     func removeNotificationsObserver() {
 		NotificationCenter.default.removeObserver(self)
 	}
+    func setStatusBar(color: UIColor) {
+            let tag = 12321
+            if let taggedView = self.view.viewWithTag(tag){
+                taggedView.removeFromSuperview()
+            }
+            let overView = UIView()
+            overView.frame = UIApplication.shared.statusBarFrame
+            overView.backgroundColor = color
+            overView.tag = tag
+            self.view.addSubview(overView)
+        }
 
 }

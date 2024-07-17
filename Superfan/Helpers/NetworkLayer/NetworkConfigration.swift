@@ -40,6 +40,7 @@ struct NetworkConfigration {
         case states = "cities"
         case validteregister = "checkRegisterValidation"
         case register = "fan/register"
+        case news = "fan/news"
         case confirmotp = "fan/confirm-otp"
         case sendotp = "fan/send-otp"
         case resetpass = "fan/forgotPassword"
@@ -55,6 +56,7 @@ struct NetworkConfigration {
         case leagues = "fan/leagues"
         case clubs = "fan/clubs"
         case setting
+        case favclub = "fan/fanFavouriteClubUpdate"
         case contactus = "fan/sendContact"
         case logout = "fan/logout"
         case clubdetails = "fan/clubs/"

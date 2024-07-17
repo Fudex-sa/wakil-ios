@@ -18,5 +18,9 @@ class NewsCoordinator: Coordinator {
 }
 
 extension NewsCoordinator {
-    
+    func detailsnews(id: Int) {
+        guard let scene = R.storyboard.newsDetailsStoryboard.newsDetailsVC() else { return }
+        scene.newsId = id
+        view?.push(scene)
+    }
 }

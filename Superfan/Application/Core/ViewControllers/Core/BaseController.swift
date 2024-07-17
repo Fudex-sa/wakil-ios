@@ -36,6 +36,7 @@ class BaseController: UIViewController, POPUPModal, Combining, Sounder {
         }
         self.setupBase()
         self.checkNetwork()
+        setStatusBar(color: R.color.whiteColor()!)
     }
     
     override func viewWillAppear(_ animated: Bool) {

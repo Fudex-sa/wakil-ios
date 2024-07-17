@@ -99,9 +99,9 @@ extension EditprofileVC {
                 return
             }
             var error = ""
-            if self?.viewModel?.lat.value ?? "" == "" {
-                error = "Locate on map".localized
-            }
+//            if self?.viewModel?.lat.value ?? "" == "" {
+//                error = "Locate on map".localized
+//            }
             if error == "" {
                 self?.viewModel?.name.send(self?.userTxf.text ?? "")
                 self?.viewModel?.userImg.send(self?.userImg.image ?? UIImage())

@@ -9,5 +9,21 @@
 import Foundation
 
 // MARK: - ...  Entity
-class HomeModel: Codable {
+struct HomeModel: Codable {
+    let status: Bool?
+    let message: String?
+    let data: HomeDataClass?
+}
+
+// MARK: - DataClass
+struct HomeDataClass: Codable {
+    let clubs: [SelectclubDatum]?
+    let news: [NewsModelData]?
+}
+
+struct NewsModelData: Codable {
+    let id: Int?
+    let club: SelectclubDatum?
+    let title, date: String?
+    let backgrouds: String?
 }

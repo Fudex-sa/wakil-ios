@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class SignupVC: BaseController {
+    @IBOutlet weak var userImgBtn: UIButton!
+    @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var passspaceView: UIView!
     @IBOutlet weak var confirmpassView: UIView!
     @IBOutlet weak var passwordView: UIView!
@@ -53,6 +55,8 @@ class SignupVC: BaseController {
     var type = 0
     var name = ""
     var socailId = ""
+    var picker: GalleryPickerHelper?
+    var photoURL: URL?
 }
 
 // MARK: - ...  LifeCycle
@@ -112,6 +116,17 @@ extension SignupVC {
         viewModel?.fetchstates()
     }
     func actions(){
+        picker = .init()
+        picker?.onPickImageURL = { [self] url in
+            self.photoURL = url
+                    
+        }
+        picker?.onPickImage = { [self] image in
+            self.userImg.image = image
+        }
+        userImgBtn.publisher.listen(on: {[weak self] _ in
+            self?.picker?.pick(in: self)
+        }).store(self)
         termsLbl.UIViewAction {
             self.coordinator?.terms()
         }
@@ -156,8 +171,8 @@ extension SignupVC {
             if self?.checkBtn.isOn == false {
                 error = "\(error)\n\("agree to".localized) \("terms and conditions".localized)"
             }
-            if self?.viewModel?.lat.value ?? "" == "" {
-                error = "\(error)\n\("Locate on map".localized)"
+            if self?.photoURL == nil {
+                error = "\(error)\n\("add personal image".localized)"
             }
             var phone = self?.phoneTxf.text ?? ""
             if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
@@ -182,6 +197,7 @@ extension SignupVC {
                 self?.viewModel?.email.send(self?.emailTxf.text ?? "")
                 self?.viewModel?.password.send(self?.passwordTxf.text ?? "")
                 self?.viewModel?.countryCode.send("+966")
+                self?.viewModel?.userImg.send(self?.userImg.image ?? UIImage())
                 self?.startLoading()
                 self?.viewModel?.checkregister()
             }else {

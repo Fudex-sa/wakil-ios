@@ -65,17 +65,32 @@ extension ForgetpassVC {
             if self?.validator?.build() == false {
                 return
             }
-            self?.startLoading()
+            var error = ""
             var phone = self?.phoneTxf.text ?? ""
             if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
-                let index = phone.index(phone.startIndex, offsetBy: 1)
-                phone = String(phone.suffix(from: index))
-                self?.viewModel?.phone.send(phone)
+                if phone.count != 10 {
+                    error = "\(error)\n\("Mobile number".localized) \("lenght must be".localized) \(10)"
+                }
             }else {
-                self?.viewModel?.phone.send(self?.phoneTxf.text ?? "")
+                if phone.count != 9 {
+                    error = "\(error)\n\("Mobile number".localized) \("lenght must be".localized) \(9)"
+                }
             }
-            self?.viewModel?.countryCode.send("+966")
-            self?.viewModel?.resendotp()
+            if error == "" {
+                self?.startLoading()
+                var phone = self?.phoneTxf.text ?? ""
+                if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
+                    let index = phone.index(phone.startIndex, offsetBy: 1)
+                    phone = String(phone.suffix(from: index))
+                    self?.viewModel?.phone.send(phone)
+                }else {
+                    self?.viewModel?.phone.send(self?.phoneTxf.text ?? "")
+                }
+                self?.viewModel?.countryCode.send("+966")
+                self?.viewModel?.resendotp()
+            }else {
+                self?.didError(error: error)
+            }
         }).store(self)
     }
 }

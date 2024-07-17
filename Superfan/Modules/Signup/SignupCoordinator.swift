@@ -37,6 +37,7 @@ extension SignupCoordinator {
         view?.viewModel?.lat.send(lat.string)
         view?.viewModel?.lng.send(lng.string)
         view?.mapLbl.text = loc
+        view?.viewModel?.location.send(loc)
         if loc != "Locate on map".localized {
             view?.mapLbl.textColor = R.color.black()
         }else {

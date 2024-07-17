@@ -26,6 +26,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="arrowleft"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="CXP-za-4cZ" eventType="touchUpInside" id="2By-rG-LN9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpL-3S-zPR">
                                 <rect key="frame" x="48" y="71.5" width="366" height="21"/>
@@ -56,6 +59,9 @@
                             <constraint firstItem="1Eq-ab-zK5" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="16" id="xrJ-vU-INR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newsTbl" destination="1nY-7Q-N2n" id="H1v-9k-lPj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-za-4cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

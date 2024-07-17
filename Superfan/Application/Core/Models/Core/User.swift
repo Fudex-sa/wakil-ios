@@ -47,6 +47,7 @@ extension UserRoot {
         var clubName: String?
         var prferedfoot: Int?
         var isverified: Int?
+        var club: SelectclubDatum?
         var isSocial: Int?
         var city: DatumSelectCountryModel?
         var country: DatumSelectCountryModel?
@@ -55,6 +56,7 @@ extension UserRoot {
             case email
             case age
             case lat
+            case club
             case lng
             case location
             case youtubeLink = "youtube_link"
