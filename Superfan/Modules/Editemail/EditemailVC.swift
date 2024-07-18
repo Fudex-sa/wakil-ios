@@ -64,6 +64,7 @@ extension EditemailVC {
 // MARK: - ...  Functions
 extension EditemailVC {
     func setup() {
+        changeColoe()
         emailTxf.text = user?.data?.email ?? ""
         editBtn.publisher.listen(on: {[weak self] _ in
             if self?.validator?.build() == false {
@@ -73,6 +74,11 @@ extension EditemailVC {
             self?.viewModel?.email.send(self?.emailTxf.text ?? "")
             self?.viewModel?.editemail()
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            editBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
 }
 // MARK: - ...  View Contract

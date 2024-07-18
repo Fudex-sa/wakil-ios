@@ -28,7 +28,7 @@ class LoginVC: BaseController {
     let appleDriver = AppleDriver()
     lazy var validator: Validator? = {
         let validator = Validator(guardOnSuperViewOfTextField: true)
-        validator.setUIType(.message).append(loginTxf, rules: [GuardRequired() , GuardNumeric()], title: "Mobile number or email".localized).holdColor()
+        validator.setUIType(.message).append(loginTxf, rules: [GuardRequired()], title: "Mobile number or email".localized).holdColor()
         validator.setUIType(.message).append(passwordTxf, rules: [GuardRequired() ], title: "password".localized).holdColor()
         return validator
     }()
@@ -93,7 +93,14 @@ extension LoginVC {
             }
             self?.startLoading()
             var phone = self?.loginTxf.text ?? ""
-            self?.viewModel?.phone.send(self?.loginTxf.text ?? "")
+            if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
+                let index = phone.index(phone.startIndex, offsetBy: 1)
+                phone = String(phone.suffix(from: index))
+                self?.viewModel?.phone.send(phone)
+            }else {
+                self?.viewModel?.phone.send(self?.loginTxf.text ?? "")
+            }
+//            self?.viewModel?.phone.send(self?.loginTxf.text ?? "")
             self?.viewModel?.countryCode.send("+966")
             self?.viewModel?.password.send(self?.passwordTxf.text ?? "")
             self?.viewModel?.login()

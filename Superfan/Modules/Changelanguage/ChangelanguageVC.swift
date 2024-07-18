@@ -43,6 +43,7 @@ extension ChangelanguageVC {
 // MARK: - ...  Functions
 extension ChangelanguageVC {
     func setup() {
+        changeColoe()
         if Localizer.current == .arabic {
             arabicBtn.select()
             englishBtn.deselect()
@@ -78,6 +79,11 @@ extension ChangelanguageVC {
                 }
             }
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            saveBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
 }
 // MARK: - ...  View Contract

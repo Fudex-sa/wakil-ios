@@ -60,6 +60,7 @@ extension ProfileVC {
 // MARK: - ...  Functions
 extension ProfileVC {
     func setup() {
+        changeColoe()
         if UD.user?.data?.user?.isSocial ?? 0 == 1 {
             editEmailBtn.isHidden = true
             editPassBtn.isHidden = true
@@ -100,6 +101,13 @@ extension ProfileVC {
             editPassBtn.isHidden = false
         }
         userImg.setImage(url: viewModel?.userddata.value?.data?.photo ?? "")
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            editBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+            editPassBtn.borderColor = UIColor(hex: UD.club?.color ?? "")
+            editPassBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
+        }
     }
 }
 // MARK: - ...  View Contract

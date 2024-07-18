@@ -67,7 +67,7 @@ extension VerifyCodeVC {
                 .setBody(self?.viewModel?.userdata.value?.message ?? "")
                 .setTheme(.success)
                 .bulid()
-            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+            Coordinator.instance.restart(storyboard: R.storyboard.selectclubStoryboard())
         })
         viewModel?.resenddata.listen(on: { [weak self] value in
             self?.stopLoading()
@@ -84,7 +84,7 @@ extension VerifyCodeVC {
                 .setBody(self?.viewModel?.editphonedata.value?.message ?? "")
                 .setTheme(.success)
                 .bulid()
-            Coordinator.instance.restart(storyboard: R.storyboard.selectclubStoryboard())
+            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
         })
         viewModel?.checkotp.listen(on: { [weak self] value in
             self?.coordinator?.resetpass()
@@ -94,6 +94,7 @@ extension VerifyCodeVC {
 // MARK: - ...  Functions
 extension VerifyCodeVC {
     func setup() {
+        changeColoe()
         setupTimer()
         verifyCodeInputs = .init()
         verifyCodeInputs?.dataSource = self
@@ -139,13 +140,56 @@ extension VerifyCodeVC {
         }).store(self)
 
     }
+    func changeColoe() {
+        if UD.user != nil {
+            if UD.club != nil {
+                verfiy1Txf.textColor = UIColor(hex: UD.club?.color ?? "")
+                verfiy2Txf.textColor = UIColor(hex: UD.club?.color ?? "")
+                verfiy3Txf.textColor = UIColor(hex: UD.club?.color ?? "")
+                verfiy4Txf.textColor = UIColor(hex: UD.club?.color ?? "")
+                verifyBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+                timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
+                if resendBtn.isUserInteractionEnabled == true {
+                    resendBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
+                }else {
+                    var color = UD.club?.color ?? ""
+                    let index = color.index(color.startIndex, offsetBy: 1)
+                    color = String(color.suffix(from: index))
+                    resendBtn.setTitleColor(UIColor(hex: "#15\(color)"), for: .normal)
+
+                }
+            }
+        }
+    }
     func setupTimer() {
             resendBtn.isUserInteractionEnabled = false
             resendBtn.setTitleColor(R.color.txtprimary(), for: .normal)
+            if UD.user != nil {
+            if UD.club != nil {
+                var color = UD.club?.color ?? ""
+                let index = color.index(color.startIndex, offsetBy: 1)
+                color = String(color.suffix(from: index))
+                resendBtn.setTitleColor(UIColor(hex: "#15\(color)"), for: .normal)
+            }else {
+                self.resendBtn.setTitleColor(R.color.txtprimary(), for: .normal)
+
+            }
+           }else {
+            self.resendBtn.setTitleColor(R.color.txtprimary(), for: .normal)
+           }
             timer = .init(seconds: 1, numberOfCycle: 180, closure: { [weak self] second in
                 if second == 0 {
                     self?.resendBtn.isUserInteractionEnabled = true
-                    self?.resendBtn.setTitleColor(R.color.primary(), for: .normal)
+                    if UD.user != nil {
+                        if UD.club != nil {
+                            self?.resendBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
+                        }else {
+                            self?.resendBtn.setTitleColor(R.color.primary(), for: .normal)
+
+                        }
+                    }else {
+                        self?.resendBtn.setTitleColor(R.color.primary(), for: .normal)
+                    }
                     self?.timer?.stopTimer()
                     self?.timer = nil
                 }
@@ -194,18 +238,46 @@ extension VerifyCodeVC: VerifyCodeInputsDataSource {
         return R.color.black1()!
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, fillTextColor: Bool?) -> UIColor {
-        return R.color.primary()!
+        if UD.user != nil {
+            if UD.club != nil {
+                return UIColor(hex: UD.club?.color ?? "")
+            }else {
+                return R.color.primary()!
+            }
+        }else {
+            return R.color.primary()!
+        }
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, emptyBackground: Bool?) -> UIColor {
         return R.color.bordergray()!
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, fillBackground: Bool?) -> UIColor {
-        return R.color.txtprimary()!
+        if UD.user != nil {
+            if UD.club != nil {
+                var color = UD.club?.color ?? ""
+                let index = color.index(color.startIndex, offsetBy: 1)
+                color = String(color.suffix(from: index))
+                return UIColor(hex: "#15\(color)")
+            }else {
+                return R.color.txtprimary()!    
+            }
+        }else {
+            return R.color.txtprimary()!   
+        }
+        
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, emptyBorder: Bool?) -> UIColor {
         return R.color.bordergray()!
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, completeBorder: Bool?) -> UIColor {
-        return R.color.primary()!
+        if UD.user != nil {
+            if UD.club != nil {
+                return UIColor(hex: UD.club?.color ?? "")
+            }else {
+                return R.color.primary()!
+            }
+        }else {
+            return R.color.primary()!
+        }
     }
 }

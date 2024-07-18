@@ -64,6 +64,9 @@ extension SlideMenuVC {
 // MARK: - ...  Functions
 extension SlideMenuVC {
     func setup() {
+        if UD.club != nil {
+            view.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
         if UD.user == nil {
             logoutView.isHidden = true
             userImg.isHidden = true

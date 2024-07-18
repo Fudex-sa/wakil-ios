@@ -78,6 +78,7 @@ extension EditprofileVC {
         userImg.setImage(url: user?.data?.photo ?? "")
         viewModel?.lat.send(user?.data?.lat ?? "")
         viewModel?.lng.send(user?.data?.lng ?? "")
+        changeColoe()
     }
     func actions(){
         picker = .init()
@@ -112,6 +113,11 @@ extension EditprofileVC {
                 self?.didError(error: error)
             }
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            editBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
 }
 // MARK: - ...  View Contract

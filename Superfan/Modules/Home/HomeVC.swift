@@ -65,6 +65,7 @@ extension HomeVC {
 // MARK: - ...  Functions
 extension HomeVC {
     func setup() {
+        changeColoe()
         clubLbl.preferredMaxLayoutWidth = 100
         if UD.club != nil {
             clubLbl.text = UD.club?.name ?? ""
@@ -136,6 +137,13 @@ extension HomeVC {
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
             }
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            coverView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+            tabBarController?.tabBar.tintColor = UIColor(hex: UD.club?.color ?? "")
+            setStatusBar(color:  UIColor(hex: UD.club?.color ?? ""))
+        }
     }
 }
 // MARK: - ...  View Contract

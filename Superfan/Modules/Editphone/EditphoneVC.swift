@@ -63,6 +63,7 @@ extension EditphoneVC {
 // MARK: - ...  Functions
 extension EditphoneVC {
     func setup() {
+        changeColoe()
         phoneTxf.text = user?.data?.mobile ?? ""
         editBtn.publisher.listen(on: {[weak self] _ in
             if self?.validator?.build() == false {
@@ -94,6 +95,11 @@ extension EditphoneVC {
             }
             self?.viewModel?.resendotp()
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            editBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
 }
 // MARK: - ...  View Contract

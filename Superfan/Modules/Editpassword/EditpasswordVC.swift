@@ -73,6 +73,7 @@ extension EditpasswordVC {
 // MARK: - ...  Functions
 extension EditpasswordVC {
     func setup() {
+        changeColoe()
         saveBtn.publisher.listen(on: {[weak self] _ in
             if self?.validator?.build() == false {
                 return
@@ -109,6 +110,11 @@ extension EditpasswordVC {
                 self?.confirmEyeBtn.setImage(#imageLiteral(resourceName: "eye"), for: .normal)
             }
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            saveBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
 }
 // MARK: - ...  View Contract

@@ -50,6 +50,7 @@ extension SelectLocVC {
 // MARK: - ...  Functions
 extension SelectLocVC {
     func setup() {
+        changeColoe()
         google = .init()
         google?.mapView = mapView
         google?.delegate = self
@@ -71,6 +72,11 @@ extension SelectLocVC {
         backBtn.publisher.listen(on: {[weak self] _ in
             self?.dismiss(animated: true, completion: nil)
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            saveBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
     private func getAddressFromPlacemark(_ placemark: CLPlacemark) -> String {
             var address = ""

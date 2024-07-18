@@ -32,6 +32,7 @@ extension MainVC {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setup()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -40,6 +41,9 @@ extension MainVC {
 // MARK: - ...  Functions
 extension MainVC {
     func setup() {
+        if UD.club != nil {
+            tabBarController?.tabBar.tintColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
 }
 // MARK: - ...  View Contract

@@ -72,6 +72,7 @@ extension ContactusVC {
 // MARK: - ...  Functions
 extension ContactusVC {
     func setup() {
+        changeColoe()
         do {
             loaderGIF = try UIImage(gifName: "contact.gif")
             contactImg?.setGifImage(loaderGIF)
@@ -99,6 +100,11 @@ extension ContactusVC {
                 self?.didError(error: error)
             }
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            sendBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
 }
 // MARK: - ...  View Contract

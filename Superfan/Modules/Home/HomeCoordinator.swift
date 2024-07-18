@@ -38,6 +38,7 @@ extension HomeCoordinator {
         view?.viewModel?.resetPaginator()
         view?.viewModel?.clearDataSource()
         view?.viewModel?.fetchhome()
+        view?.changeColoe()
     }
     
 }
