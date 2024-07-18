@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - ...  Coordinator
 class HomeCoordinator: Coordinator, ChangeClubVCDelegate {
@@ -38,6 +39,7 @@ extension HomeCoordinator {
         view?.viewModel?.resetPaginator()
         view?.viewModel?.clearDataSource()
         view?.viewModel?.fetchhome()
+        view?.sideMenuViewController?.view.backgroundColor = UIColor(hex: UD.club?.color ?? "")
         view?.changeColoe()
     }
     

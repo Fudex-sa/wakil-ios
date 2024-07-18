@@ -60,6 +60,10 @@ extension ProfileVC {
 // MARK: - ...  Functions
 extension ProfileVC {
     func setup() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            return
+        }
         changeColoe()
         if UD.user?.data?.user?.isSocial ?? 0 == 1 {
             editEmailBtn.isHidden = true
@@ -68,10 +72,7 @@ extension ProfileVC {
             editEmailBtn.isHidden = false
             editPassBtn.isHidden = false
         }
-        if UD.user == nil {
-            Coordinator.instance.unAuthorized()
-            return
-        }
+        
         startLoading()
         viewModel?.getprofile()
         editBtn.publisher.listen(on: {[weak self] _ in
@@ -92,7 +93,9 @@ extension ProfileVC {
         userTxf.text = viewModel?.userddata.value?.data?.name ?? ""
         phoneTxf.text = viewModel?.userddata.value?.data?.mobile ?? ""
         emailTxf.text = viewModel?.userddata.value?.data?.email ?? ""
-        mapLbl.text = viewModel?.userddata.value?.data?.location ?? ""
+        if viewModel?.userddata.value?.data?.location ?? "" != "" {
+            mapLbl.text = viewModel?.userddata.value?.data?.location ?? ""
+        }
         if viewModel?.userddata.value?.data?.isSocial ?? 0 == 1 {
             editPassBtn.isHidden = true
             editPassBtn.isHidden = true

@@ -24,7 +24,7 @@ extension SlideMenuCoordinator {
         view?.closeMenu()
     }
     func terms() {
-        guard let scene = R.storyboard.aboutusStoryboard.aboutusVC() else { return }
+        guard let scene = R.storyboard.termsStoryboard.termsVC() else { return }
         view?.push(scene)
         view?.closeMenu()
     }

@@ -74,7 +74,9 @@ extension EditprofileVC {
 extension EditprofileVC {
     func setup() {
         userTxf.text = user?.data?.name ?? ""
-        mapLbl.text = user?.data?.location ?? ""
+        if user?.data?.location ?? "" != "" {
+            mapLbl.text = user?.data?.location ?? ""
+        }
         userImg.setImage(url: user?.data?.photo ?? "")
         viewModel?.lat.send(user?.data?.lat ?? "")
         viewModel?.lng.send(user?.data?.lng ?? "")

@@ -92,7 +92,7 @@ extension HomeVC {
     func reload(){
         if viewModel?.items.value?.count ?? 0 == 0 {
             newsTbl.isHidden = true
-            showEmptyScreen(for: 400 , title: "There are no news available".localized)
+            showEmptyScreen(for: 250 , title: "There are no news available".localized)
         }else {
             newsTbl.isHidden = false
             hideEmptyScreen()
@@ -120,7 +120,9 @@ extension HomeVC {
         }
     func openMenu() {
         isMenuOpen.toggle()
-        
+        if viewModel?.items.value?.count ?? 0 == 0 {
+            hideEmptyScreen()
+        }
         // Update the leading constraint to animate the side menu
         sideMenuLeadingConstraint.constant = isMenuOpen ? 0 : -sideMenuWidth
         
@@ -130,6 +132,9 @@ extension HomeVC {
     }
     func closeMenu() {
             isMenuOpen = false
+            if viewModel?.items.value?.count ?? 0 == 0 {
+                showEmptyScreen(for: 250 , title: "There are no news available".localized)
+            }
 
             // Update the leading constraint to animate the side menu closure
             sideMenuLeadingConstraint.constant = -sideMenuWidth

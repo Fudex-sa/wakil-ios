@@ -2558,7 +2558,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 290 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 293 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3015,6 +3015,10 @@ struct R: Rswift.Validatable {
       /// en translation: Home
       ///
       /// Locales: ar, en
+      static let home = Rswift.StringResource(key: "Home", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Home
+      ///
+      /// Locales: ar, en
       static let homeLan = Rswift.StringResource(key: "home.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: I agree on the terms and conditions
       ///
@@ -3200,6 +3204,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let notFoundLan = Rswift.StringResource(key: "not.found.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Notification
+      ///
+      /// Locales: ar, en
+      static let notification = Rswift.StringResource(key: "Notification", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Notification
       ///
       /// Locales: ar, en
@@ -3620,6 +3628,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let zoneLan = Rswift.StringResource(key: "zone.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: add personal image
+      ///
+      /// Locales: ar, en
+      static let addPersonalImage = Rswift.StringResource(key: "add personal image", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: change language
       ///
       /// Locales: ar, en
@@ -5419,6 +5431,21 @@ struct R: Rswift.Validatable {
       /// en translation: Home
       ///
       /// Locales: ar, en
+      static func home(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Home", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Home"
+        }
+
+        return NSLocalizedString("Home", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Home
+      ///
+      /// Locales: ar, en
       static func homeLan(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("home.lan", bundle: hostingBundle, comment: "")
@@ -6119,6 +6146,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("not.found.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Notification
+      ///
+      /// Locales: ar, en
+      static func notification(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Notification", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Notification"
+        }
+
+        return NSLocalizedString("Notification", bundle: bundle, comment: "")
       }
 
       /// en translation: Notification
@@ -7694,6 +7736,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("zone.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: add personal image
+      ///
+      /// Locales: ar, en
+      static func addPersonalImage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add personal image", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add personal image"
+        }
+
+        return NSLocalizedString("add personal image", bundle: bundle, comment: "")
       }
 
       /// en translation: change language

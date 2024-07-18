@@ -69,8 +69,7 @@ extension SlideMenuVC {
         }
         if UD.user == nil {
             logoutView.isHidden = true
-            userImg.isHidden = true
-            nameLbl.isHidden = true
+            userView.isHidden = true            
         }else {
             viewModel?.getprofile()
         }

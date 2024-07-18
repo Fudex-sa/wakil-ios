@@ -18,9 +18,9 @@ class Coordinator: NSObject {
         delegate?.window?.rootViewController = scene
     }
     func unAuthorized() {
-//        let scene = R.storyboard.auth.loginNav()
-//        let delegate = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)
-//        delegate?.window?.rootViewController = scene
+        let scene = R.storyboard.loginStoryboard().instantiateInitialViewController()
+        let delegate = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)
+        delegate?.window?.rootViewController = scene
     }
     func networkFail() {
         let scene = UIApplication.topViewController() as? BaseController

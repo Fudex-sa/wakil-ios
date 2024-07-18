@@ -121,11 +121,11 @@ extension LoginVC {
             if self?.langLbl.text == "AR".localized {
                 Localizer.instance.language.send(.arabic)
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
-                    Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())}
+                    Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())}
             }else {
                 Localizer.instance.language.send(.english)
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
-                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())}
+                    Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())}
             }
             
         }).store(self)
