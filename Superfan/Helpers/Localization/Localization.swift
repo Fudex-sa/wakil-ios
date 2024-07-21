@@ -111,10 +111,10 @@ final class Localizer: NSObject {
             UserDefaults.standard.synchronize()
             NotificationCenter.default.post(name: .languageDidChanged, object: lang)
             Localizer.initLang()
-            DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
-                Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())
-                Localizer.initLang()
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+//                Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())
+//                Localizer.initLang()
+//            }
         }
     }
 }

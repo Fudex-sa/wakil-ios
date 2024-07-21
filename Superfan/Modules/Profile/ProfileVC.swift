@@ -98,10 +98,10 @@ extension ProfileVC {
         }
         if viewModel?.userddata.value?.data?.isSocial ?? 0 == 1 {
             editPassBtn.isHidden = true
-            editPassBtn.isHidden = true
+            editEmailBtn.isHidden = true
         }else {
             editPassBtn.isHidden = false
-            editPassBtn.isHidden = false
+            editEmailBtn.isHidden = false
         }
         userImg.setImage(url: viewModel?.userddata.value?.data?.photo ?? "")
     }

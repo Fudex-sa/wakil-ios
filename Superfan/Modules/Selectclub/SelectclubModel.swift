@@ -18,6 +18,6 @@ struct SelectclubModel: Codable {
 // MARK: - Datum
 struct SelectclubDatum: Codable {
     let id: Int?
-    let name, color: String?
+    var name, color: String?
     let photo: String?
 }

@@ -35,7 +35,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }else {
             Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())
-
         }
         //Coordinator.instance.restart(storyboard: R.storyboard.broadcastLiveStoryboard())
         

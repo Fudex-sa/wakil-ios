@@ -122,7 +122,7 @@
 /** validation **/
 "this_field_is_required.lan" = "هذا الحقل مطلوب";
 "you_must_be_logged_in.lan" = "يجب تسجيل الدخول اولا";
-"sure.lan" = "تاكيد";
+"sure.lan" = "تأكيد";
 "does_not_match.lan" = "غير متطابق";
 "you_are_not_allow_use_your_location.lan" = "لم تسمح باستخدام الموقع الخاص بك";
 "location_error.lan" = "خطأ في الموقع";
@@ -290,7 +290,7 @@
 "Sign in with Google account" = "تسجيل الدخول بحساب جوجل";
 "Sign in with an Apple account" = "تسجيل الدخول بحساب ابل";
 "Don't have an account?" = "ليس لديك حساب؟";
-"Create an account" = "انشاء حساب";
+"Create an account" = "إنشاء حساب";
 "Create your account" = "انشىء حسابك";
 "Please fill in the following information" = "يرجاء ملئ البيانات التالية";
 "Username" = "اسم المستخدم";
@@ -299,8 +299,8 @@
 "Country" = "البلد";
 "City" = "المدينة";
 "Locate on map" = "حدد الموقع على الخريطة";
-"Confirm Password" = "تاكيد كلمة المرور";
-"I agree to" = "اوافق على";
+"Confirm Password" = "تأكيد كلمة المرور";
+"I agree to" = "أوافق على";
 "terms and conditions" = "الشروط و الاحكام";
 "Enter verification code" = "ادخل رمز التحقق";
 "Please enter the verification code sent to" = "يرجي ادخال رمز التحقق المرسل على رقم";
@@ -308,7 +308,7 @@
 "Resend" = "اعادة ارسال";
 "Verify" = "تحقق";
 "Forgot Password" = "نسيت كلمة المرور";
-"Enter the phone number to send the confirmation code" = "ادخل رقم الهاتف لارسال رمز التاكيد";
+"Enter the phone number to send the confirmation code" = "ادخل رقم الهاتف لارسال رمز التأكيد";
 "Send Code" = "ارسل الرمز";
 "Set a new password" = "تعيين كلمة مرور جديدة";
 "Enter the phone number to send the confirmation code" = "يرجي ادخال كلمة مرور مناسبه";
@@ -361,3 +361,4 @@
 "add personal image" = "اضف صوره شخصيه";
 "Home" = "الرئيسية";
 "Notification" = "الاشعارات";
+"Old password" = "كلمه المرور القديمه";

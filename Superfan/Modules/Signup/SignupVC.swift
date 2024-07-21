@@ -36,14 +36,14 @@ class SignupVC: BaseController {
     var coordinator: SignupCoordinator?
     lazy var validator: Validator? = {
         let validator = Validator(guardOnSuperViewOfTextField: true)
-        validator.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "mobile number".localized).holdColor()
+        validator.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "Mobile number".localized).holdColor()
         validator.setUIType(.message).append(userTxf, rules: [GuardRequired() ], title: "Username".localized).holdColor()
         validator.setUIType(.message).append(emailTxf, rules: [GuardRequired() , GuardEmail() ], title: "Email".localized).holdColor()
         return validator
     }()
     lazy var validator1: Validator? = {
         let validator1 = Validator(guardOnSuperViewOfTextField: true)
-        validator1.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "mobile number".localized).holdColor()
+        validator1.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "Mobile number".localized).holdColor()
         validator1.setUIType(.message).append(userTxf, rules: [GuardRequired() ], title: "Full Name".localized).holdColor()
         validator1.setUIType(.message).append(emailTxf, rules: [GuardRequired() , GuardEmail() ], title: "Email".localized).holdColor()
         validator1.setUIType(.message).append(passwordTxf, rules: [GuardRequired() , GuardLength(minimumLength: 6)], title: "password".localized).holdColor()
@@ -155,7 +155,7 @@ extension SignupVC {
             self?.pickstates()
         }).store(self)
         regBtn.publisher.listen(on: {[weak self] _ in
-            if self?.registertype ?? 0 == 1 {
+            if self?.type ?? 0 == 0 {
                 if self?.validator1?.build() == false {
                     return
                 }

@@ -77,6 +77,31 @@ extension NewsVC {
 extension NewsVC {
 }
 extension NewsVC:UITableViewDelegate , UITableViewDataSource {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == newsTbl {
+            let tableViewVisibleHeight = newsTbl.bounds.size.height
+               let tableViewContentHeight = newsTbl.contentSize.height
+               let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 100
+               
+            if scrollView.contentOffset.y > tableViewOffsetThreshold && newsTbl.isDragging {
+                // Fetch more data here
+                if case self.viewModel?.canPaginate() = true {
+                    self.viewModel?.fetchnews()
+                }
+            }
+        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView == newsTbl {
+            scrollView.swipeButtomRefresh { [weak self] in
+                if case self?.viewModel?.canPaginate() = true {
+                    self?.viewModel?.fetchnews()
+                } else {
+                    scrollView.stopSwipeButtom()
+                }
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.dataSource()?.count ?? 2
         

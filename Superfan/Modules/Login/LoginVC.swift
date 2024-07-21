@@ -145,7 +145,6 @@ extension LoginVC {
         }).store(self)
        
         appleView.publisherGesture.listen { [weak self] _ in
-            self?.startLoading()
             self?.loginWithApple()
         }.store(self)
     }

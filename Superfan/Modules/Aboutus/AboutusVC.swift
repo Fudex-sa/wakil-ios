@@ -55,7 +55,7 @@ extension AboutusVC {
     }
     func reload(){
         stopLoading()
-        aboutLbl.text = viewModel?.setting.value?.about_tifo?.htmlToString ?? ""
+        aboutLbl.text = viewModel?.setting.value?.about_us?.htmlToString ?? ""
 
     }
 }

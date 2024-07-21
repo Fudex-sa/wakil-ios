@@ -97,6 +97,13 @@ extension HomeVC {
             newsTbl.isHidden = false
             hideEmptyScreen()
         }
+        for index in viewModel?.clubs.value ?? [] {
+            if index.id == UD.club?.id ?? 0 {
+                clubLbl.text = index.name ?? ""
+                UD.club?.name = index.name ?? ""
+                clubLbl.sizeToFit()
+            }
+        }
         newsTbl.reloadData()
         newsTbl.stopSwipeButtom()
 
@@ -120,12 +127,10 @@ extension HomeVC {
         }
     func openMenu() {
         isMenuOpen.toggle()
-        if viewModel?.items.value?.count ?? 0 == 0 {
-            hideEmptyScreen()
-        }
+        hideEmptyScreen()
         // Update the leading constraint to animate the side menu
         sideMenuLeadingConstraint.constant = isMenuOpen ? 0 : -sideMenuWidth
-        
+        clubSelectBtn.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
@@ -138,7 +143,7 @@ extension HomeVC {
 
             // Update the leading constraint to animate the side menu closure
             sideMenuLeadingConstraint.constant = -sideMenuWidth
-
+            clubSelectBtn.isUserInteractionEnabled = true
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
             }

@@ -61,7 +61,6 @@ extension SelectLocVC {
                 return
             }
             self.google?.updateCamera(lat: degree?.latitude ?? 0, lng: degree?.longitude ?? 0)
-            
         }
         location?.currentLocation()
         

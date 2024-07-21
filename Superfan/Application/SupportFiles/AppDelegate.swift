@@ -17,6 +17,9 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                // Your app's main initialization code
+        }
         // Override point for customization after application launch.
         setupFirebase()
         print((Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String) ?? "")

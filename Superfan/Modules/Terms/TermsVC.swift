@@ -55,7 +55,7 @@ extension TermsVC {
     }
     func reload(){
         stopLoading()
-        termsLbl.text = viewModel?.setting.value?.about_tifo?.htmlToString ?? ""
+        termsLbl.text = viewModel?.setting.value?.terms_condition?.htmlToString ?? ""
 
     }
 }

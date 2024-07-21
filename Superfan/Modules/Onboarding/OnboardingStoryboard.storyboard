@@ -40,7 +40,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uc-ah-98o" customClass="PaddingLabel" customModule="Superfan" customModuleProvider="target">
-                                <rect key="frame" x="15" y="63" width="33" height="24"/>
+                                <rect key="frame" x="15" y="63" width="48.5" height="24"/>
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="9XZ-3z-xKx"/>
@@ -124,6 +124,11 @@
             <point key="canvasLocation" x="123.18840579710145" y="-108.48214285714285"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="5uc-ah-98o">
+            <size key="intrinsicContentSize" width="48.5" height="19.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="language" width="17" height="16"/>
         <namedColor name="Borderblack">
