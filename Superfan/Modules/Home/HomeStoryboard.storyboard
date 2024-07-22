@@ -64,6 +64,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="7jg-Jl-WiX"/>
                                             <constraint firstAttribute="trailing" secondItem="8tK-Bb-6Ab" secondAttribute="trailing" constant="8" id="C8y-OP-XBy"/>
                                             <constraint firstItem="8tK-Bb-6Ab" firstAttribute="centerY" secondItem="FDX-Mu-VvK" secondAttribute="centerY" id="KXU-Ba-OMv"/>
                                             <constraint firstAttribute="height" constant="40" id="NSF-RK-ZDc"/>

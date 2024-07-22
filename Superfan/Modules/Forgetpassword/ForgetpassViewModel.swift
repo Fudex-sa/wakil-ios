@@ -12,7 +12,7 @@ import Foundation
 class ForgetpassViewModel: BaseViewModel {
     var phone: Publisher<String> = .init()
     var countryCode: Publisher<String> = .init()
-    var resenddata: Publisher<UserRoot> = .init()
+    var resenddata: Publisher<ProfileModel> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension ForgetpassViewModel {
@@ -22,7 +22,7 @@ extension ForgetpassViewModel {
     func resendotp() {
         NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
         NetworkManager.instance.paramaters["country_code"] = countryCode.value ?? ""
-        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }

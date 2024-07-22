@@ -22,6 +22,7 @@ extension ForgetpassCoordinator {
         guard let scene = R.storyboard.verifyCodeStoryboard.verifyCodeVC() else { return }
         scene.mobile = view?.phoneTxf.text ?? ""
         scene.code = "+966"
+        scene.time = view?.viewModel?.resenddata.value?.data?.timer ?? 0
         scene.type = .forget
         view?.push(scene)
     }

@@ -29,7 +29,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F44-Fv-ysF">
-                                        <rect key="frame" x="16" y="30" width="382" height="235"/>
+                                        <rect key="frame" x="16" y="30" width="382" height="255.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDj-U3-5hU">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="26"/>
@@ -87,8 +87,8 @@
                                                     <constraint firstAttribute="height" constant="4" id="SLg-8V-roK"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the phone number to send the confirmation code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuK-gR-beU">
-                                                <rect key="frame" x="0.0" y="84.5" width="382" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the phone number to send the confirmation code" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuK-gR-beU">
+                                                <rect key="frame" x="0.0" y="84.5" width="382" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="Black1"/>
                                                 <nil key="highlightedColor"/>
@@ -98,14 +98,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0K-LJ-zP1">
-                                                <rect key="frame" x="0.0" y="105" width="382" height="18"/>
+                                                <rect key="frame" x="0.0" y="125.5" width="382" height="18"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="LkK-tR-Qon"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGm-ZO-7yL">
-                                                <rect key="frame" x="0.0" y="123" width="382" height="48"/>
+                                                <rect key="frame" x="0.0" y="143.5" width="382" height="48"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnY-xY-uvn">
                                                         <rect key="frame" x="43.5" y="0.0" width="328.5" height="48"/>
@@ -145,14 +145,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XG8-zi-71i">
-                                                <rect key="frame" x="0.0" y="171" width="382" height="16"/>
+                                                <rect key="frame" x="0.0" y="191.5" width="382" height="16"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="hUM-yV-gPf"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k0-Ia-QSM">
-                                                <rect key="frame" x="0.0" y="187" width="382" height="48"/>
+                                                <rect key="frame" x="0.0" y="207.5" width="382" height="48"/>
                                                 <color key="backgroundColor" name="Primary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="3Xd-7a-zXm"/>

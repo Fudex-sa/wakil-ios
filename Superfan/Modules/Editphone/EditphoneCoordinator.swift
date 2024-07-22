@@ -22,6 +22,7 @@ extension EditphoneCoordinator {
         guard let scene = R.storyboard.verifyCodeStoryboard.verifyCodeVC() else { return }
         scene.mobile = view?.viewModel?.phone.value ?? ""
         scene.code = view?.viewModel?.countryCode.value ?? ""
+        scene.time = view?.viewModel?.resenddata.value?.data?.timer ?? 0
         scene.type = .update
         view?.push(scene)
     }

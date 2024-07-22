@@ -84,7 +84,6 @@ extension EditphoneVC {
                 self?.didError(error: error)
                 return
             }
-            self?.startLoading()
             self?.viewModel?.countryCode.send("+966")
             if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
                 let index = phone.index(phone.startIndex, offsetBy: 1)
@@ -93,6 +92,10 @@ extension EditphoneVC {
             }else {
                 self?.viewModel?.phone.send(self?.phoneTxf.text ?? "")
             }
+            if self?.viewModel?.phone.value ?? "" == UD.user?.data?.user?.mobile ?? "" {
+                self?.navigationController?.popViewController(animated: true)
+            }
+            self?.startLoading()
             self?.viewModel?.resendotp()
         }).store(self)
     }

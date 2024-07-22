@@ -22,8 +22,8 @@ class EditpasswordVC: BaseController {
     var coordinator: EditpasswordCoordinator?
     lazy var validator: Validator? = {
         let validator = Validator(guardOnSuperViewOfTextField: true)
-        validator.setUIType(.message).append(oldPassTxf, rules: [GuardRequired() , GuardLength(minimumLength: 6)], title: "Current password".localized).holdColor()
-        validator.setUIType(.message).append(passwordTxf, rules: [GuardRequired() , GuardLength(minimumLength: 6)], title: "password".localized).holdColor()
+        validator.setUIType(.message).append(oldPassTxf, rules: [GuardRequired() , GuardLength(minimumLength: 8)], title: "Old password".localized).holdColor()
+        validator.setUIType(.message).append(passwordTxf, rules: [GuardRequired() , GuardLength(minimumLength: 8)], title: "Password".localized).holdColor()
         validator.setUIType(.message).append(confirmPassTxf, rules: [GuardRequired() , GuardMatch(matchWith: passwordTxf)], title: "Confirm Password".localized).holdColor()
         
         return validator

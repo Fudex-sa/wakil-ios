@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class SlideMenuVC: BaseController {
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var logoutLbl: UILabel!
     @IBOutlet weak var slideView: UIView!
     @IBOutlet weak var logoutView: UIView!
     @IBOutlet weak var termsView: UIView!
@@ -65,11 +67,11 @@ extension SlideMenuVC {
 extension SlideMenuVC {
     func setup() {
         if UD.club != nil {
-            view.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+            containerView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
         }
         if UD.user == nil {
-            logoutView.isHidden = true
-            userView.isHidden = true            
+            logoutLbl.text = "Login".localized
+            userView.isHidden = true
         }else {
             viewModel?.getprofile()
         }
@@ -90,6 +92,11 @@ extension SlideMenuVC {
             self?.coordinator?.contactus()
         }).store(self)
         logoutView.publisherGesture.listen(on: {[weak self] _ in
+            if UD.user == nil {
+                Coordinator.instance.unAuthorized()
+                self?.closeMenu()
+                return
+            }
             self?.startLoading()
             self?.viewModel?.makelogout()
         }).store(self)

@@ -22,8 +22,10 @@ class EditprofileCoordinator: Coordinator, SelectLocVCDelegate {
 extension EditprofileCoordinator {
     func locate(){
         guard let scene = R.storyboard.selectLocStoryboard.selectLocVC() else { return }
-        scene.lat = view?.viewModel?.lat.value?.double() ?? 0
-        scene.lng = view?.viewModel?.lng.value?.double() ?? 0
+        if view?.viewModel?.lat.value?.double() ?? 0 != 0 {
+            scene.lat1 = view?.viewModel?.lat.value?.double() ?? 0
+            scene.lng1 = view?.viewModel?.lng.value?.double() ?? 0
+        }
         scene.delegate = self
         view?.pushPop(scene)
     }

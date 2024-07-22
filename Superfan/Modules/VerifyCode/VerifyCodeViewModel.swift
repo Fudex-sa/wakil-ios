@@ -14,7 +14,7 @@ class VerifyCodeViewModel: BaseViewModel {
     var otp: Publisher<String> = .init()
     var countryCode: Publisher<String> = .init()
     var userdata: Publisher<UserRoot> = .init()
-    var resenddata: Publisher<UserRoot> = .init()
+    var resenddata: Publisher<ProfileModel> = .init()
     var editphonedata: Publisher<ProfileModel> = .init()
     var checkotp: Publisher<UserRoot> = .init()
 }
@@ -49,7 +49,7 @@ extension VerifyCodeViewModel {
     func resendotp() {
         NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
         NetworkManager.instance.paramaters["country_code"] = countryCode.value ?? ""
-        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
@@ -73,7 +73,7 @@ extension VerifyCodeViewModel {
     func resendphoneotp() {
         NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
         NetworkManager.instance.paramaters["country_code"] = countryCode.value ?? ""
-        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotpupdatephone.rawValue, type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotpupdatephone.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }

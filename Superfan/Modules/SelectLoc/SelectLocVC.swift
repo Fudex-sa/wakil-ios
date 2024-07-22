@@ -24,6 +24,8 @@ class SelectLocVC: BaseController {
     var google: GoogleMapHelper?
     var lat: Double?
     var lng: Double?
+    var lat1: Double = 0
+    var lng1: Double = 0
     var currentLocationMarker: GMSMarker?
     weak var delegate: SelectLocVCDelegate?
 
@@ -56,8 +58,8 @@ extension SelectLocVC {
         google?.delegate = self
         location = .init()
         location?.onUpdateLocation = { degree in
-            if (self.lat ?? 0 !=  0){
-                self.google?.updateCamera(lat: self.lat ?? 0, lng: self.lng ?? 0)
+            if (self.lat1 !=  0){
+                self.google?.updateCamera(lat: self.lat1, lng: self.lng1)
                 return
             }
             self.google?.updateCamera(lat: degree?.latitude ?? 0, lng: degree?.longitude ?? 0)

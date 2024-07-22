@@ -92,7 +92,9 @@ extension HomeVC {
     func reload(){
         if viewModel?.items.value?.count ?? 0 == 0 {
             newsTbl.isHidden = true
-            showEmptyScreen(for: 250 , title: "There are no news available".localized)
+            if isMenuOpen == false {
+                showEmptyScreen(for: 250 , title: "There are no news available".localized)
+            }
         }else {
             newsTbl.isHidden = false
             hideEmptyScreen()

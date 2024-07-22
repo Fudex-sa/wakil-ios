@@ -17,7 +17,7 @@ class ForgetpassVC: BaseController {
     var coordinator: ForgetpassCoordinator?
     lazy var validator: Validator? = {
         let validator = Validator(guardOnSuperViewOfTextField: true)
-        validator.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "mobile number".localized).holdColor()
+        validator.setUIType(.message).append(phoneTxf, rules: [GuardRequired() , GuardNumeric()], title: "Mobile number".localized).holdColor()
         return validator
     }()
 }

@@ -37,6 +37,7 @@ extension LoginCoordinator {
     }
     func verify(){
         guard let scene = R.storyboard.verifyCodeStoryboard.verifyCodeVC() else { return }
+        scene.time = view?.viewModel?.userdata.value?.data?.user?.timer ?? 0
         view?.push(scene)
     }
 }

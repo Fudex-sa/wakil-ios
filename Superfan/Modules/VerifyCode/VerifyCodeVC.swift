@@ -16,6 +16,7 @@ class VerifyCodeVC: BaseController {
         case forget
         case update
     }
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var verifyBtn: UIButton!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var resendBtn: UIButton!
@@ -31,6 +32,7 @@ class VerifyCodeVC: BaseController {
     var type: VerifyType = .register
     var code = ""
     var mobile = ""
+    var time = 100
 }
 
 // MARK: - ...  LifeCycle
@@ -53,6 +55,7 @@ extension VerifyCodeVC {
         super.viewWillDisappear(animated)
         coordinator = nil
         viewModel?.userdata = .init()
+        viewModel?.checkotp = .init()
     }
     override func bind() {
         super.bind()
@@ -71,6 +74,7 @@ extension VerifyCodeVC {
         })
         viewModel?.resenddata.listen(on: { [weak self] value in
             self?.stopLoading()
+            self?.time = self?.viewModel?.resenddata.value?.data?.timer ?? 0
             self?.setupTimer()
             NotificationBuilder()
                 .setTitle("Success".localized)
@@ -108,6 +112,7 @@ extension VerifyCodeVC {
             viewModel?.countryCode.send(code)
             viewModel?.phone.send(mobile)
         }else {
+            backBtn.isHidden = true
             phoneLbl.text = "\(UD.user?.data?.user?.country?.code ?? "")\(UD.user?.data?.user?.mobile ?? "")"
             viewModel?.countryCode.send(UD.user?.data?.user?.country?.code ?? "")
             viewModel?.phone.send(UD.user?.data?.user?.mobile ?? "")
@@ -177,7 +182,7 @@ extension VerifyCodeVC {
            }else {
             self.resendBtn.setTitleColor(R.color.txtprimary(), for: .normal)
            }
-            timer = .init(seconds: 1, numberOfCycle: 180, closure: { [weak self] second in
+            timer = .init(seconds: 1, numberOfCycle: time, closure: { [weak self] second in
                 if second == 0 {
                     self?.resendBtn.isUserInteractionEnabled = true
                     if UD.user != nil {
