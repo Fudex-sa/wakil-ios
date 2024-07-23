@@ -32,10 +32,10 @@
                                         <state key="normal" image="menu"/>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 9" translatesAutoresizingMaskIntoConstraints="NO" id="Lh1-0u-1BG">
-                                        <rect key="frame" x="139" y="24" width="136" height="22"/>
+                                        <rect key="frame" x="157" y="24" width="100" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="Vmb-nG-GXu"/>
-                                            <constraint firstAttribute="width" constant="136" id="eL9-L9-pH0"/>
+                                            <constraint firstAttribute="width" constant="100" id="eL9-L9-pH0"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDX-Mu-VvK">
@@ -64,7 +64,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="7jg-Jl-WiX"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="7jg-Jl-WiX"/>
                                             <constraint firstAttribute="trailing" secondItem="8tK-Bb-6Ab" secondAttribute="trailing" constant="8" id="C8y-OP-XBy"/>
                                             <constraint firstItem="8tK-Bb-6Ab" firstAttribute="centerY" secondItem="FDX-Mu-VvK" secondAttribute="centerY" id="KXU-Ba-OMv"/>
                                             <constraint firstAttribute="height" constant="40" id="NSF-RK-ZDc"/>

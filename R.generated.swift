@@ -2558,7 +2558,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 294 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 295 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -2596,6 +2596,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let alertLan = Rswift.StringResource(key: "alert.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: All
+      ///
+      /// Locales: ar, en
+      static let all = Rswift.StringResource(key: "All", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Allow access to bluetooth
       ///
       /// Locales: ar, en
@@ -3870,6 +3874,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("alert.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: All
+      ///
+      /// Locales: ar, en
+      static func all(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("All", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "All"
+        }
+
+        return NSLocalizedString("All", bundle: bundle, comment: "")
       }
 
       /// en translation: Allow access to bluetooth

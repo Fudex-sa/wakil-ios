@@ -20,7 +20,7 @@ extension NewsViewModel {
 // MARK: - ...  Example of network response
 extension NewsViewModel {
     func fetchnews() {
-        if UD.club != nil {
+        if UD.club?.id ?? 0 != 0 {
             NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
         }
         NetworkManager.instance.paramaters["country_id"] = countryId.value ?? 0
