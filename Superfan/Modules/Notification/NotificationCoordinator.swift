@@ -18,5 +18,9 @@ class NotificationCoordinator: Coordinator {
 }
 
 extension NotificationCoordinator {
-    
+    func notdetails(id: Int?) {
+        guard let scene = R.storyboard.newsDetailsStoryboard.newsDetailsVC() else { return }
+        scene.newsId = id ?? 0
+        view?.push(scene)
+    }
 }

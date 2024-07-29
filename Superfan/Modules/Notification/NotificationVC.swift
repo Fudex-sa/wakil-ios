@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class NotificationVC: BaseController {
+    @IBOutlet weak var notTbl: UITableView!
     var viewModel: NotificationViewModel?
     var coordinator: NotificationCoordinator?
 }
@@ -25,18 +26,107 @@ extension NotificationVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        setup()
+        bind()
+        self.tabBarController?.tabBar.isHidden = false
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.reload()
+        })
+       
+    }
 }
 // MARK: - ...  Functions
 extension NotificationVC {
     func setup() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            return
+        }
+        notTbl.delegate = self
+        notTbl.dataSource = self
+        notTbl.observe()
+        notTbl.skeleton()
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
+        viewModel?.fetchnotifications()
+        viewModel?.readallnotification()
+    }
+    func reload(){
+        if viewModel?.items.value?.count ?? 0 == 0 {
+            notTbl.isHidden = true
+            showEmptyScreen(for: 250 , title: "There are no notifications available".localized)
+        }else {
+            notTbl.isHidden = false
+            hideEmptyScreen()
+        }
+        notTbl.reloadData()
+        notTbl.stopSwipeButtom()
+
     }
 }
 // MARK: - ...  View Contract
 extension NotificationVC {
+}
+extension NotificationVC:UITableViewDelegate , UITableViewDataSource {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == notTbl {
+            let tableViewVisibleHeight = notTbl.bounds.size.height
+               let tableViewContentHeight = notTbl.contentSize.height
+               let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 100
+               
+            if scrollView.contentOffset.y > tableViewOffsetThreshold && notTbl.isDragging {
+                // Fetch more data here
+                if case self.viewModel?.canPaginate() = true {
+                    self.viewModel?.fetchnotifications()
+                }
+            }
+        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView == notTbl {
+            scrollView.swipeButtomRefresh { [weak self] in
+                if case self?.viewModel?.canPaginate() = true {
+                    self?.viewModel?.fetchnotifications()
+                } else {
+                    scrollView.stopSwipeButtom()
+                }
+            }
+        }
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.dataSource()?.count ?? 2
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.cell(type: NotificationTableViewCell.self, indexPath)
+        cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+        cell.setup()
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if viewModel?.items.value?.count ?? 0 == 0 {
+            return
+        }
+        if viewModel?.dataSource()?[safe: indexPath.row]?.notificationType ?? "" == "news" {
+            coordinator?.notdetails(id: viewModel?.dataSource()?[safe: indexPath.row]?.itemId ?? 0)
+        }
+       
+    }
+
 }

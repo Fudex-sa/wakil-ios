@@ -87,6 +87,8 @@
 		667FD7F628917A270005254B /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FD7F128917A270005254B /* OnboardingVC.swift */; };
 		667FD7F728917A270005254B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FD7F228917A270005254B /* OnboardingViewModel.swift */; };
 		6681403C279055490018ECAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6681403B279055480018ECAD /* GoogleService-Info.plist */; };
+		6681DC862C57B99A0004FC3C /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6681DC852C57B99A0004FC3C /* NotificationTableViewCell.xib */; };
+		6681DC872C57B99A0004FC3C /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6681DC842C57B99A0004FC3C /* NotificationTableViewCell.swift */; };
 		66950BC52C3D3B3A00522EE0 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66950BC12C3D3B3A00522EE0 /* MainVC.swift */; };
 		66950BC72C3D3B3A00522EE0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66950BBF2C3D3B3A00522EE0 /* MainStoryboard.storyboard */; };
 		66950BCE2C3D3B7100522EE0 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66950BC92C3D3B7100522EE0 /* HomeCoordinator.swift */; };
@@ -658,6 +660,8 @@
 		667FD7F128917A270005254B /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		667FD7F228917A270005254B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		6681403B279055480018ECAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6681DC842C57B99A0004FC3C /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		6681DC852C57B99A0004FC3C /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		66950BBF2C3D3B3A00522EE0 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		66950BC12C3D3B3A00522EE0 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		66950BC92C3D3B7100522EE0 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -1368,6 +1372,15 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		6681DC832C57B9700004FC3C /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				6681DC842C57B99A0004FC3C /* NotificationTableViewCell.swift */,
+				6681DC852C57B99A0004FC3C /* NotificationTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		66950BBD2C3D3B0F00522EE0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1406,6 +1419,7 @@
 		66950BDE2C3D3BA100522EE0 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				6681DC832C57B9700004FC3C /* cells */,
 				66950BDF2C3D3BBD00522EE0 /* NotificationCoordinator.swift */,
 				66950BE02C3D3BBD00522EE0 /* NotificationStoryboard.storyboard */,
 				66950BE12C3D3BBD00522EE0 /* NotificationModel.swift */,
@@ -2970,6 +2984,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6681DC862C57B99A0004FC3C /* NotificationTableViewCell.xib in Resources */,
 				C86BF98A266947F0002D87BC /* StatusLine.xib in Resources */,
 				C871C729272FEB7B00DCBD2D /* SFPRODISPLAYBLACKITALIC.OTF in Resources */,
 				660A62FB2C464A020094B92E /* SelectLocStoryboard.storyboard in Resources */,
@@ -3465,6 +3480,7 @@
 				C86BF9A7266947F0002D87BC /* MarginAdjustable.swift in Sources */,
 				C845398A2729880600004173 /* ViewModelProtocol.swift in Sources */,
 				C86BF9B1266947F0002D87BC /* Theme.swift in Sources */,
+				6681DC872C57B99A0004FC3C /* NotificationTableViewCell.swift in Sources */,
 				C82A28F9266FB79E0079D5DA /* SearchViewPicker.swift in Sources */,
 				7756A093253482EF00BFE53C /* UIView+AutoLayoutHelper.swift in Sources */,
 				C871C8BF272FED0600DCBD2D /* SwipeCollectionViewCell+Display.swift in Sources */,
@@ -3743,7 +3759,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3827,7 +3843,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -3916,7 +3932,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3999,7 +4015,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;

@@ -24,8 +24,18 @@ extension ChangeClubViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
-            var club = SelectclubDatum(id: 0 ,name: "All".localized,color: "#E51D35", photo: "")
-            self?.append(club)
+            if UD.user != nil {
+                if UD.user?.data?.user?.club != nil {
+                    let club = SelectclubDatum(id: 0 ,name: "All".localized,color: UD.user?.data?.user?.club?.color ?? "#E51D35", photo: "")
+                    self?.append(club)
+                }else {
+                    let club = SelectclubDatum(id: 0 ,name: "All".localized,color: "#E51D35", photo: "")
+                    self?.append(club)
+                }
+            }else {
+                let club = SelectclubDatum(id: 0 ,name: "All".localized,color: "#E51D35", photo: "")
+                self?.append(club)
+            }
             self?.append(contentsOf: model.data ?? [])
             self?.paginator(respnod: model.data)
             self?.publisher()
