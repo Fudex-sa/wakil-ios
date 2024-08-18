@@ -362,3 +362,17 @@
 "Notification" = "الإشعارات";
 "Old password" = "كلمه المرور القديمه";
 "All" = "الكل";
+"There are no matches available" = "لا يوجد مباريات متاحه";
+"Matches" = "المباريات";
+"Previous Matches" = "المباريات السابقة";
+"Statistical Match" = "المباراة الإحصائية";
+"Total Shots" = "اجمالى التصويبات";
+"Total shots on goal" = "اجمالى التصويبات على المرمى";
+"Possession of the ball" = "امتلاك الكرة";
+"Passes" = "يمر";
+"Pass accuracy, pass correctness"  = "دقة التمريرات، صحة التمريرات";
+"Fouls" = "خطأ";
+"Yellow card" = "بطاقة صفراء";
+"Red Card" = "البطاقة الحمراء";
+"Offside" = "تسلل";
+"Corner kick" = "ركلة ركنية";

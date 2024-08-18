@@ -59,7 +59,9 @@ extension HomeVC {
         viewModel?.requestFinished.listen(on: { [weak self] value in
             self?.reload()
         })
-       
+        viewModel?.matchFinish.listen(on: { [weak self] value in
+            self?.reloadmatches()
+        })
     }
 }
 // MARK: - ...  Functions
@@ -73,12 +75,15 @@ extension HomeVC {
         }
         newsTbl.delegate = self
         newsTbl.dataSource = self
+        matchesCollection.delegate = self
+        matchesCollection.dataSource = self
         viewModel?.countryId.send(1)
         newsTbl.observe()
         newsTbl.skeleton()
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
         viewModel?.fetchhome()
+        viewModel?.fetchtodaymatch()
         menuBtn.publisher.listen(on: {[weak self] _ in
             self?.openMenu()
         }).store(self)
@@ -88,12 +93,15 @@ extension HomeVC {
         moreNewsLbl.UIViewAction {
             self.coordinator?.morenews()
         }
+        MoreMatchLbl.UIViewAction {
+            self.coordinator?.morematches()
+        }
     }
     func reload(){
         if viewModel?.items.value?.count ?? 0 == 0 {
             newsTbl.isHidden = true
             if isMenuOpen == false {
-                showEmptyScreen(for: 250 , title: "There are no news available".localized)
+                showEmptyScreen(for: 350 , title: "There are no news available".localized)
             }
         }else {
             newsTbl.isHidden = false
@@ -108,6 +116,20 @@ extension HomeVC {
         }
         newsTbl.reloadData()
         newsTbl.stopSwipeButtom()
+
+    }
+    func reloadmatches(){
+        if viewModel?.matches.value?.count ?? 0 == 0 {
+            matchesCollection.isHidden = true
+            if isMenuOpen == false {
+                showEmptyScreen(for: 150 , title: "There are no matches available".localized)
+            }
+        }else {
+            matchesCollection.isHidden = false
+            hideEmptyScreen()
+        }
+        matchesCollection.reloadData()
+        matchesCollection.stopSwipeButtom()
 
     }
     func setupSideMenu() {
@@ -140,7 +162,7 @@ extension HomeVC {
     func closeMenu() {
             isMenuOpen = false
             if viewModel?.items.value?.count ?? 0 == 0 {
-                showEmptyScreen(for: 250 , title: "There are no news available".localized)
+                showEmptyScreen(for: 350 , title: "There are no news available".localized)
             }
 
             // Update the leading constraint to animate the side menu closure
@@ -184,3 +206,22 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
     }
 
 }
+extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return .init(width: collectionView.width, height: collectionView.height)
+       }
+      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+          return viewModel?.matches.value?.count ?? 2
+        }
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            var cell = collectionView.cell(type: MatchsHomeCollectionViewCell.self, indexPath)
+            cell.model = viewModel?.matches.value?[safe: indexPath.row]
+            return cell
+        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if viewModel?.matches.value?.count ?? 0 == 0 {
+            return
+        }
+        coordinator?.detailsmatchs(id: viewModel?.matches.value?[safe: indexPath.row]?.id ?? 0)
+    }
+  }

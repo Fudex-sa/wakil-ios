@@ -1,14 +1,14 @@
 //
-//  MatchsHomeCollectionViewCell.swift
+//  MatchesTableViewCell.swift
 //  Superfan
 //
-//  Created by ADAM on 09/07/2024.
+//  Created by ADAM on 18/08/2024.
 //  Copyright © 2024 com.M.Abdu. All rights reserved.
 //
 
 import UIKit
 
-class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
+class MatchesTableViewCell: BaseTableViewCell {
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var contanerView: UIView!
     @IBOutlet weak var club1Img: UIImageView!
@@ -31,16 +31,14 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
             timeView.isHidden = false
             resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
             timeLbl.text = model.liveStatus ?? ""
-            if UD.club != nil {
-                timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
-            }else {
-                timeLbl.textColor = R.color.primary()
-            }
+            timeLbl.textColor = R.color.primary()
+            timeView.backgroundColor = UIColor(hex: "#FFF3F5")
         }else if model.status ?? 0 == 6 {
             timeView.isHidden = false
             resulteLbl.text = "- : -"
             timeLbl.text = DateHelper().date(date: model.date ?? "", format: "hh:mm a", oldFormat: "yyyy-MM-dd HH:mm:ss")
-            timeLbl.textColor = UIColor(hex: "#E1E1E1")
+            timeLbl.textColor = R.color.black1()
+            timeView.backgroundColor = UIColor(hex: "#F3F4F5")
         }else {
             timeView.isHidden = true
             resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
@@ -48,4 +46,5 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
         }
 
     }
+    
 }

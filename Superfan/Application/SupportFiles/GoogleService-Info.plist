@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
     <key>CLIENT_ID</key>
-    <string>869084755295-ks2kt805j19tqc3op31daqv52l5sbh3e.apps.googleusercontent.com</string>
+    <string>309215017604-eq5i4u9k5fo604t365tc01e6h09bekqu.apps.googleusercontent.com</string>
     <key>REVERSED_CLIENT_ID</key>
-    <string>com.googleusercontent.apps.869084755295-ks2kt805j19tqc3op31daqv52l5sbh3e</string>
+    <string>com.googleusercontent.apps.309215017604-eq5i4u9k5fo604t365tc01e6h09bekqu</string>
+    <key>ANDROID_CLIENT_ID</key>
+    <string>309215017604-mms0qgm5u93rvmubhmo73hf2cumdtepj.apps.googleusercontent.com</string>
     <key>API_KEY</key>
-    <string>AIzaSyDta6VlE5r1YI7s2diIAUHGYzVO5lPMBrY</string>
+    <string>AIzaSyCUcLrG8dNmhdKFUomnFTH8GSvm4JonLO0</string>
     <key>GCM_SENDER_ID</key>
-    <string>869084755295</string>
+    <string>309215017604</string>
     <key>PLIST_VERSION</key>
     <string>1</string>
     <key>BUNDLE_ID</key>
     <string>com.Fudex.superfan</string>
     <key>PROJECT_ID</key>
-    <string>superfan-53443</string>
+    <string>superfan-5c23c</string>
     <key>STORAGE_BUCKET</key>
-    <string>superfan-53443.appspot.com</string>
+    <string>superfan-5c23c.appspot.com</string>
     <key>IS_ADS_ENABLED</key>
     <false></false>
     <key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +31,6 @@
     <key>IS_SIGNIN_ENABLED</key>
     <true></true>
     <key>GOOGLE_APP_ID</key>
-    <string>1:869084755295:ios:0b15255104a9a5ae0632ea</string>
+    <string>1:309215017604:ios:c92e2355311a07c4d520d1</string>
 </dict>
 </plist>

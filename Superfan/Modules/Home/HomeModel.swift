@@ -27,3 +27,36 @@ struct NewsModelData: Codable {
     let title, date: String?
     let backgrouds: String?
 }
+
+
+struct MatchsModel: Codable {
+    let data: [MatchsDatum]?
+    let status: Bool?
+    let message: String?
+}
+
+// MARK: - Datum
+struct MatchsDatum: Codable {
+    let id, homeTeamID, awayTeamID: Int?
+    let date, liveStatus: String?
+    let status: Int?
+    let leagueName: String?
+    let team1, team2: MatchsTeam?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case homeTeamID = "home_team_id"
+        case awayTeamID = "away_team_id"
+        case date, liveStatus, status
+        case leagueName = "league_name"
+        case team1, team2
+    }
+}
+
+// MARK: - Team
+struct MatchsTeam: Codable {
+    let id: Int?
+    let title: String?
+    let logo: String?
+    let score: Int?
+}

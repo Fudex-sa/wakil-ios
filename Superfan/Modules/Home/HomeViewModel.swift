@@ -14,6 +14,8 @@ class HomeViewModel: BaseViewModel , DataSourceViewModel{
     var clubId: Publisher<Int> = .init()
     var items: Publisher<[NewsModelData]> = .init()
     var clubs: Publisher<[SelectclubDatum]> = .init()
+    var matches: Publisher<[MatchsDatum]> = .init()
+    var matchFinish: Publisher<Bool> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -34,6 +36,19 @@ extension HomeViewModel {
             self?.clubs.send(model.data?.clubs ?? [])
             self?.paginator(respnod: model.data?.news)
             self?.publisher()
+        }).store(self)
+    }
+    
+    func fetchtodaymatch() {
+        if UD.club?.id ?? 0 != 0 {
+            NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
+        }
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.perviousmatch.rawValue, type: .get, MatchsModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.matches.send(model.data ?? [])
+            self?.matchFinish.send(true)
         }).store(self)
     }
 }

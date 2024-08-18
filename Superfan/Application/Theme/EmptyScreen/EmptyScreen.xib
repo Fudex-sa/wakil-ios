@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVY-OI-96t">
-                    <rect key="frame" x="0.0" y="316.5" width="414" height="263"/>
+                    <rect key="frame" x="0.0" y="366.5" width="414" height="163"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gBX-dv-4OC">
-                            <rect key="frame" x="145.5" y="100" width="123.5" height="148.5"/>
+                            <rect key="frame" x="145.5" y="0.0" width="123.5" height="148.5"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="148.5" id="ms5-U9-4v1"/>
@@ -32,7 +32,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtJ-Gl-ksW">
-                            <rect key="frame" x="8" y="218.5" width="398" height="20.5"/>
+                            <rect key="frame" x="8" y="118.5" width="398" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="Darkerblack"/>
                             <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="GtJ-Gl-ksW" secondAttribute="trailing" constant="8" id="KpS-yi-1ye"/>
-                        <constraint firstItem="gBX-dv-4OC" firstAttribute="top" secondItem="dVY-OI-96t" secondAttribute="top" constant="100" id="NGT-pn-3jQ"/>
+                        <constraint firstItem="gBX-dv-4OC" firstAttribute="top" secondItem="dVY-OI-96t" secondAttribute="top" id="NGT-pn-3jQ"/>
                         <constraint firstItem="GtJ-Gl-ksW" firstAttribute="leading" secondItem="dVY-OI-96t" secondAttribute="leading" constant="8" id="ZMu-am-qW9"/>
                         <constraint firstItem="GtJ-Gl-ksW" firstAttribute="top" secondItem="gBX-dv-4OC" secondAttribute="bottom" constant="-30" id="bh3-Br-hgu"/>
                         <constraint firstItem="gBX-dv-4OC" firstAttribute="centerX" secondItem="dVY-OI-96t" secondAttribute="centerX" id="ev7-Li-jku"/>

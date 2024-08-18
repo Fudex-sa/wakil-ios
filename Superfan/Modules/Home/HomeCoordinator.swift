@@ -24,9 +24,18 @@ extension HomeCoordinator {
         guard let scene = R.storyboard.newsStoryboard.newsVC() else { return }
         view?.push(scene)
     }
+    func morematches() {
+        guard let scene = R.storyboard.matchesMoreStoryboard.matchesMoreVC() else { return }
+        view?.push(scene)
+    }
     func detailsnews(id: Int) {
         guard let scene = R.storyboard.newsDetailsStoryboard.newsDetailsVC() else { return }
         scene.newsId = id
+        view?.push(scene)
+    }
+    func detailsmatchs(id: Int) {
+        guard let scene = R.storyboard.matchdetailsStoryboard.matchdetailsVC() else { return }
+        scene.matchId = id
         view?.push(scene)
     }
     func changeclub() {
@@ -39,6 +48,8 @@ extension HomeCoordinator {
         view?.viewModel?.resetPaginator()
         view?.viewModel?.clearDataSource()
         view?.viewModel?.fetchhome()
+        view?.viewModel?.matches.send([])
+        view?.viewModel?.fetchtodaymatch()
         view?.sideMenuViewController?.containerView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
         view?.changeColoe()
     }

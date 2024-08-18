@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 25 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 28 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -98,6 +98,8 @@ struct R: Rswift.Validatable {
     static let changeClubStoryboard = _R.storyboard.changeClubStoryboard()
     /// Storyboard `ChangelanguageStoryboard`.
     static let changelanguageStoryboard = _R.storyboard.changelanguageStoryboard()
+    /// Storyboard `ClubdetailsStoryboard`.
+    static let clubdetailsStoryboard = _R.storyboard.clubdetailsStoryboard()
     /// Storyboard `ContactusStoryboard`.
     static let contactusStoryboard = _R.storyboard.contactusStoryboard()
     /// Storyboard `EditemailStoryboard`.
@@ -118,6 +120,10 @@ struct R: Rswift.Validatable {
     static let loginStoryboard = _R.storyboard.loginStoryboard()
     /// Storyboard `MainStoryboard`.
     static let mainStoryboard = _R.storyboard.mainStoryboard()
+    /// Storyboard `MatchdetailsStoryboard`.
+    static let matchdetailsStoryboard = _R.storyboard.matchdetailsStoryboard()
+    /// Storyboard `MatchesMoreStoryboard`.
+    static let matchesMoreStoryboard = _R.storyboard.matchesMoreStoryboard()
     /// Storyboard `NewsDetailsStoryboard`.
     static let newsDetailsStoryboard = _R.storyboard.newsDetailsStoryboard()
     /// Storyboard `NewsStoryboard`.
@@ -161,6 +167,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ChangelanguageStoryboard", bundle: ...)`
     static func changelanguageStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.changelanguageStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ClubdetailsStoryboard", bundle: ...)`
+    static func clubdetailsStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.clubdetailsStoryboard)
     }
     #endif
 
@@ -231,6 +244,20 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "MainStoryboard", bundle: ...)`
     static func mainStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.mainStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "MatchdetailsStoryboard", bundle: ...)`
+    static func matchdetailsStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.matchdetailsStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "MatchesMoreStoryboard", bundle: ...)`
+    static func matchesMoreStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.matchesMoreStoryboard)
     }
     #endif
 
@@ -1459,7 +1486,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 88 images.
+  /// This `R.image` struct is generated, and contains static references to 89 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1609,6 +1636,8 @@ struct R: Rswift.Validatable {
     static let radioon = Rswift.ImageResource(bundle: R.hostingBundle, name: "radioon")
     /// Image `rectangle7`.
     static let rectangle7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "rectangle7")
+    /// Image `result`.
+    static let result = Rswift.ImageResource(bundle: R.hostingBundle, name: "result")
     /// Image `setting`.
     static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
     /// Image `successIconLight`.
@@ -2157,6 +2186,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "result", bundle: ..., traitCollection: ...)`
+    static func result(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.result, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "setting", bundle: ..., traitCollection: ...)`
     static func setting(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.setting, compatibleWith: traitCollection)
@@ -2288,7 +2324,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 20 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 22 nibs.
   struct nib {
     /// Nib `CalendarDateRangePickerHeaderView`.
     static let calendarDateRangePickerHeaderView = _R.nib._CalendarDateRangePickerHeaderView()
@@ -2306,6 +2342,10 @@ struct R: Rswift.Validatable {
     static let imagesCollectionViewCell = _R.nib._ImagesCollectionViewCell()
     /// Nib `MaintanceScreen`.
     static let maintanceScreen = _R.nib._MaintanceScreen()
+    /// Nib `MatchdetailsTableViewCell`.
+    static let matchdetailsTableViewCell = _R.nib._MatchdetailsTableViewCell()
+    /// Nib `MatchesTableViewCell`.
+    static let matchesTableViewCell = _R.nib._MatchesTableViewCell()
     /// Nib `MatchsHomeCollectionViewCell`.
     static let matchsHomeCollectionViewCell = _R.nib._MatchsHomeCollectionViewCell()
     /// Nib `MessageView`.
@@ -2392,6 +2432,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.maintanceScreen) instead")
     static func maintanceScreen(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.maintanceScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MatchdetailsTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.matchdetailsTableViewCell) instead")
+    static func matchdetailsTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.matchdetailsTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MatchesTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.matchesTableViewCell) instead")
+    static func matchesTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.matchesTableViewCell)
     }
     #endif
 
@@ -2523,6 +2579,14 @@ struct R: Rswift.Validatable {
       return R.nib.maintanceScreen.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func matchdetailsTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MatchdetailsTableViewCell? {
+      return R.nib.matchdetailsTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MatchdetailsTableViewCell
+    }
+
+    static func matchesTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MatchesTableViewCell? {
+      return R.nib.matchesTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MatchesTableViewCell
+    }
+
     static func matchsHomeCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MatchsHomeCollectionViewCell? {
       return R.nib.matchsHomeCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MatchsHomeCollectionViewCell
     }
@@ -2581,7 +2645,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 295 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 309 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -2851,6 +2915,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let actionAllow = Rswift.StringResource(key: "action allow", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Corner kick
+      ///
+      /// Locales: ar, en
+      static let cornerKick = Rswift.StringResource(key: "Corner kick", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Country
       ///
       /// Locales: ar, en
@@ -2999,6 +3067,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let forgotYourPassword = Rswift.StringResource(key: "Forgot your password?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Fouls
+      ///
+      /// Locales: ar, en
+      static let fouls = Rswift.StringResource(key: "Fouls", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: From
       ///
       /// Locales: ar, en
@@ -3155,6 +3227,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let mapViewLan = Rswift.StringResource(key: "map.view.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Matches
+      ///
+      /// Locales: ar, en
+      static let matches = Rswift.StringResource(key: "Matches", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Media Library
       ///
       /// Locales: ar, en
@@ -3251,6 +3327,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let orLan = Rswift.StringResource(key: "or.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Offside
+      ///
+      /// Locales: ar, en
+      static let offside = Rswift.StringResource(key: "Offside", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Ok
       ///
       /// Locales: ar, en
@@ -3267,6 +3347,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let orLogInVia = Rswift.StringResource(key: "Or log in via", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Pass accuracy, pass correctness
+      ///
+      /// Locales: ar, en
+      static let passAccuracyPassCorrectness = Rswift.StringResource(key: "Pass accuracy, pass correctness", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Passes
+      ///
+      /// Locales: ar, en
+      static let passes = Rswift.StringResource(key: "Passes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Password
       ///
       /// Locales: ar, en
@@ -3347,6 +3435,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let deniedAlertDescription = Rswift.StringResource(key: "denied alert description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Possession of the ball
+      ///
+      /// Locales: ar, en
+      static let possessionOfTheBall = Rswift.StringResource(key: "Possession of the ball", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Previous Matches
+      ///
+      /// Locales: ar, en
+      static let previousMatches = Rswift.StringResource(key: "Previous Matches", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Profession
       ///
       /// Locales: ar, en
@@ -3367,6 +3463,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let recentsLan = Rswift.StringResource(key: "recents.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Red Card
+      ///
+      /// Locales: ar, en
+      static let redCard = Rswift.StringResource(key: "Red Card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Register
       ///
       /// Locales: ar, en
@@ -3519,6 +3619,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let permissionSpeechName = Rswift.StringResource(key: "permission speech name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Statistical Match
+      ///
+      /// Locales: ar, en
+      static let statisticalMatch = Rswift.StringResource(key: "Statistical Match", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Stay informed
       ///
       /// Locales: ar, en
@@ -3547,6 +3651,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let thereAreNoClubsAvailable = Rswift.StringResource(key: "There are no clubs available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: There are no matches available
+      ///
+      /// Locales: ar, en
+      static let thereAreNoMatchesAvailable = Rswift.StringResource(key: "There are no matches available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: There are no news available
       ///
       /// Locales: ar, en
@@ -3563,6 +3671,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let todaySMatches = Rswift.StringResource(key: "Today's matches", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Total Shots
+      ///
+      /// Locales: ar, en
+      static let totalShots = Rswift.StringResource(key: "Total Shots", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Total shots on goal
+      ///
+      /// Locales: ar, en
+      static let totalShotsOnGoal = Rswift.StringResource(key: "Total shots on goal", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Tracking
       ///
       /// Locales: ar, en
@@ -3619,6 +3735,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let writeWhatYouThinkAndSendToCommunicate = Rswift.StringResource(key: "Write what you think and send to communicate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Yellow card
+      ///
+      /// Locales: ar, en
+      static let yellowCard = Rswift.StringResource(key: "Yellow card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Yes
       ///
       /// Locales: ar, en
@@ -4769,6 +4889,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("action allow", bundle: bundle, comment: "")
       }
 
+      /// en translation: Corner kick
+      ///
+      /// Locales: ar, en
+      static func cornerKick(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Corner kick", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Corner kick"
+        }
+
+        return NSLocalizedString("Corner kick", bundle: bundle, comment: "")
+      }
+
       /// en translation: Country
       ///
       /// Locales: ar, en
@@ -5322,6 +5457,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Forgot your password?", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Fouls
+      ///
+      /// Locales: ar, en
+      static func fouls(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Fouls", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Fouls"
+        }
+
+        return NSLocalizedString("Fouls", bundle: bundle, comment: "")
       }
 
       /// en translation: From
@@ -5909,6 +6059,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("map.view.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Matches
+      ///
+      /// Locales: ar, en
+      static func matches(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Matches", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Matches"
+        }
+
+        return NSLocalizedString("Matches", bundle: bundle, comment: "")
+      }
+
       /// en translation: Media Library
       ///
       /// Locales: ar, en
@@ -6269,6 +6434,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("or.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Offside
+      ///
+      /// Locales: ar, en
+      static func offside(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Offside", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Offside"
+        }
+
+        return NSLocalizedString("Offside", bundle: bundle, comment: "")
+      }
+
       /// en translation: Ok
       ///
       /// Locales: ar, en
@@ -6327,6 +6507,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Or log in via", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Pass accuracy, pass correctness
+      ///
+      /// Locales: ar, en
+      static func passAccuracyPassCorrectness(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Pass accuracy, pass correctness", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Pass accuracy, pass correctness"
+        }
+
+        return NSLocalizedString("Pass accuracy, pass correctness", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Passes
+      ///
+      /// Locales: ar, en
+      static func passes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Passes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Passes"
+        }
+
+        return NSLocalizedString("Passes", bundle: bundle, comment: "")
       }
 
       /// en translation: Password
@@ -6629,6 +6839,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("denied alert description", bundle: bundle, comment: "")
       }
 
+      /// en translation: Possession of the ball
+      ///
+      /// Locales: ar, en
+      static func possessionOfTheBall(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Possession of the ball", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Possession of the ball"
+        }
+
+        return NSLocalizedString("Possession of the ball", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Previous Matches
+      ///
+      /// Locales: ar, en
+      static func previousMatches(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Previous Matches", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Previous Matches"
+        }
+
+        return NSLocalizedString("Previous Matches", bundle: bundle, comment: "")
+      }
+
       /// en translation: Profession
       ///
       /// Locales: ar, en
@@ -6702,6 +6942,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("recents.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Red Card
+      ///
+      /// Locales: ar, en
+      static func redCard(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Red Card", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Red Card"
+        }
+
+        return NSLocalizedString("Red Card", bundle: bundle, comment: "")
       }
 
       /// en translation: Register
@@ -7274,6 +7529,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("permission speech name", bundle: bundle, comment: "")
       }
 
+      /// en translation: Statistical Match
+      ///
+      /// Locales: ar, en
+      static func statisticalMatch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Statistical Match", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Statistical Match"
+        }
+
+        return NSLocalizedString("Statistical Match", bundle: bundle, comment: "")
+      }
+
       /// en translation: Stay informed
       ///
       /// Locales: ar, en
@@ -7379,6 +7649,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("There are no clubs available", bundle: bundle, comment: "")
       }
 
+      /// en translation: There are no matches available
+      ///
+      /// Locales: ar, en
+      static func thereAreNoMatchesAvailable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("There are no matches available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "There are no matches available"
+        }
+
+        return NSLocalizedString("There are no matches available", bundle: bundle, comment: "")
+      }
+
       /// en translation: There are no news available
       ///
       /// Locales: ar, en
@@ -7437,6 +7722,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Today's matches", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Total Shots
+      ///
+      /// Locales: ar, en
+      static func totalShots(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Total Shots", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Total Shots"
+        }
+
+        return NSLocalizedString("Total Shots", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Total shots on goal
+      ///
+      /// Locales: ar, en
+      static func totalShotsOnGoal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Total shots on goal", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Total shots on goal"
+        }
+
+        return NSLocalizedString("Total shots on goal", bundle: bundle, comment: "")
       }
 
       /// en translation: Tracking
@@ -7647,6 +7962,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Write what you think and send to communicate", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Yellow card
+      ///
+      /// Locales: ar, en
+      static func yellowCard(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Yellow card", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Yellow card"
+        }
+
+        return NSLocalizedString("Yellow card", bundle: bundle, comment: "")
       }
 
       /// en translation: Yes
@@ -8349,6 +8679,28 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _MatchdetailsTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MatchdetailsTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MatchdetailsTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MatchdetailsTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MatchesTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MatchesTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MatchesTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MatchesTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _MatchsHomeCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "MatchsHomeCollectionViewCell"
@@ -8545,6 +8897,9 @@ struct _R: Rswift.Validatable {
       try changelanguageStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try clubdetailsStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try contactusStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -8573,6 +8928,12 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try mainStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try matchdetailsStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try matchesMoreStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try newsDetailsStoryboard.validate()
@@ -8684,6 +9045,28 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.changelanguageStoryboard().changelanguageVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'changelanguageVC' could not be loaded from storyboard 'ChangelanguageStoryboard' as 'ChangelanguageVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct clubdetailsStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ClubdetailsVC
+
+      let bundle = R.hostingBundle
+      let clubdetailsVC = StoryboardViewControllerResource<ClubdetailsVC>(identifier: "ClubdetailsVC")
+      let name = "ClubdetailsStoryboard"
+
+      func clubdetailsVC(_: Void = ()) -> ClubdetailsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: clubdetailsVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.clubdetailsStoryboard().clubdetailsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'clubdetailsVC' could not be loaded from storyboard 'ClubdetailsStoryboard' as 'ClubdetailsVC'.") }
       }
 
       fileprivate init() {}
@@ -8980,6 +9363,61 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.mainStoryboard().mainVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainVC' could not be loaded from storyboard 'MainStoryboard' as 'MainVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct matchdetailsStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = MatchdetailsVC
+
+      let bundle = R.hostingBundle
+      let matchdetailsVC = StoryboardViewControllerResource<MatchdetailsVC>(identifier: "MatchdetailsVC")
+      let name = "MatchdetailsStoryboard"
+
+      func matchdetailsVC(_: Void = ()) -> MatchdetailsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: matchdetailsVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "result", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'result' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "gray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "txtblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'txtblue' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.matchdetailsStoryboard().matchdetailsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'matchdetailsVC' could not be loaded from storyboard 'MatchdetailsStoryboard' as 'MatchdetailsVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct matchesMoreStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = MatchesMoreVC
+
+      let bundle = R.hostingBundle
+      let matchesMoreVC = StoryboardViewControllerResource<MatchesMoreVC>(identifier: "MatchesMoreVC")
+      let name = "MatchesMoreStoryboard"
+
+      func matchesMoreVC(_: Void = ()) -> MatchesMoreVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: matchesMoreVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'MatchesMoreStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'MatchesMoreStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'MatchesMoreStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'MatchesMoreStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.matchesMoreStoryboard().matchesMoreVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'matchesMoreVC' could not be loaded from storyboard 'MatchesMoreStoryboard' as 'MatchesMoreVC'.") }
       }
 
       fileprivate init() {}

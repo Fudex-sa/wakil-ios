@@ -51,6 +51,10 @@ struct NetworkConfigration {
         case updatephone = "fan/update-otp-mobile"
         case profile = "fan/profile"
         case updateprofile = "fan/profile/update"
+        case matches
+        case todaymatxh = "todayMatches"
+        case perviousmatch = "previousMatches"
+        case nextmatches = "nextMatches"
         case home = "fan/home"
         case players = "fan/players"
         case leagues = "fan/leagues"
