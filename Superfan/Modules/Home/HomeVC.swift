@@ -70,7 +70,11 @@ extension HomeVC {
         changeColoe()
         clubLbl.preferredMaxLayoutWidth = 100
         if UD.club != nil {
-            clubLbl.text = UD.club?.name ?? ""
+            if UD.club?.id == 0 {
+                clubLbl.text = "All".localized
+            }else {
+                clubLbl.text = UD.club?.name ?? ""
+            }
             clubLbl.sizeToFit()
         }
         newsTbl.delegate = self
