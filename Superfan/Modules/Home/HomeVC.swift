@@ -196,6 +196,7 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: NewsTableViewCell.self, indexPath)
         cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+        cell.delegate = self
         cell.setup()
         return cell
         
@@ -220,6 +221,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             var cell = collectionView.cell(type: MatchsHomeCollectionViewCell.self, indexPath)
             cell.model = viewModel?.matches.value?[safe: indexPath.row]
+            cell.delegate = self
             return cell
         }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -229,3 +231,14 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
         coordinator?.detailsmatchs(id: viewModel?.matches.value?[safe: indexPath.row]?.id ?? 0)
     }
   }
+
+extension HomeVC : MatchsHomeCollectionViewCellDelegate{
+    func clubdetails(wasPressedOnCell cell: MatchsHomeCollectionViewCell, clubId: Int) {
+        coordinator?.detailsclub(id: clubId)
+    }
+}
+extension HomeVC : NewsTableViewCellDelegate{
+    func clubdetails(wasPressedOnCell cell: NewsTableViewCell, clubId: Int) {
+        coordinator?.detailsclub(id: clubId)
+    }
+}

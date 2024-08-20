@@ -111,6 +111,7 @@ extension NewsVC:UITableViewDelegate , UITableViewDataSource {
         var cell = tableView.cell(type: NewsTableViewCell.self, indexPath)
         cell.model = viewModel?.dataSource()?[safe: indexPath.row]
         cell.setup()
+        cell.delegate = self
         return cell
         
     }
@@ -122,4 +123,10 @@ extension NewsVC:UITableViewDelegate , UITableViewDataSource {
         self.coordinator?.detailsnews(id: viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
     }
 
+}
+
+extension NewsVC : NewsTableViewCellDelegate{
+    func clubdetails(wasPressedOnCell cell: NewsTableViewCell, clubId: Int) {
+        coordinator?.detailsclub(id: clubId)
+    }
 }

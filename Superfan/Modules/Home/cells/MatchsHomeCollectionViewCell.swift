@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol MatchsHomeCollectionViewCellDelegate: AnyObject {
+    func clubdetails(wasPressedOnCell cell: MatchsHomeCollectionViewCell , clubId : Int)
+}
 class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var contanerView: UIView!
@@ -18,6 +20,8 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var legaueLbl: UILabel!
     @IBOutlet weak var resulteLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
+    var delegate: MatchsHomeCollectionViewCellDelegate?
+
     override func setup() {
         skeleton(view: contentView)
         super.setup()
@@ -46,6 +50,17 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
             resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
             timeLbl.textColor = UIColor(hex: "#E1E1E1")
         }
-
+        club1Img.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team1?.id ?? 0)
+        }
+        club2Img.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team2?.id ?? 0)
+        }
+        club1Lbl.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team1?.id ?? 0)
+        }
+        club2Lbl.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team2?.id ?? 0)
+        }
     }
 }

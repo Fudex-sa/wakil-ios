@@ -7,16 +7,18 @@
 //
 
 import UIKit
-
+protocol NewsTableViewCellDelegate: AnyObject {
+    func clubdetails(wasPressedOnCell cell: NewsTableViewCell , clubId : Int)
+}
 class NewsTableViewCell: BaseTableViewCell {
     @IBOutlet weak var imageHight: NSLayoutConstraint!
     @IBOutlet weak var ContainerView: UIView!
-    
     @IBOutlet weak var clubImg: UIImageView!
     @IBOutlet weak var clubLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var titlelbl: UILabel!
     @IBOutlet weak var newImg: UIImageView!
+    var delegate: NewsTableViewCellDelegate?
     override func setup() {
         skeleton(view: contentView)
         super.setup()
@@ -31,5 +33,12 @@ class NewsTableViewCell: BaseTableViewCell {
         }else {
             imageHight.constant = 134
         }
+        clubImg.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.club?.id ?? 0)
+        }
+        clubLbl.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.club?.id ?? 0)
+        }
+       
     }
 }

@@ -70,6 +70,18 @@ extension MatchdetailsVC {
         startLoading()
         viewModel?.matchId.send(matchId)
         viewModel?.getmatchdetails()
+        club1Img.UIViewAction {
+            self.coordinator?.detailsclub(id: self.viewModel?.matchdata.value?.data?.team1?.id ?? 0)
+        }
+        club2Img.UIViewAction {
+            self.coordinator?.detailsclub(id: self.viewModel?.matchdata.value?.data?.team2?.id ?? 0)
+        }
+        club1Lbl.UIViewAction {
+            self.coordinator?.detailsclub(id: self.viewModel?.matchdata.value?.data?.team1?.id ?? 0)
+        }
+        club2Lbl.UIViewAction {
+            self.coordinator?.detailsclub(id: self.viewModel?.matchdata.value?.data?.team2?.id ?? 0)
+        }
     }
     func reload() {
         stopLoading()

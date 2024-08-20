@@ -23,4 +23,9 @@ extension NewsCoordinator {
         scene.newsId = id
         view?.push(scene)
     }
+    func detailsclub(id: Int) {
+        guard let scene = R.storyboard.clubdetailsStoryboard.clubdetailsVC() else { return }
+        scene.clubId = id
+        view?.push(scene)
+    }
 }

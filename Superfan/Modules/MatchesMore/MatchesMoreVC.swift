@@ -137,6 +137,7 @@ extension MatchesMoreVC:UITableViewDelegate , UITableViewDataSource {
         var cell = tableView.cell(type: MatchesTableViewCell.self, indexPath)
         cell.model = viewModel?.dataSource()?[safe: indexPath.row]
         cell.setup()
+        cell.delegate = self
         return cell
         
     }
@@ -149,4 +150,9 @@ extension MatchesMoreVC:UITableViewDelegate , UITableViewDataSource {
        
     }
 
+}
+extension MatchesMoreVC : MatchesTableViewCellDelegate{
+    func clubdetails(wasPressedOnCell cell: MatchesTableViewCell, clubId: Int) {
+        coordinator?.detailsclub(id: clubId)
+    }
 }

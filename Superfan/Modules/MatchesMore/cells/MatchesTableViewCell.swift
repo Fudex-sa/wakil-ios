@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol MatchesTableViewCellDelegate: AnyObject {
+    func clubdetails(wasPressedOnCell cell: MatchesTableViewCell , clubId : Int)
+}
 class MatchesTableViewCell: BaseTableViewCell {
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var contanerView: UIView!
@@ -18,6 +20,7 @@ class MatchesTableViewCell: BaseTableViewCell {
     @IBOutlet weak var legaueLbl: UILabel!
     @IBOutlet weak var resulteLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
+    var delegate: MatchesTableViewCellDelegate?
     override func setup() {
         skeleton(view: contentView)
         super.setup()
@@ -43,6 +46,18 @@ class MatchesTableViewCell: BaseTableViewCell {
             timeView.isHidden = true
             resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
             timeLbl.textColor = UIColor(hex: "#E1E1E1")
+        }
+        club1Img.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team1?.id ?? 0)
+        }
+        club2Img.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team2?.id ?? 0)
+        }
+        club1Lbl.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team1?.id ?? 0)
+        }
+        club2Lbl.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team2?.id ?? 0)
         }
 
     }

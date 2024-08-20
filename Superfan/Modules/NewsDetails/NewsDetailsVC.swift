@@ -64,6 +64,12 @@ extension NewsDetailsVC {
         startLoading()
         viewModel?.newsId.send(newsId)
         viewModel?.getnewsdetails()
+        clubImg.UIViewAction {
+            self.coordinator?.detailsclub(id: self.viewModel?.newsdata.value?.data?.club?.id ?? 0)
+        }
+        clubLbl.UIViewAction {
+            self.coordinator?.detailsclub(id: self.viewModel?.newsdata.value?.data?.club?.id ?? 0)
+        }
     }
     func reload() {
         stopLoading()
