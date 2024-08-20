@@ -365,12 +365,12 @@
 "There are no matches available" = "لا يوجد مباريات متاحه";
 "Matches" = "المباريات";
 "Previous Matches" = "المباريات السابقة";
-"Statistical Match" = "المباراة الإحصائية";
+"Statistical Match" = "إحصائيات المباراة";
 "Total Shots" = "اجمالى التصويبات";
 "Total shots on goal" = "اجمالى التصويبات على المرمى";
-"Possession of the ball" = "امتلاك الكرة";
-"Passes" = "يمر";
-"Pass accuracy, pass correctness"  = "دقة التمريرات، صحة التمريرات";
+"Possession of the ball" = "الإستحواذ";
+"Passes" = "عدد التمريرات";
+"Pass accuracy, pass correctness"  = "دقة التمريرات";
 "Fouls" = "خطأ";
 "Yellow card" = "بطاقة صفراء";
 "Red Card" = "البطاقة الحمراء";

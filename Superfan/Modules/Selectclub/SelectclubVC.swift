@@ -68,6 +68,7 @@ extension SelectclubVC {
         viewModel?.clearDataSource()
         viewModel?.fetchclubs()
         skipBtn.publisher.listen(on: {[weak self] _ in
+            UD.club = nil
             Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
         }).store(self)
         nextBtn.publisher.listen(on: {[weak self] _ in

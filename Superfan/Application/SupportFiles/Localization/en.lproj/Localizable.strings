@@ -370,12 +370,12 @@
 "There are no matches available" = "There are no matches available";
 "Matches" = "Matches";
 "Previous Matches" = "Previous Matches";
-"Statistical Match" = "Statistical Match";
+"Statistical Match" = "Match Statistics";
 "Total Shots" = "Total Shots";
 "Total shots on goal" = "Total shots on goal";
-"Possession of the ball" = "Possession of the ball";
-"Passes" = "Passes";
-"Pass accuracy, pass correctness"  = "Pass accuracy, pass correctness";
+"Possession of the ball" = "Acquisition";
+"Passes" = "Number of Passes";
+"Pass accuracy, pass correctness"  = "Pass accuracy";
 "Fouls" = "Fouls";
 "Yellow card" = "Yellow card";
 "Red Card" = "Red Card";
