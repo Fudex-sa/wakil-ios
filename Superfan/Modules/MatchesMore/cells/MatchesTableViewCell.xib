@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7U-ES-no0">
                                 <rect key="frame" x="25.000000000000004" y="16.333333333333336" width="51.333333333333343" height="85.333333333333314"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9O-Fp-CV6">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9O-Fp-CV6">
                                         <rect key="frame" x="-0.33333333333333215" y="0.0" width="52" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="N4C-KQ-urW"/>
@@ -54,7 +54,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhD-s1-3lb">
                                 <rect key="frame" x="265.66666666666669" y="16.333333333333336" width="51.333333333333314" height="85.333333333333314"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Q4-M6-Gh7">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Q4-M6-Gh7">
                                         <rect key="frame" x="-0.33333333333337123" y="0.0" width="52" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="t9Y-Bn-4Nh"/>

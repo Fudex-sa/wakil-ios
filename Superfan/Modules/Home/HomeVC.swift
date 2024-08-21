@@ -216,7 +216,12 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
         return .init(width: collectionView.frame.width, height: collectionView.frame.height)
        }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          return viewModel?.matches.value?.count ?? 2
+          if viewModel?.matches.value?.count ?? 0 > 4 {
+              return 4
+          }else {
+              return viewModel?.matches.value?.count ?? 2
+          }
+          
         }
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             var cell = collectionView.cell(type: MatchsHomeCollectionViewCell.self, indexPath)

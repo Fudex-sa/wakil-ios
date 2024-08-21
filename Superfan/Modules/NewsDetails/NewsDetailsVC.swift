@@ -76,7 +76,7 @@ extension NewsDetailsVC {
         clubImg.setImage(url: viewModel?.newsdata.value?.data?.club?.photo ?? "")
         clubLbl.text = viewModel?.newsdata.value?.data?.club?.name ?? ""
         timeLbl.text = viewModel?.newsdata.value?.data?.date ?? ""
-        desLbl.text = viewModel?.newsdata.value?.data?.description ?? ""
+        desLbl.text = viewModel?.newsdata.value?.data?.description?.htmlToString ?? ""
         if viewModel?.newsdata.value?.data?.backgrouds?.count ?? 0 == 0 {
             sliderCollection.isHidden = true
         }
