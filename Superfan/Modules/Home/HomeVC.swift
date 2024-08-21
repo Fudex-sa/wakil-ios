@@ -213,7 +213,7 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
 }
 extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return .init(width: collectionView.width, height: collectionView.height)
+        return .init(width: collectionView.frame.width, height: collectionView.frame.height)
        }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           return viewModel?.matches.value?.count ?? 2
@@ -229,6 +229,10 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
             return
         }
         coordinator?.detailsmatchs(id: viewModel?.matches.value?[safe: indexPath.row]?.id ?? 0)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            // No spacing between cells to ensure they are adjacent
+            return 0
     }
   }
 

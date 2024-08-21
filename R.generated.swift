@@ -678,23 +678,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 3 properties.
-  struct entitlements {
-    static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
-
-    struct comAppleDeveloperApplesignin {
-      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
-
-      fileprivate init() {}
-    }
-
-    struct keychainAccessGroups {
-      fileprivate init() {}
-    }
-
-    fileprivate init() {}
-  }
-
   /// This `R.file` struct is generated, and contains static references to 72 files.
   struct file {
     /// Resource file `Config.xcconfig`.
@@ -2714,7 +2697,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 322 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 323 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -2748,6 +2731,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let permissionContactsDescription = Rswift.StringResource(key: "permission contacts description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Acquisition
+      ///
+      /// Locales: ar, en
+      static let possessionOfTheBall = Rswift.StringResource(key: "Possession of the ball", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Add Child
       ///
       /// Locales: ar, en
@@ -3336,6 +3323,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let mapViewLan = Rswift.StringResource(key: "map.view.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Match Statistics
+      ///
+      /// Locales: ar, en
+      static let statisticalMatch = Rswift.StringResource(key: "Statistical Match", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Matches
       ///
       /// Locales: ar, en
@@ -3432,6 +3423,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let notificationsLan = Rswift.StringResource(key: "notifications.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Number of Passes
+      ///
+      /// Locales: ar, en
+      static let passes = Rswift.StringResource(key: "Passes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: OR
       ///
       /// Locales: ar, en
@@ -3456,14 +3451,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let orLogInVia = Rswift.StringResource(key: "Or log in via", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
-      /// en translation: Pass accuracy, pass correctness
+      /// en translation: Pass accuracy
       ///
       /// Locales: ar, en
       static let passAccuracyPassCorrectness = Rswift.StringResource(key: "Pass accuracy, pass correctness", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
-      /// en translation: Passes
-      ///
-      /// Locales: ar, en
-      static let passes = Rswift.StringResource(key: "Passes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Password
       ///
       /// Locales: ar, en
@@ -3548,10 +3539,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let deniedAlertDescription = Rswift.StringResource(key: "denied alert description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
-      /// en translation: Possession of the ball
-      ///
-      /// Locales: ar, en
-      static let possessionOfTheBall = Rswift.StringResource(key: "Possession of the ball", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Previous Matches
       ///
       /// Locales: ar, en
@@ -3732,10 +3719,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let permissionSpeechName = Rswift.StringResource(key: "permission speech name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
-      /// en translation: Statistical Match
-      ///
-      /// Locales: ar, en
-      static let statisticalMatch = Rswift.StringResource(key: "Statistical Match", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Stay informed
       ///
       /// Locales: ar, en
@@ -3776,6 +3759,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let thereAreNoNewsAvailable = Rswift.StringResource(key: "There are no news available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: There are no notifications available
+      ///
+      /// Locales: ar, en
+      static let thereAreNoNotificationsAvailable = Rswift.StringResource(key: "There are no notifications available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: These are the permissions the app requires to work properly. Please see description for each permission.
       ///
       /// Locales: ar, en
@@ -4123,6 +4110,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("permission contacts description", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Acquisition
+      ///
+      /// Locales: ar, en
+      static func possessionOfTheBall(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Possession of the ball", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Possession of the ball"
+        }
+
+        return NSLocalizedString("Possession of the ball", bundle: bundle, comment: "")
       }
 
       /// en translation: Add Child
@@ -6330,6 +6332,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("map.view.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Match Statistics
+      ///
+      /// Locales: ar, en
+      static func statisticalMatch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Statistical Match", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Statistical Match"
+        }
+
+        return NSLocalizedString("Statistical Match", bundle: bundle, comment: "")
+      }
+
       /// en translation: Matches
       ///
       /// Locales: ar, en
@@ -6690,6 +6707,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("notifications.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Number of Passes
+      ///
+      /// Locales: ar, en
+      static func passes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Passes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Passes"
+        }
+
+        return NSLocalizedString("Passes", bundle: bundle, comment: "")
+      }
+
       /// en translation: OR
       ///
       /// Locales: ar, en
@@ -6780,7 +6812,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Or log in via", bundle: bundle, comment: "")
       }
 
-      /// en translation: Pass accuracy, pass correctness
+      /// en translation: Pass accuracy
       ///
       /// Locales: ar, en
       static func passAccuracyPassCorrectness(preferredLanguages: [String]? = nil) -> String {
@@ -6793,21 +6825,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Pass accuracy, pass correctness", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Passes
-      ///
-      /// Locales: ar, en
-      static func passes(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Passes", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Passes"
-        }
-
-        return NSLocalizedString("Passes", bundle: bundle, comment: "")
       }
 
       /// en translation: Password
@@ -7123,21 +7140,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("denied alert description", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Possession of the ball
-      ///
-      /// Locales: ar, en
-      static func possessionOfTheBall(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Possession of the ball", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Possession of the ball"
-        }
-
-        return NSLocalizedString("Possession of the ball", bundle: bundle, comment: "")
       }
 
       /// en translation: Previous Matches
@@ -7815,21 +7817,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("permission speech name", bundle: bundle, comment: "")
       }
 
-      /// en translation: Statistical Match
-      ///
-      /// Locales: ar, en
-      static func statisticalMatch(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Statistical Match", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Statistical Match"
-        }
-
-        return NSLocalizedString("Statistical Match", bundle: bundle, comment: "")
-      }
-
       /// en translation: Stay informed
       ///
       /// Locales: ar, en
@@ -7978,6 +7965,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("There are no news available", bundle: bundle, comment: "")
+      }
+
+      /// en translation: There are no notifications available
+      ///
+      /// Locales: ar, en
+      static func thereAreNoNotificationsAvailable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("There are no notifications available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "There are no notifications available"
+        }
+
+        return NSLocalizedString("There are no notifications available", bundle: bundle, comment: "")
       }
 
       /// en translation: These are the permissions the app requires to work properly. Please see description for each permission.
@@ -10067,6 +10069,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "terms", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'terms' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "gray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.slideMenuStoryboard().slideMenuVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'slideMenuVC' could not be loaded from storyboard 'SlideMenuStoryboard' as 'SlideMenuVC'.") }

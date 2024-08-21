@@ -94,7 +94,31 @@ extension SelectclubVC {
 extension SelectclubVC {
 }
 extension SelectclubVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == clubsCollection {
+            let tableViewVisibleHeight = clubsCollection.bounds.size.height
+               let tableViewContentHeight = clubsCollection.contentSize.height
+               let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 100
+               
+            if scrollView.contentOffset.y > tableViewOffsetThreshold && clubsCollection.isDragging {
+                // Fetch more data here
+                if case self.viewModel?.canPaginate() = true {
+                    self.viewModel?.fetchclubs()
+                }
+            }
+        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView == clubsCollection {
+            scrollView.swipeButtomRefresh { [weak self] in
+                if case self?.viewModel?.canPaginate() = true {
+                    self?.viewModel?.fetchclubs()
+                } else {
+                    scrollView.stopSwipeButtom()
+                }
+            }
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = collectionView.bounds.width
         let itemWidth = collectionViewWidth / 3 - 10

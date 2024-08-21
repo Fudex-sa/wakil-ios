@@ -82,6 +82,31 @@ extension ChangeClubVC {
 extension ChangeClubVC {
 }
 extension ChangeClubVC:UITableViewDelegate , UITableViewDataSource {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == clubsTbl {
+            let tableViewVisibleHeight = clubsTbl.bounds.size.height
+               let tableViewContentHeight = clubsTbl.contentSize.height
+               let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 100
+               
+            if scrollView.contentOffset.y > tableViewOffsetThreshold && clubsTbl.isDragging {
+                // Fetch more data here
+                if case self.viewModel?.canPaginate() = true {
+                    self.viewModel?.fetchclubs()
+                }
+            }
+        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView == clubsTbl {
+            scrollView.swipeButtomRefresh { [weak self] in
+                if case self?.viewModel?.canPaginate() = true {
+                    self?.viewModel?.fetchclubs()
+                } else {
+                    scrollView.stopSwipeButtom()
+                }
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.dataSource()?.count ?? 2
         

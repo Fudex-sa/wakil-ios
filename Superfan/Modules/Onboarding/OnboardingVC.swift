@@ -66,7 +66,7 @@ extension OnboardingVC {
             }else {
                 Localizer.instance.language.send(.english)
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
-                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())}
+                    Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())}
             }
             
         }).store(self)
@@ -91,7 +91,7 @@ extension OnboardingVC {
 }
 extension OnboardingVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return .init(width: collectionView.width, height: collectionView.height)
+        return .init(width: collectionView.frame.width, height: collectionView.frame.height)
        }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return onboardList.count
@@ -102,6 +102,10 @@ extension OnboardingVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
             cell.delegate = self
             return cell
         }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            // No spacing between cells to ensure they are adjacent
+            return 0
+    }
   }
 
 

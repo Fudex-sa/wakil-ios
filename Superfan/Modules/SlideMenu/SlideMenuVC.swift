@@ -32,9 +32,17 @@ class SlideMenuVC: BaseController {
 extension SlideMenuVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        notSwitch.onTintColor = .green
+        notSwitch.tintColor = .gray
+        notSwitch.thumbTintColor = .white
+        notSwitch.layer.cornerRadius = notSwitch.frame.height / 2
+        notSwitch.backgroundColor = notSwitch.tintColor
+        notSwitch.clipsToBounds = true
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
