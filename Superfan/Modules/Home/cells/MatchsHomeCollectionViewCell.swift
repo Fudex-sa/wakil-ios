@@ -40,15 +40,20 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
             }else {
                 timeLbl.textColor = R.color.primary()
             }
-        }else if model.status ?? 0 == 6 {
+        }else if model.status ?? 0 == 1 {
             timeView.isHidden = false
             resulteLbl.text = "- : -"
             timeLbl.text = DateHelper().date(date: model.date ?? "", format: "hh:mm a", oldFormat: "yyyy-MM-dd HH:mm:ss")
-            timeLbl.textColor = UIColor(hex: "#E1E1E1")
+            timeLbl.textColor = R.color.primary()
         }else {
-            timeView.isHidden = true
+            timeView.isHidden = false
             resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
-            timeLbl.textColor = UIColor(hex: "#E1E1E1")
+            timeLbl.text = model.liveStatus ?? ""
+            if UD.club != nil {
+                timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
+            }else {
+                timeLbl.textColor = R.color.primary()
+            }
         }
         club1Img.UIViewAction {
             self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team1?.id ?? 0)

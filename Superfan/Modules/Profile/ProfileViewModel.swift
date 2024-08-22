@@ -11,6 +11,7 @@ import Foundation
 // MARK: - ...  ViewModel
 class ProfileViewModel: BaseViewModel {
     var userddata: Publisher<ProfileModel> = .init()
+    var deletedata: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension ProfileViewModel {
@@ -23,6 +24,14 @@ extension ProfileViewModel {
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
             self?.userddata.send(model)
+        }).store(self)
+    }
+    func deleteaccount() {
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.deleteaccount.rawValue, type: .get, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.deletedata.send(model)
         }).store(self)
     }
 }

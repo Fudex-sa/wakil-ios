@@ -44,7 +44,7 @@ extension HomeViewModel {
             NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
         }
         NetworkManager.instance.paramaters["limit"] = 4
-        NetworkManager.instance.request(NetworkConfigration.EndPoint.perviousmatch.rawValue, type: .get, MatchsModel.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.todaymatxh.rawValue, type: .get, MatchsModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }

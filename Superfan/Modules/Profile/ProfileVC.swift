@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ProfileVC: BaseController {
+    @IBOutlet weak var deleteView: UIView!
+    @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var editPhoneBtn: UIButton!
     @IBOutlet weak var editEmailBtn: UIButton!
     @IBOutlet weak var userImg: UIImageView!
@@ -54,6 +56,12 @@ extension ProfileVC {
         viewModel?.userddata.listen(on: { [weak self] value in
             self?.reload()
         })
+        viewModel?.deletedata.listen(on: { [weak self] value in
+            self?.stopLoading()
+            UD.user = nil
+            UD.club = nil
+            Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
+        })
        
     }
 }
@@ -87,6 +95,10 @@ extension ProfileVC {
         editPassBtn.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.editpassword()
         }).store(self)
+        deleteBtn.publisher.listen(on: {[weak self] _ in
+            self?.startLoading()
+            self?.viewModel?.deleteaccount()
+        }).store(self)
     }
     func reload(){
         stopLoading()
@@ -99,9 +111,11 @@ extension ProfileVC {
         if viewModel?.userddata.value?.data?.isSocial ?? 0 == 1 {
             editPassBtn.isHidden = true
             editEmailBtn.isHidden = true
+            deleteView.isHidden = true
         }else {
             editPassBtn.isHidden = false
             editEmailBtn.isHidden = false
+            deleteView.isHidden = false
         }
         userImg.setImage(url: viewModel?.userddata.value?.data?.photo ?? "")
     }
@@ -110,6 +124,7 @@ extension ProfileVC {
             editBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
             editPassBtn.borderColor = UIColor(hex: UD.club?.color ?? "")
             editPassBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
+            deleteBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
         }
     }
 }

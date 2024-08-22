@@ -94,10 +94,11 @@ extension MatchdetailsVC {
         statusLbl.text = viewModel?.matchdata.value?.data?.liveStatus ?? ""
         if viewModel?.matchdata.value?.data?.status == 1 {
             resultLbl.text =  "- : -"
-            statsticLbl.isHidden = true
+            statsticLbl.text = "Statistics after match".localized
             statsticTbl.isHidden = true
             return
         }else {
+            statsticLbl.text = "Match Statistics".localized
             resultLbl.text = "\(viewModel?.matchdata.value?.data?.team1?.score ?? 0) : \(viewModel?.matchdata.value?.data?.team2?.score ?? 0)"
         }
         statisctic.append(statistecModel(title: "Total Shots".localized, result1: viewModel?.matchdata.value?.data?.team1?.shots?.string ?? "", result2: viewModel?.matchdata.value?.data?.team2?.shots?.string ?? ""))

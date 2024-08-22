@@ -85,6 +85,9 @@ extension SelectclubVC {
             clubsCollection.isHidden = false
             hideEmptyScreen()
         }
+        if viewModel?.items.value?.count ?? 0 == 10 {
+            viewModel?.fetchclubs()
+        }
         clubsCollection.reloadData()
         clubsCollection.stopSwipeButtom()
 
@@ -98,7 +101,7 @@ extension SelectclubVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
         if scrollView == clubsCollection {
             let tableViewVisibleHeight = clubsCollection.bounds.size.height
                let tableViewContentHeight = clubsCollection.contentSize.height
-               let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 100
+               let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 105
                
             if scrollView.contentOffset.y > tableViewOffsetThreshold && clubsCollection.isDragging {
                 // Fetch more data here

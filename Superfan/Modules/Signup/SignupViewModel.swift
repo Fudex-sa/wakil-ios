@@ -48,7 +48,9 @@ extension SignupViewModel {
         NetworkManager.instance.paramaters["country_code"] = countryCode.value ?? ""
         NetworkManager.instance.paramaters["name"] = name.value ?? ""
         NetworkManager.instance.paramaters["email"] = email.value ?? ""
-        NetworkManager.instance.paramaters["city_id"] = stateId.value ?? 0
+        if stateId.value ?? 0 != 0 {
+            NetworkManager.instance.paramaters["city_id"] = stateId.value ?? 0
+        }
         NetworkManager.instance.paramaters["lat"] = lat.value ?? ""
         NetworkManager.instance.paramaters["lng"] = lng.value ?? ""
         NetworkManager.instance.paramaters["location"] = location.value ?? ""

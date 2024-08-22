@@ -362,7 +362,7 @@
 "Notification" = "الإشعارات";
 "Old password" = "كلمه المرور القديمه";
 "All" = "الكل";
-"There are no matches available" = "لا يوجد مباريات متاحه";
+"There are no matches available" = "لا يوجد مباريات متاحة";
 "Matches" = "المباريات";
 "Previous Matches" = "المباريات السابقة";
 "Statistical Match" = "إحصائيات المباراة";
@@ -371,7 +371,7 @@
 "Possession of the ball" = "الإستحواذ";
 "Passes" = "عدد التمريرات";
 "Pass accuracy, pass correctness"  = "دقة التمريرات";
-"Fouls" = "خطأ";
+"Fouls" = "أخطاء";
 "Yellow card" = "بطاقة صفراء";
 "Red Card" = "البطاقة الحمراء";
 "Offside" = "تسلل";
@@ -386,7 +386,9 @@
 "Draw" = "ت";
 "Loss" = "خ";
 "For" = "له";
-"Against" = "علية";
+"Against" = "عليه";
 "Established for the year" = "المنشىء لعام";
 "AH" = "هـ";
 "There are no notifications available" = "لا توجد إشعارات متاحة";
+"Statistics after match" = "الإحصائيات بعد المباراة";
+"Delete account" = "حذف الحساب";

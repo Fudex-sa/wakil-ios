@@ -165,15 +165,15 @@ extension SignupVC {
                 }
             }
             var error = ""
-            if self?.viewModel?.stateId.value ?? 0 == 0 {
-                error = "select city".localized
-            }
+//            if self?.viewModel?.stateId.value ?? 0 == 0 {
+//                error = "select city".localized
+//            }
             if self?.checkBtn.isOn == false {
                 error = "\(error)\n\("agree to".localized) \("terms and conditions".localized)"
             }
-            if self?.photoURL == nil {
-                error = "\(error)\n\("add personal image".localized)"
-            }
+//            if self?.photoURL == nil {
+//                error = "\(error)\n\("add personal image".localized)"
+//            }
             var phone = self?.phoneTxf.text ?? ""
             if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
                 if phone.count != 10 {

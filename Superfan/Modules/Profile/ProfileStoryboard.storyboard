@@ -29,7 +29,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-cS-gah">
-                                        <rect key="frame" x="16" y="30" width="382" height="448"/>
+                                        <rect key="frame" x="16" y="30" width="382" height="508"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pme-bC-yne">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="140"/>
@@ -308,6 +308,27 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOj-0Y-ctC">
+                                                <rect key="frame" x="0.0" y="448" width="382" height="12"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="12" id="hOo-YB-0ai"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBi-US-3ih">
+                                                <rect key="frame" x="0.0" y="460" width="382" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="bPx-4e-QOD"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Delete account">
+                                                    <color key="titleColor" name="Primary"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Delete account"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -347,6 +368,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Npk-Kt-KSY"/>
                     <connections>
+                        <outlet property="deleteBtn" destination="oBi-US-3ih" id="AsZ-FW-WcT"/>
+                        <outlet property="deleteView" destination="gOj-0Y-ctC" id="WmT-sW-Azc"/>
                         <outlet property="editBtn" destination="Dp1-up-BdJ" id="knp-8Z-P8i"/>
                         <outlet property="editEmailBtn" destination="4Kk-mw-NZt" id="iFe-X2-cNF"/>
                         <outlet property="editPassBtn" destination="Mw6-3i-zKk" id="bob-QM-SyW"/>

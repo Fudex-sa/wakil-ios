@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PlayersCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var containerView: UIView!
@@ -21,6 +22,7 @@ class PlayersCollectionViewCell: BaseCollectionViewCell {
         playerLbl.text = model.playerName ?? ""
         positionLbl.text = model.positionName ?? ""
         playerImg.setImage(url: model.playerImage ?? "")
-        flagImg.setImage(url: model.nationalityFlag ?? "")
+        flagImg.setImage(url: "https://flagcdn.com/w320/\(model.nationalityCode?.lowercased() ?? "").png")
+       
     }
 }

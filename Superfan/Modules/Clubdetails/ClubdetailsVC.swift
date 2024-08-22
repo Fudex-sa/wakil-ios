@@ -86,6 +86,7 @@ extension ClubdetailsVC {
         startLoading()
         viewModel?.clubId.send(clubId)
         viewModel?.getclubdetails()
+        backgroundView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
         if type == 0 {
             infoLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")

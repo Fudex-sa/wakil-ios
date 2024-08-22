@@ -39,10 +39,12 @@ struct Player: Codable {
     let id: Int?
     let playerName: String?
     let playerImage: String?
+    let nationalityCode: String?
     let positionName, nationalityFlag: String?
 
     enum CodingKeys: String, CodingKey {
         case id
+        case nationalityCode = "nationality_code"
         case playerName = "player_name"
         case playerImage = "player_image"
         case positionName = "position_name"

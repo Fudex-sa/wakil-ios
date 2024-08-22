@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class HomeVC: BaseController {
+    @IBOutlet weak var noMatchView: UIView!
     @IBOutlet weak var newsTbl: UITableView!
     @IBOutlet weak var matchesCollection: UICollectionView!
     @IBOutlet weak var clubLbl: UILabel!
@@ -125,12 +126,10 @@ extension HomeVC {
     func reloadmatches(){
         if viewModel?.matches.value?.count ?? 0 == 0 {
             matchesCollection.isHidden = true
-            if isMenuOpen == false {
-                showEmptyScreen(for: 150 , title: "There are no matches available".localized)
-            }
+            noMatchView.isHidden = false
         }else {
             matchesCollection.isHidden = false
-            hideEmptyScreen()
+            noMatchView.isHidden = true
         }
         matchesCollection.reloadData()
         matchesCollection.stopSwipeButtom()
@@ -168,7 +167,6 @@ extension HomeVC {
             if viewModel?.items.value?.count ?? 0 == 0 {
                 showEmptyScreen(for: 350 , title: "There are no news available".localized)
             }
-
             // Update the leading constraint to animate the side menu closure
             sideMenuLeadingConstraint.constant = -sideMenuWidth
             clubSelectBtn.isUserInteractionEnabled = true
