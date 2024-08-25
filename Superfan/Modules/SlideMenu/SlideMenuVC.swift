@@ -67,6 +67,7 @@ extension SlideMenuVC {
         viewModel?.logout.listen(on: { [weak self] value in
             self?.stopLoading()
             self?.closeMenu()
+            UD.club = nil
             Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
         })
     }

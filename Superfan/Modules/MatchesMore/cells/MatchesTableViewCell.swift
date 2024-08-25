@@ -32,7 +32,13 @@ class MatchesTableViewCell: BaseTableViewCell {
         legaueLbl.text = model.leagueName ?? ""
         if model.status ?? 0 == 6 {
             timeView.isHidden = false
-            resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
+            if Localizer.current == .arabic{
+                resulteLbl.text = "\(model.team2?.score ?? 0) : \(model.team1?.score ?? 0)"
+
+            }else {
+                resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
+
+            }
             timeLbl.text = model.liveStatus ?? ""
             timeLbl.textColor = R.color.primary()
             timeView.backgroundColor = UIColor(hex: "#FFF3F5")
@@ -44,7 +50,13 @@ class MatchesTableViewCell: BaseTableViewCell {
             timeView.backgroundColor = UIColor(hex: "#F3F4F5")
         }else {
             timeView.isHidden = false
-            resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
+            if Localizer.current == .arabic{
+                resulteLbl.text = "\(model.team2?.score ?? 0) : \(model.team1?.score ?? 0)"
+
+            }else {
+                resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
+
+            }
             timeLbl.text = model.liveStatus ?? ""
             timeLbl.textColor = R.color.primary()
             timeView.backgroundColor = UIColor(hex: "#FFF3F5")

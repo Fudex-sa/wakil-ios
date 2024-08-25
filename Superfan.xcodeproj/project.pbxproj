@@ -76,6 +76,11 @@
 		6636D7FA2C3AE429007116F7 /* VerifyCodeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6636D7F22C3AE429007116F7 /* VerifyCodeStoryboard.storyboard */; };
 		663C1F932C7217BE0026107D /* MatchdetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C1F912C7217BE0026107D /* MatchdetailsTableViewCell.swift */; };
 		663C1F942C7217BE0026107D /* MatchdetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 663C1F922C7217BE0026107D /* MatchdetailsTableViewCell.xib */; };
+		66429C702C7B72AD00CA6B72 /* DeleteaccountpopupStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66429C6B2C7B72AC00CA6B72 /* DeleteaccountpopupStoryboard.storyboard */; };
+		66429C712C7B72AD00CA6B72 /* DeleteaccountpopupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6C2C7B72AC00CA6B72 /* DeleteaccountpopupModel.swift */; };
+		66429C722C7B72AD00CA6B72 /* DeleteaccountpopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6D2C7B72AD00CA6B72 /* DeleteaccountpopupVC.swift */; };
+		66429C732C7B72AE00CA6B72 /* DeleteaccountpopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */; };
+		66429C742C7B72AE00CA6B72 /* DeleteaccountpopupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6F2C7B72AD00CA6B72 /* DeleteaccountpopupCoordinator.swift */; };
 		6646125F2C4D25E000D3D7DD /* Splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646125E2C4D25E000D3D7DD /* Splashscreen.swift */; };
 		664DCAFD2C3BC2460011DB96 /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */; };
 		664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */; };
@@ -674,6 +679,11 @@
 		6636D7F52C3AE429007116F7 /* VerifyCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewModel.swift; sourceTree = "<group>"; };
 		663C1F912C7217BE0026107D /* MatchdetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchdetailsTableViewCell.swift; sourceTree = "<group>"; };
 		663C1F922C7217BE0026107D /* MatchdetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchdetailsTableViewCell.xib; sourceTree = "<group>"; };
+		66429C6B2C7B72AC00CA6B72 /* DeleteaccountpopupStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeleteaccountpopupStoryboard.storyboard; sourceTree = "<group>"; };
+		66429C6C2C7B72AC00CA6B72 /* DeleteaccountpopupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupModel.swift; sourceTree = "<group>"; };
+		66429C6D2C7B72AD00CA6B72 /* DeleteaccountpopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupVC.swift; sourceTree = "<group>"; };
+		66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupViewModel.swift; sourceTree = "<group>"; };
+		66429C6F2C7B72AD00CA6B72 /* DeleteaccountpopupCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupCoordinator.swift; sourceTree = "<group>"; };
 		6646125E2C4D25E000D3D7DD /* Splashscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splashscreen.swift; sourceTree = "<group>"; };
 		664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
 		664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
@@ -1416,6 +1426,18 @@
 				663C1F922C7217BE0026107D /* MatchdetailsTableViewCell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		66429C6A2C7B722900CA6B72 /* Deleteaccount */ = {
+			isa = PBXGroup;
+			children = (
+				66429C6F2C7B72AD00CA6B72 /* DeleteaccountpopupCoordinator.swift */,
+				66429C6C2C7B72AC00CA6B72 /* DeleteaccountpopupModel.swift */,
+				66429C6B2C7B72AC00CA6B72 /* DeleteaccountpopupStoryboard.storyboard */,
+				66429C6D2C7B72AD00CA6B72 /* DeleteaccountpopupVC.swift */,
+				66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */,
+			);
+			path = Deleteaccount;
 			sourceTree = "<group>";
 		};
 		667FD7ED28917A0D0005254B /* Onboarding */ = {
@@ -2858,6 +2880,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66429C6A2C7B722900CA6B72 /* Deleteaccount */,
 				66A316C42C71EE9300057235 /* Clubdetails */,
 				66A316B92C71EE6D00057235 /* Matchdetails */,
 				66A316AE2C71EE3C00057235 /* MatchesMore */,
@@ -3192,6 +3215,7 @@
 				C84539A92729887000004173 /* NeoSansArabic-Medium.ttf in Resources */,
 				6699021D2C748E5900A0D4C5 /* PrizesTableViewCell.xib in Resources */,
 				C871C724272FEB7B00DCBD2D /* Muli-ExtraLight.ttf in Resources */,
+				66429C702C7B72AD00CA6B72 /* DeleteaccountpopupStoryboard.storyboard in Resources */,
 				66B6AA932C3BD41200BC277C /* SelectclubStoryboard.storyboard in Resources */,
 				C86BF982266947F0002D87BC /* errorIconSubtle.png in Resources */,
 				66C773CC2C3D639000E872CA /* ChangeClubStoryboard.storyboard in Resources */,
@@ -3486,6 +3510,7 @@
 				C871C8EA272FED5900DCBD2D /* GoogleMapZoom.swift in Sources */,
 				C853B96126D7F9450008F09D /* SPPermissionsDataSource.swift in Sources */,
 				C86BF976266947F0002D87BC /* PhysicsAnimation.swift in Sources */,
+				66429C742C7B72AE00CA6B72 /* DeleteaccountpopupCoordinator.swift in Sources */,
 				C853B94726D7F9450008F09D /* SPLocationAlwaysPermission.swift in Sources */,
 				6633828A2C3EAB6900160379 /* ChangelanguageCoordinator.swift in Sources */,
 				6633828B2C3EAB6900160379 /* ChangelanguageModel.swift in Sources */,
@@ -3575,6 +3600,7 @@
 				C8C09307272ABDA200E2270A /* UISlider+Combine.swift in Sources */,
 				C871C8C2272FED0600DCBD2D /* SwipeActionButton.swift in Sources */,
 				77D130BC2535C2D800004E81 /* NetworkResponse.swift in Sources */,
+				66429C722C7B72AD00CA6B72 /* DeleteaccountpopupVC.swift in Sources */,
 				C853B96826D7F9450008F09D /* Images.swift in Sources */,
 				C871C8E7272FED5900DCBD2D /* MapRouteHelper.swift in Sources */,
 				C853B96226D7F9450008F09D /* SPPermissionsDelegate.swift in Sources */,
@@ -3636,6 +3662,7 @@
 				66293C1A2C3D69D4008F3FB8 /* NewsVC.swift in Sources */,
 				66293C1B2C3D69D4008F3FB8 /* NewsViewModel.swift in Sources */,
 				C87CE9732733E01D003F8789 /* TextViewAutoHeight.swift in Sources */,
+				66429C732C7B72AE00CA6B72 /* DeleteaccountpopupViewModel.swift in Sources */,
 				C8127A1627298A1F005B8493 /* BaseModel.swift in Sources */,
 				C871C8E9272FED5900DCBD2D /* RouteModel.swift in Sources */,
 				C80679A6266E3036001591AF /* ValidatorUIType.swift in Sources */,
@@ -3726,6 +3753,7 @@
 				C84539942729882800004173 /* POPUPViewController.swift in Sources */,
 				C871C8A1272FECF200DCBD2D /* GoogleModel.swift in Sources */,
 				66DE7D9E2738008700CAD557 /* BaseTableViewCell.swift in Sources */,
+				66429C712C7B72AD00CA6B72 /* DeleteaccountpopupModel.swift in Sources */,
 				C871C9772730231300DCBD2D /* SkeletonMultilineLayerBuilder.swift in Sources */,
 				C853B95D26D7F9450008F09D /* ArrayExtension.swift in Sources */,
 				C871C89D272FECF200DCBD2D /* CoreSocial.swift in Sources */,
@@ -3907,7 +3935,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -3991,7 +4019,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4080,7 +4108,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4163,7 +4191,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;

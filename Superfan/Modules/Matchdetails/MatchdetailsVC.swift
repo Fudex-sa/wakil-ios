@@ -98,8 +98,15 @@ extension MatchdetailsVC {
             statsticTbl.isHidden = true
             return
         }else {
-            statsticLbl.text = "Match Statistics".localized
-            resultLbl.text = "\(viewModel?.matchdata.value?.data?.team1?.score ?? 0) : \(viewModel?.matchdata.value?.data?.team2?.score ?? 0)"
+            statsticLbl.text = "Statistical Match".localized
+            if Localizer.current == .arabic{
+                resultLbl.text = "\(viewModel?.matchdata.value?.data?.team2?.score ?? 0) : \(viewModel?.matchdata.value?.data?.team1?.score ?? 0)"
+
+            }else {
+                resultLbl.text = "\(viewModel?.matchdata.value?.data?.team1?.score ?? 0) : \(viewModel?.matchdata.value?.data?.team2?.score ?? 0)"
+
+            }
+           
         }
         statisctic.append(statistecModel(title: "Total Shots".localized, result1: viewModel?.matchdata.value?.data?.team1?.shots?.string ?? "", result2: viewModel?.matchdata.value?.data?.team2?.shots?.string ?? ""))
         statisctic.append(statistecModel(title: "Total shots on goal".localized, result1: viewModel?.matchdata.value?.data?.team1?.targetShots?.string ?? "", result2: viewModel?.matchdata.value?.data?.team2?.targetShots?.string ?? ""))

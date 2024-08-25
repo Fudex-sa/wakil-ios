@@ -37,7 +37,7 @@ class OnboardingCollectionViewCell: BaseCollectionViewCell {
             step2View.backgroundColor = R.color.primary()
             step1View.backgroundColor = UIColor(hex: "#E1E1E1")
             step3View.backgroundColor = UIColor(hex: "#E1E1E1")
-            nextBtn.setImage(R.image.next1(), for: .normal)
+            nextBtn.setImage(R.image.done(), for: .normal)
         }else if model.id == 3 {
             step3View.backgroundColor = R.color.primary()
             step2View.backgroundColor = UIColor(hex: "#E1E1E1")

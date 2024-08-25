@@ -97,7 +97,7 @@ extension ProfileVC {
         }).store(self)
         deleteBtn.publisher.listen(on: {[weak self] _ in
             self?.startLoading()
-            self?.viewModel?.deleteaccount()
+            self?.coordinator?.deleteaccount()
         }).store(self)
     }
     func reload(){

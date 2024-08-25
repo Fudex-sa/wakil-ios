@@ -80,7 +80,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJT-wx-Gxc">
                                                 <rect key="frame" x="0.0" y="140" width="382" height="48"/>
                                                 <subviews>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dq-3e-rf2">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dq-3e-rf2">
                                                         <rect key="frame" x="43.5" y="0.0" width="328.5" height="48"/>
                                                         <color key="textColor" name="Black1"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -397,3 +397,6 @@
 "There are no notifications available" = "There are no notifications available";
 "Statistics after match" = "Statistics after match";
 "Delete account" = "Delete account";
+"Cancel" = "Cancel";
+"Are you sure you want to delete your account permanently?" = "Are you sure you want to delete your account permanently?";
+"YES" = "YES";

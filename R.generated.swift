@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 28 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 29 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -102,6 +102,8 @@ struct R: Rswift.Validatable {
     static let clubdetailsStoryboard = _R.storyboard.clubdetailsStoryboard()
     /// Storyboard `ContactusStoryboard`.
     static let contactusStoryboard = _R.storyboard.contactusStoryboard()
+    /// Storyboard `DeleteaccountpopupStoryboard`.
+    static let deleteaccountpopupStoryboard = _R.storyboard.deleteaccountpopupStoryboard()
     /// Storyboard `EditemailStoryboard`.
     static let editemailStoryboard = _R.storyboard.editemailStoryboard()
     /// Storyboard `EditpasswordStoryboard`.
@@ -181,6 +183,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ContactusStoryboard", bundle: ...)`
     static func contactusStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.contactusStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "DeleteaccountpopupStoryboard", bundle: ...)`
+    static func deleteaccountpopupStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.deleteaccountpopupStoryboard)
     }
     #endif
 
@@ -2714,7 +2723,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 325 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 327 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -2844,6 +2853,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let deleteSearchLan = Rswift.StringResource(key: "delete.search.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Are you sure you want to delete your account permanently?
+      ///
+      /// Locales: ar, en
+      static let areYouSureYouWantToDeleteYourAccountPermanently = Rswift.StringResource(key: "Are you sure you want to delete your account permanently?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Bluetooth
       ///
       /// Locales: ar, en
@@ -2872,6 +2885,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let emptyUserLan = Rswift.StringResource(key: "empty.user.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: ar, en
+      static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: ar, en
@@ -4497,6 +4514,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("delete.search.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Are you sure you want to delete your account permanently?
+      ///
+      /// Locales: ar, en
+      static func areYouSureYouWantToDeleteYourAccountPermanently(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Are you sure you want to delete your account permanently?", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Are you sure you want to delete your account permanently?"
+        }
+
+        return NSLocalizedString("Are you sure you want to delete your account permanently?", bundle: bundle, comment: "")
+      }
+
       /// en translation: Bluetooth
       ///
       /// Locales: ar, en
@@ -4600,6 +4632,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("empty.user.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: ar, en
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Cancel"
+        }
+
+        return NSLocalizedString("Cancel", bundle: bundle, comment: "")
       }
 
       /// en translation: Cancel
@@ -9317,6 +9364,9 @@ struct _R: Rswift.Validatable {
       try contactusStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try deleteaccountpopupStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try editemailStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -9522,6 +9572,31 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ContactusStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.contactusStoryboard().contactusVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'contactusVC' could not be loaded from storyboard 'ContactusStoryboard' as 'ContactusVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct deleteaccountpopupStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = DeleteaccountpopupVC
+
+      let bundle = R.hostingBundle
+      let deleteaccountpopupVC = StoryboardViewControllerResource<DeleteaccountpopupVC>(identifier: "DeleteaccountpopupVC")
+      let name = "DeleteaccountpopupStoryboard"
+
+      func deleteaccountpopupVC(_: Void = ()) -> DeleteaccountpopupVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: deleteaccountpopupVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'DeleteaccountpopupStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'DeleteaccountpopupStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "txtblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'txtblue' is used in storyboard 'DeleteaccountpopupStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.deleteaccountpopupStoryboard().deleteaccountpopupVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'deleteaccountpopupVC' could not be loaded from storyboard 'DeleteaccountpopupStoryboard' as 'DeleteaccountpopupVC'.") }
       }
 
       fileprivate init() {}

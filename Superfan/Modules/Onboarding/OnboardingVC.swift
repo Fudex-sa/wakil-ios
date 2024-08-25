@@ -47,7 +47,7 @@ extension OnboardingVC {
         onboardList.removeAll()
         onboardList.append(OnboardingModel(id: 1, title: "Explore our features".localized, des: "Get the latest news and analysis from the world of sports and follow matches and results in real time".localized, image: "Onboarding 1"))
         onboardList.append(OnboardingModel(id: 2, title: "Stay informed".localized, des: "Customize your alerts to receive the latest news and results directly".localized, image: "Onboarding 2"))
-        onboardList.append(OnboardingModel(id: 3, title: "Customize your experience".localized, des: "Choose your favorite teams and sports to personalize your content".localized, image: "Onboarding 3"))
+//        onboardList.append(OnboardingModel(id: 3, title: "Customize your experience".localized, des: "Choose your favorite teams and sports to personalize your content".localized, image: "Onboarding 3"))
         onboardingCollection.delegate = self
         onboardingCollection.dataSource = self
         skipLbl.UIViewAction {
@@ -73,7 +73,7 @@ extension OnboardingVC {
     }
     func next(page:Int){
         self.page = page
-        if self.page == 3 {
+        if self.page == 2{
             UD.onboarding = true
             if UD.user == nil {
                 Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())

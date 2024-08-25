@@ -33,7 +33,13 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
         legaueLbl.text = model.leagueName ?? ""
         if model.status ?? 0 == 6 {
             timeView.isHidden = false
-            resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
+            if Localizer.current == .arabic{
+                resulteLbl.text = "\(model.team2?.score ?? 0) : \(model.team1?.score ?? 0)"
+
+            }else {
+                resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
+
+            }
             timeLbl.text = model.liveStatus ?? ""
             if UD.club != nil {
                 timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
@@ -47,7 +53,13 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
             timeLbl.textColor = R.color.primary()
         }else {
             timeView.isHidden = false
-            resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
+            if Localizer.current == .arabic{
+                resulteLbl.text = "\(model.team2?.score ?? 0) : \(model.team1?.score ?? 0)"
+
+            }else {
+                resulteLbl.text = "\(model.team1?.score ?? 0) : \(model.team2?.score ?? 0)"
+
+            }
             timeLbl.text = model.liveStatus ?? ""
             if UD.club != nil {
                 timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
