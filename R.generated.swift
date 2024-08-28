@@ -2360,7 +2360,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 25 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 26 nibs.
   struct nib {
     /// Nib `CalendarDateRangePickerHeaderView`.
     static let calendarDateRangePickerHeaderView = _R.nib._CalendarDateRangePickerHeaderView()
@@ -2396,6 +2396,8 @@ struct R: Rswift.Validatable {
     static let onboardingCollectionViewCell = _R.nib._OnboardingCollectionViewCell()
     /// Nib `PlayersCollectionViewCell`.
     static let playersCollectionViewCell = _R.nib._PlayersCollectionViewCell()
+    /// Nib `PlayerteamTableViewCell`.
+    static let playerteamTableViewCell = _R.nib._PlayerteamTableViewCell()
     /// Nib `PrizesTableViewCell`.
     static let prizesTableViewCell = _R.nib._PrizesTableViewCell()
     /// Nib `RadioView`.
@@ -2550,6 +2552,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PlayerteamTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.playerteamTableViewCell) instead")
+    static func playerteamTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.playerteamTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PrizesTableViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.prizesTableViewCell) instead")
     static func prizesTableViewCell(_: Void = ()) -> UIKit.UINib {
@@ -2681,6 +2691,10 @@ struct R: Rswift.Validatable {
       return R.nib.playersCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlayersCollectionViewCell
     }
 
+    static func playerteamTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlayerteamTableViewCell? {
+      return R.nib.playerteamTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlayerteamTableViewCell
+    }
+
     static func prizesTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PrizesTableViewCell? {
       return R.nib.prizesTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PrizesTableViewCell
     }
@@ -2723,7 +2737,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 327 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 328 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3885,6 +3899,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let writeWhatYouThinkAndSendToCommunicate = Rswift.StringResource(key: "Write what you think and send to communicate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: YES
+      ///
+      /// Locales: ar, en
+      static let yeS = Rswift.StringResource(key: "YES", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Yellow card
       ///
       /// Locales: ar, en
@@ -8384,6 +8402,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Write what you think and send to communicate", bundle: bundle, comment: "")
       }
 
+      /// en translation: YES
+      ///
+      /// Locales: ar, en
+      static func yeS(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("YES", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "YES"
+        }
+
+        return NSLocalizedString("YES", bundle: bundle, comment: "")
+      }
+
       /// en translation: Yellow card
       ///
       /// Locales: ar, en
@@ -9229,6 +9262,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlayersCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlayersCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PlayerteamTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PlayerteamTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlayerteamTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlayerteamTableViewCell
       }
 
       fileprivate init() {}

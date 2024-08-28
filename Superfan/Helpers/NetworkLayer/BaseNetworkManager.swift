@@ -1,4 +1,5 @@
 import Alamofire
+import FirebaseMessaging
 import UIKit
 // MARK: - ...  Base Network manager // downloader // paginator // alertable
 class BaseNetworkManager: Downloader, Paginator, Alertable, Combining {
@@ -143,6 +144,13 @@ extension BaseNetworkManager {
             case 401?:
                 (UIApplication.topViewController() as? BaseController)?.stopLoading()
                 Coordinator.instance.unAuthorized()
+//                Messaging.messaging().unsubscribe(fromTopic: "superfan_ios_live") { error in
+//                        if let error = error {
+//                            print("Failed to subscribe to topic: \(error.localizedDescription)")
+//                        } else {
+//                            print("Subscribed to topic: your_topic_name")
+//                        }
+//                }
                 UD.user = nil
             case 404?:
                 (UIApplication.topViewController() as? BaseController)?.stopLoading()

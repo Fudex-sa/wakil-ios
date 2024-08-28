@@ -15,12 +15,9 @@ import GooglePlaces
 import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var notificationSubscriber: NotificationSubscriber?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                // Your app's main initialization code
-        }
-        // Override point for customization after application launch.
         setupFirebase()
         print((Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String) ?? "")
         Localizer.initLang()

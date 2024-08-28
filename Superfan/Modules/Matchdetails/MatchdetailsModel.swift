@@ -38,6 +38,7 @@ struct Team: Codable {
     let id: Int?
     let title: String?
     let logo: String?
+    let scorers: [ScorersModel]?
     let score, penaltyScore, shots, targetShots: Int?
     let possession, pass, passAccuracy, missedPass: Int?
     let fouls, offsides, corners, redCards: Int?
@@ -47,6 +48,7 @@ struct Team: Codable {
         case id, title, logo, score
         case penaltyScore = "penalty_score"
         case shots
+        case scorers
         case targetShots = "target_shots"
         case possession, pass
         case passAccuracy = "pass_accuracy"
@@ -59,4 +61,7 @@ struct Team: Codable {
 
 struct statistecModel: Codable {
     let title, result1, result2: String
+}
+struct ScorersModel: Codable {
+    let player_name, time: String?
 }

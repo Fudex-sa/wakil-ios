@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 // MARK: - ...  ViewController - Vars
 class HomeVC: BaseController {
@@ -27,6 +28,8 @@ class HomeVC: BaseController {
     var isMenuOpen = false
     var sideMenuViewController: SlideMenuVC?
     let cellWidth: CGFloat = 320 // Width of each cell
+    static var itemId: Int?
+    static var type: String?
 }
 
 // MARK: - ...  LifeCycle
@@ -44,11 +47,13 @@ extension HomeVC {
         setup()
         bind()
         self.tabBarController?.tabBar.isHidden = false
+        subscribe()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+        unsubscribe()
     }
     override func bind() {
         super.bind()
@@ -68,6 +73,15 @@ extension HomeVC {
 // MARK: - ...  Functions
 extension HomeVC {
     func setup() {
+        if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "match_events"{
+            coordinator?.detailsmatchs(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "news"{
+            coordinator?.detailsnews(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }
         changeColoe()
         clubLbl.preferredMaxLayoutWidth = 100
         if UD.club != nil {
@@ -77,6 +91,13 @@ extension HomeVC {
                 clubLbl.text = UD.club?.name ?? ""
             }
             clubLbl.sizeToFit()
+        }
+        Messaging.messaging().subscribe(toTopic: "superfan_ios_live") { error in
+                if let error = error {
+                    print("Failed to subscribe to topic: \(error.localizedDescription)")
+                } else {
+                    print("Subscribed to topic: your_topic_name")
+                }
         }
         newsTbl.delegate = self
         newsTbl.dataSource = self
@@ -247,5 +268,16 @@ extension HomeVC : MatchsHomeCollectionViewCellDelegate{
 extension HomeVC : NewsTableViewCellDelegate{
     func clubdetails(wasPressedOnCell cell: NewsTableViewCell, clubId: Int) {
         coordinator?.detailsclub(id: clubId)
+    }
+}
+extension HomeVC: NotificationSubscriber {
+    func notificationControlWillPresent(notificationType: String?, json: String, closure: SoundHandler?) {
+        closure?(true)
+        if notificationType ?? "" != "match_events" {
+            return
+        }
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
+        viewModel?.fetchtodaymatch()
     }
 }

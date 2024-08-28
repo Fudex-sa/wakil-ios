@@ -142,5 +142,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>aps-environment</key>
+    <string>development</string>
+    <key>aps-environment</key>
+    <string>production</string>
 </dict>
 </plist>

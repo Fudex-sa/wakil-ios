@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseMessaging
 
 // MARK: - ...  ViewController - Vars
 class SlideMenuVC: BaseController {
@@ -68,6 +69,13 @@ extension SlideMenuVC {
             self?.stopLoading()
             self?.closeMenu()
             UD.club = nil
+//            Messaging.messaging().unsubscribe(fromTopic: "superfan_ios_live") { error in
+//                    if let error = error {
+//                        print("Failed to subscribe to topic: \(error.localizedDescription)")
+//                    } else {
+//                        print("Subscribed to topic: your_topic_name")
+//                    }
+//            }
             Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
         })
     }
