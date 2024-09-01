@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ral-vx-lSF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MypostsVC-->
+        <scene sceneID="MTC-Wx-Kxh">
+            <objects>
+                <viewController storyboardIdentifier="MypostsVC" id="Ral-vx-lSF" customClass="MypostsVC" customModule="Superfan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J6u-BJ-O5B">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mA-gY-hwK">
+                                <rect key="frame" x="16" y="70" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="GZb-Kr-ywU"/>
+                                    <constraint firstAttribute="height" constant="24" id="YS2-ni-GcC"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowleft"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="PUY-eF-BsV" eventType="touchUpInside" id="aiQ-Pn-w3j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nL-lk-4Si">
+                                <rect key="frame" x="48" y="71.5" width="366" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Darkerblack"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="My posts"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adi-Oi-O8u">
+                                <rect key="frame" x="320" y="67" width="74" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Add a post">
+                                    <color key="titleColor" name="Primary"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m12"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Add a post"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k1K-ns-Yab">
+                                <rect key="frame" x="16" y="112" width="382" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J3X-fn-Ws9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="adi-Oi-O8u" firstAttribute="centerY" secondItem="2mA-gY-hwK" secondAttribute="centerY" id="6jp-g9-pAo"/>
+                            <constraint firstItem="2mA-gY-hwK" firstAttribute="top" secondItem="J3X-fn-Ws9" secondAttribute="top" constant="22" id="6rG-pj-3v0"/>
+                            <constraint firstItem="3nL-lk-4Si" firstAttribute="leading" secondItem="2mA-gY-hwK" secondAttribute="trailing" constant="8" id="Pan-dx-qZl"/>
+                            <constraint firstItem="J3X-fn-Ws9" firstAttribute="trailing" secondItem="3nL-lk-4Si" secondAttribute="trailing" id="ShM-Q4-3tC"/>
+                            <constraint firstItem="J3X-fn-Ws9" firstAttribute="bottom" secondItem="k1K-ns-Yab" secondAttribute="bottom" constant="16" id="TSH-io-Xam"/>
+                            <constraint firstItem="k1K-ns-Yab" firstAttribute="top" secondItem="adi-Oi-O8u" secondAttribute="bottom" constant="15" id="ZG1-wd-gxu"/>
+                            <constraint firstItem="J3X-fn-Ws9" firstAttribute="trailing" secondItem="k1K-ns-Yab" secondAttribute="trailing" constant="16" id="ZpX-0t-Z4M"/>
+                            <constraint firstItem="2mA-gY-hwK" firstAttribute="leading" secondItem="J3X-fn-Ws9" secondAttribute="leading" constant="16" id="c7Y-kB-x2A"/>
+                            <constraint firstItem="J3X-fn-Ws9" firstAttribute="trailing" secondItem="adi-Oi-O8u" secondAttribute="trailing" constant="20" id="dSa-nL-KOP"/>
+                            <constraint firstItem="3nL-lk-4Si" firstAttribute="centerY" secondItem="2mA-gY-hwK" secondAttribute="centerY" id="fRJ-Vv-X04"/>
+                            <constraint firstItem="k1K-ns-Yab" firstAttribute="leading" secondItem="J3X-fn-Ws9" secondAttribute="leading" constant="16" id="hTd-Xl-kfR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addBtn" destination="adi-Oi-O8u" id="Cfl-v6-fw8"/>
+                        <outlet property="postsTbl" destination="k1K-ns-Yab" id="oy5-vz-qwU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PUY-eF-BsV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123.18840579710145" y="-108.48214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowleft" width="25" height="25"/>
+        <namedColor name="Darkerblack">
+            <color red="0.074509803921568626" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.89803921568627454" green="0.11372549019607843" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -13,7 +13,7 @@
         <!--CommentsVC-->
         <scene sceneID="Mgg-gk-q80">
             <objects>
-                <viewController storyboardIdentifier="NewsVC" id="3aA-VT-cAm" customClass="CommentsVC" customModule="Superfan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentsVC" id="3aA-VT-cAm" customClass="CommentsVC" customModule="Superfan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WG8-zp-vla">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

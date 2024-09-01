@@ -82,6 +82,13 @@
 		66429C732C7B72AE00CA6B72 /* DeleteaccountpopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */; };
 		66429C742C7B72AE00CA6B72 /* DeleteaccountpopupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6F2C7B72AD00CA6B72 /* DeleteaccountpopupCoordinator.swift */; };
 		6646125F2C4D25E000D3D7DD /* Splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646125E2C4D25E000D3D7DD /* Splashscreen.swift */; };
+		664D910D2C847462006442BA /* MypostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D91082C847462006442BA /* MypostsCoordinator.swift */; };
+		664D910E2C847462006442BA /* MypostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D910A2C847462006442BA /* MypostsModel.swift */; };
+		664D910F2C847462006442BA /* MypostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D910B2C847462006442BA /* MypostsVC.swift */; };
+		664D91102C847462006442BA /* MypostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D910C2C847462006442BA /* MypostsViewModel.swift */; };
+		664D91112C847462006442BA /* MypostsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664D91092C847462006442BA /* MypostsStoryboard.storyboard */; };
+		664D91152C847CC5006442BA /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D91132C847CC5006442BA /* PostsTableViewCell.swift */; };
+		664D91162C847CC5006442BA /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664D91142C847CC5006442BA /* PostsTableViewCell.xib */; };
 		664DCAFD2C3BC2460011DB96 /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */; };
 		664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */; };
 		664DCAFF2C3BC2460011DB96 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */; };
@@ -695,6 +702,13 @@
 		66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupViewModel.swift; sourceTree = "<group>"; };
 		66429C6F2C7B72AD00CA6B72 /* DeleteaccountpopupCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupCoordinator.swift; sourceTree = "<group>"; };
 		6646125E2C4D25E000D3D7DD /* Splashscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splashscreen.swift; sourceTree = "<group>"; };
+		664D91082C847462006442BA /* MypostsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypostsCoordinator.swift; sourceTree = "<group>"; };
+		664D91092C847462006442BA /* MypostsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypostsStoryboard.storyboard; sourceTree = "<group>"; };
+		664D910A2C847462006442BA /* MypostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypostsModel.swift; sourceTree = "<group>"; };
+		664D910B2C847462006442BA /* MypostsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypostsVC.swift; sourceTree = "<group>"; };
+		664D910C2C847462006442BA /* MypostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypostsViewModel.swift; sourceTree = "<group>"; };
+		664D91132C847CC5006442BA /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		664D91142C847CC5006442BA /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
 		664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
 		664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
 		664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
@@ -1460,6 +1474,28 @@
 				66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */,
 			);
 			path = Deleteaccount;
+			sourceTree = "<group>";
+		};
+		664D91072C847447006442BA /* Myposts */ = {
+			isa = PBXGroup;
+			children = (
+				664D91122C847CA7006442BA /* cells */,
+				664D91082C847462006442BA /* MypostsCoordinator.swift */,
+				664D91092C847462006442BA /* MypostsStoryboard.storyboard */,
+				664D910A2C847462006442BA /* MypostsModel.swift */,
+				664D910B2C847462006442BA /* MypostsVC.swift */,
+				664D910C2C847462006442BA /* MypostsViewModel.swift */,
+			);
+			path = Myposts;
+			sourceTree = "<group>";
+		};
+		664D91122C847CA7006442BA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				664D91132C847CC5006442BA /* PostsTableViewCell.swift */,
+				664D91142C847CC5006442BA /* PostsTableViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		667FD7ED28917A0D0005254B /* Onboarding */ = {
@@ -2925,6 +2961,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				664D91072C847447006442BA /* Myposts */,
 				668AA0112C84626F00454F90 /* Comments */,
 				66429C6A2C7B722900CA6B72 /* Deleteaccount */,
 				66A316C42C71EE9300057235 /* Clubdetails */,
@@ -3227,6 +3264,7 @@
 				66B6AA8B2C3BCF1400BC277C /* OnboardingCollectionViewCell.xib in Resources */,
 				664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */,
 				C86BF97E266947F0002D87BC /* warningIcon@2x.png in Resources */,
+				664D91112C847462006442BA /* MypostsStoryboard.storyboard in Resources */,
 				C8F358F2266E670A00FEE18B /* NetworkFailScreen.xib in Resources */,
 				66A316C32C71EE8700057235 /* MatchdetailsStoryboard.storyboard in Resources */,
 				C871C723272FEB7B00DCBD2D /* SFPRODISPLAYSEMIBOLDITALIC.OTF in Resources */,
@@ -3297,6 +3335,7 @@
 				77569F312534824A00BFE53C /* README.md in Resources */,
 				663382832C3EAB3900160379 /* ContactusStoryboard.storyboard in Resources */,
 				66C773C12C3D5FB200E872CA /* NewsTableViewCell.xib in Resources */,
+				664D91162C847CC5006442BA /* PostsTableViewCell.xib in Resources */,
 				6633828E2C3EAB6900160379 /* ChangelanguageStoryboard.storyboard in Resources */,
 				C871C725272FEB7B00DCBD2D /* Muli-ExtraLightItalic.ttf in Resources */,
 				667FD7F428917A270005254B /* OnboardingStoryboard.storyboard in Resources */,
@@ -3609,6 +3648,7 @@
 				66950BE42C3D3BBD00522EE0 /* NotificationCoordinator.swift in Sources */,
 				66950BE52C3D3BBD00522EE0 /* NotificationModel.swift in Sources */,
 				66AEC2D72C43C49900BC260E /* JWT.swift in Sources */,
+				664D91152C847CC5006442BA /* PostsTableViewCell.swift in Sources */,
 				66950BE62C3D3BBE00522EE0 /* NotificationVC.swift in Sources */,
 				66950BE72C3D3BBE00522EE0 /* NotificationViewModel.swift in Sources */,
 				C853B94A26D7F9450008F09D /* Depricated.swift in Sources */,
@@ -3889,6 +3929,10 @@
 				7756A090253482EF00BFE53C /* AppDelegateExtension.swift in Sources */,
 				77A804F52738050700168453 /* CombineGesturesEvent.swift in Sources */,
 				7756A17125348AD400BFE53C /* UIImageViewExtensions.swift in Sources */,
+				664D910D2C847462006442BA /* MypostsCoordinator.swift in Sources */,
+				664D910E2C847462006442BA /* MypostsModel.swift in Sources */,
+				664D910F2C847462006442BA /* MypostsVC.swift in Sources */,
+				664D91102C847462006442BA /* MypostsViewModel.swift in Sources */,
 				C80679A9266E3196001591AF /* ValidatorLabelUI+Ex.swift in Sources */,
 				C871C8A2272FECF200DCBD2D /* FacebookDelegate.swift in Sources */,
 				C8C09342272AD61600E2270A /* AnyPublisher+EX.swift in Sources */,
