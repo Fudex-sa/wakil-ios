@@ -12,6 +12,26 @@ import Firebase
 
 // MARK: - ...  ViewController - Vars
 class HomeVC: BaseController {
+    @IBOutlet weak var matchesView: UIView!
+    @IBOutlet weak var noresultNextView: UIView!
+    @IBOutlet weak var postsTbl: UITableView!
+    @IBOutlet weak var tableTbl: UITableView!
+    @IBOutlet weak var nextCollection: UICollectionView!
+    @IBOutlet weak var eventsTbl: UITableView!
+    @IBOutlet weak var eventsView: UIView!
+    @IBOutlet weak var postsshowView: UIView!
+    @IBOutlet weak var postsLbl: UILabel!
+    @IBOutlet weak var postsClickView: UIView!
+    @IBOutlet weak var newsshowView: UIView!
+    @IBOutlet weak var newsLbl: UILabel!
+    @IBOutlet weak var newsClickView: UIView!
+    @IBOutlet weak var matchesshowView: UIView!
+    @IBOutlet weak var matchesLbl: UILabel!
+    @IBOutlet weak var matcheClickView: UIView!
+    @IBOutlet weak var eventshowView: UIView!
+    @IBOutlet weak var eventLbl: UILabel!
+    @IBOutlet weak var eventClickView: UIView!
+    @IBOutlet weak var notBtn: UIButton!
     @IBOutlet weak var noMatchView: UIView!
     @IBOutlet weak var newsTbl: UITableView!
     @IBOutlet weak var matchesCollection: UICollectionView!
@@ -30,6 +50,7 @@ class HomeVC: BaseController {
     let cellWidth: CGFloat = 320 // Width of each cell
     static var itemId: Int?
     static var type: String?
+    var type = 0
 }
 
 // MARK: - ...  LifeCycle
@@ -73,6 +94,15 @@ extension HomeVC {
 // MARK: - ...  Functions
 extension HomeVC {
     func setup() {
+        if type == 0 {
+            showevents()
+        }else if type == 1 {
+           showmatches()
+        }else if type == 2 {
+           shownews()
+        }else if type == 3 {
+           showposts()
+        }
         if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "match_events"{
             coordinator?.detailsmatchs(id: HomeVC.itemId ?? 0)
             HomeVC.type = ""
@@ -116,12 +146,33 @@ extension HomeVC {
         clubSelectBtn.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.changeclub()
         }).store(self)
-        moreNewsLbl.UIViewAction {
-            self.coordinator?.morenews()
-        }
         MoreMatchLbl.UIViewAction {
             self.coordinator?.morematches()
         }
+        eventClickView.publisherGesture.listen(on: {[weak self] _ in
+            if self?.type != 0 {
+                self?.type = 0
+                self?.showevents()
+            }
+        }).store(self)
+        matcheClickView.publisherGesture.listen(on: {[weak self] _ in
+            if self?.type != 1 {
+                self?.type = 1
+                self?.showmatches()
+            }
+        }).store(self)
+        newsClickView.publisherGesture.listen(on: {[weak self] _ in
+            if self?.type != 2 {
+                self?.type = 2
+                self?.shownews()
+            }
+        }).store(self)
+        postsClickView.publisherGesture.listen(on: {[weak self] _ in
+            if self?.type != 3 {
+                self?.type = 3
+                self?.showposts()
+            }
+        }).store(self)
     }
     func reload(){
         if viewModel?.items.value?.count ?? 0 == 0 {
@@ -143,6 +194,79 @@ extension HomeVC {
         newsTbl.reloadData()
         newsTbl.stopSwipeButtom()
 
+    }
+    func showevents(){
+        eventLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        eventshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        eventshowView.isHidden = false
+        matchesLbl.textColor = UIColor(hex: "#353535")
+        matchesshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        matchesshowView.isHidden = true
+        newsLbl.textColor = UIColor(hex: "#353535")
+        newsshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        newsshowView.isHidden = true
+        postsLbl.textColor = UIColor(hex: "#353535")
+        postsshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        postsshowView.isHidden = true
+        eventsView.isHidden = false
+        matchesView.isHidden = true
+        newsTbl.isHidden = true
+        postsTbl.isHidden = true
+
+    }
+    func showmatches(){
+        matchesLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        matchesshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        matchesshowView.isHidden = false
+        eventLbl.textColor = UIColor(hex: "#353535")
+        eventshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        eventshowView.isHidden = true
+        newsLbl.textColor = UIColor(hex: "#353535")
+        newsshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        newsshowView.isHidden = true
+        postsLbl.textColor = UIColor(hex: "#353535")
+        postsshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        postsshowView.isHidden = true
+        eventsView.isHidden = true
+        matchesView.isHidden = false
+        newsTbl.isHidden = true
+        postsTbl.isHidden = true
+    }
+    func shownews(){
+        newsLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        newsshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        newsshowView.isHidden = false
+        eventLbl.textColor = UIColor(hex: "#353535")
+        eventshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        eventshowView.isHidden = true
+        matchesLbl.textColor = UIColor(hex: "#353535")
+        matchesshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        matchesshowView.isHidden = true
+        postsLbl.textColor = UIColor(hex: "#353535")
+        postsshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        postsshowView.isHidden = true
+        eventsView.isHidden = true
+        matchesView.isHidden = true
+        newsTbl.isHidden = false
+        postsTbl.isHidden = true
+    }
+    func showposts(){
+        postsLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        postsshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        postsshowView.isHidden = false
+        eventLbl.textColor = UIColor(hex: "#353535")
+        eventshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        eventshowView.isHidden = true
+        newsLbl.textColor = UIColor(hex: "#353535")
+        newsshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        newsshowView.isHidden = true
+        matchesLbl.textColor = UIColor(hex: "#353535")
+        matchesshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        matchesshowView.isHidden = true
+        eventsView.isHidden = true
+        matchesView.isHidden = true
+        newsTbl.isHidden = true
+        postsTbl.isHidden = false
     }
     func reloadmatches(){
         if viewModel?.matches.value?.count ?? 0 == 0 {
