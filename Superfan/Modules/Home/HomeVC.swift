@@ -89,6 +89,9 @@ extension HomeVC {
         viewModel?.matchFinish.listen(on: { [weak self] value in
             self?.reloadmatches()
         })
+        viewModel?.matchFinishtab.listen(on: { [weak self] value in
+            self?.reloadmatchestabs()
+        })
     }
 }
 // MARK: - ...  Functions
@@ -133,9 +136,15 @@ extension HomeVC {
         newsTbl.dataSource = self
         matchesCollection.delegate = self
         matchesCollection.dataSource = self
+        nextCollection.delegate = self
+        nextCollection.dataSource = self
         viewModel?.countryId.send(1)
         newsTbl.observe()
         newsTbl.skeleton()
+        tableTbl.delegate = self
+        tableTbl.dataSource = self
+        tableTbl.observe()
+        tableTbl.skeleton()
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
         viewModel?.fetchhome()
@@ -231,6 +240,7 @@ extension HomeVC {
         matchesView.isHidden = false
         newsTbl.isHidden = true
         postsTbl.isHidden = true
+        viewModel?.fetchmatchtab()
     }
     func shownews(){
         newsLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
@@ -278,6 +288,19 @@ extension HomeVC {
         }
         matchesCollection.reloadData()
         matchesCollection.stopSwipeButtom()
+
+    }
+    func reloadmatchestabs(){
+        if viewModel?.matchestab.value?.data?.nextMatches?.count ?? 0 == 0 {
+            nextCollection.isHidden = true
+            noresultNextView.isHidden = false
+        }else {
+            nextCollection.isHidden = false
+            noresultNextView.isHidden = true
+        }
+        nextCollection.reloadData()
+        tableTbl.reloadData()
+        nextCollection.stopSwipeButtom()
 
     }
     func setupSideMenu() {
@@ -332,16 +355,35 @@ extension HomeVC {
 }
 extension HomeVC:UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.dataSource()?.count ?? 2
+        if tableView == newsTbl {
+            return viewModel?.dataSource()?.count ?? 2
+        }else  if tableView == tableTbl {
+            return viewModel?.matchestab.value?.data?.standing?.count ?? 0
+        }else {
+            return viewModel?.dataSource()?.count ?? 2
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.cell(type: NewsTableViewCell.self, indexPath)
-        cell.model = viewModel?.dataSource()?[safe: indexPath.row]
-        cell.delegate = self
-        cell.setup()
-        return cell
+        if tableView == newsTbl{
+            var cell = tableView.cell(type: NewsTableViewCell.self, indexPath)
+            cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+            cell.delegate = self
+            cell.setup()
+            return cell
+        }else if tableView == tableTbl {
+            var cell = tableView.cell(type: TableTableViewCell.self, indexPath)
+            cell.model = viewModel?.matchestab.value?.data?.standing?[safe: indexPath.row]
+            cell.setup()
+            return cell
+        }else{
+            var cell = tableView.cell(type: NewsTableViewCell.self, indexPath)
+            cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+            cell.delegate = self
+            cell.setup()
+            return cell
+        }
         
     }
     
@@ -349,7 +391,9 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
         if viewModel?.items.value?.count ?? 0 == 0 {
             return
         }
-        self.coordinator?.detailsnews(id: viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
+        if tableView == newsTbl {
+            self.coordinator?.detailsnews(id: viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
+        }
 
     }
 
@@ -359,24 +403,39 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
         return .init(width: collectionView.frame.width, height: collectionView.frame.height)
        }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          if viewModel?.matches.value?.count ?? 0 > 4 {
-              return 4
+          if collectionView == nextCollection {
+              return viewModel?.matchestab.value?.data?.nextMatches?.count ?? 2
           }else {
-              return viewModel?.matches.value?.count ?? 2
+              if viewModel?.matches.value?.count ?? 0 > 4 {
+                  return 4
+              }else {
+                  return viewModel?.matches.value?.count ?? 2
+              }
           }
           
         }
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            var cell = collectionView.cell(type: MatchsHomeCollectionViewCell.self, indexPath)
-            cell.model = viewModel?.matches.value?[safe: indexPath.row]
-            cell.delegate = self
-            return cell
+            if collectionView == nextCollection {
+                var cell = collectionView.cell(type: NextmatchesCollectionViewCell.self, indexPath)
+                cell.model = viewModel?.matchestab.value?.data?.nextMatches?[safe: indexPath.row]
+                cell.delegate = self
+                return cell
+            }else {
+                var cell = collectionView.cell(type: MatchsHomeCollectionViewCell.self, indexPath)
+                cell.model = viewModel?.matches.value?[safe: indexPath.row]
+                cell.delegate = self
+                return cell
+            }
         }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if viewModel?.matches.value?.count ?? 0 == 0 {
+        if viewModel?.matches.value?.count ?? 0 == 0 && viewModel?.matchestab.value?.data?.nextMatches?.count ?? 0 == 0{
             return
         }
-        coordinator?.detailsmatchs(id: viewModel?.matches.value?[safe: indexPath.row]?.id ?? 0)
+        if collectionView == nextCollection {
+            coordinator?.detailsmatchs(id: viewModel?.matchestab.value?.data?.nextMatches?[safe: indexPath.row]?.id ?? 0)
+        }else {
+            coordinator?.detailsmatchs(id: viewModel?.matches.value?[safe: indexPath.row]?.id ?? 0)
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
             // No spacing between cells to ensure they are adjacent
@@ -386,6 +445,11 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
 
 extension HomeVC : MatchsHomeCollectionViewCellDelegate{
     func clubdetails(wasPressedOnCell cell: MatchsHomeCollectionViewCell, clubId: Int) {
+        coordinator?.detailsclub(id: clubId)
+    }
+}
+extension HomeVC : NextmatchesCollectionViewCellDelegate{
+    func clubdetails(wasPressedOnCell cell: NextmatchesCollectionViewCell, clubId: Int) {
         coordinator?.detailsclub(id: clubId)
     }
 }

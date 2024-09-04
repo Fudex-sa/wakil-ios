@@ -16,6 +16,8 @@ class HomeViewModel: BaseViewModel , DataSourceViewModel{
     var clubs: Publisher<[SelectclubDatum]> = .init()
     var matches: Publisher<[MatchsDatum]> = .init()
     var matchFinish: Publisher<Bool> = .init()
+    var matchestab: Publisher<MatchesModel> = .init()
+    var matchFinishtab: Publisher<Bool> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -50,6 +52,19 @@ extension HomeViewModel {
             guard let model = model else { return }
             self?.matches.send(model.data ?? [])
             self?.matchFinish.send(true)
+        }).store(self)
+    }
+    
+    func fetchmatchtab() {
+        if UD.club?.id ?? 0 != 0 {
+            NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
+        }
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.matches.rawValue, type: .get, MatchesModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.matchestab.send(model)
+            self?.matchFinishtab.send(true)
         }).store(self)
     }
 }

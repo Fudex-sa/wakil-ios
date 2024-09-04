@@ -1550,7 +1550,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 97 images.
+  /// This `R.image` struct is generated, and contains static references to 99 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1576,6 +1576,8 @@ struct R: Rswift.Validatable {
     static let home = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home")
     /// Image `Icon-4`.
     static let icon4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon-4")
+    /// Image `Image`.
+    static let image = Rswift.ImageResource(bundle: R.hostingBundle, name: "Image")
     /// Image `Loading-Dark.gif`.
     static let loadingDarkGif = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loading-Dark.gif")
     /// Image `Loading-Light.gif`.
@@ -1612,6 +1614,8 @@ struct R: Rswift.Validatable {
     static let splash2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Splash-2")
     /// Image `Tracking`.
     static let tracking = Rswift.ImageResource(bundle: R.hostingBundle, name: "Tracking")
+    /// Image `Video Camera`.
+    static let videoCamera = Rswift.ImageResource(bundle: R.hostingBundle, name: "Video Camera")
     /// Image `aboutus`.
     static let aboutus = Rswift.ImageResource(bundle: R.hostingBundle, name: "aboutus")
     /// Image `apple`.
@@ -1832,6 +1836,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Image", bundle: ..., traitCollection: ...)`
+    static func image(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.image, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Loading-Dark.gif", bundle: ..., traitCollection: ...)`
     static func loadingDarkGif(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.loadingDarkGif, compatibleWith: traitCollection)
@@ -1954,6 +1965,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Tracking", bundle: ..., traitCollection: ...)`
     static func tracking(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tracking, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Video Camera", bundle: ..., traitCollection: ...)`
+    static func videoCamera(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videoCamera, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2865,7 +2883,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 337 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 340 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3191,6 +3209,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let country = Rswift.StringResource(key: "Country", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Create a new post
+      ///
+      /// Locales: ar, en
+      static let createANewPost = Rswift.StringResource(key: "Create a new post", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Create an account
       ///
       /// Locales: ar, en
@@ -3695,6 +3717,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let personalDetailsLan = Rswift.StringResource(key: "personal.details.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Photo
+      ///
+      /// Locales: ar, en
+      static let photo = Rswift.StringResource(key: "Photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Photo Library
       ///
       /// Locales: ar, en
@@ -4015,6 +4041,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let upcomingMatches = Rswift.StringResource(key: "Upcoming Matches", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Upload a video
+      ///
+      /// Locales: ar, en
+      static let uploadAVideo = Rswift.StringResource(key: "Upload a video", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Username
       ///
       /// Locales: ar, en
@@ -5429,6 +5459,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Country", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Create a new post
+      ///
+      /// Locales: ar, en
+      static func createANewPost(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Create a new post", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Create a new post"
+        }
+
+        return NSLocalizedString("Create a new post", bundle: bundle, comment: "")
       }
 
       /// en translation: Create an account
@@ -7321,6 +7366,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("personal.details.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Photo
+      ///
+      /// Locales: ar, en
+      static func photo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Photo"
+        }
+
+        return NSLocalizedString("Photo", bundle: bundle, comment: "")
+      }
+
       /// en translation: Photo Library
       ///
       /// Locales: ar, en
@@ -8519,6 +8579,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Upcoming Matches", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Upload a video
+      ///
+      /// Locales: ar, en
+      static func uploadAVideo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Upload a video", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Upload a video"
+        }
+
+        return NSLocalizedString("Upload a video", bundle: bundle, comment: "")
       }
 
       /// en translation: Username
@@ -9870,9 +9945,7 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct addPostStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = AddPostVC
-
+    struct addPostStoryboard: Rswift.StoryboardResourceType, Rswift.Validatable {
       let addPostVC = StoryboardViewControllerResource<AddPostVC>(identifier: "AddPostVC")
       let bundle = R.hostingBundle
       let name = "AddPostStoryboard"
@@ -9882,7 +9955,19 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Image", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Image' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Video Camera", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Video Camera' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Lightgray' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "blackshadow8", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blackshadow8' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightgray 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray 1' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.addPostStoryboard().addPostVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addPostVC' could not be loaded from storyboard 'AddPostStoryboard' as 'AddPostVC'.") }
       }

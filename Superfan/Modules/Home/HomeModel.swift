@@ -60,3 +60,14 @@ struct MatchsTeam: Codable {
     let logo: String?
     let score: Int?
 }
+struct MatchesModel: Codable {
+    let status: Bool?
+    let message: String?
+    let data: MatchesDataClass?
+}
+
+// MARK: - DataClass
+struct MatchesDataClass: Codable {
+    let standing: [Standing]?
+    let nextMatches: [MatchsDatum]?
+}

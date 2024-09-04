@@ -99,6 +99,8 @@
 		664DCAFF2C3BC2460011DB96 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */; };
 		664DCB002C3BC2460011DB96 /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */; };
 		664FE17F2C3BEB620081C90B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FE17E2C3BEB620081C90B /* PaddingLabel.swift */; };
+		665411D42C88999400672746 /* NextmatchesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665411D22C88999400672746 /* NextmatchesCollectionViewCell.swift */; };
+		665411D52C88999400672746 /* NextmatchesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 665411D32C88999400672746 /* NextmatchesCollectionViewCell.xib */; };
 		666413282C74946900807309 /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666413262C74946900807309 /* PlayersCollectionViewCell.swift */; };
 		666413292C74946900807309 /* PlayersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666413272C74946900807309 /* PlayersCollectionViewCell.xib */; };
 		66762D2E2C3EB79E00D36BC6 /* contact.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66762D2D2C3EB79D00D36BC6 /* contact.gif */; };
@@ -729,6 +731,8 @@
 		664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
 		664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
 		664FE17E2C3BEB620081C90B /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		665411D22C88999400672746 /* NextmatchesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextmatchesCollectionViewCell.swift; sourceTree = "<group>"; };
+		665411D32C88999400672746 /* NextmatchesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextmatchesCollectionViewCell.xib; sourceTree = "<group>"; };
 		666413262C74946900807309 /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		666413272C74946900807309 /* PlayersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayersCollectionViewCell.xib; sourceTree = "<group>"; };
 		66762D2D2C3EB79D00D36BC6 /* contact.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = contact.gif; sourceTree = "<group>"; };
@@ -1629,6 +1633,8 @@
 				66950BEB2C3D58C400522EE0 /* MatchsHomeCollectionViewCell.xib */,
 				66C773BE2C3D5FB200E872CA /* NewsTableViewCell.swift */,
 				66C773BF2C3D5FB200E872CA /* NewsTableViewCell.xib */,
+				665411D22C88999400672746 /* NextmatchesCollectionViewCell.swift */,
+				665411D32C88999400672746 /* NextmatchesCollectionViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -3328,6 +3334,7 @@
 				C86BF98B266947F0002D87BC /* warningIconLight.png in Resources */,
 				C86BF999266947F0002D87BC /* warningIconSubtle@2x.png in Resources */,
 				C871C735272FEB7C00DCBD2D /* Muli.ttf in Resources */,
+				665411D52C88999400672746 /* NextmatchesCollectionViewCell.xib in Resources */,
 				C86BF99A266947F0002D87BC /* warningIconSubtle@3x.png in Resources */,
 				C84539AA2729887000004173 /* NeoSansArabic-Regular.ttf in Resources */,
 				C871C732272FEB7C00DCBD2D /* SFPRODISPLAYBOLD.OTF in Resources */,
@@ -3626,6 +3633,7 @@
 				6636D7EE2C3AE3F4007116F7 /* ResetpasswordViewModel.swift in Sources */,
 				E78C27D328725F4C00B345AC /* FileManager+TempDirectory.swift in Sources */,
 				C8C0930C272ABDA200E2270A /* UIGestureRecognizer+Combine.swift in Sources */,
+				665411D42C88999400672746 /* NextmatchesCollectionViewCell.swift in Sources */,
 				C871C8A4272FECF200DCBD2D /* FacebookModel.swift in Sources */,
 				7756A08A253482EF00BFE53C /* Paginator.swift in Sources */,
 				C80679A3266E3009001591AF /* ValidatorUnderlineUI+Ex.swift in Sources */,
