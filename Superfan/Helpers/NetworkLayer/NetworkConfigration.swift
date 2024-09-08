@@ -12,8 +12,8 @@ import UIKit
 // MARK: - ...  Network layer configration
 struct NetworkConfigration {
     static var _URL: String?
-    static var URL: String = "http://sfanz.co/api/v2/"
-//    static var URL: String = "https://superfan.fudex-tech.net/api/v2/"
+//    static var URL: String = "http://sfanz.co/api/v2/"
+    static var URL: String = "https://superfan.fudex-tech.net/api/v2/"
     static let VERSION = "v1"
     static var useAuth: Bool = false
     static var environment: NetworkConfigration.AppEnvironment? {
@@ -75,6 +75,7 @@ struct NetworkConfigration {
         case socialLogin = "fan/checkSocialUser"
         case years = "fan/years"
         case playerserach = "fan/players/search"
+        case posts = "fan/posts"
         case refreshToken = "/api/app/register/refresh-token"
     }
 }

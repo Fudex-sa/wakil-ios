@@ -41,4 +41,25 @@ class NewsTableViewCell: BaseTableViewCell {
         }
        
     }
+    func setuphome() {
+        skeleton(view: contentView)
+        guard let model = model as? PostsDatum else { return }
+        clubLbl.text = model.user?.name ?? ""
+        clubImg.setImage(url: model.user?.logo ?? "")
+        timeLbl.text = model.date ?? ""
+        titlelbl.text = model.title ?? ""
+        newImg.setImage(url: model.backgroundImg ?? "")
+        if model.backgroundImg ?? "" == "" {
+            imageHight.constant = 0
+        }else {
+            imageHight.constant = 134
+        }
+        clubImg.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.user?.id ?? 0)
+        }
+        clubLbl.UIViewAction {
+            self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.user?.id ?? 0)
+        }
+       
+    }
 }

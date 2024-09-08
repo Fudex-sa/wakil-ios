@@ -613,6 +613,7 @@
                         <outlet property="MoreMatchLbl" destination="n3x-Id-oCV" id="Vmw-4u-q2h"/>
                         <outlet property="clubLbl" destination="CEj-jf-h5Q" id="2y6-Pr-84Z"/>
                         <outlet property="clubSelectBtn" destination="FDX-Mu-VvK" id="JhT-e0-Zo4"/>
+                        <outlet property="containerScrollView" destination="DBU-4f-xhY" id="Isi-AU-9Zg"/>
                         <outlet property="coverView" destination="yq3-7a-jDS" id="PKw-Qs-rhB"/>
                         <outlet property="eventClickView" destination="Hi2-zQ-Urv" id="itD-h8-izN"/>
                         <outlet property="eventLbl" destination="3Gt-7y-wOq" id="kt6-zE-bsQ"/>

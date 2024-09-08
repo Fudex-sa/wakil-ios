@@ -43,6 +43,11 @@ extension HomeCoordinator {
         scene.clubId = id
         view?.push(scene)
     }
+    func detailsposts(id: Int) {
+        guard let scene = R.storyboard.postdetailsStoryboard.postdetailsVC() else { return }
+        scene.postId = id
+        view?.push(scene)
+    }
     func changeclub() {
         guard let scene = R.storyboard.changeClubStoryboard.changeClubVC() else { return }
         scene.delegate = self
@@ -50,12 +55,15 @@ extension HomeCoordinator {
     }
     func done() {
         view?.clubLbl.text = UD.club?.name ?? ""
-        view?.viewModel?.resetPaginator()
-        view?.viewModel?.clearDataSource()
-        view?.viewModel?.fetchhome()
-        view?.viewModel?.matches.send([])
-        view?.viewModel?.fetchtodaymatch()
-        view?.sideMenuViewController?.containerView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        if view?.type == 0 {
+            view?.showevents()
+        }else if view?.type == 1 {
+            view?.showmatches()
+        }else if view?.type == 2 {
+            view?.shownews()
+        }else if view?.type == 3 {
+            view?.showposts()
+        }
         view?.changeColoe()
     }
     

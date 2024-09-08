@@ -12,6 +12,7 @@ import Firebase
 
 // MARK: - ...  ViewController - Vars
 class HomeVC: BaseController {
+    @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var matchesView: UIView!
     @IBOutlet weak var noresultNextView: UIView!
     @IBOutlet weak var postsTbl: UITableView!
@@ -83,7 +84,7 @@ extension HomeVC {
             self?.didError(error: error?.localizedDescription)
         })
         
-        viewModel?.requestFinished.listen(on: { [weak self] value in
+        viewModel?.eventsfinish.listen(on: { [weak self] value in
             self?.reload()
         })
         viewModel?.matchFinish.listen(on: { [weak self] value in
@@ -92,11 +93,18 @@ extension HomeVC {
         viewModel?.matchFinishtab.listen(on: { [weak self] value in
             self?.reloadmatchestabs()
         })
+        viewModel?.newsfinish.listen(on: { [weak self] value in
+            self?.reloadnews()
+        })
+        viewModel?.postsfinish.listen(on: { [weak self] value in
+            self?.reloadposts()
+        })
     }
 }
 // MARK: - ...  Functions
 extension HomeVC {
     func setup() {
+        viewModel?.countryId.send(1)
         if type == 0 {
             showevents()
         }else if type == 1 {
@@ -125,30 +133,34 @@ extension HomeVC {
             }
             clubLbl.sizeToFit()
         }
-        Messaging.messaging().subscribe(toTopic: "superfan_ios_live") { error in
+        Messaging.messaging().subscribe(toTopic: "superfan_ios_demo") { error in
                 if let error = error {
                     print("Failed to subscribe to topic: \(error.localizedDescription)")
                 } else {
                     print("Subscribed to topic: your_topic_name")
                 }
         }
+        containerScrollView.delegate = self
         newsTbl.delegate = self
         newsTbl.dataSource = self
         matchesCollection.delegate = self
         matchesCollection.dataSource = self
         nextCollection.delegate = self
         nextCollection.dataSource = self
-        viewModel?.countryId.send(1)
         newsTbl.observe()
         newsTbl.skeleton()
         tableTbl.delegate = self
         tableTbl.dataSource = self
         tableTbl.observe()
         tableTbl.skeleton()
-        viewModel?.resetPaginator()
-        viewModel?.clearDataSource()
-        viewModel?.fetchhome()
-        viewModel?.fetchtodaymatch()
+        postsTbl.delegate = self
+        postsTbl.dataSource = self
+        postsTbl.observe()
+        postsTbl.skeleton()
+        eventsTbl.delegate = self
+        eventsTbl.dataSource = self
+        eventsTbl.observe()
+        eventsTbl.skeleton()
         menuBtn.publisher.listen(on: {[weak self] _ in
             self?.openMenu()
         }).store(self)
@@ -183,27 +195,6 @@ extension HomeVC {
             }
         }).store(self)
     }
-    func reload(){
-        if viewModel?.items.value?.count ?? 0 == 0 {
-            newsTbl.isHidden = true
-            if isMenuOpen == false {
-                showEmptyScreen(for: 350 , title: "There are no news available".localized)
-            }
-        }else {
-            newsTbl.isHidden = false
-            hideEmptyScreen()
-        }
-        for index in viewModel?.clubs.value ?? [] {
-            if index.id == UD.club?.id ?? 0 {
-                clubLbl.text = index.name ?? ""
-                UD.club?.name = index.name ?? ""
-                clubLbl.sizeToFit()
-            }
-        }
-        newsTbl.reloadData()
-        newsTbl.stopSwipeButtom()
-
-    }
     func showevents(){
         eventLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
         eventshowView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
@@ -221,7 +212,10 @@ extension HomeVC {
         matchesView.isHidden = true
         newsTbl.isHidden = true
         postsTbl.isHidden = true
-
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
+        viewModel?.fetchhome()
+        hideEmptyScreen()
     }
     func showmatches(){
         matchesLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
@@ -241,6 +235,7 @@ extension HomeVC {
         newsTbl.isHidden = true
         postsTbl.isHidden = true
         viewModel?.fetchmatchtab()
+        hideEmptyScreen()
     }
     func shownews(){
         newsLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
@@ -259,6 +254,10 @@ extension HomeVC {
         matchesView.isHidden = true
         newsTbl.isHidden = false
         postsTbl.isHidden = true
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
+        viewModel?.fetchnews()
+        hideEmptyScreen()
     }
     func showposts(){
         postsLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
@@ -277,6 +276,32 @@ extension HomeVC {
         matchesView.isHidden = true
         newsTbl.isHidden = true
         postsTbl.isHidden = false
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
+        viewModel?.fetchposts()
+        hideEmptyScreen()
+    }
+    func reload(){
+        if viewModel?.events.value?.count ?? 0 == 0 {
+            eventsTbl.isHidden = true
+            if isMenuOpen == false {
+                showEmptyScreen(for: 350 , title: "There are no events available".localized)
+            }
+        }else {
+            eventsTbl.isHidden = false
+            hideEmptyScreen()
+        }
+        for index in viewModel?.clubs.value ?? [] {
+            if index.id == UD.club?.id ?? 0 {
+                clubLbl.text = index.name ?? ""
+                UD.club?.name = index.name ?? ""
+                clubLbl.sizeToFit()
+            }
+        }
+        eventsTbl.reloadData()
+        eventsTbl.stopSwipeButtom()
+        reloadmatches()
+
     }
     func reloadmatches(){
         if viewModel?.matches.value?.count ?? 0 == 0 {
@@ -301,6 +326,34 @@ extension HomeVC {
         nextCollection.reloadData()
         tableTbl.reloadData()
         nextCollection.stopSwipeButtom()
+
+    }
+    func reloadnews(){
+        if viewModel?.items.value?.count ?? 0 == 0 {
+            newsTbl.isHidden = true
+            if isMenuOpen == false {
+                showEmptyScreen(for: 350 , title: "There are no news available".localized)
+            }
+        }else {
+            newsTbl.isHidden = false
+            hideEmptyScreen()
+        }
+        newsTbl.reloadData()
+        newsTbl.stopSwipeButtom()
+
+    }
+    func reloadposts(){
+        if viewModel?.posts.value?.count ?? 0 == 0 {
+            postsTbl.isHidden = true
+            if isMenuOpen == false {
+                showEmptyScreen(for: 350 , title: "There are no posts available".localized)
+            }
+        }else {
+            postsTbl.isHidden = false
+            hideEmptyScreen()
+        }
+        postsTbl.reloadData()
+        postsTbl.stopSwipeButtom()
 
     }
     func setupSideMenu() {
@@ -354,13 +407,44 @@ extension HomeVC {
 extension HomeVC {
 }
 extension HomeVC:UITableViewDelegate , UITableViewDataSource {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if type == 2 {
+            if scrollView == containerScrollView {
+                let tableViewVisibleHeight = containerScrollView.bounds.size.height
+                   let tableViewContentHeight = containerScrollView.contentSize.height
+                   let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 100
+                   
+                if scrollView.contentOffset.y > tableViewOffsetThreshold && containerScrollView.isDragging {
+                    // Fetch more data here
+                    if case self.viewModel?.canPaginate() = true {
+                        self.viewModel?.fetchnews()
+                    }
+                }
+            }
+        }else if type == 3 {
+            if scrollView == containerScrollView {
+                let tableViewVisibleHeight = containerScrollView.bounds.size.height
+                   let tableViewContentHeight = containerScrollView.contentSize.height
+                   let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 100
+                   
+                if scrollView.contentOffset.y > tableViewOffsetThreshold && containerScrollView.isDragging {
+                    // Fetch more data here
+                    if case self.viewModel?.canPaginate() = true {
+                        self.viewModel?.fetchposts()
+                    }
+                }
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == newsTbl {
             return viewModel?.dataSource()?.count ?? 2
         }else  if tableView == tableTbl {
             return viewModel?.matchestab.value?.data?.standing?.count ?? 0
+        }else  if tableView == postsTbl {
+            return viewModel?.posts.value?.count ?? 2
         }else {
-            return viewModel?.dataSource()?.count ?? 2
+            return viewModel?.events.value?.count ?? 2
         }
         
     }
@@ -377,22 +461,46 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
             cell.model = viewModel?.matchestab.value?.data?.standing?[safe: indexPath.row]
             cell.setup()
             return cell
-        }else{
-            var cell = tableView.cell(type: NewsTableViewCell.self, indexPath)
-            cell.model = viewModel?.dataSource()?[safe: indexPath.row]
-            cell.delegate = self
+        }else if tableView == postsTbl {
+            var cell = tableView.cell(type: PostsTableViewCell.self, indexPath)
+            cell.model = viewModel?.posts.value?[safe: indexPath.row]
             cell.setup()
+            cell.delegate = self
             return cell
+        }else{
+            if viewModel?.events.value?[safe: indexPath.row]?.type ?? "" == "news" {
+                var cell = tableView.cell(type: NewsTableViewCell.self, indexPath)
+                cell.model = viewModel?.events.value?[safe: indexPath.row]
+                cell.delegate = self
+                cell.setuphome()
+                return cell
+            }else {
+                var cell = tableView.cell(type: PostsTableViewCell.self, indexPath)
+                cell.model = viewModel?.events.value?[safe: indexPath.row]
+                cell.setup()
+                cell.delegate = self
+                return cell
+            }
         }
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if viewModel?.items.value?.count ?? 0 == 0 {
+        if viewModel?.items.value?.count ?? 0 == 0 && viewModel?.posts.value?.count ?? 0 == 0 && viewModel?.events.value?.count ?? 0 == 0{
             return
         }
         if tableView == newsTbl {
             self.coordinator?.detailsnews(id: viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
+        }else if tableView == postsTbl {
+            self.coordinator?.detailsposts(id: viewModel?.posts.value?[safe: indexPath.row]?.id ?? 0)
+        }else {
+            if viewModel?.events.value?[safe: indexPath.row]?.type ?? "" == "news" {
+                self.coordinator?.detailsnews(id: viewModel?.events.value?[safe: indexPath.row]?.id ?? 0)
+
+            }else {
+                self.coordinator?.detailsposts(id: viewModel?.events.value?[safe: indexPath.row]?.id ?? 0)
+
+            }
         }
 
     }
@@ -453,6 +561,11 @@ extension HomeVC : NextmatchesCollectionViewCellDelegate{
         coordinator?.detailsclub(id: clubId)
     }
 }
+extension HomeVC : PostsTableViewCellDelegate{
+    func clubdetails(wasPressedOnCell cell: PostsTableViewCell, clubId: Int) {
+        coordinator?.detailsclub(id: clubId)
+    }
+}
 extension HomeVC : NewsTableViewCellDelegate{
     func clubdetails(wasPressedOnCell cell: NewsTableViewCell, clubId: Int) {
         coordinator?.detailsclub(id: clubId)
@@ -464,8 +577,8 @@ extension HomeVC: NotificationSubscriber {
         if notificationType ?? "" != "match_events" {
             return
         }
-        viewModel?.resetPaginator()
-        viewModel?.clearDataSource()
-        viewModel?.fetchtodaymatch()
+//        viewModel?.resetPaginator()
+//        viewModel?.clearDataSource()
+//        viewModel?.fetchtodaymatch()
     }
 }

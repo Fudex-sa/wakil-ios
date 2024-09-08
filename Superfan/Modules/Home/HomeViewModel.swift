@@ -13,11 +13,16 @@ class HomeViewModel: BaseViewModel , DataSourceViewModel{
     var countryId: Publisher<Int> = .init()
     var clubId: Publisher<Int> = .init()
     var items: Publisher<[NewsModelData]> = .init()
+    var events: Publisher<[PostsDatum]> = .init()
+    var posts: Publisher<[PostsDatum]> = .init()
     var clubs: Publisher<[SelectclubDatum]> = .init()
     var matches: Publisher<[MatchsDatum]> = .init()
     var matchFinish: Publisher<Bool> = .init()
     var matchestab: Publisher<MatchesModel> = .init()
     var matchFinishtab: Publisher<Bool> = .init()
+    var newsfinish: Publisher<Bool> = .init()
+    var postsfinish: Publisher<Bool> = .init()
+    var eventsfinish: Publisher<Bool> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -34,10 +39,11 @@ extension HomeViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
-            self?.append(contentsOf: model.data?.news ?? [])
+            self?.events.send( model.data?.mix ?? [])
             self?.clubs.send(model.data?.clubs ?? [])
-            self?.paginator(respnod: model.data?.news)
-            self?.publisher()
+            self?.paginator(respnod: model.data?.mix)
+            self?.matches.send(model.data?.matches ?? [])
+            self?.eventsfinish.send(true)
         }).store(self)
     }
     
@@ -65,6 +71,32 @@ extension HomeViewModel {
             guard let model = model else { return }
             self?.matchestab.send(model)
             self?.matchFinishtab.send(true)
+        }).store(self)
+    }
+    func fetchnews() {
+        if UD.club?.id ?? 0 != 0 {
+            NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
+        }
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.news.rawValue, type: .get, NewsModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.append(contentsOf: model.data ?? [])
+            self?.paginator(respnod: model.data)
+            self?.newsfinish.send(true)
+        }).store(self)
+    }
+    func fetchposts() {
+        if UD.club?.id ?? 0 != 0 {
+            NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
+        }
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.posts.rawValue, type: .get, PostsModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.posts.send(model.data ?? [])
+            self?.paginator(respnod: model.data)
+            self?.postsfinish.send(true)
         }).store(self)
     }
 }

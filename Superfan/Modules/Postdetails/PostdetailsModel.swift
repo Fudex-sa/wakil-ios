@@ -9,5 +9,8 @@
 import Foundation
 
 // MARK: - ...  Entity
-class PostdetailsModel: Codable {
+struct PostdetailsModel: Codable {
+    let status: Bool?
+    let message: String?
+    let data: PostsDatum?
 }

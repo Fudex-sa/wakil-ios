@@ -27,13 +27,32 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aEa-J4-Xb1">
                                         <rect key="frame" x="0.0" y="0.0" width="242" height="115"/>
                                     </imageView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqx-Xq-Lsp">
+                                        <rect key="frame" x="0.0" y="0.0" width="242" height="115"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLC-1N-w9j">
+                                        <rect key="frame" x="101" y="37.666666666666664" width="40" height="39.999999999999993"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="43r-4R-mDS"/>
+                                            <constraint firstAttribute="width" constant="40" id="ltw-oK-5Nv"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="group-11334"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="hLC-1N-w9j" firstAttribute="centerX" secondItem="B7H-hO-6cc" secondAttribute="centerX" id="0P5-tq-sTp"/>
+                                    <constraint firstAttribute="trailing" secondItem="oqx-Xq-Lsp" secondAttribute="trailing" id="6YG-Io-AyF"/>
+                                    <constraint firstItem="oqx-Xq-Lsp" firstAttribute="top" secondItem="B7H-hO-6cc" secondAttribute="top" id="EIw-2K-AF6"/>
+                                    <constraint firstItem="hLC-1N-w9j" firstAttribute="centerY" secondItem="B7H-hO-6cc" secondAttribute="centerY" id="RXb-C2-xfT"/>
+                                    <constraint firstItem="oqx-Xq-Lsp" firstAttribute="leading" secondItem="B7H-hO-6cc" secondAttribute="leading" id="XEj-VU-CJg"/>
                                     <constraint firstAttribute="trailing" secondItem="aEa-J4-Xb1" secondAttribute="trailing" id="dFK-Gc-1CT"/>
                                     <constraint firstAttribute="bottom" secondItem="aEa-J4-Xb1" secondAttribute="bottom" id="gqg-ot-ibi"/>
                                     <constraint firstItem="aEa-J4-Xb1" firstAttribute="leading" secondItem="B7H-hO-6cc" secondAttribute="leading" id="h9d-mX-Jfh"/>
                                     <constraint firstItem="aEa-J4-Xb1" firstAttribute="top" secondItem="B7H-hO-6cc" secondAttribute="top" id="qnZ-oa-wZD"/>
+                                    <constraint firstAttribute="bottom" secondItem="oqx-Xq-Lsp" secondAttribute="bottom" id="sRe-Et-F8a"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -63,12 +82,15 @@
             <size key="customSize" width="242" height="115"/>
             <connections>
                 <outlet property="containerView" destination="B7H-hO-6cc" id="RHs-DU-erR"/>
+                <outlet property="playBtn" destination="hLC-1N-w9j" id="9Ro-ma-RDm"/>
                 <outlet property="sliderImg" destination="aEa-J4-Xb1" id="isj-ha-Ofq"/>
+                <outlet property="vedioView" destination="oqx-Xq-Lsp" id="EoU-ky-dcW"/>
             </connections>
             <point key="canvasLocation" x="177.09923664122135" y="11.619718309859156"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="group-11334" width="43" height="43"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -18,7 +18,8 @@ struct HomeModel: Codable {
 // MARK: - DataClass
 struct HomeDataClass: Codable {
     let clubs: [SelectclubDatum]?
-    let news: [NewsModelData]?
+    let mix: [PostsDatum]?
+    let matches: [MatchsDatum]?
 }
 
 struct NewsModelData: Codable {
@@ -70,4 +71,35 @@ struct MatchesModel: Codable {
 struct MatchesDataClass: Codable {
     let standing: [Standing]?
     let nextMatches: [MatchsDatum]?
+}
+struct PostsModel: Codable {
+    let data: [PostsDatum]?
+    let status: Bool?
+    let message: String?
+}
+
+// MARK: - Datum
+struct PostsDatum: Codable {
+    let id: Int?
+    let user: User?
+    let type: String?
+    let title, description, date: String?
+    let files: [File]?
+    let backgroundImg: String?
+    let likersCount, commentersCount: Int?
+}
+
+// MARK: - File
+struct File: Codable {
+    let id: Int?
+    let value: String?
+    let type: String?
+}
+
+// MARK: - User
+struct User: Codable {
+    let id: Int?
+    let name: String?
+    let logo: String?
+    let type: String?
 }
