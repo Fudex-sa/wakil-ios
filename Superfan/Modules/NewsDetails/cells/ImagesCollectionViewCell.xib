@@ -40,12 +40,23 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="group-11334"/>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drJ-eJ-eFo">
+                                        <rect key="frame" x="222" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="iHZ-zx-CaZ"/>
+                                            <constraint firstAttribute="width" constant="20" id="zHn-pm-zaV"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="close 2"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="hLC-1N-w9j" firstAttribute="centerX" secondItem="B7H-hO-6cc" secondAttribute="centerX" id="0P5-tq-sTp"/>
+                                    <constraint firstAttribute="trailing" secondItem="drJ-eJ-eFo" secondAttribute="trailing" id="5dr-7C-c9U"/>
                                     <constraint firstAttribute="trailing" secondItem="oqx-Xq-Lsp" secondAttribute="trailing" id="6YG-Io-AyF"/>
                                     <constraint firstItem="oqx-Xq-Lsp" firstAttribute="top" secondItem="B7H-hO-6cc" secondAttribute="top" id="EIw-2K-AF6"/>
+                                    <constraint firstItem="drJ-eJ-eFo" firstAttribute="top" secondItem="B7H-hO-6cc" secondAttribute="top" id="HSv-sA-hnM"/>
                                     <constraint firstItem="hLC-1N-w9j" firstAttribute="centerY" secondItem="B7H-hO-6cc" secondAttribute="centerY" id="RXb-C2-xfT"/>
                                     <constraint firstItem="oqx-Xq-Lsp" firstAttribute="leading" secondItem="B7H-hO-6cc" secondAttribute="leading" id="XEj-VU-CJg"/>
                                     <constraint firstAttribute="trailing" secondItem="aEa-J4-Xb1" secondAttribute="trailing" id="dFK-Gc-1CT"/>
@@ -82,6 +93,7 @@
             <size key="customSize" width="242" height="115"/>
             <connections>
                 <outlet property="containerView" destination="B7H-hO-6cc" id="RHs-DU-erR"/>
+                <outlet property="deleteBtn" destination="drJ-eJ-eFo" id="5iz-Wn-xD7"/>
                 <outlet property="playBtn" destination="hLC-1N-w9j" id="9Ro-ma-RDm"/>
                 <outlet property="sliderImg" destination="aEa-J4-Xb1" id="isj-ha-Ofq"/>
                 <outlet property="vedioView" destination="oqx-Xq-Lsp" id="EoU-ky-dcW"/>
@@ -90,6 +102,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="close 2" width="12" height="13"/>
         <image name="group-11334" width="43" height="43"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

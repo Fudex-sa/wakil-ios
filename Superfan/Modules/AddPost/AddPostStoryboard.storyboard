@@ -95,7 +95,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tob-2F-uvF">
                                                         <rect key="frame" x="12" y="44" width="374" height="125"/>
                                                         <subviews>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write what you think ...&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B2b-Kf-peW">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B2b-Kf-peW">
                                                                 <rect key="frame" x="8" y="8" width="358" height="125"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" name="darkgray"/>
@@ -103,7 +103,7 @@
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Write what you think ...&quot;"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Write what you think ..."/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textView>
                                                         </subviews>
@@ -244,7 +244,7 @@
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gnx-cz-fnF">
                                                                 <rect key="frame" x="12" y="12" width="358" height="46"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wl2-S5-OW9">
+                                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wl2-S5-OW9">
                                                                     <size key="itemSize" width="128" height="128"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -252,7 +252,7 @@
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
                                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="idh-4R-fHp">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                        <rect key="frame" x="0.0" y="-41" width="128" height="128"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Jye-hc-Quz">
                                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -341,7 +341,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Send"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="20"/>
+                                                        <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>

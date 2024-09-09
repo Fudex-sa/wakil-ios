@@ -30,7 +30,7 @@ class PostsTableViewCell: BaseTableViewCell {
         clubLbl.text = model.user?.name ?? ""
         clubImg.setImage(url: model.user?.logo ?? "")
         timeLbl.text = model.date ?? ""
-        titlelbl.text = model.title ?? ""
+        titlelbl.text = model.description ?? ""
         postImg.setImage(url: model.backgroundImg ?? "")
         if model.backgroundImg ?? "" == "" {
             imageHight.constant = 0

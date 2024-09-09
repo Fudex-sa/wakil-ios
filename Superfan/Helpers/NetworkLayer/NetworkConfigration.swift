@@ -76,6 +76,7 @@ struct NetworkConfigration {
         case years = "fan/years"
         case playerserach = "fan/players/search"
         case posts = "fan/posts"
+        case myposts = "fan/myPosts"
         case refreshToken = "/api/app/register/refresh-token"
     }
 }

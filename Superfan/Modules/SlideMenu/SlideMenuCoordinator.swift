@@ -38,4 +38,24 @@ extension SlideMenuCoordinator {
         view?.push(scene)
         view?.closeMenu()
     }
+    func mypost() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            view?.closeMenu()
+            return
+        }
+        guard let scene = R.storyboard.mypostsStoryboard.mypostsVC() else { return }
+        view?.push(scene)
+        view?.closeMenu()
+    }
+    func subscribe() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            view?.closeMenu()
+            return
+        }
+//        guard let scene = R.storyboard.mypostsStoryboard.mypostsVC() else { return }
+//        view?.push(scene)
+        view?.closeMenu()
+    }
 }

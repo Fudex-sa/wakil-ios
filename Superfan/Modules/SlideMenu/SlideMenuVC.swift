@@ -12,6 +12,8 @@ import FirebaseMessaging
 
 // MARK: - ...  ViewController - Vars
 class SlideMenuVC: BaseController {
+    @IBOutlet weak var subscribeView: UIView!
+    @IBOutlet weak var mypostView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoutLbl: UILabel!
     @IBOutlet weak var slideView: UIView!
@@ -107,6 +109,12 @@ extension SlideMenuVC {
         }).store(self)
         contactView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.contactus()
+        }).store(self)
+        mypostView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.mypost()
+        }).store(self)
+        subscribeView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.subscribe()
         }).store(self)
         logoutView.publisherGesture.listen(on: {[weak self] _ in
             if UD.user == nil {

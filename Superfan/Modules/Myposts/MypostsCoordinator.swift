@@ -18,5 +18,18 @@ class MypostsCoordinator: Coordinator {
 }
 
 extension MypostsCoordinator {
-    
+    func detailsclub(id: Int) {
+        guard let scene = R.storyboard.clubdetailsStoryboard.clubdetailsVC() else { return }
+        scene.clubId = id
+        view?.push(scene)
+    }
+    func detailsposts(id: Int) {
+        guard let scene = R.storyboard.postdetailsStoryboard.postdetailsVC() else { return }
+        scene.postId = id
+        view?.push(scene)
+    }
+    func addpost() {
+        guard let scene = R.storyboard.addPostStoryboard.addPostVC() else { return }
+        view?.push(scene)
+    }
 }

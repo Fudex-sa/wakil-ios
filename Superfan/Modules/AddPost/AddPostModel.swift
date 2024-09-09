@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - ...  Entity
-class AddPostModel: Codable {
+
+struct AddPostModel: Codable {
+    let url, type, path: String
 }
