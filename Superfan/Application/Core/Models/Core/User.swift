@@ -27,6 +27,7 @@ extension UserRoot {
         var token: String?
     }
     class User: Codable {
+        let id: Int?
         var email: String?
         var dialCode: String?
         var youtubeLink: String?
@@ -54,6 +55,7 @@ extension UserRoot {
         var country: DatumSelectCountryModel?
         var companyOffers: [CompanyOffer]?
         enum CodingKeys: String, CodingKey {
+            case id
             case email
             case age
             case lat

@@ -9,6 +9,9 @@
 import UIKit
 import AVFoundation
 import AVKit
+protocol ImagesCollectionViewCellDelegate: AnyObject {
+    func delete(wasPressedOnCell cell: ImagesCollectionViewCell , index : Int)
+}
 class ImagesCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
@@ -18,6 +21,7 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
     var playerAv: AVPlayer?
     var playerController: AVPlayerViewController?
     var playerItem: AVPlayerItem?
+    var delegate: ImagesCollectionViewCellDelegate?
     override func setup() {
         skeleton(for: containerView)
         super.setup()
@@ -103,6 +107,9 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
         }
         playBtn.publisher.listen { [weak self] in
             self?.playaction()
+        }.store(self)
+        deleteBtn.publisher.listen { [weak self] in
+            self?.delegate?.delete(wasPressedOnCell: self!, index: self?.indexPath() ?? 0)
         }.store(self)
     }
     func loadImage(from path: String) -> UIImage? {

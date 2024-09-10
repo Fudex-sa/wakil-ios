@@ -23,4 +23,10 @@ extension PostdetailsCoordinator {
         scene.clubId = id
         view?.push(scene)
     }
+    func editpost() {
+        guard let scene = R.storyboard.addPostStoryboard.addPostVC() else { return }
+        scene.postdata = view?.viewModel?.postdata.value
+        scene.type = .edit
+        view?.push(scene)
+    }
 }

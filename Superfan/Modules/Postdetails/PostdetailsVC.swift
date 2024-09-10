@@ -52,6 +52,15 @@ extension PostdetailsVC {
         viewModel?.postdata.listen(on: { [weak self] value in
             self?.reload()
         })
+        viewModel?.deletedata.listen(on: { [weak self] value in
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.deletedata.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+            self?.stopLoading()
+            self?.navigationController?.popViewController(animated: true)
+        })
        
     }
 }
@@ -77,6 +86,13 @@ extension PostdetailsVC {
             }
             self.coordinator?.detailsclub(id: self.viewModel?.postdata.value?.data?.user?.id ?? 0)
         }
+        editBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.editpost()
+        }).store(self)
+        closeBtn.publisher.listen(on: {[weak self] _ in
+            self?.startLoading()
+            self?.viewModel?.deletepost()
+        }).store(self)
     }
     func reload() {
         stopLoading()
@@ -86,6 +102,12 @@ extension PostdetailsVC {
         desLbl.text = viewModel?.postdata.value?.data?.description?.htmlToString ?? ""
         if viewModel?.postdata.value?.data?.files?.count ?? 0 == 0 {
             sliderCollection.isHidden = true
+        }
+        if UD.user != nil {
+            if viewModel?.postdata.value?.data?.user?.id ?? 0 == UD.user?.data?.user?.id ?? 0  {
+                editBtn.isHidden = false
+                closeBtn.isHidden = false
+            }
         }
         sliderCollection.reloadData()
     }
@@ -108,5 +130,8 @@ extension PostdetailsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDat
             cell.setuppost()
             return cell
         }
-   
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            // No spacing between cells to ensure they are adjacent
+            return 0
+    }
   }

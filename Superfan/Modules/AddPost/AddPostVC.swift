@@ -11,6 +11,10 @@ import UIKit
 import PhotosUI
 // MARK: - ...  ViewController - Vars
 class AddPostVC: BaseController , PHPickerViewControllerDelegate {
+    enum VerifyType {
+        case add
+        case edit
+    }
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var gallaryCollection: UICollectionView!
     @IBOutlet weak var vedioView: UIView!
@@ -23,6 +27,8 @@ class AddPostVC: BaseController , PHPickerViewControllerDelegate {
     var coordinator: AddPostCoordinator?
     var files: [AddPostModel] = []
     var picker: GalleryPickerHelper?
+    var postdata: PostdetailsModel?
+    var type: VerifyType = .add
  }
 
 // MARK: - ...  LifeCycle
@@ -71,17 +77,24 @@ extension AddPostVC {
         gallaryCollection.skeleton()
         picker = .init()
         picker?.onPickImageURL = { [self] url in
-            self.files.append(AddPostModel(url: "", type: "backgrounds", path: url?.absoluteString ?? ""))
+            self.files.append(AddPostModel(id: 0, url: "", type: "backgrounds", path: url?.absoluteString ?? ""))
             self.gallaryCollection.reloadData()
                     
         }
         picker?.onPickImage = { [self] image in
         }
-        
         userImg.setImage(url: UD.user?.data?.user?.photo ?? "")
         userLbl.text = UD.user?.data?.user?.name ?? ""
         desTxf.delegate = self
         desTxf.textColor = R.color.gray1()
+        if type == .edit {
+            desTxf.text = postdata?.data?.description ?? ""
+            viewModel?.postId.send(postdata?.data?.id ?? 0)
+            for index in postdata?.data?.files ?? [] {
+                self.files.append(AddPostModel(id: index.id ?? 0 , url: index.value ?? "" , type: index.type ?? ""  , path: ""))
+            }
+            desTxf.textColor = R.color.black()
+        }
         gallayView.publisherGesture.listen(on: {[weak self] _ in
             self?.picker?.pick(in: self)
         }).store(self)
@@ -98,8 +111,19 @@ extension AddPostVC {
             if error == "" {
                 self?.startLoading()
                 self?.viewModel?.des.send(self?.desTxf.text ?? "")
-                self?.viewModel?.files.send(self?.files ?? [])
-                self?.viewModel?.addpost()
+                if self?.type == .add {
+                    self?.viewModel?.files.send(self?.files ?? [])
+                    self?.viewModel?.addpost()
+                }else {
+                    var editfiles: [AddPostModel] = []
+                    for index in self?.files ?? []{
+                        if index.url == "" {
+                            editfiles.append(index)
+                        }
+                    }
+                    self?.viewModel?.files.send(editfiles)
+                    self?.viewModel?.addpost()
+                }
             }else {
                 self?.didError(error: error)
             }
@@ -127,7 +151,7 @@ extension AddPostVC {
             for result in results {
                 result.itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { (url, error) in
                     if let videoURL = url {
-                        self.files.append(AddPostModel(url: "", type: "videos", path: videoURL.absoluteString))
+                        self.files.append(AddPostModel(id: 0,url: "", type: "videos", path: videoURL.absoluteString))
                         self.gallaryCollection.reloadData()
                         print("Selected video URL: \(videoURL)")
                         // Handle the selected video URL here (e.g., play or upload).
@@ -171,6 +195,7 @@ extension AddPostVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
             var cell = collectionView.cell(type: ImagesCollectionViewCell.self, indexPath)
             cell.model = files[safe: indexPath.row]
             cell.setupaddpost()
+            cell.delegate = self
             return cell
         }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -179,3 +204,12 @@ extension AddPostVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
     }
    
   }
+
+extension AddPostVC : ImagesCollectionViewCellDelegate{
+    func delete(wasPressedOnCell cell: ImagesCollectionViewCell, index: Int) {
+        if files[index].id == 0 {
+            files.remove(at: index)
+            gallaryCollection.reloadData()
+        }
+    }
+}

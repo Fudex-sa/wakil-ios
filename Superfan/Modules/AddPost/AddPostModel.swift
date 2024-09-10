@@ -12,5 +12,6 @@ import UIKit
 // MARK: - ...  Entity
 
 struct AddPostModel: Codable {
+    let id: Int
     let url, type, path: String
 }

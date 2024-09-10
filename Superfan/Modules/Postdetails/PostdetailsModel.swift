@@ -14,3 +14,6 @@ struct PostdetailsModel: Codable {
     let message: String?
     let data: PostsDatum?
 }
+struct DeletePost: Codable {
+    var message: String?
+}
