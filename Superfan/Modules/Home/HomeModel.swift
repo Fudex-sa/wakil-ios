@@ -85,8 +85,10 @@ struct PostsDatum: Codable {
     let type: String?
     let title, description, date: String?
     let files: [File]?
+    var is_liked: Int?
     let backgroundImg: String?
-    let likersCount, commentersCount: Int?
+    var likersCount: Int?
+    var commentersCount: Int?
 }
 
 // MARK: - File

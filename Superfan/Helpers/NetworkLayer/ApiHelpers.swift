@@ -11,8 +11,12 @@ extension BaseNetworkManager {
         return url
     }
     func safeUrl(url: String) -> String {
-        let safeURL = url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
-        return safeURL
+        if url == "" {
+            return url
+        }else {
+            let safeURL = url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+            return safeURL
+        }
     }
     func queryString(method: String) -> String {
         var genericUrl: String = method

@@ -47,7 +47,7 @@
                                             <constraint firstAttribute="width" constant="20" id="zHn-pm-zaV"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" backgroundImage="close 2"/>
+                                        <state key="normal" image="close 2"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -46,6 +46,14 @@ extension MypostsVC {
         viewModel?.requestFinished.listen(on: { [weak self] value in
             self?.reload()
         })
+        viewModel?.likedata.listen(on: { [weak self] value in
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.likedata.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+            self?.stopLoading()
+        })
        
     }
 }
@@ -133,5 +141,18 @@ extension MypostsVC:UITableViewDelegate , UITableViewDataSource {
 extension MypostsVC : PostsTableViewCellDelegate{
     func clubdetails(wasPressedOnCell cell: PostsTableViewCell, clubId: Int) {
         coordinator?.detailsclub(id: clubId)
+    }
+    func favoraite(wasPressedOnCell cell: PostsTableViewCell, model: PostsDatum) {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+        }else {
+            startLoading()
+            viewModel?.postId.send(model.id ?? 0)
+            if model.is_liked == 1 {
+                viewModel?.unlikepost()
+            }else {
+                viewModel?.likepost()
+            }
+        }
     }
 }

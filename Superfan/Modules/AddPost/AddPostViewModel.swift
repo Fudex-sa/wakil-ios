@@ -12,9 +12,12 @@ import UIKit
 // MARK: - ...  ViewModel
 class AddPostViewModel: BaseViewModel {
     var postId: Publisher<Int> = .init()
+    var mediaId: Publisher<Int> = .init()
     var des: Publisher<String> = .init()
     var files: Publisher<[AddPostModel]> = .init()
     var addpostdata: Publisher<UserRoot> = .init()
+    var deletedata: Publisher<DeletePost> = .init()
+
 }
 // MARK: - ...  ViewModel Contract
 extension AddPostViewModel {
@@ -55,5 +58,12 @@ extension AddPostViewModel {
         }).store(self)
         
     }
-   
+    func deletemedia() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.deletemedia.rawValue)/\(mediaId.value ?? 0)/delete", type: .post, DeletePost.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.deletedata.send(model)
+        }).store(self)
+    }
 }

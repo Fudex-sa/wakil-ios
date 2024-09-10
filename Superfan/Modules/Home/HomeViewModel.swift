@@ -12,6 +12,7 @@ import Foundation
 class HomeViewModel: BaseViewModel , DataSourceViewModel{
     var countryId: Publisher<Int> = .init()
     var clubId: Publisher<Int> = .init()
+    var postId: Publisher<Int> = .init()
     var items: Publisher<[NewsModelData]> = .init()
     var events: Publisher<[PostsDatum]> = .init()
     var posts: Publisher<[PostsDatum]> = .init()
@@ -23,6 +24,7 @@ class HomeViewModel: BaseViewModel , DataSourceViewModel{
     var newsfinish: Publisher<Bool> = .init()
     var postsfinish: Publisher<Bool> = .init()
     var eventsfinish: Publisher<Bool> = .init()
+    var likedata: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -98,5 +100,22 @@ extension HomeViewModel {
             self?.paginator(respnod: model.data)
             self?.postsfinish.send(true)
         }).store(self)
+    }
+    func likepost() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/like", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.likedata.send(model)
+        }).store(self)
+    }
+    func unlikepost() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/disLike", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.likedata.send(model)
+        }).store(self)
+       
     }
 }

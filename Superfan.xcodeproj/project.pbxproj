@@ -4099,7 +4099,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4107,7 +4107,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4183,7 +4183,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4193,7 +4193,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4273,7 +4273,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4281,7 +4281,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4356,7 +4356,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4364,7 +4364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -99,6 +99,14 @@ extension HomeVC {
         viewModel?.postsfinish.listen(on: { [weak self] value in
             self?.reloadposts()
         })
+        viewModel?.likedata.listen(on: { [weak self] value in
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.likedata.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+            self?.stopLoading()
+        })
     }
 }
 // MARK: - ...  Functions
@@ -564,6 +572,19 @@ extension HomeVC : NextmatchesCollectionViewCellDelegate{
 extension HomeVC : PostsTableViewCellDelegate{
     func clubdetails(wasPressedOnCell cell: PostsTableViewCell, clubId: Int) {
         coordinator?.detailsclub(id: clubId)
+    }
+    func favoraite(wasPressedOnCell cell: PostsTableViewCell, model: PostsDatum) {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+        }else {
+            startLoading()
+            viewModel?.postId.send(model.id ?? 0)
+            if model.is_liked == 1 {
+                viewModel?.unlikepost()
+            }else {
+                viewModel?.likepost()
+            }
+        }
     }
 }
 extension HomeVC : NewsTableViewCellDelegate{

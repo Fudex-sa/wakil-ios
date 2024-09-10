@@ -10,7 +10,9 @@ import Foundation
 
 // MARK: - ...  ViewModel
 class MypostsViewModel: BaseViewModel , DataSourceViewModel{
+    var postId: Publisher<Int> = .init()
     var items: Publisher<[PostsDatum]> = .init()
+    var likedata: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension MypostsViewModel {
@@ -26,5 +28,22 @@ extension MypostsViewModel {
             self?.paginator(respnod: model.data)
             self?.publisher()
         }).store(self)
+    }
+    func likepost() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/like", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.likedata.send(model)
+        }).store(self)
+    }
+    func unlikepost() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/disLike", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.likedata.send(model)
+        }).store(self)
+       
     }
 }

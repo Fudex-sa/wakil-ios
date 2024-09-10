@@ -96,7 +96,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfy-n5-Cfr">
-                                <rect key="frame" x="11.999999999999998" y="88.333333333333329" width="26.333333333333329" height="12"/>
+                                <rect key="frame" x="11.999999999999998" y="256.33333333333331" width="26.333333333333329" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" name="gray1"/>
                                 <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKG-KS-XYK">
-                                <rect key="frame" x="50.333333333333336" y="88.333333333333329" width="26.333333333333336" height="12"/>
+                                <rect key="frame" x="50.333333333333336" y="256.33333333333331" width="26.333333333333336" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" name="gray1"/>
                                 <nil key="highlightedColor"/>
@@ -113,10 +113,10 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m10"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zXV-RH-rdm">
-                                <rect key="frame" x="12" y="108.33333333333331" width="506" height="160"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXV-RH-rdm">
+                                <rect key="frame" x="12" y="88.333333333333314" width="506" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="vsu-JU-nU1"/>
+                                    <constraint firstAttribute="height" constant="160" id="B9R-mi-egD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -237,22 +237,22 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mt7-PK-XvO" firstAttribute="top" secondItem="zXV-RH-rdm" secondAttribute="bottom" constant="11" id="1HL-pg-amz"/>
                             <constraint firstItem="Hx4-OH-F4i" firstAttribute="leading" secondItem="ppE-B9-CAK" secondAttribute="leading" constant="12" id="20n-l7-cWd"/>
+                            <constraint firstItem="zXV-RH-rdm" firstAttribute="leading" secondItem="ppE-B9-CAK" secondAttribute="leading" constant="12" id="D3V-yu-7Zj"/>
                             <constraint firstItem="Hx4-OH-F4i" firstAttribute="top" secondItem="HCL-UC-ewQ" secondAttribute="bottom" constant="12" id="ESQ-oX-K71"/>
-                            <constraint firstItem="zXV-RH-rdm" firstAttribute="top" secondItem="Zfy-n5-Cfr" secondAttribute="bottom" constant="8" id="Ph6-bN-LSK"/>
+                            <constraint firstItem="mt7-PK-XvO" firstAttribute="top" secondItem="Zfy-n5-Cfr" secondAttribute="bottom" constant="11" id="IPz-hY-AGQ"/>
                             <constraint firstAttribute="trailing" secondItem="Hx4-OH-F4i" secondAttribute="trailing" constant="12" id="QT2-8n-inQ"/>
                             <constraint firstAttribute="trailing" secondItem="HCL-UC-ewQ" secondAttribute="trailing" id="RoF-LF-y71"/>
                             <constraint firstItem="HCL-UC-ewQ" firstAttribute="leading" secondItem="ppE-B9-CAK" secondAttribute="leading" constant="12" id="SpM-xa-Skz"/>
-                            <constraint firstAttribute="bottom" secondItem="mt7-PK-XvO" secondAttribute="bottom" constant="14.67" id="UnS-1l-TxP"/>
+                            <constraint firstAttribute="bottom" secondItem="mt7-PK-XvO" secondAttribute="bottom" constant="14.67" id="Wya-su-6Jt"/>
                             <constraint firstItem="eKG-KS-XYK" firstAttribute="centerY" secondItem="Zfy-n5-Cfr" secondAttribute="centerY" id="Z52-Ns-5Lz"/>
                             <constraint firstItem="HCL-UC-ewQ" firstAttribute="top" secondItem="ppE-B9-CAK" secondAttribute="top" constant="12" id="ZEF-Jz-Q6D"/>
-                            <constraint firstAttribute="trailing" secondItem="zXV-RH-rdm" secondAttribute="trailing" constant="12" id="b3K-U6-8Vt"/>
                             <constraint firstItem="Zfy-n5-Cfr" firstAttribute="leading" secondItem="ppE-B9-CAK" secondAttribute="leading" constant="12" id="bcP-I7-2Pd"/>
-                            <constraint firstItem="Zfy-n5-Cfr" firstAttribute="top" secondItem="Hx4-OH-F4i" secondAttribute="bottom" constant="10" id="chK-Er-Fnl"/>
                             <constraint firstItem="mt7-PK-XvO" firstAttribute="leading" secondItem="ppE-B9-CAK" secondAttribute="leading" constant="12" id="gOd-gR-5iX"/>
-                            <constraint firstItem="zXV-RH-rdm" firstAttribute="leading" secondItem="ppE-B9-CAK" secondAttribute="leading" constant="12" id="mjK-1u-yuP"/>
+                            <constraint firstAttribute="trailing" secondItem="zXV-RH-rdm" secondAttribute="trailing" constant="12" id="gVT-oH-uaB"/>
+                            <constraint firstItem="Zfy-n5-Cfr" firstAttribute="top" secondItem="zXV-RH-rdm" secondAttribute="bottom" constant="8" id="n8o-4s-wc3"/>
                             <constraint firstAttribute="trailing" secondItem="mt7-PK-XvO" secondAttribute="trailing" constant="12" id="wlD-2s-UZO"/>
+                            <constraint firstItem="zXV-RH-rdm" firstAttribute="top" secondItem="Hx4-OH-F4i" secondAttribute="bottom" constant="10" id="x4o-6i-kUs"/>
                             <constraint firstItem="eKG-KS-XYK" firstAttribute="leading" secondItem="Zfy-n5-Cfr" secondAttribute="trailing" constant="12" id="ygc-X4-QEV"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -289,7 +289,8 @@
                 <outlet property="clubLbl" destination="Pqd-Zr-tNw" id="aK2-9U-b7S"/>
                 <outlet property="commentLbl" destination="eKG-KS-XYK" id="jMb-TX-aq8"/>
                 <outlet property="commentView" destination="bcA-vF-AMW" id="ozi-Lv-HV2"/>
-                <outlet property="imageHight" destination="vsu-JU-nU1" id="tdg-eK-96o"/>
+                <outlet property="favImg" destination="np4-Wt-jjD" id="OYi-Ym-1nb"/>
+                <outlet property="imageHight" destination="B9R-mi-egD" id="VVJ-TU-kkR"/>
                 <outlet property="likeLbl" destination="Zfy-n5-Cfr" id="2uA-Xw-hP3"/>
                 <outlet property="likeView" destination="fjV-dW-00y" id="I5y-UB-gVn"/>
                 <outlet property="postImg" destination="zXV-RH-rdm" id="5Fd-WW-N0B"/>

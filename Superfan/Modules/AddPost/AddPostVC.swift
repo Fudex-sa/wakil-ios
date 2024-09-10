@@ -29,6 +29,7 @@ class AddPostVC: BaseController , PHPickerViewControllerDelegate {
     var picker: GalleryPickerHelper?
     var postdata: PostdetailsModel?
     var type: VerifyType = .add
+    var path = 0
  }
 
 // MARK: - ...  LifeCycle
@@ -65,7 +66,16 @@ extension AddPostVC {
             self?.stopLoading()
             self?.navigationController?.popViewController(animated: true)
         })
-       
+        viewModel?.deletedata.listen(on: { [weak self] value in
+            self?.files.remove(at: self?.path ?? 0)
+            self?.gallaryCollection.reloadData()
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.deletedata.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+            self?.stopLoading()
+        })
     }
 }
 // MARK: - ...  Functions
@@ -122,7 +132,7 @@ extension AddPostVC {
                         }
                     }
                     self?.viewModel?.files.send(editfiles)
-                    self?.viewModel?.addpost()
+                    self?.viewModel?.editpost()
                 }
             }else {
                 self?.didError(error: error)
@@ -186,7 +196,7 @@ extension AddPostVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 60 , height: 60)
+        return .init(width: 60 , height: collectionView.frame.height)
        }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           return files.count
@@ -210,6 +220,11 @@ extension AddPostVC : ImagesCollectionViewCellDelegate{
         if files[index].id == 0 {
             files.remove(at: index)
             gallaryCollection.reloadData()
+        }else {
+            path = index
+            startLoading()
+            viewModel?.mediaId.send(files[index].id)
+            viewModel?.deletemedia()
         }
     }
 }
