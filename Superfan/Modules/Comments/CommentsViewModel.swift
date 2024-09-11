@@ -60,7 +60,7 @@ extension CommentsViewModel {
         }).store(self)
     }
     func likepost() {
-        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/like", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.comments.rawValue)/\(commentId.value ?? 0)/like", type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
@@ -68,7 +68,7 @@ extension CommentsViewModel {
         }).store(self)
     }
     func unlikepost() {
-        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/disLike", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.comments.rawValue)/\(commentId.value ?? 0)/disLike", type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }

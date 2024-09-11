@@ -197,13 +197,13 @@ extension CommentsVC {
             if UD.user == nil {
                 Coordinator.instance.unAuthorized()
             }else {
-//                startLoading()
-//                viewModel?.postId.send(model.id ?? 0)
-//                if model.is_liked == 1 {
-//                    viewModel?.unlikepost()
-//                }else {
-//                    viewModel?.likepost()
-//                }
+                startLoading()
+                viewModel?.commentId.send(model.id ?? 0)
+                if model.isLiked == 1 {
+                    viewModel?.unlikepost()
+                }else {
+                    viewModel?.likepost()
+                }
             }
         }
         func comments(wasPressedOnCell cell: CommentsTableViewCell, model: CommentsDatum) {
