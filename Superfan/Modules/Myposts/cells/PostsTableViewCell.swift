@@ -10,6 +10,7 @@ import UIKit
 protocol PostsTableViewCellDelegate: AnyObject {
     func clubdetails(wasPressedOnCell cell: PostsTableViewCell , clubId : Int)
     func favoraite(wasPressedOnCell cell: PostsTableViewCell , model : PostsDatum)
+    func comments(wasPressedOnCell cell: PostsTableViewCell , model : PostsDatum)
 
 }
 class PostsTableViewCell: BaseTableViewCell {
@@ -69,6 +70,10 @@ class PostsTableViewCell: BaseTableViewCell {
                 self.liked(is: model.is_liked)
                 self.likeLbl.text = "\(model.likersCount ?? 0) \("Interactions".localized)"
             }
+        }).store(self)
+        commentView.publisherGesture.listen(on: {[weak self] _ in
+            guard let self = self else { return }
+            self.delegate?.comments(wasPressedOnCell: self, model: model)
         }).store(self)
     }
     func liked(is like: Int?) {

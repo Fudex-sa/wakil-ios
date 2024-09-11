@@ -71,7 +71,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write what you think ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-Si-lR1">
                                                 <rect key="frame" x="8" y="0.0" width="322" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Write what you think ..."/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m12"/>
@@ -124,9 +124,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="CommentLbl" destination="lyC-ge-B30" id="lNC-bv-JdR"/>
                         <outlet property="commentTxf" destination="q4u-Si-lR1" id="d9s-Dn-cad"/>
                         <outlet property="commentsTbl" destination="e2W-YD-UEo" id="yOA-aa-GS1"/>
                         <outlet property="userImg" destination="SYT-RB-No6" id="P18-L1-nKh"/>
+                        <outlet property="userView" destination="HFI-2C-4sI" id="h1d-fX-kTc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5A-j6-0LU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

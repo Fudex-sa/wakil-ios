@@ -38,6 +38,11 @@ extension HomeCoordinator {
         scene.matchId = id
         view?.push(scene)
     }
+    func comments(id: Int) {
+        guard let scene = R.storyboard.commentsStoryboard.commentsVC() else { return }
+        scene.postId = id
+        view?.push(scene)
+    }
     func detailsclub(id: Int) {
         guard let scene = R.storyboard.clubdetailsStoryboard.clubdetailsVC() else { return }
         scene.clubId = id

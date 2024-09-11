@@ -285,6 +285,9 @@
                 <outlet property="clubLbl" destination="Fes-qG-zwI" id="ybZ-3L-zwP"/>
                 <outlet property="commentLbl" destination="fDM-GH-tg7" id="A2T-vr-dDG"/>
                 <outlet property="commentView" destination="9Ju-5p-uUU" id="feG-lE-EVO"/>
+                <outlet property="deleteBtn" destination="XyM-Ye-xsO" id="lf4-5b-YCG"/>
+                <outlet property="editBtn" destination="Rsj-lm-6Mv" id="O9T-Hm-Yt1"/>
+                <outlet property="favImg" destination="Eeq-QT-O5u" id="0RL-NZ-l46"/>
                 <outlet property="likeLbl" destination="DPO-sR-208" id="iz1-aE-zn5"/>
                 <outlet property="likeView" destination="bgS-Bx-Db2" id="OLX-Io-xo9"/>
                 <outlet property="timeLbl" destination="5Ba-bG-M1H" id="PWJ-xv-Jgg"/>

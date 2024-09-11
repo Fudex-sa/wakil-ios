@@ -155,4 +155,7 @@ extension MypostsVC : PostsTableViewCellDelegate{
             }
         }
     }
+    func comments(wasPressedOnCell cell: PostsTableViewCell, model: PostsDatum) {
+        coordinator?.comments(id: model.id ?? 0)
+    }
 }

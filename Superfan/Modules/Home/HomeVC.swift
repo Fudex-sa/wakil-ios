@@ -586,6 +586,9 @@ extension HomeVC : PostsTableViewCellDelegate{
             }
         }
     }
+    func comments(wasPressedOnCell cell: PostsTableViewCell, model: PostsDatum) {
+        coordinator?.comments(id: model.id ?? 0)
+    }
 }
 extension HomeVC : NewsTableViewCellDelegate{
     func clubdetails(wasPressedOnCell cell: NewsTableViewCell, clubId: Int) {

@@ -32,4 +32,9 @@ extension MypostsCoordinator {
         guard let scene = R.storyboard.addPostStoryboard.addPostVC() else { return }
         view?.push(scene)
     }
+    func comments(id: Int) {
+        guard let scene = R.storyboard.commentsStoryboard.commentsVC() else { return }
+        scene.postId = id
+        view?.push(scene)
+    }
 }
