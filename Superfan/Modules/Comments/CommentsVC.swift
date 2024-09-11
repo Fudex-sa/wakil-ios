@@ -11,12 +11,17 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class CommentsVC: BaseController{
+    enum VerifyType {
+        case add
+        case edit
+        case reply
+    }
     @IBOutlet weak var commentsTbl: UITableView!
     @IBOutlet weak var commentTxf: UITextField!
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var userView: UIView!
     @IBOutlet weak var CommentLbl: UILabel!
-
+    var type: VerifyType = .add
     var viewModel: CommentsViewModel?
     var coordinator: CommentsCoordinator?
     var postId = 0
@@ -65,6 +70,14 @@ extension CommentsVC {
             self?.stopLoading()
         })
         viewModel?.addcommentdata.listen(on: { [weak self] value in
+            self?.commentTxf.text = ""
+            self?.type = .add
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchcomments()
+            self?.stopLoading()
+        })
+        viewModel?.deletedata.listen(on: { [weak self] value in
             self?.commentTxf.text = ""
             self?.viewModel?.resetPaginator()
             self?.viewModel?.clearDataSource()
@@ -118,7 +131,11 @@ extension CommentsVC {
                 }
                 startLoading()
                 viewModel?.comment.send(commentTxf.text ?? "")
-                viewModel?.addcomments()
+                if type == .add {
+                    viewModel?.addcomments()
+                }else if type == .edit {
+                    viewModel?.editomments()
+                }
                 commentTxf.resignFirstResponder()
             }
         }
@@ -194,6 +211,16 @@ extension CommentsVC {
                 Coordinator.instance.unAuthorized()
             }else {
             }
+        }
+        func edit(wasPressedOnCell cell: CommentsTableViewCell, model: CommentsDatum) {
+            viewModel?.commentId.send(model.id ?? 0)
+            commentTxf.text = model.comment ?? ""
+            type = .edit
+        }
+        func delete(wasPressedOnCell cell: CommentsTableViewCell, model: CommentsDatum) {
+            startLoading()
+            viewModel?.commentId.send(model.id ?? 0)
+            viewModel?.deletecomments()
         }
     }
 

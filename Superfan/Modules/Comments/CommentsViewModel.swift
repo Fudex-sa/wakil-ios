@@ -12,8 +12,10 @@ import Foundation
 class CommentsViewModel: BaseViewModel , DataSourceViewModel{
     var comment: Publisher<String> = .init()
     var postId: Publisher<Int> = .init()
+    var commentId: Publisher<Int> = .init()
     var items: Publisher<[CommentsDatum]> = .init()
     var likedata: Publisher<UserRoot> = .init()
+    var deletedata: Publisher<UserRoot> = .init()
     var addcommentdata: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
@@ -38,6 +40,23 @@ extension CommentsViewModel {
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
             self?.addcommentdata.send(model)
+        }).store(self)
+    }
+    func editomments() {
+        NetworkManager.instance.paramaters["comment"] = comment.value ?? ""
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/edit", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.addcommentdata.send(model)
+        }).store(self)
+    }
+    func deletecomments() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/delete", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.deletedata.send(model)
         }).store(self)
     }
     func likepost() {

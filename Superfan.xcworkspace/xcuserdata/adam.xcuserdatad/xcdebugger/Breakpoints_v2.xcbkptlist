@@ -510,8 +510,8 @@
             filePath = "Superfan/Modules/Comments/CommentsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>

@@ -11,7 +11,8 @@ protocol CommentsTableViewCellDelegate: AnyObject {
     func clubdetails(wasPressedOnCell cell: CommentsTableViewCell , clubId : Int)
     func favoraite(wasPressedOnCell cell: CommentsTableViewCell , model : CommentsDatum)
     func comments(wasPressedOnCell cell: CommentsTableViewCell , model : CommentsDatum)
-
+    func edit(wasPressedOnCell cell: CommentsTableViewCell , model : CommentsDatum)
+    func delete(wasPressedOnCell cell: CommentsTableViewCell , model : CommentsDatum)
 }
 class CommentsTableViewCell: BaseTableViewCell {
     @IBOutlet weak var favImg: UIImageView!
@@ -77,6 +78,14 @@ class CommentsTableViewCell: BaseTableViewCell {
         commentView.publisherGesture.listen(on: {[weak self] _ in
             guard let self = self else { return }
             self.delegate?.comments(wasPressedOnCell: self, model: model)
+        }).store(self)
+        editBtn.publisher.listen(on: {[weak self] _ in
+            guard let self = self else { return }
+            self.delegate?.edit(wasPressedOnCell: self, model: model)
+        }).store(self)
+        deleteBtn.publisher.listen(on: {[weak self] _ in
+            guard let self = self else { return }
+            self.delegate?.delete(wasPressedOnCell: self, model: model)
         }).store(self)
     }
     func liked(is like: Int?) {
