@@ -87,6 +87,7 @@ class CommentsTableViewCell: BaseTableViewCell {
             guard let self = self else { return }
             self.delegate?.delete(wasPressedOnCell: self, model: model)
         }).store(self)
+       
     }
     func liked(is like: Int?) {
         if like == 1 {

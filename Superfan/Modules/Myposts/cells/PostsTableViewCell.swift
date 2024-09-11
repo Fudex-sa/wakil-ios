@@ -75,6 +75,9 @@ class PostsTableViewCell: BaseTableViewCell {
             guard let self = self else { return }
             self.delegate?.comments(wasPressedOnCell: self, model: model)
         }).store(self)
+        commentLbl.UIViewAction {
+            self.delegate?.comments(wasPressedOnCell: self, model: model)
+        }
     }
     func liked(is like: Int?) {
         if like == 1 {
