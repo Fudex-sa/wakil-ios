@@ -18,5 +18,10 @@ class CommentsCoordinator: Coordinator {
 }
 
 extension CommentsCoordinator {
-    
+    func comments(id: Int) {
+        guard let scene = R.storyboard.commentsStoryboard.commentsVC() else { return }
+        scene.postId = id
+        scene.type = .reply
+        view?.push(scene)
+    }
 }

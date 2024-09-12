@@ -175,6 +175,9 @@ extension HomeVC {
         clubSelectBtn.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.changeclub()
         }).store(self)
+        notBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.notification()
+        }).store(self)
         MoreMatchLbl.UIViewAction {
             self.coordinator?.morematches()
         }

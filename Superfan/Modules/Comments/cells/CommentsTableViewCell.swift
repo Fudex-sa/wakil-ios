@@ -15,6 +15,9 @@ protocol CommentsTableViewCellDelegate: AnyObject {
     func delete(wasPressedOnCell cell: CommentsTableViewCell , model : CommentsDatum)
 }
 class CommentsTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var topConstant: NSLayoutConstraint!
+    @IBOutlet weak var replyView: UIView!
+    @IBOutlet weak var replyHight: NSLayoutConstraint!
     @IBOutlet weak var favImg: UIImageView!
     @IBOutlet weak var ContainerView: UIView!
     @IBOutlet weak var clubImg: UIImageView!
@@ -28,6 +31,7 @@ class CommentsTableViewCell: BaseTableViewCell {
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var deleteBtn: UIButton!
     var delegate: CommentsTableViewCellDelegate?
+    var isreply = false
     override func setup() {
         skeleton(view: contentView)
         super.setup()
@@ -47,6 +51,19 @@ class CommentsTableViewCell: BaseTableViewCell {
                 editBtn.isHidden = true
                 deleteBtn.isHidden = true
             }
+        }
+        if isreply {
+            replyHight.constant = 0
+            topConstant.constant = 0
+            replyView.isHidden = true
+            commentLbl.isHidden = true
+            likeLbl.isHidden = true
+        }else {
+            topConstant.constant = 13
+            replyView.isHidden = false
+            replyHight.constant = 50
+            commentLbl.isHidden = false
+            likeLbl.isHidden = false
         }
         clubImg.UIViewAction {
 //            if model.user?.type ?? "" != "3" && model.user?.type ?? "" != "4" {
@@ -87,6 +104,9 @@ class CommentsTableViewCell: BaseTableViewCell {
             guard let self = self else { return }
             self.delegate?.delete(wasPressedOnCell: self, model: model)
         }).store(self)
+        commentLbl.UIViewAction {
+            self.delegate?.comments(wasPressedOnCell: self, model: model)
+        }
        
     }
     func liked(is like: Int?) {

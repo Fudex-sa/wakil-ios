@@ -11,7 +11,7 @@
         <!--MainVC-->
         <scene sceneID="zyN-1w-rcZ">
             <objects>
-                <tabBarController storyboardIdentifier="MainVC" id="hS0-dM-Mug" customClass="MainVC" customModule="Tifo" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainVC" id="hS0-dM-Mug" customClass="MainVC" customModule="Superfan" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DMq-9i-yHa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="51" y="-138"/>
         </scene>
-        <!--NotificationStoryboard-->
+        <!--BackstageStoryboard-->
         <scene sceneID="tmC-1H-H4c">
             <objects>
-                <viewControllerPlaceholder storyboardName="NotificationStoryboard" id="eOT-Ii-uCH" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="BackstageStoryboard" id="eOT-Ii-uCH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My profile" image="carbon_user-avatar" id="0mF-Fz-nDK">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="My profile"/>

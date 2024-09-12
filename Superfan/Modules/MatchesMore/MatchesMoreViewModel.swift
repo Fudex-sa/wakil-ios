@@ -22,7 +22,7 @@ extension MatchesMoreViewModel {
         if UD.club?.id ?? 0 != 0 {
             NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
         }
-        NetworkManager.instance.request(NetworkConfigration.EndPoint.todaymatxh.rawValue, type: .get, MatchsModel.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.nextmatches.rawValue, type: .get, MatchsModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }

@@ -71,7 +71,11 @@ extension CommentsVC {
         })
         viewModel?.addcommentdata.listen(on: { [weak self] value in
             self?.commentTxf.text = ""
-            self?.type = .add
+            if self?.viewModel?.type.value ?? "" == "reply" {
+                self?.type = .reply
+            }else {
+                self?.type = .add
+            }
             self?.viewModel?.resetPaginator()
             self?.viewModel?.clearDataSource()
             self?.viewModel?.fetchcomments()
@@ -91,6 +95,9 @@ extension CommentsVC {
     // MARK: - ...  Functions
     extension CommentsVC {
         func setup() {
+            if type == .reply {
+                viewModel?.type.send("reply")
+            }
             commentsTbl.delegate = self
             commentsTbl.dataSource = self
             commentsTbl.observe()
@@ -131,7 +138,7 @@ extension CommentsVC {
                 }
                 startLoading()
                 viewModel?.comment.send(commentTxf.text ?? "")
-                if type == .add {
+                if type == .add || type == .reply {
                     viewModel?.addcomments()
                 }else if type == .edit {
                     viewModel?.editomments()
@@ -176,6 +183,11 @@ extension CommentsVC {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             var cell = tableView.cell(type: CommentsTableViewCell.self, indexPath)
             cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+            if type == .reply {
+                cell.isreply = true
+            }else {
+                cell.isreply = false
+            }
             cell.setup()
             cell.delegate = self
             return cell
@@ -210,6 +222,7 @@ extension CommentsVC {
             if UD.user == nil {
                 Coordinator.instance.unAuthorized()
             }else {
+                coordinator?.comments(id: model.id ?? 0)
             }
         }
         func edit(wasPressedOnCell cell: CommentsTableViewCell, model: CommentsDatum) {

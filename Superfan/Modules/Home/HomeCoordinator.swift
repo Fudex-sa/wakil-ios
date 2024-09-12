@@ -24,6 +24,14 @@ extension HomeCoordinator {
         guard let scene = R.storyboard.newsStoryboard.newsVC() else { return }
         view?.push(scene)
     }
+    func notification() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            return
+        }
+        guard let scene = R.storyboard.notificationStoryboard.notificationVC() else { return }
+        view?.push(scene)
+    }
     func morematches() {
         guard let scene = R.storyboard.matchesMoreStoryboard.matchesMoreVC() else { return }
         view?.push(scene)

@@ -11,6 +11,7 @@ import Foundation
 // MARK: - ...  ViewModel
 class CommentsViewModel: BaseViewModel , DataSourceViewModel{
     var comment: Publisher<String> = .init()
+    var type: Publisher<String> = .init()
     var postId: Publisher<Int> = .init()
     var commentId: Publisher<Int> = .init()
     var items: Publisher<[CommentsDatum]> = .init()
@@ -24,7 +25,13 @@ extension CommentsViewModel {
 // MARK: - ...  Example of network response
 extension CommentsViewModel {
     func fetchcomments() {
-        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments", type: .get, CommentsModel.self)?.response(error: { [weak self] error in
+        var method = ""
+        if type.value ?? "" == "reply"{
+           method = "\(NetworkConfigration.EndPoint.comments.rawValue)/\(postId.value ?? 0)/comments"
+        }else {
+            method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments"
+        }
+        NetworkManager.instance.request(method, type: .get, CommentsModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
@@ -35,7 +42,13 @@ extension CommentsViewModel {
     }
     func addcomments() {
         NetworkManager.instance.paramaters["comment"] = comment.value ?? ""
-        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comment", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        var method = ""
+        if type.value ?? "" == "reply"{
+           method = "\(NetworkConfigration.EndPoint.comments.rawValue)/\(postId.value ?? 0)/comment"
+        }else {
+            method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comment"
+        }
+        NetworkManager.instance.request(method, type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }

@@ -86,6 +86,11 @@
 		66429C722C7B72AD00CA6B72 /* DeleteaccountpopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6D2C7B72AD00CA6B72 /* DeleteaccountpopupVC.swift */; };
 		66429C732C7B72AE00CA6B72 /* DeleteaccountpopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */; };
 		66429C742C7B72AE00CA6B72 /* DeleteaccountpopupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66429C6F2C7B72AD00CA6B72 /* DeleteaccountpopupCoordinator.swift */; };
+		6643CF952C92E9FB00143A20 /* BackstageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6643CF912C92E9FB00143A20 /* BackstageStoryboard.storyboard */; };
+		6643CF962C92E9FB00143A20 /* BackstageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6643CF902C92E9FB00143A20 /* BackstageCoordinator.swift */; };
+		6643CF972C92E9FB00143A20 /* BackstageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6643CF922C92E9FB00143A20 /* BackstageModel.swift */; };
+		6643CF982C92E9FB00143A20 /* BackstageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6643CF932C92E9FB00143A20 /* BackstageVC.swift */; };
+		6643CF992C92E9FB00143A20 /* BackstageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6643CF942C92E9FB00143A20 /* BackstageViewModel.swift */; };
 		6646125F2C4D25E000D3D7DD /* Splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646125E2C4D25E000D3D7DD /* Splashscreen.swift */; };
 		664D910D2C847462006442BA /* MypostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D91082C847462006442BA /* MypostsCoordinator.swift */; };
 		664D910E2C847462006442BA /* MypostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D910A2C847462006442BA /* MypostsModel.swift */; };
@@ -718,6 +723,11 @@
 		66429C6D2C7B72AD00CA6B72 /* DeleteaccountpopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupVC.swift; sourceTree = "<group>"; };
 		66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupViewModel.swift; sourceTree = "<group>"; };
 		66429C6F2C7B72AD00CA6B72 /* DeleteaccountpopupCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteaccountpopupCoordinator.swift; sourceTree = "<group>"; };
+		6643CF902C92E9FB00143A20 /* BackstageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackstageCoordinator.swift; sourceTree = "<group>"; };
+		6643CF912C92E9FB00143A20 /* BackstageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BackstageStoryboard.storyboard; sourceTree = "<group>"; };
+		6643CF922C92E9FB00143A20 /* BackstageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackstageModel.swift; sourceTree = "<group>"; };
+		6643CF932C92E9FB00143A20 /* BackstageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackstageVC.swift; sourceTree = "<group>"; };
+		6643CF942C92E9FB00143A20 /* BackstageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackstageViewModel.swift; sourceTree = "<group>"; };
 		6646125E2C4D25E000D3D7DD /* Splashscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splashscreen.swift; sourceTree = "<group>"; };
 		664D91082C847462006442BA /* MypostsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypostsCoordinator.swift; sourceTree = "<group>"; };
 		664D91092C847462006442BA /* MypostsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypostsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -1510,6 +1520,18 @@
 				66429C6E2C7B72AD00CA6B72 /* DeleteaccountpopupViewModel.swift */,
 			);
 			path = Deleteaccount;
+			sourceTree = "<group>";
+		};
+		6643CF8F2C92E9E900143A20 /* Backstage */ = {
+			isa = PBXGroup;
+			children = (
+				6643CF902C92E9FB00143A20 /* BackstageCoordinator.swift */,
+				6643CF912C92E9FB00143A20 /* BackstageStoryboard.storyboard */,
+				6643CF922C92E9FB00143A20 /* BackstageModel.swift */,
+				6643CF932C92E9FB00143A20 /* BackstageVC.swift */,
+				6643CF942C92E9FB00143A20 /* BackstageViewModel.swift */,
+			);
+			path = Backstage;
 			sourceTree = "<group>";
 		};
 		664D91072C847447006442BA /* Myposts */ = {
@@ -3011,6 +3033,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6643CF8F2C92E9E900143A20 /* Backstage */,
 				66FEA97A2C84873E007806CD /* AddPost */,
 				6629FD1D2C84826F0034D837 /* Postdetails */,
 				664D91072C847447006442BA /* Myposts */,
@@ -3363,6 +3386,7 @@
 				C86BF981266947F0002D87BC /* MessageView.xib in Resources */,
 				C871C72C272FEB7C00DCBD2D /* Muli-Bold.ttf in Resources */,
 				C86BF99F266947F0002D87BC /* infoIcon.png in Resources */,
+				6643CF952C92E9FB00143A20 /* BackstageStoryboard.storyboard in Resources */,
 				669902212C74904700A0D4C5 /* TableTableViewCell.xib in Resources */,
 				66A316CE2C71EEAC00057235 /* ClubdetailsStoryboard.storyboard in Resources */,
 				66FEA9802C84875A007806CD /* AddPostStoryboard.storyboard in Resources */,
@@ -3594,6 +3618,10 @@
 				66A316B52C71EE5C00057235 /* MatchesMoreModel.swift in Sources */,
 				66A316B62C71EE5C00057235 /* MatchesMoreVC.swift in Sources */,
 				66A316B72C71EE5C00057235 /* MatchesMoreViewModel.swift in Sources */,
+				6643CF962C92E9FB00143A20 /* BackstageCoordinator.swift in Sources */,
+				6643CF972C92E9FB00143A20 /* BackstageModel.swift in Sources */,
+				6643CF982C92E9FB00143A20 /* BackstageVC.swift in Sources */,
+				6643CF992C92E9FB00143A20 /* BackstageViewModel.swift in Sources */,
 				C86A6A42266D240D0030504A /* ValidatorUI.swift in Sources */,
 				C871C99B2730231300DCBD2D /* UICollectionView+CollectionSkeleton.swift in Sources */,
 				C871C97D2730231300DCBD2D /* Recoverable.swift in Sources */,
