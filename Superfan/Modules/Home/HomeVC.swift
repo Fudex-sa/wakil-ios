@@ -85,18 +85,31 @@ extension HomeVC {
         })
         
         viewModel?.eventsfinish.listen(on: { [weak self] value in
+            if self?.type != 0 {
+                return
+            }
             self?.reload()
         })
         viewModel?.matchFinish.listen(on: { [weak self] value in
+            
             self?.reloadmatches()
         })
         viewModel?.matchFinishtab.listen(on: { [weak self] value in
+            if self?.type != 1 {
+                return
+            }
             self?.reloadmatchestabs()
         })
         viewModel?.newsfinish.listen(on: { [weak self] value in
+            if self?.type != 2 {
+                return
+            }
             self?.reloadnews()
         })
         viewModel?.postsfinish.listen(on: { [weak self] value in
+            if self?.type != 3 {
+                return
+            }
             self?.reloadposts()
         })
         viewModel?.likedata.listen(on: { [weak self] value in
@@ -396,9 +409,20 @@ extension HomeVC {
     }
     func closeMenu() {
             isMenuOpen = false
-            if viewModel?.items.value?.count ?? 0 == 0 {
+        if type == 0 {
+            if viewModel?.events.value?.count ?? 0 == 0 {
+                showEmptyScreen(for: 350 , title: "There are no events available".localized)
+            }
+        }else if type == 2 {
+            if viewModel?.events.value?.count ?? 0 == 0 {
                 showEmptyScreen(for: 350 , title: "There are no news available".localized)
             }
+        }else if type == 3 {
+            if viewModel?.posts.value?.count ?? 0 == 0 {
+                showEmptyScreen(for: 350 , title: "There are no posts available".localized)
+            }
+        }
+           
             // Update the leading constraint to animate the side menu closure
             sideMenuLeadingConstraint.constant = -sideMenuWidth
             clubSelectBtn.isUserInteractionEnabled = true
@@ -411,6 +435,7 @@ extension HomeVC {
             coverView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
             tabBarController?.tabBar.tintColor = UIColor(hex: UD.club?.color ?? "")
             setStatusBar(color:  UIColor(hex: UD.club?.color ?? ""))
+            sideMenuViewController?.containerView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
         }
     }
 }

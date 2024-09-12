@@ -10184,7 +10184,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "building", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'building' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.backstageStoryboard().backstageVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'backstageVC' could not be loaded from storyboard 'BackstageStoryboard' as 'BackstageVC'.") }
       }

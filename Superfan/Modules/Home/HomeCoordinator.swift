@@ -42,6 +42,9 @@ extension HomeCoordinator {
         view?.push(scene)
     }
     func detailsmatchs(id: Int) {
+        if id == 0 {
+            return
+        }
         guard let scene = R.storyboard.matchdetailsStoryboard.matchdetailsVC() else { return }
         scene.matchId = id
         view?.push(scene)

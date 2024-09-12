@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,38 +16,10 @@
                     <view key="view" contentMode="scaleToFill" id="1ed-K5-ecp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaP-o5-Uzm">
-                                <rect key="frame" x="16" y="107" width="382" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="Darkerblack"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Notification"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WOz-vS-0i5">
-                                <rect key="frame" x="28" y="178" width="358" height="585"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ios-td-U5T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Ios-td-U5T" firstAttribute="bottom" secondItem="WOz-vS-0i5" secondAttribute="bottom" constant="50" id="35M-ZY-fdn"/>
-                            <constraint firstItem="GaP-o5-Uzm" firstAttribute="top" secondItem="Ios-td-U5T" secondAttribute="top" constant="15" id="AEB-HD-FrA"/>
-                            <constraint firstItem="GaP-o5-Uzm" firstAttribute="leading" secondItem="Ios-td-U5T" secondAttribute="leading" constant="16" id="KOV-MP-CZQ"/>
-                            <constraint firstItem="Ios-td-U5T" firstAttribute="trailing" secondItem="WOz-vS-0i5" secondAttribute="trailing" constant="28" id="WHt-sP-hXw"/>
-                            <constraint firstItem="WOz-vS-0i5" firstAttribute="leading" secondItem="Ios-td-U5T" secondAttribute="leading" constant="28" id="ceS-df-JRz"/>
-                            <constraint firstItem="WOz-vS-0i5" firstAttribute="top" secondItem="GaP-o5-Uzm" secondAttribute="bottom" constant="50" id="dzA-29-c0s"/>
-                            <constraint firstItem="Ios-td-U5T" firstAttribute="trailing" secondItem="GaP-o5-Uzm" secondAttribute="trailing" constant="16" id="ySo-iV-xcy"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c6w-BD-JnZ"/>
-                    <connections>
-                        <outlet property="notTbl" destination="WOz-vS-0i5" id="Ecm-8W-NtQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOF-jI-Bue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,9 +52,6 @@
     </scenes>
     <resources>
         <image name="building" width="24" height="24"/>
-        <namedColor name="Darkerblack">
-            <color red="0.074509803921568626" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
