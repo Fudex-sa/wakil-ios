@@ -87,7 +87,7 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
                 guard let url = URL(string: model.url) else { return }
                 playerItem = .init(url: url)
             }else {
-                playerItem = .init(url: URL(string: model.path)!)
+                playerItem = .init(url: model.uri!)
 
             }
             playerAv = .init(playerItem: playerItem)

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import PhotosUI
 // MARK: - ...  ViewController - Vars
-class AddPostVC: BaseController , PHPickerViewControllerDelegate {
+class AddPostVC: BaseController {
     enum VerifyType {
         case add
         case edit
@@ -87,7 +87,7 @@ extension AddPostVC {
         gallaryCollection.skeleton()
         picker = .init()
         picker?.onPickImageURL = { [self] url in
-            self.files.append(AddPostModel(id: 0, url: "", type: "backgrounds", path: url?.absoluteString ?? ""))
+            self.files.append(AddPostModel(id: 0, url: "", type: "backgrounds", path: url?.absoluteString ?? "",uri: nil))
             self.gallaryCollection.reloadData()
                     
         }
@@ -101,7 +101,7 @@ extension AddPostVC {
             desTxf.text = postdata?.data?.description ?? ""
             viewModel?.postId.send(postdata?.data?.id ?? 0)
             for index in postdata?.data?.files ?? [] {
-                self.files.append(AddPostModel(id: index.id ?? 0 , url: index.value ?? "" , type: index.type ?? ""  , path: ""))
+                self.files.append(AddPostModel(id: index.id ?? 0 , url: index.value ?? "" , type: index.type ?? ""  , path: "",uri: nil))
             }
             desTxf.textColor = R.color.black()
         }
@@ -109,7 +109,11 @@ extension AddPostVC {
             self?.picker?.pick(in: self)
         }).store(self)
         vedioView.publisherGesture.listen(on: {[weak self] _ in
-            self?.selectVideosFromGallery()
+            if self?.authroize(.camera, .photoLibrary) == false {
+                self?.access(.camera, .photoLibrary)
+                return
+            }
+            self?.attachVideo()
         }).store(self)
         sendBtn.publisher.listen(on: {[weak self] _ in
            
@@ -139,38 +143,15 @@ extension AddPostVC {
             }
         }).store(self)
     }
-    func selectVideosFromGallery() {
-        if #available(iOS 14.0, *) {
-            var configuration = PHPickerConfiguration()
-            configuration.filter = .videos // Only videos
-            configuration.selectionLimit = 1 // Limit to 1 video (can be adjusted)
-
-            let picker = PHPickerViewController(configuration: configuration)
-            picker.delegate = self
-            present(picker, animated: true, completion: nil)
-        } else {
-            // Fallback on earlier versions
-        }
-           
-        }
-        
-    @available(iOS 14.0, *)
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            picker.dismiss(animated: true, completion: nil)
-
-            for result in results {
-                result.itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { (url, error) in
-                    if let videoURL = url {
-                        self.files.append(AddPostModel(id: 0,url: "", type: "videos", path: videoURL.absoluteString))
-                        self.gallaryCollection.reloadData()
-                        print("Selected video URL: \(videoURL)")
-                        // Handle the selected video URL here (e.g., play or upload).
-                    } else {
-                        print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                    }
-                }
-            }
-        }
+    func attachVideo() {
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        imagePickerController.mediaTypes = ["public.movie"]
+        imagePickerController.videoExportPreset = AVAssetExportPresetPassthrough
+        present(imagePickerController, animated: true, completion: nil)
+    }
+   
+   
 }
 // MARK: - ...  View Contract
 extension AddPostVC {
@@ -226,5 +207,26 @@ extension AddPostVC : ImagesCollectionViewCellDelegate{
             viewModel?.mediaId.send(files[index].id)
             viewModel?.deletemedia()
         }
+    }
+}
+extension AddPostVC: Permission {
+    internal func reload() {
+        if authroize(.camera, .photoLibrary) {
+            attachVideo()
+        }
+    }
+}
+extension AddPostVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true, completion: {
+            guard let movieUrl = info[.mediaURL] as? URL else { return }
+            self.files.append(AddPostModel(id: 0,url: "", type: "videos", path: movieUrl.lastPathComponent,uri: movieUrl))
+            DispatchQueue.main.async {
+                self.gallaryCollection.reloadData()
+            }
+        })
+       
+        
     }
 }

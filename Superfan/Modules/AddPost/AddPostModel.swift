@@ -14,4 +14,5 @@ import UIKit
 struct AddPostModel: Codable {
     let id: Int
     let url, type, path: String
+    let uri : URL?
 }

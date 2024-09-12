@@ -30,7 +30,12 @@ extension AddPostViewModel {
         var images: [String: URL] = [:]
         for item in files.value ?? [] {
             NetworkManager.instance.paramaters["files[\(index)][type]"] = item.type
-            images["files[\(index)][value]"] = URL(string: item.path)
+            if item.type == "videos" {
+                images["files[\(index)][value]"] = item.uri
+
+            }else {
+                images["files[\(index)][value]"] = URL(string: item.path)
+            }
             index = index + 1
         }
         NetworkManager.instance.uploadFiles(NetworkConfigration.EndPoint.posts.rawValue, type: .post,file: images, UserRoot.self)?.response(error: { [weak self] error in
@@ -47,7 +52,12 @@ extension AddPostViewModel {
         var images: [String: URL] = [:]
         for item in files.value ?? [] {
             NetworkManager.instance.paramaters["files[\(index)][type]"] = item.type
-            images["files[\(index)][value]"] = URL(string: item.path)
+            if item.type == "videos" {
+                images["files[\(index)][value]"] = item.uri
+
+            }else {
+                images["files[\(index)][value]"] = URL(string: item.path)
+            }
             index = index + 1
         }
         NetworkManager.instance.uploadFiles("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)", type: .post,file: images, UserRoot.self)?.response(error: { [weak self] error in
