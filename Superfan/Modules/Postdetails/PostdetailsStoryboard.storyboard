@@ -139,7 +139,7 @@
                                                 <color key="textColor" name="Darkerblack"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>

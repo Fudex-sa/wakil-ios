@@ -16,7 +16,7 @@ class CommentsViewModel: BaseViewModel , DataSourceViewModel{
     var commentId: Publisher<Int> = .init()
     var items: Publisher<[CommentsDatum]> = .init()
     var likedata: Publisher<UserRoot> = .init()
-    var deletedata: Publisher<UserRoot> = .init()
+    var deletedata: Publisher<DeletePost> = .init()
     var addcommentdata: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
@@ -57,7 +57,13 @@ extension CommentsViewModel {
     }
     func editomments() {
         NetworkManager.instance.paramaters["comment"] = comment.value ?? ""
-        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/edit", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        var method = ""
+        if type.value ?? "" == "reply"{
+           method = "\(NetworkConfigration.EndPoint.comments.rawValue)/\(commentId.value ?? 0)/edit"
+        }else {
+            method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/edit"
+        }
+        NetworkManager.instance.request(method, type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
@@ -65,7 +71,13 @@ extension CommentsViewModel {
         }).store(self)
     }
     func deletecomments() {
-        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/delete", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        var method = ""
+        if type.value ?? "" == "reply"{
+           method = "\(NetworkConfigration.EndPoint.comments.rawValue)/\(commentId.value ?? 0)/delete"
+        }else {
+            method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/delete"
+        }
+        NetworkManager.instance.request(method, type: .post, DeletePost.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }

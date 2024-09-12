@@ -90,12 +90,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 33 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 34 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
     /// Storyboard `AddPostStoryboard`.
     static let addPostStoryboard = _R.storyboard.addPostStoryboard()
+    /// Storyboard `BackstageStoryboard`.
+    static let backstageStoryboard = _R.storyboard.backstageStoryboard()
     /// Storyboard `ChangeClubStoryboard`.
     static let changeClubStoryboard = _R.storyboard.changeClubStoryboard()
     /// Storyboard `ChangelanguageStoryboard`.
@@ -170,6 +172,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AddPostStoryboard", bundle: ...)`
     static func addPostStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.addPostStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "BackstageStoryboard", bundle: ...)`
+    static func backstageStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.backstageStoryboard)
     }
     #endif
 
@@ -1550,7 +1559,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 106 images.
+  /// This `R.image` struct is generated, and contains static references to 107 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1624,6 +1633,8 @@ struct R: Rswift.Validatable {
     static let arrowleft1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowleft 1")
     /// Image `arrowleft`.
     static let arrowleft = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowleft")
+    /// Image `building`.
+    static let building = Rswift.ImageResource(bundle: R.hostingBundle, name: "building")
     /// Image `check-box`.
     static let checkBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "check-box")
     /// Image `close 1`.
@@ -2014,6 +2025,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "arrowleft", bundle: ..., traitCollection: ...)`
     static func arrowleft(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.arrowleft, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "building", bundle: ..., traitCollection: ...)`
+    static func building(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.building, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2960,7 +2978,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 343 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 344 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3102,6 +3120,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let areYouSureYouWantToDeleteYourAccountPermanently = Rswift.StringResource(key: "Are you sure you want to delete your account permanently?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Backstage
+      ///
+      /// Locales: ar, en
+      static let backstage = Rswift.StringResource(key: "Backstage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Bluetooth
       ///
       /// Locales: ar, en
@@ -4858,6 +4880,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Are you sure you want to delete your account permanently?", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Backstage
+      ///
+      /// Locales: ar, en
+      static func backstage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Backstage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Backstage"
+        }
+
+        return NSLocalizedString("Backstage", bundle: bundle, comment: "")
       }
 
       /// en translation: Bluetooth
@@ -9977,6 +10014,9 @@ struct _R: Rswift.Validatable {
       try addPostStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try backstageStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try changeClubStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -10123,6 +10163,30 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.addPostStoryboard().addPostVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addPostVC' could not be loaded from storyboard 'AddPostStoryboard' as 'AddPostVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct backstageStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+
+      let backstageVC = StoryboardViewControllerResource<BackstageVC>(identifier: "BackstageVC")
+      let bundle = R.hostingBundle
+      let name = "BackstageStoryboard"
+
+      func backstageVC(_: Void = ()) -> BackstageVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: backstageVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "building", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'building' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.backstageStoryboard().backstageVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'backstageVC' could not be loaded from storyboard 'BackstageStoryboard' as 'BackstageVC'.") }
       }
 
       fileprivate init() {}
@@ -10691,7 +10755,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct notificationStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = NotificationVC
 
       let bundle = R.hostingBundle
       let name = "NotificationStoryboard"
@@ -10702,7 +10766,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "notificationtab1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'notificationtab1' is used in storyboard 'NotificationStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'NotificationStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'NotificationStoryboard', but couldn't be loaded.") }
         }
