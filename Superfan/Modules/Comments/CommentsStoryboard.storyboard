@@ -69,7 +69,7 @@
                                         <rect key="frame" x="36" y="0.0" width="338" height="26"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write what you think ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-Si-lR1">
-                                                <rect key="frame" x="8" y="0.0" width="322" height="26"/>
+                                                <rect key="frame" x="8" y="0.0" width="292" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
@@ -77,13 +77,24 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m12"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB9-10-X0t">
+                                                <rect key="frame" x="300" y="-2" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="WLc-hw-Pik"/>
+                                                    <constraint firstAttribute="width" constant="30" id="Yxn-lW-h2n"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="send"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="lightgray 1"/>
                                         <constraints>
+                                            <constraint firstItem="NB9-10-X0t" firstAttribute="centerY" secondItem="ZL5-yC-g9A" secondAttribute="centerY" id="ACb-W6-jJz"/>
                                             <constraint firstAttribute="bottom" secondItem="q4u-Si-lR1" secondAttribute="bottom" id="N3Z-fb-4U3"/>
                                             <constraint firstItem="q4u-Si-lR1" firstAttribute="leading" secondItem="ZL5-yC-g9A" secondAttribute="leading" constant="8" id="O8r-TJ-cCG"/>
                                             <constraint firstItem="q4u-Si-lR1" firstAttribute="top" secondItem="ZL5-yC-g9A" secondAttribute="top" id="QcT-Ny-6Lv"/>
-                                            <constraint firstAttribute="trailing" secondItem="q4u-Si-lR1" secondAttribute="trailing" constant="8" id="qwM-bF-sgh"/>
+                                            <constraint firstItem="NB9-10-X0t" firstAttribute="leading" secondItem="q4u-Si-lR1" secondAttribute="trailing" id="gad-Tq-fbA"/>
+                                            <constraint firstAttribute="trailing" secondItem="NB9-10-X0t" secondAttribute="trailing" constant="8" id="lot-ag-aHT"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -127,6 +138,7 @@
                         <outlet property="CommentLbl" destination="lyC-ge-B30" id="lNC-bv-JdR"/>
                         <outlet property="commentTxf" destination="q4u-Si-lR1" id="d9s-Dn-cad"/>
                         <outlet property="commentsTbl" destination="e2W-YD-UEo" id="yOA-aa-GS1"/>
+                        <outlet property="sendBtn" destination="NB9-10-X0t" id="5vU-dg-arP"/>
                         <outlet property="userImg" destination="SYT-RB-No6" id="P18-L1-nKh"/>
                         <outlet property="userView" destination="HFI-2C-4sI" id="h1d-fX-kTc"/>
                     </connections>
@@ -138,6 +150,7 @@
     </scenes>
     <resources>
         <image name="arrowleft" width="25" height="25"/>
+        <image name="send" width="14" height="12"/>
         <namedColor name="Darkerblack">
             <color red="0.074509803921568626" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

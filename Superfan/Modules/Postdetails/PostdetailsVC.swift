@@ -41,6 +41,7 @@ extension PostdetailsVC {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+        stopPlayersInVisibleCells()
     }
     override func bind() {
         super.bind()
@@ -63,6 +64,13 @@ extension PostdetailsVC {
         })
        
     }
+    func stopPlayersInVisibleCells() {
+            for cell in sliderCollection.visibleCells {
+                if let myCell = cell as? ImagesCollectionViewCell {
+                    myCell.stopPlayer()
+                }
+            }
+        }
 }
 // MARK: - ...  Functions
 extension PostdetailsVC {
@@ -127,6 +135,7 @@ extension PostdetailsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             var cell = collectionView.cell(type: ImagesCollectionViewCell.self, indexPath)
             cell.model = viewModel?.postdata.value?.data?.files?[safe: indexPath.row]
+            cell.delegate = self
             cell.setuppost()
             return cell
         }
@@ -135,3 +144,21 @@ extension PostdetailsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDat
             return 0
     }
   }
+
+extension PostdetailsVC : ImagesCollectionViewCellDelegate{
+    func delete(wasPressedOnCell cell: ImagesCollectionViewCell, index: Int) {
+        
+    }
+    func play(wasPressedOnCell cell: ImagesCollectionViewCell) {
+        for cell1 in sliderCollection.visibleCells {
+            if let myCell = cell1 as? ImagesCollectionViewCell {
+                if cell == myCell {
+                    cell.playaction()
+                }else {
+                    myCell.playerAv?.pause()
+                    myCell.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
+                }
+            }
+        }
+    }
+}

@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class CommentsVC: BaseController{
+    @IBOutlet weak var sendBtn: UIButton!
     enum VerifyType {
         case add
         case edit
@@ -112,7 +113,10 @@ extension CommentsVC {
                 userView.isHidden = true
                 CommentLbl.isHidden = true
             }
-            commentTxf.returnPublisher.listen(on: {[weak self] _ in
+//            commentTxf.returnPublisher.listen(on: {[weak self] _ in
+//                self?.addcomment()
+//            }).store(self)
+            sendBtn.publisher.listen(on: {[weak self] _ in
                 self?.addcomment()
             }).store(self)
            
@@ -120,7 +124,7 @@ extension CommentsVC {
         func reload(){
             if viewModel?.items.value?.count ?? 0 == 0 {
                 commentsTbl.isHidden = true
-                showEmptyScreen(for: 400 , title: "There are no posts available".localized)
+                showEmptyScreen(for: 400 , title: "There are no comments available".localized)
             }else {
                 commentsTbl.isHidden = false
                 hideEmptyScreen()

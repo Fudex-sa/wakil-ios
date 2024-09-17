@@ -11,6 +11,8 @@ import AVFoundation
 import AVKit
 protocol ImagesCollectionViewCellDelegate: AnyObject {
     func delete(wasPressedOnCell cell: ImagesCollectionViewCell , index : Int)
+    func play(wasPressedOnCell cell: ImagesCollectionViewCell)
+
 }
 class ImagesCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var deleteBtn: UIButton!
@@ -55,6 +57,7 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
             NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         }
         playBtn.publisher.listen { [weak self] in
+            self?.delegate?.play(wasPressedOnCell: self!)
             self?.playaction()
         }.store(self)
     }
@@ -106,7 +109,8 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
             NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         }
         playBtn.publisher.listen { [weak self] in
-            self?.playaction()
+            self?.delegate?.play(wasPressedOnCell: self!)
+           // self?.playaction()
         }.store(self)
         deleteBtn.publisher.listen { [weak self] in
             self?.delegate?.delete(wasPressedOnCell: self!, index: self?.indexPath() ?? 0)
@@ -144,6 +148,11 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
         restartPlay()
         print("Video Finished")
     }
+    func stopPlayer() {
+            if let player = playerAv {
+                player.pause()
+            }
+        }
     func getVideoFromPath(_ path: String) -> URL? {
         let fileManager = FileManager.default
         

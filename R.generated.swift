@@ -1559,7 +1559,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 107 images.
+  /// This `R.image` struct is generated, and contains static references to 108 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1743,6 +1743,8 @@ struct R: Rswift.Validatable {
     static let rectangle7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "rectangle7")
     /// Image `result`.
     static let result = Rswift.ImageResource(bundle: R.hostingBundle, name: "result")
+    /// Image `send`.
+    static let send = Rswift.ImageResource(bundle: R.hostingBundle, name: "send")
     /// Image `setting`.
     static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
     /// Image `subscribe`.
@@ -2410,6 +2412,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "result", bundle: ..., traitCollection: ...)`
     static func result(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.result, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "send", bundle: ..., traitCollection: ...)`
+    static func send(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.send, compatibleWith: traitCollection)
     }
     #endif
 
@@ -10288,6 +10297,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "send", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'send' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "lightgray 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray 1' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }

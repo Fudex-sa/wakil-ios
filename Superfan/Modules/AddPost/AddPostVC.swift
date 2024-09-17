@@ -30,6 +30,7 @@ class AddPostVC: BaseController {
     var postdata: PostdetailsModel?
     var type: VerifyType = .add
     var path = 0
+    var currentlyPlayingCell: ImagesCollectionViewCell?
  }
 
 // MARK: - ...  LifeCycle
@@ -49,6 +50,7 @@ extension AddPostVC {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+        stopPlayersInVisibleCells()
     }
     override func bind() {
         super.bind()
@@ -77,6 +79,13 @@ extension AddPostVC {
             self?.stopLoading()
         })
     }
+    func stopPlayersInVisibleCells() {
+            for cell in gallaryCollection.visibleCells {
+                if let myCell = cell as? ImagesCollectionViewCell {
+                    myCell.stopPlayer()
+                }
+            }
+        }
 }
 // MARK: - ...  Functions
 extension AddPostVC {
@@ -193,6 +202,14 @@ extension AddPostVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
             // No spacing between cells to ensure they are adjacent
             return 8
     }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//            let selectedCell = collectionView.cellForItem(at: indexPath) as! ImagesCollectionViewCell
+//            if let playingCell = currentlyPlayingCell {
+//                playingCell.stopPlayer()
+//            }
+//            selectedCell.playaction()
+//            currentlyPlayingCell = selectedCell
+//        }
    
   }
 
@@ -206,6 +223,18 @@ extension AddPostVC : ImagesCollectionViewCellDelegate{
             startLoading()
             viewModel?.mediaId.send(files[index].id)
             viewModel?.deletemedia()
+        }
+    }
+    func play(wasPressedOnCell cell: ImagesCollectionViewCell) {
+        for cell1 in gallaryCollection.visibleCells {
+            if let myCell = cell1 as? ImagesCollectionViewCell {
+                if cell == myCell {
+                    cell.playaction()
+                }else {
+                    myCell.playerAv?.pause()
+                    myCell.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
+                }
+            }
         }
     }
 }
