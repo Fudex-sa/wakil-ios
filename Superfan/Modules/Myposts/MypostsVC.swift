@@ -15,6 +15,7 @@ class MypostsVC: BaseController {
     @IBOutlet weak var addBtn: UIButton!
     var viewModel: MypostsViewModel?
     var coordinator: MypostsCoordinator?
+    var expandedStates = [Bool]()
 }
 
 // MARK: - ...  LifeCycle
@@ -64,6 +65,7 @@ extension MypostsVC {
         postsTbl.dataSource = self
         postsTbl.observe()
         postsTbl.skeleton()
+        expandedStates.removeAll()
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
         viewModel?.fetchposts()
@@ -82,6 +84,7 @@ extension MypostsVC {
             postsTbl.isHidden = false
             hideEmptyScreen()
         }
+        self.expandedStates.append(contentsOf: [Bool](repeating: false, count: viewModel?.items.value?.count ?? 0))
         postsTbl.reloadData()
         postsTbl.stopSwipeButtom()
 
@@ -124,6 +127,14 @@ extension MypostsVC:UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: PostsTableViewCell.self, indexPath)
         cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+        if expandedStates.count != 0 {
+            let isExpanded = expandedStates[indexPath.item]
+            let text = viewModel?.items.value?[safe: indexPath.row]?.description ?? ""
+            cell.configure(with: text, isExpanded: isExpanded) {
+                self.expandedStates[indexPath.item] = !self.expandedStates[indexPath.item]
+                self.postsTbl.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
         cell.setup()
         cell.delegate = self
         return cell

@@ -176,6 +176,11 @@
 		66A316D32C71F68700057235 /* MatchesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A316D12C71F68700057235 /* MatchesTableViewCell.xib */; };
 		66A7FEF62C7F69BD00CD6889 /* PlayerteamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7FEF42C7F69BD00CD6889 /* PlayerteamTableViewCell.swift */; };
 		66A7FEF72C7F69BD00CD6889 /* PlayerteamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A7FEF52C7F69BD00CD6889 /* PlayerteamTableViewCell.xib */; };
+		66ACF49E2C9C26490016BAAB /* SubscriptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ACF4992C9C26490016BAAB /* SubscriptionsCoordinator.swift */; };
+		66ACF49F2C9C26490016BAAB /* SubscriptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ACF49B2C9C26490016BAAB /* SubscriptionsModel.swift */; };
+		66ACF4A02C9C26490016BAAB /* SubscriptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ACF49C2C9C26490016BAAB /* SubscriptionsVC.swift */; };
+		66ACF4A12C9C26490016BAAB /* SubscriptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ACF49D2C9C26490016BAAB /* SubscriptionsViewModel.swift */; };
+		66ACF4A22C9C26490016BAAB /* SubscriptionsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66ACF49A2C9C26490016BAAB /* SubscriptionsStoryboard.storyboard */; };
 		66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */; };
 		66AEC2D12C43BF9D00BC260E /* AppleDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */; };
 		66AEC2D62C43C49900BC260E /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */; };
@@ -196,6 +201,10 @@
 		66C773CA2C3D639000E872CA /* ChangeClubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C773C62C3D639000E872CA /* ChangeClubVC.swift */; };
 		66C773CB2C3D639000E872CA /* ChangeClubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C773C72C3D639000E872CA /* ChangeClubViewModel.swift */; };
 		66C773CC2C3D639000E872CA /* ChangeClubStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C773C42C3D639000E872CA /* ChangeClubStoryboard.storyboard */; };
+		66D7C4562C9C30F500951029 /* PackagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D7C4542C9C30F500951029 /* PackagesTableViewCell.swift */; };
+		66D7C4572C9C30F500951029 /* PackagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66D7C4552C9C30F500951029 /* PackagesTableViewCell.xib */; };
+		66D7C45A2C9C316200951029 /* FeaturesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D7C4582C9C316200951029 /* FeaturesTableViewCell.swift */; };
+		66D7C45B2C9C316200951029 /* FeaturesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66D7C4592C9C316200951029 /* FeaturesTableViewCell.xib */; };
 		66DB2DE72C3C172B00BE155C /* ClubCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DB2DE62C3C172B00BE155C /* ClubCollectionViewCell.xib */; };
 		66DB2DE82C3C172B00BE155C /* ClubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DB2DE52C3C172B00BE155C /* ClubCollectionViewCell.swift */; };
 		66DE7D9D2738008700CAD557 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */; };
@@ -813,6 +822,11 @@
 		66A316D12C71F68700057235 /* MatchesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchesTableViewCell.xib; sourceTree = "<group>"; };
 		66A7FEF42C7F69BD00CD6889 /* PlayerteamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerteamTableViewCell.swift; sourceTree = "<group>"; };
 		66A7FEF52C7F69BD00CD6889 /* PlayerteamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerteamTableViewCell.xib; sourceTree = "<group>"; };
+		66ACF4992C9C26490016BAAB /* SubscriptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsCoordinator.swift; sourceTree = "<group>"; };
+		66ACF49A2C9C26490016BAAB /* SubscriptionsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscriptionsStoryboard.storyboard; sourceTree = "<group>"; };
+		66ACF49B2C9C26490016BAAB /* SubscriptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsModel.swift; sourceTree = "<group>"; };
+		66ACF49C2C9C26490016BAAB /* SubscriptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsVC.swift; sourceTree = "<group>"; };
+		66ACF49D2C9C26490016BAAB /* SubscriptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewModel.swift; sourceTree = "<group>"; };
 		66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleModel.swift; sourceTree = "<group>"; };
 		66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleDriver.swift; sourceTree = "<group>"; };
 		66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
@@ -834,6 +848,10 @@
 		66C773C62C3D639000E872CA /* ChangeClubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeClubVC.swift; sourceTree = "<group>"; };
 		66C773C72C3D639000E872CA /* ChangeClubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeClubViewModel.swift; sourceTree = "<group>"; };
 		66CEF1532781A00C0080DD1F /* Superfan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Superfan.entitlements; sourceTree = "<group>"; };
+		66D7C4542C9C30F500951029 /* PackagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableViewCell.swift; sourceTree = "<group>"; };
+		66D7C4552C9C30F500951029 /* PackagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackagesTableViewCell.xib; sourceTree = "<group>"; };
+		66D7C4582C9C316200951029 /* FeaturesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesTableViewCell.swift; sourceTree = "<group>"; };
+		66D7C4592C9C316200951029 /* FeaturesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturesTableViewCell.xib; sourceTree = "<group>"; };
 		66DB2DE52C3C172B00BE155C /* ClubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCollectionViewCell.swift; sourceTree = "<group>"; };
 		66DB2DE62C3C172B00BE155C /* ClubCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubCollectionViewCell.xib; sourceTree = "<group>"; };
 		66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1743,6 +1761,19 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		66ACF4982C9C26020016BAAB /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				66D7C4532C9C309900951029 /* cells */,
+				66ACF4992C9C26490016BAAB /* SubscriptionsCoordinator.swift */,
+				66ACF49A2C9C26490016BAAB /* SubscriptionsStoryboard.storyboard */,
+				66ACF49B2C9C26490016BAAB /* SubscriptionsModel.swift */,
+				66ACF49C2C9C26490016BAAB /* SubscriptionsVC.swift */,
+				66ACF49D2C9C26490016BAAB /* SubscriptionsViewModel.swift */,
+			);
+			path = Subscriptions;
+			sourceTree = "<group>";
+		};
 		66AEC2CD2C43BF7400BC260E /* Apple */ = {
 			isa = PBXGroup;
 			children = (
@@ -1795,6 +1826,17 @@
 				66C773C72C3D639000E872CA /* ChangeClubViewModel.swift */,
 			);
 			path = ChangeClub;
+			sourceTree = "<group>";
+		};
+		66D7C4532C9C309900951029 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				66D7C4542C9C30F500951029 /* PackagesTableViewCell.swift */,
+				66D7C4552C9C30F500951029 /* PackagesTableViewCell.xib */,
+				66D7C4582C9C316200951029 /* FeaturesTableViewCell.swift */,
+				66D7C4592C9C316200951029 /* FeaturesTableViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		66DB2DE02C3C16AC00BE155C /* cells */ = {
@@ -3033,6 +3075,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66ACF4982C9C26020016BAAB /* Subscriptions */,
 				6643CF8F2C92E9E900143A20 /* Backstage */,
 				66FEA97A2C84873E007806CD /* AddPost */,
 				6629FD1D2C84826F0034D837 /* Postdetails */,
@@ -3294,6 +3337,7 @@
 				C871C729272FEB7B00DCBD2D /* SFPRODISPLAYBLACKITALIC.OTF in Resources */,
 				660A62FB2C464A020094B92E /* SelectLocStoryboard.storyboard in Resources */,
 				66DB2DE72C3C172B00BE155C /* ClubCollectionViewCell.xib in Resources */,
+				66D7C45B2C9C316200951029 /* FeaturesTableViewCell.xib in Resources */,
 				C86BF9A5266947F0002D87BC /* warningIcon.png in Resources */,
 				C86BF980266947F0002D87BC /* infoIconSubtle.png in Resources */,
 				C86BF9A1266947F0002D87BC /* CardView.xib in Resources */,
@@ -3322,6 +3366,7 @@
 				664DCB002C3BC2460011DB96 /* Tajawal-Medium.ttf in Resources */,
 				6636D7EF2C3AE3F4007116F7 /* ResetpasswordStoryboard.storyboard in Resources */,
 				66EA91232C3EC3C20027154F /* EditemailStoryboard.storyboard in Resources */,
+				66ACF4A22C9C26490016BAAB /* SubscriptionsStoryboard.storyboard in Resources */,
 				77228EB2275667F8008F11B3 /* CalendarDateRangePickerHeaderView.xib in Resources */,
 				C83A503D272F439B00996984 /* Config.xcconfig in Resources */,
 				66293C102C3D67EC008F3FB8 /* SelectclubTableViewCell.xib in Resources */,
@@ -3362,6 +3407,7 @@
 				C84539AA2729887000004173 /* NeoSansArabic-Regular.ttf in Resources */,
 				C871C732272FEB7C00DCBD2D /* SFPRODISPLAYBOLD.OTF in Resources */,
 				666413292C74946900807309 /* PlayersCollectionViewCell.xib in Resources */,
+				66D7C4572C9C30F500951029 /* PackagesTableViewCell.xib in Resources */,
 				66EA912E2C3EC3EE0027154F /* EditpasswordStoryboard.storyboard in Resources */,
 				6636D7CE2C3AE370007116F7 /* LoginStoryboard.storyboard in Resources */,
 				C871C726272FEB7B00DCBD2D /* Muli-BoldItalic.ttf in Resources */,
@@ -3611,6 +3657,7 @@
 				66EA912F2C3EC3EE0027154F /* EditpasswordCoordinator.swift in Sources */,
 				66EA91302C3EC3EE0027154F /* EditpasswordModel.swift in Sources */,
 				66EA91312C3EC3EE0027154F /* EditpasswordVC.swift in Sources */,
+				66D7C4562C9C30F500951029 /* PackagesTableViewCell.swift in Sources */,
 				66EA91322C3EC3EE0027154F /* EditpasswordViewModel.swift in Sources */,
 				C8F358EA266E669700FEE18B /* NetworkFailScreenContract.swift in Sources */,
 				C84539812729880600004173 /* ExtensionUITableViewCell.swift in Sources */,
@@ -3641,6 +3688,7 @@
 				C86BF9A6266947F0002D87BC /* SwiftMessageFacade.swift in Sources */,
 				C8C9D023266CD56000E66D46 /* Validator.swift in Sources */,
 				C853B95626D7F9450008F09D /* SPPermissionsDialogController.swift in Sources */,
+				66D7C45A2C9C316200951029 /* FeaturesTableViewCell.swift in Sources */,
 				668AA0202C8467A500454F90 /* CommentsTableViewCell.swift in Sources */,
 				C871C9952730231300DCBD2D /* SkeletonCollectionDataSource.swift in Sources */,
 				C86BF97A266947F0002D87BC /* PassthroughView.swift in Sources */,
@@ -3971,6 +4019,10 @@
 				66293C252C3D6E52008F3FB8 /* NewsDetailsVC.swift in Sources */,
 				66A316BF2C71EE8700057235 /* MatchdetailsCoordinator.swift in Sources */,
 				66A316C02C71EE8700057235 /* MatchdetailsModel.swift in Sources */,
+				66ACF49E2C9C26490016BAAB /* SubscriptionsCoordinator.swift in Sources */,
+				66ACF49F2C9C26490016BAAB /* SubscriptionsModel.swift in Sources */,
+				66ACF4A02C9C26490016BAAB /* SubscriptionsVC.swift in Sources */,
+				66ACF4A12C9C26490016BAAB /* SubscriptionsViewModel.swift in Sources */,
 				66A316C12C71EE8700057235 /* MatchdetailsVC.swift in Sources */,
 				66A316C22C71EE8700057235 /* MatchdetailsViewModel.swift in Sources */,
 				66293C262C3D6E52008F3FB8 /* NewsDetailsViewModel.swift in Sources */,
@@ -4127,7 +4179,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4211,7 +4263,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4301,7 +4353,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4384,7 +4436,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;

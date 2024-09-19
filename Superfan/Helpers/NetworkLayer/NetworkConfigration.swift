@@ -79,6 +79,7 @@ struct NetworkConfigration {
         case myposts = "fan/myPosts"
         case deletemedia = "fan/postMedia"
         case comments = "fan/comments"
+        case packages = "fan/packages"
         case refreshToken = "/api/app/register/refresh-token"
     }
 }

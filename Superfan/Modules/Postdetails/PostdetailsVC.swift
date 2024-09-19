@@ -107,7 +107,8 @@ extension PostdetailsVC {
         clubImg.setImage(url: viewModel?.postdata.value?.data?.user?.logo ?? "")
         clubLbl.text = viewModel?.postdata.value?.data?.user?.name ?? ""
         timeLbl.text = viewModel?.postdata.value?.data?.date ?? ""
-        desLbl.text = viewModel?.postdata.value?.data?.description?.htmlToString ?? ""
+        let attributedText = Constants().addLineSpacingAndAlignment(text: viewModel?.postdata.value?.data?.description?.htmlToString ?? "", lineSpacing: 8.0 , alignment: getTextAlignmentForLanguage())
+        desLbl.attributedText = attributedText
         if viewModel?.postdata.value?.data?.files?.count ?? 0 == 0 {
             sliderCollection.isHidden = true
         }
@@ -118,6 +119,13 @@ extension PostdetailsVC {
             }
         }
         sliderCollection.reloadData()
+    }
+    func getTextAlignmentForLanguage() -> NSTextAlignment {
+        if UIView.userInterfaceLayoutDirection(for: desLbl.semanticContentAttribute) == .rightToLeft {
+            return .right
+        } else {
+            return .left
+        }
     }
 }
 // MARK: - ...  View Contract

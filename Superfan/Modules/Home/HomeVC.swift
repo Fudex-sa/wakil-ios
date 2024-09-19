@@ -52,6 +52,7 @@ class HomeVC: BaseController {
     static var itemId: Int?
     static var type: String?
     var type = 0
+    var expandedStates = [Bool]()
 }
 
 // MARK: - ...  LifeCycle
@@ -236,6 +237,7 @@ extension HomeVC {
         matchesView.isHidden = true
         newsTbl.isHidden = true
         postsTbl.isHidden = true
+        expandedStates.removeAll()
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
         viewModel?.fetchhome()
@@ -258,6 +260,7 @@ extension HomeVC {
         matchesView.isHidden = false
         newsTbl.isHidden = true
         postsTbl.isHidden = true
+        expandedStates.removeAll()
         viewModel?.fetchmatchtab()
         hideEmptyScreen()
     }
@@ -278,6 +281,7 @@ extension HomeVC {
         matchesView.isHidden = true
         newsTbl.isHidden = false
         postsTbl.isHidden = true
+        expandedStates.removeAll()
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
         viewModel?.fetchnews()
@@ -300,6 +304,7 @@ extension HomeVC {
         matchesView.isHidden = true
         newsTbl.isHidden = true
         postsTbl.isHidden = false
+        expandedStates.removeAll()
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
         viewModel?.fetchposts()
@@ -322,6 +327,7 @@ extension HomeVC {
                 clubLbl.sizeToFit()
             }
         }
+        self.expandedStates.append(contentsOf: [Bool](repeating: false, count: viewModel?.events.value?.count ?? 0))
         eventsTbl.reloadData()
         eventsTbl.stopSwipeButtom()
         reloadmatches()
@@ -376,6 +382,7 @@ extension HomeVC {
             postsTbl.isHidden = false
             hideEmptyScreen()
         }
+        self.expandedStates.append(contentsOf: [Bool](repeating: false, count: viewModel?.posts.value?.count ?? 0))
         postsTbl.reloadData()
         postsTbl.stopSwipeButtom()
 
@@ -500,6 +507,14 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
         }else if tableView == postsTbl {
             var cell = tableView.cell(type: PostsTableViewCell.self, indexPath)
             cell.model = viewModel?.posts.value?[safe: indexPath.row]
+            if expandedStates.count != 0 {
+                let isExpanded = expandedStates[indexPath.item]
+                let text = viewModel?.posts.value?[safe: indexPath.row]?.description ?? ""
+                cell.configure(with: text, isExpanded: isExpanded) {
+                    self.expandedStates[indexPath.item] = !self.expandedStates[indexPath.item]
+                    self.postsTbl.reloadRows(at: [indexPath], with: .automatic)
+                }
+            }
             cell.setup()
             cell.delegate = self
             return cell
@@ -513,6 +528,14 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
             }else {
                 var cell = tableView.cell(type: PostsTableViewCell.self, indexPath)
                 cell.model = viewModel?.events.value?[safe: indexPath.row]
+                if expandedStates.count != 0 {
+                    let isExpanded = expandedStates[indexPath.item]
+                    let text = viewModel?.events.value?[safe: indexPath.row]?.description ?? ""
+                    cell.configure(with: text, isExpanded: isExpanded) {
+                        self.expandedStates[indexPath.item] = !self.expandedStates[indexPath.item]
+                        self.postsTbl.reloadRows(at: [indexPath], with: .automatic)
+                    }
+                }
                 cell.setup()
                 cell.delegate = self
                 return cell

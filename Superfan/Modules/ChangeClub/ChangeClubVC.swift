@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 protocol ChangeClubVCDelegate: AnyObject {
-    func done()
+    func done(club : SelectclubDatum?)
 }
 // MARK: - ...  ViewController - Vars
 class ChangeClubVC: BaseController {
@@ -18,6 +18,7 @@ class ChangeClubVC: BaseController {
     var viewModel: ChangeClubViewModel?
     var coordinator: ChangeClubCoordinator?
     weak var delegate: ChangeClubVCDelegate?
+    var issubscribe = false
 }
 
 // MARK: - ...  LifeCycle
@@ -124,8 +125,10 @@ extension ChangeClubVC:UITableViewDelegate , UITableViewDataSource {
         if viewModel?.items.value?.count ?? 0 == 0 {
             return
         }
-        UD.club = viewModel?.dataSource()?[safe: indexPath.row]
-        delegate?.done()
+        if issubscribe == false {
+            UD.club = viewModel?.dataSource()?[safe: indexPath.row]
+        }
+        delegate?.done(club: viewModel?.dataSource()?[safe: indexPath.row])
         dismiss(animated: true, completion: nil)
     }
 

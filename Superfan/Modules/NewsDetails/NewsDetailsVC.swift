@@ -76,11 +76,19 @@ extension NewsDetailsVC {
         clubImg.setImage(url: viewModel?.newsdata.value?.data?.club?.photo ?? "")
         clubLbl.text = viewModel?.newsdata.value?.data?.club?.name ?? ""
         timeLbl.text = viewModel?.newsdata.value?.data?.date ?? ""
-        desLbl.text = viewModel?.newsdata.value?.data?.description?.htmlToString ?? ""
+        let attributedText = Constants().addLineSpacingAndAlignment(text: viewModel?.newsdata.value?.data?.description?.htmlToString ?? "", lineSpacing: 8.0 , alignment: getTextAlignmentForLanguage())
+        desLbl.attributedText = attributedText
         if viewModel?.newsdata.value?.data?.backgrouds?.count ?? 0 == 0 {
             sliderCollection.isHidden = true
         }
         sliderCollection.reloadData()
+    }
+    func getTextAlignmentForLanguage() -> NSTextAlignment {
+        if UIView.userInterfaceLayoutDirection(for: desLbl.semanticContentAttribute) == .rightToLeft {
+            return .right
+        } else {
+            return .left
+        }
     }
 }
 // MARK: - ...  View Contract

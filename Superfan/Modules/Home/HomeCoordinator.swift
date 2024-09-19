@@ -69,7 +69,7 @@ extension HomeCoordinator {
         scene.delegate = self
         view?.pushPop(scene)
     }
-    func done() {
+    func done(club : SelectclubDatum?) {
         view?.clubLbl.text = UD.club?.name ?? ""
         if view?.type == 0 {
             view?.showevents()

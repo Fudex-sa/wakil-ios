@@ -54,8 +54,8 @@ extension SlideMenuCoordinator {
             view?.closeMenu()
             return
         }
-//        guard let scene = R.storyboard.mypostsStoryboard.mypostsVC() else { return }
-//        view?.push(scene)
+        guard let scene = R.storyboard.subscriptionsStoryboard.subscriptionsVC() else { return }
+        view?.push(scene)
         view?.closeMenu()
     }
 }

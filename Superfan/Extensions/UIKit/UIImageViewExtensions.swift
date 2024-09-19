@@ -14,7 +14,6 @@ import AVFoundation
 // MARK: - Methods
 public extension UIImageView {
     func setImage(url: String? , placeholder: UIImage? = UIImage(named: "placeholder"),_ completion: ((UIImage) -> Void)? = nil) {
-        self.image = placeholder
         guard var string = url else { return }
         string = NetworkManager.instance.safeUrl(url: string)
         let url = URL(string: string)
@@ -28,6 +27,7 @@ public extension UIImageView {
             case .success(let image):
                 completion?(image.image)
             case .failure:
+                self.image = UIImage(named: "placeholder")
                 break
             }
         }

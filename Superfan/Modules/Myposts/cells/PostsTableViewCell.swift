@@ -27,6 +27,9 @@ class PostsTableViewCell: BaseTableViewCell {
     @IBOutlet weak var likeLbl: UILabel!
     @IBOutlet weak var postImg: UIImageView!
     var delegate: PostsTableViewCellDelegate?
+    private var isExpanded: Bool = false
+    private var onExpandCollapse: (() -> Void)?
+    private var fullText: String = ""
     override func setup() {
         skeleton(view: contentView)
         super.setup()
@@ -34,7 +37,6 @@ class PostsTableViewCell: BaseTableViewCell {
         clubLbl.text = model.user?.name ?? ""
         clubImg.setImage(url: model.user?.logo ?? "")
         timeLbl.text = model.date ?? ""
-        titlelbl.text = model.description ?? ""
         postImg.setImage(url: model.backgroundImg ?? "")
         if model.backgroundImg ?? "" == "" {
             imageHight.constant = 0
@@ -86,4 +88,49 @@ class PostsTableViewCell: BaseTableViewCell {
             favImg.image = R.image.fav()
         }
     }
+    func configure(with text: String, isExpanded: Bool, onExpandCollapse: @escaping () -> Void) {
+            self.fullText = text
+            self.isExpanded = isExpanded
+            self.onExpandCollapse = onExpandCollapse
+
+            updateTextView()
+        }
+    func updateTextView(){
+        if fullText.count > 80 {
+            if isExpanded {
+                       // Show full text with "Show Less"
+                let fullDisplayText = "\(fullText) \("Show Less".localized)"
+                let attributedString = createClickableText(fullDisplayText, clickablePart: "Show Less".localized)
+                titlelbl.attributedText = attributedString
+            } else {
+                       // Show truncated text with "Load More"
+                let truncatedDisplayText = "\(String(fullText.prefix(80))) \("Load More".localized)"
+                let attributedString = createClickableText(truncatedDisplayText, clickablePart: "Load More".localized)
+                titlelbl.attributedText = attributedString
+            }
+        }else {
+            titlelbl.text = fullText
+        }
+    }
+    private func createClickableText(_ fullText: String, clickablePart: String) -> NSMutableAttributedString {
+           let attributedString = NSMutableAttributedString(string: fullText)
+           let clickableRange = (fullText as NSString).range(of: clickablePart)
+           
+        attributedString.addAttribute(.foregroundColor, value: R.color.gray1(), range: clickableRange)
+           
+           // Add tap gesture to handle the click
+           let tapGesture = TapGestureRecognizer(target: self, action: #selector(textTapped(_:)))
+           tapGesture.action = onExpandCollapse
+           titlelbl.isUserInteractionEnabled = true
+           titlelbl.addGestureRecognizer(tapGesture)
+           return attributedString
+       }
+
+       // Handle tap on "Load More" or "Show Less"
+       @objc private func textTapped(_ sender: TapGestureRecognizer) {
+           sender.action?()
+       }
+}
+class TapGestureRecognizer: UITapGestureRecognizer {
+    var action: (() -> Void)?
 }
