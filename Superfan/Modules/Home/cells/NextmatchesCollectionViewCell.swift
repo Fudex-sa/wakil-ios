@@ -45,7 +45,7 @@ class NextmatchesCollectionViewCell: BaseCollectionViewCell {
         }else if model.status ?? 0 == 1 {
             timeView.isHidden = false
             resulteLbl.text = "- : -"
-            timeLbl.text = DateHelper().date(date: model.date ?? "", format: "hh:mm a", oldFormat: "yyyy-MM-dd HH:mm:ss")
+            timeLbl.text = model.date ?? ""
             timeLbl.textColor = R.color.black1()
         }else {
             timeView.isHidden = false

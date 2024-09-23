@@ -16,6 +16,22 @@
 		660A62F92C464A020094B92E /* SelectLocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A62F52C464A020094B92E /* SelectLocVC.swift */; };
 		660A62FA2C464A020094B92E /* SelectLocViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A62F62C464A020094B92E /* SelectLocViewModel.swift */; };
 		660A62FB2C464A020094B92E /* SelectLocStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660A62F32C464A020094B92E /* SelectLocStoryboard.storyboard */; };
+		661A7EE42CA1A101002FEB57 /* PaymentMethodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EDF2CA1A101002FEB57 /* PaymentMethodCoordinator.swift */; };
+		661A7EE52CA1A101002FEB57 /* PaymentMethodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EE12CA1A101002FEB57 /* PaymentMethodModel.swift */; };
+		661A7EE62CA1A101002FEB57 /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EE22CA1A101002FEB57 /* PaymentMethodVC.swift */; };
+		661A7EE72CA1A101002FEB57 /* PaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EE32CA1A101002FEB57 /* PaymentMethodViewModel.swift */; };
+		661A7EE82CA1A101002FEB57 /* PaymentMethodStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 661A7EE02CA1A101002FEB57 /* PaymentMethodStoryboard.storyboard */; };
+		661A7EEF2CA1A120002FEB57 /* SuccesspaymentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EEA2CA1A120002FEB57 /* SuccesspaymentCoordinator.swift */; };
+		661A7EF02CA1A120002FEB57 /* SuccesspaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EEC2CA1A120002FEB57 /* SuccesspaymentModel.swift */; };
+		661A7EF12CA1A120002FEB57 /* SuccesspaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EED2CA1A120002FEB57 /* SuccesspaymentVC.swift */; };
+		661A7EF22CA1A120002FEB57 /* SuccesspaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EEE2CA1A120002FEB57 /* SuccesspaymentViewModel.swift */; };
+		661A7EF32CA1A120002FEB57 /* SuccesspaymentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 661A7EEB2CA1A120002FEB57 /* SuccesspaymentStoryboard.storyboard */; };
+		661A7EF92CA1A1C4002FEB57 /* PayTapsWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 661A7EF52CA1A1C3002FEB57 /* PayTapsWebView.storyboard */; };
+		661A7EFA2CA1A1C4002FEB57 /* PayTapsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EF62CA1A1C3002FEB57 /* PayTapsContract.swift */; };
+		661A7EFB2CA1A1C4002FEB57 /* PayTapsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EF72CA1A1C4002FEB57 /* PayTapsWebView.swift */; };
+		661A7EFC2CA1A1C4002FEB57 /* PayTaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EF82CA1A1C4002FEB57 /* PayTaps.swift */; };
+		661A7F002CA1A794002FEB57 /* PaymentmethodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661A7EFE2CA1A794002FEB57 /* PaymentmethodTableViewCell.swift */; };
+		661A7F012CA1A794002FEB57 /* PaymentmethodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 661A7EFF2CA1A794002FEB57 /* PaymentmethodTableViewCell.xib */; };
 		6627E36C277099AF00A4A6A6 /* GuardPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6627E36B277099AF00A4A6A6 /* GuardPassword.swift */; };
 		66293C0F2C3D67EB008F3FB8 /* SelectclubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66293C0D2C3D67EB008F3FB8 /* SelectclubTableViewCell.swift */; };
 		66293C102C3D67EC008F3FB8 /* SelectclubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66293C0E2C3D67EB008F3FB8 /* SelectclubTableViewCell.xib */; };
@@ -662,6 +678,22 @@
 		660A62F42C464A020094B92E /* SelectLocModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocModel.swift; sourceTree = "<group>"; };
 		660A62F52C464A020094B92E /* SelectLocVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocVC.swift; sourceTree = "<group>"; };
 		660A62F62C464A020094B92E /* SelectLocViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocViewModel.swift; sourceTree = "<group>"; };
+		661A7EDF2CA1A101002FEB57 /* PaymentMethodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCoordinator.swift; sourceTree = "<group>"; };
+		661A7EE02CA1A101002FEB57 /* PaymentMethodStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentMethodStoryboard.storyboard; sourceTree = "<group>"; };
+		661A7EE12CA1A101002FEB57 /* PaymentMethodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodModel.swift; sourceTree = "<group>"; };
+		661A7EE22CA1A101002FEB57 /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
+		661A7EE32CA1A101002FEB57 /* PaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewModel.swift; sourceTree = "<group>"; };
+		661A7EEA2CA1A120002FEB57 /* SuccesspaymentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesspaymentCoordinator.swift; sourceTree = "<group>"; };
+		661A7EEB2CA1A120002FEB57 /* SuccesspaymentStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccesspaymentStoryboard.storyboard; sourceTree = "<group>"; };
+		661A7EEC2CA1A120002FEB57 /* SuccesspaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesspaymentModel.swift; sourceTree = "<group>"; };
+		661A7EED2CA1A120002FEB57 /* SuccesspaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesspaymentVC.swift; sourceTree = "<group>"; };
+		661A7EEE2CA1A120002FEB57 /* SuccesspaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesspaymentViewModel.swift; sourceTree = "<group>"; };
+		661A7EF52CA1A1C3002FEB57 /* PayTapsWebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PayTapsWebView.storyboard; sourceTree = "<group>"; };
+		661A7EF62CA1A1C3002FEB57 /* PayTapsContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayTapsContract.swift; sourceTree = "<group>"; };
+		661A7EF72CA1A1C4002FEB57 /* PayTapsWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayTapsWebView.swift; sourceTree = "<group>"; };
+		661A7EF82CA1A1C4002FEB57 /* PayTaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayTaps.swift; sourceTree = "<group>"; };
+		661A7EFE2CA1A794002FEB57 /* PaymentmethodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentmethodTableViewCell.swift; sourceTree = "<group>"; };
+		661A7EFF2CA1A794002FEB57 /* PaymentmethodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentmethodTableViewCell.xib; sourceTree = "<group>"; };
 		6627E36B277099AF00A4A6A6 /* GuardPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardPassword.swift; sourceTree = "<group>"; };
 		66293C0D2C3D67EB008F3FB8 /* SelectclubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectclubTableViewCell.swift; sourceTree = "<group>"; };
 		66293C0E2C3D67EB008F3FB8 /* SelectclubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectclubTableViewCell.xib; sourceTree = "<group>"; };
@@ -1360,6 +1392,51 @@
 				660A62F62C464A020094B92E /* SelectLocViewModel.swift */,
 			);
 			path = SelectLoc;
+			sourceTree = "<group>";
+		};
+		661A7EDE2CA1A0E8002FEB57 /* PaymentMethod */ = {
+			isa = PBXGroup;
+			children = (
+				661A7EFD2CA1A774002FEB57 /* cells */,
+				661A7EDF2CA1A101002FEB57 /* PaymentMethodCoordinator.swift */,
+				661A7EE02CA1A101002FEB57 /* PaymentMethodStoryboard.storyboard */,
+				661A7EE12CA1A101002FEB57 /* PaymentMethodModel.swift */,
+				661A7EE22CA1A101002FEB57 /* PaymentMethodVC.swift */,
+				661A7EE32CA1A101002FEB57 /* PaymentMethodViewModel.swift */,
+			);
+			path = PaymentMethod;
+			sourceTree = "<group>";
+		};
+		661A7EE92CA1A10A002FEB57 /* Successpayment */ = {
+			isa = PBXGroup;
+			children = (
+				661A7EEA2CA1A120002FEB57 /* SuccesspaymentCoordinator.swift */,
+				661A7EEB2CA1A120002FEB57 /* SuccesspaymentStoryboard.storyboard */,
+				661A7EEC2CA1A120002FEB57 /* SuccesspaymentModel.swift */,
+				661A7EED2CA1A120002FEB57 /* SuccesspaymentVC.swift */,
+				661A7EEE2CA1A120002FEB57 /* SuccesspaymentViewModel.swift */,
+			);
+			path = Successpayment;
+			sourceTree = "<group>";
+		};
+		661A7EF42CA1A161002FEB57 /* OnlinePayment */ = {
+			isa = PBXGroup;
+			children = (
+				661A7EF82CA1A1C4002FEB57 /* PayTaps.swift */,
+				661A7EF62CA1A1C3002FEB57 /* PayTapsContract.swift */,
+				661A7EF52CA1A1C3002FEB57 /* PayTapsWebView.storyboard */,
+				661A7EF72CA1A1C4002FEB57 /* PayTapsWebView.swift */,
+			);
+			path = OnlinePayment;
+			sourceTree = "<group>";
+		};
+		661A7EFD2CA1A774002FEB57 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				661A7EFE2CA1A794002FEB57 /* PaymentmethodTableViewCell.swift */,
+				661A7EFF2CA1A794002FEB57 /* PaymentmethodTableViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		66293C0C2C3D6768008F3FB8 /* cells */ = {
@@ -3075,6 +3152,9 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				661A7EF42CA1A161002FEB57 /* OnlinePayment */,
+				661A7EE92CA1A10A002FEB57 /* Successpayment */,
+				661A7EDE2CA1A0E8002FEB57 /* PaymentMethod */,
 				66ACF4982C9C26020016BAAB /* Subscriptions */,
 				6643CF8F2C92E9E900143A20 /* Backstage */,
 				66FEA97A2C84873E007806CD /* AddPost */,
@@ -3331,6 +3411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				661A7EF92CA1A1C4002FEB57 /* PayTapsWebView.storyboard in Resources */,
 				663C1F942C7217BE0026107D /* MatchdetailsTableViewCell.xib in Resources */,
 				6681DC862C57B99A0004FC3C /* NotificationTableViewCell.xib in Resources */,
 				C86BF98A266947F0002D87BC /* StatusLine.xib in Resources */,
@@ -3346,6 +3427,7 @@
 				668AA01F2C8467A500454F90 /* CommentsTableViewCell.xib in Resources */,
 				7756A123253486D600BFE53C /* Colors.xcassets in Resources */,
 				66950BDD2C3D3B9800522EE0 /* ProfileStoryboard.storyboard in Resources */,
+				661A7EE82CA1A101002FEB57 /* PaymentMethodStoryboard.storyboard in Resources */,
 				C84539A52729887000004173 /* EmptyScreen.xib in Resources */,
 				6633826D2C3EAAF500160379 /* TermsStoryboard.storyboard in Resources */,
 				66950BD22C3D3B7100522EE0 /* HomeStoryboard.storyboard in Resources */,
@@ -3366,6 +3448,7 @@
 				664DCB002C3BC2460011DB96 /* Tajawal-Medium.ttf in Resources */,
 				6636D7EF2C3AE3F4007116F7 /* ResetpasswordStoryboard.storyboard in Resources */,
 				66EA91232C3EC3C20027154F /* EditemailStoryboard.storyboard in Resources */,
+				661A7F012CA1A794002FEB57 /* PaymentmethodTableViewCell.xib in Resources */,
 				66ACF4A22C9C26490016BAAB /* SubscriptionsStoryboard.storyboard in Resources */,
 				77228EB2275667F8008F11B3 /* CalendarDateRangePickerHeaderView.xib in Resources */,
 				C83A503D272F439B00996984 /* Config.xcconfig in Resources */,
@@ -3392,6 +3475,7 @@
 				C86BF995266947F0002D87BC /* CenteredView.xib in Resources */,
 				C86BF990266947F0002D87BC /* successIcon@2x.png in Resources */,
 				C871C72A272FEB7B00DCBD2D /* SFPRODISPLAYREGULAR.OTF in Resources */,
+				661A7EF32CA1A120002FEB57 /* SuccesspaymentStoryboard.storyboard in Resources */,
 				66EA910D2C3EC36F0027154F /* EditprofileStoryboard.storyboard in Resources */,
 				6636D7D92C3AE3A0007116F7 /* SignupStoryboard.storyboard in Resources */,
 				C86BF9A3266947F0002D87BC /* successIconLight@3x.png in Resources */,
@@ -3598,6 +3682,7 @@
 				7756A097253482EF00BFE53C /* RadioButton.swift in Sources */,
 				664FE17F2C3BEB620081C90B /* PaddingLabel.swift in Sources */,
 				C871C98D2730231300DCBD2D /* UILabel+Multiline.swift in Sources */,
+				661A7EFA2CA1A1C4002FEB57 /* PayTapsContract.swift in Sources */,
 				66950BD92C3D3B9800522EE0 /* ProfileCoordinator.swift in Sources */,
 				66950BDA2C3D3B9800522EE0 /* ProfileModel.swift in Sources */,
 				663382692C3EAAF500160379 /* TermsCoordinator.swift in Sources */,
@@ -3682,6 +3767,10 @@
 				C871C89A272FECF200DCBD2D /* TwitterDelegate.swift in Sources */,
 				77228EB62756680B008F11B3 /* CalendarDelegate.swift in Sources */,
 				C853B95426D7F9450008F09D /* SPPermissionsDialogCloseButton.swift in Sources */,
+				661A7EEF2CA1A120002FEB57 /* SuccesspaymentCoordinator.swift in Sources */,
+				661A7EF02CA1A120002FEB57 /* SuccesspaymentModel.swift in Sources */,
+				661A7EF12CA1A120002FEB57 /* SuccesspaymentVC.swift in Sources */,
+				661A7EF22CA1A120002FEB57 /* SuccesspaymentViewModel.swift in Sources */,
 				C8C0933B272AC76B00E2270A /* Publisher.swift in Sources */,
 				C86BF975266947F0002D87BC /* SwiftMessages.swift in Sources */,
 				C871C8D1272FED0600DCBD2D /* SwipeActionsView.swift in Sources */,
@@ -3755,6 +3844,7 @@
 				663382772C3EAB1000160379 /* AboutusViewModel.swift in Sources */,
 				C871C9802730231300DCBD2D /* Table+SkeletonEX.swift in Sources */,
 				C871C8E6272FED5900DCBD2D /* PolylineAttrbuite.swift in Sources */,
+				661A7F002CA1A794002FEB57 /* PaymentmethodTableViewCell.swift in Sources */,
 				C86BF9AD266947F0002D87BC /* Presenter.swift in Sources */,
 				C853B96D26D7F9450008F09D /* SPPermissionWhenInUseLocationHandler.swift in Sources */,
 				C84539922729882800004173 /* PresentingViewProtocol.swift in Sources */,
@@ -3879,6 +3969,7 @@
 				7756A093253482EF00BFE53C /* UIView+AutoLayoutHelper.swift in Sources */,
 				C871C8BF272FED0600DCBD2D /* SwipeCollectionViewCell+Display.swift in Sources */,
 				C80679A0266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift in Sources */,
+				661A7EFB2CA1A1C4002FEB57 /* PayTapsWebView.swift in Sources */,
 				6636D7D52C3AE3A0007116F7 /* SignupCoordinator.swift in Sources */,
 				6636D7D62C3AE3A0007116F7 /* SignupModel.swift in Sources */,
 				6636D7D72C3AE3A0007116F7 /* SignupVC.swift in Sources */,
@@ -3904,6 +3995,7 @@
 				C8C09306272ABDA200E2270A /* CombineControlTarget.swift in Sources */,
 				C8C0933D272AC76B00E2270A /* Facades.swift in Sources */,
 				7756A094253482EF00BFE53C /* RadioView.swift in Sources */,
+				661A7EFC2CA1A1C4002FEB57 /* PayTaps.swift in Sources */,
 				C871C8C3272FED0600DCBD2D /* SwipeTransitionLayout.swift in Sources */,
 				C8265E44266CE18500E099C1 /* GuardLength.swift in Sources */,
 				C871C9872730231300DCBD2D /* UIView+Frame.swift in Sources */,
@@ -4023,6 +4115,10 @@
 				66ACF49F2C9C26490016BAAB /* SubscriptionsModel.swift in Sources */,
 				66ACF4A02C9C26490016BAAB /* SubscriptionsVC.swift in Sources */,
 				66ACF4A12C9C26490016BAAB /* SubscriptionsViewModel.swift in Sources */,
+				661A7EE42CA1A101002FEB57 /* PaymentMethodCoordinator.swift in Sources */,
+				661A7EE52CA1A101002FEB57 /* PaymentMethodModel.swift in Sources */,
+				661A7EE62CA1A101002FEB57 /* PaymentMethodVC.swift in Sources */,
+				661A7EE72CA1A101002FEB57 /* PaymentMethodViewModel.swift in Sources */,
 				66A316C12C71EE8700057235 /* MatchdetailsVC.swift in Sources */,
 				66A316C22C71EE8700057235 /* MatchdetailsViewModel.swift in Sources */,
 				66293C262C3D6E52008F3FB8 /* NewsDetailsViewModel.swift in Sources */,

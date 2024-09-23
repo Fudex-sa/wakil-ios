@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SuccesspaymentVC-->
+        <scene sceneID="HEa-m2-jab">
+            <objects>
+                <viewController storyboardIdentifier="SuccesspaymentVC" id="v1z-F3-ot6" customClass="SuccesspaymentVC" customModule="Superfan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wn8-wF-9xc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgD-yy-S1f">
+                                <rect key="frame" x="20" y="472" width="374" height="350"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVB-ba-7NA">
+                                        <rect key="frame" x="97" y="268" width="180" height="42"/>
+                                        <color key="backgroundColor" name="Primary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="Ofc-jK-OVJ"/>
+                                            <constraint firstAttribute="height" constant="42" id="mVJ-Ht-Niv"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Back to Home">
+                                            <color key="titleColor" name="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Back to Home"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your purchase has been successfully confirmed!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owu-VC-Kb3">
+                                        <rect key="frame" x="67" y="203" width="240" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="Black1"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b24"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Your purchase has been successfully confirmed!"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="LVB-ba-7NA" firstAttribute="centerX" secondItem="JgD-yy-S1f" secondAttribute="centerX" id="EzX-bb-a2b"/>
+                                    <constraint firstItem="owu-VC-Kb3" firstAttribute="leading" secondItem="JgD-yy-S1f" secondAttribute="leading" constant="67" id="PTx-8v-X8X"/>
+                                    <constraint firstAttribute="height" constant="350" id="aGq-LF-rbM"/>
+                                    <constraint firstAttribute="bottom" secondItem="LVB-ba-7NA" secondAttribute="bottom" constant="40" id="aY2-YG-2T5"/>
+                                    <constraint firstItem="LVB-ba-7NA" firstAttribute="top" secondItem="owu-VC-Kb3" secondAttribute="bottom" constant="24" id="n3V-IO-dGn"/>
+                                    <constraint firstAttribute="trailing" secondItem="owu-VC-Kb3" secondAttribute="trailing" constant="67" id="qvf-dn-kqF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ckT-Oz-gwY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JgD-yy-S1f" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="20" id="FLn-wF-hxr"/>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="bottom" secondItem="JgD-yy-S1f" secondAttribute="bottom" constant="40" id="Ntw-pE-8jQ"/>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="JgD-yy-S1f" secondAttribute="trailing" constant="20" id="UVU-ju-1zo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneBtn" destination="LVB-ba-7NA" id="EI9-7a-hYd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-za-4cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="-108"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Black1">
+            <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.89803921568627454" green="0.11372549019607843" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -27,6 +27,8 @@ class SubscriptionsVC: BaseController {
     var type = 0
     var clubId = 0
     var club: SelectclubDatum?
+    var payTaps: PayTaps?
+
 }
 
 // MARK: - ...  LifeCycle
@@ -61,6 +63,12 @@ extension SubscriptionsVC {
         
         viewModel?.requestFinished.listen(on: { [weak self] value in
             self?.reload()
+        })
+        viewModel?.paymentdata.listen(on: { [weak self] value in
+            self?.stopLoading()
+            self?.payTaps = .init(dataSource: self)
+            self?.payTaps?.delegate = self
+            self?.payTaps?.present(in: self)
         })
         
     }
@@ -181,7 +189,34 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
         if viewModel?.items.value?.count ?? 0 == 0 {
             return
         }
+        if tableView == packagesTbl {
+            viewModel?.packageId.send(viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
+            coordinator?.paymentmethod()
+        }
         
     }
 
+}
+extension SubscriptionsVC: PayTapsDelegate, PayTapsDataSource {
+    func payTaps(_ payTaps: PayTaps?, didPay orderID: Int) {
+        coordinator?.paymentdone()
+    }
+    func payTaps(_ payTaps: PayTaps?, cancel pay: Bool) {
+        NotificationBuilder().setTitle("Info".localized).setBody("You are cancelled the payment process".localized).setTheme(.info).bulid()
+    }
+    func payTaps(_ payTaps: PayTaps?, fail pay: Bool) {
+        super.didError(error: "Online payment has been made a mistake please try again".localized)
+    }
+    
+    func payTaps(_ payTaps: PayTaps?, successURL: Bool?) -> String? {
+        return "success"
+    }
+    
+    func payTaps(_ payTaps: PayTaps?, failURL: Bool?) -> String? {
+        return "failed"
+    }
+    
+    func payTaps(_ payTaps: PayTaps?, URL: Bool?) -> String? {
+        return viewModel?.paymentdata.value?.data?.invoiceURL ?? ""
+    }
 }

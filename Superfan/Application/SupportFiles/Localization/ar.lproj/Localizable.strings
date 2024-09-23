@@ -427,3 +427,10 @@
 "SAR" = "رس";
 "Months" = "شهور";
 "Get to" = "الحصول على";
+"Choose a payment method" = "اختر طريقة الدفع";
+"Confirm" = "تأكيد";
+"Your purchase has been successfully confirmed!" = "تم تأكيد عملية الشراء بنجاح!";
+"Back to Home" = "الرجوع للرئيسية";
+"You are cancelled the payment process" = "تم إلغاء عملية الدفع";
+"Online payment has been made a mistake please try again" = "تم ارتكاب خطأ في الدفع عبر الإنترنت ، يرجى المحاولة مرة أخرى";
+"Paying" = "الدفع";
