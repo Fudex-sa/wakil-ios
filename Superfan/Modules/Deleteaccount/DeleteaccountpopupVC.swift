@@ -12,12 +12,14 @@ import UIKit
 // MARK: - ...  ViewController - Vars
 protocol deleteAccountPopupVCDelegate: AnyObject {
     func deleteAccount()
+    func done()
     func deleteNotification(type: Int)
     func deleteItemCart()
     func changepayment(type: Int)
 }
 extension deleteAccountPopupVCDelegate {
     func deleteAccount(){}
+    func done(){}
     func deleteNotification(type: Int) {}
     func deleteItemCart(){}
     func changepayment(type: Int){}
@@ -25,9 +27,10 @@ extension deleteAccountPopupVCDelegate {
 class DeleteaccountpopupVC: BaseController {
     enum ViewType {
         case account
-        case notification
-        case itemcart
-        case payment
+        case subscribe
+        case comment
+        case reply
+        case post
     }
     @IBOutlet weak var discardBtn: UIButton!
     @IBOutlet weak var doneBtn: UIButton!
@@ -85,8 +88,26 @@ extension DeleteaccountpopupVC {
             discardBtn.borderColor = UIColor(hex: UD.club?.color ?? "")
             discardBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
         }
+        if viewType == .comment {
+            titleLbl.text = "Delete comment".localized
+            desLbl.text = "Are you want to delete comment?".localized
+        }else if viewType == .post {
+            titleLbl.text = "Delete post".localized
+            desLbl.text = "Are you want to delete post?".localized
+        }else if viewType == .reply {
+            titleLbl.text = "Delete reply".localized
+            desLbl.text = "Are you want to delete reply?".localized
+        }else if viewType == .subscribe {
+            titleLbl.text = "Unsubscribe".localized
+            desLbl.text = "Are you want to Unsubscribe?".localized
+        }
         doneBtn.publisher.listen(on: { [weak self] in
-            self?.viewModel?.deleteaccount()
+            if self?.viewType == .account {
+                self?.viewModel?.deleteaccount()
+            }else {
+                self?.dismiss(animated: true, completion: nil)
+                self?.delegate?.done()
+            }
             
         }).store(self)
         discardBtn.publisher.listen(on: { [weak self] in

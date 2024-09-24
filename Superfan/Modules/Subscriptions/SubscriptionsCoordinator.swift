@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class SubscriptionsCoordinator: Coordinator, ChangeClubVCDelegate, PaymentMethodVCCDelegate {
+class SubscriptionsCoordinator: Coordinator, ChangeClubVCDelegate, PaymentMethodVCCDelegate, deleteAccountPopupVCDelegate {
     typealias PresentingView = SubscriptionsVC
     weak var view: PresentingView?
     deinit {
@@ -43,5 +43,15 @@ extension SubscriptionsCoordinator {
     func paymentdone() {
         guard let scene = R.storyboard.successpaymentStoryboard.successpaymentVC() else { return }
         view?.pushPop(scene)
+    }
+    func deletesubscribe() {
+        guard let scene = R.storyboard.deleteaccountpopupStoryboard.deleteaccountpopupVC() else { return }
+        scene.viewType = .subscribe
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
+    func done() {
+        view?.startLoading()
+        view?.viewModel?.deletesubscribe()
     }
 }

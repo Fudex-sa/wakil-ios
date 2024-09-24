@@ -439,3 +439,13 @@
 "You are cancelled the payment process" = "You are cancelled the payment process";
 "Online payment has been made a mistake please try again" = "Online payment has been made a mistake please try again";
 "Paying" = "Paying";
+"Unsubscribe" = "Unsubscribe";
+"Expires in" = "Expires in";
+"Delete comment" = "Delete comment";
+"Are you want to delete comment?" = "Are you want to delete comment?";
+"Delete post" = "Delete post";
+"Are you want to delete post?" = "Are you want to delete post?";
+"Delete reply" = "Delete reply";
+"Are you want to delete reply?" = "Are you want to delete reply?";
+"Are you want to Unsubscribe?" = "Are you want to Unsubscribe?";
+"There are no Subscription available" = "There are no Subscription available";

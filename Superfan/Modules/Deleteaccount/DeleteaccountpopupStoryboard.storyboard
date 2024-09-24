@@ -30,10 +30,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKv-rA-sQB">
-                                <rect key="frame" x="20" y="328" width="374" height="240"/>
+                                <rect key="frame" x="20" y="360.5" width="374" height="175"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw4-hs-cYU">
-                                        <rect key="frame" x="20" y="30" width="334" height="29.5"/>
+                                        <rect key="frame" x="20" y="15" width="334" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                         <color key="textColor" name="txtblue"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to delete your account permanently?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4a-KT-r2U">
-                                        <rect key="frame" x="32" y="91.5" width="310" height="47.5"/>
+                                        <rect key="frame" x="32" y="56.5" width="310" height="47.5"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                         <color key="textColor" name="darkgray"/>
                                         <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="55o-Ae-s5y">
-                                        <rect key="frame" x="32" y="164" width="310" height="44"/>
+                                        <rect key="frame" x="32" y="119" width="310" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3S-DE-AXZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="147.5" height="44"/>
@@ -100,15 +100,15 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Bw4-hs-cYU" secondAttribute="trailing" constant="20" id="4Y6-8w-m8t"/>
-                                    <constraint firstItem="g4a-KT-r2U" firstAttribute="top" secondItem="Bw4-hs-cYU" secondAttribute="bottom" constant="32" id="9y7-wa-cUl"/>
+                                    <constraint firstItem="g4a-KT-r2U" firstAttribute="top" secondItem="Bw4-hs-cYU" secondAttribute="bottom" constant="12" id="9y7-wa-cUl"/>
                                     <constraint firstItem="55o-Ae-s5y" firstAttribute="leading" secondItem="FKv-rA-sQB" secondAttribute="leading" constant="32" id="KGc-u7-WtF"/>
-                                    <constraint firstItem="Bw4-hs-cYU" firstAttribute="top" secondItem="FKv-rA-sQB" secondAttribute="top" constant="30" id="MeR-nJ-hbi"/>
+                                    <constraint firstItem="Bw4-hs-cYU" firstAttribute="top" secondItem="FKv-rA-sQB" secondAttribute="top" constant="15" id="MeR-nJ-hbi"/>
                                     <constraint firstAttribute="trailing" secondItem="g4a-KT-r2U" secondAttribute="trailing" constant="32" id="NxJ-je-WF4"/>
                                     <constraint firstItem="g4a-KT-r2U" firstAttribute="leading" secondItem="FKv-rA-sQB" secondAttribute="leading" constant="32" id="Ven-Of-0d9"/>
-                                    <constraint firstItem="55o-Ae-s5y" firstAttribute="top" secondItem="g4a-KT-r2U" secondAttribute="bottom" constant="25" id="cyt-Mg-uuF"/>
+                                    <constraint firstItem="55o-Ae-s5y" firstAttribute="top" secondItem="g4a-KT-r2U" secondAttribute="bottom" constant="15" id="cyt-Mg-uuF"/>
                                     <constraint firstItem="Bw4-hs-cYU" firstAttribute="leading" secondItem="FKv-rA-sQB" secondAttribute="leading" constant="20" id="urg-vh-4Dn"/>
                                     <constraint firstAttribute="trailing" secondItem="55o-Ae-s5y" secondAttribute="trailing" constant="32" id="vE6-bh-oxF"/>
-                                    <constraint firstAttribute="height" constant="240" id="ybz-oS-lgW"/>
+                                    <constraint firstAttribute="bottom" secondItem="55o-Ae-s5y" secondAttribute="bottom" constant="12" id="y7O-gt-bPb"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

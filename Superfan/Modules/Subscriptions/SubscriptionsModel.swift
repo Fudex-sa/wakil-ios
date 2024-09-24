@@ -25,3 +25,25 @@ struct PackageDatum: Codable {
     let features: [String]?
     let club: User?
 }
+struct MysubscribeModel: Codable {
+    let data: [MysubscribeDatum]?
+    let status: Bool?
+    let message: String?
+}
+
+// MARK: - Datum
+struct MysubscribeDatum: Codable {
+    let id: Int?
+    let title: String?
+    var price: Int?
+    let club: User?
+    let monthesCount: Int?
+    let expireDate: String?
+    let features: [String]?
+
+    enum CodingKeys: String, CodingKey {
+        case id, club, title, monthesCount,price
+        case expireDate = "expire_date"
+        case features
+    }
+}

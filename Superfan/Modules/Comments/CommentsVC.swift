@@ -235,9 +235,12 @@ extension CommentsVC {
             type = .edit
         }
         func delete(wasPressedOnCell cell: CommentsTableViewCell, model: CommentsDatum) {
-            startLoading()
             viewModel?.commentId.send(model.id ?? 0)
-            viewModel?.deletecomments()
+            if viewModel?.type.value ?? "" == "reply" {
+                coordinator?.deletecomment(type1: 1)
+            }else {
+                coordinator?.deletecomment(type1: 0)
+            }
         }
     }
 

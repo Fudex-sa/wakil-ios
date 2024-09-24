@@ -9,7 +9,8 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class PostdetailsCoordinator: Coordinator {
+class PostdetailsCoordinator: Coordinator, deleteAccountPopupVCDelegate {
+    
     typealias PresentingView = PostdetailsVC
     weak var view: PresentingView?
     deinit {
@@ -29,4 +30,16 @@ extension PostdetailsCoordinator {
         scene.type = .edit
         view?.push(scene)
     }
+    func deletepost() {
+        guard let scene = R.storyboard.deleteaccountpopupStoryboard.deleteaccountpopupVC() else { return }
+        scene.viewType = .post
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
+    func done() {
+        view?.startLoading()
+        view?.viewModel?.deletepost()
+    }
+    
+   
 }

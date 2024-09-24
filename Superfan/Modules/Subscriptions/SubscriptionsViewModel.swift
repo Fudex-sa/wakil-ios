@@ -14,7 +14,10 @@ class SubscriptionsViewModel: BaseViewModel , DataSourceViewModel{
     var paymentId: Publisher<Int> = .init()
     var clubId: Publisher<Int> = .init()
     var items: Publisher<[PackageDatum]> = .init()
+    var mysubscribe: Publisher<[MysubscribeDatum]> = .init()
+    var mysubscribedata: Publisher<Bool> = .init()
     var paymentdata: Publisher<PaymentModel> = .init()
+    var delete: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension SubscriptionsViewModel {
@@ -41,6 +44,27 @@ extension SubscriptionsViewModel {
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
             self?.paymentdata.send(model)
+        }).store(self)
+    }
+    func fetchmypackages() {
+       
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.mySubscriptions.rawValue, type: .get, MysubscribeModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            var itemsdata: [MysubscribeDatum] = []
+            itemsdata.append(contentsOf: self?.mysubscribe.value ?? [])
+            itemsdata.append(contentsOf: model.data ?? [])
+            self?.mysubscribe.send(itemsdata)
+            self?.mysubscribedata.send(true)
+        }).store(self)
+    }
+    func deletesubscribe() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.Subscriptions.rawValue)/\(packageId.value ?? 0)/cancelSubscription", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.delete.send(model)
         }).store(self)
     }
 }

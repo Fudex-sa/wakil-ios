@@ -64,11 +64,26 @@ extension SubscriptionsVC {
         viewModel?.requestFinished.listen(on: { [weak self] value in
             self?.reload()
         })
+        viewModel?.mysubscribedata.listen(on: { [weak self] value in
+            self?.reloadsubscribe()
+        })
         viewModel?.paymentdata.listen(on: { [weak self] value in
             self?.stopLoading()
             self?.payTaps = .init(dataSource: self)
             self?.payTaps?.delegate = self
             self?.payTaps?.present(in: self)
+        })
+        viewModel?.delete.listen(on: { [weak self] value in
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.delete.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+            self?.stopLoading()
+            self?.viewModel?.mysubscribe.send([])
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchmypackages()
         })
         
     }
@@ -81,6 +96,10 @@ extension SubscriptionsVC {
         packagesTbl.dataSource = self
         packagesTbl.observe()
         packagesTbl.skeleton()
+        subcribeTbl.delegate = self
+        subcribeTbl.dataSource = self
+        subcribeTbl.observe()
+        subcribeTbl.skeleton()
         clickBtn()
         packageBtn.publisher.listen(on: {[weak self] _ in
             if self?.type != 0 {
@@ -99,6 +118,7 @@ extension SubscriptionsVC {
         }).store(self)
     }
     func reload(){
+        hideEmptyScreen()
         if viewModel?.items.value?.count ?? 0 == 0 {
             packagesTbl.isHidden = true
             showEmptyScreen(for: 400 , title: "There are no packages available".localized)
@@ -108,6 +128,19 @@ extension SubscriptionsVC {
         }
         packagesTbl.reloadData()
         packagesTbl.stopSwipeButtom()
+
+    }
+    func reloadsubscribe(){
+        hideEmptyScreen()
+        if viewModel?.mysubscribe.value?.count ?? 0 == 0 {
+            subcribeTbl.isHidden = true
+            showEmptyScreen(for: 400 , title: "There are no Subscription available".localized)
+        }else {
+            subcribeTbl.isHidden = false
+            hideEmptyScreen()
+        }
+        subcribeTbl.reloadData()
+        subcribeTbl.stopSwipeButtom()
 
     }
     func clickBtn(){
@@ -139,6 +172,10 @@ extension SubscriptionsVC {
             packageBtn.setTitleColor(R.color.gray1(), for: .normal)
             packageView.isHidden = true
             subscribeView.isHidden = false
+            viewModel?.mysubscribe.send([])
+            viewModel?.resetPaginator()
+            viewModel?.clearDataSource()
+            viewModel?.fetchmypackages()
         }
     }
 }
@@ -155,7 +192,11 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
             if scrollView.contentOffset.y > tableViewOffsetThreshold && scrollContainerView.isDragging {
                 // Fetch more data here
                 if case self.viewModel?.canPaginate() = true {
-                    self.viewModel?.fetchpackages()
+                    if self.type == 0 {
+                        self.viewModel?.fetchpackages()
+                    }else {
+                        self.viewModel?.fetchmypackages()
+                    }
                 }
             }
         }
@@ -164,7 +205,11 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
         if scrollView == scrollContainerView {
             scrollView.swipeButtomRefresh { [weak self] in
                 if case self?.viewModel?.canPaginate() = true {
-                    self?.viewModel?.fetchpackages()
+                    if self?.type == 0 {
+                        self?.viewModel?.fetchpackages()
+                    }else {
+                        self?.viewModel?.fetchmypackages()
+                    }
                 } else {
                     scrollView.stopSwipeButtom()
                 }
@@ -172,21 +217,33 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.dataSource()?.count ?? 2
+        if tableView == packagesTbl {
+            return viewModel?.dataSource()?.count ?? 2
+        }else {
+            return viewModel?.mysubscribe.value?.count ?? 2
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.cell(type: PackagesTableViewCell.self, indexPath)
-        cell.model = viewModel?.dataSource()?[safe: indexPath.row]
-        cell.clubId = clubId
-        cell.setup()
-        return cell
+        if tableView == packagesTbl {
+            var cell = tableView.cell(type: PackagesTableViewCell.self, indexPath)
+            cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+            cell.clubId = clubId
+            cell.setup()
+            return cell
+        }else {
+            var cell = tableView.cell(type: PackagesTableViewCell.self, indexPath)
+            cell.model = viewModel?.mysubscribe.value?[safe: indexPath.row]
+            cell.setupmysubscribe()
+            cell.delegate = self
+            return cell
+        }
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if viewModel?.items.value?.count ?? 0 == 0 {
+        if viewModel?.items.value?.count ?? 0 == 0 && viewModel?.mysubscribe.value?.count ?? 0 == 0 {
             return
         }
         if tableView == packagesTbl {
@@ -218,5 +275,12 @@ extension SubscriptionsVC: PayTapsDelegate, PayTapsDataSource {
     
     func payTaps(_ payTaps: PayTaps?, URL: Bool?) -> String? {
         return viewModel?.paymentdata.value?.data?.invoiceURL ?? ""
+    }
+}
+
+extension SubscriptionsVC : PackagesTableViewCellDelegate{
+    func delete(wasPressedOnCell cell: PackagesTableViewCell, model: MysubscribeDatum) {
+        viewModel?.packageId.send(model.id ?? 0)
+        coordinator?.deletesubscribe()
     }
 }

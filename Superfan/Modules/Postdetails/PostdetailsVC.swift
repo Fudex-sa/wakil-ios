@@ -98,8 +98,7 @@ extension PostdetailsVC {
             self?.coordinator?.editpost()
         }).store(self)
         closeBtn.publisher.listen(on: {[weak self] _ in
-            self?.startLoading()
-            self?.viewModel?.deletepost()
+            self?.coordinator?.deletepost()
         }).store(self)
     }
     func reload() {

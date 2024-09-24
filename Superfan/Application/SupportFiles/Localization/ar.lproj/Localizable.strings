@@ -434,3 +434,13 @@
 "You are cancelled the payment process" = "تم إلغاء عملية الدفع";
 "Online payment has been made a mistake please try again" = "تم ارتكاب خطأ في الدفع عبر الإنترنت ، يرجى المحاولة مرة أخرى";
 "Paying" = "الدفع";
+"Unsubscribe" = "الغاء الاشتراك";
+"Expires in" = "تنتهى فى";
+"Delete comment" = "حذف تعليق";
+"Are you want to delete comment?" = "هل تريد حذف التعليق؟";
+"Delete post" = "حذف منشور";
+"Are you want to delete post?" = "هل تريد حذف المنشور؟";
+"Delete reply" = "حذف رد";
+"Are you want to delete reply?"= "هل تريد حذف الرد؟";
+"Are you want to Unsubscribe?" = "هل تريد حذف الغاء الاشتراك؟";
+"There are no Subscription available" = "لا توجد اشترااكات متاحة";

@@ -7,14 +7,18 @@
 //
 
 import UIKit
+protocol PackagesTableViewCellDelegate: AnyObject {
+    func delete(wasPressedOnCell cell: PackagesTableViewCell , model : MysubscribeDatum)
 
+}
 class PackagesTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var unsubscribeBtn: UIButton!
     @IBOutlet weak var FeatureHight: NSLayoutConstraint!
     @IBOutlet weak var featureView: UIView!
     @IBOutlet weak var viewHight: NSLayoutConstraint!
     @IBOutlet weak var buttomHight: NSLayoutConstraint!
     @IBOutlet weak var conatinerView: UIView!
-    
+    var delegate: PackagesTableViewCellDelegate?
     @IBOutlet weak var colorLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
@@ -50,6 +54,29 @@ class PackagesTableViewCell: BaseTableViewCell {
         featuresTbl.delegate = self
         featuresTbl.dataSource = self
         featuresTbl.reloadData()
+        //updateTableViewHeight()
+    }
+     func setupmysubscribe() {
+        skeleton(view: contentView)
+        guard var model = model as? MysubscribeDatum else { return }
+        clubLbl.text = model.club?.name ?? ""
+        clubImg.setImage(url: model.club?.logo ?? "")
+        titleLbl.text = model.title ?? ""
+        priceLbl.text = "\(model.price ?? 0) \("SAR".localized) / \(model.monthesCount ?? 0) \("Months".localized)"
+        
+         colorLbl.textColor = R.color.primary()
+         colorLbl.text = "\("Expires in".localized) \(model.expireDate ?? "")"
+        features.removeAll()
+        features.append(contentsOf: model.features ?? [])
+        FeatureHight.constant = CGFloat((features.count) * 30)
+        featuresTbl.delegate = self
+        featuresTbl.dataSource = self
+        featuresTbl.reloadData()
+         unsubscribeBtn.isHidden = false
+         unsubscribeBtn.publisher.listen(on: {[weak self] _ in
+             guard let self = self else { return }
+             self.delegate?.delete(wasPressedOnCell: self, model: model)
+         }).store(self)
         //updateTableViewHeight()
     }
     func updateTableViewHeight() {
