@@ -57,6 +57,38 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
             NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         }
         playBtn.publisher.listen { [weak self] in
+//            self?.delegate?.play(wasPressedOnCell: self!)
+//            self?.playaction()
+        }.store(self)
+    }
+    func setuppost1() {
+        skeleton(for: containerView)
+        guard let model = model as? File else { return }
+        sliderImg.contentMode = .scaleAspectFit
+        if model.type ?? "" == "backgrounds" {
+            sliderImg.setImage(url: model.value ?? "")
+            vedioView.isHidden = true
+            playBtn.isHidden = true
+            sliderImg.isHidden = false
+        }else {
+            guard let url = URL(string: model.value ?? "") else { return }
+            playerItem = .init(url: url)
+            playerAv = .init(playerItem: playerItem)
+            playerController = .init()
+            playerController?.player = playerAv
+            playerController?.view.frame.size.height = vedioView.frame.size.height
+            playerController?.view.frame.size.width = vedioView.frame.size.width
+            playerController?.showsPlaybackControls = false
+            playerAv?.pause()
+            playerController?.videoGravity = .resize
+            self.vedioView.addSubview(playerController?.view ?? UIView())
+            self.vedioView.addSubview(createOpacityView())
+            vedioView.isHidden = false
+            sliderImg.isHidden = true
+            playBtn.isHidden = false
+            NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+        }
+        playBtn.publisher.listen { [weak self] in
             self?.delegate?.play(wasPressedOnCell: self!)
             self?.playaction()
         }.store(self)

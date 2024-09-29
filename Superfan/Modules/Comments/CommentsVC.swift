@@ -31,6 +31,7 @@ class CommentsVC: BaseController{
         validator.setUIType(.message).append(commentTxf, rules: [GuardRequired()], title: "Write what you think ...".localized).holdColor()
         return validator
     }()
+    var isbackstage = false
 }
 
 // MARK: - ...  LifeCycle
@@ -96,6 +97,7 @@ extension CommentsVC {
     // MARK: - ...  Functions
     extension CommentsVC {
         func setup() {
+            viewModel?.isbackstages.send(isbackstage)
             if type == .reply {
                 viewModel?.type.send("reply")
             }

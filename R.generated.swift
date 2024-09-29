@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 38 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 40 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -120,6 +120,8 @@ struct R: Rswift.Validatable {
     static let editprofileStoryboard = _R.storyboard.editprofileStoryboard()
     /// Storyboard `ForgetpassStoryboard`.
     static let forgetpassStoryboard = _R.storyboard.forgetpassStoryboard()
+    /// Storyboard `FullscreenStoryboard`.
+    static let fullscreenStoryboard = _R.storyboard.fullscreenStoryboard()
     /// Storyboard `HomeStoryboard`.
     static let homeStoryboard = _R.storyboard.homeStoryboard()
     /// Storyboard `LaunchScreen`.
@@ -160,6 +162,8 @@ struct R: Rswift.Validatable {
     static let signupStoryboard = _R.storyboard.signupStoryboard()
     /// Storyboard `SlideMenuStoryboard`.
     static let slideMenuStoryboard = _R.storyboard.slideMenuStoryboard()
+    /// Storyboard `SubscribePopupStoryboard`.
+    static let subscribePopupStoryboard = _R.storyboard.subscribePopupStoryboard()
     /// Storyboard `SubscriptionsStoryboard`.
     static let subscriptionsStoryboard = _R.storyboard.subscriptionsStoryboard()
     /// Storyboard `SuccesspaymentStoryboard`.
@@ -264,6 +268,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ForgetpassStoryboard", bundle: ...)`
     static func forgetpassStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.forgetpassStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "FullscreenStoryboard", bundle: ...)`
+    static func fullscreenStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.fullscreenStoryboard)
     }
     #endif
 
@@ -404,6 +415,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SlideMenuStoryboard", bundle: ...)`
     static func slideMenuStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.slideMenuStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SubscribePopupStoryboard", bundle: ...)`
+    static func subscribePopupStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.subscribePopupStoryboard)
     }
     #endif
 
@@ -1595,7 +1613,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 113 images.
+  /// This `R.image` struct is generated, and contains static references to 114 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1663,6 +1681,8 @@ struct R: Rswift.Validatable {
     static let splash2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Splash-2")
     /// Image `Tracking`.
     static let tracking = Rswift.ImageResource(bundle: R.hostingBundle, name: "Tracking")
+    /// Image `Vector-18`.
+    static let vector18 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Vector-18")
     /// Image `Video Camera`.
     static let videoCamera = Rswift.ImageResource(bundle: R.hostingBundle, name: "Video Camera")
     /// Image `aboutus`.
@@ -2052,6 +2072,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Tracking", bundle: ..., traitCollection: ...)`
     static func tracking(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tracking, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Vector-18", bundle: ..., traitCollection: ...)`
+    static func vector18(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.vector18, compatibleWith: traitCollection)
     }
     #endif
 
@@ -3110,7 +3137,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 373 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 376 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3596,6 +3623,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let establishedForTheYear = Rswift.StringResource(key: "Established for the year", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players
+      ///
+      /// Locales: ar, en
+      static let excuseMePleaseSubscribeToTheClubPackagesToSeeTheScenesAndRoomsOfThePlayers = Rswift.StringResource(key: "Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Expires in
       ///
       /// Locales: ar, en
@@ -4288,6 +4319,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let stayInformed = Rswift.StringResource(key: "Stay informed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Subscriptions
+      ///
+      /// Locales: ar, en
+      static let subscriptions = Rswift.StringResource(key: "Subscriptions", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Success
       ///
       /// Locales: ar, en
@@ -4320,6 +4355,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let thereAreNoSubscriptionAvailable = Rswift.StringResource(key: "There are no Subscription available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: There are no backstages available
+      ///
+      /// Locales: ar, en
+      static let thereAreNoBackstagesAvailable = Rswift.StringResource(key: "There are no backstages available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: There are no clubs available
       ///
       /// Locales: ar, en
@@ -6418,6 +6457,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Established for the year", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players
+      ///
+      /// Locales: ar, en
+      static func excuseMePleaseSubscribeToTheClubPackagesToSeeTheScenesAndRoomsOfThePlayers(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players"
+        }
+
+        return NSLocalizedString("Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players", bundle: bundle, comment: "")
       }
 
       /// en translation: Expires in
@@ -9015,6 +9069,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Stay informed", bundle: bundle, comment: "")
       }
 
+      /// en translation: Subscriptions
+      ///
+      /// Locales: ar, en
+      static func subscriptions(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Subscriptions", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Subscriptions"
+        }
+
+        return NSLocalizedString("Subscriptions", bundle: bundle, comment: "")
+      }
+
       /// en translation: Success
       ///
       /// Locales: ar, en
@@ -9133,6 +9202,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("There are no Subscription available", bundle: bundle, comment: "")
+      }
+
+      /// en translation: There are no backstages available
+      ///
+      /// Locales: ar, en
+      static func thereAreNoBackstagesAvailable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("There are no backstages available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "There are no backstages available"
+        }
+
+        return NSLocalizedString("There are no backstages available", bundle: bundle, comment: "")
       }
 
       /// en translation: There are no clubs available
@@ -10785,6 +10869,9 @@ struct _R: Rswift.Validatable {
       try forgetpassStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try fullscreenStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try homeStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -10843,6 +10930,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try slideMenuStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try subscribePopupStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try subscriptionsStoryboard.validate()
@@ -10930,6 +11020,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "building", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'building' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.backstageStoryboard().backstageVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'backstageVC' could not be loaded from storyboard 'BackstageStoryboard' as 'BackstageVC'.") }
@@ -11250,6 +11341,29 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.forgetpassStoryboard().forgetpassVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'forgetpassVC' could not be loaded from storyboard 'ForgetpassStoryboard' as 'ForgetpassVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct fullscreenStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = FullscreenVC
+
+      let bundle = R.hostingBundle
+      let fullscreenVC = StoryboardViewControllerResource<FullscreenVC>(identifier: "FullscreenVC")
+      let name = "FullscreenStoryboard"
+
+      func fullscreenVC(_: Void = ()) -> FullscreenVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: fullscreenVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'FullscreenStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.fullscreenStoryboard().fullscreenVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'fullscreenVC' could not be loaded from storyboard 'FullscreenStoryboard' as 'FullscreenVC'.") }
       }
 
       fileprivate init() {}
@@ -11812,6 +11926,32 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SlideMenuStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.slideMenuStoryboard().slideMenuVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'slideMenuVC' could not be loaded from storyboard 'SlideMenuStoryboard' as 'SlideMenuVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct subscribePopupStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SubscribePopupVC
+
+      let bundle = R.hostingBundle
+      let name = "SubscribePopupStoryboard"
+      let subscribePopupVC = StoryboardViewControllerResource<SubscribePopupVC>(identifier: "SubscribePopupVC")
+
+      func subscribePopupVC(_: Void = ()) -> SubscribePopupVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: subscribePopupVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Vector-18", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Vector-18' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'close' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.subscribePopupStoryboard().subscribePopupVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'subscribePopupVC' could not be loaded from storyboard 'SubscribePopupStoryboard' as 'SubscribePopupVC'.") }
       }
 
       fileprivate init() {}

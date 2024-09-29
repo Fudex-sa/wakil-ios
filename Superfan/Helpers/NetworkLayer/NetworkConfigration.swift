@@ -82,6 +82,7 @@ struct NetworkConfigration {
         case packages = "fan/packages"
         case mySubscriptions = "fan/mySubscriptions"
         case Subscriptions = "fan/subscriptions"
+        case backstages = "fan/backstages"
         case paymentMethods
         case refreshToken = "/api/app/register/refresh-token"
     }

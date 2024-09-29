@@ -21,6 +21,7 @@ class PostdetailsVC: BaseController {
     var viewModel: PostdetailsViewModel?
     var coordinator: PostdetailsCoordinator?
     var postId = 0
+    var isbackstage = false
 }
 
 // MARK: - ...  LifeCycle
@@ -81,7 +82,11 @@ extension PostdetailsVC {
         sliderCollection.skeleton()
         startLoading()
         viewModel?.postId.send(postId)
-        viewModel?.getpostdetails()
+        if isbackstage == true {
+            viewModel?.getbackstagesdetails()
+        }else {
+            viewModel?.getpostdetails()
+        }
         clubImg.UIViewAction {
             if self.viewModel?.postdata.value?.data?.user?.type ?? "" != "3" && self.viewModel?.postdata.value?.data?.user?.type ?? "" != "4"{
                 return
@@ -148,7 +153,17 @@ extension PostdetailsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
             // No spacing between cells to ensure they are adjacent
+       
             return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if viewModel?.postdata.value?.data?.files?.count ?? 0 == 0 {
+            return
+        }
+        guard let scene = R.storyboard.fullscreenStoryboard.fullscreenVC() else { return }
+        scene.files = viewModel?.postdata.value?.data?.files ?? []
+        scene.pos = indexPath.row ?? 0
+        push(scene)
     }
   }
 

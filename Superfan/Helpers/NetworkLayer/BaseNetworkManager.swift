@@ -13,6 +13,7 @@ class BaseNetworkManager: Downloader, Paginator, Alertable, Combining {
             return .init(headers)
         }
     }
+    var fullurl = ""
     var paramaters: [String: Any] = [:]
     var headers: [HTTPHeader] = []
     var subscriptions: Set<Subscriptions> = []
@@ -75,6 +76,7 @@ extension BaseNetworkManager {
         } else {
             url = self.url+method
         }
+        fullurl = url
         return url
     }
     func checkReachability() -> Bool {
@@ -158,6 +160,9 @@ extension BaseNetworkManager {
                 return (.failure(error))
             case 422?:
                 (UIApplication.topViewController() as? BaseController)?.stopLoading()
+                if fullurl.contains("backstages"){
+                    Coordinator.instance.suscribpopup()
+                }
                 let error: NetworkError = .init(message: getErrorMessage(data: response.data ?? Data()) ?? "")
                 return (.failure(error))
             case 426?:

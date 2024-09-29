@@ -16,10 +16,34 @@
                     <view key="view" contentMode="scaleToFill" id="1ed-K5-ecp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cB0-pA-gnn">
+                                <rect key="frame" x="127" y="107" width="160" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="3Ww-dH-N2e"/>
+                                    <constraint firstAttribute="height" constant="40" id="YPp-ma-k8G"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NMV-dv-3We">
+                                <rect key="frame" x="8" y="171" width="398" height="622"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ios-td-U5T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cB0-pA-gnn" firstAttribute="centerX" secondItem="1ed-K5-ecp" secondAttribute="centerX" id="26q-UA-cFE"/>
+                            <constraint firstItem="cB0-pA-gnn" firstAttribute="top" secondItem="Ios-td-U5T" secondAttribute="top" constant="15" id="8kM-PD-BKG"/>
+                            <constraint firstItem="NMV-dv-3We" firstAttribute="top" secondItem="cB0-pA-gnn" secondAttribute="bottom" constant="24" id="FBq-Ua-FTU"/>
+                            <constraint firstItem="Ios-td-U5T" firstAttribute="bottom" secondItem="NMV-dv-3We" secondAttribute="bottom" constant="20" id="Kou-to-owO"/>
+                            <constraint firstItem="Ios-td-U5T" firstAttribute="trailing" secondItem="NMV-dv-3We" secondAttribute="trailing" constant="8" id="jTa-Pd-WPH"/>
+                            <constraint firstItem="NMV-dv-3We" firstAttribute="leading" secondItem="Ios-td-U5T" secondAttribute="leading" constant="8" id="zSN-jQ-LOH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c6w-BD-JnZ"/>
+                    <connections>
+                        <outlet property="backstageTbl" destination="NMV-dv-3We" id="I5k-Iz-ZPp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOF-jI-Bue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,6 +76,7 @@
     </scenes>
     <resources>
         <image name="building" width="24" height="24"/>
+        <image name="logo" width="229" height="37"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

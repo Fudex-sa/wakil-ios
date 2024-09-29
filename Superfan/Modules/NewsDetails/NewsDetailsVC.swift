@@ -109,5 +109,18 @@ extension NewsDetailsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDat
             cell.setup()
             return cell
         }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if viewModel?.newsdata.value?.data?.backgrouds?.count ?? 0 == 0 {
+            return
+        }
+        guard let scene = R.storyboard.fullscreenStoryboard.fullscreenVC() else { return }
+        var files : [File] = []
+        for index in viewModel?.newsdata.value?.data?.backgrouds ?? [] {
+            files.append(File(id: index.id, value: index.image, type: "backgrounds"))
+        }
+        scene.files = files
+        scene.pos = indexPath.row ?? 0
+        push(scene)
+    }
    
   }

@@ -89,7 +89,7 @@ class PostsTableViewCell: BaseTableViewCell {
         }
     }
     func configure(with text: String, isExpanded: Bool, onExpandCollapse: @escaping () -> Void) {
-            self.fullText = text
+            self.fullText = text.htmlToString
             self.isExpanded = isExpanded
             self.onExpandCollapse = onExpandCollapse
 

@@ -27,6 +27,14 @@ extension PostdetailsViewModel {
             self?.postdata.send(model)
         }).store(self)
     }
+    func getbackstagesdetails() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.backstages.rawValue)/\(postId.value ?? 0)", type: .get, PostdetailsModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.postdata.send(model)
+        }).store(self)
+    }
     func deletepost() {
         NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/delete", type: .post, DeletePost.self)?.response(error: { [weak self] error in
             self?.error.send(error)

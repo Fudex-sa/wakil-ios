@@ -12,12 +12,14 @@ import Foundation
 class CommentsViewModel: BaseViewModel , DataSourceViewModel{
     var comment: Publisher<String> = .init()
     var type: Publisher<String> = .init()
+    var isbackstages: Publisher<Bool> = .init()
     var postId: Publisher<Int> = .init()
     var commentId: Publisher<Int> = .init()
     var items: Publisher<[CommentsDatum]> = .init()
     var likedata: Publisher<UserRoot> = .init()
     var deletedata: Publisher<DeletePost> = .init()
     var addcommentdata: Publisher<UserRoot> = .init()
+    
 }
 // MARK: - ...  ViewModel Contract
 extension CommentsViewModel {
@@ -29,7 +31,11 @@ extension CommentsViewModel {
         if type.value ?? "" == "reply"{
            method = "\(NetworkConfigration.EndPoint.comments.rawValue)/\(postId.value ?? 0)/comments"
         }else {
-            method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments"
+            if isbackstages.value ?? false == true {
+                method = "\(NetworkConfigration.EndPoint.backstages.rawValue)/\(postId.value ?? 0)/comments"
+            }else{
+                method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments"
+            }
         }
         NetworkManager.instance.request(method, type: .get, CommentsModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
@@ -46,7 +52,11 @@ extension CommentsViewModel {
         if type.value ?? "" == "reply"{
            method = "\(NetworkConfigration.EndPoint.comments.rawValue)/\(postId.value ?? 0)/comment"
         }else {
-            method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comment"
+            if isbackstages.value ?? false == true {
+                method = "\(NetworkConfigration.EndPoint.backstages.rawValue)/\(postId.value ?? 0)/comment"
+            }else{
+                method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comment"
+            }
         }
         NetworkManager.instance.request(method, type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
@@ -61,7 +71,11 @@ extension CommentsViewModel {
         if type.value ?? "" == "reply"{
            method = "\(NetworkConfigration.EndPoint.comments.rawValue)/\(commentId.value ?? 0)/edit"
         }else {
-            method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/edit"
+            if isbackstages.value ?? false == true {
+                method = "\(NetworkConfigration.EndPoint.backstages.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/edit"
+            }else{
+                method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/edit"
+            }
         }
         NetworkManager.instance.request(method, type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
@@ -75,7 +89,12 @@ extension CommentsViewModel {
         if type.value ?? "" == "reply"{
            method = "\(NetworkConfigration.EndPoint.comments.rawValue)/\(commentId.value ?? 0)/delete"
         }else {
-            method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/delete"
+            if isbackstages.value ?? false == true {
+                method = "\(NetworkConfigration.EndPoint.backstages.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/delete"
+            }else{
+                method = "\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/comments/\(commentId.value ?? 0)/delete"
+            }
+           
         }
         NetworkManager.instance.request(method, type: .post, DeletePost.self)?.response(error: { [weak self] error in
             self?.error.send(error)

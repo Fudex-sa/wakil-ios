@@ -30,6 +30,11 @@ class Coordinator: NSObject {
         let scene = UIApplication.topViewController() as? BaseController
         scene?.showMaintanceScreen()
     }
+    @objc dynamic func suscribpopup() {
+        guard let scene = R.storyboard.subscribePopupStoryboard.subscribePopupVC() else { return }
+        let view = UIApplication.topViewController() as? BaseController
+        view?.pushPop(scene)
+    }
     @objc dynamic func guest() {
 //        guard let scene = R.storyboard.main.guestPopUpViewController() else { return }
 //        let view = UIApplication.topViewController() as? BaseController
