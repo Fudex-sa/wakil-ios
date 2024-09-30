@@ -12,6 +12,8 @@ import FirebaseMessaging
 
 // MARK: - ...  ViewController - Vars
 class SlideMenuVC: BaseController {
+    @IBOutlet weak var subscribeHight: NSLayoutConstraint!
+    @IBOutlet weak var subscribeTop: NSLayoutConstraint!
     @IBOutlet weak var subscribeView: UIView!
     @IBOutlet weak var mypostView: UIView!
     @IBOutlet weak var containerView: UIView!

@@ -61,6 +61,9 @@ class PostsTableViewCell: BaseTableViewCell {
         likeView.publisherGesture.listen(on: {[weak self] _ in
             guard let self = self else { return }
             self.delegate?.favoraite(wasPressedOnCell: self, model: model)
+            if model.is_subscriped ?? 1 == 0 {
+                return
+            }
             if UD.user != nil {
                 if model.is_liked == 1 {
                     model.likersCount = (model.likersCount ?? 0) - 1

@@ -70,7 +70,7 @@ extension BackstageVC {
         viewModel?.fetchbackstage()
     }
     func reload(){
-        if viewModel?.items.value?.count ?? 0 == 0 {
+        if viewModel?.dataSource()?.count ?? 0 == 0 {
             backstageTbl.isHidden = true
             showEmptyScreen(for: 400 , title: "There are no backstages available".localized)
         }else {
@@ -123,7 +123,11 @@ extension BackstageVC:UITableViewDelegate , UITableViewDataSource {
         if expandedStates.count != 0 {
             let isExpanded = expandedStates[indexPath.item]
             let text = viewModel?.items.value?[safe: indexPath.row]?.description ?? ""
-            cell.configure(with: text, isExpanded: isExpanded) {
+            cell.configure(with: text, isExpanded: isExpanded) { [self] in
+                if viewModel?.dataSource()?[safe: indexPath.row]?.is_subscriped ?? 1 == 0 {
+                    Coordinator.instance.suscribpopup()
+                    return
+                }
                 self.expandedStates[indexPath.item] = !self.expandedStates[indexPath.item]
                 self.backstageTbl.reloadRows(at: [indexPath], with: .automatic)
             }
@@ -138,6 +142,10 @@ extension BackstageVC:UITableViewDelegate , UITableViewDataSource {
         if viewModel?.items.value?.count ?? 0 == 0 {
             return
         }
+        if viewModel?.dataSource()?[safe: indexPath.row]?.is_subscriped ?? 1 == 0 {
+            Coordinator.instance.suscribpopup()
+            return
+        }
         self.coordinator?.detailsposts(id: viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
     }
 
@@ -150,6 +158,10 @@ extension BackstageVC : PostsTableViewCellDelegate{
         if UD.user == nil {
             Coordinator.instance.unAuthorized()
         }else {
+            if model.is_subscriped ?? 1 == 0 {
+                Coordinator.instance.suscribpopup()
+                return
+            }
             startLoading()
             viewModel?.postId.send(model.id ?? 0)
             if model.is_liked == 1 {
@@ -160,6 +172,10 @@ extension BackstageVC : PostsTableViewCellDelegate{
         }
     }
     func comments(wasPressedOnCell cell: PostsTableViewCell, model: PostsDatum) {
+        if model.is_subscriped ?? 1 == 0 {
+            Coordinator.instance.suscribpopup()
+            return
+        }
         coordinator?.comments(id: model.id ?? 0)
     }
 }

@@ -113,6 +113,17 @@ extension HomeVC {
             }
             self?.reloadposts()
         })
+        viewModel?.settingdata.listen(on: { [weak self] value in
+            if self?.viewModel?.settingdata.value?.data?.value ?? "" == "1"{
+                self?.sideMenuViewController?.subscribeView.isHidden = false
+                self?.sideMenuViewController?.subscribeTop.constant = 24
+                self?.sideMenuViewController?.subscribeHight.constant = 35
+            }else {
+                self?.sideMenuViewController?.subscribeView.isHidden = true
+                self?.sideMenuViewController?.subscribeTop.constant = 0
+                self?.sideMenuViewController?.subscribeHight.constant = 0
+            }
+        })
         viewModel?.likedata.listen(on: { [weak self] value in
             NotificationBuilder()
                 .setTitle("Success".localized)
@@ -127,6 +138,7 @@ extension HomeVC {
 extension HomeVC {
     func setup() {
         viewModel?.countryId.send(1)
+        viewModel?.fetchsetting()
         if type == 0 {
             showevents()
         }else if type == 1 {
@@ -307,6 +319,7 @@ extension HomeVC {
         expandedStates.removeAll()
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
+        viewModel?.posts.send([])
         viewModel?.fetchposts()
         hideEmptyScreen()
     }

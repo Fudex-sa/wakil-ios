@@ -69,6 +69,7 @@ extension SubscriptionsVC {
         })
         viewModel?.paymentdata.listen(on: { [weak self] value in
             self?.stopLoading()
+            self?.viewModel?.checkclubId.send(0)
             self?.payTaps = .init(dataSource: self)
             self?.payTaps?.delegate = self
             self?.payTaps?.present(in: self)
@@ -84,6 +85,14 @@ extension SubscriptionsVC {
             self?.viewModel?.resetPaginator()
             self?.viewModel?.clearDataSource()
             self?.viewModel?.fetchmypackages()
+        })
+        viewModel?.checksubscribe.listen(on: { [weak self] value in
+            self?.stopLoading()
+            if self?.viewModel?.checksubscribe.value?.status == true {
+                self?.coordinator?.paymentmethod()
+            }else {
+                self?.coordinator?.checksubscribe()
+            }
         })
         
     }
@@ -248,7 +257,9 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
         }
         if tableView == packagesTbl {
             viewModel?.packageId.send(viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
-            coordinator?.paymentmethod()
+            viewModel?.checkclubId.send(viewModel?.dataSource()?[safe: indexPath.row]?.club?.id ?? 0)
+            startLoading()
+            viewModel?.fetchchecksubscribe()
         }
         
     }
@@ -281,6 +292,7 @@ extension SubscriptionsVC: PayTapsDelegate, PayTapsDataSource {
 extension SubscriptionsVC : PackagesTableViewCellDelegate{
     func delete(wasPressedOnCell cell: PackagesTableViewCell, model: MysubscribeDatum) {
         viewModel?.packageId.send(model.id ?? 0)
+        viewModel?.checkclubId.send(0)
         coordinator?.deletesubscribe()
     }
 }

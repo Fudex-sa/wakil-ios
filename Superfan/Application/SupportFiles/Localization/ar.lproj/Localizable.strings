@@ -373,7 +373,7 @@
 "Pass accuracy, pass correctness"  = "دقة التمريرات";
 "Fouls" = "أخطاء";
 "Yellow card" = "بطاقة صفراء";
-"Red Card" = "بطاقة الحمراء";
+"Red Card" = "بطاقة حمراء";
 "Offside" = "تسلل";
 "Corner kick" = "ركلة ركنية";
 "Club Information" = "معلومات عن النادي";
@@ -447,3 +447,4 @@
 "Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players" = "معذرة ..برجاء الأشتراك في باقات النادى لمشاهدة كواليس وغرف اللاعبين";
 "Subscriptions" = "الأشتركات";
 "There are no backstages available" = "لا توجد خلف الكواليس متاحة";
+"You are subscribed with this club in another package, if you subscribe to this package, another package will be deleted" = "أنت مشترك مع هذا النادي فى باقة أخرى إذا اشتركت في هذه الباقة سيتم حذف الباقة أخرى";

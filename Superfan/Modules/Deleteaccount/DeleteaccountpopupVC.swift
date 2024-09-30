@@ -31,6 +31,7 @@ class DeleteaccountpopupVC: BaseController {
         case comment
         case reply
         case post
+        case resubscribe
     }
     @IBOutlet weak var discardBtn: UIButton!
     @IBOutlet weak var doneBtn: UIButton!
@@ -100,6 +101,9 @@ extension DeleteaccountpopupVC {
         }else if viewType == .subscribe {
             titleLbl.text = "Unsubscribe".localized
             desLbl.text = "Are you want to Unsubscribe?".localized
+        }else if viewType == .resubscribe {
+            titleLbl.text = "Unsubscribe".localized
+            desLbl.text = "You are subscribed with this club in another package, if you subscribe to this package, another package will be deleted".localized
         }
         doneBtn.publisher.listen(on: { [weak self] in
             if self?.viewType == .account {

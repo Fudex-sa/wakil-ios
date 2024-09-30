@@ -13,11 +13,14 @@ class SubscriptionsViewModel: BaseViewModel , DataSourceViewModel{
     var packageId: Publisher<Int> = .init()
     var paymentId: Publisher<Int> = .init()
     var clubId: Publisher<Int> = .init()
+    var checkclubId: Publisher<Int> = .init()
     var items: Publisher<[PackageDatum]> = .init()
     var mysubscribe: Publisher<[MysubscribeDatum]> = .init()
     var mysubscribedata: Publisher<Bool> = .init()
     var paymentdata: Publisher<PaymentModel> = .init()
     var delete: Publisher<UserRoot> = .init()
+    var checksubscribe: Publisher<ChecksubscribeModel> = .init()
+
 }
 // MARK: - ...  ViewModel Contract
 extension SubscriptionsViewModel {
@@ -65,6 +68,17 @@ extension SubscriptionsViewModel {
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
             self?.delete.send(model)
+        }).store(self)
+    }
+    func fetchchecksubscribe() {
+        if checkclubId.value ?? 0 != 0 {
+            NetworkManager.instance.paramaters["club_id"] = checkclubId.value ?? 0
+        }
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.checkSubscriptionSellers.rawValue, type: .get, ChecksubscribeModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.checksubscribe.send(model)
         }).store(self)
     }
 }

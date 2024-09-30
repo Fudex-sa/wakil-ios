@@ -25,6 +25,7 @@ class HomeViewModel: BaseViewModel , DataSourceViewModel{
     var postsfinish: Publisher<Bool> = .init()
     var eventsfinish: Publisher<Bool> = .init()
     var likedata: Publisher<UserRoot> = .init()
+    var settingdata: Publisher<SettingModel> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -96,7 +97,10 @@ extension HomeViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
-            self?.posts.send(model.data ?? [])
+            var items:[PostsDatum] = []
+            items.append(contentsOf: self?.posts.value ?? [])
+            items.append(contentsOf: model.data ?? [])
+            self?.posts.send(items)
             self?.paginator(respnod: model.data)
             self?.postsfinish.send(true)
         }).store(self)
@@ -117,5 +121,13 @@ extension HomeViewModel {
             self?.likedata.send(model)
         }).store(self)
        
+    }
+    func fetchsetting() {
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.settingsubscribe.rawValue, type: .get, SettingModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.settingdata.send(model)
+        }).store(self)
     }
 }

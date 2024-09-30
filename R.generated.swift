@@ -3137,7 +3137,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 376 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 377 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -4495,6 +4495,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let youAreCancelledThePaymentProcess = Rswift.StringResource(key: "You are cancelled the payment process", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: You are subscribed with this club in another package, if you subscribe to this package, another package will be deleted
+      ///
+      /// Locales: ar, en
+      static let youAreSubscribedWithThisClubInAnotherPackageIfYouSubscribeToThisPackageAnotherPackageWillBeDeleted = Rswift.StringResource(key: "You are subscribed with this club in another package, if you subscribe to this package, another package will be deleted", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: You can follow the clubs for free or subscribe to follow the news of the distinguished clubs.
       ///
       /// Locales: ar, en
@@ -9727,6 +9731,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("You are cancelled the payment process", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You are subscribed with this club in another package, if you subscribe to this package, another package will be deleted
+      ///
+      /// Locales: ar, en
+      static func youAreSubscribedWithThisClubInAnotherPackageIfYouSubscribeToThisPackageAnotherPackageWillBeDeleted(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You are subscribed with this club in another package, if you subscribe to this package, another package will be deleted", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You are subscribed with this club in another package, if you subscribe to this package, another package will be deleted"
+        }
+
+        return NSLocalizedString("You are subscribed with this club in another package, if you subscribe to this package, another package will be deleted", bundle: bundle, comment: "")
       }
 
       /// en translation: You can follow the clubs for free or subscribe to follow the news of the distinguished clubs.

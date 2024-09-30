@@ -85,6 +85,7 @@ struct PostsDatum: Codable {
     let type: String?
     let title, description, date: String?
     let files: [File]?
+    let is_subscriped: Int?
     var is_liked: Int?
     let backgroundImg: String?
     var likersCount: Int?
@@ -105,3 +106,4 @@ struct User: Codable {
     let logo: String?
     let type: String?
 }
+

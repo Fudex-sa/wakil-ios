@@ -47,3 +47,6 @@ struct MysubscribeDatum: Codable {
         case features
     }
 }
+struct ChecksubscribeModel: Codable {
+    let status: Bool?
+}

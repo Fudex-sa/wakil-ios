@@ -50,8 +50,18 @@ extension SubscriptionsCoordinator {
         scene.delegate = self
         view?.pushPop(scene)
     }
+    func checksubscribe() {
+        guard let scene = R.storyboard.deleteaccountpopupStoryboard.deleteaccountpopupVC() else { return }
+        scene.viewType = .resubscribe
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
     func done() {
         view?.startLoading()
-        view?.viewModel?.deletesubscribe()
+        if view?.viewModel?.checkclubId.value ?? 0 == 0 {
+            view?.viewModel?.deletesubscribe()
+        }else {
+            view?.viewModel?.subscribe()
+        }
     }
 }
