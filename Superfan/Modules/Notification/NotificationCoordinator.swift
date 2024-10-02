@@ -23,4 +23,27 @@ extension NotificationCoordinator {
         scene.newsId = id ?? 0
         view?.push(scene)
     }
+    func comments(id: Int) {
+        guard let scene = R.storyboard.commentsStoryboard.commentsVC() else { return }
+        scene.postId = id
+        view?.push(scene)
+    }
+    func reply(id: Int) {
+        guard let scene = R.storyboard.commentsStoryboard.commentsVC() else { return }
+        scene.postId = id
+        scene.type = .reply
+        view?.push(scene)
+    }
+    func detailsbackstages(id: Int) {
+        guard let scene = R.storyboard.postdetailsStoryboard.postdetailsVC() else { return }
+        scene.postId = id
+        scene.isbackstage = true
+        view?.push(scene)
+    }
+   
+    func detailsposts(id: Int) {
+        guard let scene = R.storyboard.postdetailsStoryboard.postdetailsVC() else { return }
+        scene.postId = id
+        view?.push(scene)
+    }
 }

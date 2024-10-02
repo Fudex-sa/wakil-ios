@@ -60,6 +60,10 @@ extension BackstageVC {
 // MARK: - ...  Functions
 extension BackstageVC {
     func setup() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            return
+        }
         backstageTbl.delegate = self
         backstageTbl.dataSource = self
         backstageTbl.observe()

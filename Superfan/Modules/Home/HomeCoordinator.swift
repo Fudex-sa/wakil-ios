@@ -54,6 +54,18 @@ extension HomeCoordinator {
         scene.postId = id
         view?.push(scene)
     }
+    func reply(id: Int) {
+        guard let scene = R.storyboard.commentsStoryboard.commentsVC() else { return }
+        scene.postId = id
+        scene.type = .reply
+        view?.push(scene)
+    }
+    func detailsbackstages(id: Int) {
+        guard let scene = R.storyboard.postdetailsStoryboard.postdetailsVC() else { return }
+        scene.postId = id
+        scene.isbackstage = true
+        view?.push(scene)
+    }
     func detailsclub(id: Int) {
         guard let scene = R.storyboard.clubdetailsStoryboard.clubdetailsVC() else { return }
         scene.clubId = id

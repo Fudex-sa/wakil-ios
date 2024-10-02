@@ -125,6 +125,24 @@ extension NotificationVC:UITableViewDelegate , UITableViewDataSource {
         }
         if viewModel?.dataSource()?[safe: indexPath.row]?.notificationType ?? "" == "news" {
             coordinator?.notdetails(id: viewModel?.dataSource()?[safe: indexPath.row]?.itemId ?? 0)
+        }else  if viewModel?.dataSource()?[safe: indexPath.row]?.notificationType ?? "" == "likePost"{
+            coordinator?.detailsposts(id: viewModel?.dataSource()?[safe: indexPath.row]?.itemId ?? 0)
+           
+        }else  if viewModel?.dataSource()?[safe: indexPath.row]?.notificationType ?? "" == "commentPost"{
+            coordinator?.comments(id: viewModel?.dataSource()?[safe: indexPath.row]?.itemId ?? 0)
+           
+        }else  if viewModel?.dataSource()?[safe: indexPath.row]?.notificationType ?? "" == "likePostComment"{
+            coordinator?.comments(id: viewModel?.dataSource()?[safe: indexPath.row]?.itemId ?? 0)
+           
+        }else  if viewModel?.dataSource()?[safe: indexPath.row]?.notificationType ?? "" == "replyPost"{
+            coordinator?.reply(id: viewModel?.dataSource()?[safe: indexPath.row]?.itemId ?? 0)
+           
+        }else  if viewModel?.dataSource()?[safe: indexPath.row]?.notificationType ?? "" == "likeBackstageComment"{
+            coordinator?.detailsbackstages(id: viewModel?.dataSource()?[safe: indexPath.row]?.itemId ?? 0)
+           
+        }else  if viewModel?.dataSource()?[safe: indexPath.row]?.notificationType ?? "" == "replyBackstage"{
+            coordinator?.reply(id: viewModel?.dataSource()?[safe: indexPath.row]?.itemId ?? 0)
+           
         }
        
     }

@@ -11,9 +11,33 @@ import UIKit
 
 // MARK: - ...  Network layer configration
 struct NetworkConfigration {
+    enum Environment {
+        case live
+        case test
+    }
+    struct Config {
+        static var environment: Environment = .test  // Change this to .test for testing
+
+        static var baseURL: String {
+            switch environment {
+            case .live:
+                return "http://sfanz.co/api/v2/"
+            case .test:
+                return "https://superfan.fudex-tech.net/api/v2/"
+            }
+        }
+        static var firebaseTopic: String {
+            switch environment {
+            case .live:
+                return "superfan_ios_live"
+            case .test:
+                return "superfan_ios_demo"
+            }
+        }
+    }
     static var _URL: String?
 //    static var URL: String = "http://sfanz.co/api/v2/"
-    static var URL: String = "https://superfan.fudex-tech.net/api/v2/"
+    static var URL: String = Config.baseURL
     static let VERSION = "v1"
     static var useAuth: Bool = false
     static var environment: NetworkConfigration.AppEnvironment? {

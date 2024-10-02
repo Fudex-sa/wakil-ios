@@ -116,7 +116,7 @@ extension HomeVC {
         viewModel?.settingdata.listen(on: { [weak self] value in
             if self?.viewModel?.settingdata.value?.data?.value ?? "" == "1"{
                 self?.sideMenuViewController?.subscribeView.isHidden = false
-                self?.sideMenuViewController?.subscribeTop.constant = 24
+                self?.sideMenuViewController?.subscribeTop.constant = 20
                 self?.sideMenuViewController?.subscribeHight.constant = 35
             }else {
                 self?.sideMenuViewController?.subscribeView.isHidden = true
@@ -156,6 +156,30 @@ extension HomeVC {
             coordinator?.detailsnews(id: HomeVC.itemId ?? 0)
             HomeVC.type = ""
             HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "likePost"{
+            coordinator?.detailsposts(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "commentPost"{
+            coordinator?.comments(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "likePostComment"{
+            coordinator?.comments(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "replyPost"{
+            coordinator?.reply(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "likeBackstageComment"{
+            coordinator?.detailsbackstages(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "replyBackstage"{
+            coordinator?.reply(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
         }
         changeColoe()
         clubLbl.preferredMaxLayoutWidth = 100
@@ -167,7 +191,7 @@ extension HomeVC {
             }
             clubLbl.sizeToFit()
         }
-        Messaging.messaging().subscribe(toTopic: "superfan_ios_demo") { error in
+        Messaging.messaging().subscribe(toTopic: NetworkConfigration.Config.firebaseTopic) { error in
                 if let error = error {
                     print("Failed to subscribe to topic: \(error.localizedDescription)")
                 } else {
