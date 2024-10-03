@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class MatchesMoreVC: BaseController {
+class MatchesMoreVC: BaseController ,Reloader{
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var matchesTbl: UITableView!
     @IBOutlet weak var perviousLineView: UIView!
     @IBOutlet weak var perviousLbl: UILabel!
@@ -52,6 +54,7 @@ extension MatchesMoreVC {
         })
         
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
     }
@@ -112,6 +115,17 @@ extension MatchesMoreVC {
                 self?.type = 1
             }
         }).store(self)
+        swipeTopRefresh(scrollView: matchesTbl) { [weak self] in
+            if self?.type == 0 {
+                self?.viewModel?.resetPaginator()
+                self?.viewModel?.clearDataSource()
+                self?.viewModel?.fetchtodaymatch()
+            }else {
+                self?.viewModel?.resetPaginator()
+                self?.viewModel?.clearDataSource()
+                self?.viewModel?.fetchperviousymatch()
+            }
+        }
     }
     func reload(){
         if viewModel?.items.value?.count ?? 0 == 0 {

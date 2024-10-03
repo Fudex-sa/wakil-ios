@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class CommentsVC: BaseController{
+class CommentsVC: BaseController, Reloader{
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var sendBtn: UIButton!
     enum VerifyType {
         case add
@@ -61,6 +63,7 @@ extension CommentsVC {
         })
         
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
         viewModel?.likedata.listen(on: { [weak self] value in
@@ -121,6 +124,11 @@ extension CommentsVC {
             sendBtn.publisher.listen(on: {[weak self] _ in
                 self?.addcomment()
             }).store(self)
+            swipeTopRefresh(scrollView: commentsTbl) { [weak self] in
+                self?.viewModel?.resetPaginator()
+                self?.viewModel?.clearDataSource()
+                self?.viewModel?.fetchcomments()
+            }
            
         }
         func reload(){

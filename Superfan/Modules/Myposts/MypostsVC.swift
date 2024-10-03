@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class MypostsVC: BaseController {
+class MypostsVC: BaseController , Reloader{
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var postsTbl: UITableView!
     @IBOutlet weak var addBtn: UIButton!
     var viewModel: MypostsViewModel?
@@ -45,6 +47,7 @@ extension MypostsVC {
         })
         
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
         viewModel?.likedata.listen(on: { [weak self] value in
@@ -74,6 +77,11 @@ extension MypostsVC {
         }).store(self)
         if UD.club != nil {
             addBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
+        }
+        swipeTopRefresh(scrollView: postsTbl) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchposts()
         }
     }
     func reload(){

@@ -11,7 +11,9 @@ import UIKit
 import Firebase
 
 // MARK: - ...  ViewController - Vars
-class HomeVC: BaseController {
+class HomeVC: BaseController,Reloader {
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var matchesView: UIView!
     @IBOutlet weak var noresultNextView: UIView!
@@ -89,28 +91,32 @@ extension HomeVC {
             if self?.type != 0 {
                 return
             }
+            self?.stopSwipeTop()
             self?.reload()
         })
         viewModel?.matchFinish.listen(on: { [weak self] value in
-            
+            self?.stopSwipeTop()
             self?.reloadmatches()
         })
         viewModel?.matchFinishtab.listen(on: { [weak self] value in
             if self?.type != 1 {
                 return
             }
+            self?.stopSwipeTop()
             self?.reloadmatchestabs()
         })
         viewModel?.newsfinish.listen(on: { [weak self] value in
             if self?.type != 2 {
                 return
             }
+            self?.stopSwipeTop()
             self?.reloadnews()
         })
         viewModel?.postsfinish.listen(on: { [weak self] value in
             if self?.type != 3 {
                 return
             }
+            self?.stopSwipeTop()
             self?.reloadposts()
         })
         viewModel?.settingdata.listen(on: { [weak self] value in
@@ -255,6 +261,17 @@ extension HomeVC {
                 self?.showposts()
             }
         }).store(self)
+        swipeTopRefresh(scrollView: containerScrollView) { [weak self] in
+            if self?.type == 0 {
+                self?.showevents()
+            }else if self?.type == 1 {
+                self?.showmatches()
+            }else if self?.type == 2 {
+                self?.shownews()
+            }else if self?.type == 3 {
+                self?.showposts()
+            }
+        }
     }
     func showevents(){
         eventLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")

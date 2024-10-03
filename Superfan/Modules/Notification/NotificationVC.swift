@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class NotificationVC: BaseController {
+class NotificationVC: BaseController , Reloader{
+    var refreshControl: UIRefreshControl!
     @IBOutlet weak var notTbl: UITableView!
     var viewModel: NotificationViewModel?
     var coordinator: NotificationCoordinator?
@@ -43,6 +44,7 @@ extension NotificationVC {
         })
         
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
        
@@ -63,6 +65,11 @@ extension NotificationVC {
         viewModel?.clearDataSource()
         viewModel?.fetchnotifications()
         viewModel?.readallnotification()
+        swipeTopRefresh(scrollView: notTbl) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchnotifications()
+        }
     }
     func reload(){
         if viewModel?.items.value?.count ?? 0 == 0 {

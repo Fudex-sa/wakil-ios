@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class BackstageVC: BaseController {
+class BackstageVC: BaseController , Reloader{
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var backstageTbl: UITableView!
     var viewModel: BackstageViewModel?
     var coordinator: BackstageCoordinator?
@@ -44,6 +46,7 @@ extension BackstageVC {
         })
         
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
         viewModel?.likedata.listen(on: { [weak self] value in
@@ -72,6 +75,11 @@ extension BackstageVC {
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
         viewModel?.fetchbackstage()
+        swipeTopRefresh(scrollView: backstageTbl) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchbackstage()
+        }
     }
     func reload(){
         if viewModel?.dataSource()?.count ?? 0 == 0 {

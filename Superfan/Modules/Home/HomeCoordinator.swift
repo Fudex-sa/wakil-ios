@@ -61,7 +61,7 @@ extension HomeCoordinator {
         view?.push(scene)
     }
     func detailsbackstages(id: Int) {
-        guard let scene = R.storyboard.postdetailsStoryboard.postdetailsVC() else { return }
+        guard let scene = R.storyboard.commentsStoryboard.commentsVC() else { return }
         scene.postId = id
         scene.isbackstage = true
         view?.push(scene)
