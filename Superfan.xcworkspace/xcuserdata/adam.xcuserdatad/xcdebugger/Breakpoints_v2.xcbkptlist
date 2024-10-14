@@ -526,8 +526,8 @@
             filePath = "Superfan/Modules/Subscriptions/SubscriptionsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -542,8 +542,8 @@
             filePath = "Superfan/Modules/Subscriptions/SubscriptionsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -558,8 +558,8 @@
             filePath = "Superfan/Modules/Subscriptions/SubscriptionsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "scrollViewDidEndDragging(_:willDecelerate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -574,8 +574,8 @@
             filePath = "Superfan/Modules/Subscriptions/SubscriptionsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "scrollViewDidEndDragging(_:willDecelerate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -590,8 +590,8 @@
             filePath = "Superfan/Modules/Subscriptions/SubscriptionsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "scrollViewDidEndDragging(_:willDecelerate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -606,9 +606,41 @@
             filePath = "Superfan/Modules/Subscriptions/SubscriptionsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BCDA9B3F-3A03-40BE-8E78-B4608FB3BC6F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Superfan/Helpers/NetworkLayer/BaseNetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "response(response:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52994841-7B59-491E-922D-ED7F7DA9E243"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Superfan/Helpers/NetworkLayer/BaseNetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "response(response:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

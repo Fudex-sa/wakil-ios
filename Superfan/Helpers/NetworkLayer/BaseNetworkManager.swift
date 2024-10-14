@@ -54,7 +54,7 @@ extension BaseNetworkManager {
         headers.append(.init(name: "X-DEVICE-TYPE", value: "ios"))
         let info = Bundle.main.infoDictionary
         let currentVersion = info?["CFBundleShortVersionString"] as? String
-        headers.append(.init(name: "X-APP-VERSION", value: currentVersion ?? ""))
+        headers.append(.init(name: "X-APP-VERSION", value: (currentVersion?.replacingOccurrences(of: String("."), with: ""))!))
         headers.append(.init(name: "Content-Type", value: "application/x-www-form-urlencoded"))
 
     }
@@ -168,13 +168,17 @@ extension BaseNetworkManager {
             case 426?:
                 (UIApplication.topViewController() as? BaseController)?.stopLoading()
                 let error: NetworkError = .init(message: getErrorMessage(data: response.data ?? Data()) ?? "")
+                Coordinator.instance.forceupdate(msg: error.localizedDescription)
                 return (.failure(error))
             case 500?:
                 (UIApplication.topViewController() as? BaseController)?.stopLoading()
                 let error: NetworkError = .init(message: getErrorMessage(data: response.data ?? Data()) ?? "")
                 return (.failure(error))
             case 503?:
+                (UIApplication.topViewController() as? BaseController)?.stopLoading()
+                let error: NetworkError = .init(message: getErrorMessage(data: response.data ?? Data()) ?? "")
                 Coordinator.instance.maintance()
+                return (.failure(error))
             case .none:
                 break
             case .some(let error):
@@ -242,12 +246,7 @@ extension BaseNetworkManager {
 
 // MARK: - ...  Re login
 extension BaseNetworkManager {
-    @discardableResult
-    func forceUpdate() -> NetworkFuture<BaseModel<ForceUpdateModel>?, NetworkError>? {
-        NetworkManager.instance.paramaters["device"] = "ios"
-        return NetworkManager.instance.request(.forceUpdate, type: .get, BaseModel<ForceUpdateModel>.self)
-    }
-   
+
     private func reLogin() -> NetworkFuture<UserRoot?, NetworkError>? {
         if UD.userRemember == true && UserRoot.token() != nil {
             NetworkManager.instance.paramaters["phoneCode"] = UD.userPhoneCode ?? ""

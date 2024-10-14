@@ -12,6 +12,7 @@ import Foundation
 class SubscriptionsViewModel: BaseViewModel , DataSourceViewModel{
     var packageId: Publisher<Int> = .init()
     var paymentId: Publisher<Int> = .init()
+    var tax: Publisher<String> = .init()
     var clubId: Publisher<Int> = .init()
     var checkclubId: Publisher<Int> = .init()
     var items: Publisher<[PackageDatum]> = .init()
@@ -37,11 +38,12 @@ extension SubscriptionsViewModel {
             guard let model = model else { return }
             self?.append(contentsOf: model.data ?? [])
             self?.paginator(respnod: model.data)
+            self?.tax.send(model.added_tax ?? "")
             self?.publisher()
         }).store(self)
     }
     func subscribe() {
-        NetworkManager.instance.paramaters["paymentMethod_id"] = paymentId.value ?? 0
+//        NetworkManager.instance.paramaters["paymentMethod_id"] = paymentId.value ?? 0
         NetworkManager.instance.request("\(NetworkConfigration.EndPoint.packages.rawValue)/\(packageId.value ?? 0)/subscripe", type: .post, PaymentModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

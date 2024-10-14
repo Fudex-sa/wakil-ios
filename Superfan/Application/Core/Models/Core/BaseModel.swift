@@ -32,10 +32,4 @@ class BaseModel<T: Codable>: Codable {
     }
 }
 
-struct ForceUpdateModel: Codable {
-    var signalRUrl: String?
-    var version: String?
-    var newVersion: String?
-    var apiUrl: String?
-    var guestToken: String?
-}
+

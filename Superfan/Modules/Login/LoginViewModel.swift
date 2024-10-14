@@ -44,6 +44,9 @@ extension LoginViewModel {
         NetworkManager.instance.paramaters["provider_token"] = socailId.value ?? ""
         NetworkManager.instance.paramaters["provider_type"] = socialType.value ?? ""
         NetworkManager.instance.paramaters["email"] = email.value ?? ""
+        NetworkManager.instance.paramaters["device_type"] = Constants.FCMTYPE
+        NetworkManager.instance.paramaters["fcm_token"] = Constants.FCMTOKEN
+        NetworkManager.instance.paramaters["device_id"] = Constants.DEVICEID
         NetworkManager.instance.request(NetworkConfigration.EndPoint.socialLogin.rawValue, type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

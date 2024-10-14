@@ -28,6 +28,12 @@ class PackagesTableViewCell: BaseTableViewCell {
     @IBOutlet weak var clubLbl: UILabel!
     @IBOutlet weak var clubImg: UIImageView!
     @IBOutlet weak var clubView: RoundedView!
+    @IBOutlet weak var selecredView: UIView!
+    @IBOutlet weak var selectLbl: UILabel!
+    @IBOutlet weak var selectHight: NSLayoutConstraint!
+    @IBOutlet weak var selecttop: NSLayoutConstraint!
+    var tax = ""
+    var packageId = 0
     var features: [String] = []
     var clubId = 0
     override func setup() {
@@ -37,6 +43,26 @@ class PackagesTableViewCell: BaseTableViewCell {
         clubLbl.text = model.club?.name ?? ""
         clubImg.setImage(url: model.club?.logo ?? "")
         titleLbl.text = model.title ?? ""
+        if model.id ?? 0 == packageId {
+            selectHight.constant = 50
+            selecttop.constant = 15
+            selecredView.isHidden = false
+            conatinerView.borderColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        }else {
+            selectHight.constant = 0
+            selecttop.constant = 0
+            selecredView.isHidden = true
+            conatinerView.borderColor = R.color.gray()
+        }
+        if UD.club != nil {
+            var color = UD.club?.color ?? ""
+            let index = color.index(color.startIndex, offsetBy: 1)
+            color = String(color.suffix(from: index))
+            selecredView.backgroundColor = UIColor(hex: "#15\(color)")
+        }else {
+            selecredView.backgroundColor = R.color.txtprimary()!
+        }
+        selectLbl.text = "\("There is a tax of".localized) \(tax) \("SAR that will be added to the subscription value".localized)"
         priceLbl.text = "\(model.price ?? 0) \("SAR".localized) / \(model.monthesCount ?? 0) \("Months".localized)"
         if clubId != 0 {
             clubView.isHidden = true

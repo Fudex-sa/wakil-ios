@@ -274,6 +274,25 @@
                                     <constraint firstItem="Sqa-Gb-DiL" firstAttribute="top" secondItem="X1h-aT-j7H" secondAttribute="top" id="tlR-ek-y08"/>
                                 </constraints>
                             </scrollView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6h-dP-Luz">
+                                <rect key="frame" x="16" y="784" width="382" height="48"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="KKf-SE-inf"/>
+                                    <constraint firstAttribute="height" constant="48" id="ik3-Sd-EdM"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" name="whiteColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Confirm"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ckT-Oz-gwY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -284,9 +303,12 @@
                             <constraint firstAttribute="bottom" secondItem="X1h-aT-j7H" secondAttribute="bottom" id="6yh-dX-aFM"/>
                             <constraint firstItem="Hqo-eH-EMz" firstAttribute="top" secondItem="HvK-Kv-GBy" secondAttribute="bottom" constant="28" id="8Bw-SP-Qdz"/>
                             <constraint firstItem="7d0-Yg-Tas" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="16" id="G0i-Pt-CkW"/>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="bottom" secondItem="H6h-dP-Luz" secondAttribute="bottom" constant="30" id="KCt-M7-Ni0"/>
                             <constraint firstItem="HvK-Kv-GBy" firstAttribute="centerX" secondItem="wn8-wF-9xc" secondAttribute="centerX" id="RnL-he-oxW"/>
                             <constraint firstItem="7d0-Yg-Tas" firstAttribute="top" secondItem="ckT-Oz-gwY" secondAttribute="top" constant="22" id="Ruq-sP-wDg"/>
+                            <constraint firstItem="H6h-dP-Luz" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="16" id="Uo7-Mx-dYe"/>
                             <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="Hqo-eH-EMz" secondAttribute="trailing" constant="18" id="VAo-G6-Rox"/>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="H6h-dP-Luz" secondAttribute="trailing" constant="16" id="X3o-wX-CGh"/>
                             <constraint firstItem="Hqo-eH-EMz" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="18" id="pG1-v2-oTh"/>
                             <constraint firstItem="HvK-Kv-GBy" firstAttribute="top" secondItem="7d0-Yg-Tas" secondAttribute="bottom" constant="15" id="s0d-H2-rx2"/>
                         </constraints>
@@ -295,6 +317,7 @@
                         <outlet property="clubImg" destination="ZXC-eT-zyg" id="KKA-Kz-JPy"/>
                         <outlet property="clubLbl" destination="Qzi-vy-vpC" id="o74-Eh-JOi"/>
                         <outlet property="clubView" destination="Z8I-ZN-ytZ" id="O9I-Jn-w3K"/>
+                        <outlet property="confirmeBtn" destination="H6h-dP-Luz" id="HWs-Lx-7m4"/>
                         <outlet property="filterBtn" destination="zgK-gD-BIb" id="vQp-yw-IfV"/>
                         <outlet property="packageBtn" destination="bcF-jG-w2n" id="JWI-iJ-orN"/>
                         <outlet property="packageView" destination="cf2-Ui-tuq" id="ns1-Og-l8l"/>

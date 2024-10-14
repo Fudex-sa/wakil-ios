@@ -13,6 +13,7 @@ class SubscriptionsModel: Codable {
 }
 struct PackageModel: Codable {
     let data: [PackageDatum]?
+    let added_tax: String?
     let status: Bool?
     let message: String?
 }

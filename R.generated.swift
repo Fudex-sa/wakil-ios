@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 40 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 41 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -118,6 +118,8 @@ struct R: Rswift.Validatable {
     static let editphoneStoryboard = _R.storyboard.editphoneStoryboard()
     /// Storyboard `EditprofileStoryboard`.
     static let editprofileStoryboard = _R.storyboard.editprofileStoryboard()
+    /// Storyboard `ForceUpdateStoryboard`.
+    static let forceUpdateStoryboard = _R.storyboard.forceUpdateStoryboard()
     /// Storyboard `ForgetpassStoryboard`.
     static let forgetpassStoryboard = _R.storyboard.forgetpassStoryboard()
     /// Storyboard `FullscreenStoryboard`.
@@ -261,6 +263,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "EditprofileStoryboard", bundle: ...)`
     static func editprofileStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.editprofileStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ForceUpdateStoryboard", bundle: ...)`
+    static func forceUpdateStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.forceUpdateStoryboard)
     }
     #endif
 
@@ -1613,7 +1622,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 114 images.
+  /// This `R.image` struct is generated, and contains static references to 115 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1775,6 +1784,8 @@ struct R: Rswift.Validatable {
     static let logofull = Rswift.ImageResource(bundle: R.hostingBundle, name: "logofull")
     /// Image `logout`.
     static let logout = Rswift.ImageResource(bundle: R.hostingBundle, name: "logout")
+    /// Image `maintainence`.
+    static let maintainence = Rswift.ImageResource(bundle: R.hostingBundle, name: "maintainence")
     /// Image `map`.
     static let map = Rswift.ImageResource(bundle: R.hostingBundle, name: "map")
     /// Image `marker2`.
@@ -2401,6 +2412,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "logout", bundle: ..., traitCollection: ...)`
     static func logout(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.logout, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "maintainence", bundle: ..., traitCollection: ...)`
+    static func maintainence(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.maintainence, compatibleWith: traitCollection)
     }
     #endif
 
@@ -3137,7 +3155,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 377 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 384 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3711,6 +3729,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let getTo = Rswift.StringResource(key: "Get to", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Go to store
+      ///
+      /// Locales: ar, en
+      static let goToStore = Rswift.StringResource(key: "Go to store", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Governorates
       ///
       /// Locales: ar, en
@@ -3963,6 +3985,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let notFoundLan = Rswift.StringResource(key: "not.found.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Notes :
+      ///
+      /// Locales: ar, en
+      static let notes = Rswift.StringResource(key: "Notes :", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Notification
       ///
       /// Locales: ar, en
@@ -4183,6 +4209,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let saR = Rswift.StringResource(key: "SAR", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: SAR that will be added to the subscription value
+      ///
+      /// Locales: ar, en
+      static let sarThatWillBeAddedToTheSubscriptionValue = Rswift.StringResource(key: "SAR that will be added to the subscription value", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: SSN
       ///
       /// Locales: ar, en
@@ -4391,6 +4421,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let thereAreNoPostsAvailable = Rswift.StringResource(key: "There are no posts available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: There is a tax of
+      ///
+      /// Locales: ar, en
+      static let thereIsATaxOf = Rswift.StringResource(key: "There is a tax of", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: These are the permissions the app requires to work properly. Please see description for each permission.
       ///
       /// Locales: ar, en
@@ -4459,6 +4493,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let viewOnMap = Rswift.StringResource(key: "View on map", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: We are under maintenance
+      ///
+      /// Locales: ar, en
+      static let weAreUnderMaintenance = Rswift.StringResource(key: "We are under maintenance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: We have a dedicated team here to help you with any question
       ///
       /// Locales: ar, en
@@ -4475,6 +4513,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let win = Rswift.StringResource(key: "Win", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Working hard to bring you a better browsing experience
+      ///
+      /// Locales: ar, en
+      static let workingHardToBringYouABetterBrowsingExperience = Rswift.StringResource(key: "Working hard to bring you a better browsing experience", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Write what you think and send to communicate
       ///
       /// Locales: ar, en
@@ -4607,6 +4649,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let selectCity = Rswift.StringResource(key: "select city", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: select package first
+      ///
+      /// Locales: ar, en
+      static let selectPackageFirst = Rswift.StringResource(key: "select package first", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: the length has error
       ///
       /// Locales: ar, en
@@ -6793,6 +6839,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Get to", bundle: bundle, comment: "")
       }
 
+      /// en translation: Go to store
+      ///
+      /// Locales: ar, en
+      static func goToStore(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Go to store", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Go to store"
+        }
+
+        return NSLocalizedString("Go to store", bundle: bundle, comment: "")
+      }
+
       /// en translation: Governorates
       ///
       /// Locales: ar, en
@@ -7738,6 +7799,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("not.found.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Notes :
+      ///
+      /// Locales: ar, en
+      static func notes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Notes :", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Notes :"
+        }
+
+        return NSLocalizedString("Notes :", bundle: bundle, comment: "")
+      }
+
       /// en translation: Notification
       ///
       /// Locales: ar, en
@@ -8563,6 +8639,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("SAR", bundle: bundle, comment: "")
       }
 
+      /// en translation: SAR that will be added to the subscription value
+      ///
+      /// Locales: ar, en
+      static func sarThatWillBeAddedToTheSubscriptionValue(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("SAR that will be added to the subscription value", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "SAR that will be added to the subscription value"
+        }
+
+        return NSLocalizedString("SAR that will be added to the subscription value", bundle: bundle, comment: "")
+      }
+
       /// en translation: SSN
       ///
       /// Locales: ar, en
@@ -9343,6 +9434,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("There are no posts available", bundle: bundle, comment: "")
       }
 
+      /// en translation: There is a tax of
+      ///
+      /// Locales: ar, en
+      static func thereIsATaxOf(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("There is a tax of", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "There is a tax of"
+        }
+
+        return NSLocalizedString("There is a tax of", bundle: bundle, comment: "")
+      }
+
       /// en translation: These are the permissions the app requires to work properly. Please see description for each permission.
       ///
       /// Locales: ar, en
@@ -9598,6 +9704,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("View on map", bundle: bundle, comment: "")
       }
 
+      /// en translation: We are under maintenance
+      ///
+      /// Locales: ar, en
+      static func weAreUnderMaintenance(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("We are under maintenance", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "We are under maintenance"
+        }
+
+        return NSLocalizedString("We are under maintenance", bundle: bundle, comment: "")
+      }
+
       /// en translation: We have a dedicated team here to help you with any question
       ///
       /// Locales: ar, en
@@ -9656,6 +9777,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Win", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Working hard to bring you a better browsing experience
+      ///
+      /// Locales: ar, en
+      static func workingHardToBringYouABetterBrowsingExperience(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Working hard to bring you a better browsing experience", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Working hard to bring you a better browsing experience"
+        }
+
+        return NSLocalizedString("Working hard to bring you a better browsing experience", bundle: bundle, comment: "")
       }
 
       /// en translation: Write what you think and send to communicate
@@ -10151,6 +10287,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("select city", bundle: bundle, comment: "")
+      }
+
+      /// en translation: select package first
+      ///
+      /// Locales: ar, en
+      static func selectPackageFirst(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("select package first", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "select package first"
+        }
+
+        return NSLocalizedString("select package first", bundle: bundle, comment: "")
       }
 
       /// en translation: the length has error
@@ -10885,6 +11036,9 @@ struct _R: Rswift.Validatable {
       try editprofileStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try forceUpdateStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try forgetpassStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -11330,6 +11484,32 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.editprofileStoryboard().editprofileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editprofileVC' could not be loaded from storyboard 'EditprofileStoryboard' as 'EditprofileVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct forceUpdateStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ForceUpdateVC
+
+      let bundle = R.hostingBundle
+      let forceUpdateVC = StoryboardViewControllerResource<ForceUpdateVC>(identifier: "ForceUpdateVC")
+      let name = "ForceUpdateStoryboard"
+
+      func forceUpdateVC(_: Void = ()) -> ForceUpdateVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: forceUpdateVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "logofull", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logofull' is used in storyboard 'ForceUpdateStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "maintainence", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'maintainence' is used in storyboard 'ForceUpdateStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'ForceUpdateStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'ForceUpdateStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.forceUpdateStoryboard().forceUpdateVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'forceUpdateVC' could not be loaded from storyboard 'ForceUpdateStoryboard' as 'ForceUpdateVC'.") }
       }
 
       fileprivate init() {}

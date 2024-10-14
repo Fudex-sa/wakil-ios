@@ -22,6 +22,7 @@ class SubscriptionsVC: BaseController {
     @IBOutlet weak var packageView: UIView!
     @IBOutlet weak var subscribeBtn: UIButton!
     @IBOutlet weak var packageBtn: UIButton!
+    @IBOutlet weak var confirmeBtn: UIButton!
     var viewModel: SubscriptionsViewModel?
     var coordinator: SubscriptionsCoordinator?
     var type = 0
@@ -89,7 +90,9 @@ extension SubscriptionsVC {
         viewModel?.checksubscribe.listen(on: { [weak self] value in
             self?.stopLoading()
             if self?.viewModel?.checksubscribe.value?.status == true {
-                self?.coordinator?.paymentmethod()
+                self?.stopLoading()
+                self?.viewModel?.subscribe()
+//                self?.coordinator?.paymentmethod()
             }else {
                 self?.coordinator?.checksubscribe()
             }
@@ -124,6 +127,14 @@ extension SubscriptionsVC {
         }).store(self)
         clubView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.changeclub()
+        }).store(self)
+        confirmeBtn.publisher.listen(on: {[weak self] _ in
+            if self?.viewModel?.packageId.value ?? 0 == 0 {
+                self?.didError(error: "select package first".localized)
+                return
+            }
+            self?.startLoading()
+            self?.viewModel?.fetchchecksubscribe()
         }).store(self)
     }
     func reload(){
@@ -170,6 +181,7 @@ extension SubscriptionsVC {
             viewModel?.fetchpackages()
             packageView.isHidden = false
             subscribeView.isHidden = true
+            confirmeBtn.isHidden = false
         }else {
             subscribeBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             packageBtn.backgroundColor = R.color.whiteColor()
@@ -181,6 +193,7 @@ extension SubscriptionsVC {
             packageBtn.setTitleColor(R.color.gray1(), for: .normal)
             packageView.isHidden = true
             subscribeView.isHidden = false
+            confirmeBtn.isHidden = true
             viewModel?.mysubscribe.send([])
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
@@ -239,6 +252,8 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
             var cell = tableView.cell(type: PackagesTableViewCell.self, indexPath)
             cell.model = viewModel?.dataSource()?[safe: indexPath.row]
             cell.clubId = clubId
+            cell.packageId = viewModel?.packageId.value ?? 0
+            cell.tax = viewModel?.tax.value ?? ""
             cell.setup()
             return cell
         }else {
@@ -258,8 +273,7 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
         if tableView == packagesTbl {
             viewModel?.packageId.send(viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
             viewModel?.checkclubId.send(viewModel?.dataSource()?[safe: indexPath.row]?.club?.id ?? 0)
-            startLoading()
-            viewModel?.fetchchecksubscribe()
+            packagesTbl.reloadData()
         }
         
     }

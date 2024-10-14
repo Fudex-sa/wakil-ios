@@ -27,13 +27,20 @@ class Coordinator: NSObject {
         scene?.showNetworkFailScreen()
     }
     func maintance() {
-        let scene = UIApplication.topViewController() as? BaseController
-        scene?.showMaintanceScreen()
+        guard let scene = R.storyboard.forceUpdateStoryboard.forceUpdateVC() else { return }
+        let view = UIApplication.topViewController() as? BaseController
+       view?.push(scene)
     }
     @objc dynamic func suscribpopup() {
         guard let scene = R.storyboard.subscribePopupStoryboard.subscribePopupVC() else { return }
         let view = UIApplication.topViewController() as? BaseController
         view?.pushPop(scene)
+    }
+    func forceupdate(msg: String) {
+        guard let scene = R.storyboard.forceUpdateStoryboard.forceUpdateVC() else { return }
+        let view = UIApplication.topViewController() as? BaseController
+        scene.msg = msg
+        view?.push(scene)
     }
     @objc dynamic func guest() {
 //        guard let scene = R.storyboard.main.guestPopUpViewController() else { return }
