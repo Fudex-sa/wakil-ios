@@ -81,6 +81,7 @@ extension LoginVC {
 // MARK: - ...  Functions
 extension LoginVC {
     func setup() {
+        setStatusBar(color: UIColor(hex: "#181928") )
         regBtn.UIViewAction {
             self.coordinator?.register()
         }

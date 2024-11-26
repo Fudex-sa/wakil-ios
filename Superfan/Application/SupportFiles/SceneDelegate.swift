@@ -36,6 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }else {
             Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())
         }
+
 //        Coordinator.instance.restart(storyboard: R.storyboard.matchdetailsStoryboard())
         
 //        for family in UIFont.familyNames {

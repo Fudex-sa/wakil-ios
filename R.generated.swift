@@ -466,7 +466,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 18 colors.
+  /// This `R.color` struct is generated, and contains static references to 23 colors.
   struct color {
     /// Color `Black1`.
     static let black1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "Black1")
@@ -478,6 +478,8 @@ struct R: Rswift.Validatable {
     static let lighT = Rswift.ColorResource(bundle: R.hostingBundle, name: "LIGHT")
     /// Color `Primary`.
     static let primary = Rswift.ColorResource(bundle: R.hostingBundle, name: "Primary")
+    /// Color `Secondary 1`.
+    static let secondary1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "Secondary 1")
     /// Color `Secondary`.
     static let secondary = Rswift.ColorResource(bundle: R.hostingBundle, name: "Secondary")
     /// Color `black2`.
@@ -490,6 +492,8 @@ struct R: Rswift.Validatable {
     static let bordergray = Rswift.ColorResource(bundle: R.hostingBundle, name: "bordergray")
     /// Color `borderprimary`.
     static let borderprimary = Rswift.ColorResource(bundle: R.hostingBundle, name: "borderprimary")
+    /// Color `darkgray 1`.
+    static let darkgray1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray 1")
     /// Color `darkgray`.
     static let darkgray = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray")
     /// Color `gray1`.
@@ -498,6 +502,12 @@ struct R: Rswift.Validatable {
     static let gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "gray")
     /// Color `lightgray 1`.
     static let lightgray1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightgray 1")
+    /// Color `primary1`.
+    static let primary1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "primary1")
+    /// Color `textfileldbackground`.
+    static let textfileldbackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "textfileldbackground")
+    /// Color `textfileldbackgroundtrans`.
+    static let textfileldbackgroundtrans = Rswift.ColorResource(bundle: R.hostingBundle, name: "textfileldbackgroundtrans")
     /// Color `txtblue`.
     static let txtblue = Rswift.ColorResource(bundle: R.hostingBundle, name: "txtblue")
     /// Color `txtprimary`.
@@ -547,6 +557,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func primary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.primary, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "Secondary 1", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func secondary1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.secondary1, compatibleWith: traitCollection)
     }
     #endif
 
@@ -605,6 +624,15 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "darkgray 1", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func darkgray1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkgray1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "darkgray", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -637,6 +665,33 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func lightgray1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.lightgray1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "primary1", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func primary1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.primary1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "textfileldbackground", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func textfileldbackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.textfileldbackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "textfileldbackgroundtrans", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func textfileldbackgroundtrans(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.textfileldbackgroundtrans, compatibleWith: traitCollection)
     }
     #endif
 
@@ -708,6 +763,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "Secondary 1", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func secondary1(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.secondary1.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "Secondary", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func secondary(_: Void = ()) -> UIKit.UIColor? {
@@ -756,6 +819,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "darkgray 1", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func darkgray1(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.darkgray1.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "darkgray", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func darkgray(_: Void = ()) -> UIKit.UIColor? {
@@ -784,6 +855,30 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func lightgray1(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.lightgray1.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "primary1", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func primary1(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.primary1.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "textfileldbackground", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func textfileldbackground(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.textfileldbackground.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "textfileldbackgroundtrans", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func textfileldbackgroundtrans(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.textfileldbackgroundtrans.name)
     }
     #endif
 
@@ -1622,7 +1717,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 115 images.
+  /// This `R.image` struct is generated, and contains static references to 116 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1832,6 +1927,8 @@ struct R: Rswift.Validatable {
     static let successIconSubtle = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIconSubtle")
     /// Image `successIcon`.
     static let successIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIcon")
+    /// Image `superfan`.
+    static let superfan = Rswift.ImageResource(bundle: R.hostingBundle, name: "superfan")
     /// Image `suscribe`.
     static let suscribe = Rswift.ImageResource(bundle: R.hostingBundle, name: "suscribe")
     /// Image `terms`.
@@ -2580,6 +2677,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "successIconSubtle", bundle: ..., traitCollection: ...)`
     static func successIconSubtle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.successIconSubtle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "superfan", bundle: ..., traitCollection: ...)`
+    static func superfan(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.superfan, compatibleWith: traitCollection)
     }
     #endif
 
@@ -11531,12 +11635,11 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ForgetpassStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.forgetpassStoryboard().forgetpassVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'forgetpassVC' could not be loaded from storyboard 'ForgetpassStoryboard' as 'ForgetpassVC'.") }
@@ -11639,14 +11742,13 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "global-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'global-2' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "google", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'google' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'lock' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "gray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray1' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkgray 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray 1' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackgroundtrans", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackgroundtrans' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'LoginStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.loginStoryboard().loginVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginVC' could not be loaded from storyboard 'LoginStoryboard' as 'LoginVC'.") }

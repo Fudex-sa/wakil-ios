@@ -25,6 +25,7 @@ class BaseController: UIViewController, POPUPModal, Combining, Sounder {
     var refreshPlayer: AVAudioPlayer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStatusBar(color: UIColor(hex: "#181928") )
         self.navigationController?.navigationBar.removeSubviews()
         self.navigationItem.setHidesBackButton(true, animated: false)
         if Localizer.current == .arabic {
@@ -36,7 +37,6 @@ class BaseController: UIViewController, POPUPModal, Combining, Sounder {
         }
         self.setupBase()
         self.checkNetwork()
-        setStatusBar(color: R.color.whiteColor()!)
     }
     
     override func viewWillAppear(_ animated: Bool) {

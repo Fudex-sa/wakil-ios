@@ -38,15 +38,15 @@
                                 <rect key="frame" x="67" y="296" width="200" height="4"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58C-Ya-A28">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="4"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="58.666666666666664" height="4"/>
                                         <color key="backgroundColor" name="Primary"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQs-Q3-cvO">
-                                        <rect key="frame" x="106" y="0.0" width="94" height="4"/>
+                                        <rect key="frame" x="70.666666666666657" y="0.0" width="58.666666666666657" height="4"/>
                                         <color key="backgroundColor" name="Lightgray"/>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnr-6t-nvw">
-                                        <rect key="frame" x="200" y="0.0" width="0.0" height="4"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnr-6t-nvw">
+                                        <rect key="frame" x="141.33333333333334" y="0.0" width="58.666666666666657" height="4"/>
                                         <color key="backgroundColor" name="Lightgray"/>
                                     </view>
                                 </subviews>

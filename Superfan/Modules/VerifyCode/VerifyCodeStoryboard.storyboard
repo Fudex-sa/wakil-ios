@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,7 +33,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ym-Dl-WIe">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="R3l-Ux-lMI">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superfan" translatesAutoresizingMaskIntoConstraints="NO" id="R3l-Ux-lMI">
                                                         <rect key="frame" x="73" y="0.0" width="228" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="VTd-4H-7uq"/>
@@ -73,7 +72,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter verification code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMH-bK-zmb">
                                                 <rect key="frame" x="0.0" y="68" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="Black1"/>
+                                                <color key="textColor" name="whiteColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b24"/>
@@ -90,7 +89,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the verification code sent to" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOY-YZ-9r9">
                                                 <rect key="frame" x="0.0" y="96.5" width="374" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" name="Black1"/>
+                                                <color key="textColor" name="whiteColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r16"/>
@@ -103,7 +102,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="L9L-Fw-qvL"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" name="Black1"/>
+                                                <color key="textColor" name="darkgray"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r13"/>
@@ -135,7 +134,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                 </subviews>
-                                                                <color key="backgroundColor" name="bordergray"/>
+                                                                <color key="backgroundColor" name="textfileldbackground"/>
                                                                 <constraints>
                                                                     <constraint firstItem="WD8-05-tdS" firstAttribute="top" secondItem="vtv-Ow-kje" secondAttribute="top" constant="4" id="SWt-Dh-a09"/>
                                                                     <constraint firstAttribute="trailing" secondItem="WD8-05-tdS" secondAttribute="trailing" constant="10" id="SzL-2m-yEt"/>
@@ -161,7 +160,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                 </subviews>
-                                                                <color key="backgroundColor" name="bordergray"/>
+                                                                <color key="backgroundColor" name="textfileldbackground"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="mpP-9g-Ti7" secondAttribute="trailing" constant="10" id="1fJ-lv-X1i"/>
                                                                     <constraint firstItem="mpP-9g-Ti7" firstAttribute="top" secondItem="6Vk-Od-FAI" secondAttribute="top" constant="4" id="K0q-vB-qyc"/>
@@ -187,7 +186,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                 </subviews>
-                                                                <color key="backgroundColor" name="bordergray"/>
+                                                                <color key="backgroundColor" name="textfileldbackground"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="fYt-l4-7aE" secondAttribute="bottom" constant="4" id="9yM-Yz-REw"/>
                                                                     <constraint firstItem="fYt-l4-7aE" firstAttribute="leading" secondItem="SNH-h8-lKp" secondAttribute="leading" constant="10" id="MlQ-0K-Q9d"/>
@@ -213,7 +212,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                 </subviews>
-                                                                <color key="backgroundColor" name="bordergray"/>
+                                                                <color key="backgroundColor" name="textfileldbackground"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="LN0-Sh-baD" secondAttribute="trailing" constant="10" id="5kG-PG-jcA"/>
                                                                     <constraint firstItem="LN0-Sh-baD" firstAttribute="leading" secondItem="GZL-lR-BAq" secondAttribute="leading" constant="10" id="Poc-eh-p6K"/>
@@ -257,7 +256,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code expires after" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hej-fQ-77y">
                                                                 <rect key="frame" x="0.0" y="5" width="140" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" name="Black1"/>
+                                                                <color key="textColor" name="whiteColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
@@ -267,7 +266,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8q-6x-t0m">
                                                                 <rect key="frame" x="145" y="5" width="46" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" name="Primary"/>
+                                                                <color key="textColor" name="Secondary"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
@@ -355,7 +354,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bbj-dg-34b"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="primary1"/>
                         <constraints>
                             <constraint firstItem="KMk-Ua-mb2" firstAttribute="top" secondItem="Bbj-dg-34b" secondAttribute="top" id="Eka-52-5WA"/>
                             <constraint firstItem="KMk-Ua-mb2" firstAttribute="leading" secondItem="Bbj-dg-34b" secondAttribute="leading" id="N3X-Sh-RNv"/>
@@ -382,15 +381,21 @@
     </scenes>
     <resources>
         <image name="arrowleft" width="25" height="25"/>
-        <image name="logo" width="229" height="37"/>
-        <namedColor name="Black1">
-            <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
+        <image name="superfan" width="159" height="27"/>
         <namedColor name="Primary">
             <color red="0.89803921568627454" green="0.11372549019607843" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="bordergray">
-            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="Secondary">
+            <color red="0.90588235294117647" green="0.21176470588235294" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="darkgray">
+            <color red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="primary1">
+            <color red="0.094117647058823528" green="0.098039215686274508" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textfileldbackground">
+            <color red="0.1803921568627451" green="0.18431372549019609" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="txtprimary">
             <color red="0.96862745098039216" green="0.72549019607843135" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -398,8 +403,5 @@
         <namedColor name="whiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

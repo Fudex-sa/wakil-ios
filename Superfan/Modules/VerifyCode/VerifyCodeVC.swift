@@ -240,7 +240,7 @@ extension VerifyCodeVC: VerifyCodeInputsDataSource {
         return [verfiy1Txf, verfiy2Txf, verfiy3Txf, verfiy4Txf]
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, emptyTextColor: Bool?) -> UIColor {
-        return R.color.black1()!
+        return R.color.whiteColor()!
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, fillTextColor: Bool?) -> UIColor {
         if UD.user != nil {
@@ -254,7 +254,7 @@ extension VerifyCodeVC: VerifyCodeInputsDataSource {
         }
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, emptyBackground: Bool?) -> UIColor {
-        return R.color.bordergray()!
+        return R.color.textfileldbackground()!
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, fillBackground: Bool?) -> UIColor {
         if UD.user != nil {
@@ -264,25 +264,25 @@ extension VerifyCodeVC: VerifyCodeInputsDataSource {
                 color = String(color.suffix(from: index))
                 return UIColor(hex: "#15\(color)")
             }else {
-                return R.color.txtprimary()!    
+                return R.color.textfileldbackground()!
             }
         }else {
-            return R.color.txtprimary()!   
+            return R.color.textfileldbackground()!   
         }
         
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, emptyBorder: Bool?) -> UIColor {
-        return R.color.bordergray()!
+        return R.color.textfileldbackground()!
     }
     func verifyCodeInputs(_ inputs: VerifyCodeInputs?, completeBorder: Bool?) -> UIColor {
         if UD.user != nil {
             if UD.club != nil {
                 return UIColor(hex: UD.club?.color ?? "")
             }else {
-                return R.color.primary()!
+                return UIColor(hex: "#F7B9C0")
             }
         }else {
-            return R.color.primary()!
+            return UIColor(hex: "#F7B9C0")
         }
     }
 }

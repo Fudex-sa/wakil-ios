@@ -213,7 +213,7 @@ extension SignupVC {
         scene.didSelectItem.listen(on: { [weak self] didSelect in
             guard let item = didSelect?.1 as? RegisterModel else { return }
             self?.cityLbl.text = item.name ?? ""
-            self?.cityLbl.textColor = R.color.black()
+            self?.cityLbl.textColor = R.color.whiteColor()
             self?.viewModel?.stateId.send(item.id ?? 0)
         })
         self.pushPop(scene)
