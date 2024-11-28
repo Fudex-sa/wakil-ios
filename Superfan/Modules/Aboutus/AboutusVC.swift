@@ -11,6 +11,10 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class AboutusVC: BaseController {
+    @IBOutlet weak var twitterBtn: UIButton!
+    @IBOutlet weak var faceBtn: UIButton!
+    @IBOutlet weak var instaBtn: UIButton!
+    @IBOutlet weak var linkinBtn: UIButton!
     @IBOutlet weak var aboutLbl: UILabel!
     var viewModel: AboutusViewModel?
     var coordinator: AboutusCoordinator?

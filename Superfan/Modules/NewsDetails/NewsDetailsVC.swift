@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class NewsDetailsVC: BaseController {
+    @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var desLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var clubLbl: UILabel!
@@ -70,6 +71,10 @@ extension NewsDetailsVC {
         clubLbl.UIViewAction {
             self.coordinator?.detailsclub(id: self.viewModel?.newsdata.value?.data?.club?.id ?? 0)
         }
+        shareBtn.publisher.listen(on: {[weak self] _ in
+            Common().shareApp(items: [self?.viewModel?.newsdata.value?.data?.description?.htmlToString ?? ""])
+            
+        }).store(self)
     }
     func reload() {
         stopLoading()

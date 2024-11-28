@@ -62,7 +62,7 @@ extension HomeVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSideMenu()
-        setStatusBar(color: R.color.primary()!)
+        //setStatusBar(color: R.color.primary()!)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -495,7 +495,7 @@ extension HomeVC {
         if UD.club != nil {
             coverView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
             tabBarController?.tabBar.tintColor = UIColor(hex: UD.club?.color ?? "")
-            setStatusBar(color:  UIColor(hex: UD.club?.color ?? ""))
+          //  setStatusBar(color:  UIColor(hex: UD.club?.color ?? ""))
             sideMenuViewController?.containerView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
         }
     }

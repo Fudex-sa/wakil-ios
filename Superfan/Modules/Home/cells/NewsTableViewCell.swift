@@ -11,7 +11,6 @@ protocol NewsTableViewCellDelegate: AnyObject {
     func clubdetails(wasPressedOnCell cell: NewsTableViewCell , clubId : Int)
 }
 class NewsTableViewCell: BaseTableViewCell {
-    @IBOutlet weak var imageHight: NSLayoutConstraint!
     @IBOutlet weak var ContainerView: UIView!
     @IBOutlet weak var clubImg: UIImageView!
     @IBOutlet weak var clubLbl: UILabel!
@@ -28,11 +27,6 @@ class NewsTableViewCell: BaseTableViewCell {
         timeLbl.text = model.date ?? ""
         titlelbl.text = model.title ?? ""
         newImg.setImage(url: model.backgrouds ?? "")
-        if model.backgrouds ?? "" == "" {
-            imageHight.constant = 0
-        }else {
-            imageHight.constant = 134
-        }
         clubImg.UIViewAction {
             self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.club?.id ?? 0)
         }
@@ -49,11 +43,6 @@ class NewsTableViewCell: BaseTableViewCell {
         timeLbl.text = model.date ?? ""
         titlelbl.text = model.title ?? ""
         newImg.setImage(url: model.backgroundImg ?? "")
-        if model.backgroundImg ?? "" == "" {
-            imageHight.constant = 0
-        }else {
-            imageHight.constant = 134
-        }
         clubImg.UIViewAction {
             self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.user?.id ?? 0)
         }

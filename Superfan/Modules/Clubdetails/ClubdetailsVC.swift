@@ -39,7 +39,7 @@ class ClubdetailsVC: BaseController {
 extension ClubdetailsVC {
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBar(color:  UIColor(hex: UD.club?.color ?? "#E51D35"))
+       // setStatusBar(color:  UIColor(hex: UD.club?.color ?? "#E51D35"))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -86,19 +86,19 @@ extension ClubdetailsVC {
         startLoading()
         viewModel?.clubId.send(clubId)
         viewModel?.getclubdetails()
-        backgroundView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+      //  backgroundView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
         if type == 0 {
             infoLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             infoLineView.isHidden = false
-            tableLbl.textColor = UIColor(hex: "#353535")
+            tableLbl.textColor = UIColor(hex: "#D9D9D9")
             tableLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             tableLineView.isHidden = true
         }else {
             tableLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             tableLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             tableLineView.isHidden = false
-            infoLbl.textColor = UIColor(hex: "#353535")
+            infoLbl.textColor = UIColor(hex: "#D9D9D9")
             infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             infoLineView.isHidden = true
         }
@@ -106,7 +106,7 @@ extension ClubdetailsVC {
             self?.infoLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             self?.infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             self?.infoLineView.isHidden = false
-            self?.tableLbl.textColor = UIColor(hex: "#353535")
+            self?.tableLbl.textColor = UIColor(hex: "#D9D9D9")
             self?.tableLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             self?.tableLineView.isHidden = true
             self?.tableView.isHidden = true
@@ -116,7 +116,7 @@ extension ClubdetailsVC {
             self?.tableLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             self?.tableLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             self?.tableLineView.isHidden = false
-            self?.infoLbl.textColor = UIColor(hex: "#353535")
+            self?.infoLbl.textColor = UIColor(hex: "#D9D9D9")
             self?.infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
             self?.infoLineView.isHidden = true
             self?.tableView.isHidden = false

@@ -33,9 +33,9 @@ class TableTableViewCell: BaseTableViewCell {
         forLbl.text = model.goalsIn?.string ?? ""
         aqainestLbl.text = model.goalsOut?.string ?? ""
         if (model.order ?? 0) % 2 == 0 {
-            containerView.backgroundColor = R.color.whiteColor()
+            containerView.backgroundColor = R.color.secondary1()
         }else {
-            containerView.backgroundColor = UIColor(hex: "#0822558C")
+            containerView.backgroundColor = R.color.primary1()
         }
     }
 }
