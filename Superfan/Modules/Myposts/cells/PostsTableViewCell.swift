@@ -15,7 +15,6 @@ protocol PostsTableViewCellDelegate: AnyObject {
 }
 class PostsTableViewCell: BaseTableViewCell {
     @IBOutlet weak var favImg: UIImageView!
-    @IBOutlet weak var imageHight: NSLayoutConstraint!
     @IBOutlet weak var ContainerView: UIView!
     @IBOutlet weak var clubImg: UIImageView!
     @IBOutlet weak var clubLbl: UILabel!
@@ -38,11 +37,6 @@ class PostsTableViewCell: BaseTableViewCell {
         clubImg.setImage(url: model.user?.logo ?? "")
         timeLbl.text = model.date ?? ""
         postImg.setImage(url: model.backgroundImg ?? "")
-        if model.backgroundImg ?? "" == "" {
-            imageHight.constant = 0
-        }else {
-            imageHight.constant = 160
-        }
         liked(is: model.is_liked ?? 0)
         commentLbl.text = "\(model.commentersCount ?? 0) \("comment".localized)"
         likeLbl.text = "\(model.likersCount ?? 0) \("Interactions".localized)"

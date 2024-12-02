@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class PostdetailsVC: BaseController {
+    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var commentBtn: UIButton!
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var desLbl: UILabel!
@@ -22,6 +24,7 @@ class PostdetailsVC: BaseController {
     var coordinator: PostdetailsCoordinator?
     var postId = 0
     var isbackstage = false
+    var islike = 0
 }
 
 // MARK: - ...  LifeCycle
@@ -63,6 +66,15 @@ extension PostdetailsVC {
             self?.stopLoading()
             self?.navigationController?.popViewController(animated: true)
         })
+        viewModel?.likedata.listen(on: { [weak self] value in
+            if self?.islike ?? 0 == 1 {
+                self?.islike = 0
+                self?.likeBtn.setImage(R.image.heart2(), for: .normal)
+            }else {
+                self?.islike = 1
+                self?.likeBtn.setImage(R.image.fav1(), for: .normal)
+            }
+        })
        
     }
     func stopPlayersInVisibleCells() {
@@ -76,6 +88,13 @@ extension PostdetailsVC {
 // MARK: - ...  Functions
 extension PostdetailsVC {
     func setup() {
+        changeColoe()
+        if Localizer.current == .arabic {
+            likeBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
+            commentBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
+            editBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
+            closeBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
+        }
         sliderCollection.delegate = self
         sliderCollection.dataSource = self
         sliderCollection.observe()
@@ -105,6 +124,32 @@ extension PostdetailsVC {
         closeBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.deletepost()
         }).store(self)
+        commentBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.comments(id: self?.postId ?? 0)
+        }).store(self)
+        likeBtn.publisher.listen(on: {[weak self] _ in
+            if self?.isbackstage ?? false {
+                if self?.islike ?? 0 == 1 {
+                    self?.viewModel?.unlikebackstage()
+                }else {
+                    self?.viewModel?.likebackstage()
+                }
+            }else {
+                if self?.islike ?? 0 == 1 {
+                    self?.viewModel?.unlikepost()
+                }else {
+                    self?.viewModel?.likepost()
+                }
+            }
+        }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            editBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+            closeBtn.borderColor = UIColor(hex: UD.club?.color ?? "")
+            closeBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
+            closeBtn.tintColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
     func reload() {
         stopLoading()
@@ -121,6 +166,13 @@ extension PostdetailsVC {
                 editBtn.isHidden = false
                 closeBtn.isHidden = false
             }
+        }
+        islike = viewModel?.postdata.value?.data?.isLiked ?? 0
+        if islike == 1 {
+            likeBtn.setImage(R.image.heart2(), for: .normal)
+        }else {
+            islike = 1
+            likeBtn.setImage(R.image.fav1(), for: .normal)
         }
         sliderCollection.reloadData()
     }

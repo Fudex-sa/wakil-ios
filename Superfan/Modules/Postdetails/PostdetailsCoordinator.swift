@@ -40,6 +40,11 @@ extension PostdetailsCoordinator {
         view?.startLoading()
         view?.viewModel?.deletepost()
     }
-    
+    func comments(id: Int) {
+        guard let scene = R.storyboard.commentsStoryboard.commentsVC() else { return }
+        scene.postId = id
+        scene.isbackstage = view?.isbackstage ?? false
+        view?.push(scene)
+    }
    
 }

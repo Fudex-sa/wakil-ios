@@ -114,7 +114,7 @@ extension ContactusVC : UITextViewDelegate {
         func textViewDidBeginEditing(_ textView: UITextView) {
             if messageTxt.textColor == R.color.gray1() {
                 messageTxt.text = nil
-                messageTxt.textColor = R.color.black()
+                messageTxt.textColor = R.color.whiteColor()
             }
         }
         func textViewDidEndEditing (_ textView: UITextView) {

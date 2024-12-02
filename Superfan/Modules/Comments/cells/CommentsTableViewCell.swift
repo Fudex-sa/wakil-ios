@@ -113,7 +113,7 @@ class CommentsTableViewCell: BaseTableViewCell {
         if like == 1 {
             favImg.image = R.image.fav1()
         } else {
-            favImg.image = R.image.fav()
+            favImg.image = R.image.heart2()
         }
     }
 }

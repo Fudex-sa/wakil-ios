@@ -47,21 +47,21 @@ class PackagesTableViewCell: BaseTableViewCell {
             selectHight.constant = 50
             selecttop.constant = 15
             selecredView.isHidden = false
-            conatinerView.borderColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            //conatinerView.borderColor = UIColor(hex: UD.club?.color ?? "#E51D35")
         }else {
             selectHight.constant = 0
             selecttop.constant = 0
             selecredView.isHidden = true
-            conatinerView.borderColor = R.color.gray()
+            //conatinerView.borderColor = R.color.gray()
         }
-        if UD.club != nil {
-            var color = UD.club?.color ?? ""
-            let index = color.index(color.startIndex, offsetBy: 1)
-            color = String(color.suffix(from: index))
-            selecredView.backgroundColor = UIColor(hex: "#15\(color)")
-        }else {
-            selecredView.backgroundColor = R.color.txtprimary()!
-        }
+//        if UD.club != nil {
+//            var color = UD.club?.color ?? ""
+//            let index = color.index(color.startIndex, offsetBy: 1)
+//            color = String(color.suffix(from: index))
+//            selecredView.backgroundColor = UIColor(hex: "#15\(color)")
+//        }else {
+//            selecredView.backgroundColor = R.color.txtprimary()!
+//        }
         selectLbl.text = "\("There is a tax of".localized) \(tax) \("SAR that will be added to the subscription value".localized)"
         priceLbl.text = "\(model.price ?? 0) \("SAR".localized) / \(model.monthesCount ?? 0) \("Months".localized)"
         if clubId != 0 {
@@ -92,6 +92,9 @@ class PackagesTableViewCell: BaseTableViewCell {
         
          colorLbl.textColor = R.color.primary()
          colorLbl.text = "\("Expires in".localized) \(model.expireDate ?? "")"
+         colorLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+         unsubscribeBtn.borderColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+         unsubscribeBtn.setTitleColor(UIColor(hex: UD.club?.color ?? "#E51D35"), for: .normal)
         features.removeAll()
         features.append(contentsOf: model.features ?? [])
         FeatureHight.constant = CGFloat((features.count) * 30)

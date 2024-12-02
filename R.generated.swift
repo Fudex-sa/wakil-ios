@@ -466,7 +466,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 23 colors.
+  /// This `R.color` struct is generated, and contains static references to 24 colors.
   struct color {
     /// Color `Black1`.
     static let black1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "Black1")
@@ -496,6 +496,8 @@ struct R: Rswift.Validatable {
     static let darkgray1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray 1")
     /// Color `darkgray`.
     static let darkgray = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray")
+    /// Color `darkwhite`.
+    static let darkwhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkwhite")
     /// Color `gray1`.
     static let gray1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "gray1")
     /// Color `gray`.
@@ -638,6 +640,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func darkgray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.darkgray, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "darkwhite", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func darkwhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkwhite, compatibleWith: traitCollection)
     }
     #endif
 
@@ -831,6 +842,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func darkgray(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.darkgray.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "darkwhite", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func darkwhite(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.darkwhite.name)
     }
     #endif
 
@@ -1717,7 +1736,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 116 images.
+  /// This `R.image` struct is generated, and contains static references to 126 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1735,18 +1754,30 @@ struct R: Rswift.Validatable {
     static let contacts = Rswift.ImageResource(bundle: R.hostingBundle, name: "Contacts")
     /// Image `FaceID`.
     static let faceID = Rswift.ImageResource(bundle: R.hostingBundle, name: "FaceID")
+    /// Image `Facebook-2`.
+    static let facebook2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Facebook-2")
+    /// Image `Facebook`.
+    static let facebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "Facebook")
     /// Image `Group 514995`.
     static let group514995 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Group 514995")
+    /// Image `Group 7`.
+    static let group7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Group 7")
     /// Image `Group 9`.
     static let group9 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Group 9")
     /// Image `Health`.
     static let health = Rswift.ImageResource(bundle: R.hostingBundle, name: "Health")
     /// Image `Home`.
     static let home = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home")
+    /// Image `Icon-3`.
+    static let icon3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon-3")
     /// Image `Icon-4`.
     static let icon4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon-4")
     /// Image `Image`.
     static let image = Rswift.ImageResource(bundle: R.hostingBundle, name: "Image")
+    /// Image `Instagram`.
+    static let instagram = Rswift.ImageResource(bundle: R.hostingBundle, name: "Instagram")
+    /// Image `Linkedin`.
+    static let linkedin = Rswift.ImageResource(bundle: R.hostingBundle, name: "Linkedin")
     /// Image `Loading-Dark.gif`.
     static let loadingDarkGif = Rswift.ImageResource(bundle: R.hostingBundle, name: "Loading-Dark.gif")
     /// Image `Loading-Light.gif`.
@@ -1769,6 +1800,8 @@ struct R: Rswift.Validatable {
     static let onboarding2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Onboarding 2")
     /// Image `Onboarding 3`.
     static let onboarding3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Onboarding 3")
+    /// Image `Path_425`.
+    static let path_425 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Path_425")
     /// Image `Photos`.
     static let photos = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photos")
     /// Image `Privacy`.
@@ -1815,6 +1848,8 @@ struct R: Rswift.Validatable {
     static let contactGif = Rswift.ImageResource(bundle: R.hostingBundle, name: "contact.gif")
     /// Image `contactus`.
     static let contactus = Rswift.ImageResource(bundle: R.hostingBundle, name: "contactus")
+    /// Image `delete`.
+    static let delete = Rswift.ImageResource(bundle: R.hostingBundle, name: "delete")
     /// Image `done 1`.
     static let done1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "done 1")
     /// Image `done 2`.
@@ -1855,6 +1890,8 @@ struct R: Rswift.Validatable {
     static let google = Rswift.ImageResource(bundle: R.hostingBundle, name: "google")
     /// Image `group-11334`.
     static let group11334 = Rswift.ImageResource(bundle: R.hostingBundle, name: "group-11334")
+    /// Image `heart-2`.
+    static let heart2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "heart-2")
     /// Image `hometab1`.
     static let hometab1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "hometab1")
     /// Image `hometab`.
@@ -1919,6 +1956,8 @@ struct R: Rswift.Validatable {
     static let send = Rswift.ImageResource(bundle: R.hostingBundle, name: "send")
     /// Image `setting`.
     static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
+    /// Image `share`.
+    static let share = Rswift.ImageResource(bundle: R.hostingBundle, name: "share")
     /// Image `subscribe`.
     static let subscribe = Rswift.ImageResource(bundle: R.hostingBundle, name: "subscribe")
     /// Image `successIconLight`.
@@ -2009,9 +2048,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Facebook", bundle: ..., traitCollection: ...)`
+    static func facebook(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.facebook, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Facebook-2", bundle: ..., traitCollection: ...)`
+    static func facebook2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.facebook2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Group 514995", bundle: ..., traitCollection: ...)`
     static func group514995(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.group514995, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Group 7", bundle: ..., traitCollection: ...)`
+    static func group7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.group7, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2037,6 +2097,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Icon-3", bundle: ..., traitCollection: ...)`
+    static func icon3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Icon-4", bundle: ..., traitCollection: ...)`
     static func icon4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icon4, compatibleWith: traitCollection)
@@ -2047,6 +2114,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Image", bundle: ..., traitCollection: ...)`
     static func image(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.image, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Instagram", bundle: ..., traitCollection: ...)`
+    static func instagram(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.instagram, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Linkedin", bundle: ..., traitCollection: ...)`
+    static func linkedin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.linkedin, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2124,6 +2205,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Onboarding 3", bundle: ..., traitCollection: ...)`
     static func onboarding3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.onboarding3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Path_425", bundle: ..., traitCollection: ...)`
+    static func path_425(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.path_425, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2289,6 +2377,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "delete", bundle: ..., traitCollection: ...)`
+    static func delete(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.delete, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "done 1", bundle: ..., traitCollection: ...)`
     static func done1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.done1, compatibleWith: traitCollection)
@@ -2425,6 +2520,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "group-11334", bundle: ..., traitCollection: ...)`
     static func group11334(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.group11334, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "heart-2", bundle: ..., traitCollection: ...)`
+    static func heart2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.heart2, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2649,6 +2751,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "setting", bundle: ..., traitCollection: ...)`
     static func setting(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.setting, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "share", bundle: ..., traitCollection: ...)`
+    static func share(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.share, compatibleWith: traitCollection)
     }
     #endif
 
@@ -3259,7 +3368,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 384 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 385 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3649,6 +3758,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let deactivateLan = Rswift.StringResource(key: "deactivate.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Delete
+      ///
+      /// Locales: ar, en
+      static let delete = Rswift.StringResource(key: "Delete", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Delete
       ///
       /// Locales: ar, en
@@ -6251,6 +6364,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deactivate.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete
+      ///
+      /// Locales: ar, en
+      static func delete(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Delete", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Delete"
+        }
+
+        return NSLocalizedString("Delete", bundle: bundle, comment: "")
       }
 
       /// en translation: Delete
@@ -10684,16 +10812,15 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Icon-3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Icon-3' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "close 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'close 1' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "comment", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'comment' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "fav", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'fav' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "heart-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'heart-2' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "blackshadow8", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blackshadow8' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray1' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "lightgray 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray 1' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in nib 'CommentsTableViewCell', but couldn't be loaded.") }
         }
       }
 
@@ -10709,9 +10836,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in nib 'EmptyScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in nib 'EmptyScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in nib 'EmptyScreen', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in nib 'EmptyScreen', but couldn't be loaded.") }
         }
       }
 
@@ -10876,11 +11003,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "user 2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user 2' is used in nib 'NotificationTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Path_425", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Path_425' is used in nib 'NotificationTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in nib 'NotificationTableViewCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in nib 'NotificationTableViewCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray1' is used in nib 'NotificationTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in nib 'NotificationTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in nib 'NotificationTableViewCell', but couldn't be loaded.") }
         }
       }
 
@@ -10976,10 +11102,10 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "fav", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'fav' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "blackshadow8", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blackshadow8' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray1' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkwhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkwhite' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "gray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in nib 'PostsTableViewCell', but couldn't be loaded.") }
         }
       }
 
@@ -10997,7 +11123,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "prizes", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'prizes' is used in nib 'PrizesTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in nib 'PrizesTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in nib 'PrizesTableViewCell', but couldn't be loaded.") }
         }
       }
 
@@ -11238,11 +11364,16 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Facebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Facebook' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Facebook-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Facebook-2' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Instagram", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Instagram' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Linkedin", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Linkedin' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkwhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkwhite' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'AboutusStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.aboutusStoryboard().aboutusVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'aboutusVC' could not be loaded from storyboard 'AboutusStoryboard' as 'AboutusVC'.") }
       }
@@ -11266,14 +11397,11 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "Video Camera", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Video Camera' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Lightgray' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "blackshadow8", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blackshadow8' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "lightgray 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray 1' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'AddPostStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.addPostStoryboard().addPostVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addPostVC' could not be loaded from storyboard 'AddPostStoryboard' as 'AddPostVC'.") }
@@ -11297,8 +11425,9 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "building", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'building' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'BackstageStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.backstageStoryboard().backstageVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'backstageVC' could not be loaded from storyboard 'BackstageStoryboard' as 'BackstageVC'.") }
       }
@@ -11322,8 +11451,9 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'close' is used in storyboard 'ChangeClubStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "black2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black2' is used in storyboard 'ChangeClubStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "gray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray' is used in storyboard 'ChangeClubStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'ChangeClubStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ChangeClubStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.changeClubStoryboard().changeClubVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'changeClubVC' could not be loaded from storyboard 'ChangeClubStoryboard' as 'ChangeClubVC'.") }
       }
@@ -11347,9 +11477,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ChangelanguageStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.changelanguageStoryboard().changelanguageVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'changelanguageVC' could not be loaded from storyboard 'ChangelanguageStoryboard' as 'ChangelanguageVC'.") }
@@ -11375,11 +11504,11 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "arrowleft 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft 1' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "mask", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mask' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Lightgray' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkwhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkwhite' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ClubdetailsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.clubdetailsStoryboard().clubdetailsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'clubdetailsVC' could not be loaded from storyboard 'ClubdetailsStoryboard' as 'ClubdetailsVC'.") }
@@ -11405,8 +11534,10 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "send", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'send' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "lightgray 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray 1' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'CommentsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.commentsStoryboard().commentsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'commentsVC' could not be loaded from storyboard 'CommentsStoryboard' as 'CommentsVC'.") }
       }
@@ -11486,12 +11617,11 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditemailStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.editemailStoryboard().editemailVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editemailVC' could not be loaded from storyboard 'EditemailStoryboard' as 'EditemailVC'.") }
@@ -11517,12 +11647,11 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "eye", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'eye' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'lock' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditpasswordStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.editpasswordStoryboard().editpasswordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editpasswordVC' could not be loaded from storyboard 'EditpasswordStoryboard' as 'EditpasswordVC'.") }
@@ -11547,12 +11676,11 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Call' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditphoneStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.editphoneStoryboard().editphoneVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editphoneVC' could not be loaded from storyboard 'EditphoneStoryboard' as 'EditphoneVC'.") }
@@ -11582,9 +11710,11 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'EditprofileStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.editprofileStoryboard().editprofileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editprofileVC' could not be loaded from storyboard 'EditprofileStoryboard' as 'EditprofileVC'.") }
@@ -11804,6 +11934,7 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "gray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "txtblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'txtblue' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'MatchdetailsStoryboard', but couldn't be loaded.") }
@@ -11856,8 +11987,9 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'MypostsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'MypostsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'MypostsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'MypostsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'MypostsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.mypostsStoryboard().mypostsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mypostsVC' could not be loaded from storyboard 'MypostsStoryboard' as 'MypostsVC'.") }
       }
@@ -11880,9 +12012,10 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'NewsDetailsStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "share", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'share' is used in storyboard 'NewsDetailsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'NewsDetailsStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'NewsDetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'NewsDetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'NewsDetailsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.newsDetailsStoryboard().newsDetailsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newsDetailsVC' could not be loaded from storyboard 'NewsDetailsStoryboard' as 'NewsDetailsVC'.") }
       }
@@ -11906,7 +12039,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'NewsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'NewsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'NewsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'NewsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.newsStoryboard().newsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newsVC' could not be loaded from storyboard 'NewsStoryboard' as 'NewsVC'.") }
       }
@@ -11930,7 +12064,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'NotificationStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'NotificationStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'NotificationStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'NotificationStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.notificationStoryboard().notificationVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'notificationVC' could not be loaded from storyboard 'NotificationStoryboard' as 'NotificationVC'.") }
       }
@@ -12029,12 +12164,16 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Icon-3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Icon-3' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "close 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'close 1' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "edit 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit 1' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "delete", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'delete' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "heart-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'heart-2' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkwhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkwhite' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.postdetailsStoryboard().postdetailsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'postdetailsVC' could not be loaded from storyboard 'PostdetailsStoryboard' as 'PostdetailsVC'.") }
       }
@@ -12064,9 +12203,11 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "usertab", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'usertab' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ProfileStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.profileStoryboard().profileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'profileVC' could not be loaded from storyboard 'ProfileStoryboard' as 'ProfileVC'.") }
@@ -12090,12 +12231,11 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "eye", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'eye' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'lock' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ResetpasswordStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.resetpasswordStoryboard().resetpasswordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'resetpasswordVC' could not be loaded from storyboard 'ResetpasswordStoryboard' as 'ResetpasswordVC'.") }
@@ -12181,15 +12321,16 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "email", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'email' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "eye", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'eye' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'lock' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "map", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "user 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user 1' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SignupStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.signupStoryboard().signupVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'signupVC' could not be loaded from storyboard 'SignupStoryboard' as 'SignupVC'.") }
@@ -12249,8 +12390,9 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "Vector-18", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Vector-18' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'close' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SubscribePopupStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.subscribePopupStoryboard().subscribePopupVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'subscribePopupVC' could not be loaded from storyboard 'SubscribePopupStoryboard' as 'SubscribePopupVC'.") }
       }
@@ -12276,14 +12418,14 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "dropdown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dropdown' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "filter", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'filter' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary 1' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray1' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "lightgray 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray 1' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SubscriptionsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.subscriptionsStoryboard().subscriptionsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'subscriptionsVC' could not be loaded from storyboard 'SubscriptionsStoryboard' as 'SubscriptionsVC'.") }
@@ -12307,8 +12449,8 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'SuccesspaymentStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'SuccesspaymentStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'SuccesspaymentStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SuccesspaymentStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.successpaymentStoryboard().successpaymentVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'successpaymentVC' could not be loaded from storyboard 'SuccesspaymentStoryboard' as 'SuccesspaymentVC'.") }
@@ -12333,8 +12475,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'TermsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'TermsStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'TermsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'TermsStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'TermsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.termsStoryboard().termsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'termsVC' could not be loaded from storyboard 'TermsStoryboard' as 'TermsVC'.") }
       }
@@ -12357,11 +12499,13 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "arrowleft", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowleft' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "bordergray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'bordergray' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "txtprimary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'txtprimary' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'VerifyCodeStoryboard', but couldn't be loaded.") }
         }

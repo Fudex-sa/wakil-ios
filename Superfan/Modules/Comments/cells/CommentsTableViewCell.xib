@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,7 +39,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fes-qG-zwI">
                                         <rect key="frame" x="34" y="0.0" width="466" height="14.333333333333334"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" name="Darkerblack"/>
+                                        <color key="textColor" name="whiteColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m12"/>
@@ -49,7 +48,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ba-bG-M1H">
                                         <rect key="frame" x="34" y="22.333333333333336" width="466" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" name="gray1"/>
+                                        <color key="textColor" name="whiteColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m10"/>
@@ -74,7 +73,7 @@
                                         <state key="normal" image="edit"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Secondary 1"/>
                                 <constraints>
                                     <constraint firstItem="UPU-d1-SAO" firstAttribute="leading" secondItem="9dh-9l-a6M" secondAttribute="leading" id="3vx-jn-IqN"/>
                                     <constraint firstItem="5Ba-bG-M1H" firstAttribute="leading" secondItem="UPU-d1-SAO" secondAttribute="trailing" constant="10" id="6Ar-QH-IXh"/>
@@ -94,7 +93,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxv-hF-DqQ">
                                 <rect key="frame" x="12" y="58.000000000000007" width="488" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="Darkerblack"/>
+                                <color key="textColor" name="whiteColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
@@ -106,7 +105,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPO-sR-208">
                                         <rect key="frame" x="0.0" y="0.0" width="26.333333333333332" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" name="gray1"/>
+                                        <color key="textColor" name="whiteColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m10"/>
@@ -115,7 +114,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDM-GH-tg7">
                                         <rect key="frame" x="34.333333333333336" y="-6" width="26.333333333333336" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" name="gray1"/>
+                                        <color key="textColor" name="whiteColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m10"/>
@@ -123,7 +122,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDg-eM-OVT">
                                         <rect key="frame" x="0.0" y="10" width="488" height="1"/>
-                                        <color key="backgroundColor" name="lightgray 1"/>
+                                        <color key="backgroundColor" name="textfileldbackground"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="acs-vA-roD"/>
                                         </constraints>
@@ -137,7 +136,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6g-Qd-3qP">
                                                         <rect key="frame" x="84" y="4.3333333333333428" width="71.333333333333314" height="30"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fav" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-QT-O5u">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-2" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-QT-O5u">
                                                                 <rect key="frame" x="0.0" y="5" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="DQK-pv-pT2"/>
@@ -147,7 +146,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i like it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDV-5n-bpP">
                                                                 <rect key="frame" x="24.000000000000004" y="5" width="47.333333333333343" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" name="Black1"/>
+                                                                <color key="textColor" name="whiteColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m12"/>
@@ -155,7 +154,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="Eeq-QT-O5u" firstAttribute="centerY" secondItem="O6g-Qd-3qP" secondAttribute="centerY" id="0VE-rD-7v4"/>
                                                             <constraint firstItem="Eeq-QT-O5u" firstAttribute="leading" secondItem="O6g-Qd-3qP" secondAttribute="leading" id="6Ae-5t-dcg"/>
@@ -166,7 +165,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="O6g-Qd-3qP" firstAttribute="centerX" secondItem="bgS-Bx-Db2" secondAttribute="centerX" id="1Na-Yw-qo9"/>
                                                     <constraint firstItem="O6g-Qd-3qP" firstAttribute="centerY" secondItem="bgS-Bx-Db2" secondAttribute="centerY" id="lsO-LB-5H9"/>
@@ -178,7 +177,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-Hd-Wkg">
                                                         <rect key="frame" x="70.333333333333314" y="4.3333333333333428" width="98.666666666666686" height="30"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment" translatesAutoresizingMaskIntoConstraints="NO" id="24i-WA-3fd">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-3" translatesAutoresizingMaskIntoConstraints="NO" id="24i-WA-3fd">
                                                                 <rect key="frame" x="0.0" y="5" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="JWI-Fl-9VY"/>
@@ -188,7 +187,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjc-Ii-KWR">
                                                                 <rect key="frame" x="24" y="5" width="74.666666666666671" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" name="Black1"/>
+                                                                <color key="textColor" name="whiteColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m12"/>
@@ -196,7 +195,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="24i-WA-3fd" firstAttribute="centerY" secondItem="c2b-Hd-Wkg" secondAttribute="centerY" id="2R8-sJ-iI7"/>
                                                             <constraint firstAttribute="height" constant="30" id="4RN-4X-pYV"/>
@@ -208,7 +207,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="c2b-Hd-Wkg" firstAttribute="centerY" secondItem="9Ju-5p-uUU" secondAttribute="centerY" id="aZR-pu-uQW"/>
                                                     <constraint firstItem="c2b-Hd-Wkg" firstAttribute="centerX" secondItem="9Ju-5p-uUU" secondAttribute="centerX" id="liQ-hK-uHF"/>
@@ -217,7 +216,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3ep-xz-mPv" secondAttribute="trailing" id="2i5-Bs-PAs"/>
                                     <constraint firstAttribute="height" constant="60" id="8xp-ed-cjY"/>
@@ -234,7 +233,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Secondary 1"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="nNf-b2-B4W" secondAttribute="trailing" constant="12" id="0E0-Ah-uhz"/>
                             <constraint firstAttribute="trailing" secondItem="9dh-9l-a6M" secondAttribute="trailing" id="1Pt-jJ-wOX"/>
@@ -296,27 +295,21 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="close 1" width="16" height="16"/>
-        <image name="comment" width="15" height="15"/>
+        <image name="Icon-3" width="15" height="14"/>
+        <image name="close 1" width="24" height="25"/>
         <image name="edit" width="16" height="16"/>
-        <image name="fav" width="15" height="13"/>
-        <namedColor name="Black1">
-            <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Darkerblack">
-            <color red="0.074509803921568626" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <image name="heart-2" width="17" height="16"/>
+        <namedColor name="Secondary 1">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blackshadow8">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.079999998211860657" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="gray1">
-            <color red="0.67450980392156867" green="0.67450980392156867" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="textfileldbackground">
+            <color red="0.1803921568627451" green="0.18431372549019609" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="lightgray 1">
-            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

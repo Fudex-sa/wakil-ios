@@ -169,11 +169,11 @@ extension SubscriptionsVC {
         clubImg.setImage(url: club?.photo ?? "")
         if type == 0 {
             packageBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            subscribeBtn.backgroundColor = R.color.whiteColor()
-            packageBtn.borderColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            packageBtn.borderWidth = 1
-            subscribeBtn.borderColor = R.color.lightgray1()
-            subscribeBtn.borderWidth = 1
+            subscribeBtn.backgroundColor = R.color.textfileldbackground()
+            packageBtn.borderColor = .clear
+            packageBtn.borderWidth = 0
+            subscribeBtn.borderColor = .clear
+            subscribeBtn.borderWidth = 0
             packageBtn.setTitleColor(R.color.whiteColor(), for: .normal)
             subscribeBtn.setTitleColor(R.color.gray1(), for: .normal)
             viewModel?.resetPaginator()
@@ -184,11 +184,11 @@ extension SubscriptionsVC {
             confirmeBtn.isHidden = false
         }else {
             subscribeBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            packageBtn.backgroundColor = R.color.whiteColor()
-            subscribeBtn.borderColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            subscribeBtn.borderWidth = 1
-            packageBtn.borderColor = R.color.lightgray1()
-            packageBtn.borderWidth = 1
+            packageBtn.backgroundColor = R.color.textfileldbackground()
+            packageBtn.borderColor = .clear
+            packageBtn.borderWidth = 0
+            subscribeBtn.borderColor = .clear
+            subscribeBtn.borderWidth = 0
             subscribeBtn.setTitleColor(R.color.whiteColor(), for: .normal)
             packageBtn.setTitleColor(R.color.gray1(), for: .normal)
             packageView.isHidden = true

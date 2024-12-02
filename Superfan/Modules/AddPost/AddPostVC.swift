@@ -90,6 +90,7 @@ extension AddPostVC {
 // MARK: - ...  Functions
 extension AddPostVC {
     func setup() {
+        changeColoe()
         gallaryCollection.delegate = self
         gallaryCollection.dataSource = self
         gallaryCollection.observe()
@@ -105,7 +106,7 @@ extension AddPostVC {
         userImg.setImage(url: UD.user?.data?.user?.photo ?? "")
         userLbl.text = UD.user?.data?.user?.name ?? ""
         desTxf.delegate = self
-        desTxf.textColor = R.color.gray1()
+        desTxf.textColor = R.color.whiteColor()
         if type == .edit {
             desTxf.text = postdata?.data?.description ?? ""
             viewModel?.postId.send(postdata?.data?.id ?? 0)
@@ -159,7 +160,11 @@ extension AddPostVC {
         imagePickerController.videoExportPreset = AVAssetExportPresetPassthrough
         present(imagePickerController, animated: true, completion: nil)
     }
-   
+    func changeColoe() {
+        if UD.club != nil {
+            sendBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
+    }
    
 }
 // MARK: - ...  View Contract
@@ -167,14 +172,14 @@ extension AddPostVC {
 }
 extension AddPostVC : UITextViewDelegate {
         func textViewDidBeginEditing(_ textView: UITextView) {
-            if desTxf.textColor == R.color.gray1() {
+            if desTxf.textColor == R.color.whiteColor() {
                 desTxf.text = nil
-                desTxf.textColor = R.color.black()
+                desTxf.textColor = R.color.whiteColor()
             }
         }
         func textViewDidEndEditing (_ textView: UITextView) {
             if desTxf.text.isEmpty {
-                desTxf.textColor = R.color.gray1() // YOUR PREFERED PLACEHOLDER COLOR HERE
+                desTxf.textColor = R.color.whiteColor() // YOUR PREFERED PLACEHOLDER COLOR HERE
                 desTxf.text =  "Write what you think ...".localized
             }
         }

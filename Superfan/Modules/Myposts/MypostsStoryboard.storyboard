@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +32,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nL-lk-4Si">
                                 <rect key="frame" x="48" y="71.5" width="366" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="Darkerblack"/>
+                                <color key="textColor" name="whiteColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
@@ -52,19 +51,19 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k1K-ns-Yab">
-                                <rect key="frame" x="16" y="112" width="382" height="734"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="16" y="127" width="382" height="719"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J3X-fn-Ws9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="primary1"/>
                         <constraints>
                             <constraint firstItem="adi-Oi-O8u" firstAttribute="centerY" secondItem="2mA-gY-hwK" secondAttribute="centerY" id="6jp-g9-pAo"/>
                             <constraint firstItem="2mA-gY-hwK" firstAttribute="top" secondItem="J3X-fn-Ws9" secondAttribute="top" constant="22" id="6rG-pj-3v0"/>
                             <constraint firstItem="3nL-lk-4Si" firstAttribute="leading" secondItem="2mA-gY-hwK" secondAttribute="trailing" constant="8" id="Pan-dx-qZl"/>
                             <constraint firstItem="J3X-fn-Ws9" firstAttribute="trailing" secondItem="3nL-lk-4Si" secondAttribute="trailing" id="ShM-Q4-3tC"/>
                             <constraint firstItem="J3X-fn-Ws9" firstAttribute="bottom" secondItem="k1K-ns-Yab" secondAttribute="bottom" constant="16" id="TSH-io-Xam"/>
-                            <constraint firstItem="k1K-ns-Yab" firstAttribute="top" secondItem="adi-Oi-O8u" secondAttribute="bottom" constant="15" id="ZG1-wd-gxu"/>
+                            <constraint firstItem="k1K-ns-Yab" firstAttribute="top" secondItem="adi-Oi-O8u" secondAttribute="bottom" constant="30" id="ZG1-wd-gxu"/>
                             <constraint firstItem="J3X-fn-Ws9" firstAttribute="trailing" secondItem="k1K-ns-Yab" secondAttribute="trailing" constant="16" id="ZpX-0t-Z4M"/>
                             <constraint firstItem="2mA-gY-hwK" firstAttribute="leading" secondItem="J3X-fn-Ws9" secondAttribute="leading" constant="16" id="c7Y-kB-x2A"/>
                             <constraint firstItem="J3X-fn-Ws9" firstAttribute="trailing" secondItem="adi-Oi-O8u" secondAttribute="trailing" constant="20" id="dSa-nL-KOP"/>
@@ -84,14 +83,14 @@
     </scenes>
     <resources>
         <image name="arrowleft" width="25" height="25"/>
-        <namedColor name="Darkerblack">
-            <color red="0.074509803921568626" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="Primary">
             <color red="0.89803921568627454" green="0.11372549019607843" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="primary1">
+            <color red="0.094117647058823528" green="0.098039215686274508" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

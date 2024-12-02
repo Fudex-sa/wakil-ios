@@ -13,6 +13,7 @@ class PostdetailsViewModel: BaseViewModel {
     var postId: Publisher<Int> = .init()
     var postdata: Publisher<PostdetailsModel> = .init()
     var deletedata: Publisher<DeletePost> = .init()
+    var likedata: Publisher<UserRoot> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension PostdetailsViewModel {
@@ -42,5 +43,39 @@ extension PostdetailsViewModel {
             guard let model = model else { return }
             self?.deletedata.send(model)
         }).store(self)
+    }
+    func likepost() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/like", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.likedata.send(model)
+        }).store(self)
+    }
+    func unlikepost() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/disLike", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.likedata.send(model)
+        }).store(self)
+       
+    }
+    func likebackstage() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.backstages.rawValue)/\(postId.value ?? 0)/like", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.likedata.send(model)
+        }).store(self)
+    }
+    func unlikebackstage() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.backstages.rawValue)/\(postId.value ?? 0)/disLike", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.likedata.send(model)
+        }).store(self)
+       
     }
 }

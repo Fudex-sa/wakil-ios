@@ -1,8 +1,9 @@
 {
   "images" : [
     {
-      "filename" : "Video Camera.svg",
-      "idiom" : "universal"
+      "filename" : "Vector-4.svg",
+      "idiom" : "universal",
+      "language-direction" : "right-to-left"
     }
   ],
   "info" : {
