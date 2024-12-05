@@ -18,8 +18,10 @@ struct HomeModel: Codable {
 // MARK: - DataClass
 struct HomeDataClass: Codable {
     let clubs: [SelectclubDatum]?
-    let mix: [PostsDatum]?
+    let posts: [PostsDatum]?
+    let news: [NewsModelData]?
     let matches: [MatchsDatum]?
+    let sliders: [SliderModelData]?
 }
 
 struct NewsModelData: Codable {
@@ -60,6 +62,7 @@ struct MatchsTeam: Codable {
     let title: String?
     let logo: String?
     let score: Int?
+    let scorers: [ScorersModel]?
 }
 struct MatchesModel: Codable {
     let status: Bool?
@@ -107,3 +110,8 @@ struct User: Codable {
     let type: String?
 }
 
+struct SliderModelData: Codable {
+    let id: Int?
+    let title, description: String?
+    let file: String?
+}

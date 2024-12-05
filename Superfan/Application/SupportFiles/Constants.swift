@@ -6,7 +6,7 @@
 import UIKit
 
 struct Constants {
-    static let itunesURL = "itms-apps://itunes.apple.com/app/id1330387425"
+    static let itunesURL = "itms-apps://itunes.apple.com/app/id6547850254"
     static var isconnet = true
     static let FCMTYPE = "ios"
     static var iscompletedata = true

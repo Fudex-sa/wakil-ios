@@ -36,7 +36,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-rp-GSi">
                                 <rect key="frame" x="48" y="72" width="52" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="Black1"/>
+                                <color key="textColor" name="whiteColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
@@ -48,7 +48,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxD-Bn-dNV">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Cb5-uM-64c"/>
                                         </constraints>
@@ -129,12 +129,12 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzJ-uB-3UU" customClass="PaddingLabel" customModule="Superfan" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="41.5" height="20"/>
-                                                                <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="j1Z-3z-gY1"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" name="Primary"/>
+                                                                <color key="textColor" name="whiteColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
@@ -362,13 +362,7 @@
     </designables>
     <resources>
         <image name="arrowleft" width="25" height="25"/>
-        <image name="result" width="375" height="812"/>
-        <namedColor name="Black1">
-            <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Primary">
-            <color red="0.89803921568627454" green="0.11372549019607843" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
+        <image name="result" width="1500" height="3248"/>
         <namedColor name="Secondary 1">
             <color red="0.13333333333333333" green="0.13333333333333333" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

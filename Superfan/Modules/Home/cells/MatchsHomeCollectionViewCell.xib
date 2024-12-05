@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SiB-ZQ-jlD">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="149"/>
+                        <rect key="frame" x="0.0" y="0.0" width="382" height="149"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-3d-DoE">
                                 <rect key="frame" x="25.000000000000004" y="31.999999999999993" width="51.333333333333343" height="85.333333333333314"/>
@@ -53,7 +52,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZl-5v-gEz">
-                                <rect key="frame" x="317.66666666666669" y="31.999999999999993" width="51.333333333333314" height="85.333333333333314"/>
+                                <rect key="frame" x="305.66666666666669" y="31.999999999999993" width="51.333333333333314" height="85.333333333333314"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZDP-Bs-DgR">
                                         <rect key="frame" x="-0.33333333333337123" y="0.0" width="52" height="52"/>
@@ -83,7 +82,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRG-fB-Cdp">
-                                <rect key="frame" x="176.33333333333334" y="28" width="41.333333333333343" height="93"/>
+                                <rect key="frame" x="170.33333333333334" y="28" width="41.333333333333343" height="93"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf1-m1-X8N">
                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="21"/>
@@ -109,14 +108,14 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59v-Wq-xA5">
                                                 <rect key="frame" x="5" y="1.6666666666666714" width="41.333333333333336" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="Primary"/>
+                                                <color key="textColor" name="whiteColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="LUz-Lh-ExK"/>
                                             <constraint firstAttribute="trailing" secondItem="59v-Wq-xA5" secondAttribute="trailing" constant="5" id="YZA-pu-NaA"/>
@@ -140,7 +139,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="txtblue"/>
+                        <color key="backgroundColor" name="Secondary 1"/>
                         <constraints>
                             <constraint firstItem="b1I-3d-DoE" firstAttribute="leading" secondItem="SiB-ZQ-jlD" secondAttribute="leading" constant="25" id="Fd8-d5-KNw"/>
                             <constraint firstItem="CRG-fB-Cdp" firstAttribute="centerX" secondItem="SiB-ZQ-jlD" secondAttribute="centerX" id="PUb-Uv-Rfj"/>
@@ -162,7 +161,7 @@
                 <constraint firstItem="SiB-ZQ-jlD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8ji-My-zfs"/>
                 <constraint firstItem="SiB-ZQ-jlD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="SS0-On-fqN"/>
                 <constraint firstAttribute="bottom" secondItem="SiB-ZQ-jlD" secondAttribute="bottom" id="d9i-f9-Lmp"/>
-                <constraint firstAttribute="trailing" secondItem="SiB-ZQ-jlD" secondAttribute="trailing" id="i7d-Rc-hd4"/>
+                <constraint firstAttribute="trailing" secondItem="SiB-ZQ-jlD" secondAttribute="trailing" constant="12" id="i7d-Rc-hd4"/>
             </constraints>
             <size key="customSize" width="394" height="149"/>
             <connections>
@@ -183,17 +182,11 @@
         <namedColor name="Lightgray">
             <color red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="Primary">
-            <color red="0.89803921568627454" green="0.11372549019607843" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="txtblue">
-            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Secondary 1">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="whiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

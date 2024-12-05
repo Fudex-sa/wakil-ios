@@ -115,7 +115,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="desLbl" destination="KTQ-YY-mzi" id="556-SS-KRy"/>
                         <outlet property="termsLbl" destination="cOF-aM-63W" id="tdI-We-Veb"/>
+                        <outlet property="titleLbl" destination="Lvq-8H-3SS" id="232-OL-FIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5XC-nL-fQg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

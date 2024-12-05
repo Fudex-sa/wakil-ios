@@ -18,6 +18,7 @@ class MypostsVC: BaseController , Reloader{
     var viewModel: MypostsViewModel?
     var coordinator: MypostsCoordinator?
     var expandedStates = [Bool]()
+    var ismypost = true
 }
 
 // MARK: - ...  LifeCycle
@@ -69,9 +70,16 @@ extension MypostsVC {
         postsTbl.observe()
         postsTbl.skeleton()
         expandedStates.removeAll()
-        viewModel?.resetPaginator()
-        viewModel?.clearDataSource()
-        viewModel?.fetchposts()
+        if ismypost == false {
+            addBtn.isHidden = true
+            viewModel?.resetPaginator()
+            viewModel?.clearDataSource()
+            viewModel?.fetchposts1()
+        }else {
+            viewModel?.resetPaginator()
+            viewModel?.clearDataSource()
+            viewModel?.fetchposts()
+        }
         addBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.addpost()
         }).store(self)

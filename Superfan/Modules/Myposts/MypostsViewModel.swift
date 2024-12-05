@@ -29,6 +29,19 @@ extension MypostsViewModel {
             self?.publisher()
         }).store(self)
     }
+    func fetchposts1() {
+        if UD.club?.id ?? 0 != 0 {
+            NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
+        }
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.posts.rawValue, type: .get, PostsModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.append(contentsOf: model.data ?? [])
+            self?.paginator(respnod: model.data)
+            self?.publisher()
+        }).store(self)
+    }
     func likepost() {
         NetworkManager.instance.request("\(NetworkConfigration.EndPoint.posts.rawValue)/\(postId.value ?? 0)/like", type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)

@@ -27,7 +27,7 @@ public extension UIImageView {
             case .success(let image):
                 completion?(image.image)
             case .failure:
-                self.image = UIImage(named: "placeholder")
+                self.image = placeholder
                 break
             }
         }

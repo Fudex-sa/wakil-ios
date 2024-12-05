@@ -24,6 +24,11 @@ extension HomeCoordinator {
         guard let scene = R.storyboard.newsStoryboard.newsVC() else { return }
         view?.push(scene)
     }
+    func moreposts() {
+        guard let scene = R.storyboard.mypostsStoryboard.mypostsVC() else { return }
+        scene.ismypost = false
+        view?.push(scene)
+    }
     func notification() {
         if UD.user == nil {
             Coordinator.instance.unAuthorized()
@@ -83,15 +88,9 @@ extension HomeCoordinator {
     }
     func done(club : SelectclubDatum?) {
         view?.clubLbl.text = UD.club?.name ?? ""
-        if view?.type == 0 {
-            view?.showevents()
-        }else if view?.type == 1 {
-            view?.showmatches()
-        }else if view?.type == 2 {
-            view?.shownews()
-        }else if view?.type == 3 {
-            view?.showposts()
-        }
+        view?.viewModel?.resetPaginator()
+        view?.viewModel?.clearDataSource()
+        view?.viewModel?.fetchhome()
         view?.changeColoe()
     }
     

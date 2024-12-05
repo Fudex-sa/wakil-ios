@@ -36,7 +36,7 @@ class PostsTableViewCell: BaseTableViewCell {
         clubLbl.text = model.user?.name ?? ""
         clubImg.setImage(url: model.user?.logo ?? "")
         timeLbl.text = model.date ?? ""
-        postImg.setImage(url: model.backgroundImg ?? "")
+        postImg.setImage(url: model.backgroundImg ?? "", placeholder: UIImage(named: "newslogo"))
         liked(is: model.is_liked ?? 0)
         commentLbl.text = "\(model.commentersCount ?? 0) \("comment".localized)"
         likeLbl.text = "\(model.likersCount ?? 0) \("Interactions".localized)"

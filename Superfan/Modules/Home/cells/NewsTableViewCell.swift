@@ -26,7 +26,7 @@ class NewsTableViewCell: BaseTableViewCell {
         clubImg.setImage(url: model.club?.photo ?? "")
         timeLbl.text = model.date ?? ""
         titlelbl.text = model.title ?? ""
-        newImg.setImage(url: model.backgrouds ?? "")
+        newImg.setImage(url: model.backgrouds ?? "", placeholder: UIImage(named: "newslogo"))
         clubImg.UIViewAction {
             self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.club?.id ?? 0)
         }

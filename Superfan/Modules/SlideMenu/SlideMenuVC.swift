@@ -12,13 +12,13 @@ import FirebaseMessaging
 
 // MARK: - ...  ViewController - Vars
 class SlideMenuVC: BaseController {
-    @IBOutlet weak var subscribeHight: NSLayoutConstraint!
-    @IBOutlet weak var subscribeTop: NSLayoutConstraint!
+    @IBOutlet weak var privacyView: UIView!
+    @IBOutlet weak var rateView: UIView!
+    @IBOutlet weak var notificationView: UIView!
     @IBOutlet weak var subscribeView: UIView!
     @IBOutlet weak var mypostView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoutLbl: UILabel!
-    @IBOutlet weak var slideView: UIView!
     @IBOutlet weak var logoutView: UIView!
     @IBOutlet weak var termsView: UIView!
     @IBOutlet weak var notSwitch: UISwitch!
@@ -87,9 +87,6 @@ extension SlideMenuVC {
 // MARK: - ...  Functions
 extension SlideMenuVC {
     func setup() {
-        if UD.club != nil {
-            containerView.backgroundColor = UIColor(hex: UD.club?.color ?? "")
-        }
         if UD.user == nil {
             logoutLbl.text = "Login".localized
             userView.isHidden = true
@@ -108,6 +105,18 @@ extension SlideMenuVC {
         }).store(self)
         languageView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.language()
+        }).store(self)
+        notificationView.publisherGesture.listen(on: {[weak self] _ in
+            if UD.user == nil {
+                Coordinator.instance.unAuthorized()
+            }
+            self?.coordinator?.notification()
+        }).store(self)
+        privacyView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.privacy()
+        }).store(self)
+        rateView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.rateapp()
         }).store(self)
         contactView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.contactus()

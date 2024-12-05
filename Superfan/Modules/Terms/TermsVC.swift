@@ -11,9 +11,12 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class TermsVC: BaseController {
+    @IBOutlet weak var desLbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var termsLbl: UILabel!
     var viewModel: TermsViewModel?
     var coordinator: TermsCoordinator?
+    var isprivacy = false
 }
 
 // MARK: - ...  LifeCycle
@@ -50,12 +53,20 @@ extension TermsVC {
 // MARK: - ...  Functions
 extension TermsVC {
     func setup() {
+        if isprivacy {
+            desLbl.text = "Review of Privacy".localized
+            titleLbl.text = "Privacy".localized
+        }
         startLoading()
         viewModel?.fetchsetting()
     }
     func reload(){
         stopLoading()
-        termsLbl.text = viewModel?.setting.value?.terms_condition?.htmlToString ?? ""
+        if isprivacy {
+            termsLbl.text = viewModel?.setting.value?.privacy_policy?.htmlToString ?? ""
+        }else {
+            termsLbl.text = viewModel?.setting.value?.terms_condition?.htmlToString ?? ""
+        }
 
     }
 }

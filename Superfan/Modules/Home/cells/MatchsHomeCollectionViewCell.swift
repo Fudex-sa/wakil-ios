@@ -41,14 +41,14 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
 
             }
             timeLbl.text = model.liveStatus ?? ""
-            if UD.club != nil {
-                timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
-            }else {
-                timeLbl.textColor = R.color.primary()
-            }
+//            if UD.club != nil {
+//                timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
+//            }else {
+//                timeLbl.textColor = R.color.primary()
+//            }
         }else if model.status ?? 0 == 1 {
             timeView.isHidden = false
-            resulteLbl.text = "- : -"
+            resulteLbl.text = ""
             timeLbl.text = DateHelper().date(date: model.date ?? "", format: "hh:mm a", oldFormat: "yyyy-MM-dd HH:mm:ss")
             timeLbl.textColor = R.color.primary()
         }else {
@@ -61,11 +61,11 @@ class MatchsHomeCollectionViewCell: BaseCollectionViewCell {
 
             }
             timeLbl.text = model.liveStatus ?? ""
-            if UD.club != nil {
-                timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
-            }else {
-                timeLbl.textColor = R.color.primary()
-            }
+//            if UD.club != nil {
+//                timeLbl.textColor = UIColor(hex: UD.club?.color ?? "")
+//            }else {
+//                timeLbl.textColor = R.color.primary()
+//            }
         }
         club1Img.UIViewAction {
             self.delegate?.clubdetails(wasPressedOnCell: self, clubId: model.team1?.id ?? 0)

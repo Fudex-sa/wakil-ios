@@ -137,6 +137,8 @@
 		667FD7F728917A270005254B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FD7F228917A270005254B /* OnboardingViewModel.swift */; };
 		6681DC862C57B99A0004FC3C /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6681DC852C57B99A0004FC3C /* NotificationTableViewCell.xib */; };
 		6681DC872C57B99A0004FC3C /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6681DC842C57B99A0004FC3C /* NotificationTableViewCell.swift */; };
+		66863DBA2D006FF10003C781 /* SlidersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66863DB82D006FF00003C781 /* SlidersCollectionViewCell.swift */; };
+		66863DBB2D006FF10003C781 /* SlidersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66863DB92D006FF00003C781 /* SlidersCollectionViewCell.xib */; };
 		668AA0172C84628E00454F90 /* CommentsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668AA0132C84628E00454F90 /* CommentsStoryboard.storyboard */; };
 		668AA0182C84628E00454F90 /* CommentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668AA0122C84628E00454F90 /* CommentsCoordinator.swift */; };
 		668AA0192C84628E00454F90 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668AA0142C84628E00454F90 /* CommentsModel.swift */; };
@@ -814,6 +816,8 @@
 		667FD7F228917A270005254B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		6681DC842C57B99A0004FC3C /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		6681DC852C57B99A0004FC3C /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		66863DB82D006FF00003C781 /* SlidersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidersCollectionViewCell.swift; sourceTree = "<group>"; };
+		66863DB92D006FF00003C781 /* SlidersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlidersCollectionViewCell.xib; sourceTree = "<group>"; };
 		668AA0122C84628E00454F90 /* CommentsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCoordinator.swift; sourceTree = "<group>"; };
 		668AA0132C84628E00454F90 /* CommentsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommentsStoryboard.storyboard; sourceTree = "<group>"; };
 		668AA0142C84628E00454F90 /* CommentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
@@ -1782,6 +1786,8 @@
 				66C773BF2C3D5FB200E872CA /* NewsTableViewCell.xib */,
 				665411D22C88999400672746 /* NextmatchesCollectionViewCell.swift */,
 				665411D32C88999400672746 /* NextmatchesCollectionViewCell.xib */,
+				66863DB82D006FF00003C781 /* SlidersCollectionViewCell.swift */,
+				66863DB92D006FF00003C781 /* SlidersCollectionViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -3545,6 +3551,7 @@
 				C871C723272FEB7B00DCBD2D /* SFPRODISPLAYSEMIBOLDITALIC.OTF in Resources */,
 				C86BF995266947F0002D87BC /* CenteredView.xib in Resources */,
 				C86BF990266947F0002D87BC /* successIcon@2x.png in Resources */,
+				66863DBB2D006FF10003C781 /* SlidersCollectionViewCell.xib in Resources */,
 				C871C72A272FEB7B00DCBD2D /* SFPRODISPLAYREGULAR.OTF in Resources */,
 				661A7EF32CA1A120002FEB57 /* SuccesspaymentStoryboard.storyboard in Resources */,
 				66EA910D2C3EC36F0027154F /* EditprofileStoryboard.storyboard in Resources */,
@@ -4069,6 +4076,7 @@
 				66A316CC2C71EEAC00057235 /* ClubdetailsVC.swift in Sources */,
 				66A316CD2C71EEAC00057235 /* ClubdetailsViewModel.swift in Sources */,
 				C8C09306272ABDA200E2270A /* CombineControlTarget.swift in Sources */,
+				66863DBA2D006FF10003C781 /* SlidersCollectionViewCell.swift in Sources */,
 				C8C0933D272AC76B00E2270A /* Facades.swift in Sources */,
 				7756A094253482EF00BFE53C /* RadioView.swift in Sources */,
 				661A7EFC2CA1A1C4002FEB57 /* PayTaps.swift in Sources */,
@@ -4359,7 +4367,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4367,7 +4375,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4443,7 +4451,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4453,7 +4461,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4533,7 +4541,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4541,7 +4549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4616,7 +4624,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4624,7 +4632,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

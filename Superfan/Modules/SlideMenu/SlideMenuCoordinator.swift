@@ -33,6 +33,21 @@ extension SlideMenuCoordinator {
         view?.push(scene)
         view?.closeMenu()
     }
+    func notification() {
+        guard let scene = R.storyboard.notificationStoryboard.notificationVC() else { return }
+        view?.push(scene)
+        view?.closeMenu()
+    }
+    func privacy() {
+        guard let scene = R.storyboard.termsStoryboard.termsVC() else { return }
+        scene.isprivacy = true
+        view?.push(scene)
+        view?.closeMenu()
+    }
+    func rateapp() {
+        Common().openUrl(text: "https://apps.apple.com/app/superfans/id6547850254")
+        view?.closeMenu()
+    }
     func contactus() {
         guard let scene = R.storyboard.contactusStoryboard.contactusVC() else { return }
         view?.push(scene)

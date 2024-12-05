@@ -23,7 +23,7 @@ struct NetworkConfigration {
             case .live:
                 return "http://sfanz.co/api/v2/"
             case .test:
-                return "https://superfan.fudex-tech.net/api/v2/"
+                return "https://superfan.fudex-tech.net/api/v3/"
             }
         }
         static var firebaseTopic: String {

@@ -15,8 +15,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DMq-9i-yHa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="whiteColor"/>
-                        <color key="barTintColor" name="whiteColor"/>
+                        <color key="backgroundColor" name="textfileldbackground"/>
+                        <color key="barTintColor" name="textfileldbackground"/>
                         <color key="selectedImageTintColor" name="Primary"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -96,8 +96,8 @@
         <namedColor name="blackshadow8">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.079999998211860657" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="whiteColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="textfileldbackground">
+            <color red="0.1803921568627451" green="0.18431372549019609" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

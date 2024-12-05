@@ -70,31 +70,25 @@ extension MatchesMoreVC {
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
             viewModel?.fetchtodaymatch()
-            todayLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            todayLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            todayLineView.isHidden = false
-            perviousLbl.textColor = UIColor(hex: "#353535")
-            perviousLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            perviousLineView.isHidden = true
+            todayLbl.textColor = R.color.whiteColor()
+            todayView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            perviousLbl.textColor = R.color.darkgray()
+            perviousView.backgroundColor = R.color.textfileldbackground()
         }else {
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
             viewModel?.fetchperviousymatch()
-            perviousLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            perviousLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            perviousLineView.isHidden = false
-            todayLbl.textColor = UIColor(hex: "#353535")
-            todayLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            todayLineView.isHidden = true
+            perviousLbl.textColor = R.color.whiteColor()
+            perviousView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            todayLbl.textColor =  R.color.darkgray()
+            todayView.backgroundColor =  R.color.textfileldbackground()
         }
         todayView.publisherGesture.listen(on: {[weak self] _ in
             if self?.type != 0 {
-                self?.todayLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-                self?.todayLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-                self?.todayLineView.isHidden = false
-                self?.perviousLbl.textColor = UIColor(hex: "#353535")
-                self?.perviousLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-                self?.perviousLineView.isHidden = true
+                self?.todayLbl.textColor = R.color.whiteColor()
+                self?.todayView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+                self?.perviousLbl.textColor = R.color.darkgray()
+                self?.perviousView.backgroundColor = R.color.textfileldbackground()
                 self?.viewModel?.resetPaginator()
                 self?.viewModel?.clearDataSource()
                 self?.viewModel?.fetchtodaymatch()
@@ -103,12 +97,10 @@ extension MatchesMoreVC {
         }).store(self)
         perviousView.publisherGesture.listen(on: {[weak self] _ in
             if self?.type != 1 {
-                self?.perviousLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-                self?.perviousLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-                self?.perviousLineView.isHidden = false
-                self?.todayLbl.textColor = UIColor(hex: "#353535")
-                self?.todayLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-                self?.todayLineView.isHidden = true
+                self?.perviousLbl.textColor = R.color.whiteColor()
+                self?.perviousView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+                self?.todayLbl.textColor = R.color.darkgray()
+                self?.todayView.backgroundColor =  R.color.textfileldbackground()
                 self?.viewModel?.resetPaginator()
                 self?.viewModel?.clearDataSource()
                 self?.viewModel?.fetchperviousymatch()
