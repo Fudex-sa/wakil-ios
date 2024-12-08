@@ -443,15 +443,28 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Profile"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkj-s6-IGG">
+                                <rect key="frame" x="335" y="115.5" width="63" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="My posts">
+                                    <color key="titleColor" name="Primary"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m12"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="My posts"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MGz-jk-0Hs"/>
                         <color key="backgroundColor" name="primary1"/>
                         <constraints>
                             <constraint firstItem="VaP-Xy-jpm" firstAttribute="leading" secondItem="MGz-jk-0Hs" secondAttribute="leading" constant="16" id="Ehw-Xo-Hnx"/>
+                            <constraint firstItem="zkj-s6-IGG" firstAttribute="centerY" secondItem="VaP-Xy-jpm" secondAttribute="centerY" id="GEX-0z-hEM"/>
                             <constraint firstItem="bkS-4X-xsh" firstAttribute="leading" secondItem="MGz-jk-0Hs" secondAttribute="leading" id="Gcs-2g-Uyz"/>
                             <constraint firstAttribute="bottom" secondItem="bkS-4X-xsh" secondAttribute="bottom" id="MS4-Pf-B5q"/>
                             <constraint firstItem="bkS-4X-xsh" firstAttribute="trailing" secondItem="MGz-jk-0Hs" secondAttribute="trailing" id="Qh4-mu-KJL"/>
                             <constraint firstItem="VaP-Xy-jpm" firstAttribute="top" secondItem="MGz-jk-0Hs" secondAttribute="top" constant="28" id="T2y-im-uNV"/>
+                            <constraint firstItem="MGz-jk-0Hs" firstAttribute="trailing" secondItem="zkj-s6-IGG" secondAttribute="trailing" constant="16" id="nYk-JB-PqR"/>
                             <constraint firstItem="MGz-jk-0Hs" firstAttribute="trailing" secondItem="VaP-Xy-jpm" secondAttribute="trailing" constant="16" id="tqo-1p-Ksa"/>
                             <constraint firstItem="bkS-4X-xsh" firstAttribute="top" secondItem="MGz-jk-0Hs" secondAttribute="top" constant="60" id="zFn-sX-qpx"/>
                         </constraints>
@@ -468,6 +481,7 @@
                         <outlet property="mapLbl" destination="nP3-2D-niq" id="vj6-gF-cBx"/>
                         <outlet property="mapView" destination="GiS-Ch-0Lc" id="e9m-FD-otZ"/>
                         <outlet property="phoneTxf" destination="bIa-ZH-7xA" id="VF2-nB-UxG"/>
+                        <outlet property="postsBtn" destination="zkj-s6-IGG" id="yy8-6n-3aW"/>
                         <outlet property="userImg" destination="LDL-qt-tiZ" id="8Ad-Sc-rUA"/>
                         <outlet property="userTxf" destination="Wsm-YU-bNK" id="9GQ-Zw-ca1"/>
                     </connections>

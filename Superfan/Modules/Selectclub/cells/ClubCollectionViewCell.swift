@@ -20,11 +20,11 @@ class ClubCollectionViewCell: BaseCollectionViewCell {
         guard let model = model as? SelectclubDatum else { return }
         clubLbl.text = model.name ?? ""
         clubImg.setImage(url: model.photo ?? "")
-        if clubId == model.id ?? 0 {
-            containerView.borderColor = R.color.primary()
-        }else {
-            containerView.borderColor = R.color.borderprimary()
-        }
+//        if clubId == model.id ?? 0 {
+//            containerView.borderColor = R.color.primary()
+//        }else {
+//            containerView.borderColor = R.color.borderprimary()
+//        }
         
     }
 }

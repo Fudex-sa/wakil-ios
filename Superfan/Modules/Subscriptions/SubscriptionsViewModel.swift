@@ -13,6 +13,9 @@ class SubscriptionsViewModel: BaseViewModel , DataSourceViewModel{
     var packageId: Publisher<Int> = .init()
     var paymentId: Publisher<Int> = .init()
     var tax: Publisher<String> = .init()
+    var price: Publisher<String> = .init()
+    var keyword: Publisher<String> = .init()
+    var duration: Publisher<String> = .init()
     var clubId: Publisher<Int> = .init()
     var checkclubId: Publisher<Int> = .init()
     var items: Publisher<[PackageDatum]> = .init()
@@ -52,7 +55,15 @@ extension SubscriptionsViewModel {
         }).store(self)
     }
     func fetchmypackages() {
-       
+        if duration.value ?? "" != "" {
+            NetworkManager.instance.paramaters["monthesCount"] = duration.value ?? ""
+        }
+        if price.value ?? "" != "" {
+            NetworkManager.instance.paramaters["order_by"] = price.value ?? ""
+        }
+        if keyword.value ?? "" != "" {
+            NetworkManager.instance.paramaters["keyword"] = keyword.value ?? ""
+        }
         NetworkManager.instance.request(NetworkConfigration.EndPoint.mySubscriptions.rawValue, type: .get, MysubscribeModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

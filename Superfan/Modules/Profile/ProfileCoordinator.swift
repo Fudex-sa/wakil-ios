@@ -41,4 +41,8 @@ extension ProfileCoordinator {
         guard let scene = R.storyboard.deleteaccountpopupStoryboard.deleteaccountpopupVC() else { return }
         view?.pushPop(scene)
     }
+    func myposts() {
+        guard let scene = R.storyboard.mypostsStoryboard.mypostsVC() else { return }
+        view?.push(scene)
+    }
 }

@@ -39,13 +39,19 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uJ-68-ew1">
-                                <rect key="frame" x="15" y="63" width="30" height="30"/>
+                                <rect key="frame" x="15" y="63" width="40" height="40"/>
+                                <color key="backgroundColor" name="primary1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ry6-xQ-Mgg"/>
-                                    <constraint firstAttribute="width" constant="30" id="UHi-Uv-PMN"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ry6-xQ-Mgg"/>
+                                    <constraint firstAttribute="width" constant="40" id="UHi-Uv-PMN"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="arrowleft"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="backBtn:" destination="CXP-za-4cZ" eventType="touchUpInside" id="0Ry-Qm-wlS"/>
                                 </connections>

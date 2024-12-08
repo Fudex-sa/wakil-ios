@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class PostdetailsVC: BaseController {
+    @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
     @IBOutlet weak var editBtn: UIButton!
@@ -141,6 +142,9 @@ extension PostdetailsVC {
                     self?.viewModel?.likepost()
                 }
             }
+        }).store(self)
+        shareBtn.publisher.listen(on: {[weak self] _ in
+            Common().shareApp(items: [self?.viewModel?.postdata.value?.data?.description?.htmlToString ?? ""])
         }).store(self)
     }
     func changeColoe() {

@@ -85,47 +85,24 @@ extension SelectclubVC {
             clubsCollection.isHidden = false
             hideEmptyScreen()
         }
-        if viewModel?.items.value?.count ?? 0 == 10 {
-            viewModel?.fetchclubs()
-        }
         clubsCollection.reloadData()
         clubsCollection.stopSwipeButtom()
-
+        if viewModel?.items.value?.count ?? 0 > 0 {
+            if case viewModel?.canPaginate() = true {
+                  viewModel?.fetchclubs()
+            }
+        }
     }
 }
 // MARK: - ...  View Contract
 extension SelectclubVC {
 }
 extension SelectclubVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == clubsCollection {
-            let tableViewVisibleHeight = clubsCollection.bounds.size.height
-               let tableViewContentHeight = clubsCollection.contentSize.height
-               let tableViewOffsetThreshold = tableViewContentHeight - tableViewVisibleHeight - 2 * 105
-               
-            if scrollView.contentOffset.y > tableViewOffsetThreshold && clubsCollection.isDragging {
-                // Fetch more data here
-                if case self.viewModel?.canPaginate() = true {
-                    self.viewModel?.fetchclubs()
-                }
-            }
-        }
-    }
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == clubsCollection {
-            scrollView.swipeButtomRefresh { [weak self] in
-                if case self?.viewModel?.canPaginate() = true {
-                    self?.viewModel?.fetchclubs()
-                } else {
-                    scrollView.stopSwipeButtom()
-                }
-            }
-        }
-    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = collectionView.bounds.width
         let itemWidth = collectionViewWidth / 3 - 10
-        return CGSize(width: itemWidth , height: 105)
+        return CGSize(width: itemWidth , height: 135)
        }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           return viewModel?.items.value?.count ?? 6

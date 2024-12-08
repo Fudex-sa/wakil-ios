@@ -321,6 +321,7 @@
                         <outlet property="packageView" destination="cf2-Ui-tuq" id="ns1-Og-l8l"/>
                         <outlet property="packagesTbl" destination="4xd-sA-uaq" id="DKQ-sh-pO8"/>
                         <outlet property="scrollContainerView" destination="X1h-aT-j7H" id="gIj-Qr-tgo"/>
+                        <outlet property="searchTxf" destination="ZOG-aH-2Bt" id="J4w-sw-U92"/>
                         <outlet property="subcribeTbl" destination="Zgh-vO-qZO" id="5Ys-q4-TCA"/>
                         <outlet property="subscribeBtn" destination="bmz-A9-FwH" id="BmN-yv-Hud"/>
                         <outlet property="subscribeView" destination="ztD-wb-2u4" id="VjO-WD-DYq"/>

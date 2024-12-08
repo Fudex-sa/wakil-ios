@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class SubscriptionsVC: BaseController {
+    @IBOutlet weak var searchTxf: UITextField!
     @IBOutlet weak var scrollContainerView: UIScrollView!
     @IBOutlet weak var subcribeTbl: UITableView!
     @IBOutlet weak var filterBtn: UIButton!
@@ -29,6 +30,7 @@ class SubscriptionsVC: BaseController {
     var clubId = 0
     var club: SelectclubDatum?
     var payTaps: PayTaps?
+    var timer: TimeHelper?
 
 }
 
@@ -116,6 +118,9 @@ extension SubscriptionsVC {
         packageBtn.publisher.listen(on: {[weak self] _ in
             if self?.type != 0 {
                 self?.type = 0
+                self?.viewModel?.duration.send("")
+                self?.viewModel?.price.send("")
+                self?.searchTxf.text = ""
                 self?.clickBtn()
             }
         }).store(self)
@@ -135,6 +140,23 @@ extension SubscriptionsVC {
             }
             self?.startLoading()
             self?.viewModel?.fetchchecksubscribe()
+        }).store(self)
+        searchTxf.publisher.listen(on: { [weak self]_ in
+            self?.timer?.stopTimer()
+            self?.timer = nil
+            self?.timer = .init(seconds: 1, closure: { [self] (second) in
+                self?.timer?.stopTimer()
+                self?.timer = nil
+                self?.viewModel?.keyword.send(self?.searchTxf.text ?? "")
+                self?.viewModel?.mysubscribe.send([])
+                self?.viewModel?.resetPaginator()
+                self?.viewModel?.clearDataSource()
+                self?.viewModel?.fetchmypackages()
+            })
+            
+        }).store(self)
+        filterBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.filter()
         }).store(self)
     }
     func reload(){

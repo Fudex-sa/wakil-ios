@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 41 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 42 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -118,6 +118,8 @@ struct R: Rswift.Validatable {
     static let editphoneStoryboard = _R.storyboard.editphoneStoryboard()
     /// Storyboard `EditprofileStoryboard`.
     static let editprofileStoryboard = _R.storyboard.editprofileStoryboard()
+    /// Storyboard `FilterpackageStoryboard`.
+    static let filterpackageStoryboard = _R.storyboard.filterpackageStoryboard()
     /// Storyboard `ForceUpdateStoryboard`.
     static let forceUpdateStoryboard = _R.storyboard.forceUpdateStoryboard()
     /// Storyboard `ForgetpassStoryboard`.
@@ -263,6 +265,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "EditprofileStoryboard", bundle: ...)`
     static func editprofileStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.editprofileStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "FilterpackageStoryboard", bundle: ...)`
+    static func filterpackageStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.filterpackageStoryboard)
     }
     #endif
 
@@ -3446,7 +3455,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 389 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 394 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3703,6 +3712,10 @@ struct R: Rswift.Validatable {
       /// en translation: Clear
       ///
       /// Locales: ar, en
+      static let clear = Rswift.StringResource(key: "Clear", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Clear
+      ///
+      /// Locales: ar, en
       static let clearLan = Rswift.StringResource(key: "clear.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Close
       ///
@@ -3888,6 +3901,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let draw = Rswift.StringResource(key: "Draw", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Duration
+      ///
+      /// Locales: ar, en
+      static let duration = Rswift.StringResource(key: "Duration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: ERROR
       ///
       /// Locales: ar, en
@@ -3968,6 +3985,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let feesLan = Rswift.StringResource(key: "fees.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Filter
+      ///
+      /// Locales: ar, en
+      static let filter = Rswift.StringResource(key: "Filter", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: First name
       ///
       /// Locales: ar, en
@@ -4056,6 +4077,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let highToLowLan = Rswift.StringResource(key: "high.to.low.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Highest Price
+      ///
+      /// Locales: ar, en
+      static let highestPrice = Rswift.StringResource(key: "Highest Price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Home
       ///
       /// Locales: ar, en
@@ -4180,6 +4205,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let lowToHighLan = Rswift.StringResource(key: "low.to.high.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Lowest Price
+      ///
+      /// Locales: ar, en
+      static let lowestPrice = Rswift.StringResource(key: "Lowest Price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Main Events
       ///
       /// Locales: ar, en
@@ -4224,10 +4253,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let mobileVerificationLan = Rswift.StringResource(key: "mobile.verification.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
-      /// en translation: Months
-      ///
-      /// Locales: ar, en
-      static let months = Rswift.StringResource(key: "Months", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: More
       ///
       /// Locales: ar, en
@@ -4448,6 +4473,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let previousMatches = Rswift.StringResource(key: "Previous Matches", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Price
+      ///
+      /// Locales: ar, en
+      static let price = Rswift.StringResource(key: "Price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Privacy
       ///
       /// Locales: ar, en
@@ -5953,6 +5982,21 @@ struct R: Rswift.Validatable {
       /// en translation: Clear
       ///
       /// Locales: ar, en
+      static func clear(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Clear", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Clear"
+        }
+
+        return NSLocalizedString("Clear", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clear
+      ///
+      /// Locales: ar, en
       static func clearLan(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("clear.lan", bundle: hostingBundle, comment: "")
@@ -6655,6 +6699,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Draw", bundle: bundle, comment: "")
       }
 
+      /// en translation: Duration
+      ///
+      /// Locales: ar, en
+      static func duration(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Duration", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Duration"
+        }
+
+        return NSLocalizedString("Duration", bundle: bundle, comment: "")
+      }
+
       /// en translation: ERROR
       ///
       /// Locales: ar, en
@@ -6953,6 +7012,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("fees.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Filter
+      ///
+      /// Locales: ar, en
+      static func filter(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Filter", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Filter"
+        }
+
+        return NSLocalizedString("Filter", bundle: bundle, comment: "")
       }
 
       /// en translation: First name
@@ -7283,6 +7357,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("high.to.low.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Highest Price
+      ///
+      /// Locales: ar, en
+      static func highestPrice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Highest Price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Highest Price"
+        }
+
+        return NSLocalizedString("Highest Price", bundle: bundle, comment: "")
       }
 
       /// en translation: Home
@@ -7750,6 +7839,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("low.to.high.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Lowest Price
+      ///
+      /// Locales: ar, en
+      static func lowestPrice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Lowest Price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Lowest Price"
+        }
+
+        return NSLocalizedString("Lowest Price", bundle: bundle, comment: "")
+      }
+
       /// en translation: Main Events
       ///
       /// Locales: ar, en
@@ -7913,21 +8017,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("mobile.verification.lan", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Months
-      ///
-      /// Locales: ar, en
-      static func months(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Months", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Months"
-        }
-
-        return NSLocalizedString("Months", bundle: bundle, comment: "")
       }
 
       /// en translation: More
@@ -8753,6 +8842,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Previous Matches", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Price
+      ///
+      /// Locales: ar, en
+      static func price(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Price"
+        }
+
+        return NSLocalizedString("Price", bundle: bundle, comment: "")
       }
 
       /// en translation: Privacy
@@ -11439,6 +11543,9 @@ struct _R: Rswift.Validatable {
       try editprofileStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try filterpackageStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try forceUpdateStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -11898,6 +12005,35 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct filterpackageStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = FilterpackageVC
+
+      let bundle = R.hostingBundle
+      let filterpackageVC = StoryboardViewControllerResource<FilterpackageVC>(identifier: "FilterpackageVC")
+      let name = "FilterpackageStoryboard"
+
+      func filterpackageVC(_: Void = ()) -> FilterpackageVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: filterpackageVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'close' is used in storyboard 'FilterpackageStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'FilterpackageStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkwhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkwhite' is used in storyboard 'FilterpackageStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "gray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray' is used in storyboard 'FilterpackageStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'FilterpackageStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'FilterpackageStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'FilterpackageStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.filterpackageStoryboard().filterpackageVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'filterpackageVC' could not be loaded from storyboard 'FilterpackageStoryboard' as 'FilterpackageVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct forceUpdateStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = ForceUpdateVC
 
@@ -12341,6 +12477,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "delete", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'delete' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "heart-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'heart-2' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "share", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'share' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "darkwhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkwhite' is used in storyboard 'PostdetailsStoryboard', but couldn't be loaded.") }
@@ -12459,12 +12596,12 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'SelectclubStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'SelectclubStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'SelectclubStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Darkerblack", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Darkerblack' is used in storyboard 'SelectclubStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "borderprimary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'borderprimary' is used in storyboard 'SelectclubStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary1' is used in storyboard 'SelectclubStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "txtprimary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'txtprimary' is used in storyboard 'SelectclubStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SelectclubStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.selectclubStoryboard().selectclubVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectclubVC' could not be loaded from storyboard 'SelectclubStoryboard' as 'SelectclubVC'.") }
       }

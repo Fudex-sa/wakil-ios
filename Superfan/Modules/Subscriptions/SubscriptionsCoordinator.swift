@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class SubscriptionsCoordinator: Coordinator, ChangeClubVCDelegate, PaymentMethodVCCDelegate, deleteAccountPopupVCDelegate {
+class SubscriptionsCoordinator: Coordinator, ChangeClubVCDelegate, PaymentMethodVCCDelegate, deleteAccountPopupVCDelegate, FilterpackageVCDelegate {
     typealias PresentingView = SubscriptionsVC
     weak var view: PresentingView?
     deinit {
@@ -56,6 +56,11 @@ extension SubscriptionsCoordinator {
         scene.delegate = self
         view?.pushPop(scene)
     }
+    func filter() {
+        guard let scene = R.storyboard.filterpackageStoryboard.filterpackageVC() else { return }
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
     func done() {
         view?.startLoading()
         if view?.viewModel?.checkclubId.value ?? 0 == 0 {
@@ -63,5 +68,13 @@ extension SubscriptionsCoordinator {
         }else {
             view?.viewModel?.subscribe()
         }
+    }
+    func doneFilter(price: String, duaration: String) {
+        view?.viewModel?.price.send(price)
+        view?.viewModel?.duration.send(duaration)
+        view?.viewModel?.mysubscribe.send([])
+        view?.viewModel?.resetPaginator()
+        view?.viewModel?.clearDataSource()
+        view?.viewModel?.fetchmypackages()
     }
 }

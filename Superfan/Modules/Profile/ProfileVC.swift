@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ProfileVC: BaseController {
+    @IBOutlet weak var postsBtn: UIButton!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var editPhoneBtn: UIButton!
@@ -94,6 +95,9 @@ extension ProfileVC {
         }).store(self)
         editPassBtn.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.editpassword()
+        }).store(self)
+        postsBtn.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.myposts()
         }).store(self)
         deleteBtn.publisher.listen(on: {[weak self] _ in
             self?.startLoading()
