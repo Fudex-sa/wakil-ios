@@ -23,6 +23,10 @@ struct SettingData: Codable  {
     let app_status: String?
     let android_last_stable_version: String?
     let ios_last_stable_version: String?
+    let faceBook_link: String?
+    let twitter_link: String?
+    let instagram_link: String?
+    let linkedIn_link: String?
     let id: Int?
     let key, value: String?
 }

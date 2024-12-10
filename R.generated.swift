@@ -12130,6 +12130,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "hometab", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hometab' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "menu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'menu' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "soccer", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'soccer' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "lightblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightblue' is used in storyboard 'HomeStoryboard', but couldn't be loaded.") }

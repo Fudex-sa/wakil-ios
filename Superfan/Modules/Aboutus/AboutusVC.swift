@@ -56,6 +56,18 @@ extension AboutusVC {
     func setup() {
         startLoading()
         viewModel?.fetchsetting()
+        twitterBtn.publisher.listen(on: {[weak self] _ in
+            Common().openUrl(text: self?.viewModel?.setting.value?.twitter_link ?? "")
+        }).store(self)
+        faceBtn.publisher.listen(on: {[weak self] _ in
+            Common().openUrl(text: self?.viewModel?.setting.value?.faceBook_link ?? "")
+        }).store(self)
+        instaBtn.publisher.listen(on: {[weak self] _ in
+            Common().openUrl(text: self?.viewModel?.setting.value?.instagram_link ?? "")
+        }).store(self)
+        linkinBtn.publisher.listen(on: {[weak self] _ in
+            Common().openUrl(text: self?.viewModel?.setting.value?.linkedIn_link ?? "")
+        }).store(self)
     }
     func reload(){
         stopLoading()

@@ -112,6 +112,6 @@ struct User: Codable {
 
 struct SliderModelData: Codable {
     let id: Int?
-    let title, description: String?
+    let title, description, link: String?
     let file: String?
 }

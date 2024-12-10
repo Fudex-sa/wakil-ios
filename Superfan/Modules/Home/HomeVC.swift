@@ -12,6 +12,9 @@ import Firebase
 
 // MARK: - ...  ViewController - Vars
 class HomeVC: BaseController,Reloader {
+    @IBOutlet weak var postsView: UIView!
+    @IBOutlet weak var newsView: UIView!
+    @IBOutlet weak var matchesView: UIView!
     var refreshControl: UIRefreshControl!
     @IBOutlet weak var pageControll: UIPageControl!
     @IBOutlet weak var slidersCollection: UICollectionView!
@@ -194,6 +197,27 @@ extension HomeVC {
                 clubLbl.sizeToFit()
             }
         }
+        if viewModel?.matches.value?.count ?? 0 == 0 {
+            matchesView.isHidden = false
+            matchesCollection.isHidden = true
+        }else {
+            matchesView.isHidden = true
+            matchesCollection.isHidden = false
+        }
+        if viewModel?.items.value?.count ?? 0 == 0 {
+            newsView.isHidden = false
+            newsTbl.isHidden = true
+        }else {
+            newsView.isHidden = true
+            newsTbl.isHidden = false
+        }
+        if viewModel?.posts.value?.count ?? 0 == 0 {
+            postsView.isHidden = false
+            postsTbl.isHidden = true
+        }else {
+            postsView.isHidden = true
+            postsTbl.isHidden = false
+        }
         slidersCollection.reloadData()
         newsTbl.reloadData()
         postsTbl.reloadData()
@@ -351,7 +375,9 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
             return
         }
         if collectionView == slidersCollection {
-            
+            if viewModel?.sliders.value?[safe: indexPath.row]?.link ?? "" != "" {
+                Common().openUrl(text: viewModel?.sliders.value?[safe: indexPath.row]?.link ?? "")
+            }
         }else {
             coordinator?.detailsmatchs(id: viewModel?.matches.value?[safe: indexPath.row]?.id ?? 0)
         }

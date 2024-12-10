@@ -31,6 +31,8 @@ class SubscriptionsVC: BaseController {
     var club: SelectclubDatum?
     var payTaps: PayTaps?
     var timer: TimeHelper?
+    var suucesUrl = ""
+    var failedurl = ""
 
 }
 
@@ -65,13 +67,21 @@ extension SubscriptionsVC {
         })
         
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            if self?.type == 1 {
+                return
+            }
             self?.reload()
         })
         viewModel?.mysubscribedata.listen(on: { [weak self] value in
+            if self?.type == 0 {
+                return
+            }
             self?.reloadsubscribe()
         })
         viewModel?.paymentdata.listen(on: { [weak self] value in
             self?.stopLoading()
+            self?.suucesUrl = self?.viewModel?.paymentdata.value?.data?.successLink ?? ""
+            self?.failedurl = self?.viewModel?.paymentdata.value?.data?.errorLink ?? ""
             self?.viewModel?.checkclubId.send(0)
             self?.payTaps = .init(dataSource: self)
             self?.payTaps?.delegate = self
@@ -313,11 +323,11 @@ extension SubscriptionsVC: PayTapsDelegate, PayTapsDataSource {
     }
     
     func payTaps(_ payTaps: PayTaps?, successURL: Bool?) -> String? {
-        return "success"
+        return suucesUrl
     }
     
     func payTaps(_ payTaps: PayTaps?, failURL: Bool?) -> String? {
-        return "failed"
+        return failedurl
     }
     
     func payTaps(_ payTaps: PayTaps?, URL: Bool?) -> String? {
