@@ -13,6 +13,7 @@ import UIKit
 class MypostsVC: BaseController , Reloader{
     var refreshControl: UIRefreshControl!
     
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var postsTbl: UITableView!
     @IBOutlet weak var addBtn: UIButton!
     var viewModel: MypostsViewModel?
@@ -75,6 +76,7 @@ extension MypostsVC {
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
             viewModel?.fetchposts1()
+            titleLbl.text = "Posts".localized
         }else {
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()

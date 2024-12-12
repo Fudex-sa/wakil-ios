@@ -16,12 +16,12 @@ struct NetworkConfigration {
         case test
     }
     struct Config {
-        static var environment: Environment = .test  // Change this to .test for testing
+        static var environment: Environment = .live  // Change this to .test for testing
 
         static var baseURL: String {
             switch environment {
             case .live:
-                return "http://sfanz.co/api/v2/"
+                return "http://sfanz.co/api/v3/"
             case .test:
                 return "https://superfan.fudex-tech.net/api/v3/"
             }
@@ -110,7 +110,7 @@ struct NetworkConfigration {
         case paymentMethods
         case refreshToken = "/api/app/register/refresh-token"
         case checkSubscriptionSellers = "fan/checkSubscriptionSellers"
-        case settingsubscribe = "setting/packages_available_v2"
+        case settingsubscribe = "setting/packages_available_v3"
     }
 }
 

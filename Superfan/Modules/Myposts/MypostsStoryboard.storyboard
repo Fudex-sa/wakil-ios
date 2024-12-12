@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="addBtn" destination="adi-Oi-O8u" id="Cfl-v6-fw8"/>
                         <outlet property="postsTbl" destination="k1K-ns-Yab" id="oy5-vz-qwU"/>
+                        <outlet property="titleLbl" destination="3nL-lk-4Si" id="0tw-vy-dqE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUY-eF-BsV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
