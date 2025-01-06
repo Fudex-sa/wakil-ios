@@ -30,6 +30,7 @@ extension HomeViewModel {
         if UD.club?.id ?? 0 != 0 {
             NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
         }
+        NetworkManager.instance.paramaters["league_id"] = 232
         NetworkManager.instance.paramaters["limit"] = 4
         NetworkManager.instance.paramaters["country_id"] = countryId.value ?? 0
         NetworkManager.instance.request(NetworkConfigration.EndPoint.home.rawValue, type: .get, HomeModel.self)?.response(error: { [weak self] error in

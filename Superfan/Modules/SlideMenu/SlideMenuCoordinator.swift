@@ -73,4 +73,9 @@ extension SlideMenuCoordinator {
         view?.push(scene)
         view?.closeMenu()
     }
+    func leagues() {
+        guard let scene = R.storyboard.tournamentsStoryboard.tournamentsVC() else { return }
+        view?.push(scene)
+        view?.closeMenu()
+    }
 }

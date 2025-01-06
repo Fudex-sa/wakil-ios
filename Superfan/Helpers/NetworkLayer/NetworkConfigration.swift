@@ -16,14 +16,14 @@ struct NetworkConfigration {
         case test
     }
     struct Config {
-        static var environment: Environment = .live  // Change this to .test for testing
+        static var environment: Environment = .test  // Change this to .test for testing
 
         static var baseURL: String {
             switch environment {
             case .live:
-                return "http://sfanz.co/api/v3/"
+                return "http://sfanz.co/api/v4/"
             case .test:
-                return "https://superfan.fudex-tech.net/api/v3/"
+                return "https://superfan.fudex-tech.net/api/v4/"
             }
         }
         static var firebaseTopic: String {
@@ -82,7 +82,7 @@ struct NetworkConfigration {
         case nextmatches = "nextMatches"
         case home = "fan/home"
         case players = "fan/players"
-        case leagues = "fan/leagues"
+        case leagues = "leagues"
         case clubs = "fan/clubs"
         case setting
         case favclub = "fan/fanFavouriteClubUpdate"
@@ -107,10 +107,11 @@ struct NetworkConfigration {
         case mySubscriptions = "fan/mySubscriptions"
         case Subscriptions = "fan/subscriptions"
         case backstages = "fan/backstages"
+        case standing
         case paymentMethods
         case refreshToken = "/api/app/register/refresh-token"
         case checkSubscriptionSellers = "fan/checkSubscriptionSellers"
-        case settingsubscribe = "setting/packages_available_v3"
+        case settingsubscribe = "setting/packages_available_v4"
     }
 }
 

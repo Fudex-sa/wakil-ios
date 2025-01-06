@@ -25,8 +25,8 @@
                                     <constraint firstAttribute="height" constant="250" id="aFI-sV-o0b"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBU-4f-xhY">
-                                <rect key="frame" x="0.0" y="-20" width="414" height="916"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBU-4f-xhY">
+                                <rect key="frame" x="0.0" y="92" width="414" height="804"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yq3-7a-jDS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
@@ -100,7 +100,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MLY-nz-KLe">
-                                        <rect key="frame" x="16" y="75" width="380" height="628"/>
+                                        <rect key="frame" x="16" y="75" width="380" height="708"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fy-0P-xaA">
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="148"/>
@@ -390,6 +390,13 @@
                                                     <constraint firstItem="OsT-uT-X5V" firstAttribute="top" secondItem="otv-cC-gyx" secondAttribute="bottom" constant="15" id="y1u-ox-kdx"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtG-yE-nMT">
+                                                <rect key="frame" x="0.0" y="628" width="380" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="r8U-Q9-Onu"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -398,10 +405,10 @@
                                     <constraint firstAttribute="bottom" secondItem="MLY-nz-KLe" secondAttribute="bottom" constant="30" id="F0a-rJ-Zcd"/>
                                     <constraint firstAttribute="width" secondItem="yq3-7a-jDS" secondAttribute="width" id="TQa-ZJ-dS7"/>
                                     <constraint firstItem="yq3-7a-jDS" firstAttribute="leading" secondItem="DBU-4f-xhY" secondAttribute="leading" id="U4h-P7-qoC"/>
+                                    <constraint firstItem="yq3-7a-jDS" firstAttribute="top" secondItem="DBU-4f-xhY" secondAttribute="top" id="b9d-rU-9pc"/>
                                     <constraint firstItem="MLY-nz-KLe" firstAttribute="leading" secondItem="DBU-4f-xhY" secondAttribute="leading" constant="16" id="kID-0i-yBG"/>
                                     <constraint firstItem="MLY-nz-KLe" firstAttribute="top" secondItem="yq3-7a-jDS" secondAttribute="bottom" constant="10" id="ry4-Va-MOy"/>
                                     <constraint firstAttribute="trailing" secondItem="MLY-nz-KLe" secondAttribute="trailing" constant="18" id="sBB-bv-BR1"/>
-                                    <constraint firstItem="yq3-7a-jDS" firstAttribute="top" secondItem="DBU-4f-xhY" secondAttribute="top" id="ybn-fW-Hkf"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -411,9 +418,9 @@
                             <constraint firstItem="S2o-A2-k0Z" firstAttribute="top" secondItem="wn8-wF-9xc" secondAttribute="top" id="9u2-jB-orB"/>
                             <constraint firstItem="S2o-A2-k0Z" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" id="HEE-Ni-3a4"/>
                             <constraint firstAttribute="bottom" secondItem="DBU-4f-xhY" secondAttribute="bottom" id="I9F-0J-jcX"/>
+                            <constraint firstItem="DBU-4f-xhY" firstAttribute="top" secondItem="ckT-Oz-gwY" secondAttribute="top" id="Psw-pP-SL4"/>
                             <constraint firstItem="DBU-4f-xhY" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" id="jCP-y9-rx5"/>
                             <constraint firstItem="DBU-4f-xhY" firstAttribute="trailing" secondItem="ckT-Oz-gwY" secondAttribute="trailing" id="ngS-VY-dXf"/>
-                            <constraint firstItem="DBU-4f-xhY" firstAttribute="top" secondItem="wn8-wF-9xc" secondAttribute="top" constant="-20" id="qvD-9e-pBf"/>
                             <constraint firstItem="S2o-A2-k0Z" firstAttribute="trailing" secondItem="ckT-Oz-gwY" secondAttribute="trailing" id="vcL-kg-kfQ"/>
                         </constraints>
                     </view>

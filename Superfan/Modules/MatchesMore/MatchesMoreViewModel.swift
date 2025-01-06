@@ -22,6 +22,7 @@ extension MatchesMoreViewModel {
         if UD.club?.id ?? 0 != 0 {
             NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
         }
+        NetworkManager.instance.paramaters["league_id"] = 232
         NetworkManager.instance.request(NetworkConfigration.EndPoint.nextmatches.rawValue, type: .get, MatchsModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
@@ -35,6 +36,7 @@ extension MatchesMoreViewModel {
         if UD.club?.id ?? 0 != 0 {
             NetworkManager.instance.paramaters["club_id"] = UD.club?.id ?? 0
         }
+        NetworkManager.instance.paramaters["league_id"] = 232
         NetworkManager.instance.request(NetworkConfigration.EndPoint.perviousmatch.rawValue, type: .get, MatchsModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

@@ -12,6 +12,7 @@ import FirebaseMessaging
 
 // MARK: - ...  ViewController - Vars
 class SlideMenuVC: BaseController {
+    @IBOutlet weak var leaguesView: UIView!
     @IBOutlet weak var privacyView: UIView!
     @IBOutlet weak var rateView: UIView!
     @IBOutlet weak var notificationView: UIView!
@@ -126,6 +127,9 @@ extension SlideMenuVC {
         }).store(self)
         subscribeView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.subscribe()
+        }).store(self)
+        leaguesView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.leagues()
         }).store(self)
         logoutView.publisherGesture.listen(on: {[weak self] _ in
             if UD.user == nil {

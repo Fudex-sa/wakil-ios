@@ -22,17 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="382" height="149"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-3d-DoE">
-                                <rect key="frame" x="25.000000000000004" y="31.999999999999993" width="51.333333333333343" height="85.333333333333314"/>
+                                <rect key="frame" x="25" y="31.999999999999993" width="80" height="85.333333333333314"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rhD-3d-9ZI">
-                                        <rect key="frame" x="-0.33333333333333215" y="0.0" width="52" height="52"/>
+                                        <rect key="frame" x="14" y="0.0" width="52" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="52" id="MPz-YI-ekP"/>
                                             <constraint firstAttribute="height" constant="52" id="xBy-bQ-Iqx"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-Io-FFR">
-                                        <rect key="frame" x="5" y="57.000000000000007" width="41.333333333333336" height="20.333333333333336"/>
+                                        <rect key="frame" x="5" y="57.000000000000007" width="70" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="whiteColor"/>
                                         <nil key="highlightedColor"/>
@@ -49,20 +49,21 @@
                                     <constraint firstItem="rhD-3d-9ZI" firstAttribute="centerX" secondItem="b1I-3d-DoE" secondAttribute="centerX" id="faB-M8-gir"/>
                                     <constraint firstItem="rhD-3d-9ZI" firstAttribute="top" secondItem="b1I-3d-DoE" secondAttribute="top" id="qGW-zd-g08"/>
                                     <constraint firstItem="AI1-Io-FFR" firstAttribute="top" secondItem="rhD-3d-9ZI" secondAttribute="bottom" constant="5" id="wyb-yQ-nn3"/>
+                                    <constraint firstAttribute="width" constant="80" id="xSr-Kn-1ZB"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZl-5v-gEz">
-                                <rect key="frame" x="305.66666666666669" y="31.999999999999993" width="51.333333333333314" height="85.333333333333314"/>
+                                <rect key="frame" x="277" y="31.999999999999993" width="80" height="85.333333333333314"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZDP-Bs-DgR">
-                                        <rect key="frame" x="-0.33333333333337123" y="0.0" width="52" height="52"/>
+                                        <rect key="frame" x="14" y="0.0" width="52" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="52" id="QtW-cs-5HJ"/>
                                             <constraint firstAttribute="height" constant="52" id="Zsr-9E-vR1"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkW-qA-BZs">
-                                        <rect key="frame" x="5" y="57.000000000000007" width="41.333333333333336" height="20.333333333333336"/>
+                                        <rect key="frame" x="5" y="57.000000000000007" width="70" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="whiteColor"/>
                                         <nil key="highlightedColor"/>
@@ -77,6 +78,7 @@
                                     <constraint firstAttribute="trailing" secondItem="QkW-qA-BZs" secondAttribute="trailing" constant="5" id="GuN-Lf-e2U"/>
                                     <constraint firstItem="QkW-qA-BZs" firstAttribute="top" secondItem="ZDP-Bs-DgR" secondAttribute="bottom" constant="5" id="QW8-3H-Alt"/>
                                     <constraint firstItem="QkW-qA-BZs" firstAttribute="leading" secondItem="ZZl-5v-gEz" secondAttribute="leading" constant="5" id="ZQZ-wo-0zP"/>
+                                    <constraint firstAttribute="width" constant="80" id="hTH-hh-c5G"/>
                                     <constraint firstItem="ZDP-Bs-DgR" firstAttribute="top" secondItem="ZZl-5v-gEz" secondAttribute="top" id="j9K-Xb-vmA"/>
                                     <constraint firstItem="ZDP-Bs-DgR" firstAttribute="centerX" secondItem="ZZl-5v-gEz" secondAttribute="centerX" id="tRi-g1-6RA"/>
                                 </constraints>
