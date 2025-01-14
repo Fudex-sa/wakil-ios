@@ -98,7 +98,7 @@ extension VerifyCodeVC {
 // MARK: - ...  Functions
 extension VerifyCodeVC {
     func setup() {
-        changeColoe()
+        //changeColoe()
         setupTimer()
         verifyCodeInputs = .init()
         verifyCodeInputs?.dataSource = self

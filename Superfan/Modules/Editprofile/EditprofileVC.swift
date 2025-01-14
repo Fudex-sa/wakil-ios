@@ -80,7 +80,7 @@ extension EditprofileVC {
         userImg.setImage(url: user?.data?.photo ?? "")
         viewModel?.lat.send(user?.data?.lat ?? "")
         viewModel?.lng.send(user?.data?.lng ?? "")
-        changeColoe()
+        //changeColoe()
     }
     func actions(){
         picker = .init()

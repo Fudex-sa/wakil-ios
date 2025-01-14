@@ -40,7 +40,7 @@ extension ProfileVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -73,7 +73,7 @@ extension ProfileVC {
             Coordinator.instance.unAuthorized()
             return
         }
-        changeColoe()
+      //  changeColoe()
         if UD.user?.data?.user?.isSocial ?? 0 == 1 {
             editEmailBtn.isHidden = true
             editPassBtn.isHidden = true

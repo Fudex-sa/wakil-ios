@@ -29,6 +29,7 @@ extension MainVC {
 //        notificationVC.title = "Notification".localized
 //        notificationVC.floatingTabItem = FloatingTabItem(selectedImage: UIImage(named: "notificationtab")!, normalImage:  UIImage(named: "notificationtab1")!)
 //        viewControllers = [homeVC,profileVC,notificationVC]
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,6 +45,7 @@ extension MainVC {
         if UD.club != nil {
             tabBarController?.tabBar.tintColor = UIColor(hex: UD.club?.color ?? "")
         }
+    
     }
 }
 // MARK: - ...  View Contract

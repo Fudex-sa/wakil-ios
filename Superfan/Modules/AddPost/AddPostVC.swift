@@ -45,6 +45,7 @@ extension AddPostVC {
         coordinator?.view = self
         setup()
         bind()
+        self.tabBarController?.tabBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

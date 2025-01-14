@@ -73,7 +73,7 @@ extension EditpasswordVC {
 // MARK: - ...  Functions
 extension EditpasswordVC {
     func setup() {
-        changeColoe()
+       // changeColoe()
         saveBtn.publisher.listen(on: {[weak self] _ in
             if self?.validator?.build() == false {
                 return

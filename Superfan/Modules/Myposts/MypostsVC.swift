@@ -34,7 +34,7 @@ extension MypostsVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -66,6 +66,10 @@ extension MypostsVC {
 // MARK: - ...  Functions
 extension MypostsVC {
     func setup() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            return
+        }
         postsTbl.delegate = self
         postsTbl.dataSource = self
         postsTbl.observe()

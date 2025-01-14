@@ -78,4 +78,9 @@ extension SlideMenuCoordinator {
         view?.push(scene)
         view?.closeMenu()
     }
+    func profile() {
+        guard let scene = R.storyboard.profileStoryboard.profileVC() else { return }
+        view?.push(scene)
+        view?.closeMenu()
+    }
 }

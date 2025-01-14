@@ -64,7 +64,7 @@ extension EditemailVC {
 // MARK: - ...  Functions
 extension EditemailVC {
     func setup() {
-        changeColoe()
+      //  changeColoe()
         emailTxf.text = user?.data?.email ?? ""
         editBtn.publisher.listen(on: {[weak self] _ in
             if self?.validator?.build() == false {
