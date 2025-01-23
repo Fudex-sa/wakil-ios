@@ -32,7 +32,7 @@ extension ChangelanguageVC {
         coordinator = .init()
         coordinator?.view = self
         setup()
-        self.tabBarController?.tabBar.isHidden = true
+                (self.tabBarController as? CustomTabBarController)?.hideTabBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

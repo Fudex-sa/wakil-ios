@@ -34,7 +34,8 @@ extension MypostsVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = false
+        (self.tabBarController as? CustomTabBarController)?.showTabBar()
+        Constants.index = 0
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

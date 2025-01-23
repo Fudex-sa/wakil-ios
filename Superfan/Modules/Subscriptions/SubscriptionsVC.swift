@@ -52,7 +52,7 @@ extension SubscriptionsVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = true
+        (self.tabBarController as? CustomTabBarController)?.hideTabBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

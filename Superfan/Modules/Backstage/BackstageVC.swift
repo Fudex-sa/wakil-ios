@@ -31,7 +31,7 @@ extension BackstageVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = false
+        (self.tabBarController as? CustomTabBarController)?.showTabBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

@@ -40,7 +40,7 @@ extension ProfileVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = true
+                (self.tabBarController as? CustomTabBarController)?.hideTabBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -97,7 +97,8 @@ extension ProfileVC {
             self?.coordinator?.editpassword()
         }).store(self)
         postsBtn.publisherGesture.listen(on: {[weak self] _ in
-            self?.coordinator?.myposts()
+            Constants.index = 2
+            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
         }).store(self)
         deleteBtn.publisher.listen(on: {[weak self] _ in
             self?.startLoading()

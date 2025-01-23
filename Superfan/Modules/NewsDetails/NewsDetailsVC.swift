@@ -34,7 +34,7 @@ extension NewsDetailsVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = true
+                (self.tabBarController as? CustomTabBarController)?.hideTabBar()
         sliderCollection.autoScrolling()
     }
     override func viewWillDisappear(_ animated: Bool) {

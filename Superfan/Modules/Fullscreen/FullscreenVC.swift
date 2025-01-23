@@ -16,6 +16,7 @@ class FullscreenVC: BaseController {
     var coordinator: FullscreenCoordinator?
     var files: [File] = []
     var pos = 0
+    private var currentPlayingCell: ImagesCollectionViewCell?
 }
 
 // MARK: - ...  LifeCycle
@@ -34,7 +35,8 @@ extension FullscreenVC {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
-        stopPlayersInVisibleCells()
+       // stopPlayersInVisibleCells()
+        stopAllVideos()
     }
 }
 // MARK: - ...  Functions
@@ -79,6 +81,29 @@ extension FullscreenVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
             // No spacing between cells to ensure they are adjacent
             return 0
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            playVisibleVideos()
+        }
+
+        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            playVisibleVideos()
+        }
+
+        private func playVisibleVideos() {
+            let visibleCells = gallaryCollection.visibleCells.compactMap { $0 as? ImagesCollectionViewCell }
+                   guard let visibleCell = visibleCells.first else { return }
+
+                   if currentPlayingCell != visibleCell {
+                       currentPlayingCell?.pause()
+                       currentPlayingCell = visibleCell
+                       currentPlayingCell?.play()
+                   }
+           
+        }
+    private func stopAllVideos() {
+           currentPlayingCell?.pause()
+           currentPlayingCell = nil
+       }
   }
 
 extension FullscreenVC : ImagesCollectionViewCellDelegate{

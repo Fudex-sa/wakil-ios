@@ -25,8 +25,7 @@ extension HomeCoordinator {
         view?.push(scene)
     }
     func moreposts() {
-        guard let scene = R.storyboard.mypostsStoryboard.mypostsVC() else { return }
-        scene.ismypost = false
+        guard let scene = R.storyboard.postsStoryboard.postsVC() else { return }
         view?.push(scene)
     }
     func notification() {

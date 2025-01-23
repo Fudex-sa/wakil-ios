@@ -56,7 +56,7 @@ extension HomeVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = false
+        (self.tabBarController as? CustomTabBarController)?.showTabBar()
         subscribe()
     }
     override func viewWillDisappear(_ animated: Bool) {

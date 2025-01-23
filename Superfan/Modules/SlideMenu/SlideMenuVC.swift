@@ -147,6 +147,7 @@ extension SlideMenuVC {
             self?.startLoading()
             self?.viewModel?.makelogout()
         }).store(self)
+        print("notification\(UD.notificationStatus)")
         notSwitch.isOn = UD.notificationStatus ?? true
     }
     func closeMenu(){
@@ -159,7 +160,7 @@ extension SlideMenuVC {
         userImg.setImage(url: viewModel?.userddata.value?.data?.photo ?? "")
     }
     @objc func switchPressed() {
-        if UD.notificationStatus == true {
+        if UD.notificationStatus ?? true == true {
             let application = UIApplication.shared
             application.unregisterForRemoteNotifications()
             UD.notificationStatus = false

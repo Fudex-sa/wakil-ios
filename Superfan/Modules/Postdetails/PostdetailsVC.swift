@@ -26,6 +26,8 @@ class PostdetailsVC: BaseController {
     var postId = 0
     var isbackstage = false
     var islike = 0
+    private var currentPlayingCell: ImagesCollectionViewCell?
+
 }
 
 // MARK: - ...  LifeCycle
@@ -40,13 +42,14 @@ extension PostdetailsVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = true
+        (self.tabBarController as? CustomTabBarController)?.hideTabBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
-        stopPlayersInVisibleCells()
+       // stopPlayersInVisibleCells()
+        stopAllVideos()
     }
     override func bind() {
         super.bind()
@@ -221,6 +224,29 @@ extension PostdetailsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         scene.pos = indexPath.row ?? 0
         push(scene)
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            playVisibleVideos()
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        playVisibleVideos()
+    }
+
+        private func playVisibleVideos() {
+            let visibleCells = sliderCollection.visibleCells.compactMap { $0 as? ImagesCollectionViewCell }
+                   guard let visibleCell = visibleCells.first else { return }
+
+                   if currentPlayingCell != visibleCell {
+                       currentPlayingCell?.pause()
+                       currentPlayingCell = visibleCell
+                       currentPlayingCell?.play()
+                   }
+           
+        }
+    private func stopAllVideos() {
+           currentPlayingCell?.pause()
+           currentPlayingCell = nil
+       }
   }
 
 extension PostdetailsVC : ImagesCollectionViewCellDelegate{

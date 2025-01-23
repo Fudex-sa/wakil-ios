@@ -402,7 +402,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yq3-7a-jDS" secondAttribute="trailing" id="9vW-D6-2R6"/>
-                                    <constraint firstAttribute="bottom" secondItem="MLY-nz-KLe" secondAttribute="bottom" constant="30" id="F0a-rJ-Zcd"/>
+                                    <constraint firstAttribute="bottom" secondItem="MLY-nz-KLe" secondAttribute="bottom" constant="140" id="F0a-rJ-Zcd"/>
                                     <constraint firstAttribute="width" secondItem="yq3-7a-jDS" secondAttribute="width" id="TQa-ZJ-dS7"/>
                                     <constraint firstItem="yq3-7a-jDS" firstAttribute="leading" secondItem="DBU-4f-xhY" secondAttribute="leading" id="U4h-P7-qoC"/>
                                     <constraint firstItem="yq3-7a-jDS" firstAttribute="top" secondItem="DBU-4f-xhY" secondAttribute="top" id="b9d-rU-9pc"/>
@@ -451,7 +451,7 @@
         <scene sceneID="y6r-yT-Uqy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rte-Kz-72n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="hometab" id="Hze-wp-81T">
+                    <tabBarItem key="tabBarItem" title="Home" image="hometab" selectedImage="hometab" id="Hze-wp-81T">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Home"/>
                         </userDefinedRuntimeAttributes>

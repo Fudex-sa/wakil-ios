@@ -145,6 +145,8 @@
 		665411D52C88999400672746 /* NextmatchesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 665411D32C88999400672746 /* NextmatchesCollectionViewCell.xib */; };
 		666413282C74946900807309 /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666413262C74946900807309 /* PlayersCollectionViewCell.swift */; };
 		666413292C74946900807309 /* PlayersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666413272C74946900807309 /* PlayersCollectionViewCell.xib */; };
+		666CD7242D424F4C002981C6 /* CustomTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666CD7232D424F4C002981C6 /* CustomTabBarView.xib */; };
+		666CD7262D425F69002981C6 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666CD7252D425F69002981C6 /* CustomTabBarView.swift */; };
 		66762D2E2C3EB79E00D36BC6 /* contact.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66762D2D2C3EB79D00D36BC6 /* contact.gif */; };
 		667FD7F328917A270005254B /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FD7EE28917A270005254B /* OnboardingCoordinator.swift */; };
 		667FD7F428917A270005254B /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667FD7EF28917A270005254B /* OnboardingStoryboard.storyboard */; };
@@ -279,9 +281,15 @@
 		66EA91302C3EC3EE0027154F /* EditpasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA912B2C3EC3EE0027154F /* EditpasswordModel.swift */; };
 		66EA91312C3EC3EE0027154F /* EditpasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA912C2C3EC3EE0027154F /* EditpasswordVC.swift */; };
 		66EA91322C3EC3EE0027154F /* EditpasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA912D2C3EC3EE0027154F /* EditpasswordViewModel.swift */; };
+		66EABB422D40F7FA00FD5A13 /* PostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EABB3D2D40F7FA00FD5A13 /* PostsCoordinator.swift */; };
+		66EABB432D40F7FA00FD5A13 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EABB3F2D40F7FA00FD5A13 /* PostsModel.swift */; };
+		66EABB442D40F7FA00FD5A13 /* PostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EABB402D40F7FA00FD5A13 /* PostsVC.swift */; };
+		66EABB452D40F7FA00FD5A13 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EABB412D40F7FA00FD5A13 /* PostsViewModel.swift */; };
+		66EABB462D40F7FA00FD5A13 /* PostsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EABB3E2D40F7FA00FD5A13 /* PostsStoryboard.storyboard */; };
 		66F7C2F3278C68D800E449F6 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66F7C2F0278C68D800E449F6 /* Muli-SemiBold.ttf */; };
 		66F7C2F4278C68D800E449F6 /* Muli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66F7C2F1278C68D800E449F6 /* Muli.ttf */; };
 		66F7C2F5278C68D800E449F6 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66F7C2F2278C68D800E449F6 /* Muli-Bold.ttf */; };
+		66F8926A2D429D95007B3A55 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F892692D429D95007B3A55 /* CustomTabBarController.swift */; };
 		66FEA9802C84875A007806CD /* AddPostStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FEA97C2C84875A007806CD /* AddPostStoryboard.storyboard */; };
 		66FEA9812C84875A007806CD /* AddPostCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEA97B2C84875A007806CD /* AddPostCoordinator.swift */; };
 		66FEA9822C84875A007806CD /* AddPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEA97D2C84875A007806CD /* AddPostModel.swift */; };
@@ -840,6 +848,8 @@
 		665411D32C88999400672746 /* NextmatchesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextmatchesCollectionViewCell.xib; sourceTree = "<group>"; };
 		666413262C74946900807309 /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		666413272C74946900807309 /* PlayersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayersCollectionViewCell.xib; sourceTree = "<group>"; };
+		666CD7232D424F4C002981C6 /* CustomTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBarView.xib; sourceTree = "<group>"; };
+		666CD7252D425F69002981C6 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		66762D2D2C3EB79D00D36BC6 /* contact.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = contact.gif; sourceTree = "<group>"; };
 		667FD7EE28917A270005254B /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		667FD7EF28917A270005254B /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
@@ -975,9 +985,15 @@
 		66EA912B2C3EC3EE0027154F /* EditpasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditpasswordModel.swift; sourceTree = "<group>"; };
 		66EA912C2C3EC3EE0027154F /* EditpasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditpasswordVC.swift; sourceTree = "<group>"; };
 		66EA912D2C3EC3EE0027154F /* EditpasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditpasswordViewModel.swift; sourceTree = "<group>"; };
+		66EABB3D2D40F7FA00FD5A13 /* PostsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCoordinator.swift; sourceTree = "<group>"; };
+		66EABB3E2D40F7FA00FD5A13 /* PostsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostsStoryboard.storyboard; sourceTree = "<group>"; };
+		66EABB3F2D40F7FA00FD5A13 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		66EABB402D40F7FA00FD5A13 /* PostsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsVC.swift; sourceTree = "<group>"; };
+		66EABB412D40F7FA00FD5A13 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		66F7C2F0278C68D800E449F6 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
 		66F7C2F1278C68D800E449F6 /* Muli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Muli.ttf; sourceTree = "<group>"; };
 		66F7C2F2278C68D800E449F6 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
+		66F892692D429D95007B3A55 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		66FEA97B2C84875A007806CD /* AddPostCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostCoordinator.swift; sourceTree = "<group>"; };
 		66FEA97C2C84875A007806CD /* AddPostStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPostStoryboard.storyboard; sourceTree = "<group>"; };
 		66FEA97D2C84875A007806CD /* AddPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostModel.swift; sourceTree = "<group>"; };
@@ -1755,6 +1771,16 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		666CD7222D424F19002981C6 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				666CD7232D424F4C002981C6 /* CustomTabBarView.xib */,
+				666CD7252D425F69002981C6 /* CustomTabBarView.swift */,
+				66F892692D429D95007B3A55 /* CustomTabBarController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
 		667FD7ED28917A0D0005254B /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -2113,6 +2139,18 @@
 				66EA912D2C3EC3EE0027154F /* EditpasswordViewModel.swift */,
 			);
 			path = Editpassword;
+			sourceTree = "<group>";
+		};
+		66EABB3C2D40F7E200FD5A13 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				66EABB3D2D40F7FA00FD5A13 /* PostsCoordinator.swift */,
+				66EABB3E2D40F7FA00FD5A13 /* PostsStoryboard.storyboard */,
+				66EABB3F2D40F7FA00FD5A13 /* PostsModel.swift */,
+				66EABB402D40F7FA00FD5A13 /* PostsVC.swift */,
+				66EABB412D40F7FA00FD5A13 /* PostsViewModel.swift */,
+			);
+			path = Posts;
 			sourceTree = "<group>";
 		};
 		66FEA97A2C84873E007806CD /* AddPost */ = {
@@ -3294,6 +3332,8 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				666CD7222D424F19002981C6 /* Tabbar */,
+				66EABB3C2D40F7E200FD5A13 /* Posts */,
 				662078CB2D1AD53D00519F61 /* Tournaments */,
 				6628D11C2D05D4C600056310 /* Filterpackage */,
 				66D307D62CBD10CD00A2F3FC /* ForceUpdate */,
@@ -3577,6 +3617,7 @@
 				661C39D32CBD12A900AB30D8 /* ForceUpdateStoryboard.storyboard in Resources */,
 				66950BDD2C3D3B9800522EE0 /* ProfileStoryboard.storyboard in Resources */,
 				661A7EE82CA1A101002FEB57 /* PaymentMethodStoryboard.storyboard in Resources */,
+				66EABB462D40F7FA00FD5A13 /* PostsStoryboard.storyboard in Resources */,
 				C84539A52729887000004173 /* EmptyScreen.xib in Resources */,
 				6633826D2C3EAAF500160379 /* TermsStoryboard.storyboard in Resources */,
 				66950BD22C3D3B7100522EE0 /* HomeStoryboard.storyboard in Resources */,
@@ -3690,6 +3731,7 @@
 				66A316D32C71F68700057235 /* MatchesTableViewCell.xib in Resources */,
 				C86BF991266947F0002D87BC /* infoIconLight@2x.png in Resources */,
 				E8339CA827CD262D000D5A6E /* Loading-Light.gif in Resources */,
+				666CD7242D424F4C002981C6 /* CustomTabBarView.xib in Resources */,
 				7756A096253482EF00BFE53C /* RadioView.xib in Resources */,
 				C86BF9A4266947F0002D87BC /* warningIconSubtle.png in Resources */,
 				C86BF996266947F0002D87BC /* errorIconLight@3x.png in Resources */,
@@ -3876,6 +3918,7 @@
 				7756A18225348AD400BFE53C /* IntExtensions.swift in Sources */,
 				C84539912729882800004173 /* BaseController.swift in Sources */,
 				66AEC2D62C43C49900BC260E /* JWTDecodeError.swift in Sources */,
+				66F8926A2D429D95007B3A55 /* CustomTabBarController.swift in Sources */,
 				C871480D266E691600AD75E8 /* Reachability.swift in Sources */,
 				C871C8BD272FED0600DCBD2D /* SwipeTableViewCellDelegate.swift in Sources */,
 				7756A0F6253482EF00BFE53C /* PublicHelper.swift in Sources */,
@@ -3990,6 +4033,10 @@
 				C871C89E272FECF200DCBD2D /* Setup.swift in Sources */,
 				C8265E41266CE17600E099C1 /* GuardRequired.swift in Sources */,
 				77228EB427566805008F11B3 /* CalendarDateRangePickerCell.swift in Sources */,
+				66EABB422D40F7FA00FD5A13 /* PostsCoordinator.swift in Sources */,
+				66EABB432D40F7FA00FD5A13 /* PostsModel.swift in Sources */,
+				66EABB442D40F7FA00FD5A13 /* PostsVC.swift in Sources */,
+				66EABB452D40F7FA00FD5A13 /* PostsViewModel.swift in Sources */,
 				7756A18625348AD400BFE53C /* SwifterSwift.swift in Sources */,
 				7756A17925348AD400BFE53C /* FloatExtensions.swift in Sources */,
 				C86BF972266947F0002D87BC /* KeyboardTrackingView.swift in Sources */,
@@ -4203,6 +4250,7 @@
 				669902222C74904700A0D4C5 /* TableTableViewCell.swift in Sources */,
 				C871C89F272FECF200DCBD2D /* GoogleDriver.swift in Sources */,
 				C871C8D5272FED3000DCBD2D /* SwipeRefresh.swift in Sources */,
+				666CD7262D425F69002981C6 /* CustomTabBarView.swift in Sources */,
 				7756A17C25348AD400BFE53C /* DictionaryExtensions.swift in Sources */,
 				C871C8C8272FED0600DCBD2D /* SwipeActionTransitioning.swift in Sources */,
 				6629FD242C8482AB0034D837 /* PostdetailsCoordinator.swift in Sources */,
@@ -4455,7 +4503,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4539,7 +4587,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4629,7 +4677,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4712,7 +4760,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;

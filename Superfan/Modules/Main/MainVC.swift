@@ -18,6 +18,7 @@ class MainVC: UITabBarController {
 extension MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //        tabBar.tintColor = R.color.primary()
 //        guard let homeVC = UIStoryboard(name: "HomeStoryboard", bundle: nil).instantiateViewController(identifier: "HomeVC") as? UIViewController else {}
 //        let notificationVC = NotificationVC()
@@ -45,6 +46,7 @@ extension MainVC {
         if UD.club != nil {
             tabBarController?.tabBar.tintColor = UIColor(hex: UD.club?.color ?? "")
         }
+        self.selectedIndex = Constants.index
     
     }
 }

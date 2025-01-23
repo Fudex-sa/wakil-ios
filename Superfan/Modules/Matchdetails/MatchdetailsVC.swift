@@ -43,7 +43,7 @@ extension MatchdetailsVC {
         coordinator?.view = self
         setup()
         bind()
-        self.tabBarController?.tabBar.isHidden = true
+        (self.tabBarController as? CustomTabBarController)?.hideTabBar()
         subscribe()
     }
     override func viewWillDisappear(_ animated: Bool) {

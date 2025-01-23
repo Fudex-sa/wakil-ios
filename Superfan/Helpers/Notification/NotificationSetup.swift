@@ -14,9 +14,25 @@ protocol FirebaseNotificationDelegate: Permission {
 extension FirebaseNotificationDelegate where Self: AppDelegate {
     // MARK: - ...  Setup the firebase notification
     func setupFirebase() {
-        if !authroize(.notification) {
-            return access(.notification)
-        }
+//        let notificationCenter = UNUserNotificationCenter.current()
+//            notificationCenter.getNotificationSettings { settings in
+//                DispatchQueue.main.async { [self] in
+//                    switch settings.authorizationStatus {
+//                    case .notDetermined:
+//                        if !self.authroize(.notification) {
+//                            return access(.notification)
+//                        }
+//                    case .denied:
+//                        print("Notifications are denied.")
+//                        // Handle the case where notifications are denied
+//                    case .authorized, .provisional, .ephemeral:
+//                        print("Notifications are allowed.")
+//                    @unknown default:
+//                        print("Unknown notification authorization status.")
+//                    }
+//                }
+//            }
+        
         let application = UIApplication.shared
         FirebaseApp.configure()
         // [START set_messaging_delegate]
@@ -38,7 +54,6 @@ extension FirebaseNotificationDelegate where Self: AppDelegate {
             application.registerUserNotificationSettings(settings)
         }
         application.registerForRemoteNotifications()
-        UD.notificationStatus = true
     }
     // MARK: - ...  Unsubscribe from push notification
     func unSubscribeFirebase() {
