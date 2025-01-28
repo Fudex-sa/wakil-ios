@@ -974,12 +974,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 3 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 4 properties.
   struct entitlements {
     static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
 
     struct comAppleDeveloperApplesignin {
       static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    struct comAppleDeveloperAssociatedDomains {
+      static let applinksSuperfanPageLink = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:superfan.page.link") ?? "applinks:superfan.page.link"
 
       fileprivate init() {}
     }
@@ -1782,7 +1788,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 137 images.
+  /// This `R.image` struct is generated, and contains static references to 138 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1946,6 +1952,8 @@ struct R: Rswift.Validatable {
     static let heart2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "heart-2")
     /// Image `hometab1`.
     static let hometab1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "hometab1")
+    /// Image `hometab2`.
+    static let hometab2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "hometab2")
     /// Image `hometab`.
     static let hometab = Rswift.ImageResource(bundle: R.hostingBundle, name: "hometab")
     /// Image `icon notification-3`.
@@ -2630,6 +2638,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "hometab1", bundle: ..., traitCollection: ...)`
     static func hometab1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.hometab1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "hometab2", bundle: ..., traitCollection: ...)`
+    static func hometab2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.hometab2, compatibleWith: traitCollection)
     }
     #endif
 
@@ -3449,8 +3464,8 @@ struct R: Rswift.Validatable {
       return R.nib.commentsTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommentsTableViewCell
     }
 
-    static func customTabBarView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomTabBarView? {
-      return R.nib.customTabBarView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomTabBarView
+    static func customTabBarView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.customTabBarView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func emptyScreen(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -11295,15 +11310,14 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "CustomTabBarView"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomTabBarView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomTabBarView
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       static func validate() throws {
         if UIKit.UIImage(named: "building 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'building 1' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'home' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "hometab", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hometab' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "hometab1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hometab1' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "hometab2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hometab2' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "myposts 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'myposts 1' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "tourments", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tourments' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -12467,14 +12481,14 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct mainStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = MainVC
+      typealias InitialController = CustomTabBarController
 
       let bundle = R.hostingBundle
-      let mainVC = StoryboardViewControllerResource<MainVC>(identifier: "MainVC")
+      let customTabBarController = StoryboardViewControllerResource<CustomTabBarController>(identifier: "CustomTabBarController")
       let name = "MainStoryboard"
 
-      func mainVC(_: Void = ()) -> MainVC? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainVC)
+      func customTabBarController(_: Void = ()) -> CustomTabBarController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: customTabBarController)
       }
 
       static func validate() throws {
@@ -12486,7 +12500,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "blackshadow8", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blackshadow8' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "textfileldbackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textfileldbackground' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
         }
-        if _R.storyboard.mainStoryboard().mainVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainVC' could not be loaded from storyboard 'MainStoryboard' as 'MainVC'.") }
+        if _R.storyboard.mainStoryboard().customTabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'customTabBarController' could not be loaded from storyboard 'MainStoryboard' as 'CustomTabBarController'.") }
       }
 
       fileprivate init() {}

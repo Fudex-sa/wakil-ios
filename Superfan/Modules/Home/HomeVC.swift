@@ -92,6 +92,18 @@ extension HomeVC {
             self?.stopLoading()
         })
     }
+    func handleDeepLink(path: String, queryParams: [String: String]?) {
+            print("Path: \(path)")
+            if let params = queryParams {
+                print("Query Params: \(params)")
+            }
+
+            // Navigate based on the path and parameters
+            if path == "/Sohr" {
+                print("Navigate to the specific screen for Sohr")
+                // Add navigation code here
+            }
+        }
 }
 // MARK: - ...  Functions
 extension HomeVC {
@@ -104,6 +116,14 @@ extension HomeVC {
             HomeVC.itemId = 0
         }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "news"{
             coordinator?.detailsnews(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "posts"{
+            coordinator?.detailsposts(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "backstages"{
+            coordinator?.detailsbackstage(id: HomeVC.itemId ?? 0)
             HomeVC.type = ""
             HomeVC.itemId = 0
         }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "likePost"{

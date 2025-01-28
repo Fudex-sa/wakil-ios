@@ -228,7 +228,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="cGB-gP-dgi" secondAttribute="bottom" constant="30" id="3fh-wR-DBQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="cGB-gP-dgi" secondAttribute="bottom" constant="20" id="3fh-wR-DBQ"/>
                                     <constraint firstAttribute="trailing" secondItem="UYJ-s3-fez" secondAttribute="trailing" id="5Oc-7Q-oYk"/>
                                     <constraint firstAttribute="width" secondItem="UYJ-s3-fez" secondAttribute="width" id="KCp-fo-6gc"/>
                                     <constraint firstItem="UYJ-s3-fez" firstAttribute="top" secondItem="dIo-6k-cr4" secondAttribute="top" id="N2R-9i-MLh"/>

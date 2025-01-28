@@ -4503,7 +4503,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4587,7 +4587,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4677,7 +4677,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4760,7 +4760,7 @@
 				CODE_SIGN_ENTITLEMENTS = Superfan/Superfan.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Superfan/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;

@@ -20,6 +20,12 @@ class HomeCoordinator: Coordinator, ChangeClubVCDelegate {
 }
 
 extension HomeCoordinator {
+    func detailsbackstage(id: Int) {
+        guard let scene = R.storyboard.postdetailsStoryboard.postdetailsVC() else { return }
+        scene.postId = id
+        scene.isbackstage = true
+        view?.push(scene)
+    }
     func morenews() {
         guard let scene = R.storyboard.newsStoryboard.newsVC() else { return }
         view?.push(scene)
@@ -86,6 +92,10 @@ extension HomeCoordinator {
         view?.pushPop(scene)
     }
     func done(club : SelectclubDatum?) {
+        (view?.tabBarController as? CustomTabBarController)?.customTabBar.homeImg.tintColor = UIColor(hex: UD.club?.color ?? "")
+        (view?.tabBarController as? CustomTabBarController)?.customTabBar.leagueImg.tintColor = UIColor(hex: UD.club?.color ?? "")
+        (view?.tabBarController as? CustomTabBarController)?.customTabBar.mypostsImg.tintColor = UIColor(hex: UD.club?.color ?? "")
+        (view?.tabBarController as? CustomTabBarController)?.customTabBar.backstageImg.tintColor = UIColor(hex: UD.club?.color ?? "")
         view?.clubLbl.text = UD.club?.name ?? ""
         view?.viewModel?.resetPaginator()
         view?.viewModel?.clearDataSource()

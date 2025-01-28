@@ -9,6 +9,7 @@
 import UIKit
 protocol PackagesTableViewCellDelegate: AnyObject {
     func delete(wasPressedOnCell cell: PackagesTableViewCell , model : MysubscribeDatum)
+    func select(wasPressedOnCell cell: PackagesTableViewCell , model : PackageDatum)
 
 }
 class PackagesTableViewCell: BaseTableViewCell {
@@ -37,7 +38,6 @@ class PackagesTableViewCell: BaseTableViewCell {
     var features: [String] = []
     var clubId = 0
     override func setup() {
-        skeleton(view: contentView)
         super.setup()
         guard var model = model as? PackageDatum else { return }
         clubLbl.text = model.club?.name ?? ""
@@ -80,10 +80,13 @@ class PackagesTableViewCell: BaseTableViewCell {
         featuresTbl.delegate = self
         featuresTbl.dataSource = self
         featuresTbl.reloadData()
+        conatinerView.publisherGesture.listen(on: {[weak self] _ in
+            guard let self = self else { return }
+            self.delegate?.select(wasPressedOnCell: self, model: model)
+        }).store(self)
         //updateTableViewHeight()
     }
      func setupmysubscribe() {
-        skeleton(view: contentView)
         guard var model = model as? MysubscribeDatum else { return }
         clubLbl.text = model.club?.name ?? ""
         clubImg.setImage(url: model.club?.logo ?? "")

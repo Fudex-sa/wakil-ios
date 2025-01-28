@@ -11,7 +11,6 @@ import UIKit
 class FeaturesTableViewCell: BaseTableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     override func setup() {
-        skeleton(view: contentView)
         super.setup()
         guard var model = model as? String else { return }
         titleLbl.text = model

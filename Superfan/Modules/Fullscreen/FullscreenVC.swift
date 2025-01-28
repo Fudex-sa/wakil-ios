@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+import AVKit
 
 // MARK: - ...  ViewController - Vars
 class FullscreenVC: BaseController {
@@ -16,7 +18,9 @@ class FullscreenVC: BaseController {
     var coordinator: FullscreenCoordinator?
     var files: [File] = []
     var pos = 0
-    private var currentPlayingCell: ImagesCollectionViewCell?
+    var playerAv: AVPlayer?
+    var playerController: AVPlayerViewController?
+    var index = 0
 }
 
 // MARK: - ...  LifeCycle
@@ -30,13 +34,13 @@ extension FullscreenVC {
         coordinator = .init()
         coordinator?.view = self
         setup()
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
-       // stopPlayersInVisibleCells()
-        stopAllVideos()
+        playerAv?.pause()
     }
 }
 // MARK: - ...  Functions
@@ -49,14 +53,37 @@ extension FullscreenVC {
         gallaryCollection.reloadData()
         let indexPath = IndexPath(item: self.pos, section: 0)
         self.gallaryCollection.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-    }
-    func stopPlayersInVisibleCells() {
-            for cell in gallaryCollection.visibleCells {
-                if let myCell = cell as? ImagesCollectionViewCell {
-                    myCell.stopPlayer()
-                }
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.playVideo(at: 0)
         }
+    }
+    func playVideo(at index: Int) {
+        if playerAv != nil {
+            playerAv?.pause()
+        }
+        if files[safe: index]?.type ?? "" == "backgrounds" {
+            return
+        }
+        guard var cell = gallaryCollection.cellForItem(at: IndexPath(row: index, section: 0)) as? ImagesCollectionViewCell else { return }
+        guard let videoURL = URL(string: files[safe: index]?.value ?? "") else { return }
+        playerAv = AVPlayer(url: videoURL)
+        playerController = .init()
+        playerController?.player = playerAv
+        playerController?.view.frame.size.height = cell.vedioView.frame.size.height
+        playerController?.view.frame.size.width = cell.vedioView.frame.size.width
+        playerController?.showsPlaybackControls = false
+        playerAv?.play()
+        playerController?.videoGravity = .resize
+        cell.vedioView.addSubview(playerController?.view ?? UIView())
+        cell.playBtn.setImage(UIImage(named: "pause"), for: .normal)
+        playerAv?.play()
+       }
+    @objc func playerDidFinishPlaying(video: NSNotification) {
+        guard var cell = gallaryCollection.cellForItem(at: IndexPath(row: index, section: 0)) as? ImagesCollectionViewCell else { return }
+        playerAv?.seek(to: .zero)
+        playerAv?.pause()
+        cell.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
+    }
 }
 // MARK: - ...  View Contract
 extension FullscreenVC {
@@ -81,29 +108,14 @@ extension FullscreenVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
             // No spacing between cells to ensure they are adjacent
             return 0
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            playVisibleVideos()
-        }
-
-        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            playVisibleVideos()
-        }
-
-        private func playVisibleVideos() {
-            let visibleCells = gallaryCollection.visibleCells.compactMap { $0 as? ImagesCollectionViewCell }
-                   guard let visibleCell = visibleCells.first else { return }
-
-                   if currentPlayingCell != visibleCell {
-                       currentPlayingCell?.pause()
-                       currentPlayingCell = visibleCell
-                       currentPlayingCell?.play()
-                   }
-           
-        }
-    private func stopAllVideos() {
-           currentPlayingCell?.pause()
-           currentPlayingCell = nil
-       }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    
+        let visibleRect = CGRect(origin: gallaryCollection.contentOffset, size: gallaryCollection.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        let visibleIndexPath = gallaryCollection.indexPathForItem(at: visiblePoint)
+        index = visibleIndexPath?.row ?? 0
+        playVideo(at: visibleIndexPath?.row ?? 0)
+    }
   }
 
 extension FullscreenVC : ImagesCollectionViewCellDelegate{
@@ -111,15 +123,12 @@ extension FullscreenVC : ImagesCollectionViewCellDelegate{
         
     }
     func play(wasPressedOnCell cell: ImagesCollectionViewCell) {
-        for cell1 in gallaryCollection.visibleCells {
-            if let myCell = cell1 as? ImagesCollectionViewCell {
-                if cell == myCell {
-                    cell.playaction()
-                }else {
-                    myCell.playerAv?.pause()
-                    myCell.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
-                }
-            }
+        if playerAv?.timeControlStatus == .playing {
+            playerAv?.pause()
+            cell.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
+        }else {
+            playerAv?.play()
+            cell.playBtn.setImage(UIImage(named: "pause"), for: .normal)
         }
     }
 }

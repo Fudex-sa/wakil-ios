@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+import AVKit
 
 // MARK: - ...  ViewController - Vars
 class PostdetailsVC: BaseController {
@@ -26,8 +28,9 @@ class PostdetailsVC: BaseController {
     var postId = 0
     var isbackstage = false
     var islike = 0
-    private var currentPlayingCell: ImagesCollectionViewCell?
-
+    var playerAv: AVPlayer?
+    var playerController: AVPlayerViewController?
+    var index = 0
 }
 
 // MARK: - ...  LifeCycle
@@ -43,13 +46,13 @@ extension PostdetailsVC {
         setup()
         bind()
         (self.tabBarController as? CustomTabBarController)?.hideTabBar()
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
-       // stopPlayersInVisibleCells()
-        stopAllVideos()
+        playerAv?.pause()
     }
     override func bind() {
         super.bind()
@@ -82,12 +85,11 @@ extension PostdetailsVC {
        
     }
     func stopPlayersInVisibleCells() {
-            for cell in sliderCollection.visibleCells {
-                if let myCell = cell as? ImagesCollectionViewCell {
-                    myCell.stopPlayer()
-                }
-            }
+        guard let visibleCells = sliderCollection.visibleCells as? [ImagesCollectionViewCell] else { return }
+            for cell in visibleCells {
+                cell.playerAv?.pause()
         }
+    }
 }
 // MARK: - ...  Functions
 extension PostdetailsVC {
@@ -165,9 +167,6 @@ extension PostdetailsVC {
         timeLbl.text = viewModel?.postdata.value?.data?.date ?? ""
         let attributedText = Constants().addLineSpacingAndAlignment(text: viewModel?.postdata.value?.data?.description?.htmlToString ?? "", lineSpacing: 8.0 , alignment: getTextAlignmentForLanguage())
         desLbl.attributedText = attributedText
-        if viewModel?.postdata.value?.data?.files?.count ?? 0 == 0 {
-            sliderCollection.isHidden = true
-        }
         if UD.user != nil {
             if viewModel?.postdata.value?.data?.user?.id ?? 0 == UD.user?.data?.user?.id ?? 0  {
                 editBtn.isHidden = false
@@ -182,6 +181,13 @@ extension PostdetailsVC {
             likeBtn.setImage(R.image.fav1(), for: .normal)
         }
         sliderCollection.reloadData()
+        if viewModel?.postdata.value?.data?.files?.count ?? 0 == 0 {
+            sliderCollection.isHidden = true
+        }else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.playVideo(at: 0)
+            }
+        }
     }
     func getTextAlignmentForLanguage() -> NSTextAlignment {
         if UIView.userInterfaceLayoutDirection(for: desLbl.semanticContentAttribute) == .rightToLeft {
@@ -189,6 +195,32 @@ extension PostdetailsVC {
         } else {
             return .left
         }
+    }
+    func playVideo(at index: Int) {
+        if viewModel?.postdata.value?.data?.files?[safe: index]?.type ?? "" == "backgrounds" {
+            if playerAv != nil {
+                playerAv?.pause()
+            }
+        }
+        guard var cell = sliderCollection.cellForItem(at: IndexPath(row: index, section: 0)) as? ImagesCollectionViewCell else { return }
+        guard let videoURL = URL(string: viewModel?.postdata.value?.data?.files?[safe: index]?.value ?? "") else { return }
+        playerAv = AVPlayer(url: videoURL)
+        playerController = .init()
+        playerController?.player = playerAv
+        playerController?.view.frame.size.height = cell.vedioView.frame.size.height
+        playerController?.view.frame.size.width = cell.vedioView.frame.size.width
+        playerController?.showsPlaybackControls = false
+        playerAv?.play()
+        playerController?.videoGravity = .resize
+        cell.vedioView.addSubview(playerController?.view ?? UIView())
+        cell.playBtn.setImage(UIImage(named: "pause"), for: .normal)
+        playerAv?.play()
+       }
+    @objc func playerDidFinishPlaying(video: NSNotification) {
+        guard var cell = sliderCollection.cellForItem(at: IndexPath(row: index, section: 0)) as? ImagesCollectionViewCell else { return }
+        playerAv?.seek(to: .zero)
+        playerAv?.pause()
+        cell.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
     }
 }
 // MARK: - ...  View Contract
@@ -224,29 +256,15 @@ extension PostdetailsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         scene.pos = indexPath.row ?? 0
         push(scene)
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            playVisibleVideos()
-    }
-
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        playVisibleVideos()
+    
+        let visibleRect = CGRect(origin: sliderCollection.contentOffset, size: sliderCollection.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        let visibleIndexPath = sliderCollection.indexPathForItem(at: visiblePoint)
+        index = visibleIndexPath?.row ?? 0
+        playVideo(at: visibleIndexPath?.row ?? 0)
     }
-
-        private func playVisibleVideos() {
-            let visibleCells = sliderCollection.visibleCells.compactMap { $0 as? ImagesCollectionViewCell }
-                   guard let visibleCell = visibleCells.first else { return }
-
-                   if currentPlayingCell != visibleCell {
-                       currentPlayingCell?.pause()
-                       currentPlayingCell = visibleCell
-                       currentPlayingCell?.play()
-                   }
-           
-        }
-    private func stopAllVideos() {
-           currentPlayingCell?.pause()
-           currentPlayingCell = nil
-       }
   }
 
 extension PostdetailsVC : ImagesCollectionViewCellDelegate{
@@ -254,15 +272,12 @@ extension PostdetailsVC : ImagesCollectionViewCellDelegate{
         
     }
     func play(wasPressedOnCell cell: ImagesCollectionViewCell) {
-        for cell1 in sliderCollection.visibleCells {
-            if let myCell = cell1 as? ImagesCollectionViewCell {
-                if cell == myCell {
-                    cell.playaction()
-                }else {
-                    myCell.playerAv?.pause()
-                    myCell.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
-                }
-            }
+        if playerAv?.timeControlStatus == .playing {
+            playerAv?.pause()
+            cell.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
+        }else {
+            playerAv?.play()
+            cell.playBtn.setImage(UIImage(named: "pause"), for: .normal)
         }
     }
 }

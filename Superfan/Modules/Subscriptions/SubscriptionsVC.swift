@@ -272,9 +272,9 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == packagesTbl {
-            return viewModel?.dataSource()?.count ?? 2
+            return viewModel?.dataSource()?.count ?? 0
         }else {
-            return viewModel?.mysubscribe.value?.count ?? 2
+            return viewModel?.mysubscribe.value?.count ?? 0
         }
         
     }
@@ -287,6 +287,7 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
             cell.packageId = viewModel?.packageId.value ?? 0
             cell.tax = viewModel?.tax.value ?? ""
             cell.setup()
+            cell.delegate = self
             return cell
         }else {
             var cell = tableView.cell(type: PackagesTableViewCell.self, indexPath)
@@ -302,11 +303,7 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
         if viewModel?.items.value?.count ?? 0 == 0 && viewModel?.mysubscribe.value?.count ?? 0 == 0 {
             return
         }
-        if tableView == packagesTbl {
-            viewModel?.packageId.send(viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
-            viewModel?.checkclubId.send(viewModel?.dataSource()?[safe: indexPath.row]?.club?.id ?? 0)
-            packagesTbl.reloadData()
-        }
+       
         
     }
 
@@ -340,5 +337,10 @@ extension SubscriptionsVC : PackagesTableViewCellDelegate{
         viewModel?.packageId.send(model.id ?? 0)
         viewModel?.checkclubId.send(0)
         coordinator?.deletesubscribe()
+    }
+    func select(wasPressedOnCell cell: PackagesTableViewCell, model: PackageDatum) {
+        viewModel?.packageId.send(model.id ?? 0)
+        viewModel?.checkclubId.send(model.club?.id ?? 0)
+        packagesTbl.reloadData()
     }
 }

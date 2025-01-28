@@ -39,27 +39,25 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
             playBtn.isHidden = true
             sliderImg.isHidden = false
         }else {
-            guard let url = URL(string: model.value ?? "") else { return }
-            playerItem = .init(url: url)
-            playerAv = .init(playerItem: playerItem)
-            playerController = .init()
-            playerController?.player = playerAv
-            playerController?.view.frame.size.height = vedioView.frame.size.height
-            playerController?.view.frame.size.width = vedioView.frame.size.width
-            playerController?.showsPlaybackControls = false
-            playerAv?.play()
-            self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            playerController?.videoGravity = .resizeAspectFill
-            self.vedioView.addSubview(playerController?.view ?? UIView())
-            self.vedioView.addSubview(createOpacityView())
+//            guard let url = URL(string: model.value ?? "") else { return }
+//            playerItem = AVPlayerItem(url: url)
+//            playerAv = AVPlayer(playerItem: playerItem)
+//            playerController = AVPlayerViewController()
+//            playerController?.player = playerAv
+//            playerController?.view.frame = vedioView.bounds
+//            playerController?.showsPlaybackControls = false
+//            playerController?.videoGravity = .resizeAspectFill
+//            vedioView.addSubview(playerController?.view ?? UIView())
+//            vedioView.addSubview(createOpacityView())
+//                   
+//            playerAv?.play() // Start playback
             vedioView.isHidden = false
             sliderImg.isHidden = true
             playBtn.isHidden = false
-            NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         }
         playBtn.publisher.listen { [weak self] in
-            //self?.delegate?.play(wasPressedOnCell: self!)
-            self?.playaction()
+            self?.delegate?.play(wasPressedOnCell: self!)
+//            self?.playaction()
         }.store(self)
     }
     func setuppost1() {
@@ -72,26 +70,12 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
             playBtn.isHidden = true
             sliderImg.isHidden = false
         }else {
-            guard let url = URL(string: model.value ?? "") else { return }
-            playerItem = .init(url: url)
-            playerAv = .init(playerItem: playerItem)
-            playerController = .init()
-            playerController?.player = playerAv
-            playerController?.view.frame.size.height = vedioView.frame.size.height
-            playerController?.view.frame.size.width = vedioView.frame.size.width
-            playerController?.showsPlaybackControls = false
-            playerAv?.play()
-            self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            playerController?.videoGravity = .resizeAspectFill
-            self.vedioView.addSubview(playerController?.view ?? UIView())
-            self.vedioView.addSubview(createOpacityView())
             vedioView.isHidden = false
             sliderImg.isHidden = true
             playBtn.isHidden = false
-            NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         }
         playBtn.publisher.listen { [weak self] in
-            //self?.delegate?.play(wasPressedOnCell: self!)
+            self?.delegate?.play(wasPressedOnCell: self!)
             self?.playaction()
         }.store(self)
     }
@@ -161,17 +145,6 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
         }
         return view
     }
-    func play() {
-        if let player = playerAv {
-            player.play()
-        }
-       }
-
-       func pause() {
-           if let player = playerAv {
-               player.pause()
-           }
-       }
     func playaction() {
         if self.playerAv == nil {
             return
@@ -187,7 +160,7 @@ class ImagesCollectionViewCell: BaseCollectionViewCell {
     func restartPlay() {
         playerAv?.seek(to: .zero)
         playerAv?.pause()
-        playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
+        self.playBtn.setImage(UIImage(named: "group-11334"), for: .normal)
     }
     @objc func playerDidFinishPlaying(video: NSNotification) {
         restartPlay()

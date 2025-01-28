@@ -29,9 +29,29 @@ class CustomTabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.customTabBar.selectedIndex = self.selectedIndex
+        if UD.club != nil {
+            self.customTabBar.homeImg.tintColor = UIColor(hex: UD.club?.color ?? "")
+            self.customTabBar.leagueImg.tintColor = UIColor(hex: UD.club?.color ?? "")
+            self.customTabBar.mypostsImg.tintColor = UIColor(hex: UD.club?.color ?? "")
+            self.customTabBar.backstageImg.tintColor = UIColor(hex: UD.club?.color ?? "")
+        }
+
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    func setcurrntindex(index: Int){
+        if index == 0 {
+            self.customTabBar.backageImg.image = UIImage(named: "home")
+            self.customTabBar.homeCircleView.isHidden = false
+            self.customTabBar.home1Img.isHidden = true
+            self.customTabBar.leagueCircleView.isHidden = true
+            self.customTabBar.league1Img.isHidden = false
+            self.customTabBar.mypostsCircleView.isHidden = true
+            self.customTabBar.mypost1Img.isHidden = false
+            self.customTabBar.backstageCircleView.isHidden = true
+            self.customTabBar.backstage1Img.isHidden = false
+        }
     }
     func loadTabBar() {
         tabBar.isHidden = true

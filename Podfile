@@ -31,6 +31,7 @@ pod 'FBSDKShareKit', '~> 14.0'
 pod 'GoogleSignIn'
 pod 'Cache'
 pod 'FloatingTabBarController'
+pod 'Firebase/DynamicLinks'
 end
 
 post_install do |installer|

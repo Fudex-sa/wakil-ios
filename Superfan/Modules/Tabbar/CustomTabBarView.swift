@@ -119,6 +119,7 @@ class CustomTabBarView : UIView {
         selectedIndex = 0
         onDidClickItem?(0)
     }
+   
     
 }
 extension CustomTabBarView {

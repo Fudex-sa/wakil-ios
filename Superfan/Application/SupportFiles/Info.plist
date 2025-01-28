@@ -38,7 +38,17 @@
 				<string>com.googleusercontent.apps.309215017604-eq5i4u9k5fo604t365tc01e6h09bekqu</string>
 			</array>
 		</dict>
+<!--        <dict>-->
+<!--                <key>CFBundleURLSchemes</key>-->
+<!--                <array>-->
+<!--                    <string>com.Fudex.superfan</string> -->
+<!--                </array>-->
+<!--            </dict>-->
 	</array>
+<!--    <key>FirebaseDynamicLinksCustomDomains</key>-->
+<!--    <array>-->
+<!--        <string>https://superfan.page.link</string>-->
+<!--    </array>-->
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ENV</key>

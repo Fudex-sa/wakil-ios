@@ -7,6 +7,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import FirebaseDynamicLinks
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
@@ -24,6 +25,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        } else {
 //            window?.overrideUserInterfaceStyle = .light
 //        }
+        if let userActivity = connectionOptions.userActivities.first(where: { $0.activityType == NSUserActivityTypeBrowsingWeb }) {
+            guard let incomingURL = userActivity.webpageURL else { return }
+
+                   // Handle Firebase Dynamic Link
+            DynamicLinks.dynamicLinks().handleUniversalLink(incomingURL) { [self] dynamicLink, error in
+                       if let error = error {
+                           print("Error handling dynamic link: \(error.localizedDescription)")
+                           return
+                       }
+                       if let dynamicLink = dynamicLink {
+                           let url = dynamicLink.url?.absoluteString ?? ""
+                           if url.contains("news"){
+                               let id = self.substringAfterWord(in: url, word: "news/")
+                               HomeVC.itemId = id?.int ?? 0
+                               HomeVC.type = "news"
+                               Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                           }else if url.contains("posts"){
+                               let id = substringAfterWord(in: url, word: "posts/")
+                               HomeVC.itemId = id?.int ?? 0
+                               HomeVC.type = "posts"
+                               Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                           }else if url.contains("backstages"){
+                               let id = self.substringAfterWord(in: url, word: "backstages/")
+                               HomeVC.itemId = id?.int ?? 0
+                               HomeVC.type = "backstages"
+                               Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                           }
+                       }
+                   }
+        }
         if UD.onboarding == true {
             if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
                 Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
@@ -47,8 +78,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            }
 //        }
         
+        
     }
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        print("Your Incoming Custom Scheme URL is \(URLContexts.first?.url.absoluteString)")
+//        if let dynamicLink = DynamicLinks.dynamicLinks().dynamicLink(fromCustomSchemeURL: URLContexts.first?.url){
+//            print("dynamiclink: \(url)")
+//
+//            self.handleIncomingDynamicLink(url: dynamicLink.url?.absoluteString ?? "")
+//                   return true
+//               }
+//       
+//        return false
         guard let url = URLContexts.first?.url else {
             return
         }
@@ -88,5 +129,50 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
-    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        guard let incomingURL = userActivity.webpageURL else {
+            print("No webpageURL in userActivity.")
+            return
+        }
+
+        DynamicLinks.dynamicLinks().handleUniversalLink(incomingURL) { [self] dynamicLink, error in
+            if let error = error {
+                print("Error handling dynamic link: \(error.localizedDescription)")
+                return
+            }
+            if let dynamicLink = dynamicLink {
+                let url = dynamicLink.url?.absoluteString ?? ""
+                if url.contains("news"){
+                    let id = substringAfterWord(in: url, word: "news/")
+                    HomeVC.itemId = id?.int ?? 0
+                    HomeVC.type = "news"
+                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                }else if url.contains("posts"){
+                    let id = substringAfterWord(in: url, word: "posts/")
+                    HomeVC.itemId = id?.int ?? 0
+                    HomeVC.type = "posts"
+                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                }else if url.contains("backstages"){
+                    let id = self.substringAfterWord(in: url, word: "backstages/")
+                    HomeVC.itemId = id?.int ?? 0
+                    HomeVC.type = "backstages"
+                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                }
+                print("Error handling dynamic link: \(dynamicLink.url?.absoluteString)")
+            }
+        }
+    }
+    func substringAfterWord(in text: String, word: String) -> String? {
+        // Check if the word exists in the text
+        guard let range = text.range(of: word) else {
+            return nil // Return nil if the word is not found
+        }
+        
+        // Get the start index of the substring after the word
+        let startIndex = range.upperBound
+        
+        // Extract and return the substring from the start index to the end of the original string
+        let substring = text[startIndex...].trimmingCharacters(in: .whitespacesAndNewlines)
+        return substring.isEmpty ? nil : substring // Return nil if the substring is empty
+    }
 }

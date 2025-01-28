@@ -51,7 +51,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k1K-ns-Yab">
-                                <rect key="frame" x="16" y="171" width="382" height="626"/>
+                                <rect key="frame" x="16" y="171" width="382" height="622"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -62,7 +62,7 @@
                             <constraint firstItem="2mA-gY-hwK" firstAttribute="top" secondItem="J3X-fn-Ws9" secondAttribute="top" constant="22" id="6rG-pj-3v0"/>
                             <constraint firstItem="3nL-lk-4Si" firstAttribute="leading" secondItem="2mA-gY-hwK" secondAttribute="trailing" constant="8" id="Pan-dx-qZl"/>
                             <constraint firstItem="J3X-fn-Ws9" firstAttribute="trailing" secondItem="3nL-lk-4Si" secondAttribute="trailing" id="ShM-Q4-3tC"/>
-                            <constraint firstItem="J3X-fn-Ws9" firstAttribute="bottom" secondItem="k1K-ns-Yab" secondAttribute="bottom" constant="16" id="TSH-io-Xam"/>
+                            <constraint firstItem="J3X-fn-Ws9" firstAttribute="bottom" secondItem="k1K-ns-Yab" secondAttribute="bottom" constant="20" id="TSH-io-Xam"/>
                             <constraint firstItem="k1K-ns-Yab" firstAttribute="top" secondItem="adi-Oi-O8u" secondAttribute="bottom" constant="30" id="ZG1-wd-gxu"/>
                             <constraint firstItem="J3X-fn-Ws9" firstAttribute="trailing" secondItem="k1K-ns-Yab" secondAttribute="trailing" constant="16" id="ZpX-0t-Z4M"/>
                             <constraint firstItem="2mA-gY-hwK" firstAttribute="leading" secondItem="J3X-fn-Ws9" secondAttribute="leading" constant="16" id="c7Y-kB-x2A"/>

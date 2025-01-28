@@ -29,7 +29,7 @@ extension BackstageViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
-            self?.items.send(model.data ?? [])
+            self?.append(contentsOf: model.data ?? [])
             self?.paginator(respnod: model.data)
             self?.requestFinished.send(true)
         }).store(self)
