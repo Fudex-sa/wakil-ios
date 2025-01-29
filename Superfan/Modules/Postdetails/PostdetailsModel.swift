@@ -22,10 +22,12 @@ struct PostdetailsDataClass: Codable {
     let title, description, date: String?
     let files: [File]?
     let backgroundImg: String?
+    let dynamiclink: String?
     let likersCount, commentersCount, isLiked: Int?
 
     enum CodingKeys: String, CodingKey {
         case id, user, title, description, date, files, backgroundImg, likersCount, commentersCount
+        case dynamiclink = "dynamic_link"
         case isLiked = "is_liked"
     }
 }

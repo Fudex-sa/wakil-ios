@@ -149,7 +149,7 @@ extension PostdetailsVC {
             }
         }).store(self)
         shareBtn.publisher.listen(on: {[weak self] _ in
-            Common().shareApp(items: [self?.viewModel?.postdata.value?.data?.description?.htmlToString ?? ""])
+            Common().shareLink(items: [self?.viewModel?.postdata.value?.data?.dynamiclink ?? ""])
         }).store(self)
     }
     func changeColoe() {

@@ -21,6 +21,7 @@ struct NewsDetailDataClass: Codable {
     let club: SelectclubDatum?
     let title, date, description: String?
     let backgrouds: [NewsDetailBackgroud]?
+    let dynamic_link: String?
 }
 
 // MARK: - Backgroud

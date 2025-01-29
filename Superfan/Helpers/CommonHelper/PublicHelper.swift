@@ -58,4 +58,14 @@ extension Common {
         activityVC.popoverPresentationController?.sourceView = view.view
         view.present(activityVC, animated: true, completion: nil)
     }
+    public func shareLink(items: [Any] = []) {
+        var sharing = items
+        let activityVC = UIActivityViewController(activityItems: sharing, applicationActivities: nil)
+        //New Excluded Activities Code
+        activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+        //
+        let view = UIApplication.topMostController()
+        activityVC.popoverPresentationController?.sourceView = view.view
+        view.present(activityVC, animated: true, completion: nil)
+    }
 }

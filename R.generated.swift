@@ -986,6 +986,7 @@ struct R: Rswift.Validatable {
 
     struct comAppleDeveloperAssociatedDomains {
       static let applinksSuperfanPageLink = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:superfan.page.link") ?? "applinks:superfan.page.link"
+      static let httpsSuperfanPageLink = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "https://superfan.page.link") ?? "https://superfan.page.link"
 
       fileprivate init() {}
     }

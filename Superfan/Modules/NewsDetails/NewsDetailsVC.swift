@@ -72,7 +72,7 @@ extension NewsDetailsVC {
             self.coordinator?.detailsclub(id: self.viewModel?.newsdata.value?.data?.club?.id ?? 0)
         }
         shareBtn.publisher.listen(on: {[weak self] _ in
-            Common().shareApp(items: [self?.viewModel?.newsdata.value?.data?.description?.htmlToString ?? ""])
+            Common().shareLink(items: [self?.viewModel?.newsdata.value?.data?.dynamic_link ?? ""])
             
         }).store(self)
     }
