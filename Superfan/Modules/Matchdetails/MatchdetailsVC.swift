@@ -29,6 +29,7 @@ class MatchdetailsVC: BaseController {
     var coordinator: MatchdetailsCoordinator?
     var matchId = 0
     var statisctic : [statistecModel] = []
+    var isAnotherleague = false
 }
 
 // MARK: - ...  LifeCycle
@@ -84,15 +85,27 @@ extension MatchdetailsVC {
         viewModel?.matchId.send(matchId)
         viewModel?.getmatchdetails()
         club1Img.UIViewAction {
+            if self.isAnotherleague {
+                return
+            }
             self.coordinator?.detailsclub(id: self.viewModel?.matchdata.value?.data?.team1?.id ?? 0)
         }
         club2Img.UIViewAction {
+            if self.isAnotherleague {
+                return
+            }
             self.coordinator?.detailsclub(id: self.viewModel?.matchdata.value?.data?.team2?.id ?? 0)
         }
         club1Lbl.UIViewAction {
+            if self.isAnotherleague {
+                return
+            }
             self.coordinator?.detailsclub(id: self.viewModel?.matchdata.value?.data?.team1?.id ?? 0)
         }
         club2Lbl.UIViewAction {
+            if self.isAnotherleague {
+                return
+            }
             self.coordinator?.detailsclub(id: self.viewModel?.matchdata.value?.data?.team2?.id ?? 0)
         }
     }

@@ -44,6 +44,7 @@ extension SubscriptionsVC {
             clubId = UD.club?.id ?? 0
             club = UD.club
         }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -96,7 +97,6 @@ extension SubscriptionsVC {
             self?.stopLoading()
             self?.viewModel?.mysubscribe.send([])
             self?.viewModel?.resetPaginator()
-            self?.viewModel?.clearDataSource()
             self?.viewModel?.fetchmypackages()
         })
         viewModel?.checksubscribe.listen(on: { [weak self] value in
@@ -160,7 +160,6 @@ extension SubscriptionsVC {
                 self?.viewModel?.keyword.send(self?.searchTxf.text ?? "")
                 self?.viewModel?.mysubscribe.send([])
                 self?.viewModel?.resetPaginator()
-                self?.viewModel?.clearDataSource()
                 self?.viewModel?.fetchmypackages()
             })
             
@@ -171,7 +170,7 @@ extension SubscriptionsVC {
     }
     func reload(){
         hideEmptyScreen()
-        if viewModel?.items.value?.count ?? 0 == 0 {
+        if viewModel?.dataSource()?.count ?? 0 == 0 {
             packagesTbl.isHidden = true
             showEmptyScreen(for: 400 , title: "There are no packages available".localized)
         }else {
@@ -255,23 +254,24 @@ extension SubscriptionsVC:UITableViewDelegate , UITableViewDataSource {
             }
         }
     }
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == scrollContainerView {
-            scrollView.swipeButtomRefresh { [weak self] in
-                if case self?.viewModel?.canPaginate() = true {
-                    if self?.type == 0 {
-                        self?.viewModel?.fetchpackages()
-                    }else {
-                        self?.viewModel?.fetchmypackages()
-                    }
-                } else {
-                    scrollView.stopSwipeButtom()
-                }
-            }
-        }
-    }
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if scrollView == scrollContainerView {
+//            scrollView.swipeButtomRefresh { [weak self] in
+//                if case self?.viewModel?.canPaginate() = true {
+//                    if self?.type == 0 {
+//                        self?.viewModel?.fetchpackages()
+//                    }else {
+//                        self?.viewModel?.fetchmypackages()
+//                    }
+//                } else {
+//                    scrollView.stopSwipeButtom()
+//                }
+//            }
+//        }
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == packagesTbl {
+            print(viewModel?.items.value?.count ?? 0)
             return viewModel?.dataSource()?.count ?? 0
         }else {
             return viewModel?.mysubscribe.value?.count ?? 0
@@ -342,5 +342,6 @@ extension SubscriptionsVC : PackagesTableViewCellDelegate{
         viewModel?.packageId.send(model.id ?? 0)
         viewModel?.checkclubId.send(model.club?.id ?? 0)
         packagesTbl.reloadData()
+        packagesTbl.isHidden = false
     }
 }

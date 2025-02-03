@@ -73,7 +73,7 @@ extension FullscreenVC {
         playerController?.view.frame.size.width = cell.vedioView.frame.size.width
         playerController?.showsPlaybackControls = false
         playerAv?.play()
-        playerController?.videoGravity = .resize
+        playerController?.videoGravity = .resizeAspectFill
         cell.vedioView.addSubview(playerController?.view ?? UIView())
         cell.playBtn.setImage(UIImage(named: "pause"), for: .normal)
         playerAv?.play()

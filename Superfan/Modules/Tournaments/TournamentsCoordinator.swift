@@ -29,6 +29,7 @@ extension TournamentsCoordinator {
         }
         guard let scene = R.storyboard.matchdetailsStoryboard.matchdetailsVC() else { return }
         scene.matchId = id
+        scene.isAnotherleague = true
         view?.push(scene)
     }
 }

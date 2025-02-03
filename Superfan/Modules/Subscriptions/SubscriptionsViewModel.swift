@@ -39,6 +39,9 @@ extension SubscriptionsViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
+            if model.data?.count ?? 0 == 0 {
+                return
+            }
             self?.append(contentsOf: model.data ?? [])
             self?.paginator(respnod: model.data)
             self?.tax.send(model.added_tax ?? "")

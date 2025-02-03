@@ -90,9 +90,9 @@ extension MypostsVC {
         addBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.addpost()
         }).store(self)
-        if UD.club != nil {
-            addBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
-        }
+//        if UD.club != nil {
+//            addBtn.setTitleColor(UIColor(hex: UD.club?.color ?? ""), for: .normal)
+//        }
         swipeTopRefresh(scrollView: postsTbl) { [weak self] in
             self?.viewModel?.resetPaginator()
             self?.viewModel?.clearDataSource()

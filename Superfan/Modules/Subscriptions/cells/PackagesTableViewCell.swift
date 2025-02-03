@@ -73,7 +73,7 @@ class PackagesTableViewCell: BaseTableViewCell {
             clubHight.constant = 34
             lineView.isHidden = false
         }
-        colorLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+       // colorLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
         features.removeAll()
         features.append(contentsOf: model.features ?? [])
         FeatureHight.constant = CGFloat((features.count) * 30)
@@ -95,9 +95,9 @@ class PackagesTableViewCell: BaseTableViewCell {
         
          colorLbl.textColor = R.color.primary()
          colorLbl.text = "\("Expires in".localized) \(model.expireDate ?? "")"
-         colorLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-         unsubscribeBtn.borderColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-         unsubscribeBtn.setTitleColor(UIColor(hex: UD.club?.color ?? "#E51D35"), for: .normal)
+       //  colorLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+      //   unsubscribeBtn.borderColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+        // unsubscribeBtn.setTitleColor(UIColor(hex: UD.club?.color ?? "#E51D35"), for: .normal)
         features.removeAll()
         features.append(contentsOf: model.features ?? [])
         FeatureHight.constant = CGFloat((features.count) * 30)

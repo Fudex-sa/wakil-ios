@@ -88,36 +88,36 @@ extension ClubdetailsVC {
         viewModel?.getclubdetails()
       //  backgroundView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
         if type == 0 {
-            infoLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            infoLbl.textColor = R.color.primary()
+            infoLineView.backgroundColor = R.color.primary()
             infoLineView.isHidden = false
             tableLbl.textColor = UIColor(hex: "#D9D9D9")
-            tableLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            tableLineView.backgroundColor = R.color.primary()
             tableLineView.isHidden = true
         }else {
-            tableLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            tableLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            tableLbl.textColor = R.color.primary()
+            tableLineView.backgroundColor = R.color.primary()
             tableLineView.isHidden = false
             infoLbl.textColor = UIColor(hex: "#D9D9D9")
-            infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            infoLineView.backgroundColor = R.color.primary()
             infoLineView.isHidden = true
         }
         infoClickView.publisherGesture.listen(on: {[weak self] _ in
-            self?.infoLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            self?.infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            self?.infoLbl.textColor = R.color.primary()
+            self?.infoLineView.backgroundColor = R.color.primary()
             self?.infoLineView.isHidden = false
             self?.tableLbl.textColor = UIColor(hex: "#D9D9D9")
-            self?.tableLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            self?.tableLineView.backgroundColor = R.color.primary()
             self?.tableLineView.isHidden = true
             self?.tableView.isHidden = true
             self?.infoView.isHidden = false
         }).store(self)
         tableClickView.publisherGesture.listen(on: {[weak self] _ in
-            self?.tableLbl.textColor = UIColor(hex: UD.club?.color ?? "#E51D35")
-            self?.tableLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            self?.tableLbl.textColor = R.color.primary()
+            self?.tableLineView.backgroundColor = R.color.primary()
             self?.tableLineView.isHidden = false
             self?.infoLbl.textColor = UIColor(hex: "#D9D9D9")
-            self?.infoLineView.backgroundColor = UIColor(hex: UD.club?.color ?? "#E51D35")
+            self?.infoLineView.backgroundColor = R.color.primary()
             self?.infoLineView.isHidden = true
             self?.tableView.isHidden = false
             self?.infoView.isHidden = true

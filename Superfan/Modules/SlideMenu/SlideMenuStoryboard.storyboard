@@ -555,7 +555,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="yTR-CH-6Ly" secondAttribute="trailing" constant="20" id="5Jc-Sa-pFu"/>
-                                            <constraint firstAttribute="bottom" secondItem="yTR-CH-6Ly" secondAttribute="bottom" constant="20" id="5pb-N4-cYl"/>
+                                            <constraint firstAttribute="bottom" secondItem="yTR-CH-6Ly" secondAttribute="bottom" constant="150" id="5pb-N4-cYl"/>
                                             <constraint firstAttribute="trailing" secondItem="Xov-9i-xhI" secondAttribute="trailing" id="6it-va-mBk"/>
                                             <constraint firstItem="yTR-CH-6Ly" firstAttribute="top" secondItem="Xov-9i-xhI" secondAttribute="bottom" id="9SY-YK-acu"/>
                                             <constraint firstAttribute="width" secondItem="Xov-9i-xhI" secondAttribute="width" id="Rpw-IT-CvR"/>

@@ -3599,7 +3599,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 398 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 400 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -4185,6 +4185,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let genderLan = Rswift.StringResource(key: "gender.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Get access to the exclusive content and be a Superfan
+      ///
+      /// Locales: ar, en
+      static let lookAtTheExclusiveContentAndBeASuperfan = Rswift.StringResource(key: "Look at the exclusive content and be a superfan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Get important information without opening app.
       ///
       /// Locales: ar, en
@@ -4849,6 +4853,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let stayInformed = Rswift.StringResource(key: "Stay informed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Subscribe Now
+      ///
+      /// Locales: ar, en
+      static let subscribeNow = Rswift.StringResource(key: "Subscribe Now", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Subscriptions
       ///
       /// Locales: ar, en
@@ -7384,6 +7392,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("gender.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Get access to the exclusive content and be a Superfan
+      ///
+      /// Locales: ar, en
+      static func lookAtTheExclusiveContentAndBeASuperfan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Look at the exclusive content and be a superfan", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Look at the exclusive content and be a superfan"
+        }
+
+        return NSLocalizedString("Look at the exclusive content and be a superfan", bundle: bundle, comment: "")
+      }
+
       /// en translation: Get important information without opening app.
       ///
       /// Locales: ar, en
@@ -9872,6 +9895,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Stay informed", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Subscribe Now
+      ///
+      /// Locales: ar, en
+      static func subscribeNow(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Subscribe Now", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Subscribe Now"
+        }
+
+        return NSLocalizedString("Subscribe Now", bundle: bundle, comment: "")
       }
 
       /// en translation: Subscriptions

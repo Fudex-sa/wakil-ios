@@ -27,34 +27,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9z-TA-Wt0">
-                                <rect key="frame" x="20" y="308" width="374" height="280"/>
+                                <rect key="frame" x="20" y="320" width="374" height="256.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCz-aH-dSa">
-                                        <rect key="frame" x="32" y="106" width="310" height="71"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Look at the exclusive content and be a superfan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCz-aH-dSa">
+                                        <rect key="frame" x="32" y="106" width="310" height="47.5"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                         <color key="textColor" name="whiteColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Excuse me.. Please subscribe to the club packages to see the scenes and rooms of the players"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Look at the exclusive content and be a superfan"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="CBd-mM-88C">
-                                        <rect key="frame" x="102" y="192" width="170" height="48"/>
+                                        <rect key="frame" x="102" y="168.5" width="170" height="48"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btR-HZ-fsP">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="48"/>
                                                 <color key="backgroundColor" name="Primary"/>
                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Subscriptions">
+                                                <state key="normal" title="Subscribe Now">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Subscriptions"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Subscribe Now"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>

@@ -40,6 +40,7 @@ extension TournamentsVC {
         coordinator?.view = self
         bind()
         click()
+        (self.tabBarController as? CustomTabBarController)?.showTabBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
