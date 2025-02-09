@@ -38,6 +38,7 @@ extension SubscribePopupVC {
 // MARK: - ...  Functions
 extension SubscribePopupVC {
     func setup() {
+        changeColoe()
         subscripeBtn.publisher.listen(on: {[weak self] _ in
             self?.dismiss(animated: true, completion: {
                 let view = UIApplication.topViewController() as? BaseController
@@ -49,6 +50,11 @@ extension SubscribePopupVC {
             self?.dismiss(animated: true, completion: {
             })
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            subscripeBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
 }
 // MARK: - ...  View Contract

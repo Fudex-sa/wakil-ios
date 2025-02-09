@@ -115,6 +115,7 @@ extension SubscriptionsVC {
 // MARK: - ...  Functions
 extension SubscriptionsVC {
     func setup() {
+        changeColoe()
         scrollContainerView.delegate = self
         packagesTbl.delegate = self
         packagesTbl.dataSource = self
@@ -167,6 +168,11 @@ extension SubscriptionsVC {
         filterBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.filter()
         }).store(self)
+    }
+    func changeColoe() {
+        if UD.club != nil {
+            confirmeBtn.backgroundColor = UIColor(hex: UD.club?.color ?? "")
+        }
     }
     func reload(){
         hideEmptyScreen()
