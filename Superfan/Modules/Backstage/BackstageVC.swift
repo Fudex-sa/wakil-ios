@@ -37,6 +37,7 @@ extension BackstageVC {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+        expandedStates.removeAll()
     }
     override func bind() {
         super.bind()
@@ -82,6 +83,10 @@ extension BackstageVC {
         }
     }
     func reload(){
+        let postCount = viewModel?.items.value?.count ?? 0
+           if expandedStates.count != postCount {
+               expandedStates = Array(repeating: false, count: postCount)
+           }
         if viewModel?.dataSource()?.count ?? 0 == 0 {
             backstageTbl.isHidden = true
             showEmptyScreen(for: 400 , title: "There are no backstages available".localized)

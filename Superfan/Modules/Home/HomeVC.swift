@@ -64,6 +64,7 @@ extension HomeVC {
         viewModel = nil
         coordinator = nil
         unsubscribe()
+        expandedStates.removeAll()
     }
     override func bind() {
         super.bind()
@@ -224,6 +225,11 @@ extension HomeVC {
             matchesView.isHidden = true
             matchesCollection.isHidden = false
         }
+        let postCount = viewModel?.posts.value?.count ?? 0
+           if expandedStates.count != postCount {
+               expandedStates = Array(repeating: false, count: postCount)
+           }
+        
         if viewModel?.items.value?.count ?? 0 == 0 {
             newsView.isHidden = false
             newsTbl.isHidden = true
@@ -327,6 +333,7 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
         }else {
             var cell = tableView.cell(type: PostsTableViewCell.self, indexPath)
             cell.model = viewModel?.posts.value?[safe: indexPath.row]
+            cell.setup()
             if expandedStates.count != 0 {
                 let isExpanded = expandedStates[indexPath.item]
                 let text = viewModel?.posts.value?[safe: indexPath.row]?.description ?? ""
@@ -335,7 +342,6 @@ extension HomeVC:UITableViewDelegate , UITableViewDataSource {
                     self.postsTbl.reloadRows(at: [indexPath], with: .automatic)
                 }
             }
-            cell.setup()
             cell.delegate = self
             return cell
         }

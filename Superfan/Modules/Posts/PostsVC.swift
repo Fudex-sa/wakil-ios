@@ -39,6 +39,8 @@ extension PostsVC {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+        expandedStates.removeAll()
+
     }
     override func bind() {
         super.bind()
@@ -82,6 +84,10 @@ extension PostsVC {
         }
     }
     func reload(){
+        let postCount = viewModel?.items.value?.count ?? 0
+           if expandedStates.count != postCount {
+               expandedStates = Array(repeating: false, count: postCount)
+           }
         if viewModel?.items.value?.count ?? 0 == 0 {
             postsTbl.isHidden = true
             showEmptyScreen(for: 400 , title: "There are no posts available".localized)
