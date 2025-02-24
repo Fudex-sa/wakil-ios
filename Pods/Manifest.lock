@@ -30,6 +30,9 @@ PODS:
   - Firebase/Crashlytics (9.3.0):
     - Firebase/CoreOnly
     - FirebaseCrashlytics (~> 9.3.0)
+  - Firebase/DynamicLinks (9.3.0):
+    - Firebase/CoreOnly
+    - FirebaseDynamicLinks (~> 9.3.0)
   - Firebase/Messaging (9.3.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 9.3.0)
@@ -70,6 +73,8 @@ PODS:
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (~> 2.1)
+  - FirebaseDynamicLinks (9.3.0):
+    - FirebaseCore (~> 9.0)
   - FirebaseInstallations (9.3.0):
     - FirebaseCore (~> 9.0)
     - GoogleUtilities/Environment (~> 7.7)
@@ -171,6 +176,7 @@ DEPENDENCIES:
   - FBSDKShareKit (~> 14.0)
   - Firebase
   - Firebase/Crashlytics
+  - Firebase/DynamicLinks
   - Firebase/Messaging
   - FloatingTabBarController
   - GoogleMaps (= 3.0.3)
@@ -204,6 +210,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseCoreInternal
     - FirebaseCrashlytics
+    - FirebaseDynamicLinks
     - FirebaseInstallations
     - FirebaseMessaging
     - FloatingTabBarController
@@ -245,6 +252,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 060eb57cc56dfaf40b1b1b5874a5c17c41ce79f8
   FirebaseCoreInternal: 635d1c9a612a6502b6377a0c92af83758076ffff
   FirebaseCrashlytics: 65a5b349e664e986e6c7486b0a9b5ed8c11d0491
+  FirebaseDynamicLinks: af0acc2d1fa117a074e84a3c06a1d9f817443490
   FirebaseInstallations: 54b40022cb06e462740c9f2b9fbe38b5e78a825a
   FirebaseMessaging: 2f6e38b6133059eb796ec224104f09379298a8c3
   FloatingTabBarController: 2e5aeb6a5e28cd907c10f172437e48788a214f31
@@ -268,6 +276,6 @@ SPEC CHECKSUMS:
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
 
-PODFILE CHECKSUM: 435fa07d487b1f55055b13efee2b608ec18c7bc0
+PODFILE CHECKSUM: 2a2b341f075e05e70069f6be122d56797838d459
 
 COCOAPODS: 1.15.2

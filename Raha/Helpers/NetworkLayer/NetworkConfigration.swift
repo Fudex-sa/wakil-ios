@@ -1,0 +1,135 @@
+//
+//  EndPoint.swift
+//  SupportI
+//
+//  Created by Mohamed Abdu on 3/20/20.
+//  Copyright © 2020 MohamedAbdu. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+// MARK: - ...  Network layer configration
+struct NetworkConfigration {
+    enum Environment {
+        case live
+        case test
+    }
+    struct Config {
+        static var environment: Environment = .live  // Change this to .test for testing
+
+        static var baseURL: String {
+            switch environment {
+            case .live:
+                return "http://sfanz.co/api/v4/"
+            case .test:
+                return "https://superfan.fudex-tech.net/api/v4/"
+            }
+        }
+        static var firebaseTopic: String {
+            switch environment {
+            case .live:
+                return "superfan_ios_live"
+            case .test:
+                return "superfan_ios_demo"
+            }
+        }
+    }
+    static var _URL: String?
+//    static var URL: String = "http://sfanz.co/api/v2/"
+    static var URL: String = Config.baseURL
+    static let VERSION = "v1"
+    static var useAuth: Bool = false
+    static var environment: NetworkConfigration.AppEnvironment? {
+        let env = Bundle.main.infoDictionary?["ENV"] as? String ?? ""
+        switch env {
+            case "Development":
+                return .Development
+            case "Testing":
+                return .Testing
+            case "Beta":
+                return .Beta
+            case "Production":
+                return .Production
+            default:
+                return .Development
+        }
+    }
+   
+    // MARK: - ...  The Endpoints
+    public enum EndPoint: String {
+        case forceUpdate = "/api/app/register/force-update"
+        case login = "fan/login"
+        case countries
+        case states = "cities"
+        case validteregister = "checkRegisterValidation"
+        case register = "fan/register"
+        case news = "fan/news"
+        case confirmotp = "fan/confirm-otp"
+        case sendotp = "fan/send-otp"
+        case resetpass = "fan/forgotPassword"
+        case checkotp = "fan/check-otp"
+        case updateemail = "fan/updateEmail"
+        case updatepassword = "fan/updatePassword"
+        case sendotpupdatephone = "fan/send-otp-mobile"
+        case updatephone = "fan/update-otp-mobile"
+        case profile = "fan/profile"
+        case updateprofile = "fan/profile/update"
+        case deleteaccount = "fan/account/delete"
+        case matches
+        case todaymatxh = "todayMatches"
+        case perviousmatch = "previousMatches"
+        case nextmatches = "nextMatches"
+        case home = "fan/home"
+        case players = "fan/players"
+        case leagues = "leagues"
+        case clubs = "fan/clubs"
+        case setting
+        case favclub = "fan/fanFavouriteClubUpdate"
+        case contactus = "fan/sendContact"
+        case logout = "fan/logout"
+        case clubdetails = "fan/clubs/"
+        case paymentmethod = "checkoutDetails"
+        case tryouts = "fan/tryouts"
+        case maketryout = "fan/makeTryout"
+        case mytryouts = "fan/myTryouts"
+        case tryoutsstatus = "fan/myTryoutsFilters"
+        case notificationcount = "fan/notificationsCount"
+        case notifications = "fan/notifications"
+        case socialLogin = "fan/checkSocialUser"
+        case years = "fan/years"
+        case playerserach = "fan/players/search"
+        case posts = "fan/posts"
+        case myposts = "fan/myPosts"
+        case deletemedia = "fan/postMedia"
+        case comments = "fan/comments"
+        case packages = "fan/packages"
+        case mySubscriptions = "fan/mySubscriptions"
+        case Subscriptions = "fan/subscriptions"
+        case backstages = "fan/backstages"
+        case standing
+        case paymentMethods
+        case refreshToken = "/api/app/register/refresh-token"
+        case checkSubscriptionSellers = "fan/checkSubscriptionSellers"
+        case settingsubscribe = "setting/packages_available_v4"
+    }
+}
+
+extension NetworkConfigration.EndPoint {
+    static func endPoint(point: NetworkConfigration.EndPoint, paramters: [Any]) -> String {
+        let method = NetworkManager.instance.slugs(point, paramters)
+        return method
+    }
+}
+
+
+extension NetworkConfigration {
+    
+    enum AppEnvironment: String {
+        case Development
+        case Testing
+        case Beta
+        case Production
+    }
+    
+}

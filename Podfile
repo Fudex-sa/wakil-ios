@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Superfan' do
+target 'Raha' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -31,6 +31,7 @@ pod 'FBSDKShareKit', '~> 14.0'
 pod 'GoogleSignIn'
 pod 'Cache'
 pod 'FloatingTabBarController'
+pod 'Firebase/DynamicLinks'
 end
 
 post_install do |installer|
