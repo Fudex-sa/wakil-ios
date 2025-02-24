@@ -101,39 +101,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
-    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        guard let incomingURL = userActivity.webpageURL else {
-            print("No webpageURL in userActivity.")
-            return
-        }
-
-        DynamicLinks.dynamicLinks().handleUniversalLink(incomingURL) { [self] dynamicLink, error in
-            if let error = error {
-                print("Error handling dynamic link: \(error.localizedDescription)")
-                return
-            }
-            if let dynamicLink = dynamicLink {
-                let url = dynamicLink.url?.absoluteString ?? ""
-                if url.contains("news"){
-                    let id = substringAfterWord(in: url, word: "news/")
-                    HomeVC.itemId = id?.int ?? 0
-                    HomeVC.type = "news"
-                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-                }else if url.contains("posts"){
-                    let id = substringAfterWord(in: url, word: "posts/")
-                    HomeVC.itemId = id?.int ?? 0
-                    HomeVC.type = "posts"
-                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-                }else if url.contains("backstages"){
-                    let id = self.substringAfterWord(in: url, word: "backstages/")
-                    HomeVC.itemId = id?.int ?? 0
-                    HomeVC.type = "backstages"
-                    Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-                }
-                print("Error handling dynamic link: \(dynamicLink.url?.absoluteString)")
-            }
-        }
-    }
     func substringAfterWord(in text: String, word: String) -> String? {
         // Check if the word exists in the text
         guard let range = text.range(of: word) else {

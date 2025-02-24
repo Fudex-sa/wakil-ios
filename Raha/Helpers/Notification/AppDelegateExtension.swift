@@ -40,7 +40,7 @@ extension AppDelegate: FirebaseNotificationDelegate {
 //        } else {
 //            closure?(true)
 //        }
-//    }
+   }
 }
 
 extension AppDelegate {

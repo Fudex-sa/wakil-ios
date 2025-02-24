@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 // MARK: - ...  Coordinator for All Application
 class Coordinator: NSObject {
-    let storyboard: UIStoryboard = R.storyboard.onboardingStoryboard()
+    let storyboard: UIStoryboard = R.storyboard.loginStoryboard()
     // MARK: - ...  Restart the main storyboard
     func restart(storyboard: UIStoryboard = Coordinator.instance.storyboard) {
         let scene = storyboard.instantiateInitialViewController()
@@ -27,20 +27,20 @@ class Coordinator: NSObject {
         scene?.showNetworkFailScreen()
     }
     func maintance() {
-        guard let scene = R.storyboard.forceUpdateStoryboard.forceUpdateVC() else { return }
-        let view = UIApplication.topViewController() as? BaseController
-       view?.push(scene)
+//        guard let scene = R.storyboard.forceUpdateStoryboard.forceUpdateVC() else { return }
+//        let view = UIApplication.topViewController() as? BaseController
+//       view?.push(scene)
     }
     @objc dynamic func suscribpopup() {
-        guard let scene = R.storyboard.subscribePopupStoryboard.subscribePopupVC() else { return }
-        let view = UIApplication.topViewController() as? BaseController
-        view?.pushPop(scene)
+//        guard let scene = R.storyboard.subscribePopupStoryboard.subscribePopupVC() else { return }
+//        let view = UIApplication.topViewController() as? BaseController
+//        view?.pushPop(scene)
     }
     func forceupdate(msg: String) {
-        guard let scene = R.storyboard.forceUpdateStoryboard.forceUpdateVC() else { return }
-        let view = UIApplication.topViewController() as? BaseController
-        scene.msg = msg
-        view?.push(scene)
+//        guard let scene = R.storyboard.forceUpdateStoryboard.forceUpdateVC() else { return }
+//        let view = UIApplication.topViewController() as? BaseController
+//        scene.msg = msg
+//        view?.push(scene)
     }
     @objc dynamic func guest() {
 //        guard let scene = R.storyboard.main.guestPopUpViewController() else { return }

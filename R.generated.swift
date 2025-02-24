@@ -449,12 +449,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 72 files.
+  /// This `R.file` struct is generated, and contains static references to 76 files.
   struct file {
     /// Resource file `Config.xcconfig`.
     static let configXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Config", pathExtension: "xcconfig")
     /// Resource file `Development.xcconfig`.
     static let developmentXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Development", pathExtension: "xcconfig")
+    /// Resource file `Expo-Arabic-Bold.ttf`.
+    static let expoArabicBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Expo-Arabic-Bold", pathExtension: "ttf")
+    /// Resource file `Expo-Arabic-Book.ttf`.
+    static let expoArabicBookTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Expo-Arabic-Book", pathExtension: "ttf")
+    /// Resource file `Expo-Arabic-Light.ttf`.
+    static let expoArabicLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Expo-Arabic-Light", pathExtension: "ttf")
+    /// Resource file `Expo-Arabic-Medium.ttf`.
+    static let expoArabicMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Expo-Arabic-Medium", pathExtension: "ttf")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `Loading-Dark.gif`.
@@ -605,6 +613,30 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Development", withExtension: "xcconfig")`
     static func developmentXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.developmentXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Expo-Arabic-Bold", withExtension: "ttf")`
+    static func expoArabicBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.expoArabicBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Expo-Arabic-Book", withExtension: "ttf")`
+    static func expoArabicBookTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.expoArabicBookTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Expo-Arabic-Light", withExtension: "ttf")`
+    static func expoArabicLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.expoArabicLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Expo-Arabic-Medium", withExtension: "ttf")`
+    static func expoArabicMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.expoArabicMediumTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1031,10 +1063,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 31 fonts.
+  /// This `R.font` struct is generated, and contains static references to 35 fonts.
   struct font: Rswift.Validatable {
     /// Font `AllRoundGothicW03-Demi`.
     static let allRoundGothicW03Demi = Rswift.FontResource(fontName: "AllRoundGothicW03-Demi")
+    /// Font `ExpoArabic-Bold`.
+    static let expoArabicBold = Rswift.FontResource(fontName: "ExpoArabic-Bold")
+    /// Font `ExpoArabic-Book`.
+    static let expoArabicBook = Rswift.FontResource(fontName: "ExpoArabic-Book")
+    /// Font `ExpoArabic-Light`.
+    static let expoArabicLight = Rswift.FontResource(fontName: "ExpoArabic-Light")
+    /// Font `ExpoArabic-Medium`.
+    static let expoArabicMedium = Rswift.FontResource(fontName: "ExpoArabic-Medium")
     /// Font `Muli-BoldItalic`.
     static let muliBoldItalic = Rswift.FontResource(fontName: "Muli-BoldItalic")
     /// Font `Muli-ExtraLightItalic`.
@@ -1087,6 +1127,26 @@ struct R: Rswift.Validatable {
     /// `UIFont(name: "AllRoundGothicW03-Demi", size: ...)`
     static func allRoundGothicW03Demi(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: allRoundGothicW03Demi, size: size)
+    }
+
+    /// `UIFont(name: "ExpoArabic-Bold", size: ...)`
+    static func expoArabicBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: expoArabicBold, size: size)
+    }
+
+    /// `UIFont(name: "ExpoArabic-Book", size: ...)`
+    static func expoArabicBook(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: expoArabicBook, size: size)
+    }
+
+    /// `UIFont(name: "ExpoArabic-Light", size: ...)`
+    static func expoArabicLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: expoArabicLight, size: size)
+    }
+
+    /// `UIFont(name: "ExpoArabic-Medium", size: ...)`
+    static func expoArabicMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: expoArabicMedium, size: size)
     }
 
     /// `UIFont(name: "Muli-BoldItalic", size: ...)`
@@ -1211,6 +1271,10 @@ struct R: Rswift.Validatable {
 
     static func validate() throws {
       if R.font.allRoundGothicW03Demi(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AllRoundGothicW03-Demi' could not be loaded, is 'all_round.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.expoArabicBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Bold' could not be loaded, is 'Expo-Arabic-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.expoArabicBook(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Book' could not be loaded, is 'Expo-Arabic-Book.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.expoArabicLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Light' could not be loaded, is 'Expo-Arabic-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.expoArabicMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Medium' could not be loaded, is 'Expo-Arabic-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.muliBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-BoldItalic' could not be loaded, is 'Muli-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.muliExtraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-ExtraLight' could not be loaded, is 'Muli-ExtraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.muliExtraLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-ExtraLightItalic' could not be loaded, is 'Muli-ExtraLightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
