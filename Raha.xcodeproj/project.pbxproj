@@ -17,6 +17,21 @@
 		6636D7CC2C3AE370007116F7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6636D7C82C3AE36F007116F7 /* LoginVC.swift */; };
 		6636D7CD2C3AE370007116F7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6636D7C92C3AE36F007116F7 /* LoginViewModel.swift */; };
 		6636D7CE2C3AE370007116F7 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6636D7C62C3AE36F007116F7 /* LoginStoryboard.storyboard */; };
+		663C3F952D6DC8C700A2C80A /* VerifycodeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3F902D6DC8C700A2C80A /* VerifycodeCoordinator.swift */; };
+		663C3F962D6DC8C700A2C80A /* VerifycodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3F922D6DC8C700A2C80A /* VerifycodeModel.swift */; };
+		663C3F972D6DC8C700A2C80A /* VerifycodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3F932D6DC8C700A2C80A /* VerifycodeVC.swift */; };
+		663C3F982D6DC8C700A2C80A /* VerifycodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3F942D6DC8C700A2C80A /* VerifycodeViewModel.swift */; };
+		663C3F992D6DC8C700A2C80A /* VerifycodeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663C3F912D6DC8C700A2C80A /* VerifycodeStoryboard.storyboard */; };
+		663C3FA02D6DC90100A2C80A /* ForgetpasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3F9B2D6DC90100A2C80A /* ForgetpasswordCoordinator.swift */; };
+		663C3FA12D6DC90100A2C80A /* ForgetpasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3F9D2D6DC90100A2C80A /* ForgetpasswordModel.swift */; };
+		663C3FA22D6DC90100A2C80A /* ForgetpasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3F9E2D6DC90100A2C80A /* ForgetpasswordVC.swift */; };
+		663C3FA32D6DC90100A2C80A /* ForgetpasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3F9F2D6DC90100A2C80A /* ForgetpasswordViewModel.swift */; };
+		663C3FA42D6DC90100A2C80A /* ForgetpasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663C3F9C2D6DC90100A2C80A /* ForgetpasswordStoryboard.storyboard */; };
+		663C3FAB2D6DC92900A2C80A /* ResetpasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3FA62D6DC92900A2C80A /* ResetpasswordCoordinator.swift */; };
+		663C3FAC2D6DC92900A2C80A /* ResetpasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3FA82D6DC92900A2C80A /* ResetpasswordModel.swift */; };
+		663C3FAD2D6DC92900A2C80A /* ResetpasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3FA92D6DC92900A2C80A /* ResetpasswordVC.swift */; };
+		663C3FAE2D6DC92900A2C80A /* ResetpasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C3FAA2D6DC92900A2C80A /* ResetpasswordViewModel.swift */; };
+		663C3FAF2D6DC92900A2C80A /* ResetpasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663C3FA72D6DC92900A2C80A /* ResetpasswordStoryboard.storyboard */; };
 		6646125F2C4D25E000D3D7DD /* Splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646125E2C4D25E000D3D7DD /* Splashscreen.swift */; };
 		664DCAFD2C3BC2460011DB96 /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */; };
 		664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */; };
@@ -474,6 +489,21 @@
 		6636D7C72C3AE36F007116F7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		6636D7C82C3AE36F007116F7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		6636D7C92C3AE36F007116F7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		663C3F902D6DC8C700A2C80A /* VerifycodeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifycodeCoordinator.swift; sourceTree = "<group>"; };
+		663C3F912D6DC8C700A2C80A /* VerifycodeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VerifycodeStoryboard.storyboard; sourceTree = "<group>"; };
+		663C3F922D6DC8C700A2C80A /* VerifycodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifycodeModel.swift; sourceTree = "<group>"; };
+		663C3F932D6DC8C700A2C80A /* VerifycodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifycodeVC.swift; sourceTree = "<group>"; };
+		663C3F942D6DC8C700A2C80A /* VerifycodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifycodeViewModel.swift; sourceTree = "<group>"; };
+		663C3F9B2D6DC90100A2C80A /* ForgetpasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpasswordCoordinator.swift; sourceTree = "<group>"; };
+		663C3F9C2D6DC90100A2C80A /* ForgetpasswordStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetpasswordStoryboard.storyboard; sourceTree = "<group>"; };
+		663C3F9D2D6DC90100A2C80A /* ForgetpasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpasswordModel.swift; sourceTree = "<group>"; };
+		663C3F9E2D6DC90100A2C80A /* ForgetpasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpasswordVC.swift; sourceTree = "<group>"; };
+		663C3F9F2D6DC90100A2C80A /* ForgetpasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpasswordViewModel.swift; sourceTree = "<group>"; };
+		663C3FA62D6DC92900A2C80A /* ResetpasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetpasswordCoordinator.swift; sourceTree = "<group>"; };
+		663C3FA72D6DC92900A2C80A /* ResetpasswordStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetpasswordStoryboard.storyboard; sourceTree = "<group>"; };
+		663C3FA82D6DC92900A2C80A /* ResetpasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetpasswordModel.swift; sourceTree = "<group>"; };
+		663C3FA92D6DC92900A2C80A /* ResetpasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetpasswordVC.swift; sourceTree = "<group>"; };
+		663C3FAA2D6DC92900A2C80A /* ResetpasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetpasswordViewModel.swift; sourceTree = "<group>"; };
 		6646125E2C4D25E000D3D7DD /* Splashscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splashscreen.swift; sourceTree = "<group>"; };
 		664DCAF92C3BC2450011DB96 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
 		664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
@@ -986,6 +1016,42 @@
 				6636D7C92C3AE36F007116F7 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		663C3F8F2D6DC8AB00A2C80A /* Verifycode */ = {
+			isa = PBXGroup;
+			children = (
+				663C3F902D6DC8C700A2C80A /* VerifycodeCoordinator.swift */,
+				663C3F912D6DC8C700A2C80A /* VerifycodeStoryboard.storyboard */,
+				663C3F922D6DC8C700A2C80A /* VerifycodeModel.swift */,
+				663C3F932D6DC8C700A2C80A /* VerifycodeVC.swift */,
+				663C3F942D6DC8C700A2C80A /* VerifycodeViewModel.swift */,
+			);
+			path = Verifycode;
+			sourceTree = "<group>";
+		};
+		663C3F9A2D6DC8DB00A2C80A /* Forgetpassword */ = {
+			isa = PBXGroup;
+			children = (
+				663C3F9B2D6DC90100A2C80A /* ForgetpasswordCoordinator.swift */,
+				663C3F9C2D6DC90100A2C80A /* ForgetpasswordStoryboard.storyboard */,
+				663C3F9D2D6DC90100A2C80A /* ForgetpasswordModel.swift */,
+				663C3F9E2D6DC90100A2C80A /* ForgetpasswordVC.swift */,
+				663C3F9F2D6DC90100A2C80A /* ForgetpasswordViewModel.swift */,
+			);
+			path = Forgetpassword;
+			sourceTree = "<group>";
+		};
+		663C3FA52D6DC91200A2C80A /* Resetpassword */ = {
+			isa = PBXGroup;
+			children = (
+				663C3FA62D6DC92900A2C80A /* ResetpasswordCoordinator.swift */,
+				663C3FA72D6DC92900A2C80A /* ResetpasswordStoryboard.storyboard */,
+				663C3FA82D6DC92900A2C80A /* ResetpasswordModel.swift */,
+				663C3FA92D6DC92900A2C80A /* ResetpasswordVC.swift */,
+				663C3FAA2D6DC92900A2C80A /* ResetpasswordViewModel.swift */,
+			);
+			path = Resetpassword;
 			sourceTree = "<group>";
 		};
 		666B9EDF2D6DC08200E88890 /* Register */ = {
@@ -2190,6 +2256,9 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				663C3FA52D6DC91200A2C80A /* Resetpassword */,
+				663C3F9A2D6DC8DB00A2C80A /* Forgetpassword */,
+				663C3F8F2D6DC8AB00A2C80A /* Verifycode */,
 				666B9EDF2D6DC08200E88890 /* Register */,
 				6636D7C42C3AE34C007116F7 /* Login */,
 				6646125E2C4D25E000D3D7DD /* Splashscreen.swift */,
@@ -2493,7 +2562,9 @@
 				C86BF991266947F0002D87BC /* infoIconLight@2x.png in Resources */,
 				66C8C0942D6C687700096320 /* Expo-Arabic-Light.ttf in Resources */,
 				66C8C0952D6C687700096320 /* Expo-Arabic-Bold.ttf in Resources */,
+				663C3FA42D6DC90100A2C80A /* ForgetpasswordStoryboard.storyboard in Resources */,
 				E8339CA827CD262D000D5A6E /* Loading-Light.gif in Resources */,
+				663C3FAF2D6DC92900A2C80A /* ResetpasswordStoryboard.storyboard in Resources */,
 				7756A096253482EF00BFE53C /* RadioView.xib in Resources */,
 				C86BF9A4266947F0002D87BC /* warningIconSubtle.png in Resources */,
 				66C8C0932D6C687700096320 /* Expo-Arabic-Medium.ttf in Resources */,
@@ -2511,6 +2582,7 @@
 				666B9EE92D6DC09700E88890 /* RegisterStoryboard.storyboard in Resources */,
 				C86BF984266947F0002D87BC /* infoIcon@3x.png in Resources */,
 				E846000427A9786700007A44 /* Pull_To_Refresh.mp3 in Resources */,
+				663C3F992D6DC8C700A2C80A /* VerifycodeStoryboard.storyboard in Resources */,
 				C86BF98E266947F0002D87BC /* infoIconLight.png in Resources */,
 				664DCAFD2C3BC2460011DB96 /* Tajawal-Bold.ttf in Resources */,
 				C86BF986266947F0002D87BC /* errorIcon@3x.png in Resources */,
@@ -2674,6 +2746,10 @@
 				7756A15825348AD400BFE53C /* UISearchBarExtensions.swift in Sources */,
 				C86BF977266947F0002D87BC /* UIEdgeInsets+Extensions.swift in Sources */,
 				C8C0931A272ABDA200E2270A /* CombineControlProperty.swift in Sources */,
+				663C3F952D6DC8C700A2C80A /* VerifycodeCoordinator.swift in Sources */,
+				663C3F962D6DC8C700A2C80A /* VerifycodeModel.swift in Sources */,
+				663C3F972D6DC8C700A2C80A /* VerifycodeVC.swift in Sources */,
+				663C3F982D6DC8C700A2C80A /* VerifycodeViewModel.swift in Sources */,
 				C871C8CF272FED0600DCBD2D /* SwipeExpansionStyle.swift in Sources */,
 				7756A17E25348AD400BFE53C /* BoolExtensions.swift in Sources */,
 				C871C89A272FECF200DCBD2D /* TwitterDelegate.swift in Sources */,
@@ -2800,6 +2876,10 @@
 				C871C97F2730231300DCBD2D /* Collection+SkeletonEX.swift in Sources */,
 				C871C9962730231300DCBD2D /* CollectionSkeletonProtocol.swift in Sources */,
 				C871C8E3272FED5900DCBD2D /* GoogleMapHelper.swift in Sources */,
+				663C3FA02D6DC90100A2C80A /* ForgetpasswordCoordinator.swift in Sources */,
+				663C3FA12D6DC90100A2C80A /* ForgetpasswordModel.swift in Sources */,
+				663C3FA22D6DC90100A2C80A /* ForgetpasswordVC.swift in Sources */,
+				663C3FA32D6DC90100A2C80A /* ForgetpasswordViewModel.swift in Sources */,
 				C806799D266E2F80001591AF /* GuardUI.swift in Sources */,
 				C871C9992730231300DCBD2D /* SkeletonTableViewProtocols.swift in Sources */,
 				C853B95026D7F9450008F09D /* SPPermissionsList.swift in Sources */,
@@ -2934,6 +3014,10 @@
 				66AEC2D82C43C49900BC260E /* JWTDecode.swift in Sources */,
 				C84539842729880600004173 /* User.swift in Sources */,
 				C871C9842730231300DCBD2D /* UIView+Extension.swift in Sources */,
+				663C3FAB2D6DC92900A2C80A /* ResetpasswordCoordinator.swift in Sources */,
+				663C3FAC2D6DC92900A2C80A /* ResetpasswordModel.swift in Sources */,
+				663C3FAD2D6DC92900A2C80A /* ResetpasswordVC.swift in Sources */,
+				663C3FAE2D6DC92900A2C80A /* ResetpasswordViewModel.swift in Sources */,
 				C853B94E26D7F9450008F09D /* SPPermissionsPermissionIconView.swift in Sources */,
 				C871C99C2730231300DCBD2D /* SkeletonCollectionViewProtocols.swift in Sources */,
 				C853B96526D7F9450008F09D /* PresenterSP.swift in Sources */,

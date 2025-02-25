@@ -292,3 +292,7 @@
 "Approval of" = "الموافقة على";
 "(Terms & Conditions)" = "( الشروط والأحكام)";
 "Signup" = "تسجيل";
+"Activation Code" = "كود التفعيل";
+"To activate your account, please enter the code sent to" = "لتفعيل حسابك من فضلك قم بإدخال الكود الذي تم إرساله الى رقم";
+"Resend" = "إعادة إرسال الرمز";
+"Verify" = "تحقق";
