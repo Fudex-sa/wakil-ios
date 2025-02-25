@@ -12,7 +12,17 @@ import GoogleSignIn
 
 // MARK: - ...  ViewController - Vars
 class LoginVC: BaseController {
-  
+    @IBOutlet weak var regLbl: UILabel!
+    @IBOutlet weak var appleBtn: UIButton!
+    @IBOutlet weak var googleBtn: UIButton!
+    @IBOutlet weak var skipBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var forgetBtn: UIButton!
+    @IBOutlet weak var eyeBtn: UIButton!
+    @IBOutlet weak var passTxf: UITextField!
+    @IBOutlet weak var phoneTxf: UITextField!
+    @IBOutlet weak var langImg: UIImageView!
+    
     var viewModel: LoginViewModel?
     var coordinator: LoginCoordinator?
     let appleDriver = AppleDriver()

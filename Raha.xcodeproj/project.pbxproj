@@ -23,6 +23,11 @@
 		664DCAFF2C3BC2460011DB96 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */; };
 		664DCB002C3BC2460011DB96 /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */; };
 		664FE17F2C3BEB620081C90B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FE17E2C3BEB620081C90B /* PaddingLabel.swift */; };
+		666B9EE52D6DC09700E88890 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B9EE02D6DC09700E88890 /* RegisterCoordinator.swift */; };
+		666B9EE62D6DC09700E88890 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B9EE22D6DC09700E88890 /* RegisterModel.swift */; };
+		666B9EE72D6DC09700E88890 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B9EE32D6DC09700E88890 /* RegisterVC.swift */; };
+		666B9EE82D6DC09700E88890 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B9EE42D6DC09700E88890 /* RegisterViewModel.swift */; };
+		666B9EE92D6DC09700E88890 /* RegisterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666B9EE12D6DC09700E88890 /* RegisterStoryboard.storyboard */; };
 		66762D2E2C3EB79E00D36BC6 /* contact.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66762D2D2C3EB79D00D36BC6 /* contact.gif */; };
 		669BB0B52C7DFCC90061B8CC /* NotificationSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669BB0B42C7DFCC90061B8CC /* NotificationSubscriber.swift */; };
 		669E1B422C47F11B00950373 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B412C47F11B00950373 /* RoundedView.swift */; };
@@ -475,6 +480,11 @@
 		664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
 		664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
 		664FE17E2C3BEB620081C90B /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		666B9EE02D6DC09700E88890 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		666B9EE12D6DC09700E88890 /* RegisterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterStoryboard.storyboard; sourceTree = "<group>"; };
+		666B9EE22D6DC09700E88890 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		666B9EE32D6DC09700E88890 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		666B9EE42D6DC09700E88890 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		66762D2D2C3EB79D00D36BC6 /* contact.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = contact.gif; sourceTree = "<group>"; };
 		669BB0B42C7DFCC90061B8CC /* NotificationSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSubscriber.swift; sourceTree = "<group>"; };
 		669E1B412C47F11B00950373 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -976,6 +986,18 @@
 				6636D7C92C3AE36F007116F7 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		666B9EDF2D6DC08200E88890 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				666B9EE02D6DC09700E88890 /* RegisterCoordinator.swift */,
+				666B9EE12D6DC09700E88890 /* RegisterStoryboard.storyboard */,
+				666B9EE22D6DC09700E88890 /* RegisterModel.swift */,
+				666B9EE32D6DC09700E88890 /* RegisterVC.swift */,
+				666B9EE42D6DC09700E88890 /* RegisterViewModel.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		66AEC2CD2C43BF7400BC260E /* Apple */ = {
@@ -2168,6 +2190,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				666B9EDF2D6DC08200E88890 /* Register */,
 				6636D7C42C3AE34C007116F7 /* Login */,
 				6646125E2C4D25E000D3D7DD /* Splashscreen.swift */,
 			);
@@ -2485,6 +2508,7 @@
 				66F7C2F3278C68D800E449F6 /* Muli-SemiBold.ttf in Resources */,
 				C853B90626D7F8D60008F09D /* Localizable.strings in Resources */,
 				C84539A72729887000004173 /* NeoSansW23-Bold.ttf in Resources */,
+				666B9EE92D6DC09700E88890 /* RegisterStoryboard.storyboard in Resources */,
 				C86BF984266947F0002D87BC /* infoIcon@3x.png in Resources */,
 				E846000427A9786700007A44 /* Pull_To_Refresh.mp3 in Resources */,
 				C86BF98E266947F0002D87BC /* infoIconLight.png in Resources */,
@@ -2940,6 +2964,10 @@
 				C8127A1727298A1F005B8493 /* Errors.swift in Sources */,
 				7756A090253482EF00BFE53C /* AppDelegateExtension.swift in Sources */,
 				77A804F52738050700168453 /* CombineGesturesEvent.swift in Sources */,
+				666B9EE52D6DC09700E88890 /* RegisterCoordinator.swift in Sources */,
+				666B9EE62D6DC09700E88890 /* RegisterModel.swift in Sources */,
+				666B9EE72D6DC09700E88890 /* RegisterVC.swift in Sources */,
+				666B9EE82D6DC09700E88890 /* RegisterViewModel.swift in Sources */,
 				7756A17125348AD400BFE53C /* UIImageViewExtensions.swift in Sources */,
 				C80679A9266E3196001591AF /* ValidatorLabelUI+Ex.swift in Sources */,
 				C871C8A2272FECF200DCBD2D /* FacebookDelegate.swift in Sources */,
