@@ -296,3 +296,9 @@
 "To activate your account, please enter the code sent to" = "لتفعيل حسابك من فضلك قم بإدخال الكود الذي تم إرساله الى رقم";
 "Resend" = "إعادة إرسال الرمز";
 "Verify" = "تحقق";
+"Forgot Password" = "نسيت كلمة المرور";
+"Enter your mobile number to send the activation code" = "قم بإدخال رقك جوالك لارسال رمز التفعيل";
+"Send" = "إرسال";
+"Change Password" = "تغيير كلمة المرور";
+"Enter a new password to reopen your account" = "قم بإدخال كلمة مرور جديدة لإعادة فتح حسابك";
+"Save" = "حفظ";

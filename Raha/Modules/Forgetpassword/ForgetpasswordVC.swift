@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ForgetpasswordVC: BaseController {
+    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var phoneTxf: UITextField!
     var viewModel: ForgetpasswordViewModel?
     var coordinator: ForgetpasswordCoordinator?
 }

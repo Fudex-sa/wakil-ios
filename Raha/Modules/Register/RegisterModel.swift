@@ -9,5 +9,3 @@
 import Foundation
 
 // MARK: - ...  Entity
-class RegisterModel: Codable {
-}
