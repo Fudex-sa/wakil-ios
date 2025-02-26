@@ -88,6 +88,11 @@
 		66C2E0D42D6F30620027823E /* EditPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0D02D6F30620027823E /* EditPasswordVC.swift */; };
 		66C2E0D52D6F30620027823E /* EditPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0D12D6F30620027823E /* EditPasswordViewModel.swift */; };
 		66C2E0D62D6F30620027823E /* EditPasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C2E0CE2D6F30620027823E /* EditPasswordStoryboard.storyboard */; };
+		66C2E0DD2D6F34380027823E /* EditProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0D82D6F34380027823E /* EditProfileCoordinator.swift */; };
+		66C2E0DE2D6F34380027823E /* EditProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0DA2D6F34380027823E /* EditProfileModel.swift */; };
+		66C2E0DF2D6F34380027823E /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0DB2D6F34380027823E /* EditProfileVC.swift */; };
+		66C2E0E02D6F34380027823E /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0DC2D6F34380027823E /* EditProfileViewModel.swift */; };
+		66C2E0E12D6F34380027823E /* EditProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C2E0D92D6F34380027823E /* EditProfileStoryboard.storyboard */; };
 		66C8C0922D6C687700096320 /* Expo-Arabic-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C08E2D6C687600096320 /* Expo-Arabic-Book.ttf */; };
 		66C8C0932D6C687700096320 /* Expo-Arabic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C08F2D6C687600096320 /* Expo-Arabic-Medium.ttf */; };
 		66C8C0942D6C687700096320 /* Expo-Arabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C0902D6C687700096320 /* Expo-Arabic-Light.ttf */; };
@@ -596,6 +601,11 @@
 		66C2E0CF2D6F30620027823E /* EditPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordModel.swift; sourceTree = "<group>"; };
 		66C2E0D02D6F30620027823E /* EditPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordVC.swift; sourceTree = "<group>"; };
 		66C2E0D12D6F30620027823E /* EditPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewModel.swift; sourceTree = "<group>"; };
+		66C2E0D82D6F34380027823E /* EditProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCoordinator.swift; sourceTree = "<group>"; };
+		66C2E0D92D6F34380027823E /* EditProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfileStoryboard.storyboard; sourceTree = "<group>"; };
+		66C2E0DA2D6F34380027823E /* EditProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileModel.swift; sourceTree = "<group>"; };
+		66C2E0DB2D6F34380027823E /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		66C2E0DC2D6F34380027823E /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		66C8C08E2D6C687600096320 /* Expo-Arabic-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Book.ttf"; sourceTree = "<group>"; };
 		66C8C08F2D6C687600096320 /* Expo-Arabic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Medium.ttf"; sourceTree = "<group>"; };
 		66C8C0902D6C687700096320 /* Expo-Arabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Light.ttf"; sourceTree = "<group>"; };
@@ -1247,6 +1257,18 @@
 				66C2E0D12D6F30620027823E /* EditPasswordViewModel.swift */,
 			);
 			path = EditPassword;
+			sourceTree = "<group>";
+		};
+		66C2E0D72D6F340F0027823E /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				66C2E0D82D6F34380027823E /* EditProfileCoordinator.swift */,
+				66C2E0D92D6F34380027823E /* EditProfileStoryboard.storyboard */,
+				66C2E0DA2D6F34380027823E /* EditProfileModel.swift */,
+				66C2E0DB2D6F34380027823E /* EditProfileVC.swift */,
+				66C2E0DC2D6F34380027823E /* EditProfileViewModel.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		77021ABF2537455C006F720B /* SupportFiles */ = {
@@ -2420,6 +2442,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66C2E0D72D6F340F0027823E /* EditProfile */,
 				66C2E0CC2D6F30430027823E /* EditPassword */,
 				66C2E0C12D6F2D980027823E /* EditEmail */,
 				66C2E0B62D6F2BD50027823E /* EditPhone */,
@@ -2765,6 +2788,7 @@
 				C86BF98E266947F0002D87BC /* infoIconLight.png in Resources */,
 				664C815F2D6F20AA0086D0D4 /* ProfileStoryboard.storyboard in Resources */,
 				664DCAFD2C3BC2460011DB96 /* Tajawal-Bold.ttf in Resources */,
+				66C2E0E12D6F34380027823E /* EditProfileStoryboard.storyboard in Resources */,
 				C86BF986266947F0002D87BC /* errorIcon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3058,6 +3082,10 @@
 				E8603FD1280D80FA007E0C10 /* DelegateProxyPublisher.swift in Sources */,
 				6636D7CA2C3AE370007116F7 /* LoginCoordinator.swift in Sources */,
 				6636D7CB2C3AE370007116F7 /* LoginModel.swift in Sources */,
+				66C2E0DD2D6F34380027823E /* EditProfileCoordinator.swift in Sources */,
+				66C2E0DE2D6F34380027823E /* EditProfileModel.swift in Sources */,
+				66C2E0DF2D6F34380027823E /* EditProfileVC.swift in Sources */,
+				66C2E0E02D6F34380027823E /* EditProfileViewModel.swift in Sources */,
 				6636D7CC2C3AE370007116F7 /* LoginVC.swift in Sources */,
 				6636D7CD2C3AE370007116F7 /* LoginViewModel.swift in Sources */,
 				C86BF914266945E3002D87BC /* LocationDelegate.swift in Sources */,
