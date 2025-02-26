@@ -73,6 +73,16 @@
 		66BF52342D6F0EE60030B38A /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BF52302D6F0EE60030B38A /* MoreVC.swift */; };
 		66BF52352D6F0EE60030B38A /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BF52312D6F0EE60030B38A /* MoreViewModel.swift */; };
 		66BF52362D6F0EE60030B38A /* MoreStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66BF522E2D6F0EE60030B38A /* MoreStoryboard.storyboard */; };
+		66C2E0BC2D6F2BEC0027823E /* EditPhoneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0B72D6F2BEC0027823E /* EditPhoneCoordinator.swift */; };
+		66C2E0BD2D6F2BEC0027823E /* EditPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0B92D6F2BEC0027823E /* EditPhoneModel.swift */; };
+		66C2E0BE2D6F2BEC0027823E /* EditPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0BA2D6F2BEC0027823E /* EditPhoneVC.swift */; };
+		66C2E0BF2D6F2BEC0027823E /* EditPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0BB2D6F2BEC0027823E /* EditPhoneViewModel.swift */; };
+		66C2E0C02D6F2BEC0027823E /* EditPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C2E0B82D6F2BEC0027823E /* EditPhoneStoryboard.storyboard */; };
+		66C2E0C72D6F2DBF0027823E /* EditEmailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0C22D6F2DBF0027823E /* EditEmailCoordinator.swift */; };
+		66C2E0C82D6F2DBF0027823E /* EditEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0C42D6F2DBF0027823E /* EditEmailModel.swift */; };
+		66C2E0C92D6F2DBF0027823E /* EditEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0C52D6F2DBF0027823E /* EditEmailVC.swift */; };
+		66C2E0CA2D6F2DBF0027823E /* EditEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0C62D6F2DBF0027823E /* EditEmailViewModel.swift */; };
+		66C2E0CB2D6F2DBF0027823E /* EditEmailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C2E0C32D6F2DBF0027823E /* EditEmailStoryboard.storyboard */; };
 		66C8C0922D6C687700096320 /* Expo-Arabic-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C08E2D6C687600096320 /* Expo-Arabic-Book.ttf */; };
 		66C8C0932D6C687700096320 /* Expo-Arabic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C08F2D6C687600096320 /* Expo-Arabic-Medium.ttf */; };
 		66C8C0942D6C687700096320 /* Expo-Arabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C0902D6C687700096320 /* Expo-Arabic-Light.ttf */; };
@@ -566,6 +576,16 @@
 		66BF522F2D6F0EE60030B38A /* MoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreModel.swift; sourceTree = "<group>"; };
 		66BF52302D6F0EE60030B38A /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		66BF52312D6F0EE60030B38A /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
+		66C2E0B72D6F2BEC0027823E /* EditPhoneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneCoordinator.swift; sourceTree = "<group>"; };
+		66C2E0B82D6F2BEC0027823E /* EditPhoneStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		66C2E0B92D6F2BEC0027823E /* EditPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneModel.swift; sourceTree = "<group>"; };
+		66C2E0BA2D6F2BEC0027823E /* EditPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneVC.swift; sourceTree = "<group>"; };
+		66C2E0BB2D6F2BEC0027823E /* EditPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneViewModel.swift; sourceTree = "<group>"; };
+		66C2E0C22D6F2DBF0027823E /* EditEmailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailCoordinator.swift; sourceTree = "<group>"; };
+		66C2E0C32D6F2DBF0027823E /* EditEmailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEmailStoryboard.storyboard; sourceTree = "<group>"; };
+		66C2E0C42D6F2DBF0027823E /* EditEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailModel.swift; sourceTree = "<group>"; };
+		66C2E0C52D6F2DBF0027823E /* EditEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailVC.swift; sourceTree = "<group>"; };
+		66C2E0C62D6F2DBF0027823E /* EditEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewModel.swift; sourceTree = "<group>"; };
 		66C8C08E2D6C687600096320 /* Expo-Arabic-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Book.ttf"; sourceTree = "<group>"; };
 		66C8C08F2D6C687600096320 /* Expo-Arabic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Medium.ttf"; sourceTree = "<group>"; };
 		66C8C0902D6C687700096320 /* Expo-Arabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Light.ttf"; sourceTree = "<group>"; };
@@ -1181,6 +1201,30 @@
 				66BF52312D6F0EE60030B38A /* MoreViewModel.swift */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		66C2E0B62D6F2BD50027823E /* EditPhone */ = {
+			isa = PBXGroup;
+			children = (
+				66C2E0B72D6F2BEC0027823E /* EditPhoneCoordinator.swift */,
+				66C2E0B82D6F2BEC0027823E /* EditPhoneStoryboard.storyboard */,
+				66C2E0B92D6F2BEC0027823E /* EditPhoneModel.swift */,
+				66C2E0BA2D6F2BEC0027823E /* EditPhoneVC.swift */,
+				66C2E0BB2D6F2BEC0027823E /* EditPhoneViewModel.swift */,
+			);
+			path = EditPhone;
+			sourceTree = "<group>";
+		};
+		66C2E0C12D6F2D980027823E /* EditEmail */ = {
+			isa = PBXGroup;
+			children = (
+				66C2E0C22D6F2DBF0027823E /* EditEmailCoordinator.swift */,
+				66C2E0C32D6F2DBF0027823E /* EditEmailStoryboard.storyboard */,
+				66C2E0C42D6F2DBF0027823E /* EditEmailModel.swift */,
+				66C2E0C52D6F2DBF0027823E /* EditEmailVC.swift */,
+				66C2E0C62D6F2DBF0027823E /* EditEmailViewModel.swift */,
+			);
+			path = EditEmail;
 			sourceTree = "<group>";
 		};
 		77021ABF2537455C006F720B /* SupportFiles */ = {
@@ -2354,6 +2398,8 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66C2E0C12D6F2D980027823E /* EditEmail */,
+				66C2E0B62D6F2BD50027823E /* EditPhone */,
 				664C81552D6F20950086D0D4 /* Profile */,
 				66BF522C2D6F0ED50030B38A /* More */,
 				66BF52212D6F0EAF0030B38A /* Reservation */,
@@ -2621,6 +2667,7 @@
 				C86BF98C266947F0002D87BC /* errorIconSubtle@3x.png in Resources */,
 				66762D2E2C3EB79E00D36BC6 /* contact.gif in Resources */,
 				C86BF985266947F0002D87BC /* infoIconSubtle@2x.png in Resources */,
+				66C2E0C02D6F2BEC0027823E /* EditPhoneStoryboard.storyboard in Resources */,
 				664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */,
 				C86BF97E266947F0002D87BC /* warningIcon@2x.png in Resources */,
 				C8F358F2266E670A00FEE18B /* NetworkFailScreen.xib in Resources */,
@@ -2657,6 +2704,7 @@
 				66EA353E2C7F1E0600E271E3 /* GoogleService-Info.plist in Resources */,
 				C86BF98D266947F0002D87BC /* errorIconSubtle@2x.png in Resources */,
 				E8339CA927CD262D000D5A6E /* Loading-Dark.gif in Resources */,
+				66C2E0CB2D6F2DBF0027823E /* EditEmailStoryboard.storyboard in Resources */,
 				C871C736272FEB7C00DCBD2D /* Muli-LightItalic.ttf in Resources */,
 				C86BF997266947F0002D87BC /* successIconSubtle@3x.png in Resources */,
 				C871C731272FEB7C00DCBD2D /* all_round.ttf in Resources */,
@@ -2814,6 +2862,10 @@
 				C86BF9B9266947F0002D87BC /* MessageView.swift in Sources */,
 				7756A089253482EF00BFE53C /* Downloader.swift in Sources */,
 				7756A17025348AD400BFE53C /* UIApplicationExtensions.swift in Sources */,
+				66C2E0C72D6F2DBF0027823E /* EditEmailCoordinator.swift in Sources */,
+				66C2E0C82D6F2DBF0027823E /* EditEmailModel.swift in Sources */,
+				66C2E0C92D6F2DBF0027823E /* EditEmailVC.swift in Sources */,
+				66C2E0CA2D6F2DBF0027823E /* EditEmailViewModel.swift in Sources */,
 				66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */,
 				C84539822729880600004173 /* CellProtocol.swift in Sources */,
 				E78C27D428725F4C00B345AC /* URL+FileSize.swift in Sources */,
@@ -2954,6 +3006,10 @@
 				C86BF9A9266947F0002D87BC /* CornerRoundingView.swift in Sources */,
 				7756A17B25348AD400BFE53C /* SignedNumericExtensions.swift in Sources */,
 				C84539872729880600004173 /* Coordinator.swift in Sources */,
+				66C2E0BC2D6F2BEC0027823E /* EditPhoneCoordinator.swift in Sources */,
+				66C2E0BD2D6F2BEC0027823E /* EditPhoneModel.swift in Sources */,
+				66C2E0BE2D6F2BEC0027823E /* EditPhoneVC.swift in Sources */,
+				66C2E0BF2D6F2BEC0027823E /* EditPhoneViewModel.swift in Sources */,
 				7756A08E253482EF00BFE53C /* NetworkConfigration.swift in Sources */,
 				C871C99A2730231300DCBD2D /* UIView+CollectionSkeleton.swift in Sources */,
 				C871C8CC272FED0600DCBD2D /* SwipeCollectionViewCell+Accessibility.swift in Sources */,
