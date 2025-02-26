@@ -83,6 +83,11 @@
 		66C2E0C92D6F2DBF0027823E /* EditEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0C52D6F2DBF0027823E /* EditEmailVC.swift */; };
 		66C2E0CA2D6F2DBF0027823E /* EditEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0C62D6F2DBF0027823E /* EditEmailViewModel.swift */; };
 		66C2E0CB2D6F2DBF0027823E /* EditEmailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C2E0C32D6F2DBF0027823E /* EditEmailStoryboard.storyboard */; };
+		66C2E0D22D6F30620027823E /* EditPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0CD2D6F30620027823E /* EditPasswordCoordinator.swift */; };
+		66C2E0D32D6F30620027823E /* EditPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0CF2D6F30620027823E /* EditPasswordModel.swift */; };
+		66C2E0D42D6F30620027823E /* EditPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0D02D6F30620027823E /* EditPasswordVC.swift */; };
+		66C2E0D52D6F30620027823E /* EditPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C2E0D12D6F30620027823E /* EditPasswordViewModel.swift */; };
+		66C2E0D62D6F30620027823E /* EditPasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C2E0CE2D6F30620027823E /* EditPasswordStoryboard.storyboard */; };
 		66C8C0922D6C687700096320 /* Expo-Arabic-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C08E2D6C687600096320 /* Expo-Arabic-Book.ttf */; };
 		66C8C0932D6C687700096320 /* Expo-Arabic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C08F2D6C687600096320 /* Expo-Arabic-Medium.ttf */; };
 		66C8C0942D6C687700096320 /* Expo-Arabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66C8C0902D6C687700096320 /* Expo-Arabic-Light.ttf */; };
@@ -586,6 +591,11 @@
 		66C2E0C42D6F2DBF0027823E /* EditEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailModel.swift; sourceTree = "<group>"; };
 		66C2E0C52D6F2DBF0027823E /* EditEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailVC.swift; sourceTree = "<group>"; };
 		66C2E0C62D6F2DBF0027823E /* EditEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewModel.swift; sourceTree = "<group>"; };
+		66C2E0CD2D6F30620027823E /* EditPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordCoordinator.swift; sourceTree = "<group>"; };
+		66C2E0CE2D6F30620027823E /* EditPasswordStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPasswordStoryboard.storyboard; sourceTree = "<group>"; };
+		66C2E0CF2D6F30620027823E /* EditPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordModel.swift; sourceTree = "<group>"; };
+		66C2E0D02D6F30620027823E /* EditPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordVC.swift; sourceTree = "<group>"; };
+		66C2E0D12D6F30620027823E /* EditPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewModel.swift; sourceTree = "<group>"; };
 		66C8C08E2D6C687600096320 /* Expo-Arabic-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Book.ttf"; sourceTree = "<group>"; };
 		66C8C08F2D6C687600096320 /* Expo-Arabic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Medium.ttf"; sourceTree = "<group>"; };
 		66C8C0902D6C687700096320 /* Expo-Arabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expo-Arabic-Light.ttf"; sourceTree = "<group>"; };
@@ -1225,6 +1235,18 @@
 				66C2E0C62D6F2DBF0027823E /* EditEmailViewModel.swift */,
 			);
 			path = EditEmail;
+			sourceTree = "<group>";
+		};
+		66C2E0CC2D6F30430027823E /* EditPassword */ = {
+			isa = PBXGroup;
+			children = (
+				66C2E0CD2D6F30620027823E /* EditPasswordCoordinator.swift */,
+				66C2E0CE2D6F30620027823E /* EditPasswordStoryboard.storyboard */,
+				66C2E0CF2D6F30620027823E /* EditPasswordModel.swift */,
+				66C2E0D02D6F30620027823E /* EditPasswordVC.swift */,
+				66C2E0D12D6F30620027823E /* EditPasswordViewModel.swift */,
+			);
+			path = EditPassword;
 			sourceTree = "<group>";
 		};
 		77021ABF2537455C006F720B /* SupportFiles */ = {
@@ -2398,6 +2420,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66C2E0CC2D6F30430027823E /* EditPassword */,
 				66C2E0C12D6F2D980027823E /* EditEmail */,
 				66C2E0B62D6F2BD50027823E /* EditPhone */,
 				664C81552D6F20950086D0D4 /* Profile */,
@@ -2700,6 +2723,7 @@
 				C86BF981266947F0002D87BC /* MessageView.xib in Resources */,
 				C871C72C272FEB7C00DCBD2D /* Muli-Bold.ttf in Resources */,
 				C86BF99F266947F0002D87BC /* infoIcon.png in Resources */,
+				66C2E0D62D6F30620027823E /* EditPasswordStoryboard.storyboard in Resources */,
 				C86BF9A0266947F0002D87BC /* errorIconLight.png in Resources */,
 				66EA353E2C7F1E0600E271E3 /* GoogleService-Info.plist in Resources */,
 				C86BF98D266947F0002D87BC /* errorIconSubtle@2x.png in Resources */,
@@ -3124,6 +3148,10 @@
 				C871C97E2730231300DCBD2D /* RecoverableViewState.swift in Sources */,
 				7756A08B253482EF00BFE53C /* ApiHelpers.swift in Sources */,
 				C871C8CB272FED0600DCBD2D /* SwipeOptions.swift in Sources */,
+				66C2E0D22D6F30620027823E /* EditPasswordCoordinator.swift in Sources */,
+				66C2E0D32D6F30620027823E /* EditPasswordModel.swift in Sources */,
+				66C2E0D42D6F30620027823E /* EditPasswordVC.swift in Sources */,
+				66C2E0D52D6F30620027823E /* EditPasswordViewModel.swift in Sources */,
 				C871C89F272FECF200DCBD2D /* GoogleDriver.swift in Sources */,
 				C871C8D5272FED3000DCBD2D /* SwipeRefresh.swift in Sources */,
 				7756A17C25348AD400BFE53C /* DictionaryExtensions.swift in Sources */,
