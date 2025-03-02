@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import FBSDKCoreKit
-extension AppDelegate {
-    func initFB(application : UIApplication , options:[UIApplication.LaunchOptionsKey: Any]?) {
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: options)
-    }
-}
+//import FBSDKCoreKit
+//extension AppDelegate {
+//    func initFB(application : UIApplication , options:[UIApplication.LaunchOptionsKey: Any]?) {
+//        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: options)
+//    }
+//}

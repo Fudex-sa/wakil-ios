@@ -16,10 +16,13 @@ class GoogleModel: SocialModel {
     var givenName: String?
     var familyName: String?
     var email: String?
-    init(user: GIDGoogleUser) {
+    init(user: GIDGoogleUser?) {
         super.init(type: .google)
+        guard let user = user else {
+            return
+        }
         self.id = user.userID
-        self.token = user.authentication.idToken
+        self.token = user.accessToken.tokenString
         self.fullName = user.profile?.name
         self.givenName = user.profile?.givenName
         self.familyName = user.profile?.familyName

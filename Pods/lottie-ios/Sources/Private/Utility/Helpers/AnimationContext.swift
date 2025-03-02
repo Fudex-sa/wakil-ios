@@ -5,15 +5,17 @@
 //  Created by Brandon Withrow on 2/1/19.
 //
 
-import CoreGraphics
 import Foundation
 import QuartzCore
 
-/// A completion block for animations. `true` is passed in if the animation completed playing.
-public typealias LottieCompletionBlock = (Bool) -> Void
+/// A completion block for animations.
+///  - `true` is passed in if the animation completed playing.
+///  - `false` is passed in if the animation was interrupted and did not complete playing.
+public typealias LottieCompletionBlock = (_ completed: Bool) -> Void
 
 // MARK: - AnimationContext
 
+@available(iOS 13.0.0, *)
 struct AnimationContext {
 
   init(
@@ -34,11 +36,12 @@ struct AnimationContext {
 
 // MARK: Equatable
 
+@available(iOS 13.0.0, *)
 extension AnimationContext: Equatable {
   /// Whether or not the two given `AnimationContext`s are functionally equivalent
   ///  - This checks whether or not a completion handler was provided,
   ///    but does not check whether or not the two completion handlers are equivalent.
-  static func == (_ lhs: AnimationContext, _ rhs: AnimationContext) -> Bool {
+  static func ==(_ lhs: AnimationContext, _ rhs: AnimationContext) -> Bool {
     lhs.playTo == rhs.playTo
       && lhs.playFrom == rhs.playFrom
       && (lhs.closure.completionBlock == nil) == (rhs.closure.completionBlock == nil)
@@ -55,6 +58,7 @@ enum AnimationContextState {
 
 // MARK: - AnimationCompletionDelegate
 
+@available(iOS 13.0.0, *)
 class AnimationCompletionDelegate: NSObject, CAAnimationDelegate {
 
   // MARK: Lifecycle
@@ -69,13 +73,13 @@ class AnimationCompletionDelegate: NSObject, CAAnimationDelegate {
   public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     guard ignoreDelegate == false else { return }
     animationState = flag ? .complete : .cancelled
-    if let animationLayer = animationLayer, let key = animationKey {
+    if let animationLayer, let key = animationKey {
       animationLayer.removeAnimation(forKey: key)
       if flag {
         animationLayer.currentFrame = (anim as! CABasicAnimation).toValue as! CGFloat
       }
     }
-    if let completionBlock = completionBlock {
+    if let completionBlock {
       completionBlock(flag)
     }
   }
@@ -85,7 +89,7 @@ class AnimationCompletionDelegate: NSObject, CAAnimationDelegate {
   var animationLayer: RootAnimationLayer?
   var animationKey: String?
   var ignoreDelegate = false
-  var animationState: AnimationContextState = .playing
+  var animationState = AnimationContextState.playing
 
   let completionBlock: LottieCompletionBlock?
 }

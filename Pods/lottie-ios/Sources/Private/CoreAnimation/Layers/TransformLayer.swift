@@ -2,6 +2,7 @@
 // Copyright © 2021 Airbnb Inc. All rights reserved.
 
 /// The CALayer type responsible for only rendering the `transform` of a `LayerModel`
+@available(iOS 13.0.0, *)
 final class TransformLayer: BaseCompositionLayer {
 
   /// `TransformLayer`s don't render any visible content,

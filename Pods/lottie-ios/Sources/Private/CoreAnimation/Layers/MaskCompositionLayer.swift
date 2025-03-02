@@ -6,6 +6,7 @@ import QuartzCore
 // MARK: - MaskCompositionLayer
 
 /// The CALayer type responsible for rendering the `Mask` of a `BaseCompositionLayer`
+@available(iOS 13.0.0, *)
 final class MaskCompositionLayer: CALayer {
 
   // MARK: Lifecycle
@@ -66,6 +67,7 @@ final class MaskCompositionLayer: CALayer {
 
 // MARK: AnimationLayer
 
+@available(iOS 13.0.0, *)
 extension MaskCompositionLayer: AnimationLayer {
   func setupAnimations(context: LayerAnimationContext) throws {
     for maskLayer in maskLayers {
@@ -74,8 +76,9 @@ extension MaskCompositionLayer: AnimationLayer {
   }
 }
 
-// MARK: - MaskLayer
+// MARK: MaskCompositionLayer.MaskLayer
 
+@available(iOS 13.0.0, *)
 extension MaskCompositionLayer {
   final class MaskLayer: CAShapeLayer {
 
@@ -112,6 +115,7 @@ extension MaskCompositionLayer {
 
 // MARK: - MaskCompositionLayer.MaskLayer + AnimationLayer
 
+@available(iOS 13.0.0, *)
 extension MaskCompositionLayer.MaskLayer: AnimationLayer {
   func setupAnimations(context: LayerAnimationContext) throws {
     let shouldInvertMask = (maskModel.mode.usableMode == .subtract && !maskModel.inverted)

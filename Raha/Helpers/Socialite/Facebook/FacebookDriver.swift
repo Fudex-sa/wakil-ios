@@ -1,90 +1,81 @@
 
-import UIKit
-import FBSDKLoginKit
-
-typealias CallbackFacebook = (FacebookModel) -> Void
-
-class FacebookDriver: SocialError, SocialIndicator {
-    weak var viewController: UIViewController!
-    init(delegate: UIViewController) {
-        viewController = delegate
-    }
-    
-    
-    static func logout() {
-        AccessToken.current = nil
-        LoginManager().logOut()
-    }
-    // Once the button is clicked, show the login dialog
-    func checkFBlogin() -> Bool {
-        if(AccessToken.current != nil) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    //make login by fbsdk
-
-    func callback(completionHandler: @escaping CallbackFacebook) {
-        if checkFBlogin() {
-            self.fetchUserProfile { facebook in
-                completionHandler(facebook)
-            }
-        } else{
-            let loginManager = LoginManager()
-
-            loginManager.logIn(permissions: [ "public_profile","email" ],from: viewController) { result,error  in
-                if(error != nil){
-                    self.alertError()
-                }
-                if let resultLogin = result {
-                    if resultLogin.isCancelled {
-                        self.alertError()
-                    } else {
-                        self.startLoading()
-                        self.fetchUserProfile { facebook in
-                            completionHandler(facebook)
-                        }
-                    }
-                }
-
-            }
-        }
-
-    }
-
-    //handler graph
-    func fetchUserProfile(completionHandler: @escaping CallbackFacebook) {
-        let requestMe = GraphRequest.init(graphPath: "me", parameters: ["fields": "id, name, first_name, relationship_status , email ,picture.width(480).height(480)"])
-        let connection = GraphRequestConnection()
-        connection.add(requestMe, completion: { (connectn, result, error) in
-            self.stopLoading()
-            if (error == nil) {
-                
-                let fbDetails = result as! NSDictionary
-                
-                do {
-                    print(result ?? [:] , fbDetails)
-                    let jsonData = try JSONSerialization.data(withJSONObject: fbDetails, options: .prettyPrinted)
-                    
-                    // here "jsonData" is the dictionary encoded in JSON data
-                    
-                    //let decoded = try JSONSerialization.jsonObject(with: jsonData, options: [])
-                    
-                    // here "decoded" is of type `Any`, decoded from JSON data
-                    let facebook  = FacebookModel.convertToModel(response: jsonData)
-                    facebook.parseImage(dic: fbDetails)
-                    completionHandler(facebook)
-                    
-                } catch {
-                    self.alertError()
-                }
-            } else {
-                self.alertError()
-            }
-        })
-        connection.start()
-    }
-    //end
-}
+//import UIKit
+//import FacebookLogin
+//import FacebookCore
+//
+//typealias CallbackFacebook = (FacebookModel) -> Void
+//
+//class FacebookDriver: SocialError, SocialIndicator {
+//    weak var viewController: UIViewController?
+//    
+//    init(delegate: UIViewController) {
+//        self.viewController = delegate
+//    }
+//
+//    static func logout() {
+//        Profile.current = nil
+//        AccessToken.current = nil
+//        LoginManager().logOut()
+//    }
+//
+//    func checkFBlogin() -> Bool {
+//        return AccessToken.current != nil
+//    }
+//
+//    func callback(completionHandler: @escaping CallbackFacebook) {
+//        if checkFBlogin() {
+//            fetchUserProfile(completionHandler: completionHandler)
+//        } else {
+//            let loginManager = LoginManager()
+//            loginManager.logIn(permissions: ["public_profile", "email"], viewController: viewController) { result in
+//                switch result {
+//                case .success(_, _, _):
+//                    self.startLoading()
+//                    self.fetchUserProfile(completionHandler: completionHandler)
+//                case .failed(let error):
+//                    print("Facebook Login Failed: \(error.localizedDescription)")
+//                    self.alertError()
+//                case .cancelled:
+//                    print("Facebook Login Cancelled")
+//                    self.alertError()
+//                }
+//            }
+//        }
+//    }
+//
+//    func fetchUserProfile(completionHandler: @escaping CallbackFacebook) {
+//        guard let accessToken = AccessToken.current else {
+//            print("No access token available")
+//            self.alertError()
+//            return
+//        }
+//
+//        let request = GraphRequest(graphPath: "me", parameters: [
+//            "fields": "id,name,first_name,relationship_status,email,picture.width(480).height(480)"
+//        ], tokenString: accessToken.tokenString, version: nil, httpMethod: .get)
+//
+//        request.start { _, result, error in
+//            self.stopLoading()
+//            if let error = error {
+//                print("GraphRequest Error: \(error.localizedDescription)")
+//                self.alertError()
+//                return
+//            }
+//
+//            if let fbDetails = result as? [String: Any] {
+//                do {
+//                    let jsonData = try JSONSerialization.data(withJSONObject: fbDetails, options: .prettyPrinted)
+//                    let facebook = FacebookModel.convertToModel(response: jsonData)
+//                    facebook.parseImage(dic: fbDetails)
+//                    completionHandler(facebook)
+//                } catch {
+//                    print("JSON Parsing Error")
+//                    self.alertError()
+//                }
+//            } else {
+//                print("Unexpected Graph API Response")
+//                self.alertError()
+//            }
+//        }
+//    }
+//}

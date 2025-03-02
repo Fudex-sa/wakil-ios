@@ -6,6 +6,7 @@ import QuartzCore
 // MARK: - ImageLayer
 
 /// The `CALayer` type responsible for rendering `ImageLayerModel`s
+@available(iOS 13.0.0, *)
 final class ImageLayer: BaseCompositionLayer {
 
   // MARK: Lifecycle
@@ -42,12 +43,13 @@ final class ImageLayer: BaseCompositionLayer {
       let image = context.imageProvider.imageForAsset(asset: imageAsset)
     else {
       self.imageAsset = nil
-      contents = nil
+      contentsLayer.contents = nil
       return
     }
 
     self.imageAsset = imageAsset
-    contents = image
+    contentsLayer.contents = image
+    contentsLayer.contentsGravity = context.imageProvider.contentsGravity(for: imageAsset)
     setNeedsLayout()
   }
 
@@ -60,11 +62,12 @@ final class ImageLayer: BaseCompositionLayer {
 
 // MARK: CustomLayoutLayer
 
+@available(iOS 13.0.0, *)
 extension ImageLayer: CustomLayoutLayer {
   func layout(superlayerBounds: CGRect) {
     anchorPoint = .zero
 
-    guard let imageAsset = imageAsset else {
+    guard let imageAsset else {
       bounds = superlayerBounds
       return
     }

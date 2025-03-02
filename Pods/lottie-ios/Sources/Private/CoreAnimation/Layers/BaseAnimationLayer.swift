@@ -5,6 +5,7 @@ import QuartzCore
 
 /// A base `CALayer` that manages the frame and animations
 /// of its `sublayers` and `mask`
+@available(iOS 13.0.0, *)
 class BaseAnimationLayer: CALayer, AnimationLayer {
 
   // MARK: Internal

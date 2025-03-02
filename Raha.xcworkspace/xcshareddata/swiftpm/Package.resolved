@@ -1,0 +1,15 @@
+{
+  "originHash" : "0fc6296f171b0a31455fcf3a51a1f1adf37ff3a5e6837753db6c16240d4ed82f",
+  "pins" : [
+    {
+      "identity" : "mbprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jdg/MBProgressHUD",
+      "state" : {
+        "branch" : "master",
+        "revision" : "4a7c5f3e53cdea77c5dcb8578c2ee5acacdf6781"
+      }
+    }
+  ],
+  "version" : 3
+}

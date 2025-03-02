@@ -7,31 +7,29 @@ target 'Raha' do
 
   # Pods for Speed
 
-pod 'Alamofire', '~> 5.4'
-pod 'Kingfisher', '= 6.3.1'
+pod 'Alamofire'
+pod 'Kingfisher'
 pod 'Firebase'
 pod 'Firebase/Messaging'
 pod 'Firebase/Crashlytics'
 pod 'IQKeyboardManagerSwift'
-pod 'R.swift'
+pod 'R.swift', '= 6.1.0'
 
 pod 'Cosmos'
-pod 'MBProgressHUD'
-pod 'GooglePlaces', '= 3.0.3'
-pod 'GoogleMaps', '= 3.0.3'
+pod 'GooglePlaces'
+pod 'GoogleMaps'
 pod 'GooglePlacesSearchController'
 pod 'SwiftyGif'
 pod 'lottie-ios'
 pod 'KDCircularProgress'
 pod 'CameraManager', '~> 5.1'
 
-pod 'FBSDKCoreKit', '~> 14.0'
-pod 'FBSDKLoginKit', '~> 14.0'
-pod 'FBSDKShareKit', '~> 14.0'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 pod 'GoogleSignIn'
 pod 'Cache'
 pod 'FloatingTabBarController'
-pod 'Firebase/DynamicLinks'
 end
 
 post_install do |installer|

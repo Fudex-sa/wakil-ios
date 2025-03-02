@@ -8,11 +8,6 @@
 	<array>
 		<string>Default</string>
 	</array>
-	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>applinks:superfan.page.link</string>
-		<string>https://superfan.page.link</string>
-	</array>
 	<key>keychain-access-groups</key>
 	<array/>
 </dict>

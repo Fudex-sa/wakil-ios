@@ -26,12 +26,6 @@ variant_for_slice()
   "FBSDKShareKit.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "FBSDKShareKit.xcframework/tvos-arm64")
-    echo ""
-    ;;
-  "FBSDKShareKit.xcframework/tvos-arm64_x86_64-simulator")
-    echo "simulator"
-    ;;
   esac
 }
 
@@ -45,12 +39,6 @@ archs_for_slice()
     echo "arm64 x86_64"
     ;;
   "FBSDKShareKit.xcframework/ios-arm64_x86_64-simulator")
-    echo "arm64 x86_64"
-    ;;
-  "FBSDKShareKit.xcframework/tvos-arm64")
-    echo "arm64"
-    ;;
-  "FBSDKShareKit.xcframework/tvos-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
   esac

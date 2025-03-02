@@ -7,7 +7,7 @@ import QuartzCore
 
 protocol OpacityAnimationModel {
   /// The opacity animation to apply to a `CALayer`
-  var opacity: KeyframeGroup<Vector1D> { get }
+  var opacity: KeyframeGroup<LottieVector1D> { get }
 }
 
 // MARK: - Transform + OpacityAnimationModel
@@ -34,13 +34,14 @@ extension Stroke: OpacityAnimationModel { }
 
 extension GradientStroke: OpacityAnimationModel { }
 
+@available(iOS 13.0.0, *)
 extension CALayer {
   /// Adds the opacity animation from the given `OpacityAnimationModel` to this layer
   @nonobjc
   func addOpacityAnimation(for opacity: OpacityAnimationModel, context: LayerAnimationContext) throws {
     try addAnimation(
       for: .opacity,
-      keyframes: opacity.opacity.keyframes,
+      keyframes: opacity.opacity,
       value: {
         // Lottie animation files express opacity as a numerical percentage value
         // (e.g. 0%, 50%, 100%) so we divide by 100 to get the decimal values

@@ -32,3 +32,15 @@ class Box<T> {
         self.value = value
     }
 }
+
+@available(iOS 13.0.0, *)
+actor ActorBox<T> {
+    var value: T
+    init(_ value: T) {
+        self.value = value
+    }
+    
+    func setValue(_ value: T) {
+        self.value = value
+    }
+}

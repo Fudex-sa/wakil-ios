@@ -54,6 +54,7 @@
 		666B9EE92D6DC09700E88890 /* RegisterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666B9EE12D6DC09700E88890 /* RegisterStoryboard.storyboard */; };
 		66762D2E2C3EB79E00D36BC6 /* contact.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66762D2D2C3EB79D00D36BC6 /* contact.gif */; };
 		669BB0B52C7DFCC90061B8CC /* NotificationSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669BB0B42C7DFCC90061B8CC /* NotificationSubscriber.swift */; };
+		669D84412D7466A200A752E6 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 669D84402D7466A200A752E6 /* MBProgressHUD */; };
 		669E1B422C47F11B00950373 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B412C47F11B00950373 /* RoundedView.swift */; };
 		669E1B442C47F15700950373 /* RoundedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B432C47F15700950373 /* RoundedBottomView.swift */; };
 		66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */; };
@@ -1077,6 +1078,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669D84412D7466A200A752E6 /* MBProgressHUD in Frameworks */,
 				FABF6C7EDEEE24541BD8C923 /* Pods_Raha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2695,15 +2697,18 @@
 				77C5F4942534814100E70C4C /* Frameworks */,
 				7712A1FF25386FFB0072BAEC /* R.Swift */,
 				77C5F4932534814100E70C4C /* Sources */,
-				65A791F5E2C2619C8F1314EA /* [CP] Embed Pods Frameworks */,
-				C4EEDC01C3CC02309B50D388 /* [CP] Copy Pods Resources */,
 				E866BDE9281AB53200CD91F4 /* Crashlytics  */,
+				D856895DC772F3C467933D3C /* [CP] Embed Pods Frameworks */,
+				0A8C421F59D5885D6752ADFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Raha;
+			packageProductDependencies = (
+				669D84402D7466A200A752E6 /* MBProgressHUD */,
+			);
 			productName = BaseIOS;
 			productReference = 77C5F4972534814100E70C4C /* Raha.app */;
 			productType = "com.apple.product-type.application";
@@ -2733,6 +2738,9 @@
 				ar,
 			);
 			mainGroup = 77C5F48E2534814100E70C4C;
+			packageReferences = (
+				669D843F2D7466A200A752E6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+			);
 			productRefGroup = 77C5F4982534814100E70C4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2868,21 +2876,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		65A791F5E2C2619C8F1314EA /* [CP] Embed Pods Frameworks */ = {
+		0A8C421F59D5885D6752ADFF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7712A1FF25386FFB0072BAEC /* R.Swift */ = {
@@ -2905,23 +2913,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		C4EEDC01C3CC02309B50D388 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D04B84AFBD0D5C844C49C01A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2942,6 +2933,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D856895DC772F3C467933D3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Raha/Pods-Raha-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E866BDE9281AB53200CD91F4 /* Crashlytics  */ = {
@@ -3777,6 +3785,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		669D843F2D7466A200A752E6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		669D84402D7466A200A752E6 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 669D843F2D7466A200A752E6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 77C5F48F2534814100E70C4C /* Project object */;
 }

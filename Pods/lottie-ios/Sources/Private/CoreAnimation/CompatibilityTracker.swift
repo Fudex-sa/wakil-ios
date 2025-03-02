@@ -123,6 +123,7 @@ extension LayerContext: CompatibilityTrackerProviding {
 
 // MARK: - LayerAnimationContext + CompatibilityTrackerProviding
 
+@available(iOS 13.0.0, *)
 extension LayerAnimationContext: CompatibilityTrackerProviding {
   var compatibilityIssueContext: String {
     currentKeypath.fullPath

@@ -3,6 +3,7 @@
 
 import QuartzCore
 
+@available(iOS 13.0.0, *)
 extension CAAnimation {
   /// Creates a `CAAnimation` that wraps this animation,
   /// applying timing-related configuration from the given `LayerAnimationContext`.
@@ -21,7 +22,7 @@ extension CAAnimation {
     //  0%                                100%
     //
     let baseAnimation = self
-    baseAnimation.duration = context.animation.duration
+    baseAnimation.duration = context.animationDuration
     baseAnimation.speed = (context.endFrame < context.startFrame) ? -1 : 1
 
     // To select the subrange of the `baseAnimation` that should be played,
@@ -42,7 +43,11 @@ extension CAAnimation {
     clippingParent.animations = [baseAnimation]
 
     clippingParent.duration = Double(abs(context.endFrame - context.startFrame)) / context.animation.framerate
-    baseAnimation.timeOffset = context.animation.time(forFrame: context.startFrame)
+      if #available(iOS 13.0.0, *) {
+          baseAnimation.timeOffset = context.animation.time(forFrame: context.startFrame)
+      } else {
+          // Fallback on earlier versions
+      }
 
     clippingParent.autoreverses = context.timingConfiguration.autoreverses
     clippingParent.repeatCount = context.timingConfiguration.repeatCount
@@ -69,6 +74,7 @@ extension CAAnimation {
   }
 }
 
+@available(iOS 13.0.0, *)
 extension CALayer {
   /// Adds the given animation to this layer, timed with the given timing configuration
   ///  - The given animation should start at the beginning of the animation and

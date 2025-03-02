@@ -6,9 +6,8 @@
 //  Copyright © 2020 YurtvilleProds. All rights reserved.
 //
 
-import Foundation
-
 /// Connects a LottieFontProvider to a group of text layers
+@available(iOS 13.0.0, *)
 final class LayerFontProvider {
 
   // MARK: Lifecycle
@@ -34,8 +33,8 @@ final class LayerFontProvider {
   }
 
   func reloadTexts() {
-    textLayers.forEach {
-      $0.fontProvider = fontProvider
+    for textLayer in textLayers {
+      textLayer.fontProvider = fontProvider
     }
   }
 }

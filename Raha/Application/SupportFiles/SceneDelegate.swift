@@ -7,7 +7,6 @@
 
 import UIKit
 import FBSDKCoreKit
-import FirebaseDynamicLinks
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?

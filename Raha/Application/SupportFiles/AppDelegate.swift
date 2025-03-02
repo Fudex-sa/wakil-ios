@@ -13,7 +13,6 @@ import GoogleMaps
 import IQKeyboardManagerSwift
 import GooglePlaces
 import Firebase
-import FirebaseDynamicLinks
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var notificationSubscriber: NotificationSubscriber?
@@ -22,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupFirebase()
         print((Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String) ?? "")
         Localizer.initLang()
-        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.isEnabled = true
         GMSServices.provideAPIKey(GoogleMapHelper.Keys.googleAPI)
         GMSPlacesClient.provideAPIKey(GoogleMapHelper.Keys.googleAPI)
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -46,11 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                   open: url,
                                                   sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                   annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-        if let dynamicLink = DynamicLinks.dynamicLinks().dynamicLink(fromCustomSchemeURL: url) {
-                   handleDynamicLink(dynamicLink)
-                   return true
-        }
-        return false
     }
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         //
@@ -60,19 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         //
     }
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-            // Handle dynamic link via Universal Link
-            guard let incomingURL = userActivity.webpageURL else {
-                return false
-            }
-
-            let handled = DynamicLinks.dynamicLinks().handleUniversalLink(incomingURL) { dynamicLink, error in
-                if let dynamicLink = dynamicLink {
-                    self.handleDynamicLink(dynamicLink)
-                }
-            }
-            return handled
-        }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions
@@ -100,21 +81,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
-    private func handleDynamicLink(_ dynamicLink: DynamicLink) {
-           guard let deepLinkURL = dynamicLink.url else {
-               print("No URL found in dynamic link")
-               return
-           }
-
-           // Process the received deep link
-           print("Received deep link: \(deepLinkURL.absoluteString)")
-
-           // Example: Navigate to a specific page
-           let queryParams = URLComponents(url: deepLinkURL, resolvingAgainstBaseURL: true)?.queryItems
-           let param = queryParams?.first(where: { $0.name == "param" })?.value
-
-           print("Query parameter: \(param ?? "none")")
-       }
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
