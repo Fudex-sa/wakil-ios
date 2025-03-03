@@ -1,8 +1,8 @@
 //
-//  HomeVC.swift
+//  SelectLanguageVC.swift
 //  Raha
 //
-//  Created by ADAM on 26/02/2025.
+//  Created by ADAM on 03/03/2025.
 //  Copyright © 2025 com.M.Abdu. All rights reserved.
 //
 
@@ -10,22 +10,18 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class HomeVC: BaseController {
-    @IBOutlet weak var centerTbl: UITableView!
-    @IBOutlet weak var dotsPage: UIPageControl!
-    @IBOutlet weak var slidersCollection: UICollectionView!
-    @IBOutlet weak var searchTxf: UITextField!
-    @IBOutlet weak var filterView: UIView!
-    @IBOutlet weak var locLbl: UILabel!
-    @IBOutlet weak var langBtn: UIButton!
-    @IBOutlet weak var notBtn: UIButton!
-    @IBOutlet weak var userImg: UIImageView!
-    var viewModel: HomeViewModel?
-    var coordinator: HomeCoordinator?
+class SelectLanguageVC: BaseController {
+    @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var englishRadio: RadioButton!
+    @IBOutlet weak var englishView: UIView!
+    @IBOutlet weak var arabicRadio: RadioButton!
+    @IBOutlet weak var arabicView: UIView!
+    var viewModel: SelectLanguageViewModel?
+    var coordinator: SelectLanguageCoordinator?
 }
 
 // MARK: - ...  LifeCycle
-extension HomeVC {
+extension SelectLanguageVC {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -42,10 +38,10 @@ extension HomeVC {
     }
 }
 // MARK: - ...  Functions
-extension HomeVC {
+extension SelectLanguageVC {
     func setup() {
     }
 }
 // MARK: - ...  View Contract
-extension HomeVC {
+extension SelectLanguageVC {
 }
