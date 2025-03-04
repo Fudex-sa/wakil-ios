@@ -28,7 +28,6 @@ extension LoginViewModel {
     func login() {
         NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
         NetworkManager.instance.paramaters["password"] = password.value ?? ""
-        NetworkManager.instance.paramaters["country_code"] = countryCode.value ?? ""
         NetworkManager.instance.paramaters["device_type"] = Constants.FCMTYPE
         NetworkManager.instance.paramaters["fcm_token"] = Constants.FCMTOKEN
         NetworkManager.instance.paramaters["device_id"] = Constants.DEVICEID

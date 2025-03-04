@@ -18,5 +18,13 @@ class RegisterCoordinator: Coordinator {
 }
 
 extension RegisterCoordinator {
-    
+    func verify(){
+        guard let scene = R.storyboard.verifycodeStoryboard.verifycodeVC() else { return }
+      //  scene.time = view?.viewModel?.userdata.value?.data?.user?.timer ?? 0
+        view?.push(scene)
+    }
+    func terms() {
+        guard let scene = R.storyboard.termsStoryboard.termsVC() else { return }
+        view?.push(scene)
+    }
 }

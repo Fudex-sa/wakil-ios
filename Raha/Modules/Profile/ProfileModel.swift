@@ -9,5 +9,7 @@
 import Foundation
 
 // MARK: - ...  Entity
-class ProfileModel: Codable {
+struct ProfileModel: Codable {
+    let message: String?
+    var data: UserRoot.User?
 }

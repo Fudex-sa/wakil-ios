@@ -8,7 +8,7 @@ import UIKit
 struct Constants {
     static let itunesURL = "itms-apps://itunes.apple.com/app/id6547850254"
     static var isconnet = true
-    static let FCMTYPE = "ios"
+    static let FCMTYPE = "apple"
     static var iscompletedata = true
     static let FCMTOKEN: String = {
         return UD.DEVICE_TOKEN ?? "nil"

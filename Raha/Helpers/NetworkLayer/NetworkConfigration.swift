@@ -16,14 +16,14 @@ struct NetworkConfigration {
         case test
     }
     struct Config {
-        static var environment: Environment = .live  // Change this to .test for testing
+        static var environment: Environment = .test  // Change this to .test for testing
 
         static var baseURL: String {
             switch environment {
             case .live:
                 return "http://sfanz.co/api/v4/"
             case .test:
-                return "https://superfan.fudex-tech.net/api/v4/"
+                return "http://demo.raha.fudex-tech.net/api/v1/"
             }
         }
         static var firebaseTopic: String {
@@ -59,58 +59,58 @@ struct NetworkConfigration {
     // MARK: - ...  The Endpoints
     public enum EndPoint: String {
         case forceUpdate = "/api/app/register/force-update"
-        case login = "fan/login"
+        case login = "client/login"
         case countries
         case states = "cities"
         case validteregister = "checkRegisterValidation"
-        case register = "fan/register"
-        case news = "fan/news"
-        case confirmotp = "fan/confirm-otp"
-        case sendotp = "fan/send-otp"
-        case resetpass = "fan/forgotPassword"
-        case checkotp = "fan/check-otp"
-        case updateemail = "fan/updateEmail"
-        case updatepassword = "fan/updatePassword"
-        case sendotpupdatephone = "fan/send-otp-mobile"
-        case updatephone = "fan/update-otp-mobile"
-        case profile = "fan/profile"
-        case updateprofile = "fan/profile/update"
-        case deleteaccount = "fan/account/delete"
+        case register = "client/register"
+        case news = "client/news"
+        case confirmotp = "client/confirm-otp-register"
+        case sendotp = "client/send-otp"
+        case resetpass = "client/forgotPassword"
+        case checkotp = "client/check-otp"
+        case updateemail = "client/updateEmail"
+        case updatepassword = "client/updatePassword"
+        case sendotpupdatephone = "client/send-otp-mobile"
+        case updatephone = "client/update-otp-mobile"
+        case profile = "client/profile"
+        case updateprofile = "client/profile/update"
+        case deleteaccount = "client/account/delete"
         case matches
         case todaymatxh = "todayMatches"
         case perviousmatch = "previousMatches"
         case nextmatches = "nextMatches"
-        case home = "fan/home"
-        case players = "fan/players"
+        case home = "client/home"
+        case players = "client/players"
         case leagues = "leagues"
-        case clubs = "fan/clubs"
+        case clubs = "client/clubs"
         case setting
-        case favclub = "fan/fanFavouriteClubUpdate"
-        case contactus = "fan/sendContact"
-        case logout = "fan/logout"
-        case clubdetails = "fan/clubs/"
+        case favclub = "client/fanFavouriteClubUpdate"
+        case contactus = "client/sendContact"
+        case logout = "client/logout"
+        case clubdetails = "client/clubs/"
         case paymentmethod = "checkoutDetails"
-        case tryouts = "fan/tryouts"
-        case maketryout = "fan/makeTryout"
-        case mytryouts = "fan/myTryouts"
-        case tryoutsstatus = "fan/myTryoutsFilters"
-        case notificationcount = "fan/notificationsCount"
-        case notifications = "fan/notifications"
-        case socialLogin = "fan/checkSocialUser"
-        case years = "fan/years"
-        case playerserach = "fan/players/search"
-        case posts = "fan/posts"
-        case myposts = "fan/myPosts"
-        case deletemedia = "fan/postMedia"
-        case comments = "fan/comments"
-        case packages = "fan/packages"
-        case mySubscriptions = "fan/mySubscriptions"
-        case Subscriptions = "fan/subscriptions"
-        case backstages = "fan/backstages"
+        case tryouts = "client/tryouts"
+        case maketryout = "client/makeTryout"
+        case mytryouts = "client/myTryouts"
+        case tryoutsstatus = "client/myTryoutsFilters"
+        case notificationcount = "client/notificationsCount"
+        case notifications = "client/notifications"
+        case socialLogin = "client/checkSocialUser"
+        case years = "client/years"
+        case playerserach = "client/players/search"
+        case posts = "client/posts"
+        case myposts = "client/myPosts"
+        case deletemedia = "client/postMedia"
+        case comments = "client/comments"
+        case packages = "client/packages"
+        case mySubscriptions = "client/mySubscriptions"
+        case Subscriptions = "client/subscriptions"
+        case backstages = "client/backstages"
         case standing
         case paymentMethods
         case refreshToken = "/api/app/register/refresh-token"
-        case checkSubscriptionSellers = "fan/checkSubscriptionSellers"
+        case checkSubscriptionSellers = "client/checkSubscriptionSellers"
         case settingsubscribe = "setting/packages_available_v4"
     }
 }

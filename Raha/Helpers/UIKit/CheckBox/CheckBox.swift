@@ -22,12 +22,12 @@ class CheckBoxButton: UIButton {
     var isOn: Bool {
         didSet {
             if isOn {
-                let image = #imageLiteral(resourceName: "check-box.pdf").withRenderingMode(.alwaysTemplate)
-                tintColor = tintColor
+                let image = #imageLiteral(resourceName: "checkbox").withRenderingMode(.alwaysTemplate)
+                //tintColor = tintColor
                 setBackgroundImage(image, for: .normal)
             } else {
-                let image = #imageLiteral(resourceName: "unchecked-box").withRenderingMode(.alwaysTemplate)
-                tintColor = tintColor
+                let image = #imageLiteral(resourceName: "unckeck").withRenderingMode(.alwaysTemplate)
+               // tintColor = tintColor
                 setBackgroundImage(image, for: .normal)
             }
         }

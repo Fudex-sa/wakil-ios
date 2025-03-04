@@ -293,6 +293,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="Kqu-Ft-src"/>
                                                             <constraint firstAttribute="width" constant="30" id="epW-yv-ypp"/>
                                                         </constraints>
+                                                        <color key="tintColor" name="black2"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="eye-slash"/>
                                                     </button>
@@ -374,6 +375,7 @@
                                                             <constraint firstAttribute="width" constant="30" id="2Bz-F4-N3A"/>
                                                             <constraint firstAttribute="height" constant="30" id="dSH-qu-diV"/>
                                                         </constraints>
+                                                        <color key="tintColor" name="black2"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="eye-slash"/>
                                                     </button>
@@ -418,7 +420,11 @@
                                                             <constraint firstAttribute="height" constant="20" id="3Ug-zT-VdE"/>
                                                             <constraint firstAttribute="width" constant="20" id="IvN-CP-aVq"/>
                                                         </constraints>
+                                                        <color key="tintColor" name="normalblue"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approval of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVV-xa-NQK">
                                                         <rect key="frame" x="28" y="1.5" width="74" height="17"/>
@@ -515,11 +521,19 @@
                     <navigationItem key="navigationItem" id="Yaj-EM-F2d"/>
                     <connections>
                         <outlet property="CheckBtn" destination="eDG-aX-qx9" id="p3a-bG-pPg"/>
+                        <outlet property="confirmLbl" destination="Qry-hE-E8p" id="oYK-1m-Z1s"/>
+                        <outlet property="confirmSpace1View" destination="FCX-0t-ius" id="ZQ4-at-piM"/>
+                        <outlet property="confirmSpaceView" destination="FNW-2n-Qbq" id="0x0-XY-kAt"/>
+                        <outlet property="confirmView" destination="7aD-wa-8Ar" id="1b8-HN-2kt"/>
                         <outlet property="confirmeyeBtn" destination="BkZ-Qb-itG" id="ovP-JV-seA"/>
                         <outlet property="confirmpassTxf" destination="Fy6-Uk-08w" id="y4o-bI-4ma"/>
                         <outlet property="eyeBtn" destination="odi-9A-tLw" id="IbO-go-y3M"/>
                         <outlet property="nameTxf" destination="hIu-nG-Rw0" id="VbB-Zb-ylL"/>
+                        <outlet property="passLbl" destination="top-cf-Kdi" id="iwj-xf-HzR"/>
+                        <outlet property="passSpace1View" destination="K1z-2y-6Oq" id="Jtl-nk-Ai8"/>
+                        <outlet property="passSpaceView" destination="eJa-pD-wkg" id="dHC-yh-Y61"/>
                         <outlet property="passTxf" destination="Iaa-ji-yo1" id="6l9-zs-2gy"/>
+                        <outlet property="passView" destination="ItI-SO-Kz2" id="yoX-ON-okh"/>
                         <outlet property="phoneTxf" destination="KGP-6Z-MYT" id="41g-YT-0yz"/>
                         <outlet property="regBtn" destination="10B-yK-QJb" id="gr1-OP-CMd"/>
                         <outlet property="termsLbl" destination="wfg-vQ-JoP" id="kdi-ym-w0d"/>
@@ -531,7 +545,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Vector-7" width="67" height="80"/>
+        <image name="Vector-7" width="72" height="80"/>
         <image name="back" width="24" height="24"/>
         <image name="eye-slash" width="20" height="20"/>
         <image name="key" width="20" height="20"/>

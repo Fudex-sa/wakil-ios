@@ -340,14 +340,16 @@
 "Male" = "ذكر";
 "Female" = "أنثى";
 "Distance" = "يبعد مسافة";
-"Evaluation" = "التقييم"'
+"Evaluation" = "التقييم";
 "Search" = "بحث";
 "Clear all" = "مسح الكل";
 "Select a language" = "قم بإختيار اللغة";
 "Done" = "تم";
 "Add a new address" = "إضافة عنوان جديد";
 "Contact the application management" = "تواصل مع إدارة التطبيق";
-"If you face any problem or have an inquiry, do not hesitate to contact us and we will preview the message and respond to you as soon as possible"  "إذا كنت تواجه أيي مشكلة أو لديك استفسار لا تتردد في التواصل معنا وسنقوم بمعاينة الرسالة والرد عليك في أسرع وقت";
+"If you face any problem or have an inquiry, do not hesitate to contact us and we will preview the message and respond to you as soon as possible" = "إذا كنت تواجه أيي مشكلة أو لديك استفسار لا تتردد في التواصل معنا وسنقوم بمعاينة الرسالة والرد عليك في أسرع وقت";
 "Your message" = "رسالتك";
 "Message text" = "نص الرسالة";
 "Virtual Location" = "الموقع الافتراضي";
+"lenght must be" = "عدد الأرقام يساوى";
+"agree to" = "لابد من الموافقه على";
