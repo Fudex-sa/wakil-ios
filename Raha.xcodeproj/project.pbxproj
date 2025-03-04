@@ -143,6 +143,9 @@
 		66CFBFCE2D6F5082007715D0 /* AboutusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFBFC92D6F5082007715D0 /* AboutusVC.swift */; };
 		66CFBFCF2D6F5082007715D0 /* AboutusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFBFCA2D6F5082007715D0 /* AboutusViewModel.swift */; };
 		66D634F12D77038500B6A6E3 /* VerifyCodeInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D634F02D77038500B6A6E3 /* VerifyCodeInputs.swift */; };
+		66D634F62D771DAB00B6A6E3 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D634F32D771DAA00B6A6E3 /* CustomTabBarView.swift */; };
+		66D634F72D771DAB00B6A6E3 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D634F42D771DAA00B6A6E3 /* CustomTabBarController.swift */; };
+		66D634F82D771DAB00B6A6E3 /* CustomTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66D634F52D771DAA00B6A6E3 /* CustomTabBarView.xib */; };
 		66DE7D9D2738008700CAD557 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */; };
 		66DE7D9E2738008700CAD557 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */; };
 		66DED3992D74798C001AF6E0 /* SlidersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DED3982D74798C001AF6E0 /* SlidersCollectionViewCell.xib */; };
@@ -706,6 +709,9 @@
 		66CFBFC92D6F5082007715D0 /* AboutusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutusVC.swift; sourceTree = "<group>"; };
 		66CFBFCA2D6F5082007715D0 /* AboutusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutusViewModel.swift; sourceTree = "<group>"; };
 		66D634F02D77038500B6A6E3 /* VerifyCodeInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeInputs.swift; sourceTree = "<group>"; };
+		66D634F32D771DAA00B6A6E3 /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		66D634F42D771DAA00B6A6E3 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		66D634F52D771DAA00B6A6E3 /* CustomTabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTabBarView.xib; sourceTree = "<group>"; };
 		66DE7D9B2738008600CAD557 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		66DE7D9C2738008600CAD557 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		66DED3972D74798C001AF6E0 /* SlidersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidersCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1487,6 +1493,16 @@
 				66CFBFCA2D6F5082007715D0 /* AboutusViewModel.swift */,
 			);
 			path = Aboutus;
+			sourceTree = "<group>";
+		};
+		66D634F22D771D6F00B6A6E3 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				66D634F42D771DAA00B6A6E3 /* CustomTabBarController.swift */,
+				66D634F32D771DAA00B6A6E3 /* CustomTabBarView.swift */,
+				66D634F52D771DAA00B6A6E3 /* CustomTabBarView.xib */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		66DED3962D747971001AF6E0 /* cells */ = {
@@ -2671,6 +2687,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66D634F22D771D6F00B6A6E3 /* Tabbar */,
 				66B979B12D75C74000962C19 /* Faq */,
 				66B979A62D75C04800962C19 /* Contactus */,
 				6638307C2D75A36700E9CC0E /* SelectAddress */,
@@ -2980,6 +2997,7 @@
 				C86BF99A266947F0002D87BC /* warningIconSubtle@3x.png in Resources */,
 				C84539AA2729887000004173 /* NeoSansArabic-Regular.ttf in Resources */,
 				C871C732272FEB7C00DCBD2D /* SFPRODISPLAYBOLD.OTF in Resources */,
+				66D634F82D771DAB00B6A6E3 /* CustomTabBarView.xib in Resources */,
 				6636D7CE2C3AE370007116F7 /* LoginStoryboard.storyboard in Resources */,
 				C871C726272FEB7B00DCBD2D /* Muli-BoldItalic.ttf in Resources */,
 				C84539A82729887000004173 /* NeoSansArabic-Light.ttf in Resources */,
@@ -3396,6 +3414,7 @@
 				66CFBFC32D6F462C007715D0 /* SettingsVC.swift in Sources */,
 				66CFBFC42D6F462C007715D0 /* SettingsViewModel.swift in Sources */,
 				7756A16A25348AD400BFE53C /* UINavigationControllerExtensions.swift in Sources */,
+				66D634F72D771DAB00B6A6E3 /* CustomTabBarController.swift in Sources */,
 				7756A15925348AD400BFE53C /* UITableViewExtensions.swift in Sources */,
 				C871C9892730231300DCBD2D /* Selekton-CALayer+Extensions.swift in Sources */,
 				C871C97C2730231300DCBD2D /* SkeletonConfig.swift in Sources */,
@@ -3582,6 +3601,7 @@
 				C8C09342272AD61600E2270A /* AnyPublisher+EX.swift in Sources */,
 				66CFBFCC2D6F5082007715D0 /* AboutusCoordinator.swift in Sources */,
 				66CFBFCD2D6F5082007715D0 /* AboutusModel.swift in Sources */,
+				66D634F62D771DAB00B6A6E3 /* CustomTabBarView.swift in Sources */,
 				66CFBFCE2D6F5082007715D0 /* AboutusVC.swift in Sources */,
 				66CFBFCF2D6F5082007715D0 /* AboutusViewModel.swift in Sources */,
 			);

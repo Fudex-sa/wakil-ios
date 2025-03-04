@@ -304,7 +304,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 28 colors.
+  /// This `R.color` struct is generated, and contains static references to 29 colors.
   struct color {
     /// Color `Black1`.
     static let black1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "Black1")
@@ -330,6 +330,8 @@ struct R: Rswift.Validatable {
     static let darkerblue = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkerblue")
     /// Color `darkgray 1`.
     static let darkgray1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray 1")
+    /// Color `darkgray 2`.
+    static let darkgray2 = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray 2")
     /// Color `darkgray`.
     static let darkgray = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkgray")
     /// Color `darkhoverblue`.
@@ -468,6 +470,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func darkgray1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.darkgray1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "darkgray 2", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func darkgray2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkgray2, compatibleWith: traitCollection)
     }
     #endif
 
@@ -708,6 +719,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func darkgray1(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.darkgray1.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "darkgray 2", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func darkgray2(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.darkgray2.name)
     }
     #endif
 
@@ -2444,7 +2463,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 17 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 18 nibs.
   struct nib {
     /// Nib `AddressTableViewCell`.
     static let addressTableViewCell = _R.nib._AddressTableViewCell()
@@ -2458,6 +2477,8 @@ struct R: Rswift.Validatable {
     static let centeredView = _R.nib._CenteredView()
     /// Nib `CentersTableViewCell`.
     static let centersTableViewCell = _R.nib._CentersTableViewCell()
+    /// Nib `CustomTabBarView`.
+    static let customTabBarView = _R.nib._CustomTabBarView()
     /// Nib `EmptyScreen`.
     static let emptyScreen = _R.nib._EmptyScreen()
     /// Nib `FaqTableViewCell`.
@@ -2526,6 +2547,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.centersTableViewCell) instead")
     static func centersTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.centersTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CustomTabBarView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.customTabBarView) instead")
+    static func customTabBarView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.customTabBarView)
     }
     #endif
 
@@ -2639,6 +2668,10 @@ struct R: Rswift.Validatable {
 
     static func centersTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CentersTableViewCell? {
       return R.nib.centersTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CentersTableViewCell
+    }
+
+    static func customTabBarView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.customTabBarView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func emptyScreen(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -8111,6 +8144,7 @@ struct _R: Rswift.Validatable {
       try _CardView.validate()
       try _CenteredView.validate()
       try _CentersTableViewCell.validate()
+      try _CustomTabBarView.validate()
       try _EmptyScreen.validate()
       try _FaqTableViewCell.validate()
       try _MaintanceScreen.validate()
@@ -8214,6 +8248,28 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "lightblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightblue' is used in nib 'CentersTableViewCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray' is used in nib 'CentersTableViewCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in nib 'CentersTableViewCell', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CustomTabBarView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CustomTabBarView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'home' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "more", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'more' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "reservation", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'reservation' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "darkgray 2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray 2' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightblue' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in nib 'CustomTabBarView', but couldn't be loaded.") }
         }
       }
 

@@ -25,6 +25,7 @@ extension ReservationVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        (self.tabBarController as? CustomTabBarController)?.showTabBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

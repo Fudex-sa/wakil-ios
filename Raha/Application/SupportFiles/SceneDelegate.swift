@@ -24,20 +24,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        } else {
 //            window?.overrideUserInterfaceStyle = .light
 //        }
-        Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
-
-//        if UD.onboarding == true {
-//            if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
-//                Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
-//            }else {
-//                if UD.user?.data?.user?.club != nil {
-//                    UD.club = UD.user?.data?.user?.club
-//                }
-//                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-//            }
-//        }else {
-//            Coordinator.instance.restart(storyboard: R.storyboard.onboardingStoryboard())
-//        }
+        if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
+            Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
+        }else {
+            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+        }
 
 //        Coordinator.instance.restart(storyboard: R.storyboard.matchdetailsStoryboard())
         

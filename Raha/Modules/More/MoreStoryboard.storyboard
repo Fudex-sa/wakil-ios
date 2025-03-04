@@ -498,7 +498,7 @@
                         <outlet property="complainView" destination="aBs-9o-fxo" id="Lp3-W0-VB4"/>
                         <outlet property="contactusView" destination="Mdm-Za-Zx5" id="lWe-nn-SDy"/>
                         <outlet property="faqView" destination="lmT-YC-rrN" id="XeV-wQ-3q3"/>
-                        <outlet property="logoutLbl" destination="CZ7-kQ-Fqm" id="0zK-PI-LN6"/>
+                        <outlet property="logoutLbl" destination="Ywa-5f-qFj" id="aZP-6K-d3o"/>
                         <outlet property="logoutView" destination="05V-1o-yco" id="yka-wk-BIB"/>
                         <outlet property="nameLbl" destination="0Dd-wU-pSD" id="hrp-4f-gxy"/>
                         <outlet property="privacyView" destination="yK1-GL-ySm" id="9dV-XY-QCk"/>

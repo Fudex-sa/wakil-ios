@@ -18,5 +18,32 @@ class MoreCoordinator: Coordinator {
 }
 
 extension MoreCoordinator {
-    
+    func profile() {
+        guard let scene = R.storyboard.profileStoryboard.profileVC() else { return }
+        view?.push(scene)
+    }
+    func setting() {
+        guard let scene = R.storyboard.settingsStoryboard.settingsVC() else { return }
+        view?.push(scene)
+    }
+    func aboutus() {
+        guard let scene = R.storyboard.aboutusStoryboard.aboutusVC() else { return }
+        view?.push(scene)
+    }
+    func terms() {
+        guard let scene = R.storyboard.termsStoryboard.termsVC() else { return }
+        view?.push(scene)
+    }
+    func privacy() {
+        guard let scene = R.storyboard.termsStoryboard.termsVC() else { return }
+        view?.push(scene)
+    }
+    func contactus() {
+        guard let scene = R.storyboard.contactusStoryboard.contactusVC() else { return }
+        view?.push(scene)
+    }
+    func faqs() {
+        guard let scene = R.storyboard.faqStoryboard.faqVC() else { return }
+        view?.push(scene)
+    }
 }

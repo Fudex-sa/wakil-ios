@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainVC-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="VWA-JN-8d1">
             <objects>
-                <tabBarController storyboardIdentifier="MainVC" id="fn4-ov-IDJ" customClass="MainVC" customModule="Raha" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTabBarController" id="fn4-ov-IDJ" customClass="CustomTabBarController" customModule="Raha" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N9g-hm-il8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
