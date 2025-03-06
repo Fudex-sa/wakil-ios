@@ -26,16 +26,32 @@ extension AboutusVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        (self.tabBarController as? CustomTabBarController)?.hideTabBar()
+        setup()
+        bind()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.aboutddata.listen(on: { [weak self] value in
+            self?.desLbl.text = self?.viewModel?.aboutddata.value?.data?.description?.htmlToString ?? ""
+        })
+        
+    }
 }
 // MARK: - ...  Functions
 extension AboutusVC {
     func setup() {
+        viewModel?.getabout()
     }
 }
 // MARK: - ...  View Contract

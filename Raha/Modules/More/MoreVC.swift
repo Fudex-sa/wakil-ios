@@ -67,8 +67,8 @@ extension MoreVC {
 extension MoreVC {
     func setup() {
         if UD.user == nil {
-            logoutLbl.text = "Login".localized
             profileView.isHidden = true
+            logoutView.isHidden = true
         }else {
             viewModel?.getprofile()
         }
@@ -82,7 +82,7 @@ extension MoreVC {
             self?.coordinator?.terms()
         }).store(self)
         privacyView.publisherGesture.listen(on: {[weak self] _ in
-            self?.coordinator?.terms()
+            self?.coordinator?.privacy()
         }).store(self)
         settingView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.setting()
@@ -92,6 +92,9 @@ extension MoreVC {
         }).store(self)
         contactusView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.contactus()
+        }).store(self)
+        logoutView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.logout()
         }).store(self)
     }
     func reload(){

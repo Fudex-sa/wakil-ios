@@ -455,11 +455,11 @@
                     <connections>
                         <outlet property="EditBtn" destination="foi-yH-0WF" id="Zp9-YO-6PI"/>
                         <outlet property="addressView" destination="6le-z7-ecV" id="eh0-Xv-SYZ"/>
-                        <outlet property="deleteView" destination="mZN-Ob-4qA" id="eaL-ot-sgx"/>
+                        <outlet property="deleteView" destination="mZN-Ob-4qA" id="aRy-Xo-wg3"/>
+                        <outlet property="editPassBtn" destination="Pua-WI-2wF" id="PUD-Bn-Cg6"/>
                         <outlet property="emailEditBtn" destination="60y-si-4r0" id="Pig-9t-kBL"/>
                         <outlet property="emailLbl" destination="VXN-4H-dHx" id="wIb-4N-OYC"/>
                         <outlet property="nameLbl" destination="b3l-RA-WhJ" id="eWy-Ho-cnc"/>
-                        <outlet property="passwordEditBtn" destination="Pua-WI-2wF" id="AWZ-2f-urc"/>
                         <outlet property="phoneEditBtn" destination="EDS-Sf-aLh" id="3Gq-Ul-ZNa"/>
                         <outlet property="phoneLbl" destination="X5w-NT-qd1" id="3uy-oc-AQg"/>
                         <outlet property="userImg" destination="pbJ-k4-ppZ" id="Coi-5w-bKv"/>

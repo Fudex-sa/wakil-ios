@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 23 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 24 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -116,6 +116,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `LoginStoryboard`.
     static let loginStoryboard = _R.storyboard.loginStoryboard()
+    /// Storyboard `LogoutStoryboard`.
+    static let logoutStoryboard = _R.storyboard.logoutStoryboard()
     /// Storyboard `MainStoryboard`.
     static let mainStoryboard = _R.storyboard.mainStoryboard()
     /// Storyboard `MoreStoryboard`.
@@ -220,6 +222,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LoginStoryboard", bundle: ...)`
     static func loginStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.loginStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LogoutStoryboard", bundle: ...)`
+    static func logoutStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.logoutStoryboard)
     }
     #endif
 
@@ -2728,7 +2737,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 283 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 284 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3082,10 +3091,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let emailLan = Rswift.StringResource(key: "email.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
-      /// en translation: English
-      ///
-      /// Locales: ar, en
-      static let english = Rswift.StringResource(key: "English", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Enter a new password to reopen your account
       ///
       /// Locales: ar, en
@@ -3110,6 +3115,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let facilitiesLan = Rswift.StringResource(key: "facilities.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Faqs list is empty
+      ///
+      /// Locales: ar, en
+      static let faqsListIsEmpty = Rswift.StringResource(key: "Faqs list is empty", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Favorites
       ///
       /// Locales: ar, en
@@ -3862,6 +3871,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let your_are_cancel_the_operationLan = Rswift.StringResource(key: "your_are_cancel_the_operation.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: العربيه
+      ///
+      /// Locales: ar, en
+      static let english = Rswift.StringResource(key: "English", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
 
       /// en translation: ADD
       ///
@@ -5183,21 +5196,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("email.lan", bundle: bundle, comment: "")
       }
 
-      /// en translation: English
-      ///
-      /// Locales: ar, en
-      static func english(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("English", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "English"
-        }
-
-        return NSLocalizedString("English", bundle: bundle, comment: "")
-      }
-
       /// en translation: Enter a new password to reopen your account
       ///
       /// Locales: ar, en
@@ -5286,6 +5284,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("facilities.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Faqs list is empty
+      ///
+      /// Locales: ar, en
+      static func faqsListIsEmpty(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Faqs list is empty", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Faqs list is empty"
+        }
+
+        return NSLocalizedString("Faqs list is empty", bundle: bundle, comment: "")
       }
 
       /// en translation: Favorites
@@ -8108,6 +8121,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("your_are_cancel_the_operation.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: العربيه
+      ///
+      /// Locales: ar, en
+      static func english(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("English", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "English"
+        }
+
+        return NSLocalizedString("English", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 
@@ -8285,9 +8313,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "superfan", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'superfan' is used in nib 'EmptyScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "LOGO", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'LOGO' is used in nib 'EmptyScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in nib 'EmptyScreen', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in nib 'EmptyScreen', but couldn't be loaded.") }
         }
       }
 
@@ -8492,6 +8520,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try loginStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try logoutStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try mainStoryboard.validate()
@@ -8880,15 +8911,37 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct mainStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = MainVC
+    struct logoutStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LogoutVC
 
       let bundle = R.hostingBundle
-      let mainVC = StoryboardViewControllerResource<MainVC>(identifier: "MainVC")
+      let logoutVC = StoryboardViewControllerResource<LogoutVC>(identifier: "LogoutVC")
+      let name = "LogoutStoryboard"
+
+      func logoutVC(_: Void = ()) -> LogoutVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: logoutVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.logoutStoryboard().logoutVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'logoutVC' could not be loaded from storyboard 'LogoutStoryboard' as 'LogoutVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct mainStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = CustomTabBarController
+
+      let bundle = R.hostingBundle
+      let customTabBarController = StoryboardViewControllerResource<CustomTabBarController>(identifier: "CustomTabBarController")
       let name = "MainStoryboard"
 
-      func mainVC(_: Void = ()) -> MainVC? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainVC)
+      func customTabBarController(_: Void = ()) -> CustomTabBarController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: customTabBarController)
       }
 
       static func validate() throws {
@@ -8898,7 +8951,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'MainStoryboard', but couldn't be loaded.") }
         }
-        if _R.storyboard.mainStoryboard().mainVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainVC' could not be loaded from storyboard 'MainStoryboard' as 'MainVC'.") }
+        if _R.storyboard.mainStoryboard().customTabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'customTabBarController' could not be loaded from storyboard 'MainStoryboard' as 'CustomTabBarController'.") }
       }
 
       fileprivate init() {}

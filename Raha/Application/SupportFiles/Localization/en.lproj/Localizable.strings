@@ -333,7 +333,7 @@
 "New Password" = "New Password";
 "Edit personal data" = "Edit personal data";
 "Language" = "Language";
-"English" = "English";
+"English" = "العربيه";
 "Raha application" = "Raha application";
 "Find a center" = "Find a center";
 "kilometer" = "kilometer";
@@ -358,3 +358,6 @@
 "Virtual Location" = "Virtual Location";
 "lenght must be" = "lenght must be";
 "agree to" = "must agree to";
+"Faqs list is empty" = "Faqs list is empty";
+"Are you sure to log out of the app?" = "Are you sure to log out of the app?";
+"Cancel" = "Cancel";

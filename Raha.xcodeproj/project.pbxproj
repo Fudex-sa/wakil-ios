@@ -68,6 +68,11 @@
 		667FB07C2D748445002A4D87 /* FilterServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FB0782D748445002A4D87 /* FilterServiceVC.swift */; };
 		667FB07D2D748445002A4D87 /* FilterServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FB0792D748445002A4D87 /* FilterServiceViewModel.swift */; };
 		667FB07E2D748445002A4D87 /* FilterServiceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667FB0762D748445002A4D87 /* FilterServiceStoryboard.storyboard */; };
+		6693369B2D79CFF6008DB727 /* LogoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669336962D79CFF6008DB727 /* LogoutCoordinator.swift */; };
+		6693369C2D79CFF6008DB727 /* LogoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669336982D79CFF6008DB727 /* LogoutModel.swift */; };
+		6693369D2D79CFF6008DB727 /* LogoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669336992D79CFF6008DB727 /* LogoutVC.swift */; };
+		6693369E2D79CFF6008DB727 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693369A2D79CFF6008DB727 /* LogoutViewModel.swift */; };
+		6693369F2D79CFF6008DB727 /* LogoutStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669336972D79CFF6008DB727 /* LogoutStoryboard.storyboard */; };
 		669BB0B52C7DFCC90061B8CC /* NotificationSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669BB0B42C7DFCC90061B8CC /* NotificationSubscriber.swift */; };
 		669D84412D7466A200A752E6 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 669D84402D7466A200A752E6 /* MBProgressHUD */; };
 		669E1B422C47F11B00950373 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B412C47F11B00950373 /* RoundedView.swift */; };
@@ -634,6 +639,11 @@
 		667FB0772D748445002A4D87 /* FilterServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterServiceModel.swift; sourceTree = "<group>"; };
 		667FB0782D748445002A4D87 /* FilterServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterServiceVC.swift; sourceTree = "<group>"; };
 		667FB0792D748445002A4D87 /* FilterServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterServiceViewModel.swift; sourceTree = "<group>"; };
+		669336962D79CFF6008DB727 /* LogoutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutCoordinator.swift; sourceTree = "<group>"; };
+		669336972D79CFF6008DB727 /* LogoutStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogoutStoryboard.storyboard; sourceTree = "<group>"; };
+		669336982D79CFF6008DB727 /* LogoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutModel.swift; sourceTree = "<group>"; };
+		669336992D79CFF6008DB727 /* LogoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutVC.swift; sourceTree = "<group>"; };
+		6693369A2D79CFF6008DB727 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		669BB0B42C7DFCC90061B8CC /* NotificationSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSubscriber.swift; sourceTree = "<group>"; };
 		669E1B412C47F11B00950373 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		669E1B432C47F15700950373 /* RoundedBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBottomView.swift; sourceTree = "<group>"; };
@@ -1313,6 +1323,18 @@
 				667FB0792D748445002A4D87 /* FilterServiceViewModel.swift */,
 			);
 			path = FilterService;
+			sourceTree = "<group>";
+		};
+		669336952D79CFCF008DB727 /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				669336962D79CFF6008DB727 /* LogoutCoordinator.swift */,
+				669336972D79CFF6008DB727 /* LogoutStoryboard.storyboard */,
+				669336982D79CFF6008DB727 /* LogoutModel.swift */,
+				669336992D79CFF6008DB727 /* LogoutVC.swift */,
+				6693369A2D79CFF6008DB727 /* LogoutViewModel.swift */,
+			);
+			path = Logout;
 			sourceTree = "<group>";
 		};
 		66AEC2CD2C43BF7400BC260E /* Apple */ = {
@@ -2687,6 +2709,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				669336952D79CFCF008DB727 /* Logout */,
 				66D634F22D771D6F00B6A6E3 /* Tabbar */,
 				66B979B12D75C74000962C19 /* Faq */,
 				66B979A62D75C04800962C19 /* Contactus */,
@@ -3015,6 +3038,7 @@
 				C871C72C272FEB7C00DCBD2D /* Muli-Bold.ttf in Resources */,
 				663830862D75A37F00E9CC0E /* SelectAddressStoryboard.storyboard in Resources */,
 				C86BF99F266947F0002D87BC /* infoIcon.png in Resources */,
+				6693369F2D79CFF6008DB727 /* LogoutStoryboard.storyboard in Resources */,
 				66C2E0D62D6F30620027823E /* EditPasswordStoryboard.storyboard in Resources */,
 				C86BF9A0266947F0002D87BC /* errorIconLight.png in Resources */,
 				66EA353E2C7F1E0600E271E3 /* GoogleService-Info.plist in Resources */,
@@ -3212,6 +3236,10 @@
 				C871480D266E691600AD75E8 /* Reachability.swift in Sources */,
 				C871C8BD272FED0600DCBD2D /* SwipeTableViewCellDelegate.swift in Sources */,
 				7756A0F6253482EF00BFE53C /* PublicHelper.swift in Sources */,
+				6693369B2D79CFF6008DB727 /* LogoutCoordinator.swift in Sources */,
+				6693369C2D79CFF6008DB727 /* LogoutModel.swift in Sources */,
+				6693369D2D79CFF6008DB727 /* LogoutVC.swift in Sources */,
+				6693369E2D79CFF6008DB727 /* LogoutViewModel.swift in Sources */,
 				C871C9A7273029D900DCBD2D /* RangeSeekSliderDelegate.swift in Sources */,
 				C871C8CD272FED0600DCBD2D /* SwipeCollectionViewCell.swift in Sources */,
 				C84539AB2729887000004173 /* UIFontEx.swift in Sources */,

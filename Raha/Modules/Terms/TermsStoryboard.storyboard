@@ -104,6 +104,7 @@
                     </view>
                     <connections>
                         <outlet property="desLbl" destination="CB6-7Z-onN" id="hLa-M3-aWL"/>
+                        <outlet property="titleLbl" destination="BKh-7t-4Na" id="xtT-Kd-yUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="858-p1-glw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

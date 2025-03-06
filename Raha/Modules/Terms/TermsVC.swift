@@ -11,9 +11,11 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class TermsVC: BaseController {
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var desLbl: UILabel!
     var viewModel: TermsViewModel?
     var coordinator: TermsCoordinator?
+    var isprivacy = false
 }
 
 // MARK: - ...  LifeCycle
@@ -26,16 +28,38 @@ extension TermsVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        (self.tabBarController as? CustomTabBarController)?.hideTabBar()
+        setup()
+        bind()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.aboutddata.listen(on: { [weak self] value in
+            self?.desLbl.text = self?.viewModel?.aboutddata.value?.data?.description?.htmlToString ?? ""
+        })
+        
+    }
 }
 // MARK: - ...  Functions
 extension TermsVC {
     func setup() {
+        if isprivacy {
+            viewModel?.getprivacy()
+            titleLbl.text = "Privacy policy".localized
+        }else {
+            viewModel?.getterms()
+
+        }
     }
 }
 // MARK: - ...  View Contract

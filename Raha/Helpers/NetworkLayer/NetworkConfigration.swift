@@ -23,7 +23,7 @@ struct NetworkConfigration {
             case .live:
                 return "http://sfanz.co/api/v4/"
             case .test:
-                return "http://demo.raha.fudex-tech.net/api/v1/"
+                return "https://demo.raha.fudex-tech.net/api/v1/"
             }
         }
         static var firebaseTopic: String {
@@ -72,6 +72,9 @@ struct NetworkConfigration {
         case updateemail = "client/updateEmail"
         case updatepassword = "client/updatePassword"
         case sendotpupdatephone = "client/send-otp-mobile"
+        case about = "client/pages/about-us"
+        case terms = "client/pages/terms-and-conditions"
+        case privacy = "client/pages/privacy-policy"
         case updatephone = "client/update-otp-mobile"
         case profile = "client/profile"
         case updateprofile = "client/profile/update"
@@ -84,6 +87,7 @@ struct NetworkConfigration {
         case players = "client/players"
         case leagues = "leagues"
         case clubs = "client/clubs"
+        case faqs = "client/faqs"
         case setting
         case favclub = "client/fanFavouriteClubUpdate"
         case contactus = "client/sendContact"

@@ -329,7 +329,7 @@
 "New Password" = "كلمة المرور الجديدة";
 "Edit personal data" = "تعديل البيانات الشخصية";
 "Language" = "اللغة";
-"English" = "العربيه";
+"English" = "English";
 "Find a center" = "ابحث عن مركز";
 "kilometer" = "كيلومتر";
 "Filtering services" = "تصفية الخدمات";
@@ -353,3 +353,6 @@
 "Virtual Location" = "الموقع الافتراضي";
 "lenght must be" = "عدد الأرقام يساوى";
 "agree to" = "لابد من الموافقه على";
+"Faqs list is empty" = "الأسئلة الشائعة فارغه";
+"Are you sure to log out of the app?" = "هل أنت متأكد من تسجيل الخروج من التطبيق؟";
+"Cancel" = "الغاء";

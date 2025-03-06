@@ -36,6 +36,7 @@ extension MoreCoordinator {
     }
     func privacy() {
         guard let scene = R.storyboard.termsStoryboard.termsVC() else { return }
+        scene.isprivacy = true
         view?.push(scene)
     }
     func contactus() {
@@ -45,5 +46,9 @@ extension MoreCoordinator {
     func faqs() {
         guard let scene = R.storyboard.faqStoryboard.faqVC() else { return }
         view?.push(scene)
+    }
+    func logout() {
+        guard let scene = R.storyboard.logoutStoryboard.logoutVC() else { return }
+        view?.pushPop(scene)
     }
 }
