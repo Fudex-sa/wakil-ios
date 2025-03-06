@@ -31,7 +31,6 @@ class FaqTableViewCell: BaseTableViewCell {
             self?.isControl = !(self?.isControl ?? true)
             if (self?.isControl ?? false){
                 self?.answerLbl.text = model.answer ?? ""
-
             }else {
                 self?.answerLbl.text = ""
 
