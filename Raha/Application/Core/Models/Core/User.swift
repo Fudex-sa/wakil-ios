@@ -33,6 +33,7 @@ extension UserRoot {
         var youtubeLink: String?
         var name: String?
         var photo: String?
+        var avatar: String?
         var description: String?
         var mobile: String?
         var images: [String]?

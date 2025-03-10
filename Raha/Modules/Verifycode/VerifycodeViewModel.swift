@@ -58,7 +58,6 @@ extension VerifycodeViewModel {
     }
     func editphone() {
         NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
-        NetworkManager.instance.paramaters["country_code"] = countryCode.value ?? ""
         NetworkManager.instance.paramaters["otp"] = otp.value ?? ""
         NetworkManager.instance.request(NetworkConfigration.EndPoint.updatephone.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
@@ -72,12 +71,35 @@ extension VerifycodeViewModel {
     }
     func resendphoneotp() {
         NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
-        NetworkManager.instance.paramaters["country_code"] = countryCode.value ?? ""
-        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotpupdatephone.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.paramaters["type"] = "update_mobile"
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
             self?.resenddata.send(model)
+        }).store(self)
+    }
+    func resendemaileotp() {
+        NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
+        NetworkManager.instance.paramaters["type"] = "update_email"
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.resenddata.send(model)
+        }).store(self)
+    }
+    func editemail() {
+        NetworkManager.instance.paramaters["email"] = phone.value ?? ""
+        NetworkManager.instance.paramaters["otp"] = otp.value ?? ""
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.updateemail.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            var user = UD.user
+            user?.data?.user = model.data
+            UD.user = user
+            self?.editphonedata.send(model)
         }).store(self)
     }
 }

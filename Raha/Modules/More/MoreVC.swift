@@ -99,7 +99,7 @@ extension MoreVC {
     }
     func reload(){
         nameLbl.text = viewModel?.userddata.value?.data?.name ?? ""
-        userImg.setImage(url: viewModel?.userddata.value?.data?.photo ?? "")
+        userImg.setImage(url: viewModel?.userddata.value?.data?.avatar ?? "")
     }
 }
 // MARK: - ...  View Contract

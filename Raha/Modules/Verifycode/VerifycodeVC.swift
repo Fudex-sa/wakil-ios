@@ -15,6 +15,7 @@ class VerifycodeVC: BaseController {
         case register
         case forget
         case update
+        case updateemail
     }
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var verifyBtn: UIButton!
@@ -112,6 +113,9 @@ extension VerifycodeVC {
             phoneLbl.text = "\(code)\(mobile)"
             viewModel?.countryCode.send(code)
             viewModel?.phone.send(mobile)
+        }else if type == .updateemail {
+            phoneLbl.text = "\(mobile)"
+            viewModel?.phone.send(mobile)
         }else {
             backBtn.isHidden = true
             phoneLbl.text = "\(UD.user?.data?.user?.country?.code ?? "")\(UD.user?.data?.user?.mobile ?? "")"
@@ -125,6 +129,8 @@ extension VerifycodeVC {
             self?.startLoading()
             if self?.type == .update {
                 self?.viewModel?.resendphoneotp()
+            }else  if self?.type == .updateemail {
+                self?.viewModel?.resendemaileotp()
             }else {
                 self?.viewModel?.resendotp()
             }
@@ -136,6 +142,10 @@ extension VerifycodeVC {
                 self?.viewModel?.otp.send(code ?? "")
                 self?.viewModel?.checkotprequest()
             }else if self?.type == .update {
+                self?.startLoading()
+                self?.viewModel?.otp.send(code ?? "")
+                self?.viewModel?.editphone()
+            }else if self?.type == .updateemail {
                 self?.startLoading()
                 self?.viewModel?.otp.send(code ?? "")
                 self?.viewModel?.editphone()

@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ProfileVC: BaseController {
+    @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var editPassBtn: UIButton!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var emailLbl: UILabel!
@@ -61,15 +62,34 @@ extension ProfileVC {
 extension ProfileVC {
     func setup() {
         viewModel?.getprofile()
+        EditBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.editprofile()
+        }).store(self)
+        phoneEditBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.editphone()
+        }).store(self)
+        emailEditBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.editemail()
+        }).store(self)
+        editPassBtn.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.editpassword()
+        }).store(self)
     }
     func reload(){
         nameLbl.text = viewModel?.userddata.value?.data?.name ?? ""
-        userImg.setImage(url: viewModel?.userddata.value?.data?.photo ?? "")
+        userImg.setImage(url: viewModel?.userddata.value?.data?.avatar ?? "")
         phoneLbl.text = viewModel?.userddata.value?.data?.mobile ?? ""
         if viewModel?.userddata.value?.data?.email ?? "" == "" {
             emailLbl.text = "No email has been added yet".localized
         }else {
             emailLbl.text = viewModel?.userddata.value?.data?.email ?? ""
+        }
+        if viewModel?.userddata.value?.data?.isSocial ?? 0 == 1 {
+            passwordView.isHidden = true
+            emailEditBtn.isHidden = true
+        }else {
+            passwordView.isHidden = false
+            emailEditBtn.isHidden = false
         }
 
     }
