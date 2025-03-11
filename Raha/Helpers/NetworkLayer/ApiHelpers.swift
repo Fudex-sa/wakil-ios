@@ -71,7 +71,7 @@ extension BaseNetworkManager {
             }
             return [message]
         } else {
-            return [error.errors ?? .init()]
+            return []
         }
     }
     

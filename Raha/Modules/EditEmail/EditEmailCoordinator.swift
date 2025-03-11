@@ -21,7 +21,7 @@ extension EditEmailCoordinator {
     func verify() {
         guard let scene = R.storyboard.verifycodeStoryboard.verifycodeVC() else { return }
         scene.mobile = view?.viewModel?.email.value ?? ""
-        scene.type = .update
+        scene.type = .updateemail
         view?.push(scene)
     }
 }

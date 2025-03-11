@@ -58,6 +58,7 @@ extension UserRoot {
             case id
             case email
             case age
+            case avatar
             case lat
             case timer
             case lng

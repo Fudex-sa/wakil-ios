@@ -19,7 +19,7 @@ extension EditEmailViewModel {
 // MARK: - ...  Example of network response
 extension EditEmailViewModel {
     func resendotp() {
-        NetworkManager.instance.paramaters["mobile"] = email.value ?? ""
+        NetworkManager.instance.paramaters["email"] = email.value ?? ""
         NetworkManager.instance.paramaters["type"] = "update_email"
         NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
