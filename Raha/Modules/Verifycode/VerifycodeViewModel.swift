@@ -80,7 +80,7 @@ extension VerifycodeViewModel {
         }).store(self)
     }
     func resendemaileotp() {
-        NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
+        NetworkManager.instance.paramaters["email"] = phone.value ?? ""
         NetworkManager.instance.paramaters["type"] = "update_email"
         NetworkManager.instance.request(NetworkConfigration.EndPoint.sendotp.rawValue, type: .post, ProfileModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)

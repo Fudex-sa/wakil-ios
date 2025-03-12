@@ -9,7 +9,7 @@ class BaseModel<T: Codable>: Codable {
     var success: Bool?
     var message: String?
     var errorMessage: String?
-    var errors: Errors?
+    var errors: [String: [String]]?
     var error: Erro?
     var responseData: T?
     
@@ -22,13 +22,18 @@ class BaseModel<T: Codable>: Codable {
         case responseData
     }
     func description() -> String {
-//        let str: NSMutableString = NSMutableString()
+        var errorMessage = ""
+        for (field, error) in errors! {
+        for error in error {
+            errorMessage += "- \(error)\n"
+        }
+        }
 //        for error in errors {
-//            str.append("\(error.key ?? "") : \(error.value ?? error.message ?? "") ")
+//            str.append("\(error.key[0] ?? "") : \(error.value ?? error.message ?? "") ")
 //            break
 //        }
-//        return str as String
-        return ""
+        return errorMessage
+        //return ""
     }
 }
 

@@ -356,3 +356,11 @@
 "Faqs list is empty" = "الأسئلة الشائعة فارغه";
 "Are you sure to log out of the app?" = "هل أنت متأكد من تسجيل الخروج من التطبيق؟";
 "Cancel" = "الغاء";
+"Add address" = "إضافة عنوان";
+"Add a new address" = "إضافة عنوان جديد";
+"Street" = "الشارع";
+"Region" = "المنطقة";
+"City" = "المدينة";
+"Neighborhood" = "الحي";
+"Select as default address" = "تحديد كعنوان افتراضي";
+"Show on map" = "الموقع على الخريطة";

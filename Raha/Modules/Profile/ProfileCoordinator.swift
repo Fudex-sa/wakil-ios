@@ -25,7 +25,7 @@ extension ProfileCoordinator {
     }
     func editemail() {
         guard let scene = R.storyboard.editEmailStoryboard.editEmailVC() else { return }
-        //scene.user = view?.viewModel?.userddata.value
+        scene.user = view?.viewModel?.userddata.value
         view?.push(scene)
     }
     func editphone() {

@@ -361,3 +361,11 @@
 "Faqs list is empty" = "Faqs list is empty";
 "Are you sure to log out of the app?" = "Are you sure to log out of the app?";
 "Cancel" = "Cancel";
+"Add address" = "Add address";
+"Add a new address" = "Add a new address";
+"Street" = "Street";
+"Region" = "Region";
+"City" = "City";
+"Neighborhood" = "Neighborhood";
+"Select as default address" = "Select as default address";
+"Show on map" = "Show on map";

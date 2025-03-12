@@ -148,7 +148,7 @@ extension VerifycodeVC {
             }else if self?.type == .updateemail {
                 self?.startLoading()
                 self?.viewModel?.otp.send(code ?? "")
-                self?.viewModel?.editphone()
+                self?.viewModel?.editemail()
             }else {
                 self?.startLoading()
                 self?.viewModel?.otp.send(code ?? "")

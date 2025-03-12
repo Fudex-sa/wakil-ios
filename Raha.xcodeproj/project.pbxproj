@@ -16,6 +16,23 @@
 		6602D04B2D6F548300453B06 /* TermsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602D0462D6F548300453B06 /* TermsModel.swift */; };
 		6602D04C2D6F548300453B06 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602D0472D6F548300453B06 /* TermsVC.swift */; };
 		6602D04D2D6F548300453B06 /* TermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602D0482D6F548300453B06 /* TermsViewModel.swift */; };
+		6606AA302D802AF800E7665E /* AddressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA2B2D802AF800E7665E /* AddressCoordinator.swift */; };
+		6606AA312D802AF800E7665E /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA2D2D802AF800E7665E /* AddressModel.swift */; };
+		6606AA322D802AF800E7665E /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA2E2D802AF800E7665E /* AddressVC.swift */; };
+		6606AA332D802AF800E7665E /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA2F2D802AF800E7665E /* AddressViewModel.swift */; };
+		6606AA342D802AF800E7665E /* AddressStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6606AA2C2D802AF800E7665E /* AddressStoryboard.storyboard */; };
+		6606AA3B2D802B2900E7665E /* AddAddressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA362D802B2900E7665E /* AddAddressCoordinator.swift */; };
+		6606AA3C2D802B2900E7665E /* AddAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA382D802B2900E7665E /* AddAddressModel.swift */; };
+		6606AA3D2D802B2900E7665E /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA392D802B2900E7665E /* AddAddressVC.swift */; };
+		6606AA3E2D802B2900E7665E /* AddAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA3A2D802B2900E7665E /* AddAddressViewModel.swift */; };
+		6606AA3F2D802B2900E7665E /* AddAddressStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6606AA372D802B2900E7665E /* AddAddressStoryboard.storyboard */; };
+		6606AA462D802B5200E7665E /* SelectonmapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA412D802B5200E7665E /* SelectonmapCoordinator.swift */; };
+		6606AA472D802B5200E7665E /* SelectonmapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA432D802B5200E7665E /* SelectonmapModel.swift */; };
+		6606AA482D802B5200E7665E /* SelectonmapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA442D802B5200E7665E /* SelectonmapVC.swift */; };
+		6606AA492D802B5200E7665E /* SelectonmapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA452D802B5200E7665E /* SelectonmapViewModel.swift */; };
+		6606AA4A2D802B5200E7665E /* SelectonmapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6606AA422D802B5200E7665E /* SelectonmapStoryboard.storyboard */; };
+		6606AA522D8032FF00E7665E /* AddresslistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6606AA502D8032FF00E7665E /* AddresslistTableViewCell.swift */; };
+		6606AA532D8032FF00E7665E /* AddresslistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6606AA512D8032FF00E7665E /* AddresslistTableViewCell.xib */; };
 		66093EDC2D759B2D00F307C7 /* SelectLanguageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66093ED82D759B2D00F307C7 /* SelectLanguageStoryboard.storyboard */; };
 		66093EDD2D759B2D00F307C7 /* SelectLanguageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66093ED72D759B2D00F307C7 /* SelectLanguageCoordinator.swift */; };
 		66093EDE2D759B2D00F307C7 /* SelectLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66093ED92D759B2D00F307C7 /* SelectLanguageModel.swift */; };
@@ -587,6 +604,23 @@
 		6602D0462D6F548300453B06 /* TermsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsModel.swift; sourceTree = "<group>"; };
 		6602D0472D6F548300453B06 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		6602D0482D6F548300453B06 /* TermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewModel.swift; sourceTree = "<group>"; };
+		6606AA2B2D802AF800E7665E /* AddressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCoordinator.swift; sourceTree = "<group>"; };
+		6606AA2C2D802AF800E7665E /* AddressStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressStoryboard.storyboard; sourceTree = "<group>"; };
+		6606AA2D2D802AF800E7665E /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		6606AA2E2D802AF800E7665E /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
+		6606AA2F2D802AF800E7665E /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		6606AA362D802B2900E7665E /* AddAddressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressCoordinator.swift; sourceTree = "<group>"; };
+		6606AA372D802B2900E7665E /* AddAddressStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAddressStoryboard.storyboard; sourceTree = "<group>"; };
+		6606AA382D802B2900E7665E /* AddAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressModel.swift; sourceTree = "<group>"; };
+		6606AA392D802B2900E7665E /* AddAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressVC.swift; sourceTree = "<group>"; };
+		6606AA3A2D802B2900E7665E /* AddAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewModel.swift; sourceTree = "<group>"; };
+		6606AA412D802B5200E7665E /* SelectonmapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectonmapCoordinator.swift; sourceTree = "<group>"; };
+		6606AA422D802B5200E7665E /* SelectonmapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectonmapStoryboard.storyboard; sourceTree = "<group>"; };
+		6606AA432D802B5200E7665E /* SelectonmapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectonmapModel.swift; sourceTree = "<group>"; };
+		6606AA442D802B5200E7665E /* SelectonmapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectonmapVC.swift; sourceTree = "<group>"; };
+		6606AA452D802B5200E7665E /* SelectonmapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectonmapViewModel.swift; sourceTree = "<group>"; };
+		6606AA502D8032FF00E7665E /* AddresslistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddresslistTableViewCell.swift; sourceTree = "<group>"; };
+		6606AA512D8032FF00E7665E /* AddresslistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddresslistTableViewCell.xib; sourceTree = "<group>"; };
 		66093ED72D759B2D00F307C7 /* SelectLanguageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLanguageCoordinator.swift; sourceTree = "<group>"; };
 		66093ED82D759B2D00F307C7 /* SelectLanguageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectLanguageStoryboard.storyboard; sourceTree = "<group>"; };
 		66093ED92D759B2D00F307C7 /* SelectLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLanguageModel.swift; sourceTree = "<group>"; };
@@ -1214,6 +1248,52 @@
 				6602D0482D6F548300453B06 /* TermsViewModel.swift */,
 			);
 			path = Terms;
+			sourceTree = "<group>";
+		};
+		6606AA2A2D802AD100E7665E /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				6606AA4B2D802D4500E7665E /* cells */,
+				6606AA2B2D802AF800E7665E /* AddressCoordinator.swift */,
+				6606AA2C2D802AF800E7665E /* AddressStoryboard.storyboard */,
+				6606AA2D2D802AF800E7665E /* AddressModel.swift */,
+				6606AA2E2D802AF800E7665E /* AddressVC.swift */,
+				6606AA2F2D802AF800E7665E /* AddressViewModel.swift */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		6606AA352D802B0900E7665E /* AddAddress */ = {
+			isa = PBXGroup;
+			children = (
+				6606AA362D802B2900E7665E /* AddAddressCoordinator.swift */,
+				6606AA372D802B2900E7665E /* AddAddressStoryboard.storyboard */,
+				6606AA382D802B2900E7665E /* AddAddressModel.swift */,
+				6606AA392D802B2900E7665E /* AddAddressVC.swift */,
+				6606AA3A2D802B2900E7665E /* AddAddressViewModel.swift */,
+			);
+			path = AddAddress;
+			sourceTree = "<group>";
+		};
+		6606AA402D802B3700E7665E /* Selectonmap */ = {
+			isa = PBXGroup;
+			children = (
+				6606AA412D802B5200E7665E /* SelectonmapCoordinator.swift */,
+				6606AA422D802B5200E7665E /* SelectonmapStoryboard.storyboard */,
+				6606AA432D802B5200E7665E /* SelectonmapModel.swift */,
+				6606AA442D802B5200E7665E /* SelectonmapVC.swift */,
+				6606AA452D802B5200E7665E /* SelectonmapViewModel.swift */,
+			);
+			path = Selectonmap;
+			sourceTree = "<group>";
+		};
+		6606AA4B2D802D4500E7665E /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				6606AA502D8032FF00E7665E /* AddresslistTableViewCell.swift */,
+				6606AA512D8032FF00E7665E /* AddresslistTableViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		66093ED62D759B0600F307C7 /* SelectLanguage */ = {
@@ -2709,6 +2789,9 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6606AA402D802B3700E7665E /* Selectonmap */,
+				6606AA352D802B0900E7665E /* AddAddress */,
+				6606AA2A2D802AD100E7665E /* Address */,
 				669336952D79CFCF008DB727 /* Logout */,
 				66D634F22D771D6F00B6A6E3 /* Tabbar */,
 				66B979B12D75C74000962C19 /* Faq */,
@@ -2971,10 +3054,12 @@
 				66DED39F2D747B22001AF6E0 /* CentersTableViewCell.xib in Resources */,
 				66CFBFC02D6F462C007715D0 /* SettingsStoryboard.storyboard in Resources */,
 				C86BF9A2266947F0002D87BC /* successIconLight@2x.png in Resources */,
+				6606AA532D8032FF00E7665E /* AddresslistTableViewCell.xib in Resources */,
 				7756A123253486D600BFE53C /* Colors.xcassets in Resources */,
 				C84539A52729887000004173 /* EmptyScreen.xib in Resources */,
 				C871C72E272FEB7C00DCBD2D /* Muli-SemiBold.ttf in Resources */,
 				77228EBE2756681F008F11B3 /* CalendarPickerView.xib in Resources */,
+				6606AA3F2D802B2900E7665E /* AddAddressStoryboard.storyboard in Resources */,
 				C871C72F272FEB7C00DCBD2D /* SFPRODISPLAYTHINITALIC.OTF in Resources */,
 				C86BF97D266947F0002D87BC /* infoIcon@2x.png in Resources */,
 				C84539AF2729887000004173 /* MaintanceScreen.xib in Resources */,
@@ -3011,6 +3096,7 @@
 				C86BF990266947F0002D87BC /* successIcon@2x.png in Resources */,
 				C871C72A272FEB7B00DCBD2D /* SFPRODISPLAYREGULAR.OTF in Resources */,
 				C86BF9A3266947F0002D87BC /* successIconLight@3x.png in Resources */,
+				6606AA4A2D802B5200E7665E /* SelectonmapStoryboard.storyboard in Resources */,
 				C871C737272FEB7C00DCBD2D /* SFPRODISPLAYULTRALIGHTITALIC.OTF in Resources */,
 				C86BF992266947F0002D87BC /* errorIcon.png in Resources */,
 				C86BF98B266947F0002D87BC /* warningIconLight.png in Resources */,
@@ -3031,6 +3117,7 @@
 				C853B95926D7F9450008F09D /* Assets.xcassets in Resources */,
 				66C8C0922D6C687700096320 /* Expo-Arabic-Book.ttf in Resources */,
 				C86BF99C266947F0002D87BC /* successIcon.png in Resources */,
+				6606AA342D802AF800E7665E /* AddressStoryboard.storyboard in Resources */,
 				C84539A92729887000004173 /* NeoSansArabic-Medium.ttf in Resources */,
 				C871C724272FEB7B00DCBD2D /* Muli-ExtraLight.ttf in Resources */,
 				C86BF982266947F0002D87BC /* errorIconSubtle.png in Resources */,
@@ -3202,6 +3289,7 @@
 				C8978F832669520C00021B0C /* NotificationBuilder.swift in Sources */,
 				C8C0930B272ABDA200E2270A /* UISwitch+Combine.swift in Sources */,
 				7756A097253482EF00BFE53C /* RadioButton.swift in Sources */,
+				6606AA522D8032FF00E7665E /* AddresslistTableViewCell.swift in Sources */,
 				664FE17F2C3BEB620081C90B /* PaddingLabel.swift in Sources */,
 				C871C98D2730231300DCBD2D /* UILabel+Multiline.swift in Sources */,
 				C86BF9B9266947F0002D87BC /* MessageView.swift in Sources */,
@@ -3264,6 +3352,10 @@
 				663C3F952D6DC8C700A2C80A /* VerifycodeCoordinator.swift in Sources */,
 				663C3F962D6DC8C700A2C80A /* VerifycodeModel.swift in Sources */,
 				663C3F972D6DC8C700A2C80A /* VerifycodeVC.swift in Sources */,
+				6606AA462D802B5200E7665E /* SelectonmapCoordinator.swift in Sources */,
+				6606AA472D802B5200E7665E /* SelectonmapModel.swift in Sources */,
+				6606AA482D802B5200E7665E /* SelectonmapVC.swift in Sources */,
+				6606AA492D802B5200E7665E /* SelectonmapViewModel.swift in Sources */,
 				663C3F982D6DC8C700A2C80A /* VerifycodeViewModel.swift in Sources */,
 				C871C8CF272FED0600DCBD2D /* SwipeExpansionStyle.swift in Sources */,
 				7756A17E25348AD400BFE53C /* BoolExtensions.swift in Sources */,
@@ -3276,6 +3368,10 @@
 				C86BF9A6266947F0002D87BC /* SwiftMessageFacade.swift in Sources */,
 				C8C9D023266CD56000E66D46 /* Validator.swift in Sources */,
 				C853B95626D7F9450008F09D /* SPPermissionsDialogController.swift in Sources */,
+				6606AA3B2D802B2900E7665E /* AddAddressCoordinator.swift in Sources */,
+				6606AA3C2D802B2900E7665E /* AddAddressModel.swift in Sources */,
+				6606AA3D2D802B2900E7665E /* AddAddressVC.swift in Sources */,
+				6606AA3E2D802B2900E7665E /* AddAddressViewModel.swift in Sources */,
 				C871C9952730231300DCBD2D /* SkeletonCollectionDataSource.swift in Sources */,
 				C86BF97A266947F0002D87BC /* PassthroughView.swift in Sources */,
 				C8489AAF2677AD8100C56B9B /* StoredDefaults.swift in Sources */,
@@ -3346,6 +3442,10 @@
 				C871C70C272FEAC200DCBD2D /* DarkMode.swift in Sources */,
 				C86BF9A8266947F0002D87BC /* NSLayoutConstraint+Extensions.swift in Sources */,
 				66DED39A2D74798C001AF6E0 /* SlidersCollectionViewCell.swift in Sources */,
+				6606AA302D802AF800E7665E /* AddressCoordinator.swift in Sources */,
+				6606AA312D802AF800E7665E /* AddressModel.swift in Sources */,
+				6606AA322D802AF800E7665E /* AddressVC.swift in Sources */,
+				6606AA332D802AF800E7665E /* AddressViewModel.swift in Sources */,
 				669E1B442C47F15700950373 /* RoundedBottomView.swift in Sources */,
 				66AEC2D72C43C49900BC260E /* JWT.swift in Sources */,
 				C853B94A26D7F9450008F09D /* Depricated.swift in Sources */,
