@@ -364,3 +364,10 @@
 "Neighborhood" = "الحي";
 "Select as default address" = "تحديد كعنوان افتراضي";
 "Show on map" = "الموقع على الخريطة";
+"Default address" = "العنوان الافتراضي";
+"Delete address" = "حذف عنوان";
+"Are you sure to delete address?" = "هل تريد حذف عنوان ؟";
+"Delete" = "حذف";
+"Addresses list is empty" = "قائمه العناوين فارغه";
+"Locate on the map" = "تحديد الموقع على الخريطة";
+"Location" = "الموقع";

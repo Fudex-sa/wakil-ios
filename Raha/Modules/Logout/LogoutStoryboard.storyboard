@@ -133,8 +133,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bodyLbl" destination="JVC-xf-dpz" id="yLb-bY-d2O"/>
                         <outlet property="cancelBtn" destination="Lrs-Wc-PH0" id="aqw-f5-pW9"/>
+                        <outlet property="imgTop" destination="YUA-xb-rYK" id="Zsz-UG-5Eo"/>
                         <outlet property="logoutBtn" destination="PeE-gg-gvI" id="4sB-JG-pjQ"/>
+                        <outlet property="logoutHight" destination="BLS-Jf-79h" id="Qu1-pG-4oq"/>
+                        <outlet property="logoutImg" destination="HgT-2f-Nc6" id="oVm-AT-0i7"/>
+                        <outlet property="logoutLbl" destination="PeE-gg-gvI" id="iQe-yv-XP7"/>
+                        <outlet property="titlrLbl" destination="5hU-Ah-7Q4" id="6jV-Ti-lsz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-za-4cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

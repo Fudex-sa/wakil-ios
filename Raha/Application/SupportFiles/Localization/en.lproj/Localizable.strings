@@ -369,3 +369,10 @@
 "Neighborhood" = "Neighborhood";
 "Select as default address" = "Select as default address";
 "Show on map" = "Show on map";
+"Default address" = "Default address";
+"Delete address" = "Delete address";
+"Are you sure to delete address?" = "Are you sure to delete address?";
+"Delete" = "Delete";
+"Addresses list is empty" = "Addresses list is empty";
+"Locate on the map" = "Locate on the map";
+"Location" = "Location";

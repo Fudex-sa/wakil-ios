@@ -115,6 +115,7 @@ struct NetworkConfigration {
         case refreshToken = "/api/app/register/refresh-token"
         case checkSubscriptionSellers = "client/checkSubscriptionSellers"
         case settingsubscribe = "setting/packages_available_v4"
+        case addresses = "client/userAddresses"
     }
 }
 

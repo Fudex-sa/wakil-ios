@@ -47,19 +47,20 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="delete"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-oi-Ynk">
-                                <rect key="frame" x="32" y="1.6666666666666661" width="331" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-oi-Ynk">
+                                <rect key="frame" x="32" y="2" width="331" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msV-c4-YOM">
-                                <rect key="frame" x="0.0" y="44" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msV-c4-YOM">
+                                <rect key="frame" x="0.0" y="44" width="120" height="21.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="orange"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Default address"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLe-Jm-9NT">
@@ -73,7 +74,7 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mow-XJ-si3">
                                 <rect key="frame" x="0.0" y="89" width="435" height="1"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="gray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="cFT-Sl-BGD"/>
                                 </constraints>
@@ -82,6 +83,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xVA-vh-heI" firstAttribute="leading" secondItem="48Y-1m-fWo" secondAttribute="leading" id="2SS-QW-OkB"/>
+                            <constraint firstItem="XO4-oi-Ynk" firstAttribute="top" secondItem="48Y-1m-fWo" secondAttribute="top" constant="2" id="8I1-96-fge"/>
                             <constraint firstItem="xVA-vh-heI" firstAttribute="top" secondItem="48Y-1m-fWo" secondAttribute="top" id="KlN-FA-ohX"/>
                             <constraint firstItem="XO4-oi-Ynk" firstAttribute="leading" secondItem="xVA-vh-heI" secondAttribute="trailing" constant="8" id="NR6-33-qbG"/>
                             <constraint firstItem="XO4-oi-Ynk" firstAttribute="centerY" secondItem="xVA-vh-heI" secondAttribute="centerY" id="Ogg-gG-YOo"/>
@@ -91,6 +93,7 @@
                             <constraint firstItem="Mow-XJ-si3" firstAttribute="leading" secondItem="48Y-1m-fWo" secondAttribute="leading" id="VVV-KY-G8L"/>
                             <constraint firstItem="0SA-iv-K4a" firstAttribute="centerY" secondItem="JbB-ME-i7g" secondAttribute="centerY" id="Xn7-q8-XX8"/>
                             <constraint firstItem="JbB-ME-i7g" firstAttribute="leading" secondItem="0SA-iv-K4a" secondAttribute="trailing" constant="16" id="Zei-xL-G6i"/>
+                            <constraint firstItem="Mow-XJ-si3" firstAttribute="top" secondItem="sLe-Jm-9NT" secondAttribute="bottom" constant="23.329999999999998" id="bPB-GC-lvm"/>
                             <constraint firstItem="0SA-iv-K4a" firstAttribute="leading" secondItem="XO4-oi-Ynk" secondAttribute="trailing" constant="8" id="bPM-sc-JEq"/>
                             <constraint firstItem="msV-c4-YOM" firstAttribute="top" secondItem="xVA-vh-heI" secondAttribute="bottom" constant="20" id="dQH-SS-aIf"/>
                             <constraint firstItem="msV-c4-YOM" firstAttribute="leading" secondItem="48Y-1m-fWo" secondAttribute="leading" id="hah-dl-F3p"/>
@@ -110,6 +113,7 @@
             <viewLayoutGuide key="safeArea" id="g5v-l4-M11"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="containerView" destination="48Y-1m-fWo" id="WDd-UP-Ead"/>
                 <outlet property="defualtLbl" destination="msV-c4-YOM" id="IzI-zE-i7e"/>
                 <outlet property="defultBtn" destination="sLe-Jm-9NT" id="MhA-dC-UMX"/>
                 <outlet property="deleteBtn" destination="0SA-iv-K4a" id="h1W-bF-UBC"/>
@@ -124,6 +128,9 @@
         <image name="delete" width="18" height="18"/>
         <image name="edit" width="24" height="24"/>
         <image name="location" width="24" height="24"/>
+        <namedColor name="gray">
+            <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="orange">
             <color red="0.85098039215686272" green="0.46666666666666667" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

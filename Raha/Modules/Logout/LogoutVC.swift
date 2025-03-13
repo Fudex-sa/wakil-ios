@@ -8,13 +8,28 @@
 
 import Foundation
 import UIKit
+protocol LogoutVCDelegate: AnyObject {
+    func address()
 
+}
 // MARK: - ...  ViewController - Vars
 class LogoutVC: BaseController {
+    enum VerifyType {
+        case logout
+        case address
+    }
+    var delegate: LogoutVCDelegate?
+    @IBOutlet weak var imgTop: NSLayoutConstraint!
+    @IBOutlet weak var logoutHight: NSLayoutConstraint!
+    @IBOutlet weak var logoutImg: UIImageView!
+    @IBOutlet weak var logoutLbl: UIButton!
+    @IBOutlet weak var bodyLbl: UILabel!
+    @IBOutlet weak var titlrLbl: UILabel!
     @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
     var viewModel: LogoutViewModel?
     var coordinator: LogoutCoordinator?
+    var type: VerifyType = .logout
 }
 
 // MARK: - ...  LifeCycle
@@ -54,7 +69,20 @@ extension LogoutVC {
 // MARK: - ...  Functions
 extension LogoutVC {
     func setup() {
+        if type == .address {
+            logoutImg.isHidden = true
+            logoutHight.constant = 0
+            imgTop.constant = 0
+            titlrLbl.text = "Delete address".localized
+            bodyLbl.text = "Are you sure to delete address?".localized
+            logoutLbl.setTitle("Delete".localized, for: .normal)
+        }
         logoutBtn.publisher.listen(on: { [weak self] in
+            if self?.type == .address {
+                self?.delegate?.address()
+                self?.dismiss(animated: true, completion: nil)
+                return
+            }
             self?.viewModel?.fetchlogout()
             
         }).store(self)

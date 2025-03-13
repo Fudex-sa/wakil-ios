@@ -37,4 +37,8 @@ extension ProfileCoordinator {
         guard let scene = R.storyboard.editPasswordStoryboard.editPasswordVC() else { return }
         view?.push(scene)
     }
+    func addresses() {
+        guard let scene = R.storyboard.addressStoryboard.addressVC() else { return }
+        view?.push(scene)
+    }
 }

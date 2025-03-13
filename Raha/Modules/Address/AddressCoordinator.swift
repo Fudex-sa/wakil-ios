@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class AddressCoordinator: Coordinator {
+class AddressCoordinator: Coordinator , LogoutVCDelegate {
     typealias PresentingView = AddressVC
     weak var view: PresentingView?
     deinit {
@@ -18,5 +18,22 @@ class AddressCoordinator: Coordinator {
 }
 
 extension AddressCoordinator {
-    
+    func addaddress() {
+        guard let scene = R.storyboard.addAddressStoryboard.addAddressVC() else { return }
+        view?.push(scene)
+    }
+    func editaddress() {
+        guard let scene = R.storyboard.addAddressStoryboard.addAddressVC() else { return }
+        view?.push(scene)
+    }
+    func delete() {
+        guard let scene = R.storyboard.logoutStoryboard.logoutVC() else { return }
+        scene.type = .address
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
+    func address() {
+        view?.stopLoading()
+        view?.viewModel?.deleteaddress()
+    }
 }

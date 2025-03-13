@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class AddAddressVC: BaseController {
+    @IBOutlet weak var locLbl: UILabel!
+    @IBOutlet weak var locView: UIView!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var defaultBtn: CheckBoxButton!
     @IBOutlet weak var hayTxf: UITextField!

@@ -74,6 +74,9 @@ extension ProfileVC {
         editPassBtn.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.editpassword()
         }).store(self)
+        addressView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.addresses()
+        }).store(self)
     }
     func reload(){
         nameLbl.text = viewModel?.userddata.value?.data?.name ?? ""
