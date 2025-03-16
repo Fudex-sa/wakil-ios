@@ -61,7 +61,6 @@ struct NetworkConfigration {
         case forceUpdate = "/api/app/register/force-update"
         case login = "client/login"
         case countries
-        case states = "cities"
         case validteregister = "checkRegisterValidation"
         case register = "client/register"
         case news = "client/news"
@@ -89,7 +88,7 @@ struct NetworkConfigration {
         case faqs = "client/faqs"
         case setting
         case favclub = "client/fanFavouriteClubUpdate"
-        case contactus = "client/sendContact"
+        case contactus = "client/contact-us"
         case logout = "client/logout"
         case clubdetails = "client/clubs/"
         case paymentmethod = "checkoutDetails"
@@ -116,6 +115,8 @@ struct NetworkConfigration {
         case checkSubscriptionSellers = "client/checkSubscriptionSellers"
         case settingsubscribe = "setting/packages_available_v4"
         case addresses = "client/userAddresses"
+        case states = "client/states"
+        case cities = "client/cities"
     }
 }
 

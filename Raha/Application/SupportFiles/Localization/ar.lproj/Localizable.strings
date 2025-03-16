@@ -371,3 +371,8 @@
 "Addresses list is empty" = "قائمه العناوين فارغه";
 "Locate on the map" = "تحديد الموقع على الخريطة";
 "Location" = "الموقع";
+"select Region first" = "اختر المنطقه اولا";
+"select Region" = "اختر المنطقه";
+"select City" = "اختر المدينه";
+"select Location" = "اختر العنوان";
+"write message" = "اكتب رساله";

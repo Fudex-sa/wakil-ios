@@ -45,3 +45,7 @@ struct CityID: Codable {
         case stateID = "state_id"
     }
 }
+
+struct DeleteaddresssModel: Codable {
+    let message: String?
+}

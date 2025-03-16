@@ -132,7 +132,7 @@ extension AddressVC : AddresslistTableViewCellDelegate {
     }
     
     func edit(wasPressedOnCell cell: AddresslistTableViewCell, model: AddressesDatum) {
-        coordinator?.editaddress()
+        coordinator?.editaddress(model: model)
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 
 extension GoogleMapHelper {
     struct Keys {
-        static let googleRoutesAPI = "AIzaSyAieupB0035MyGmucDg2y8-BBKLAr_sUFY"
-        static let googleAPI = "AIzaSyAieupB0035MyGmucDg2y8-BBKLAr_sUFY"
+        static let googleRoutesAPI = "AIzaSyDUc7N2lfakNIv56tK0LKgexC4bdJblY_c"
+        static let googleAPI = "AIzaSyDUc7N2lfakNIv56tK0LKgexC4bdJblY_c"
     }
 }

@@ -22,8 +22,10 @@ extension AddressCoordinator {
         guard let scene = R.storyboard.addAddressStoryboard.addAddressVC() else { return }
         view?.push(scene)
     }
-    func editaddress() {
+    func editaddress(model: AddressesDatum) {
         guard let scene = R.storyboard.addAddressStoryboard.addAddressVC() else { return }
+        scene.isedit = true
+        scene.address = model
         view?.push(scene)
     }
     func delete() {

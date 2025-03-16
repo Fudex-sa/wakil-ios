@@ -33,9 +33,6 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back"/>
-                                        <connections>
-                                            <action selector="backBtn:" destination="CXP-za-4cZ" eventType="touchUpInside" id="HjF-Aq-afS"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show on map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlQ-4e-Akb">
                                         <rect key="frame" x="131.5" y="8" width="103.5" height="20.5"/>
@@ -92,6 +89,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="soo-J0-olP" id="8gY-nL-1j0"/>
                         <outlet property="mapView" destination="yXX-GO-CZx" id="bGB-lZ-TbA"/>
                         <outlet property="saveBtn" destination="OLA-Jm-WeM" id="EeE-B1-2QE"/>
                     </connections>

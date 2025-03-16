@@ -9,5 +9,6 @@
 import Foundation
 
 // MARK: - ...  Entity
-class AddAddressModel: Codable {
+struct AddAddressModel: Codable {
+    var data: [RegisterModel]?
 }

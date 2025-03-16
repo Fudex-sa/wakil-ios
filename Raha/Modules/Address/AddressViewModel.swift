@@ -12,7 +12,7 @@ import Foundation
 class AddressViewModel: BaseViewModel ,DataSourceViewModel {
     var addressId: Publisher<Int> = .init()
     var items: Publisher<[AddressesDatum]> = .init()
-    var deltedata: Publisher<UserRoot> = .init()
+    var deltedata: Publisher<DeleteaddresssModel> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension AddressViewModel {
@@ -30,7 +30,7 @@ extension AddressViewModel {
         }).store(self)
     }
     func deleteaddress() {
-        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.addresses.rawValue)/\(addressId.value ?? 0)/delete", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.addresses.rawValue)/\(addressId.value ?? 0)/delete", type: .post, DeleteaddresssModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
