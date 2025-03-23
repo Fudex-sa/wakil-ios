@@ -1807,7 +1807,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 82 images.
+  /// This `R.image` struct is generated, and contains static references to 84 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1867,6 +1867,8 @@ struct R: Rswift.Validatable {
     static let arrowdown = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowdown")
     /// Image `back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
+    /// Image `check-box`.
+    static let checkBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "check-box")
     /// Image `check`.
     static let check = Rswift.ImageResource(bundle: R.hostingBundle, name: "check")
     /// Image `checkbox`.
@@ -1961,6 +1963,8 @@ struct R: Rswift.Validatable {
     static let successIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIcon")
     /// Image `terms`.
     static let terms = Rswift.ImageResource(bundle: R.hostingBundle, name: "terms")
+    /// Image `unchecked-box`.
+    static let uncheckedBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "unchecked-box")
     /// Image `unckeck`.
     static let unckeck = Rswift.ImageResource(bundle: R.hostingBundle, name: "unckeck")
     /// Image `user1`.
@@ -2181,6 +2185,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "check", bundle: ..., traitCollection: ...)`
     static func check(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.check, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "check-box", bundle: ..., traitCollection: ...)`
+    static func checkBox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.checkBox, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2503,6 +2514,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "terms", bundle: ..., traitCollection: ...)`
     static func terms(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.terms, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "unchecked-box", bundle: ..., traitCollection: ...)`
+    static func uncheckedBox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uncheckedBox, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2861,7 +2879,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 293 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 305 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -2911,6 +2929,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let addressList = Rswift.StringResource(key: "Address List", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Addresses list is empty
+      ///
+      /// Locales: ar, en
+      static let addressesListIsEmpty = Rswift.StringResource(key: "Addresses list is empty", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Alert
       ///
       /// Locales: ar, en
@@ -2983,6 +3005,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let deactivateAccountLan = Rswift.StringResource(key: "deactivate.account.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Are you sure to delete address?
+      ///
+      /// Locales: ar, en
+      static let areYouSureToDeleteAddress = Rswift.StringResource(key: "Are you sure to delete address?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Are you sure to log out of the app?
       ///
       /// Locales: ar, en
@@ -3171,6 +3197,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let deactivateLan = Rswift.StringResource(key: "deactivate.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Default address
+      ///
+      /// Locales: ar, en
+      static let defaultAddress = Rswift.StringResource(key: "Default address", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Delete
+      ///
+      /// Locales: ar, en
+      static let delete = Rswift.StringResource(key: "Delete", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Delete
       ///
       /// Locales: ar, en
@@ -3179,6 +3213,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let deleteAccount = Rswift.StringResource(key: "Delete Account", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Delete address
+      ///
+      /// Locales: ar, en
+      static let deleteAddress = Rswift.StringResource(key: "Delete address", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Denied
       ///
       /// Locales: ar, en
@@ -3391,6 +3429,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let listLan = Rswift.StringResource(key: "list.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Locate on the map
+      ///
+      /// Locales: ar, en
+      static let locateOnTheMap = Rswift.StringResource(key: "Locate on the map", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Location
+      ///
+      /// Locales: ar, en
+      static let location = Rswift.StringResource(key: "Location", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Location Always
       ///
       /// Locales: ar, en
@@ -3995,6 +4041,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let not_foundLan = Rswift.StringResource(key: "not_found.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: select City
+      ///
+      /// Locales: ar, en
+      static let selectCity = Rswift.StringResource(key: "select City", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: select Location
+      ///
+      /// Locales: ar, en
+      static let selectLocation = Rswift.StringResource(key: "select Location", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: select Region
+      ///
+      /// Locales: ar, en
+      static let selectRegion = Rswift.StringResource(key: "select Region", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: select Region first
+      ///
+      /// Locales: ar, en
+      static let selectRegionFirst = Rswift.StringResource(key: "select Region first", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: the length has error
       ///
       /// Locales: ar, en
@@ -4015,6 +4077,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let this_field_is_requiredLan = Rswift.StringResource(key: "this_field_is_required.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: write message
+      ///
+      /// Locales: ar, en
+      static let writeMessage = Rswift.StringResource(key: "write message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: you must accept the request to login
       ///
       /// Locales: ar, en
@@ -4214,6 +4280,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Address List", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Addresses list is empty
+      ///
+      /// Locales: ar, en
+      static func addressesListIsEmpty(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Addresses list is empty", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Addresses list is empty"
+        }
+
+        return NSLocalizedString("Addresses list is empty", bundle: bundle, comment: "")
       }
 
       /// en translation: Alert
@@ -4484,6 +4565,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("deactivate.account.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Are you sure to delete address?
+      ///
+      /// Locales: ar, en
+      static func areYouSureToDeleteAddress(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Are you sure to delete address?", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Are you sure to delete address?"
+        }
+
+        return NSLocalizedString("Are you sure to delete address?", bundle: bundle, comment: "")
       }
 
       /// en translation: Are you sure to log out of the app?
@@ -5191,6 +5287,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("deactivate.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Default address
+      ///
+      /// Locales: ar, en
+      static func defaultAddress(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Default address", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Default address"
+        }
+
+        return NSLocalizedString("Default address", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete
+      ///
+      /// Locales: ar, en
+      static func delete(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Delete", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Delete"
+        }
+
+        return NSLocalizedString("Delete", bundle: bundle, comment: "")
+      }
+
       /// en translation: Delete
       ///
       /// Locales: ar, en
@@ -5219,6 +5345,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Delete Account", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete address
+      ///
+      /// Locales: ar, en
+      static func deleteAddress(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Delete address", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Delete address"
+        }
+
+        return NSLocalizedString("Delete address", bundle: bundle, comment: "")
       }
 
       /// en translation: Denied
@@ -6014,6 +6155,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("list.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Locate on the map
+      ///
+      /// Locales: ar, en
+      static func locateOnTheMap(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Locate on the map", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Locate on the map"
+        }
+
+        return NSLocalizedString("Locate on the map", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Location
+      ///
+      /// Locales: ar, en
+      static func location(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Location", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Location"
+        }
+
+        return NSLocalizedString("Location", bundle: bundle, comment: "")
       }
 
       /// en translation: Location Always
@@ -8281,6 +8452,66 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("not_found.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: select City
+      ///
+      /// Locales: ar, en
+      static func selectCity(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("select City", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "select City"
+        }
+
+        return NSLocalizedString("select City", bundle: bundle, comment: "")
+      }
+
+      /// en translation: select Location
+      ///
+      /// Locales: ar, en
+      static func selectLocation(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("select Location", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "select Location"
+        }
+
+        return NSLocalizedString("select Location", bundle: bundle, comment: "")
+      }
+
+      /// en translation: select Region
+      ///
+      /// Locales: ar, en
+      static func selectRegion(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("select Region", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "select Region"
+        }
+
+        return NSLocalizedString("select Region", bundle: bundle, comment: "")
+      }
+
+      /// en translation: select Region first
+      ///
+      /// Locales: ar, en
+      static func selectRegionFirst(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("select Region first", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "select Region first"
+        }
+
+        return NSLocalizedString("select Region first", bundle: bundle, comment: "")
+      }
+
       /// en translation: the length has error
       ///
       /// Locales: ar, en
@@ -8354,6 +8585,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("this_field_is_required.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: write message
+      ///
+      /// Locales: ar, en
+      static func writeMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("write message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "write message"
+        }
+
+        return NSLocalizedString("write message", bundle: bundle, comment: "")
       }
 
       /// en translation: you must accept the request to login
@@ -8513,6 +8759,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit' is used in nib 'AddresslistTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "location", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'location' is used in nib 'AddresslistTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "gray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'gray' is used in nib 'AddresslistTableViewCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "orange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'orange' is used in nib 'AddresslistTableViewCell', but couldn't be loaded.") }
         }
       }
@@ -8926,6 +9173,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "arrowdown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrowdown' is used in storyboard 'AddAddressStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back' is used in storyboard 'AddAddressStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "loc", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'loc' is used in storyboard 'AddAddressStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'AddAddressStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'AddAddressStoryboard', but couldn't be loaded.") }

@@ -74,7 +74,7 @@
                                                         <color key="textColor" name="Black1"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m16"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -126,7 +126,7 @@
                                                         <color key="textColor" name="black2"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m16"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -183,6 +183,11 @@
                                     <constraint firstItem="Kgo-Q2-nDr" firstAttribute="top" secondItem="CVT-d0-yi5" secondAttribute="top" constant="8" id="omd-l9-Hbd"/>
                                     <constraint firstItem="bf3-Hg-uut" firstAttribute="centerX" secondItem="CVT-d0-yi5" secondAttribute="centerX" id="pLP-0Q-YxJ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aNQ-H7-HQ3"/>
@@ -209,6 +214,9 @@
     </scenes>
     <designables>
         <designable name="EcC-1d-vs3">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="MwD-eg-jjZ">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>

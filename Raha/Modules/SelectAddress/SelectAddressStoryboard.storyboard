@@ -39,7 +39,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Address List"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ke5-uQ-3mj">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ke5-uQ-3mj">
                                         <rect key="frame" x="24" y="80.5" width="326" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -107,6 +107,17 @@
                                                     <constraint firstItem="14I-J8-ZE3" firstAttribute="centerY" secondItem="0ce-Ef-qPa" secondAttribute="centerY" id="fM8-gw-u9L"/>
                                                     <constraint firstItem="14I-J8-ZE3" firstAttribute="centerX" secondItem="0ce-Ef-qPa" secondAttribute="centerX" id="hPv-Zs-bHl"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="normalblue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -128,6 +139,11 @@
                                     <constraint firstItem="wM8-Pi-qyR" firstAttribute="centerX" secondItem="t6z-6n-T2E" secondAttribute="centerX" id="tT1-9i-wMU"/>
                                     <constraint firstAttribute="trailing" secondItem="ilA-0f-njT" secondAttribute="trailing" constant="24" id="vYW-SP-x2z"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cob-7c-bHy"/>
