@@ -9,7 +9,9 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class HomeCoordinator: Coordinator, SelectAddressVCDelegate {
+class HomeCoordinator: Coordinator, SelectAddressVCDelegate, FilterServiceVCDelegate {
+    
+    
     typealias PresentingView = HomeVC
     weak var view: PresentingView?
     deinit {
@@ -32,8 +34,28 @@ extension HomeCoordinator {
         guard let scene = R.storyboard.selectLanguageStoryboard.selectLanguageVC() else { return }
         view?.pushPop(scene)
     }
+    func filter() {
+        guard let scene = R.storyboard.filterServiceStoryboard.filterServiceVC() else { return }
+        scene.filter = view!.filter
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
     func done(model:AddressesDatum){
         view?.locLbl.text = "\(model.street ?? "") - \(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
         view?.addressdata = model
+        view?.viewModel?.lat.send(model.lat?.double() ?? 0.0)
+        view?.viewModel?.lng.send(model.lng?.double() ?? 0.0)
+        view?.viewModel?.homedata.send([])
+        view?.viewModel?.fetchhome()
+    }
+    func done(model: FilterServiceModel) {
+        view!.filter = model
+        view?.viewModel?.distance.send(model.distance ?? "")
+        view?.viewModel?.gender.send(model.gender ?? "")
+        view?.viewModel?.rate.send(model.rate ?? "")
+        view?.viewModel?.loctype.send(model.loctype ?? "")
+        view?.viewModel?.servicetype.send(model.servicetype ?? "")
+        view?.viewModel?.homedata.send([])
+        view?.viewModel?.fetchhome()
     }
 }

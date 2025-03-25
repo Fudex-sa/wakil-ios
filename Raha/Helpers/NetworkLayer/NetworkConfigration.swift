@@ -81,7 +81,7 @@ struct NetworkConfigration {
         case todaymatxh = "todayMatches"
         case perviousmatch = "previousMatches"
         case nextmatches = "nextMatches"
-        case home = "client/home"
+        case home = "client/branches"
         case players = "client/players"
         case leagues = "leagues"
         case clubs = "client/clubs"

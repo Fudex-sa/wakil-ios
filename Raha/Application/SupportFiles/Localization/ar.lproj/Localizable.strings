@@ -376,3 +376,7 @@
 "select City" = "اختر المدينه";
 "select Location" = "اختر العنوان";
 "write message" = "اكتب رساله";
+"All" = "الكل";
+"Massage" = "مساج";
+"Cupping" = "حجامة";
+"Centers list is empty" = "قائمه المراكز فارغه";

@@ -10,8 +10,18 @@ import Foundation
 
 // MARK: - ...  ViewModel
 class HomeViewModel: BaseViewModel ,DataSourceViewModel {
+    var lat: Publisher<Double> = .init()
+    var lng: Publisher<Double> = .init()
+    var distance: Publisher<String> = .init()
+    var servicetype: Publisher<String> = .init()
+    var loctype: Publisher<String> = .init()
+    var gender: Publisher<String> = .init()
+    var rate: Publisher<String> = .init()
+    var name: Publisher<String> = .init()
     var items: Publisher<[AddressesDatum]> = .init()
     var userddata: Publisher<ProfileModel> = .init()
+    var homedata: Publisher<[HomeDatum]> = .init()
+    var homestatus: Publisher<Bool> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -34,6 +44,39 @@ extension HomeViewModel {
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
             self?.userddata.send(model)
+        }).store(self)
+    }
+    func fetchhome() {
+        NetworkManager.instance.paramaters["lat"] = lat.value ?? 0.0
+        NetworkManager.instance.paramaters["lng"] = lng.value ?? 0.0
+        if distance.value ?? "" != "" {
+            NetworkManager.instance.paramaters["max_distance"] = distance.value ?? ""
+        }
+        if servicetype.value ?? "" != "" {
+            if servicetype.value ?? "" == "1" {
+                NetworkManager.instance.paramaters["service_type"] = "massag"
+            }else  if servicetype.value ?? "" == "2" {
+                NetworkManager.instance.paramaters["service_type"] = "hegama"
+            }
+        }
+        if loctype.value ?? "" != "" {
+            NetworkManager.instance.paramaters["location_type"] = loctype.value ?? ""
+        }
+        if gender.value ?? "" != "" {
+            NetworkManager.instance.paramaters["employee_gender"] = gender.value ?? ""
+        }
+        if rate.value ?? "" != "" {
+            NetworkManager.instance.paramaters["rate"] = rate.value ?? ""
+        }
+        if name.value ?? "" != "" {
+            NetworkManager.instance.paramaters["name"] = name.value ?? ""
+        }
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.home.rawValue, type: .get, HomeModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.homedata.send(model.data ?? [])
+            self?.homestatus.send(true)
         }).store(self)
     }
 }

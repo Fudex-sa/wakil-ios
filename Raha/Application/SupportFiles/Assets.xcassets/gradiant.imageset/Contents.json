@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "filename" : "Gredint-2.png",
+      "idiom" : "universal",
+      "language-direction" : "right-to-left"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

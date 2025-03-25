@@ -132,6 +132,7 @@ extension SelectAddressVC: UITableViewDelegate, UITableViewDataSource {
         var cell = tableView.cell(type: AddressTableViewCell.self, indexPath)
         cell.model = viewModel?.dataSource()?[safe: indexPath.row]
         cell.id = addressId
+        cell.setup()
         cell.delegate = self
         return cell
     }

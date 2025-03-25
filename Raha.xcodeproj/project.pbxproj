@@ -94,6 +94,8 @@
 		669D84412D7466A200A752E6 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 669D84402D7466A200A752E6 /* MBProgressHUD */; };
 		669E1B422C47F11B00950373 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B412C47F11B00950373 /* RoundedView.swift */; };
 		669E1B442C47F15700950373 /* RoundedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E1B432C47F15700950373 /* RoundedBottomView.swift */; };
+		669F74B22D92BF7F009A3649 /* ServicetypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669F74B02D92BF7F009A3649 /* ServicetypeCollectionViewCell.swift */; };
+		669F74B32D92BF80009A3649 /* ServicetypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 669F74B12D92BF7F009A3649 /* ServicetypeCollectionViewCell.xib */; };
 		66AEC2D02C43BF9D00BC260E /* AppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */; };
 		66AEC2D12C43BF9D00BC260E /* AppleDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */; };
 		66AEC2D62C43C49900BC260E /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */; };
@@ -681,6 +683,8 @@
 		669BB0B42C7DFCC90061B8CC /* NotificationSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSubscriber.swift; sourceTree = "<group>"; };
 		669E1B412C47F11B00950373 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		669E1B432C47F15700950373 /* RoundedBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBottomView.swift; sourceTree = "<group>"; };
+		669F74B02D92BF7F009A3649 /* ServicetypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicetypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		669F74B12D92BF7F009A3649 /* ServicetypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicetypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		66AEC2CE2C43BF9C00BC260E /* AppleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleModel.swift; sourceTree = "<group>"; };
 		66AEC2CF2C43BF9C00BC260E /* AppleDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleDriver.swift; sourceTree = "<group>"; };
 		66AEC2D32C43C49800BC260E /* JWTDecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
@@ -1614,6 +1618,8 @@
 				66DED3982D74798C001AF6E0 /* SlidersCollectionViewCell.xib */,
 				66DED39D2D747B22001AF6E0 /* CentersTableViewCell.swift */,
 				66DED39E2D747B22001AF6E0 /* CentersTableViewCell.xib */,
+				669F74B02D92BF7F009A3649 /* ServicetypeCollectionViewCell.swift */,
+				669F74B12D92BF7F009A3649 /* ServicetypeCollectionViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -3090,6 +3096,7 @@
 				66CFBFCB2D6F5082007715D0 /* AboutusStoryboard.storyboard in Resources */,
 				664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */,
 				C86BF97E266947F0002D87BC /* warningIcon@2x.png in Resources */,
+				669F74B32D92BF80009A3649 /* ServicetypeCollectionViewCell.xib in Resources */,
 				C8F358F2266E670A00FEE18B /* NetworkFailScreen.xib in Resources */,
 				C871C723272FEB7B00DCBD2D /* SFPRODISPLAYSEMIBOLDITALIC.OTF in Resources */,
 				C86BF995266947F0002D87BC /* CenteredView.xib in Resources */,
@@ -3325,6 +3332,7 @@
 				C871C8BD272FED0600DCBD2D /* SwipeTableViewCellDelegate.swift in Sources */,
 				7756A0F6253482EF00BFE53C /* PublicHelper.swift in Sources */,
 				6693369B2D79CFF6008DB727 /* LogoutCoordinator.swift in Sources */,
+				669F74B22D92BF7F009A3649 /* ServicetypeCollectionViewCell.swift in Sources */,
 				6693369C2D79CFF6008DB727 /* LogoutModel.swift in Sources */,
 				6693369D2D79CFF6008DB727 /* LogoutVC.swift in Sources */,
 				6693369E2D79CFF6008DB727 /* LogoutViewModel.swift in Sources */,

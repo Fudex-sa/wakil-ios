@@ -10,4 +10,9 @@ import Foundation
 
 // MARK: - ...  Entity
 class FilterServiceModel: Codable {
+    var distance: String?
+    var servicetype: String?
+    var loctype: String?
+    var gender: String?
+    var rate: String?
 }
