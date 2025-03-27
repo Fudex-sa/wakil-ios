@@ -255,6 +255,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkW-iI-8jq">
                                 <rect key="frame" x="0.0" y="804" width="414" height="92"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CTA-Photoroom" translatesAutoresizingMaskIntoConstraints="NO" id="laf-SG-byY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtT-SC-WMw">
                                         <rect key="frame" x="24" y="18" width="366" height="56"/>
                                         <color key="backgroundColor" name="normalblue"/>
@@ -278,8 +281,12 @@
                                 <constraints>
                                     <constraint firstItem="dtT-SC-WMw" firstAttribute="centerX" secondItem="MkW-iI-8jq" secondAttribute="centerX" id="21o-al-xeZ"/>
                                     <constraint firstItem="dtT-SC-WMw" firstAttribute="centerY" secondItem="MkW-iI-8jq" secondAttribute="centerY" id="37y-Xy-rmf"/>
+                                    <constraint firstAttribute="trailing" secondItem="laf-SG-byY" secondAttribute="trailing" id="7RK-K2-iqj"/>
+                                    <constraint firstItem="laf-SG-byY" firstAttribute="leading" secondItem="MkW-iI-8jq" secondAttribute="leading" id="FTD-XH-FGj"/>
                                     <constraint firstAttribute="trailing" secondItem="dtT-SC-WMw" secondAttribute="trailing" constant="24" id="UMa-KJ-RRI"/>
+                                    <constraint firstItem="laf-SG-byY" firstAttribute="top" secondItem="MkW-iI-8jq" secondAttribute="top" id="fSR-kv-xff"/>
                                     <constraint firstAttribute="height" constant="92" id="ohR-Iz-ygV"/>
+                                    <constraint firstAttribute="bottom" secondItem="laf-SG-byY" secondAttribute="bottom" id="s0M-aO-Htb"/>
                                     <constraint firstItem="dtT-SC-WMw" firstAttribute="leading" secondItem="MkW-iI-8jq" secondAttribute="leading" constant="24" id="zAa-YV-M47"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -325,6 +332,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CTA-Photoroom" width="430" height="99"/>
         <image name="back" width="24" height="24"/>
         <image name="email" width="24" height="24"/>
         <namedColor name="Black1">
@@ -340,7 +348,7 @@
             <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blackshadow5">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.05000000074505806" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lightblue">
             <color red="0.9137254901960784" green="0.96470588235294119" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

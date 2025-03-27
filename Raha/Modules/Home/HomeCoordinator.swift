@@ -40,6 +40,13 @@ extension HomeCoordinator {
         scene.delegate = self
         view?.pushPop(scene)
     }
+    func detailscenter(id:Int) {
+        guard let scene = R.storyboard.detailscentersStoryboard.detailscentersVC() else { return }
+        scene.lat = view?.viewModel?.lat.value ?? 0.0
+        scene.lng = view?.viewModel?.lng.value ?? 0.0
+        scene.centerId = id
+        view?.push(scene)
+    }
     func done(model:AddressesDatum){
         view?.locLbl.text = "\(model.street ?? "") - \(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
         view?.addressdata = model

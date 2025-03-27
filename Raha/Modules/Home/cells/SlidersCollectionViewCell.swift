@@ -12,5 +12,9 @@ class SlidersCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sliderImg: UIImageView!
     
-
+     func setupcenters() {
+        skeleton(view: containerView)
+        guard let model = model as? Image else { return }
+         sliderImg.setImage(url: model.image ?? "")
+    }
 }

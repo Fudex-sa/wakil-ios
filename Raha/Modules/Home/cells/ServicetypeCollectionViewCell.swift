@@ -35,4 +35,22 @@ class ServicetypeCollectionViewCell: BaseCollectionViewCell {
             titleLbl.textColor = R.color.black3()
         }
     }
+    
+    func setupselectdetails() {
+        super.setup()
+        skeleton(view: containerView)
+        guard let model = model as? RegisterModel else { return }
+        containerView.cornerRadius = 4
+        titleLbl.text = model.name ?? ""
+        containerView.borderWidth = 0
+        if serviceId == model.id ?? 0 {
+            containerView.borderColor = nil
+            containerView.backgroundColor = R.color.normalblue()
+            titleLbl.textColor = R.color.whiteColor()
+        }else {
+            containerView.borderColor = nil
+            containerView.backgroundColor = R.color.whiteColor()
+            titleLbl.textColor = R.color.black3()
+        }
+    }
 }

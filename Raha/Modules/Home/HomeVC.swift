@@ -229,7 +229,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        if viewModel?.homedata.value?.count ?? 0 == 0 {
+            return
+        }
+        coordinator?.detailscenter(id: viewModel?.homedata.value?[safe: indexPath.row]?.id ?? 0)
     }
     
 }

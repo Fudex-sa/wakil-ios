@@ -74,7 +74,14 @@
 		664DCAFE2C3BC2460011DB96 /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */; };
 		664DCAFF2C3BC2460011DB96 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */; };
 		664DCB002C3BC2460011DB96 /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */; };
+		664E68E72D955DE800899D5E /* DetailscentersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E68E22D955DE700899D5E /* DetailscentersCoordinator.swift */; };
+		664E68E82D955DE800899D5E /* DetailscentersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E68E42D955DE700899D5E /* DetailscentersModel.swift */; };
+		664E68E92D955DE800899D5E /* DetailscentersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E68E52D955DE700899D5E /* DetailscentersVC.swift */; };
+		664E68EA2D955DE800899D5E /* DetailscentersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E68E62D955DE700899D5E /* DetailscentersViewModel.swift */; };
+		664E68EB2D955DE800899D5E /* DetailscentersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664E68E32D955DE700899D5E /* DetailscentersStoryboard.storyboard */; };
 		664FE17F2C3BEB620081C90B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FE17E2C3BEB620081C90B /* PaddingLabel.swift */; };
+		6657EBC22D9571530001E389 /* ServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6657EBC02D9571530001E389 /* ServicesTableViewCell.swift */; };
+		6657EBC32D9571530001E389 /* ServicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6657EBC12D9571530001E389 /* ServicesTableViewCell.xib */; };
 		666B9EE52D6DC09700E88890 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B9EE02D6DC09700E88890 /* RegisterCoordinator.swift */; };
 		666B9EE72D6DC09700E88890 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B9EE32D6DC09700E88890 /* RegisterVC.swift */; };
 		666B9EE82D6DC09700E88890 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B9EE42D6DC09700E88890 /* RegisterViewModel.swift */; };
@@ -664,7 +671,14 @@
 		664DCAFA2C3BC2460011DB96 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
 		664DCAFB2C3BC2460011DB96 /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
 		664DCAFC2C3BC2460011DB96 /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
+		664E68E22D955DE700899D5E /* DetailscentersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailscentersCoordinator.swift; sourceTree = "<group>"; };
+		664E68E32D955DE700899D5E /* DetailscentersStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailscentersStoryboard.storyboard; sourceTree = "<group>"; };
+		664E68E42D955DE700899D5E /* DetailscentersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailscentersModel.swift; sourceTree = "<group>"; };
+		664E68E52D955DE700899D5E /* DetailscentersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailscentersVC.swift; sourceTree = "<group>"; };
+		664E68E62D955DE700899D5E /* DetailscentersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailscentersViewModel.swift; sourceTree = "<group>"; };
 		664FE17E2C3BEB620081C90B /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		6657EBC02D9571530001E389 /* ServicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableViewCell.swift; sourceTree = "<group>"; };
+		6657EBC12D9571530001E389 /* ServicesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesTableViewCell.xib; sourceTree = "<group>"; };
 		666B9EE02D6DC09700E88890 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		666B9EE12D6DC09700E88890 /* RegisterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterStoryboard.storyboard; sourceTree = "<group>"; };
 		666B9EE32D6DC09700E88890 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -1384,6 +1398,28 @@
 				664C815A2D6F20AA0086D0D4 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		664E68E12D955DB900899D5E /* Detailscenters */ = {
+			isa = PBXGroup;
+			children = (
+				6657EBBF2D95711B0001E389 /* cells */,
+				664E68E22D955DE700899D5E /* DetailscentersCoordinator.swift */,
+				664E68E32D955DE700899D5E /* DetailscentersStoryboard.storyboard */,
+				664E68E42D955DE700899D5E /* DetailscentersModel.swift */,
+				664E68E52D955DE700899D5E /* DetailscentersVC.swift */,
+				664E68E62D955DE700899D5E /* DetailscentersViewModel.swift */,
+			);
+			path = Detailscenters;
+			sourceTree = "<group>";
+		};
+		6657EBBF2D95711B0001E389 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				6657EBC02D9571530001E389 /* ServicesTableViewCell.swift */,
+				6657EBC12D9571530001E389 /* ServicesTableViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		666B9EDF2D6DC08200E88890 /* Register */ = {
@@ -2795,6 +2831,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				664E68E12D955DB900899D5E /* Detailscenters */,
 				6606AA402D802B3700E7665E /* Selectonmap */,
 				6606AA352D802B0900E7665E /* AddAddress */,
 				6606AA2A2D802AD100E7665E /* Address */,
@@ -3065,6 +3102,7 @@
 				C84539A52729887000004173 /* EmptyScreen.xib in Resources */,
 				C871C72E272FEB7C00DCBD2D /* Muli-SemiBold.ttf in Resources */,
 				77228EBE2756681F008F11B3 /* CalendarPickerView.xib in Resources */,
+				6657EBC32D9571530001E389 /* ServicesTableViewCell.xib in Resources */,
 				6606AA3F2D802B2900E7665E /* AddAddressStoryboard.storyboard in Resources */,
 				C871C72F272FEB7C00DCBD2D /* SFPRODISPLAYTHINITALIC.OTF in Resources */,
 				C86BF97D266947F0002D87BC /* infoIcon@2x.png in Resources */,
@@ -3135,6 +3173,7 @@
 				6693369F2D79CFF6008DB727 /* LogoutStoryboard.storyboard in Resources */,
 				66C2E0D62D6F30620027823E /* EditPasswordStoryboard.storyboard in Resources */,
 				C86BF9A0266947F0002D87BC /* errorIconLight.png in Resources */,
+				664E68EB2D955DE800899D5E /* DetailscentersStoryboard.storyboard in Resources */,
 				66EA353E2C7F1E0600E271E3 /* GoogleService-Info.plist in Resources */,
 				C86BF98D266947F0002D87BC /* errorIconSubtle@2x.png in Resources */,
 				E8339CA927CD262D000D5A6E /* Loading-Dark.gif in Resources */,
@@ -3480,6 +3519,7 @@
 				C84539872729880600004173 /* Coordinator.swift in Sources */,
 				66C2E0BC2D6F2BEC0027823E /* EditPhoneCoordinator.swift in Sources */,
 				66C2E0BD2D6F2BEC0027823E /* EditPhoneModel.swift in Sources */,
+				6657EBC22D9571530001E389 /* ServicesTableViewCell.swift in Sources */,
 				66C2E0BE2D6F2BEC0027823E /* EditPhoneVC.swift in Sources */,
 				66C2E0BF2D6F2BEC0027823E /* EditPhoneViewModel.swift in Sources */,
 				7756A08E253482EF00BFE53C /* NetworkConfigration.swift in Sources */,
@@ -3584,6 +3624,10 @@
 				C8C0933D272AC76B00E2270A /* Facades.swift in Sources */,
 				7756A094253482EF00BFE53C /* RadioView.swift in Sources */,
 				C871C8C3272FED0600DCBD2D /* SwipeTransitionLayout.swift in Sources */,
+				664E68E72D955DE800899D5E /* DetailscentersCoordinator.swift in Sources */,
+				664E68E82D955DE800899D5E /* DetailscentersModel.swift in Sources */,
+				664E68E92D955DE800899D5E /* DetailscentersVC.swift in Sources */,
+				664E68EA2D955DE800899D5E /* DetailscentersViewModel.swift in Sources */,
 				C8265E44266CE18500E099C1 /* GuardLength.swift in Sources */,
 				C871C9872730231300DCBD2D /* UIView+Frame.swift in Sources */,
 				C8C09319272ABDA200E2270A /* CombineControlEvent.swift in Sources */,
