@@ -253,6 +253,13 @@
 		77C5F4A72534814200E70C4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C5F4A62534814200E70C4C /* Assets.xcassets */; };
 		77D130BC2535C2D800004E81 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D130BB2535C2D800004E81 /* NetworkResponse.swift */; };
 		77D130BE2535C79F00004E81 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D130BD2535C79F00004E81 /* NetworkError.swift */; };
+		8D4D2C8A2DA166A2001502EC /* DetailsreservationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D2C852DA166A2001502EC /* DetailsreservationCoordinator.swift */; };
+		8D4D2C8B2DA166A2001502EC /* DetailsreservationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D2C862DA166A2001502EC /* DetailsreservationModel.swift */; };
+		8D4D2C8C2DA166A2001502EC /* DetailsreservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D2C892DA166A2001502EC /* DetailsreservationViewModel.swift */; };
+		8D4D2C8D2DA166A2001502EC /* DetailsreservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D2C882DA166A2001502EC /* DetailsreservationVC.swift */; };
+		8D4D2C8E2DA166A2001502EC /* DetailsreservationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D2C872DA166A2001502EC /* DetailsreservationStoryboard.storyboard */; };
+		8D8F5DE82DA15E630046DB8E /* ReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */; };
+		8D8F5DE92DA15E630046DB8E /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */; };
 		C806799D266E2F80001591AF /* GuardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806799C266E2F80001591AF /* GuardUI.swift */; };
 		C80679A0266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806799F266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift */; };
 		C80679A3266E3009001591AF /* ValidatorUnderlineUI+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80679A2266E3009001591AF /* ValidatorUnderlineUI+Ex.swift */; };
@@ -855,6 +862,13 @@
 		77C5F4AB2534814200E70C4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D130BB2535C2D800004E81 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		77D130BD2535C79F00004E81 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8D4D2C852DA166A2001502EC /* DetailsreservationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationCoordinator.swift; sourceTree = "<group>"; };
+		8D4D2C862DA166A2001502EC /* DetailsreservationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationModel.swift; sourceTree = "<group>"; };
+		8D4D2C872DA166A2001502EC /* DetailsreservationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsreservationStoryboard.storyboard; sourceTree = "<group>"; };
+		8D4D2C882DA166A2001502EC /* DetailsreservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationVC.swift; sourceTree = "<group>"; };
+		8D4D2C892DA166A2001502EC /* DetailsreservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationViewModel.swift; sourceTree = "<group>"; };
+		8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
+		8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationTableViewCell.xib; sourceTree = "<group>"; };
 		A7D5D8C73E2E95434085A056 /* Pods-Raha.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raha.development.xcconfig"; path = "Target Support Files/Pods-Raha/Pods-Raha.development.xcconfig"; sourceTree = "<group>"; };
 		C806799C266E2F80001591AF /* GuardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardUI.swift; sourceTree = "<group>"; };
 		C806799F266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValidatorInfoMarkUI+Ex.swift"; sourceTree = "<group>"; };
@@ -1544,6 +1558,7 @@
 		66BF52212D6F0EAF0030B38A /* Reservation */ = {
 			isa = PBXGroup;
 			children = (
+				8D8F5DE12DA15DCE0046DB8E /* cells */,
 				66BF52222D6F0ECB0030B38A /* ReservationCoordinator.swift */,
 				66BF52232D6F0ECB0030B38A /* ReservationStoryboard.storyboard */,
 				66BF52242D6F0ECB0030B38A /* ReservationModel.swift */,
@@ -1937,6 +1952,27 @@
 				C8BABF082666401E0080B058 /* Modules */,
 			);
 			path = Raha;
+			sourceTree = "<group>";
+		};
+		8D8F5DE12DA15DCE0046DB8E /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */,
+				8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		8D8F5DEA2DA1663C0046DB8E /* Detailsreservation */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D2C852DA166A2001502EC /* DetailsreservationCoordinator.swift */,
+				8D4D2C862DA166A2001502EC /* DetailsreservationModel.swift */,
+				8D4D2C872DA166A2001502EC /* DetailsreservationStoryboard.storyboard */,
+				8D4D2C882DA166A2001502EC /* DetailsreservationVC.swift */,
+				8D4D2C892DA166A2001502EC /* DetailsreservationViewModel.swift */,
+			);
+			path = Detailsreservation;
 			sourceTree = "<group>";
 		};
 		C24929DD1F6900B652036CF1 /* Frameworks */ = {
@@ -2831,6 +2867,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8D8F5DEA2DA1663C0046DB8E /* Detailsreservation */,
 				664E68E12D955DB900899D5E /* Detailscenters */,
 				6606AA402D802B3700E7665E /* Selectonmap */,
 				6606AA352D802B0900E7665E /* AddAddress */,
@@ -3147,6 +3184,7 @@
 				C86BF98B266947F0002D87BC /* warningIconLight.png in Resources */,
 				667FB07E2D748445002A4D87 /* FilterServiceStoryboard.storyboard in Resources */,
 				C86BF999266947F0002D87BC /* warningIconSubtle@2x.png in Resources */,
+				8D4D2C8E2DA166A2001502EC /* DetailsreservationStoryboard.storyboard in Resources */,
 				C871C735272FEB7C00DCBD2D /* Muli.ttf in Resources */,
 				C86BF99A266947F0002D87BC /* warningIconSubtle@3x.png in Resources */,
 				C84539AA2729887000004173 /* NeoSansArabic-Regular.ttf in Resources */,
@@ -3159,6 +3197,7 @@
 				C86BF998266947F0002D87BC /* warningIconLight@3x.png in Resources */,
 				664DCAFF2C3BC2460011DB96 /* Tajawal-Light.ttf in Resources */,
 				C86BF987266947F0002D87BC /* successIconSubtle.png in Resources */,
+				8D8F5DE82DA15E630046DB8E /* ReservationTableViewCell.xib in Resources */,
 				C853B95926D7F9450008F09D /* Assets.xcassets in Resources */,
 				66C8C0922D6C687700096320 /* Expo-Arabic-Book.ttf in Resources */,
 				C86BF99C266947F0002D87BC /* successIcon.png in Resources */,
@@ -3559,6 +3598,10 @@
 				C871C9A02730231300DCBD2D /* PrepareForSkeletonProtocol.swift in Sources */,
 				C871C97F2730231300DCBD2D /* Collection+SkeletonEX.swift in Sources */,
 				C871C9962730231300DCBD2D /* CollectionSkeletonProtocol.swift in Sources */,
+				8D4D2C8A2DA166A2001502EC /* DetailsreservationCoordinator.swift in Sources */,
+				8D4D2C8B2DA166A2001502EC /* DetailsreservationModel.swift in Sources */,
+				8D4D2C8C2DA166A2001502EC /* DetailsreservationViewModel.swift in Sources */,
+				8D4D2C8D2DA166A2001502EC /* DetailsreservationVC.swift in Sources */,
 				C871C8E3272FED5900DCBD2D /* GoogleMapHelper.swift in Sources */,
 				663C3FA02D6DC90100A2C80A /* ForgetpasswordCoordinator.swift in Sources */,
 				663C3FA12D6DC90100A2C80A /* ForgetpasswordModel.swift in Sources */,
@@ -3631,6 +3674,7 @@
 				C8265E44266CE18500E099C1 /* GuardLength.swift in Sources */,
 				C871C9872730231300DCBD2D /* UIView+Frame.swift in Sources */,
 				C8C09319272ABDA200E2270A /* CombineControlEvent.swift in Sources */,
+				8D8F5DE92DA15E630046DB8E /* ReservationTableViewCell.swift in Sources */,
 				C86BF97C266947F0002D87BC /* MarginAdjustable+Extensions.swift in Sources */,
 				C871C8EF272FF00300DCBD2D /* BaseController+EX.swift in Sources */,
 				C853B94D26D7F9450008F09D /* SPPermissionsActionButton.swift in Sources */,

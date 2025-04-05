@@ -11,6 +11,16 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ReservationVC: BaseController {
+    @IBOutlet weak var orderTbl: UITableView!
+    @IBOutlet weak var perviousLineView: UIView!
+    @IBOutlet weak var perviousLbl: UILabel!
+    @IBOutlet weak var perviousView: UIView!
+    @IBOutlet weak var ongoingLineView: UIView!
+    @IBOutlet weak var ongoingLbl: UILabel!
+    @IBOutlet weak var ongoingView: UIView!
+    @IBOutlet weak var newLineView: UIView!
+    @IBOutlet weak var newLbl: UILabel!
+    @IBOutlet weak var newView: UIView!
     var viewModel: ReservationViewModel?
     var coordinator: ReservationCoordinator?
 }
