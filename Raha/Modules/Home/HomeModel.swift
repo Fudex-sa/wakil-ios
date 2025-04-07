@@ -30,3 +30,22 @@ struct HomeDatum: Codable {
         case serviceTypes = "service_types"
     }
 }
+struct SlidersModel: Codable {
+    let data: [SlidersDatum]?
+    let status: Bool?
+    let message: String?
+}
+
+// MARK: - Datum
+struct SlidersDatum: Codable {
+    let id: Int?
+    let title, desc: String?
+    let sortOrder: Int?
+    let image: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, title, desc
+        case sortOrder = "sort_order"
+        case image
+    }
+}

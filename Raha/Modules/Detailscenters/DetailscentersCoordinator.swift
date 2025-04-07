@@ -18,5 +18,8 @@ class DetailscentersCoordinator: Coordinator {
 }
 
 extension DetailscentersCoordinator {
-    
+    func bookdetaisl(){
+        guard let scene = R.storyboard.bookserviceStoryboard.bookserviceVC() else { return }
+        view?.push(scene)
+    }
 }

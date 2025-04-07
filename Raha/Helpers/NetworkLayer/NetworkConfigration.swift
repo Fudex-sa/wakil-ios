@@ -117,6 +117,8 @@ struct NetworkConfigration {
         case addresses = "client/userAddresses"
         case states = "client/states"
         case cities = "client/cities"
+        case servicetype = "client/serviceTypes"
+        case sliders = "client/sliders"
     }
 }
 

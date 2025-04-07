@@ -11,7 +11,7 @@ import UIKit
 class ServicetypeCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLbl: UILabel!
-    var serviceId = 0
+    var serviceId = ""
     override func setup() {
         super.setup()
         skeleton(view: containerView)
@@ -21,11 +21,11 @@ class ServicetypeCollectionViewCell: BaseCollectionViewCell {
     func setupselect() {
         super.setup()
         skeleton(view: containerView)
-        guard let model = model as? RegisterModel else { return }
+        guard let model = model as? ServicetypeDatum else { return }
         containerView.cornerRadius = 12
-        titleLbl.text = model.name ?? ""
+        titleLbl.text = model.value ?? ""
         containerView.borderWidth = 1
-        if serviceId == model.id ?? 0 {
+        if serviceId == model.key ?? "" {
             containerView.borderColor = R.color.normalblue()
             containerView.backgroundColor = R.color.lightblue()
             titleLbl.textColor = R.color.normalblue()
@@ -39,11 +39,11 @@ class ServicetypeCollectionViewCell: BaseCollectionViewCell {
     func setupselectdetails() {
         super.setup()
         skeleton(view: containerView)
-        guard let model = model as? RegisterModel else { return }
+        guard let model = model as? ServicetypeDatum else { return }
         containerView.cornerRadius = 4
-        titleLbl.text = model.name ?? ""
+        titleLbl.text = model.value ?? ""
         containerView.borderWidth = 0
-        if serviceId == model.id ?? 0 {
+        if serviceId == model.key ?? "" {
             containerView.borderColor = nil
             containerView.backgroundColor = R.color.normalblue()
             titleLbl.textColor = R.color.whiteColor()

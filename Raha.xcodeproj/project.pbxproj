@@ -260,6 +260,26 @@
 		8D4D2C8E2DA166A2001502EC /* DetailsreservationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D2C872DA166A2001502EC /* DetailsreservationStoryboard.storyboard */; };
 		8D8F5DE82DA15E630046DB8E /* ReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */; };
 		8D8F5DE92DA15E630046DB8E /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */; };
+		8DA612B22DA3F2320098CC92 /* BookserviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612B12DA3F2320098CC92 /* BookserviceViewModel.swift */; };
+		8DA612B32DA3F2320098CC92 /* BookserviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612AE2DA3F2320098CC92 /* BookserviceModel.swift */; };
+		8DA612B42DA3F2320098CC92 /* BookserviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612B02DA3F2320098CC92 /* BookserviceVC.swift */; };
+		8DA612B52DA3F2320098CC92 /* BookserviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612AD2DA3F2320098CC92 /* BookserviceCoordinator.swift */; };
+		8DA612B62DA3F2320098CC92 /* BookserviceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DA612AF2DA3F2320098CC92 /* BookserviceStoryboard.storyboard */; };
+		8DA612B82DA3F5AE0098CC92 /* HorizontalCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612B72DA3F59B0098CC92 /* HorizontalCalendarView.swift */; };
+		8DA612BB2DA3F61A0098CC92 /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612BA2DA3F6180098CC92 /* CalendarDayCell.swift */; };
+		8DA612BD2DA3F6A40098CC92 /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612BC2DA3F6A20098CC92 /* CalendarDay.swift */; };
+		8DD3C1592DA2B83A00D8962B /* ClientRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1582DA2B83A00D8962B /* ClientRatingViewModel.swift */; };
+		8DD3C15A2DA2B83A00D8962B /* ClientRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1552DA2B83A00D8962B /* ClientRatingModel.swift */; };
+		8DD3C15B2DA2B83A00D8962B /* ClientRatingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1542DA2B83A00D8962B /* ClientRatingCoordinator.swift */; };
+		8DD3C15C2DA2B83A00D8962B /* ClientRatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1572DA2B83A00D8962B /* ClientRatingVC.swift */; };
+		8DD3C15D2DA2B83A00D8962B /* ClientRatingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3C1562DA2B83A00D8962B /* ClientRatingStoryboard.storyboard */; };
+		8DD3C1612DA2B91E00D8962B /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C15F2DA2B91E00D8962B /* RatingTableViewCell.swift */; };
+		8DD3C1622DA2B91E00D8962B /* RatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3C1602DA2B91E00D8962B /* RatingTableViewCell.xib */; };
+		8DD3C1692DA2C16F00D8962B /* CancelOrderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1642DA2C16F00D8962B /* CancelOrderCoordinator.swift */; };
+		8DD3C16A2DA2C16F00D8962B /* CancelOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1652DA2C16F00D8962B /* CancelOrderModel.swift */; };
+		8DD3C16B2DA2C16F00D8962B /* CancelOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1682DA2C16F00D8962B /* CancelOrderViewModel.swift */; };
+		8DD3C16C2DA2C16F00D8962B /* CancelOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1672DA2C16F00D8962B /* CancelOrderVC.swift */; };
+		8DD3C16D2DA2C16F00D8962B /* CancelOrderStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3C1662DA2C16F00D8962B /* CancelOrderStoryboard.storyboard */; };
 		C806799D266E2F80001591AF /* GuardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806799C266E2F80001591AF /* GuardUI.swift */; };
 		C80679A0266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806799F266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift */; };
 		C80679A3266E3009001591AF /* ValidatorUnderlineUI+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80679A2266E3009001591AF /* ValidatorUnderlineUI+Ex.swift */; };
@@ -869,6 +889,26 @@
 		8D4D2C892DA166A2001502EC /* DetailsreservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationViewModel.swift; sourceTree = "<group>"; };
 		8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationTableViewCell.xib; sourceTree = "<group>"; };
+		8DA612AD2DA3F2320098CC92 /* BookserviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookserviceCoordinator.swift; sourceTree = "<group>"; };
+		8DA612AE2DA3F2320098CC92 /* BookserviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookserviceModel.swift; sourceTree = "<group>"; };
+		8DA612AF2DA3F2320098CC92 /* BookserviceStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookserviceStoryboard.storyboard; sourceTree = "<group>"; };
+		8DA612B02DA3F2320098CC92 /* BookserviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookserviceVC.swift; sourceTree = "<group>"; };
+		8DA612B12DA3F2320098CC92 /* BookserviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookserviceViewModel.swift; sourceTree = "<group>"; };
+		8DA612B72DA3F59B0098CC92 /* HorizontalCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCalendarView.swift; sourceTree = "<group>"; };
+		8DA612BA2DA3F6180098CC92 /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
+		8DA612BC2DA3F6A20098CC92 /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
+		8DD3C1542DA2B83A00D8962B /* ClientRatingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRatingCoordinator.swift; sourceTree = "<group>"; };
+		8DD3C1552DA2B83A00D8962B /* ClientRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRatingModel.swift; sourceTree = "<group>"; };
+		8DD3C1562DA2B83A00D8962B /* ClientRatingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClientRatingStoryboard.storyboard; sourceTree = "<group>"; };
+		8DD3C1572DA2B83A00D8962B /* ClientRatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRatingVC.swift; sourceTree = "<group>"; };
+		8DD3C1582DA2B83A00D8962B /* ClientRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRatingViewModel.swift; sourceTree = "<group>"; };
+		8DD3C15F2DA2B91E00D8962B /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
+		8DD3C1602DA2B91E00D8962B /* RatingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingTableViewCell.xib; sourceTree = "<group>"; };
+		8DD3C1642DA2C16F00D8962B /* CancelOrderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderCoordinator.swift; sourceTree = "<group>"; };
+		8DD3C1652DA2C16F00D8962B /* CancelOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderModel.swift; sourceTree = "<group>"; };
+		8DD3C1662DA2C16F00D8962B /* CancelOrderStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CancelOrderStoryboard.storyboard; sourceTree = "<group>"; };
+		8DD3C1672DA2C16F00D8962B /* CancelOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderVC.swift; sourceTree = "<group>"; };
+		8DD3C1682DA2C16F00D8962B /* CancelOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderViewModel.swift; sourceTree = "<group>"; };
 		A7D5D8C73E2E95434085A056 /* Pods-Raha.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raha.development.xcconfig"; path = "Target Support Files/Pods-Raha/Pods-Raha.development.xcconfig"; sourceTree = "<group>"; };
 		C806799C266E2F80001591AF /* GuardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardUI.swift; sourceTree = "<group>"; };
 		C806799F266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValidatorInfoMarkUI+Ex.swift"; sourceTree = "<group>"; };
@@ -1734,6 +1774,7 @@
 		77569F7B253482EE00BFE53C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8DA612B92DA3F5F30098CC92 /* Calender */,
 				66AEC2D22C43C46000BC260E /* JWTDecode */,
 				664FE17E2C3BEB620081C90B /* PaddingLabel.swift */,
 				C871C8EE272FF00300DCBD2D /* BaseController+EX.swift */,
@@ -1973,6 +2014,62 @@
 				8D4D2C892DA166A2001502EC /* DetailsreservationViewModel.swift */,
 			);
 			path = Detailsreservation;
+			sourceTree = "<group>";
+		};
+		8DA612AC2DA3F2190098CC92 /* Bookservice */ = {
+			isa = PBXGroup;
+			children = (
+				8DA612AD2DA3F2320098CC92 /* BookserviceCoordinator.swift */,
+				8DA612AE2DA3F2320098CC92 /* BookserviceModel.swift */,
+				8DA612AF2DA3F2320098CC92 /* BookserviceStoryboard.storyboard */,
+				8DA612B02DA3F2320098CC92 /* BookserviceVC.swift */,
+				8DA612B12DA3F2320098CC92 /* BookserviceViewModel.swift */,
+			);
+			path = Bookservice;
+			sourceTree = "<group>";
+		};
+		8DA612B92DA3F5F30098CC92 /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				8DA612BC2DA3F6A20098CC92 /* CalendarDay.swift */,
+				8DA612BA2DA3F6180098CC92 /* CalendarDayCell.swift */,
+				8DA612B72DA3F59B0098CC92 /* HorizontalCalendarView.swift */,
+			);
+			path = Calender;
+			sourceTree = "<group>";
+		};
+		8DD3C1532DA2B81600D8962B /* ClientRating */ = {
+			isa = PBXGroup;
+			children = (
+				8DD3C15E2DA2B90900D8962B /* cells */,
+				8DD3C1542DA2B83A00D8962B /* ClientRatingCoordinator.swift */,
+				8DD3C1552DA2B83A00D8962B /* ClientRatingModel.swift */,
+				8DD3C1562DA2B83A00D8962B /* ClientRatingStoryboard.storyboard */,
+				8DD3C1572DA2B83A00D8962B /* ClientRatingVC.swift */,
+				8DD3C1582DA2B83A00D8962B /* ClientRatingViewModel.swift */,
+			);
+			path = ClientRating;
+			sourceTree = "<group>";
+		};
+		8DD3C15E2DA2B90900D8962B /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				8DD3C15F2DA2B91E00D8962B /* RatingTableViewCell.swift */,
+				8DD3C1602DA2B91E00D8962B /* RatingTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		8DD3C1632DA2C15800D8962B /* CancelOrder */ = {
+			isa = PBXGroup;
+			children = (
+				8DD3C1642DA2C16F00D8962B /* CancelOrderCoordinator.swift */,
+				8DD3C1652DA2C16F00D8962B /* CancelOrderModel.swift */,
+				8DD3C1662DA2C16F00D8962B /* CancelOrderStoryboard.storyboard */,
+				8DD3C1672DA2C16F00D8962B /* CancelOrderVC.swift */,
+				8DD3C1682DA2C16F00D8962B /* CancelOrderViewModel.swift */,
+			);
+			path = CancelOrder;
 			sourceTree = "<group>";
 		};
 		C24929DD1F6900B652036CF1 /* Frameworks */ = {
@@ -2867,6 +2964,9 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8DA612AC2DA3F2190098CC92 /* Bookservice */,
+				8DD3C1632DA2C15800D8962B /* CancelOrder */,
+				8DD3C1532DA2B81600D8962B /* ClientRating */,
 				8D8F5DEA2DA1663C0046DB8E /* Detailsreservation */,
 				664E68E12D955DB900899D5E /* Detailscenters */,
 				6606AA402D802B3700E7665E /* Selectonmap */,
@@ -3124,6 +3224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD3C16D2DA2C16F00D8962B /* CancelOrderStoryboard.storyboard in Resources */,
 				66BF522B2D6F0ECB0030B38A /* ReservationStoryboard.storyboard in Resources */,
 				C86BF98A266947F0002D87BC /* StatusLine.xib in Resources */,
 				C871C729272FEB7B00DCBD2D /* SFPRODISPLAYBLACKITALIC.OTF in Resources */,
@@ -3187,10 +3288,12 @@
 				8D4D2C8E2DA166A2001502EC /* DetailsreservationStoryboard.storyboard in Resources */,
 				C871C735272FEB7C00DCBD2D /* Muli.ttf in Resources */,
 				C86BF99A266947F0002D87BC /* warningIconSubtle@3x.png in Resources */,
+				8DD3C15D2DA2B83A00D8962B /* ClientRatingStoryboard.storyboard in Resources */,
 				C84539AA2729887000004173 /* NeoSansArabic-Regular.ttf in Resources */,
 				C871C732272FEB7C00DCBD2D /* SFPRODISPLAYBOLD.OTF in Resources */,
 				66D634F82D771DAB00B6A6E3 /* CustomTabBarView.xib in Resources */,
 				6636D7CE2C3AE370007116F7 /* LoginStoryboard.storyboard in Resources */,
+				8DA612B62DA3F2320098CC92 /* BookserviceStoryboard.storyboard in Resources */,
 				C871C726272FEB7B00DCBD2D /* Muli-BoldItalic.ttf in Resources */,
 				C84539A82729887000004173 /* NeoSansArabic-Light.ttf in Resources */,
 				77C5F4A72534814200E70C4C /* Assets.xcassets in Resources */,
@@ -3217,6 +3320,7 @@
 				C86BF98D266947F0002D87BC /* errorIconSubtle@2x.png in Resources */,
 				E8339CA927CD262D000D5A6E /* Loading-Dark.gif in Resources */,
 				66B979BF2D75C87A00962C19 /* FaqTableViewCell.xib in Resources */,
+				8DD3C1622DA2B91E00D8962B /* RatingTableViewCell.xib in Resources */,
 				66C2E0CB2D6F2DBF0027823E /* EditEmailStoryboard.storyboard in Resources */,
 				C871C736272FEB7C00DCBD2D /* Muli-LightItalic.ttf in Resources */,
 				C86BF997266947F0002D87BC /* successIconSubtle@3x.png in Resources */,
@@ -3370,6 +3474,7 @@
 			files = (
 				C871C9852730231300DCBD2D /* UIView+Autolayout.swift in Sources */,
 				C871C8C0272FED0600DCBD2D /* Swipeable.swift in Sources */,
+				8DD3C1612DA2B91E00D8962B /* RatingTableViewCell.swift in Sources */,
 				C871C8E4272FED5900DCBD2D /* MarkerProtocols.swift in Sources */,
 				C8978F832669520C00021B0C /* NotificationBuilder.swift in Sources */,
 				C8C0930B272ABDA200E2270A /* UISwitch+Combine.swift in Sources */,
@@ -3447,6 +3552,7 @@
 				7756A17E25348AD400BFE53C /* BoolExtensions.swift in Sources */,
 				C871C89A272FECF200DCBD2D /* TwitterDelegate.swift in Sources */,
 				77228EB62756680B008F11B3 /* CalendarDelegate.swift in Sources */,
+				8DA612B82DA3F5AE0098CC92 /* HorizontalCalendarView.swift in Sources */,
 				C853B95426D7F9450008F09D /* SPPermissionsDialogCloseButton.swift in Sources */,
 				C8C0933B272AC76B00E2270A /* Publisher.swift in Sources */,
 				C86BF975266947F0002D87BC /* SwiftMessages.swift in Sources */,
@@ -3455,6 +3561,7 @@
 				C8C9D023266CD56000E66D46 /* Validator.swift in Sources */,
 				C853B95626D7F9450008F09D /* SPPermissionsDialogController.swift in Sources */,
 				6606AA3B2D802B2900E7665E /* AddAddressCoordinator.swift in Sources */,
+				8DA612BB2DA3F61A0098CC92 /* CalendarDayCell.swift in Sources */,
 				6606AA3C2D802B2900E7665E /* AddAddressModel.swift in Sources */,
 				6606AA3D2D802B2900E7665E /* AddAddressVC.swift in Sources */,
 				6606AA3E2D802B2900E7665E /* AddAddressViewModel.swift in Sources */,
@@ -3549,6 +3656,7 @@
 				C8265E4A266CE19D00E099C1 /* GuardPhone.swift in Sources */,
 				C86BF911266945C4002D87BC /* LocationHelper.swift in Sources */,
 				E875CDEE27A17FDF001C35F6 /* CameraRecoder.swift in Sources */,
+				8DA612BD2DA3F6A40098CC92 /* CalendarDay.swift in Sources */,
 				C8265E3E266CE15D00E099C1 /* Guard.swift in Sources */,
 				C871C933273000C800DCBD2D /* Authentication.swift in Sources */,
 				7756A18025348AD400BFE53C /* CharacterExtensions.swift in Sources */,
@@ -3584,6 +3692,10 @@
 				C853B96C26D7F9450008F09D /* SPLocationWhenInUsePermission.swift in Sources */,
 				E8603FD1280D80FA007E0C10 /* DelegateProxyPublisher.swift in Sources */,
 				6636D7CA2C3AE370007116F7 /* LoginCoordinator.swift in Sources */,
+				8DD3C1592DA2B83A00D8962B /* ClientRatingViewModel.swift in Sources */,
+				8DD3C15A2DA2B83A00D8962B /* ClientRatingModel.swift in Sources */,
+				8DD3C15B2DA2B83A00D8962B /* ClientRatingCoordinator.swift in Sources */,
+				8DD3C15C2DA2B83A00D8962B /* ClientRatingVC.swift in Sources */,
 				6636D7CB2C3AE370007116F7 /* LoginModel.swift in Sources */,
 				66C2E0DD2D6F34380027823E /* EditProfileCoordinator.swift in Sources */,
 				66C2E0DE2D6F34380027823E /* EditProfileModel.swift in Sources */,
@@ -3616,6 +3728,10 @@
 				C871C8C5272FED0600DCBD2D /* Extensions.swift in Sources */,
 				C871C8E1272FED5900DCBD2D /* GoogleMapKeys.swift in Sources */,
 				C853B95F26D7F9450008F09D /* UIFontExtension.swift in Sources */,
+				8DD3C1692DA2C16F00D8962B /* CancelOrderCoordinator.swift in Sources */,
+				8DD3C16A2DA2C16F00D8962B /* CancelOrderModel.swift in Sources */,
+				8DD3C16B2DA2C16F00D8962B /* CancelOrderViewModel.swift in Sources */,
+				8DD3C16C2DA2C16F00D8962B /* CancelOrderVC.swift in Sources */,
 				7756A0F8253482EF00BFE53C /* NavigateMapHelper.swift in Sources */,
 				7756A16E25348AD400BFE53C /* UISwitchExtensions.swift in Sources */,
 				66093EDD2D759B2D00F307C7 /* SelectLanguageCoordinator.swift in Sources */,
@@ -3808,6 +3924,10 @@
 				C8C09317272ABDA200E2270A /* UITextField+Combine.swift in Sources */,
 				C86BF9B4266947F0002D87BC /* SwiftMessages.Config+Extensions.swift in Sources */,
 				236E198C2670F380001A9C46 /* UITableViewEx.swift in Sources */,
+				8DA612B22DA3F2320098CC92 /* BookserviceViewModel.swift in Sources */,
+				8DA612B32DA3F2320098CC92 /* BookserviceModel.swift in Sources */,
+				8DA612B42DA3F2320098CC92 /* BookserviceVC.swift in Sources */,
+				8DA612B52DA3F2320098CC92 /* BookserviceCoordinator.swift in Sources */,
 				7756A110253482EF00BFE53C /* UILocalizationExtensions.swift in Sources */,
 				C86BF9AE266947F0002D87BC /* NSBundle+Extensions.swift in Sources */,
 				C871C9812730231300DCBD2D /* Cell+SkeletonEX.swift in Sources */,

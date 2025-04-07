@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class DetailscentersVC: BaseController {
+    @IBOutlet weak var bookBtn: UIButton!
+    @IBOutlet weak var imageHight: NSLayoutConstraint!
     @IBOutlet weak var servicesTbl: UITableView!
     @IBOutlet weak var catsCollection: UICollectionView!
     @IBOutlet weak var homeView: UIView!
@@ -27,7 +29,8 @@ class DetailscentersVC: BaseController {
     var lat = 0.0
     var lng = 0.0
     var centerId = 0
-    var ServiceType: [RegisterModel] = []
+    var loctype = ""
+    var ServiceType: [ServicetypeDatum] = []
 
 }
 
@@ -67,6 +70,7 @@ extension DetailscentersVC {
     func setup() {
         viewModel?.lat.send(lat)
         viewModel?.lng.send(lng)
+        viewModel?.loctype.send(loctype)
         viewModel?.centerId.send(centerId)
         viewModel?.fetchcentersdetails()
         servicesTbl.skeleton()
@@ -82,10 +86,10 @@ extension DetailscentersVC {
         catsCollection.dataSource = self
         catsCollection.observe()
         ServiceType.removeAll()
-        ServiceType.append(RegisterModel.init(id: 0, name: "All services".localized))
-        ServiceType.append(RegisterModel.init(id: 1, name: "Massage".localized))
-        ServiceType.append(RegisterModel.init(id: 2, name: "Cupping".localized))
-        catsCollection.reloadData()
+        bookBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.bookdetaisl()
+        }).store(self)
+       
     }
     func reload() {
         distanceLbl.text = viewModel?.centerdetails.value?.data?.distance ?? ""
@@ -99,6 +103,9 @@ extension DetailscentersVC {
         }else {
             homeView.isHidden = true
         }
+        if viewModel?.centerdetails.value?.data?.images?.count ?? 0 == 0 {
+            imageHight.constant = 60
+        }
         imagesCollection.reloadData()
         if viewModel?.centerdetails.value?.data?.services?.count ?? 0 == 0 {
             servicesTbl.isHidden = true
@@ -108,6 +115,12 @@ extension DetailscentersVC {
             hideEmptyScreen()
             servicesTbl.isHidden = false
         }
+        if viewModel?.centerdetails.value?.data?.serviceTypes?.count ?? 0 > 0 {
+            ServiceType.removeAll()
+            ServiceType.append(ServicetypeDatum(key: "", value: "All services".localized))
+            ServiceType.append(contentsOf: viewModel?.centerdetails.value?.data?.serviceTypes ?? [])
+        }
+        catsCollection.reloadData()
         servicesTbl.skeleton()
         servicesTbl.stopSwipeButtom()
     }
@@ -146,14 +159,14 @@ extension DetailscentersVC: UICollectionViewDelegateFlowLayout, UICollectionView
             }else {
                 var cell = collectionView.cell(type: ServicetypeCollectionViewCell.self, indexPath)
                 cell.model = ServiceType[safe: indexPath.row]
-                cell.serviceId = viewModel?.servicetype.value?.int ?? 0
+                cell.serviceId = viewModel?.servicetype.value ?? ""
                 cell.setupselectdetails()
                 return cell
             }
         }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == catsCollection {
-            viewModel?.servicetype.send(ServiceType[safe: indexPath.row]?.id?.string ?? "0")
+            viewModel?.servicetype.send(ServiceType[safe: indexPath.row]?.key ?? "")
             catsCollection.reloadData()
             viewModel?.fetchcentersdetails()
         }

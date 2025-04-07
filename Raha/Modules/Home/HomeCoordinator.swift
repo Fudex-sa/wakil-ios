@@ -45,6 +45,7 @@ extension HomeCoordinator {
         scene.lat = view?.viewModel?.lat.value ?? 0.0
         scene.lng = view?.viewModel?.lng.value ?? 0.0
         scene.centerId = id
+        scene.loctype = view?.viewModel?.loctype.value ?? ""
         view?.push(scene)
     }
     func done(model:AddressesDatum){

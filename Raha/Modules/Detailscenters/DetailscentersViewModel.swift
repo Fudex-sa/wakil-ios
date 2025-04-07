@@ -15,6 +15,7 @@ class DetailscentersViewModel: BaseViewModel {
     var servicetype: Publisher<String> = .init()
     var centerId: Publisher<Int> = .init()
     var centerdetails: Publisher<DetailscentersModel> = .init()
+    var loctype: Publisher<String> = .init()
 
 }
 // MARK: - ...  ViewModel Contract
@@ -26,11 +27,10 @@ extension DetailscentersViewModel {
         NetworkManager.instance.paramaters["lat"] = lat.value ?? 0.0
         NetworkManager.instance.paramaters["lng"] = lng.value ?? 0.0
         if servicetype.value ?? "" != "" {
-            if servicetype.value ?? "" == "1" {
-                NetworkManager.instance.paramaters["service_type"] = "massag"
-            }else  if servicetype.value ?? "" == "2" {
-                NetworkManager.instance.paramaters["service_type"] = "cupping"
-            }
+            NetworkManager.instance.paramaters["service_type"] = servicetype.value ?? ""
+        }
+        if loctype.value ?? "" != "" {
+            NetworkManager.instance.paramaters["location_type"] = loctype.value ?? ""
         }
         NetworkManager.instance.request("\(NetworkConfigration.EndPoint.home.rawValue)/\(centerId.value ?? 0)", type: .get, DetailscentersModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)

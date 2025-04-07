@@ -24,7 +24,7 @@ struct DetailscentersDataClass: Codable {
     let homeServicesAvailable: Int?
     let distance: String?
     let images: [Image]?
-    let serviceTypes: [String]?
+    let serviceTypes: [ServicetypeDatum]?
     let services: [Service]?
 
     enum CodingKeys: String, CodingKey {

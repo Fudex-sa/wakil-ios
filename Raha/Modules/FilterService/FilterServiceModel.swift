@@ -16,3 +16,17 @@ class FilterServiceModel: Codable {
     var gender: String?
     var rate: String?
 }
+struct ServicetypeModel: Codable {
+    let status: Bool?
+    let message: String?
+    let data: [ServicetypeDatum]?
+}
+
+// MARK: - Datum
+class ServicetypeDatum: Codable {
+    let key, value: String?
+    init(key: String?, value: String?) {
+        self.key = key
+        self.value = value
+    }
+}

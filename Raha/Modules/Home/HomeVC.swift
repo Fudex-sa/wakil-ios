@@ -64,6 +64,9 @@ extension HomeVC {
         viewModel?.homestatus.listen(on: { [weak self] value in
             self?.reloadhome()
         })
+        viewModel?.slidersFinished.listen(on: { [weak self] value in
+            self?.reloadsliders()
+        })
         viewModel?.userddata.listen(on: { [weak self] value in
             self?.userImg.setImage(url: self?.viewModel?.userddata.value?.data?.avatar ?? "")
         })
@@ -78,6 +81,11 @@ extension HomeVC {
         centerTbl.delegate = self
         centerTbl.dataSource = self
         centerTbl.observe()
+        slidersCollection.skeleton()
+        slidersCollection.delegate = self
+        slidersCollection.dataSource = self
+        slidersCollection.observe()
+        viewModel?.fetchsliders()
         if UD.user != nil {
             viewModel?.getprofile()
             viewModel?.fetchaddresses()
@@ -159,6 +167,9 @@ extension HomeVC {
         centerTbl.skeleton()
         centerTbl.stopSwipeButtom()
     }
+    func reloadsliders() {
+        slidersCollection.reloadData()
+    }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
             switch status {
             case .notDetermined:
@@ -237,3 +248,34 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
 }
   
+extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: collectionView.frame.width, height: collectionView.frame.height)
+
+       }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if collectionView == slidersCollection {
+            dotsPage.currentPage = indexPath.row
+        }
+        }
+      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+          dotsPage.numberOfPages = viewModel?.sliders.value?.count ?? 0
+          return viewModel?.sliders.value?.count ?? 0
+          
+        }
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            var cell = collectionView.cell(type: SlidersCollectionViewCell.self, indexPath)
+            cell.model = viewModel?.sliders.value?[safe: indexPath.row]
+            cell.setupsliders()
+            return cell
+            
+        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            // No spacing between cells to ensure they are adjacent
+            return 0
+    }
+  }

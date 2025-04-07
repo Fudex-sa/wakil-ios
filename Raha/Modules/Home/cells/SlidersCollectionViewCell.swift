@@ -17,4 +17,9 @@ class SlidersCollectionViewCell: BaseCollectionViewCell {
         guard let model = model as? Image else { return }
          sliderImg.setImage(url: model.image ?? "")
     }
+    func setupsliders() {
+       skeleton(view: containerView)
+        guard let model = model as? SlidersDatum else { return }
+        sliderImg.setImage(url: model.image ?? "")
+   }
 }

@@ -22,6 +22,8 @@ class HomeViewModel: BaseViewModel ,DataSourceViewModel {
     var userddata: Publisher<ProfileModel> = .init()
     var homedata: Publisher<[HomeDatum]> = .init()
     var homestatus: Publisher<Bool> = .init()
+    var sliders: Publisher<[SlidersDatum]> = .init()
+    var slidersFinished: Publisher<Bool> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -53,11 +55,7 @@ extension HomeViewModel {
             NetworkManager.instance.paramaters["max_distance"] = distance.value ?? ""
         }
         if servicetype.value ?? "" != "" {
-            if servicetype.value ?? "" == "1" {
-                NetworkManager.instance.paramaters["service_type"] = "massag"
-            }else  if servicetype.value ?? "" == "2" {
-                NetworkManager.instance.paramaters["service_type"] = "hegama"
-            }
+            NetworkManager.instance.paramaters["service_type"] = servicetype.value ?? ""
         }
         if loctype.value ?? "" != "" {
             NetworkManager.instance.paramaters["location_type"] = loctype.value ?? ""
@@ -77,6 +75,15 @@ extension HomeViewModel {
             guard let model = model else { return }
             self?.homedata.send(model.data ?? [])
             self?.homestatus.send(true)
+        }).store(self)
+    }
+    func fetchsliders() {
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.sliders.rawValue, type: .get, SlidersModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.sliders.send(model.data ?? [])
+            self?.slidersFinished.send(true)
         }).store(self)
     }
 }

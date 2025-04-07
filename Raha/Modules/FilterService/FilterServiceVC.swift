@@ -32,7 +32,7 @@ class FilterServiceVC: BaseController {
     var coordinator: FilterServiceCoordinator?
     var filter : FilterServiceModel = FilterServiceModel.init()
     var distances: [RegisterModel] = []
-    var ServiceType: [RegisterModel] = []
+    var ServiceType: [ServicetypeDatum] = []
     var delegate: FilterServiceVCDelegate?
 
 }
@@ -48,11 +48,24 @@ extension FilterServiceVC {
         coordinator = .init()
         coordinator?.view = self
         setup()
+        bind()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+    }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.servicestypeFinished.listen(on: { [weak self] value in
+            self?.servicetypereload()
+        })
+       
     }
 }
 // MARK: - ...  Functions
@@ -72,11 +85,7 @@ extension FilterServiceVC {
         distances.append(RegisterModel.init(id: 15, name: "15 \("kilometer".localized)"))
         distances.append(RegisterModel.init(id: 20, name: "20 \("kilometer".localized)"))
         distances.append(RegisterModel.init(id: 25, name: "25 \("kilometer".localized)"))
-        ServiceType.removeAll()
-        ServiceType.append(RegisterModel.init(id: 0, name: "All".localized))
-        ServiceType.append(RegisterModel.init(id: 1, name: "Massage".localized))
-        ServiceType.append(RegisterModel.init(id: 2, name: "Cupping".localized))
-        typesCollection.reloadData()
+        viewModel?.fetchservicestype()
         if filter.servicetype == "home" {
             homeRadio.select()
         }else  if filter.servicetype == "center" {
@@ -94,11 +103,11 @@ extension FilterServiceVC {
         }
         homeRadio.onSelect(execute: { [self] in
             centerRadio.deselect()
-            filter.servicetype = "home"
+            filter.loctype = "home"
         })
         centerRadio.onSelect(execute: { [self] in
             homeRadio.deselect()
-            filter.servicetype = "center"
+            filter.loctype = "center"
         })
         maleRadio.onSelect(execute: { [self] in
             femaleRadio.deselect()
@@ -152,6 +161,12 @@ extension FilterServiceVC {
         })
         self.pushPop(scene)
     }
+    func servicetypereload() {
+        ServiceType.removeAll()
+        ServiceType.append(ServicetypeDatum(key: "", value: "All".localized))
+        ServiceType.append(contentsOf: viewModel?.servicestype.value ?? [])
+        typesCollection.reloadData()
+    }
 }
 // MARK: - ...  View Contract
 extension FilterServiceVC {
@@ -168,12 +183,12 @@ extension FilterServiceVC: UICollectionViewDelegateFlowLayout, UICollectionViewD
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             var cell = collectionView.cell(type: ServicetypeCollectionViewCell.self, indexPath)
             cell.model = ServiceType[safe: indexPath.row]
-            cell.serviceId = filter.servicetype?.int ?? 0
+            cell.serviceId = filter.servicetype ?? ""
             cell.setupselect()
             return cell
         }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        filter.servicetype = ServiceType[safe: indexPath.row]?.id?.string ?? "0"
+        filter.servicetype = ServiceType[safe: indexPath.row]?.key ?? ""
         typesCollection.reloadData()
     }
    
