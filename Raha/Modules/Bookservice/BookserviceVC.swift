@@ -23,12 +23,24 @@ class BookserviceVC: BaseController {
     @IBOutlet weak var serviceTbl: UITableView!
     var viewModel: BookserviceViewModel?
     var coordinator: BookserviceCoordinator?
+    var centerId = 0
+    var loctype = ""
+    var selectservices : [Service] = []
+    var slots : [SlotsDatum] = []
+    var address: AddressesDatum?
+    var date = ""
+    var payTaps: PayTaps?
+    var suucesUrl = ""
+    var failedurl = ""
 }
 
 // MARK: - ...  LifeCycle
 extension BookserviceVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        address = UD.address
+        date = DateHelper().currentDate() ?? ""
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,22 +48,195 @@ extension BookserviceVC {
         coordinator = .init()
         coordinator?.view = self
         setup()
+        bind()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.didError(error: error?.localizedDescription)
+        })
+        viewModel?.slotsdetails.listen(on: { [weak self] value in
+            self?.slots.removeAll()
+            self?.slots.append(contentsOf: self?.viewModel?.slotsdetails.value?.data ?? [])
+            self?.slotsTbl.reloadData()
+        })
+        viewModel?.createorder.listen(on: { [weak self] value in
+            self?.stopLoading()
+            self?.suucesUrl = self?.viewModel?.createorder.value?.data?.successURL ?? ""
+            self?.failedurl = self?.viewModel?.createorder.value?.data?.failURL ?? ""
+            self?.payTaps = .init(dataSource: self)
+            self?.payTaps?.delegate = self
+            self?.payTaps?.present(in: self)
+        })
+       
+    }
 }
 // MARK: - ...  Functions
 extension BookserviceVC {
     func setup() {
+        serviceTbl.skeleton()
+        serviceTbl.delegate = self
+        serviceTbl.dataSource = self
+        serviceTbl.observe()
+        slotsTbl.skeleton()
+        slotsTbl.delegate = self
+        slotsTbl.dataSource = self
+        slotsTbl.observe()
+        viewModel?.centerId.send(centerId)
+        viewModel?.services.send(selectservices)
+        viewModel?.date.send(date)
+        viewModel?.fetchcentersdetails()
+        if loctype == "home" {
+            visitLbl.text = "Home visit".localized
+            addressView.isHidden = false
+        }else {
+            visitLbl.text = "At the center".localized
+            addressView.isHidden = true
+        }
+        if address != nil {
+            addressLbl.text = "\(address?.street ?? "") - \(address?.district ?? "") - \(address?.cityID?.name ?? "") - \(address?.stateID?.name ?? "")"
+            changeAddressBtn.setTitle("Change".localized, for: .normal)
+        }else {
+            addressLbl.text = "Addresses list is empty".localized
+            changeAddressBtn.setTitle("Add".localized, for: .normal)
+        }
+        var price = 0.0
+        for index in selectservices {
+            price = price + Double(index.price ?? "0.0")!
+        }
+        priceLbl.text = price.string ?? ""
+        serviceTbl.reloadData()
         calenderView.onDateSelected = { selectedDate in
             print("You picked: \(selectedDate)")
+            self.date = DateHelper().date(date: selectedDate, format: "dd-MM-yyyy") ?? ""
+            self.viewModel?.date.send(self.date ?? "")
+            self.viewModel?.fetchcentersdetails()
         }
+        changeAddressBtn.publisher.listen(on: {[weak self] _ in
+            if UD.address == nil {
+                self?.coordinator?.addaddress()
+            }else {
+                self?.coordinator?.selectaddress()
+            }
+        }).store(self)
+        bookBtn.publisher.listen(on: {[weak self] _ in
+            var error = ""
+            if self?.slots.count == 0 {
+                error = "no available appountment".localized
+            }
+            if self?.loctype != "center" && self?.address?.id ?? 0 == 0 {
+                error = "\(error) \("Add address".localized)\n"
+            }
+            for index in self?.slots ?? [] {
+                var isgood = false
+                for item in index.slots ?? [] {
+                    if item.isselect ?? false == true {
+                        isgood = true
+                    }
+                }
+                if isgood == false {
+                    error = "\(error) \("Service that name is".localized) \(index.serviceName ?? "") \("not select time to reseve".localized)\n"
+                }
+            }
+            if error == "" {
+                self?.viewModel?.location_type.send(self?.loctype ?? "")
+                self?.viewModel?.address_id.send(self?.address?.id ?? 0)
+                self?.viewModel?.payment_method.send("visa")
+                self?.viewModel?.price.send(self?.priceLbl.text ?? "")
+                self?.viewModel?.slots.send(self?.slots ?? [])
+                self?.viewModel?.makecreateorder()
+            }else {
+                self?.didError(error: error)
+            }
+        }).store(self)
 
     }
 }
 // MARK: - ...  View Contract
 extension BookserviceVC {
+}
+extension BookserviceVC: UITableViewDelegate, UITableViewDataSource {
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == slotsTbl {
+            return slots.count
+        }else {
+            return selectservices.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == slotsTbl {
+            var cell = tableView.cell(type: ServicesslotsTableViewCell.self, indexPath)
+            cell.model = slots[safe: indexPath.row]
+            cell.delegate = self
+            return cell
+        }else {
+            var cell = tableView.cell(type: SelectservicesTableViewCell.self, indexPath)
+            cell.model = selectservices[safe: indexPath.row]
+            return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+    
+}
+extension BookserviceVC : ServicesslotsTableViewCellDelegate {
+    func selectservice(wasPressedOnCell cell: ServicesslotsTableViewCell, model: SlotsDatum) {
+        var index1 = 0
+        for index in slots {
+            if index.serviceID == model.serviceID {
+                if slots[index1].isselect ?? false == false {
+                    slots[index1].isselect = true
+                }else {
+                    slots[index1].isselect = false
+                }
+            }
+            index1 = index1 + 1
+        }
+        slotsTbl.reloadData()
+    }
+    
+    func selectslot(wasPressedOnCell cell: ServicesslotsTableViewCell, model: [Slot], serviceId : Int) {
+        var index1 = 0
+        for index in slots {
+            if index.serviceID == serviceId {
+                slots[index1].slots?.removeAll()
+                slots[index1].slots?.append(contentsOf: model)
+            }
+            index1 = index1 + 1
+        }
+        slotsTbl.reloadData()
+    }
+    
+    
+}
+extension BookserviceVC: PayTapsDelegate, PayTapsDataSource {
+    func payTaps(_ payTaps: PayTaps?, didPay orderID: Int) {
+        coordinator?.paymentdone()
+    }
+    func payTaps(_ payTaps: PayTaps?, cancel pay: Bool) {
+        NotificationBuilder().setTitle("Info".localized).setBody("You are cancelled the payment process".localized).setTheme(.info).bulid()
+    }
+    func payTaps(_ payTaps: PayTaps?, fail pay: Bool) {
+        super.didError(error: "Online payment has been made a mistake please try again".localized)
+    }
+    
+    func payTaps(_ payTaps: PayTaps?, successURL: Bool?) -> String? {
+        return suucesUrl
+    }
+    
+    func payTaps(_ payTaps: PayTaps?, failURL: Bool?) -> String? {
+        return failedurl
+    }
+    
+    func payTaps(_ payTaps: PayTaps?, URL: Bool?) -> String? {
+        return viewModel?.createorder.value?.data?.paymentURL ?? ""
+    }
 }

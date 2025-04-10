@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        } else {
 //            window?.overrideUserInterfaceStyle = .light
 //        }
+        UD.address = nil
         if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
             Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
         }else {

@@ -268,6 +268,31 @@
 		8DA612B82DA3F5AE0098CC92 /* HorizontalCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612B72DA3F59B0098CC92 /* HorizontalCalendarView.swift */; };
 		8DA612BB2DA3F61A0098CC92 /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612BA2DA3F6180098CC92 /* CalendarDayCell.swift */; };
 		8DA612BD2DA3F6A40098CC92 /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612BC2DA3F6A20098CC92 /* CalendarDay.swift */; };
+		8DB6ADC82DA7C81A0093EB4E /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADC42DA7C81A0093EB4E /* GiftModel.swift */; };
+		8DB6ADC92DA7C81A0093EB4E /* GiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADC72DA7C81A0093EB4E /* GiftViewModel.swift */; };
+		8DB6ADCA2DA7C81A0093EB4E /* GiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADC62DA7C81A0093EB4E /* GiftVC.swift */; };
+		8DB6ADCB2DA7C81A0093EB4E /* GiftCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADC32DA7C81A0093EB4E /* GiftCoordinator.swift */; };
+		8DB6ADCC2DA7C81A0093EB4E /* GiftStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6ADC52DA7C81A0093EB4E /* GiftStoryboard.storyboard */; };
+		8DB6ADD32DA7C8470093EB4E /* CalenderselectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADD12DA7C8470093EB4E /* CalenderselectVC.swift */; };
+		8DB6ADD42DA7C8470093EB4E /* CalenderselectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADCF2DA7C8470093EB4E /* CalenderselectModel.swift */; };
+		8DB6ADD52DA7C8470093EB4E /* CalenderselectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADD22DA7C8470093EB4E /* CalenderselectViewModel.swift */; };
+		8DB6ADD62DA7C8470093EB4E /* CalenderselectCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADCE2DA7C8470093EB4E /* CalenderselectCoordinator.swift */; };
+		8DB6ADD72DA7C8470093EB4E /* CalenderselectStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6ADD02DA7C8470093EB4E /* CalenderselectStoryboard.storyboard */; };
+		8DB6ADDE2DA7C8940093EB4E /* PaymentDoneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADD92DA7C8940093EB4E /* PaymentDoneCoordinator.swift */; };
+		8DB6ADDF2DA7C8940093EB4E /* PaymentDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADDD2DA7C8940093EB4E /* PaymentDoneViewModel.swift */; };
+		8DB6ADE02DA7C8940093EB4E /* PaymentDoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADDA2DA7C8940093EB4E /* PaymentDoneModel.swift */; };
+		8DB6ADE12DA7C8940093EB4E /* PaymentDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADDC2DA7C8940093EB4E /* PaymentDoneVC.swift */; };
+		8DB6ADE22DA7C8940093EB4E /* PaymentDoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6ADDB2DA7C8940093EB4E /* PaymentDoneStoryboard.storyboard */; };
+		8DB6ADE82DA7C94E0093EB4E /* PayTapsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADE52DA7C94E0093EB4E /* PayTapsContract.swift */; };
+		8DB6ADE92DA7C94E0093EB4E /* PayTaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADE42DA7C94E0093EB4E /* PayTaps.swift */; };
+		8DB6ADEA2DA7C94E0093EB4E /* PayTapsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADE72DA7C94E0093EB4E /* PayTapsWebView.swift */; };
+		8DB6ADEB2DA7C94E0093EB4E /* PayTapsWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6ADE62DA7C94E0093EB4E /* PayTapsWebView.storyboard */; };
+		8DB6ADEF2DA7CD620093EB4E /* SelectservicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADED2DA7CD620093EB4E /* SelectservicesTableViewCell.swift */; };
+		8DB6ADF02DA7CD620093EB4E /* SelectservicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6ADEE2DA7CD620093EB4E /* SelectservicesTableViewCell.xib */; };
+		8DB6ADF32DA7CD870093EB4E /* ServicesslotsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADF12DA7CD870093EB4E /* ServicesslotsTableViewCell.swift */; };
+		8DB6ADF42DA7CD870093EB4E /* ServicesslotsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6ADF22DA7CD870093EB4E /* ServicesslotsTableViewCell.xib */; };
+		8DB6ADF72DA7CDB00093EB4E /* SlotsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6ADF52DA7CDB00093EB4E /* SlotsCollectionViewCell.swift */; };
+		8DB6ADF82DA7CDB00093EB4E /* SlotsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6ADF62DA7CDB00093EB4E /* SlotsCollectionViewCell.xib */; };
 		8DD3C1592DA2B83A00D8962B /* ClientRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1582DA2B83A00D8962B /* ClientRatingViewModel.swift */; };
 		8DD3C15A2DA2B83A00D8962B /* ClientRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1552DA2B83A00D8962B /* ClientRatingModel.swift */; };
 		8DD3C15B2DA2B83A00D8962B /* ClientRatingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1542DA2B83A00D8962B /* ClientRatingCoordinator.swift */; };
@@ -897,6 +922,31 @@
 		8DA612B72DA3F59B0098CC92 /* HorizontalCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCalendarView.swift; sourceTree = "<group>"; };
 		8DA612BA2DA3F6180098CC92 /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 		8DA612BC2DA3F6A20098CC92 /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
+		8DB6ADC32DA7C81A0093EB4E /* GiftCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCoordinator.swift; sourceTree = "<group>"; };
+		8DB6ADC42DA7C81A0093EB4E /* GiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
+		8DB6ADC52DA7C81A0093EB4E /* GiftStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GiftStoryboard.storyboard; sourceTree = "<group>"; };
+		8DB6ADC62DA7C81A0093EB4E /* GiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftVC.swift; sourceTree = "<group>"; };
+		8DB6ADC72DA7C81A0093EB4E /* GiftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewModel.swift; sourceTree = "<group>"; };
+		8DB6ADCE2DA7C8470093EB4E /* CalenderselectCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderselectCoordinator.swift; sourceTree = "<group>"; };
+		8DB6ADCF2DA7C8470093EB4E /* CalenderselectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderselectModel.swift; sourceTree = "<group>"; };
+		8DB6ADD02DA7C8470093EB4E /* CalenderselectStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalenderselectStoryboard.storyboard; sourceTree = "<group>"; };
+		8DB6ADD12DA7C8470093EB4E /* CalenderselectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderselectVC.swift; sourceTree = "<group>"; };
+		8DB6ADD22DA7C8470093EB4E /* CalenderselectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderselectViewModel.swift; sourceTree = "<group>"; };
+		8DB6ADD92DA7C8940093EB4E /* PaymentDoneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDoneCoordinator.swift; sourceTree = "<group>"; };
+		8DB6ADDA2DA7C8940093EB4E /* PaymentDoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDoneModel.swift; sourceTree = "<group>"; };
+		8DB6ADDB2DA7C8940093EB4E /* PaymentDoneStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentDoneStoryboard.storyboard; sourceTree = "<group>"; };
+		8DB6ADDC2DA7C8940093EB4E /* PaymentDoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDoneVC.swift; sourceTree = "<group>"; };
+		8DB6ADDD2DA7C8940093EB4E /* PaymentDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDoneViewModel.swift; sourceTree = "<group>"; };
+		8DB6ADE42DA7C94E0093EB4E /* PayTaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTaps.swift; sourceTree = "<group>"; };
+		8DB6ADE52DA7C94E0093EB4E /* PayTapsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTapsContract.swift; sourceTree = "<group>"; };
+		8DB6ADE62DA7C94E0093EB4E /* PayTapsWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayTapsWebView.storyboard; sourceTree = "<group>"; };
+		8DB6ADE72DA7C94E0093EB4E /* PayTapsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTapsWebView.swift; sourceTree = "<group>"; };
+		8DB6ADED2DA7CD620093EB4E /* SelectservicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectservicesTableViewCell.swift; sourceTree = "<group>"; };
+		8DB6ADEE2DA7CD620093EB4E /* SelectservicesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectservicesTableViewCell.xib; sourceTree = "<group>"; };
+		8DB6ADF12DA7CD870093EB4E /* ServicesslotsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesslotsTableViewCell.swift; sourceTree = "<group>"; };
+		8DB6ADF22DA7CD870093EB4E /* ServicesslotsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesslotsTableViewCell.xib; sourceTree = "<group>"; };
+		8DB6ADF52DA7CDB00093EB4E /* SlotsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotsCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DB6ADF62DA7CDB00093EB4E /* SlotsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlotsCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DD3C1542DA2B83A00D8962B /* ClientRatingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRatingCoordinator.swift; sourceTree = "<group>"; };
 		8DD3C1552DA2B83A00D8962B /* ClientRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRatingModel.swift; sourceTree = "<group>"; };
 		8DD3C1562DA2B83A00D8962B /* ClientRatingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClientRatingStoryboard.storyboard; sourceTree = "<group>"; };
@@ -2019,6 +2069,7 @@
 		8DA612AC2DA3F2190098CC92 /* Bookservice */ = {
 			isa = PBXGroup;
 			children = (
+				8DB6ADEC2DA7CD430093EB4E /* cells */,
 				8DA612AD2DA3F2320098CC92 /* BookserviceCoordinator.swift */,
 				8DA612AE2DA3F2320098CC92 /* BookserviceModel.swift */,
 				8DA612AF2DA3F2320098CC92 /* BookserviceStoryboard.storyboard */,
@@ -2036,6 +2087,66 @@
 				8DA612B72DA3F59B0098CC92 /* HorizontalCalendarView.swift */,
 			);
 			path = Calender;
+			sourceTree = "<group>";
+		};
+		8DB6ADC22DA7C7EB0093EB4E /* Gift */ = {
+			isa = PBXGroup;
+			children = (
+				8DB6ADC32DA7C81A0093EB4E /* GiftCoordinator.swift */,
+				8DB6ADC42DA7C81A0093EB4E /* GiftModel.swift */,
+				8DB6ADC52DA7C81A0093EB4E /* GiftStoryboard.storyboard */,
+				8DB6ADC62DA7C81A0093EB4E /* GiftVC.swift */,
+				8DB6ADC72DA7C81A0093EB4E /* GiftViewModel.swift */,
+			);
+			path = Gift;
+			sourceTree = "<group>";
+		};
+		8DB6ADCD2DA7C82B0093EB4E /* Calenderselect */ = {
+			isa = PBXGroup;
+			children = (
+				8DB6ADCE2DA7C8470093EB4E /* CalenderselectCoordinator.swift */,
+				8DB6ADCF2DA7C8470093EB4E /* CalenderselectModel.swift */,
+				8DB6ADD02DA7C8470093EB4E /* CalenderselectStoryboard.storyboard */,
+				8DB6ADD12DA7C8470093EB4E /* CalenderselectVC.swift */,
+				8DB6ADD22DA7C8470093EB4E /* CalenderselectViewModel.swift */,
+			);
+			path = Calenderselect;
+			sourceTree = "<group>";
+		};
+		8DB6ADD82DA7C8680093EB4E /* PaymentDone */ = {
+			isa = PBXGroup;
+			children = (
+				8DB6ADD92DA7C8940093EB4E /* PaymentDoneCoordinator.swift */,
+				8DB6ADDA2DA7C8940093EB4E /* PaymentDoneModel.swift */,
+				8DB6ADDB2DA7C8940093EB4E /* PaymentDoneStoryboard.storyboard */,
+				8DB6ADDC2DA7C8940093EB4E /* PaymentDoneVC.swift */,
+				8DB6ADDD2DA7C8940093EB4E /* PaymentDoneViewModel.swift */,
+			);
+			path = PaymentDone;
+			sourceTree = "<group>";
+		};
+		8DB6ADE32DA7C9200093EB4E /* OnlinePayment */ = {
+			isa = PBXGroup;
+			children = (
+				8DB6ADE42DA7C94E0093EB4E /* PayTaps.swift */,
+				8DB6ADE52DA7C94E0093EB4E /* PayTapsContract.swift */,
+				8DB6ADE62DA7C94E0093EB4E /* PayTapsWebView.storyboard */,
+				8DB6ADE72DA7C94E0093EB4E /* PayTapsWebView.swift */,
+			);
+			path = OnlinePayment;
+			sourceTree = "<group>";
+		};
+		8DB6ADEC2DA7CD430093EB4E /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				8DB6ADED2DA7CD620093EB4E /* SelectservicesTableViewCell.swift */,
+				8DB6ADEE2DA7CD620093EB4E /* SelectservicesTableViewCell.xib */,
+				8DB6ADF12DA7CD870093EB4E /* ServicesslotsTableViewCell.swift */,
+				8DB6ADF22DA7CD870093EB4E /* ServicesslotsTableViewCell.xib */,
+				8DB6ADF52DA7CDB00093EB4E /* SlotsCollectionViewCell.swift */,
+				8DB6ADF62DA7CDB00093EB4E /* SlotsCollectionViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		8DD3C1532DA2B81600D8962B /* ClientRating */ = {
@@ -2964,6 +3075,10 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8DB6ADE32DA7C9200093EB4E /* OnlinePayment */,
+				8DB6ADD82DA7C8680093EB4E /* PaymentDone */,
+				8DB6ADCD2DA7C82B0093EB4E /* Calenderselect */,
+				8DB6ADC22DA7C7EB0093EB4E /* Gift */,
 				8DA612AC2DA3F2190098CC92 /* Bookservice */,
 				8DD3C1632DA2C15800D8962B /* CancelOrder */,
 				8DD3C1532DA2B81600D8962B /* ClientRating */,
@@ -3253,6 +3368,7 @@
 				C853B90726D7F8D60008F09D /* InfoPlist.strings in Resources */,
 				C86BF99D266947F0002D87BC /* successIconSubtle@2x.png in Resources */,
 				66BF52362D6F0EE60030B38A /* MoreStoryboard.storyboard in Resources */,
+				8DB6ADD72DA7C8470093EB4E /* CalenderselectStoryboard.storyboard in Resources */,
 				66F7C2F4278C68D800E449F6 /* Muli.ttf in Resources */,
 				C86BF983266947F0002D87BC /* warningIcon@3x.png in Resources */,
 				664DCB002C3BC2460011DB96 /* Tajawal-Medium.ttf in Resources */,
@@ -3291,6 +3407,8 @@
 				8DD3C15D2DA2B83A00D8962B /* ClientRatingStoryboard.storyboard in Resources */,
 				C84539AA2729887000004173 /* NeoSansArabic-Regular.ttf in Resources */,
 				C871C732272FEB7C00DCBD2D /* SFPRODISPLAYBOLD.OTF in Resources */,
+				8DB6ADCC2DA7C81A0093EB4E /* GiftStoryboard.storyboard in Resources */,
+				8DB6ADF42DA7CD870093EB4E /* ServicesslotsTableViewCell.xib in Resources */,
 				66D634F82D771DAB00B6A6E3 /* CustomTabBarView.xib in Resources */,
 				6636D7CE2C3AE370007116F7 /* LoginStoryboard.storyboard in Resources */,
 				8DA612B62DA3F2320098CC92 /* BookserviceStoryboard.storyboard in Resources */,
@@ -3310,11 +3428,13 @@
 				C86BF982266947F0002D87BC /* errorIconSubtle.png in Resources */,
 				C86BF981266947F0002D87BC /* MessageView.xib in Resources */,
 				C871C72C272FEB7C00DCBD2D /* Muli-Bold.ttf in Resources */,
+				8DB6ADE22DA7C8940093EB4E /* PaymentDoneStoryboard.storyboard in Resources */,
 				663830862D75A37F00E9CC0E /* SelectAddressStoryboard.storyboard in Resources */,
 				C86BF99F266947F0002D87BC /* infoIcon.png in Resources */,
 				6693369F2D79CFF6008DB727 /* LogoutStoryboard.storyboard in Resources */,
 				66C2E0D62D6F30620027823E /* EditPasswordStoryboard.storyboard in Resources */,
 				C86BF9A0266947F0002D87BC /* errorIconLight.png in Resources */,
+				8DB6ADEB2DA7C94E0093EB4E /* PayTapsWebView.storyboard in Resources */,
 				664E68EB2D955DE800899D5E /* DetailscentersStoryboard.storyboard in Resources */,
 				66EA353E2C7F1E0600E271E3 /* GoogleService-Info.plist in Resources */,
 				C86BF98D266947F0002D87BC /* errorIconSubtle@2x.png in Resources */,
@@ -3339,6 +3459,7 @@
 				E8339CA827CD262D000D5A6E /* Loading-Light.gif in Resources */,
 				663C3FAF2D6DC92900A2C80A /* ResetpasswordStoryboard.storyboard in Resources */,
 				7756A096253482EF00BFE53C /* RadioView.xib in Resources */,
+				8DB6ADF02DA7CD620093EB4E /* SelectservicesTableViewCell.xib in Resources */,
 				C86BF9A4266947F0002D87BC /* warningIconSubtle.png in Resources */,
 				66C8C0932D6C687700096320 /* Expo-Arabic-Medium.ttf in Resources */,
 				C86BF996266947F0002D87BC /* errorIconLight@3x.png in Resources */,
@@ -3346,6 +3467,7 @@
 				66BF52152D6F0E2D0030B38A /* MainStoryboard.storyboard in Resources */,
 				C86BF994266947F0002D87BC /* infoIconSubtle@3x.png in Resources */,
 				C86BF99E266947F0002D87BC /* errorIconLight@2x.png in Resources */,
+				8DB6ADF82DA7CDB00093EB4E /* SlotsCollectionViewCell.xib in Resources */,
 				77569F312534824A00BFE53C /* README.md in Resources */,
 				C871C725272FEB7B00DCBD2D /* Muli-ExtraLightItalic.ttf in Resources */,
 				C871C728272FEB7B00DCBD2D /* SFPRODISPLAYLIGHTITALIC.OTF in Resources */,
@@ -3523,9 +3645,13 @@
 				C871C8CD272FED0600DCBD2D /* SwipeCollectionViewCell.swift in Sources */,
 				C84539AB2729887000004173 /* UIFontEx.swift in Sources */,
 				C871C98E2730231300DCBD2D /* ContainsMultilineText.swift in Sources */,
+				8DB6ADE82DA7C94E0093EB4E /* PayTapsContract.swift in Sources */,
+				8DB6ADE92DA7C94E0093EB4E /* PayTaps.swift in Sources */,
+				8DB6ADEA2DA7C94E0093EB4E /* PayTapsWebView.swift in Sources */,
 				7756A16825348AD400BFE53C /* UIViewControllerExtensions.swift in Sources */,
 				C871C8E5272FED5900DCBD2D /* GoogleMapProtocolHelper.swift in Sources */,
 				6602D04A2D6F548300453B06 /* TermsCoordinator.swift in Sources */,
+				8DB6ADF32DA7CD870093EB4E /* ServicesslotsTableViewCell.swift in Sources */,
 				6602D04B2D6F548300453B06 /* TermsModel.swift in Sources */,
 				6602D04C2D6F548300453B06 /* TermsVC.swift in Sources */,
 				6602D04D2D6F548300453B06 /* TermsViewModel.swift in Sources */,
@@ -3538,6 +3664,7 @@
 				66D634F12D77038500B6A6E3 /* VerifyCodeInputs.swift in Sources */,
 				7756A17F25348AD400BFE53C /* DoubleExtensions.swift in Sources */,
 				7756A15825348AD400BFE53C /* UISearchBarExtensions.swift in Sources */,
+				8DB6ADEF2DA7CD620093EB4E /* SelectservicesTableViewCell.swift in Sources */,
 				C86BF977266947F0002D87BC /* UIEdgeInsets+Extensions.swift in Sources */,
 				C8C0931A272ABDA200E2270A /* CombineControlProperty.swift in Sources */,
 				663C3F952D6DC8C700A2C80A /* VerifycodeCoordinator.swift in Sources */,
@@ -3685,6 +3812,7 @@
 				C871C8C2272FED0600DCBD2D /* SwipeActionButton.swift in Sources */,
 				77D130BC2535C2D800004E81 /* NetworkResponse.swift in Sources */,
 				C853B96826D7F9450008F09D /* Images.swift in Sources */,
+				8DB6ADF72DA7CDB00093EB4E /* SlotsCollectionViewCell.swift in Sources */,
 				C871C8E7272FED5900DCBD2D /* MapRouteHelper.swift in Sources */,
 				C853B96226D7F9450008F09D /* SPPermissionsDelegate.swift in Sources */,
 				C853B94926D7F9450008F09D /* SPNotificationPermission.swift in Sources */,
@@ -3698,6 +3826,10 @@
 				8DD3C15C2DA2B83A00D8962B /* ClientRatingVC.swift in Sources */,
 				6636D7CB2C3AE370007116F7 /* LoginModel.swift in Sources */,
 				66C2E0DD2D6F34380027823E /* EditProfileCoordinator.swift in Sources */,
+				8DB6ADD32DA7C8470093EB4E /* CalenderselectVC.swift in Sources */,
+				8DB6ADD42DA7C8470093EB4E /* CalenderselectModel.swift in Sources */,
+				8DB6ADD52DA7C8470093EB4E /* CalenderselectViewModel.swift in Sources */,
+				8DB6ADD62DA7C8470093EB4E /* CalenderselectCoordinator.swift in Sources */,
 				66C2E0DE2D6F34380027823E /* EditProfileModel.swift in Sources */,
 				66C2E0DF2D6F34380027823E /* EditProfileVC.swift in Sources */,
 				66C2E0E02D6F34380027823E /* EditProfileViewModel.swift in Sources */,
@@ -3753,6 +3885,10 @@
 				7756A15925348AD400BFE53C /* UITableViewExtensions.swift in Sources */,
 				C871C9892730231300DCBD2D /* Selekton-CALayer+Extensions.swift in Sources */,
 				C871C97C2730231300DCBD2D /* SkeletonConfig.swift in Sources */,
+				8DB6ADC82DA7C81A0093EB4E /* GiftModel.swift in Sources */,
+				8DB6ADC92DA7C81A0093EB4E /* GiftViewModel.swift in Sources */,
+				8DB6ADCA2DA7C81A0093EB4E /* GiftVC.swift in Sources */,
+				8DB6ADCB2DA7C81A0093EB4E /* GiftCoordinator.swift in Sources */,
 				C871C8A0272FECF200DCBD2D /* GoogleProtocol.swift in Sources */,
 				C86BF9A7266947F0002D87BC /* MarginAdjustable.swift in Sources */,
 				C845398A2729880600004173 /* ViewModelProtocol.swift in Sources */,
@@ -3927,6 +4063,10 @@
 				8DA612B22DA3F2320098CC92 /* BookserviceViewModel.swift in Sources */,
 				8DA612B32DA3F2320098CC92 /* BookserviceModel.swift in Sources */,
 				8DA612B42DA3F2320098CC92 /* BookserviceVC.swift in Sources */,
+				8DB6ADDE2DA7C8940093EB4E /* PaymentDoneCoordinator.swift in Sources */,
+				8DB6ADDF2DA7C8940093EB4E /* PaymentDoneViewModel.swift in Sources */,
+				8DB6ADE02DA7C8940093EB4E /* PaymentDoneModel.swift in Sources */,
+				8DB6ADE12DA7C8940093EB4E /* PaymentDoneVC.swift in Sources */,
 				8DA612B52DA3F2320098CC92 /* BookserviceCoordinator.swift in Sources */,
 				7756A110253482EF00BFE53C /* UILocalizationExtensions.swift in Sources */,
 				C86BF9AE266947F0002D87BC /* NSBundle+Extensions.swift in Sources */,
@@ -4048,7 +4188,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TBYZE4288M;
+				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4056,7 +4196,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.raha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Raha/Application/Combine/Controls/Runtime/Combine-bridge.h";
@@ -4133,7 +4273,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = TBYZE4288M;
+				DEVELOPMENT_TEAM = G24U7LTB23;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -4143,7 +4283,7 @@
 				);
 				MARKETING_VERSION = 1.2.5;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.raha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -4222,7 +4362,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TBYZE4288M;
+				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4230,7 +4370,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.raha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Raha/Application/Combine/Controls/Runtime/Combine-bridge.h";
@@ -4305,7 +4445,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TBYZE4288M;
+				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4313,7 +4453,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.superfan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.raha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Raha/Application/Combine/Controls/Runtime/Combine-bridge.h";

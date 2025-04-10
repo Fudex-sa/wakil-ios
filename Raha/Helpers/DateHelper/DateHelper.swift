@@ -79,7 +79,7 @@ class DateHelper {
     func currentDate() -> String? {
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let dateOrginial = dateFormatter.string(from: date)
         return dateOrginial
@@ -116,7 +116,8 @@ class DateHelper {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         //dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600 * 2)
-        dateFormatter.locale = Locale(identifier: locale()) // set locale to reliable US_POSIX
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+ // set locale to reliable US_POSIX
         if dateD != nil {
             let dateString = dateFormatter.string(from: dateD!)
             return dateString

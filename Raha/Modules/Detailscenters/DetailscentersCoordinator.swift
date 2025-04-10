@@ -18,8 +18,11 @@ class DetailscentersCoordinator: Coordinator {
 }
 
 extension DetailscentersCoordinator {
-    func bookdetaisl(){
+    func bookservices(id:Int) {
         guard let scene = R.storyboard.bookserviceStoryboard.bookserviceVC() else { return }
+        scene.centerId = id
+        scene.loctype = view?.viewModel?.loctype.value ?? ""
+        scene.selectservices = view?.selectservices ?? []
         view?.push(scene)
     }
 }

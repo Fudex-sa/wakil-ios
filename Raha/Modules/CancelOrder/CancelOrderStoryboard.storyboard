@@ -28,7 +28,7 @@
                                             <constraint firstAttribute="width" constant="30" id="Sq0-Kv-sCL"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="back"/>
+                                        <state key="normal" image="back 4"/>
                                         <connections>
                                             <action selector="backBtn:" destination="3IO-Qs-KBD" eventType="touchUpInside" id="6dS-k4-jpG"/>
                                         </connections>
@@ -234,7 +234,7 @@
     <resources>
         <image name="CTA-Photoroom" width="430" height="99"/>
         <image name="alert" width="24" height="24"/>
-        <image name="back" width="24" height="24"/>
+        <image name="back 4" width="24" height="24"/>
         <namedColor name="Black1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

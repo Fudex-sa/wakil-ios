@@ -88,7 +88,15 @@ extension HomeVC {
         viewModel?.fetchsliders()
         if UD.user != nil {
             viewModel?.getprofile()
-            viewModel?.fetchaddresses()
+            if UD.address == nil {
+                viewModel?.fetchaddresses()
+            }else {
+                locLbl.text = "\(UD.address?.street ?? "") - \(UD.address?.district ?? "") - \(UD.address?.cityID?.name ?? "") - \(UD.address?.stateID?.name ?? "")"
+                addressdata = UD.address
+                viewModel?.lat.send(UD.address?.lat?.double() ?? 0.0)
+                viewModel?.lng.send(UD.address?.lng?.double() ?? 0.0)
+                viewModel?.fetchhome()
+            }
         }else {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
@@ -148,6 +156,7 @@ extension HomeVC {
             if index.isDefault ?? 0 == 1 {
                 locLbl.text = "\(index.street ?? "") - \(index.district ?? "") - \(index.cityID?.name ?? "") - \(index.stateID?.name ?? "")"
                 addressdata = index
+                UD.address = index
                 viewModel?.lat.send(index.lat?.double() ?? 0.0)
                 viewModel?.lng.send(index.lng?.double() ?? 0.0)
                 viewModel?.fetchhome()

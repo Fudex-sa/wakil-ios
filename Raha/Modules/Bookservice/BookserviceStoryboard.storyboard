@@ -28,7 +28,7 @@
                                             <constraint firstAttribute="width" constant="30" id="eM3-mf-JXR"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="back"/>
+                                        <state key="normal" image="back 4"/>
                                         <connections>
                                             <action selector="backBtn:" destination="qg3-C6-0Wn" eventType="touchUpInside" id="qvQ-L6-hA7"/>
                                         </connections>
@@ -184,7 +184,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNq-h3-l9G">
-                                                        <rect key="frame" x="36" y="47" width="260" height="14.5"/>
+                                                        <rect key="frame" x="36" y="47" width="31" height="14.5"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <color key="textColor" name="black2"/>
                                                         <nil key="highlightedColor"/>
@@ -227,7 +227,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="tp5-CH-SNJ" secondAttribute="trailing" constant="12" id="atg-RY-gyS"/>
                                                     <constraint firstItem="u2M-nU-PwP" firstAttribute="centerY" secondItem="WyT-Bj-08J" secondAttribute="centerY" id="eVg-5V-Z8z"/>
                                                     <constraint firstAttribute="bottom" secondItem="u2M-nU-PwP" secondAttribute="bottom" constant="10" id="enc-VJ-B08"/>
-                                                    <constraint firstItem="u2M-nU-PwP" firstAttribute="leading" secondItem="nNq-h3-l9G" secondAttribute="trailing" constant="10" id="fnu-Ml-I2q"/>
                                                     <constraint firstAttribute="height" constant="78" id="oIi-DU-Vjd"/>
                                                     <constraint firstAttribute="trailing" secondItem="u2M-nU-PwP" secondAttribute="trailing" id="oc5-Wk-F9c"/>
                                                 </constraints>
@@ -253,7 +252,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send the booking as a gift to a loved one" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxv-5J-m8c">
-                                                        <rect key="frame" x="36" y="47" width="260" height="14.5"/>
+                                                        <rect key="frame" x="36" y="47" width="231" height="14.5"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <color key="textColor" name="black2"/>
                                                         <nil key="highlightedColor"/>
@@ -292,7 +291,6 @@
                                                     <constraint firstItem="6Fu-PR-QxR" firstAttribute="leading" secondItem="Nc3-H3-85c" secondAttribute="leading" constant="12" id="AI4-9w-EE5"/>
                                                     <constraint firstItem="6Fu-PR-QxR" firstAttribute="top" secondItem="raV-7q-6kR" secondAttribute="bottom" constant="8" id="Muf-sQ-oUJ"/>
                                                     <constraint firstItem="raV-7q-6kR" firstAttribute="leading" secondItem="Nc3-H3-85c" secondAttribute="leading" constant="12" id="Wrt-OS-Aph"/>
-                                                    <constraint firstItem="sNc-Bj-8mQ" firstAttribute="leading" secondItem="kxv-5J-m8c" secondAttribute="trailing" constant="10" id="j3r-Dx-Qh2"/>
                                                     <constraint firstItem="kxv-5J-m8c" firstAttribute="leading" secondItem="6Fu-PR-QxR" secondAttribute="trailing" constant="4" id="mrD-KX-P6F"/>
                                                     <constraint firstAttribute="trailing" secondItem="raV-7q-6kR" secondAttribute="trailing" constant="12" id="twC-Sv-xio"/>
                                                     <constraint firstAttribute="trailing" secondItem="sNc-Bj-8mQ" secondAttribute="trailing" id="v5u-ar-Vnm"/>
@@ -470,7 +468,7 @@
     </scenes>
     <resources>
         <image name="CTA-Photoroom" width="430" height="99"/>
-        <image name="back" width="24" height="24"/>
+        <image name="back 4" width="24" height="24"/>
         <image name="calendar-tick" width="20" height="20"/>
         <image name="gift" width="20" height="20"/>
         <image name="location" width="24" height="24"/>

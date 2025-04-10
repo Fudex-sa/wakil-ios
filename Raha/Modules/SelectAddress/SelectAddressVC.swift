@@ -22,6 +22,7 @@ class SelectAddressVC: BaseController {
     var addressId = 0
     var addressdata: AddressesDatum?
     var delegate: SelectAddressVCDelegate?
+    var book = false
 }
 
 // MARK: - ...  LifeCycle
@@ -56,6 +57,9 @@ extension SelectAddressVC {
 // MARK: - ...  Functions
 extension SelectAddressVC {
     func setup() {
+        if book {
+            addView.isHidden = true
+        }
         addressTbl.skeleton()
         addressTbl.delegate = self
         addressTbl.dataSource = self
@@ -75,6 +79,7 @@ extension SelectAddressVC {
             for index in self?.viewModel?.items.value ?? [] {
                 if index.id == self?.addressId ?? 0 {
                     self?.addressdata = index
+                    UD.address = index
                 }
             }
             self?.delegate?.done(model: (self?.addressdata!)!)

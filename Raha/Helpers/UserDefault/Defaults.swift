@@ -17,6 +17,9 @@ internal class Defaults {
     @StoredDefaults("userDataDefaults")
     var user: UserRoot?
     
+    @StoredDefaults("addressDataDefaults")
+    var address: AddressesDatum?
+    
     @StoredDefaults("USER_LOGIN_REMEMBER")
     var LoginRemember: Bool?
     

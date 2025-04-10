@@ -28,7 +28,9 @@ class CustomTabBarController: UITabBarController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        selectedIndex = Constants.index
         self.customTabBar.selectedIndex = self.selectedIndex
+        setcurrntindex(index: selectedIndex)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -44,6 +46,17 @@ class CustomTabBarController: UITabBarController {
             self.customTabBar.moreBackgroundView.backgroundColor = .clear
             self.customTabBar.moreImg.tintColor = R.color.darkgray2()
             self.customTabBar.moreLbl.textColor = R.color.darkgray2()
+        }else if (index == 1) {
+            self.customTabBar.bookingBackgroundView.backgroundColor = R.color.lightblue()
+            self.customTabBar.bookingImg.tintColor = R.color.normalblue()
+            self.customTabBar.bookingLbl.textColor = R.color.normalblue()
+            self.customTabBar.homeBackgroundView.backgroundColor = .clear
+            self.customTabBar.homeImg.tintColor = R.color.darkgray2()
+            self.customTabBar.homeLbl.textColor = R.color.darkgray2()
+            self.customTabBar.moreBackgroundView.backgroundColor = .clear
+            self.customTabBar.moreImg.tintColor = R.color.darkgray2()
+            self.customTabBar.moreLbl.textColor = R.color.darkgray2()
+            self.customTabBar.lastSelectedIndex = selectedIndex
         }
     }
     func loadTabBar() {

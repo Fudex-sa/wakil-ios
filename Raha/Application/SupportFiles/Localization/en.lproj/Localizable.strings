@@ -421,3 +421,13 @@
 "Booking Confirmation & Payment" = "Booking Confirmation & Payment";
 "Send the booking as a gift to a loved one" = "Send the booking as a gift to a loved one";
 "lang" = "en";
+"Visit Type" = "Visit Type";
+"Home visit" = "Home visit";
+"select visit type" = "select visit type";
+"Selected" = "Selected";
+"no available appountment" = "No appointments available";
+"Service that name is" = "Service that name is";
+"not select time to reseve" = "not select time to reseve";
+"Payment confirmed successfully" = "Payment confirmed successfully";
+"You can follow the details and status of your booking now" = "You can follow the details and status of your booking now";
+"Back to Home" = "Back to Home";

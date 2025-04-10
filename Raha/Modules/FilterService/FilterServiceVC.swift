@@ -14,6 +14,10 @@ protocol FilterServiceVCDelegate: AnyObject {
 }
 // MARK: - ...  ViewController - Vars
 class FilterServiceVC: BaseController {
+    @IBOutlet weak var homeLbl: UILabel!
+    @IBOutlet weak var centerLbl: UILabel!
+    @IBOutlet weak var femaleLbl: UILabel!
+    @IBOutlet weak var maleLbl: UILabel!
     @IBOutlet weak var clearBtn: UIButton!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var star1Img: UIImageView!
@@ -87,14 +91,22 @@ extension FilterServiceVC {
         distances.append(RegisterModel.init(id: 25, name: "25 \("kilometer".localized)"))
         viewModel?.fetchservicestype()
         if filter.servicetype == "home" {
+            homeLbl.textColor = R.color.black1()
+            centerLbl.textColor = R.color.darkgray2()
             homeRadio.select()
         }else  if filter.servicetype == "center" {
+            centerLbl.textColor = R.color.black1()
+            homeLbl.textColor = R.color.darkgray2()
             centerRadio.select()
         }
         if filter.gender == "male" {
+            maleLbl.textColor = R.color.black1()
+            femaleLbl.textColor = R.color.darkgray2()
             maleRadio.select()
         }else  if filter.servicetype == "female" {
             femaleRadio.select()
+            femaleLbl.textColor = R.color.black1()
+            maleLbl.textColor = R.color.darkgray2()
         }
         if filter.distance ?? "" != "" && filter.distance ?? "" != "0" {
             distanceLbl.text = "\(filter.distance ?? "") \("kilometer".localized)"
@@ -104,18 +116,26 @@ extension FilterServiceVC {
         homeRadio.onSelect(execute: { [self] in
             centerRadio.deselect()
             filter.loctype = "home"
+            homeLbl.textColor = R.color.black1()
+            centerLbl.textColor = R.color.darkgray2()
         })
         centerRadio.onSelect(execute: { [self] in
             homeRadio.deselect()
             filter.loctype = "center"
+            centerLbl.textColor = R.color.black1()
+            homeLbl.textColor = R.color.darkgray2()
         })
         maleRadio.onSelect(execute: { [self] in
             femaleRadio.deselect()
             filter.gender = "male"
+            maleLbl.textColor = R.color.black1()
+            femaleLbl.textColor = R.color.darkgray2()
         })
         femaleRadio.onSelect(execute: { [self] in
             maleRadio.deselect()
             filter.gender = "female"
+            femaleLbl.textColor = R.color.black1()
+            maleLbl.textColor = R.color.darkgray2()
         })
         star5Img.UIViewAction {
             self.filter.rate = "5"

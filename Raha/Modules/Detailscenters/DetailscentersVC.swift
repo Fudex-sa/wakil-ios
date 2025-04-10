@@ -11,6 +11,11 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class DetailscentersVC: BaseController {
+    @IBOutlet weak var countLbl: UILabel!
+    @IBOutlet weak var countWidth: NSLayoutConstraint!
+    @IBOutlet weak var centerLbl: UILabel!
+    @IBOutlet weak var homeLbl: UILabel!
+    @IBOutlet weak var visitView: UIView!
     @IBOutlet weak var bookBtn: UIButton!
     @IBOutlet weak var imageHight: NSLayoutConstraint!
     @IBOutlet weak var servicesTbl: UITableView!
@@ -24,6 +29,8 @@ class DetailscentersVC: BaseController {
     @IBOutlet weak var centerImg: UIImageView!
     @IBOutlet weak var pageControll: UIPageControl!
     @IBOutlet weak var imagesCollection: UICollectionView!
+    @IBOutlet weak var centerRadio: RadioButton!
+    @IBOutlet weak var homeRadio: RadioButton!
     var viewModel: DetailscentersViewModel?
     var coordinator: DetailscentersCoordinator?
     var lat = 0.0
@@ -31,6 +38,8 @@ class DetailscentersVC: BaseController {
     var centerId = 0
     var loctype = ""
     var ServiceType: [ServicetypeDatum] = []
+    var selectservices : [Service] = []
+    var services : [Service] = []
 
 }
 
@@ -38,10 +47,13 @@ class DetailscentersVC: BaseController {
 extension DetailscentersVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        if loctype != "" {
+            visitView.isHidden = true
+        }
+        viewModel = .init()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
         (self.tabBarController as? CustomTabBarController)?.hideTabBar()
@@ -50,8 +62,8 @@ extension DetailscentersVC {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        viewModel = nil
         coordinator = nil
+        viewModel?.centerdetails = .init()
     }
     override func bind() {
         super.bind()
@@ -86,8 +98,34 @@ extension DetailscentersVC {
         catsCollection.dataSource = self
         catsCollection.observe()
         ServiceType.removeAll()
+        homeRadio.onSelect(execute: { [self] in
+            centerRadio.deselect()
+            homeLbl.textColor = R.color.black1()
+            centerLbl.textColor = R.color.darkgray2()
+            viewModel?.loctype.send("home")
+            viewModel?.fetchcentersdetails()
+        })
+        centerRadio.onSelect(execute: { [self] in
+            centerLbl.textColor = R.color.black1()
+            homeLbl.textColor = R.color.darkgray2()
+            homeRadio.deselect()
+            viewModel?.loctype.send("center")
+            viewModel?.fetchcentersdetails()
+        })
         bookBtn.publisher.listen(on: {[weak self] _ in
-            self?.coordinator?.bookdetaisl()
+            var error = ""
+            if self?.viewModel?.loctype.value ?? "" == "" {
+                error = "\(error) \("select visit type".localized)\n"
+            }
+            if self?.selectservices.count == 0 {
+                error = "\(error) \("Select Service".localized)"
+            }
+            if error != "" {
+                self?.didError(error: error)
+                return
+            }
+            self?.coordinator?.bookservices(id: self?.centerId ?? 0)
+
         }).store(self)
        
     }
@@ -120,9 +158,21 @@ extension DetailscentersVC {
             ServiceType.append(ServicetypeDatum(key: "", value: "All services".localized))
             ServiceType.append(contentsOf: viewModel?.centerdetails.value?.data?.serviceTypes ?? [])
         }
+        services.removeAll()
+        services.append(contentsOf: viewModel?.centerdetails.value?.data?.services ?? [])
         catsCollection.reloadData()
         servicesTbl.skeleton()
         servicesTbl.stopSwipeButtom()
+        var index1 = 0
+        for index in services {
+            for item in selectservices {
+                if index.id == item.id {
+                    services[index1].isselect = true
+                }
+            }
+            index1 = index1 + 1
+        }
+        servicesTbl.reloadData()
     }
 }
 // MARK: - ...  View Contract
@@ -204,16 +254,50 @@ extension DetailscentersVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.centerdetails.value?.data?.services?.count ?? 2
+        return services.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: ServicesTableViewCell.self, indexPath)
-        cell.model = viewModel?.centerdetails.value?.data?.services?[safe: indexPath.row]
+        cell.model = services[safe: indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+        }else {
+            if viewModel?.loctype.value ?? "" == "" {
+                didError(error: "select visit type".localized)
+                return
+            }
+            for index in services {
+                if index.id == services[safe: indexPath.row]?.id {
+                    if services[safe: indexPath.row]?.isselect == true {
+                        services[indexPath.row].isselect = false
+                        var index1 = 0
+                        for item in selectservices {
+                            if index.id == item.id {
+                                selectservices.remove(at: index1)
+                            }
+                            index1 = index1 + 1
+                        }
+                    }else {
+                        services[indexPath.row].isselect = true
+                        selectservices.append(index)
+                    }
+                    servicesTbl.reloadData()
+                    countLbl.text = selectservices.count.string ?? "0"
+                    if selectservices.count == 0 {
+                        countLbl.isHidden = true
+                        countWidth.constant = 0
+                    }else {
+                        countLbl.isHidden = false
+                        countWidth.constant = 20
+                    }
+                    break
+                }
+            }
+        }
     }
     
 }

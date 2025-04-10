@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -92,7 +92,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Domestic service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txg-Ed-Ef8">
                                         <rect key="frame" x="48" y="172.5" width="111.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" name="Black1"/>
+                                        <color key="textColor" name="darkgray 2"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
@@ -154,7 +154,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a60-s7-y0C">
                                         <rect key="frame" x="48" y="241.5" width="31" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" name="Black1"/>
+                                        <color key="textColor" name="darkgray 2"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
@@ -404,12 +404,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerLbl" destination="AmP-Vp-dtR" id="bmw-Og-7K9"/>
                         <outlet property="centerRadio" destination="4lD-ZS-Jnd" id="cYe-6j-Vea"/>
                         <outlet property="clearBtn" destination="p2K-54-jip" id="ilm-42-7aM"/>
                         <outlet property="distanceLbl" destination="VkA-IL-jle" id="0b3-sN-bKz"/>
                         <outlet property="distanceView" destination="HfP-lS-F6S" id="onm-zN-vsh"/>
+                        <outlet property="femaleLbl" destination="D0c-k8-dOc" id="g44-69-FRq"/>
                         <outlet property="femaleRadio" destination="4KE-N4-8tg" id="UEe-6h-vr9"/>
+                        <outlet property="homeLbl" destination="txg-Ed-Ef8" id="sba-77-oDv"/>
                         <outlet property="homeRadio" destination="s5Z-v6-vS2" id="eM1-QP-whr"/>
+                        <outlet property="maleLbl" destination="a60-s7-y0C" id="64m-SZ-NY4"/>
                         <outlet property="maleRadio" destination="ZUT-NV-Qds" id="Z9d-mN-mmf"/>
                         <outlet property="searchBtn" destination="h3Y-pu-vAo" id="KYC-Md-YqZ"/>
                         <outlet property="star1Img" destination="mK4-o7-VvQ" id="pHU-iF-0BE"/>
@@ -425,20 +429,6 @@
             <point key="canvasLocation" x="123.18840579710145" y="-108.48214285714285"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="4KE-N4-8tg">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="4lD-ZS-Jnd">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="ZUT-NV-Qds">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="s5Z-v6-vS2">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="arrowdown" width="16" height="16"/>
         <image name="star1" width="112" height="24"/>
@@ -454,6 +444,9 @@
         </namedColor>
         <namedColor name="black3">
             <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="darkgray 2">
+            <color red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lightgray">
             <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

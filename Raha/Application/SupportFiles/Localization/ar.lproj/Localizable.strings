@@ -416,3 +416,13 @@
 "Booking Confirmation & Payment" = "تأكيد الحجز والدفع";
 "Send the booking as a gift to a loved one" = "إرسال الحجز كهدية لشخص عزيز عليك";
 "lang" = "ar";
+"Visit Type" = "نوع الزيارة";
+"Home visit" = "زيارة منزلية";
+"select visit type" = "اختر نوع الزيارة";
+"Selected" = "تم الاختيار";
+"no available appountment" = "لا يوجد مواعيد متاحه";
+"Service that name is" = "الخدمه التى اسمها";
+"not select time to reseve" = "لم يتم اختيار وقت للحجز";
+"Payment confirmed successfully" = "تم تأكيد الدفع بنجاح";
+"You can follow the details and status of your booking now" = "يمكنك متابعة تفاصيل وحالة الحجز الآن";
+"Back to Home" = "رجوع للرئيسية";
