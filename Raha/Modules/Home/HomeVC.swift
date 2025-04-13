@@ -12,6 +12,7 @@ import CoreLocation
 
 // MARK: - ...  ViewController - Vars
 class HomeVC: BaseController, CLLocationManagerDelegate {
+    @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var scrollContainerView: UIScrollView!
     @IBOutlet weak var centerTbl: UITableView!
     @IBOutlet weak var dotsPage: UIPageControl!
@@ -177,6 +178,11 @@ extension HomeVC {
         centerTbl.stopSwipeButtom()
     }
     func reloadsliders() {
+        if viewModel?.sliders.value?.count ?? 0  == 0 {
+            sliderView.isHidden = true
+        }else {
+            sliderView.isHidden = false
+        }
         slidersCollection.reloadData()
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

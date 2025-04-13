@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class BookserviceVC: BaseController {
+    @IBOutlet weak var noAppointmentLbl: UILabel!
+    @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var bookBtn: UIButton!
     @IBOutlet weak var slotsTbl: UITableView!
     @IBOutlet weak var calenderView: HorizontalCalendarView!
@@ -63,6 +65,11 @@ extension BookserviceVC {
         viewModel?.slotsdetails.listen(on: { [weak self] value in
             self?.slots.removeAll()
             self?.slots.append(contentsOf: self?.viewModel?.slotsdetails.value?.data ?? [])
+            if self?.viewModel?.slotsdetails.value?.data?.count ?? 0 == 0 {
+                self?.noAppointmentLbl.isHidden = false
+            }else {
+                self?.noAppointmentLbl.isHidden = true
+            }
             self?.slotsTbl.reloadData()
         })
         viewModel?.createorder.listen(on: { [weak self] value in
@@ -124,6 +131,12 @@ extension BookserviceVC {
                 self?.coordinator?.selectaddress()
             }
         }).store(self)
+        addGiftBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.gift()
+        }).store(self)
+        calenderView.calendarIcon.UIViewAction {
+            self.coordinator?.calender()
+        }
         bookBtn.publisher.listen(on: {[weak self] _ in
             var error = ""
             if self?.slots.count == 0 {

@@ -40,11 +40,11 @@ struct SlotsModel: Codable {
 struct SlotsDatum: Codable {
     var slots: [Slot]?
     let serviceID: Int?
-    let serviceName, providerType, price: String?
+    let serviceName, providerType, price, duration: String?
     var isselect: Bool? = false
 
     enum CodingKeys: String, CodingKey {
-        case slots, isselect
+        case slots, isselect, duration
         case serviceID = "service_id"
         case serviceName = "service_name"
         case providerType = "provider_type"

@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3k-Bz-BX7">
                         <rect key="frame" x="0.0" y="0.0" width="344" height="85"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20G-yA-7Ij">
-                                <rect key="frame" x="16.000000000000004" y="16" width="35.333333333333343" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20G-yA-7Ij">
+                                <rect key="frame" x="16" y="16" width="157" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" name="Black1"/>
                                 <nil key="highlightedColor"/>
@@ -32,11 +32,11 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SkF-ke-Q8q">
-                                <rect key="frame" x="208" y="16" width="120" height="20"/>
+                                <rect key="frame" x="178" y="16" width="150" height="20"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="0dR-iE-xwH"/>
-                                    <constraint firstAttribute="width" constant="120" id="utF-XK-lBd"/>
+                                    <constraint firstAttribute="width" constant="150" id="utF-XK-lBd"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wFO-ut-sQg">
                                     <size key="itemSize" width="128" height="128"/>
@@ -91,6 +91,7 @@
                             <constraint firstItem="Q8B-75-VFB" firstAttribute="leading" secondItem="o43-9P-Aeg" secondAttribute="trailing" constant="4" id="Sl2-W6-gw0"/>
                             <constraint firstItem="20G-yA-7Ij" firstAttribute="leading" secondItem="f3k-Bz-BX7" secondAttribute="leading" constant="16" id="WAU-IO-NsN"/>
                             <constraint firstItem="akI-um-DBo" firstAttribute="centerY" secondItem="2V8-ee-vmH" secondAttribute="centerY" id="XqP-C5-bc2"/>
+                            <constraint firstItem="SkF-ke-Q8q" firstAttribute="leading" secondItem="20G-yA-7Ij" secondAttribute="trailing" constant="5" id="abd-Do-vGy"/>
                             <constraint firstItem="o43-9P-Aeg" firstAttribute="leading" secondItem="f3k-Bz-BX7" secondAttribute="leading" constant="16" id="cjz-4z-pZ2"/>
                             <constraint firstItem="akI-um-DBo" firstAttribute="leading" secondItem="2V8-ee-vmH" secondAttribute="trailing" constant="4" id="otA-sK-TFz"/>
                         </constraints>

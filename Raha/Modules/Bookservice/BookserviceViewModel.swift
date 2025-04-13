@@ -71,6 +71,7 @@ extension BookserviceViewModel {
                 if item.isselect ?? false {
                     NetworkManager.instance.paramaters["services[\(item1)][id]"] = index.serviceID ?? 0
                     NetworkManager.instance.paramaters["services[\(item1)][provider_type]"] = index.providerType ?? ""
+                    NetworkManager.instance.paramaters["services[\(item1)][duration]"] = index.duration ?? ""
                     NetworkManager.instance.paramaters["services[\(item1)][price]"] = index.price ?? ""
                     NetworkManager.instance.paramaters["services[\(item1)][time]"] = item.from ?? ""
                     NetworkManager.instance.paramaters["services[\(item1)][date]"] = DateHelper().date(date: date.value ?? "", format: "yyyy-MM-dd", oldFormat: "dd-MM-yyyy") ?? ""

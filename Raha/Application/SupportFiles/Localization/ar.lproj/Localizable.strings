@@ -426,3 +426,10 @@
 "Payment confirmed successfully" = "تم تأكيد الدفع بنجاح";
 "You can follow the details and status of your booking now" = "يمكنك متابعة تفاصيل وحالة الحجز الآن";
 "Back to Home" = "رجوع للرئيسية";
+"Name of the person to whom the gift is sent" = "اسم الشخص المرسل إلية الهدية";
+"Address" = "العنوان";
+"Gender" = "النوع";
+"select gender" = "اختر النوع";
+"Confirm" = "تأكيد";
+"Back" = "رجوع";
+"gift" = "هدية";

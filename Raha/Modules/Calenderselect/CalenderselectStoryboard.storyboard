@@ -1,26 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--CalenderselectVC-->
         <scene sceneID="HEa-m2-jab">
             <objects>
-                <viewController storyboardIdentifier="CalenderselectVC" id="v1z-F3-ot6" customClass="CalenderselectVC" customModule="BaseIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalenderselectVC" id="v1z-F3-ot6" customClass="CalenderselectVC" customModule="Raha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wn8-wF-9xc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bE8-gl-QfR">
+                                <rect key="frame" x="0.0" y="417" width="414" height="445"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="zJX-Lg-6Nh">
+                                        <rect key="frame" x="16" y="24" width="382" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" id="16x-PN-cLc"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="datePickerChanged:" destination="v1z-F3-ot6" eventType="valueChanged" id="kSC-v5-fJY"/>
+                                        </connections>
+                                    </datePicker>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWo-mP-xXS">
+                                        <rect key="frame" x="0.0" y="360" width="414" height="1"/>
+                                        <color key="backgroundColor" name="lightgray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Og1-F0-ILe"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bix-ae-Ng0">
+                                        <rect key="frame" x="24" y="377" width="366" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzK-Iu-FRj">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="48"/>
+                                                <color key="backgroundColor" name="normalblue"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Confirm">
+                                                    <color key="titleColor" name="whiteColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Confirm"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-hw-F3A">
+                                                <rect key="frame" x="191" y="0.0" width="175" height="48"/>
+                                                <color key="backgroundColor" name="lightgray 1"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" name="Black1"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Back"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="87Q-ax-c1w"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="bix-ae-Ng0" firstAttribute="top" secondItem="XWo-mP-xXS" secondAttribute="bottom" constant="16" id="4UL-65-ncl"/>
+                                    <constraint firstItem="zJX-Lg-6Nh" firstAttribute="leading" secondItem="bE8-gl-QfR" secondAttribute="leading" constant="16" id="6mE-JG-CnH"/>
+                                    <constraint firstAttribute="trailing" secondItem="bix-ae-Ng0" secondAttribute="trailing" constant="24" id="CJs-Qb-rxE"/>
+                                    <constraint firstAttribute="trailing" secondItem="XWo-mP-xXS" secondAttribute="trailing" id="DwE-9A-bwd"/>
+                                    <constraint firstItem="XWo-mP-xXS" firstAttribute="top" secondItem="zJX-Lg-6Nh" secondAttribute="bottom" constant="16" id="OOc-Os-aSQ"/>
+                                    <constraint firstItem="zJX-Lg-6Nh" firstAttribute="top" secondItem="bE8-gl-QfR" secondAttribute="top" constant="24" id="URl-a6-I0W"/>
+                                    <constraint firstItem="bix-ae-Ng0" firstAttribute="leading" secondItem="bE8-gl-QfR" secondAttribute="leading" constant="24" id="Vab-PW-z0e"/>
+                                    <constraint firstItem="XWo-mP-xXS" firstAttribute="leading" secondItem="bE8-gl-QfR" secondAttribute="leading" id="X5j-S1-Zie"/>
+                                    <constraint firstAttribute="bottom" secondItem="bix-ae-Ng0" secondAttribute="bottom" constant="20" id="bek-mA-z8W"/>
+                                    <constraint firstAttribute="trailing" secondItem="zJX-Lg-6Nh" secondAttribute="trailing" constant="16" id="k5g-dy-GxR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ckT-Oz-gwY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="bottom" secondItem="bE8-gl-QfR" secondAttribute="bottom" id="8KT-kg-yqh"/>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="bE8-gl-QfR" secondAttribute="trailing" id="Yky-F7-cy9"/>
+                            <constraint firstItem="bE8-gl-QfR" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" id="b9s-bf-PI5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="PWe-hw-F3A" id="LBg-0D-akd"/>
+                        <outlet property="datePicker" destination="zJX-Lg-6Nh" id="z2H-1e-qrj"/>
+                        <outlet property="doneBtn" destination="dzK-Iu-FRj" id="KAy-YE-aPX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-za-4cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="124" y="-108"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Black1">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="lightgray">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="lightgray 1">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="normalblue">
+            <color red="0.12549019607843137" green="0.64313725490196083" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

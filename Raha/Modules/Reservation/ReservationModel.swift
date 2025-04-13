@@ -9,5 +9,25 @@
 import Foundation
 
 // MARK: - ...  Entity
-class ReservationModel: Codable {
+struct ReservationModel: Codable {
+    let status: Bool?
+    let message: String?
+    let data: [ReservationDatum]?
 }
+
+// MARK: - Datum
+struct ReservationDatum: Codable {
+    let id, is_gift: Int?
+    let status: String?
+    let service: [Service]?
+    var serviceTypes: [String]?
+    let price, date, time: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, status, service, is_gift
+        case serviceTypes = "service_types"
+        case price, date, time
+    }
+}
+
+// MARK: - Service

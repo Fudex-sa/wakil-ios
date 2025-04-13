@@ -17,6 +17,14 @@ class ServicetypeCollectionViewCell: BaseCollectionViewCell {
         skeleton(view: containerView)
         guard let model = model as? String else { return }
         titleLbl.text = model
+        if model == "" {
+            titleLbl.text = "gift".localized
+            containerView.backgroundColor = UIColor(hex: "#FFF4E5")
+            titleLbl.textColor = UIColor(hex: "#FE9B0E")
+        }else {
+            containerView.backgroundColor = R.color.lightblue()
+            titleLbl.textColor = R.color.normalblue()
+        }
     }
     func setupselect() {
         super.setup()

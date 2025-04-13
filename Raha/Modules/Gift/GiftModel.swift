@@ -9,5 +9,10 @@
 import Foundation
 
 // MARK: - ...  Entity
+
 class GiftModel: Codable {
+    var name: String?
+    var phone: String?
+    var gender: String?
+    var address: String?
 }

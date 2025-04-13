@@ -121,6 +121,7 @@ struct NetworkConfigration {
         case sliders = "client/sliders"
         case slots = "client/slots"
         case createorder = "client/order"
+        case myorders = "client/my-orders"
     }
 }
 

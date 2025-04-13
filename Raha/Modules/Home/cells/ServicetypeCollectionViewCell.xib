@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-NR-M9O">
-                        <rect key="frame" x="0.0" y="0.0" width="145" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="153" height="56"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-mv-y0B">
-                                <rect key="frame" x="51.666666666666657" y="17.666666666666668" width="42" height="21.000000000000004"/>
+                                <rect key="frame" x="55.666666666666657" y="17.666666666666668" width="42" height="21.000000000000004"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="normalblue"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="cqP-NR-M9O" secondAttribute="trailing" constant="12" id="23B-oQ-cvK"/>
+                <constraint firstAttribute="trailing" secondItem="cqP-NR-M9O" secondAttribute="trailing" constant="4" id="23B-oQ-cvK"/>
                 <constraint firstItem="cqP-NR-M9O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Fai-8P-8gl"/>
                 <constraint firstAttribute="bottom" secondItem="cqP-NR-M9O" secondAttribute="bottom" id="mUq-Jh-ozm"/>
                 <constraint firstItem="cqP-NR-M9O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wN8-DF-htd"/>

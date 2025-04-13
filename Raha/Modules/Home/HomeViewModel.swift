@@ -73,7 +73,9 @@ extension HomeViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
-            self?.homedata.send(model.data ?? [])
+            var data = self?.homedata.value ?? []
+            data.append(contentsOf: model.data ?? [])
+            self?.homedata.send(data)
             self?.homestatus.send(true)
         }).store(self)
     }

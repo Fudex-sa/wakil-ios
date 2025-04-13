@@ -98,6 +98,12 @@ extension DetailscentersVC {
         catsCollection.dataSource = self
         catsCollection.observe()
         ServiceType.removeAll()
+        if homeRadio.isChecked == true {
+            viewModel?.loctype.send("home")
+        }
+        if centerRadio.isChecked == true {
+            viewModel?.loctype.send("center")
+        }
         homeRadio.onSelect(execute: { [self] in
             centerRadio.deselect()
             homeLbl.textColor = R.color.black1()

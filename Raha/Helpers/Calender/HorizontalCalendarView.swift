@@ -12,14 +12,14 @@ import UIKit
 class HorizontalCalendarView: UIView {
 
     private let monthLabel = UILabel()
-    private let calendarIcon = UIImageView(image: UIImage(named: "Calendar Remove"))
+    let calendarIcon = UIImageView(image: UIImage(named: "Calendar Remove"))
     private let collectionView: UICollectionView
 
         private var days: [CalendarDay] = []
         var selectedDate: Date?
 
     @IBInspectable var localeIdentifier: String = "lang".localized {
-            didSet { loadDates() }
+        didSet { loadDates(today: Date()) }
         }
 
         override init(frame: CGRect) {
@@ -44,7 +44,7 @@ class HorizontalCalendarView: UIView {
         private func commonInit() {
             setupViews()
             updateSemanticDirection()
-            loadDates()
+            loadDates(today: Date())
         }
     private func updateSemanticDirection() {
            let isRTL = Locale.characterDirection(forLanguage: localeIdentifier) == .rightToLeft
@@ -93,9 +93,8 @@ class HorizontalCalendarView: UIView {
                 ])
         }
 
-        private func loadDates() {
+    func loadDates(today : Date) {
             let calendar = Calendar.current
-            let today = Date()
             selectedDate = today
             onDateSelected?(selectedDate ?? Date())
             let dateFormatter = DateFormatter()

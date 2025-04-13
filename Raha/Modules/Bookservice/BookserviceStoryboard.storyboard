@@ -366,6 +366,16 @@
                                                     <constraint firstAttribute="height" constant="300" id="Qyp-LA-yFn"/>
                                                 </constraints>
                                             </tableView>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no available appountment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hju-0M-7ah">
+                                                <rect key="frame" x="0.0" y="1038" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="Black1"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="no available appountment"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -455,6 +465,8 @@
                         <outlet property="bookBtn" destination="L8g-bp-LBG" id="Oob-VY-ERt"/>
                         <outlet property="calenderView" destination="rCJ-HW-OUW" id="ae6-B0-HL8"/>
                         <outlet property="changeAddressBtn" destination="u2M-nU-PwP" id="r1l-kz-qjy"/>
+                        <outlet property="nameLbl" destination="kxv-5J-m8c" id="LBw-MD-tv0"/>
+                        <outlet property="noAppointmentLbl" destination="Hju-0M-7ah" id="tgY-B3-Ghl"/>
                         <outlet property="priceLbl" destination="eYm-fa-yTD" id="4Yd-3E-3QJ"/>
                         <outlet property="serviceTbl" destination="6DL-hC-1mj" id="lFi-ob-JTb"/>
                         <outlet property="slotsTbl" destination="zpC-Ey-PrG" id="Qqz-0y-F4v"/>
