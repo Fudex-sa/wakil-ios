@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class DetailsreservationVC: BaseController {
+    @IBOutlet weak var prividerImg: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var cancelView: UIView!
     @IBOutlet weak var userRateLbl: UILabel!
@@ -35,6 +36,8 @@ class DetailsreservationVC: BaseController {
     @IBOutlet weak var timeLbl: UILabel!
     var viewModel: DetailsreservationViewModel?
     var coordinator: DetailsreservationCoordinator?
+    var service: [Service] = []
+    var orderId = 0
 }
 
 // MARK: - ...  LifeCycle
@@ -47,18 +50,100 @@ extension DetailsreservationVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        (self.tabBarController as? CustomTabBarController)?.hideTabBar()
+        setup()
+        bind()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.didError(error: error?.localizedDescription)
+        })
+        viewModel?.orderdetails.listen(on: { [weak self] value in
+            self?.reload()
+        })
+       
+       
+    }
 }
 // MARK: - ...  Functions
 extension DetailsreservationVC {
     func setup() {
+        viewModel?.orderId.send(orderId)
+        startLoading()
+        viewModel?.fetchorderdetails()
+        servicesTbl.skeleton()
+        servicesTbl.delegate = self
+        servicesTbl.dataSource = self
+        servicesTbl.observe()
+        cancelBtn.publisher.listen(on: {[weak self] _ in
+            if self?.viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 2 {
+                self?.coordinator?.cancelorder(id: self?.orderId ?? 0)
+            }
+        }).store(self)
+    }
+    func reload() {
+        stopLoading()
+        dateLbl.text = viewModel?.orderdetails.value?.data?.date ?? ""
+        timeLbl.text = viewModel?.orderdetails.value?.data?.time ?? ""
+        prividerImg.setImage(url: viewModel?.orderdetails.value?.data?.branch?.image ?? "")
+        nameLbl.text = viewModel?.orderdetails.value?.data?.branch?.name ?? ""
+        rateLbl.text = viewModel?.orderdetails.value?.data?.branch?.rate?.string ?? ""
+        distanceLbl.text = viewModel?.orderdetails.value?.data?.branch?.distance ?? ""
+        if viewModel?.orderdetails.value?.data?.isGift ?? 0 == 1 {
+            giftView.isHidden = false
+            nameGiftLbl.text = viewModel?.orderdetails.value?.data?.gift?.name ?? ""
+            phoneLbl.text = viewModel?.orderdetails.value?.data?.gift?.mobile ?? ""
+        }else {
+            giftView.isHidden = true
+        }
+        if viewModel?.orderdetails.value?.data?.rating != nil {
+            rateView.isHidden = false
+            userRateImg.setImage(url: viewModel?.orderdetails.value?.data?.rating?.user?.avatarURL ?? "")
+            nameRateLbl.text = viewModel?.orderdetails.value?.data?.rating?.user?.name ?? ""
+            commentLbl.text = viewModel?.orderdetails.value?.data?.rating?.comment ?? ""
+            userRateLbl.text = viewModel?.orderdetails.value?.data?.rating?.rating?.string ?? ""
+
+        }else {
+            rateView.isHidden = true
+        }
+        if viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 2 {
+            cancelBtn.setTitle("Cancel order".localized, for: .normal)
+            cancelView.isHidden = false
+        }else if viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 4 && viewModel?.orderdetails.value?.data?.rating == nil {
+            cancelBtn.setTitle("Service Evaluation".localized, for: .normal)
+            cancelView.isHidden = false
+        }else {
+            cancelView.isHidden = true
+        }
+        service.removeAll()
+        service.append(contentsOf: viewModel?.orderdetails.value?.data?.service ?? [])
+        servicesTbl.reloadData()
     }
 }
 // MARK: - ...  View Contract
 extension DetailsreservationVC {
+}
+extension DetailsreservationVC: UITableViewDelegate, UITableViewDataSource {
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return service.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.cell(type: DetailsreservationTableViewCell.self, indexPath)
+        cell.model = service[safe: indexPath.row]
+        cell.isgift = viewModel?.orderdetails.value?.data?.isGift ?? 0
+        cell.setup()
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+    
 }

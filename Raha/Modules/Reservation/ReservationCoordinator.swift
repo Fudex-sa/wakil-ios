@@ -18,5 +18,9 @@ class ReservationCoordinator: Coordinator {
 }
 
 extension ReservationCoordinator {
-    
+    func detailsorder(id:Int) {
+        guard let scene = R.storyboard.detailsreservationStoryboard.detailsreservationVC() else { return }
+        scene.orderId = id
+        view?.push(scene)
+    }
 }

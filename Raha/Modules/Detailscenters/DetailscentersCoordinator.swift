@@ -25,4 +25,9 @@ extension DetailscentersCoordinator {
         scene.selectservices = view?.selectservices ?? []
         view?.push(scene)
     }
+    func rating(id:Int) {
+        guard let scene = R.storyboard.clientRatingStoryboard.clientRatingVC() else { return }
+        scene.centerId = id
+        view?.push(scene)
+    }
 }

@@ -18,5 +18,9 @@ class DetailsreservationCoordinator: Coordinator {
 }
 
 extension DetailsreservationCoordinator {
-    
+    func cancelorder(id:Int) {
+        guard let scene = R.storyboard.cancelOrderStoryboard.cancelOrderVC() else { return }
+        scene.centerId = id
+        view?.push(scene)
+    }
 }

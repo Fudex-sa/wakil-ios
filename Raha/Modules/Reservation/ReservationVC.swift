@@ -195,7 +195,7 @@ extension ReservationVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        coordinator?.detailsorder(id: viewModel?.dataSource()?[safe: indexPath.row]?.id ?? 0)
     }
     
 }

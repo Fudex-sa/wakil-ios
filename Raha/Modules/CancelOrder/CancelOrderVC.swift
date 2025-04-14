@@ -15,6 +15,7 @@ class CancelOrderVC: BaseController {
     @IBOutlet weak var cancelBtn: UIButton!
     var viewModel: CancelOrderViewModel?
     var coordinator: CancelOrderCoordinator?
+    var centerId = 0
 }
 
 // MARK: - ...  LifeCycle
@@ -27,16 +28,31 @@ extension CancelOrderVC {
         viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
+        setup()
+        bind()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
     }
+    override func bind() {
+        super.bind()
+        viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
+            self?.didError(error: error?.localizedDescription)
+        })
+        
+        viewModel?.policyddata.listen(on: { [weak self] value in
+            self?.cancelLbl.text = self?.viewModel?.policyddata.value?.data?.description?.htmlToString ?? ""
+        })
+        
+    }
 }
 // MARK: - ...  Functions
 extension CancelOrderVC {
     func setup() {
+        viewModel?.getcancelpolicy()
     }
 }
 // MARK: - ...  View Contract

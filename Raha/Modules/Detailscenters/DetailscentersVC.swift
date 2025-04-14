@@ -11,6 +11,9 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class DetailscentersVC: BaseController {
+    @IBOutlet weak var ratingCollection: UICollectionView!
+    @IBOutlet weak var moreBtn: UIButton!
+    @IBOutlet weak var revIewView: UIStackView!
     @IBOutlet weak var countLbl: UILabel!
     @IBOutlet weak var countWidth: NSLayoutConstraint!
     @IBOutlet weak var centerLbl: UILabel!
@@ -73,7 +76,9 @@ extension DetailscentersVC {
         viewModel?.centerdetails.listen(on: { [weak self] value in
             self?.reload()
         })
-       
+        viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.reloadrateing()
+        })
        
     }
 }
@@ -85,6 +90,9 @@ extension DetailscentersVC {
         viewModel?.loctype.send(loctype)
         viewModel?.centerId.send(centerId)
         viewModel?.fetchcentersdetails()
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
+        viewModel?.fetchrating()
         servicesTbl.skeleton()
         servicesTbl.delegate = self
         servicesTbl.dataSource = self
@@ -93,6 +101,10 @@ extension DetailscentersVC {
         imagesCollection.delegate = self
         imagesCollection.dataSource = self
         imagesCollection.observe()
+        ratingCollection.skeleton()
+        ratingCollection.delegate = self
+        ratingCollection.dataSource = self
+        ratingCollection.observe()
         catsCollection.skeleton()
         catsCollection.delegate = self
         catsCollection.dataSource = self
@@ -109,6 +121,9 @@ extension DetailscentersVC {
             homeLbl.textColor = R.color.black1()
             centerLbl.textColor = R.color.darkgray2()
             viewModel?.loctype.send("home")
+            selectservices.removeAll()
+            countLbl.isHidden = true
+            countWidth.constant = 0
             viewModel?.fetchcentersdetails()
         })
         centerRadio.onSelect(execute: { [self] in
@@ -116,8 +131,14 @@ extension DetailscentersVC {
             homeLbl.textColor = R.color.darkgray2()
             homeRadio.deselect()
             viewModel?.loctype.send("center")
+            selectservices.removeAll()
+            countLbl.isHidden = true
+            countWidth.constant = 0
             viewModel?.fetchcentersdetails()
         })
+        moreBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.rating(id: self?.centerId ?? 0)
+        }).store(self)
         bookBtn.publisher.listen(on: {[weak self] _ in
             var error = ""
             if self?.viewModel?.loctype.value ?? "" == "" {
@@ -180,6 +201,14 @@ extension DetailscentersVC {
         }
         servicesTbl.reloadData()
     }
+    func reloadrateing() {
+        if viewModel?.dataSource()?.count ?? 0 == 0 {
+            revIewView.isHidden = true
+        }else {
+            revIewView.isHidden = false
+        }
+        ratingCollection.reloadData()
+    }
 }
 // MARK: - ...  View Contract
 extension DetailscentersVC {
@@ -188,6 +217,8 @@ extension DetailscentersVC: UICollectionViewDelegateFlowLayout, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == catsCollection {
             return .init(width: 75, height: catsCollection.height)
+        }else if collectionView == ratingCollection {
+            return .init(width: 280, height: ratingCollection.height)
         }else {
             return .init(width: collectionView.frame.width, height: collectionView.frame.height)
         }
@@ -201,6 +232,8 @@ extension DetailscentersVC: UICollectionViewDelegateFlowLayout, UICollectionView
           if collectionView == imagesCollection {
               pageControll.numberOfPages = viewModel?.centerdetails.value?.data?.images?.count ?? 0
               return viewModel?.centerdetails.value?.data?.images?.count ?? 2
+          }else  if collectionView == ratingCollection {
+              return viewModel?.dataSource()?.count ?? 0
           }else {
               return ServiceType.count
           }
@@ -211,6 +244,11 @@ extension DetailscentersVC: UICollectionViewDelegateFlowLayout, UICollectionView
                 var cell = collectionView.cell(type: SlidersCollectionViewCell.self, indexPath)
                 cell.model = viewModel?.centerdetails.value?.data?.images?[safe: indexPath.row]
                 cell.setupcenters()
+                return cell
+            }else if collectionView == ratingCollection {
+                var cell = collectionView.cell(type: RatingCollectionViewCell.self, indexPath)
+                cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+                cell.setup()
                 return cell
             }else {
                 var cell = collectionView.cell(type: ServicetypeCollectionViewCell.self, indexPath)

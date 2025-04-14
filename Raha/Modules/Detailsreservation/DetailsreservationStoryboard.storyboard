@@ -436,7 +436,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="VO0-GA-QmO"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can file a complaint if you have a problem with your booking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGS-ka-Zi9">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can file a complaint if you have a problem with your booking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGS-ka-Zi9">
                                                         <rect key="frame" x="36" y="47.5" width="330" height="14.5"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <color key="textColor" name="black2"/>
@@ -680,6 +680,7 @@
                         <outlet property="nameLbl" destination="yQJ-xn-LCG" id="wBS-tv-Inj"/>
                         <outlet property="nameRateLbl" destination="TD0-IU-nMQ" id="409-pr-sz8"/>
                         <outlet property="phoneLbl" destination="F6u-gQ-c2n" id="MgI-uf-KhK"/>
+                        <outlet property="prividerImg" destination="GZm-Qe-zW7" id="VHk-As-NYL"/>
                         <outlet property="rateLbl" destination="POT-XT-VvM" id="bYz-SP-FBj"/>
                         <outlet property="rateSpaceView" destination="u2y-Kc-vIB" id="1V5-zT-AX2"/>
                         <outlet property="rateView" destination="gbe-ou-vVP" id="LFc-cJ-IGT"/>

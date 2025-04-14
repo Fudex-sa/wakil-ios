@@ -253,11 +253,30 @@
 		77C5F4A72534814200E70C4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C5F4A62534814200E70C4C /* Assets.xcassets */; };
 		77D130BC2535C2D800004E81 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D130BB2535C2D800004E81 /* NetworkResponse.swift */; };
 		77D130BE2535C79F00004E81 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D130BD2535C79F00004E81 /* NetworkError.swift */; };
-		8D4D2C8A2DA166A2001502EC /* DetailsreservationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D2C852DA166A2001502EC /* DetailsreservationCoordinator.swift */; };
-		8D4D2C8B2DA166A2001502EC /* DetailsreservationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D2C862DA166A2001502EC /* DetailsreservationModel.swift */; };
-		8D4D2C8C2DA166A2001502EC /* DetailsreservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D2C892DA166A2001502EC /* DetailsreservationViewModel.swift */; };
-		8D4D2C8D2DA166A2001502EC /* DetailsreservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D2C882DA166A2001502EC /* DetailsreservationVC.swift */; };
-		8D4D2C8E2DA166A2001502EC /* DetailsreservationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D2C872DA166A2001502EC /* DetailsreservationStoryboard.storyboard */; };
+		8D3B0EDE2DAD454C00C54E31 /* DetailsreservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EDB2DAD454C00C54E31 /* DetailsreservationVC.swift */; };
+		8D3B0EDF2DAD454C00C54E31 /* DetailsreservationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0ED82DAD454C00C54E31 /* DetailsreservationCoordinator.swift */; };
+		8D3B0EE02DAD454C00C54E31 /* DetailsreservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EDC2DAD454C00C54E31 /* DetailsreservationViewModel.swift */; };
+		8D3B0EE12DAD454C00C54E31 /* DetailsreservationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0ED92DAD454C00C54E31 /* DetailsreservationModel.swift */; };
+		8D3B0EE22DAD454C00C54E31 /* DetailsreservationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B0EDA2DAD454C00C54E31 /* DetailsreservationStoryboard.storyboard */; };
+		8D3B0EE62DAD45B700C54E31 /* DetailsreservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EE42DAD45B700C54E31 /* DetailsreservationTableViewCell.swift */; };
+		8D3B0EE72DAD45B700C54E31 /* DetailsreservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B0EE52DAD45B700C54E31 /* DetailsreservationTableViewCell.xib */; };
+		8D3B0EEA2DAD5BA300C54E31 /* RatingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EE82DAD5BA300C54E31 /* RatingCollectionViewCell.swift */; };
+		8D3B0EEB2DAD5BA300C54E31 /* RatingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B0EE92DAD5BA300C54E31 /* RatingCollectionViewCell.xib */; };
+		8D3B0EF22DAD691A00C54E31 /* CancelPopupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EEE2DAD691A00C54E31 /* CancelPopupModel.swift */; };
+		8D3B0EF32DAD691A00C54E31 /* CancelPopupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EED2DAD691A00C54E31 /* CancelPopupCoordinator.swift */; };
+		8D3B0EF42DAD691A00C54E31 /* CancelPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EF02DAD691A00C54E31 /* CancelPopupVC.swift */; };
+		8D3B0EF52DAD691A00C54E31 /* CancelPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EF12DAD691A00C54E31 /* CancelPopupViewModel.swift */; };
+		8D3B0EF62DAD691A00C54E31 /* CancelPopupStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B0EEF2DAD691A00C54E31 /* CancelPopupStoryboard.storyboard */; };
+		8D3B0EFD2DAD694000C54E31 /* RatingPopupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EF82DAD694000C54E31 /* RatingPopupCoordinator.swift */; };
+		8D3B0EFE2DAD694000C54E31 /* RatingPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EFB2DAD694000C54E31 /* RatingPopupVC.swift */; };
+		8D3B0EFF2DAD694000C54E31 /* RatingPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EFC2DAD694000C54E31 /* RatingPopupViewModel.swift */; };
+		8D3B0F002DAD694000C54E31 /* RatingPopupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0EF92DAD694000C54E31 /* RatingPopupModel.swift */; };
+		8D3B0F012DAD694000C54E31 /* RatingPopupStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B0EFA2DAD694000C54E31 /* RatingPopupStoryboard.storyboard */; };
+		8D3B0F072DAD697F00C54E31 /* ChooseLocMethodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0F032DAD697F00C54E31 /* ChooseLocMethodModel.swift */; };
+		8D3B0F082DAD697F00C54E31 /* ChooseLocMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0F062DAD697F00C54E31 /* ChooseLocMethodViewModel.swift */; };
+		8D3B0F092DAD697F00C54E31 /* ChooseLocMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0F052DAD697F00C54E31 /* ChooseLocMethodVC.swift */; };
+		8D3B0F0A2DAD697F00C54E31 /* ChooseLocMethodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B0F022DAD697F00C54E31 /* ChooseLocMethodCoordinator.swift */; };
+		8D3B0F0B2DAD697F00C54E31 /* ChooseLocMethodStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B0F042DAD697F00C54E31 /* ChooseLocMethodStoryboard.storyboard */; };
 		8D8F5DE82DA15E630046DB8E /* ReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */; };
 		8D8F5DE92DA15E630046DB8E /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */; };
 		8DA612B22DA3F2320098CC92 /* BookserviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612B12DA3F2320098CC92 /* BookserviceViewModel.swift */; };
@@ -907,11 +926,30 @@
 		77C5F4AB2534814200E70C4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D130BB2535C2D800004E81 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		77D130BD2535C79F00004E81 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		8D4D2C852DA166A2001502EC /* DetailsreservationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationCoordinator.swift; sourceTree = "<group>"; };
-		8D4D2C862DA166A2001502EC /* DetailsreservationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationModel.swift; sourceTree = "<group>"; };
-		8D4D2C872DA166A2001502EC /* DetailsreservationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsreservationStoryboard.storyboard; sourceTree = "<group>"; };
-		8D4D2C882DA166A2001502EC /* DetailsreservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationVC.swift; sourceTree = "<group>"; };
-		8D4D2C892DA166A2001502EC /* DetailsreservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationViewModel.swift; sourceTree = "<group>"; };
+		8D3B0ED82DAD454C00C54E31 /* DetailsreservationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationCoordinator.swift; sourceTree = "<group>"; };
+		8D3B0ED92DAD454C00C54E31 /* DetailsreservationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationModel.swift; sourceTree = "<group>"; };
+		8D3B0EDA2DAD454C00C54E31 /* DetailsreservationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsreservationStoryboard.storyboard; sourceTree = "<group>"; };
+		8D3B0EDB2DAD454C00C54E31 /* DetailsreservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationVC.swift; sourceTree = "<group>"; };
+		8D3B0EDC2DAD454C00C54E31 /* DetailsreservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationViewModel.swift; sourceTree = "<group>"; };
+		8D3B0EE42DAD45B700C54E31 /* DetailsreservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsreservationTableViewCell.swift; sourceTree = "<group>"; };
+		8D3B0EE52DAD45B700C54E31 /* DetailsreservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsreservationTableViewCell.xib; sourceTree = "<group>"; };
+		8D3B0EE82DAD5BA300C54E31 /* RatingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCollectionViewCell.swift; sourceTree = "<group>"; };
+		8D3B0EE92DAD5BA300C54E31 /* RatingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingCollectionViewCell.xib; sourceTree = "<group>"; };
+		8D3B0EED2DAD691A00C54E31 /* CancelPopupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopupCoordinator.swift; sourceTree = "<group>"; };
+		8D3B0EEE2DAD691A00C54E31 /* CancelPopupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopupModel.swift; sourceTree = "<group>"; };
+		8D3B0EEF2DAD691A00C54E31 /* CancelPopupStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CancelPopupStoryboard.storyboard; sourceTree = "<group>"; };
+		8D3B0EF02DAD691A00C54E31 /* CancelPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopupVC.swift; sourceTree = "<group>"; };
+		8D3B0EF12DAD691A00C54E31 /* CancelPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopupViewModel.swift; sourceTree = "<group>"; };
+		8D3B0EF82DAD694000C54E31 /* RatingPopupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPopupCoordinator.swift; sourceTree = "<group>"; };
+		8D3B0EF92DAD694000C54E31 /* RatingPopupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPopupModel.swift; sourceTree = "<group>"; };
+		8D3B0EFA2DAD694000C54E31 /* RatingPopupStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RatingPopupStoryboard.storyboard; sourceTree = "<group>"; };
+		8D3B0EFB2DAD694000C54E31 /* RatingPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPopupVC.swift; sourceTree = "<group>"; };
+		8D3B0EFC2DAD694000C54E31 /* RatingPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPopupViewModel.swift; sourceTree = "<group>"; };
+		8D3B0F022DAD697F00C54E31 /* ChooseLocMethodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocMethodCoordinator.swift; sourceTree = "<group>"; };
+		8D3B0F032DAD697F00C54E31 /* ChooseLocMethodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocMethodModel.swift; sourceTree = "<group>"; };
+		8D3B0F042DAD697F00C54E31 /* ChooseLocMethodStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseLocMethodStoryboard.storyboard; sourceTree = "<group>"; };
+		8D3B0F052DAD697F00C54E31 /* ChooseLocMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocMethodVC.swift; sourceTree = "<group>"; };
+		8D3B0F062DAD697F00C54E31 /* ChooseLocMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocMethodViewModel.swift; sourceTree = "<group>"; };
 		8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationTableViewCell.xib; sourceTree = "<group>"; };
 		8DA612AD2DA3F2320098CC92 /* BookserviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookserviceCoordinator.swift; sourceTree = "<group>"; };
@@ -2045,6 +2083,66 @@
 			path = Raha;
 			sourceTree = "<group>";
 		};
+		8D3B0EDD2DAD454C00C54E31 /* Detailsreservation */ = {
+			isa = PBXGroup;
+			children = (
+				8D3B0EE32DAD455D00C54E31 /* cells */,
+				8D3B0ED82DAD454C00C54E31 /* DetailsreservationCoordinator.swift */,
+				8D3B0ED92DAD454C00C54E31 /* DetailsreservationModel.swift */,
+				8D3B0EDA2DAD454C00C54E31 /* DetailsreservationStoryboard.storyboard */,
+				8D3B0EDB2DAD454C00C54E31 /* DetailsreservationVC.swift */,
+				8D3B0EDC2DAD454C00C54E31 /* DetailsreservationViewModel.swift */,
+			);
+			path = Detailsreservation;
+			sourceTree = "<group>";
+		};
+		8D3B0EE32DAD455D00C54E31 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				8D3B0EE42DAD45B700C54E31 /* DetailsreservationTableViewCell.swift */,
+				8D3B0EE52DAD45B700C54E31 /* DetailsreservationTableViewCell.xib */,
+				8D3B0EE82DAD5BA300C54E31 /* RatingCollectionViewCell.swift */,
+				8D3B0EE92DAD5BA300C54E31 /* RatingCollectionViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		8D3B0EEC2DAD68FE00C54E31 /* CancelPopup */ = {
+			isa = PBXGroup;
+			children = (
+				8D3B0EED2DAD691A00C54E31 /* CancelPopupCoordinator.swift */,
+				8D3B0EEE2DAD691A00C54E31 /* CancelPopupModel.swift */,
+				8D3B0EEF2DAD691A00C54E31 /* CancelPopupStoryboard.storyboard */,
+				8D3B0EF02DAD691A00C54E31 /* CancelPopupVC.swift */,
+				8D3B0EF12DAD691A00C54E31 /* CancelPopupViewModel.swift */,
+			);
+			path = CancelPopup;
+			sourceTree = "<group>";
+		};
+		8D3B0EF72DAD692A00C54E31 /* RatingPopup */ = {
+			isa = PBXGroup;
+			children = (
+				8D3B0EF82DAD694000C54E31 /* RatingPopupCoordinator.swift */,
+				8D3B0EF92DAD694000C54E31 /* RatingPopupModel.swift */,
+				8D3B0EFA2DAD694000C54E31 /* RatingPopupStoryboard.storyboard */,
+				8D3B0EFB2DAD694000C54E31 /* RatingPopupVC.swift */,
+				8D3B0EFC2DAD694000C54E31 /* RatingPopupViewModel.swift */,
+			);
+			path = RatingPopup;
+			sourceTree = "<group>";
+		};
+		8D3B0F0C2DAD699200C54E31 /* ChooseLocMethod */ = {
+			isa = PBXGroup;
+			children = (
+				8D3B0F022DAD697F00C54E31 /* ChooseLocMethodCoordinator.swift */,
+				8D3B0F032DAD697F00C54E31 /* ChooseLocMethodModel.swift */,
+				8D3B0F042DAD697F00C54E31 /* ChooseLocMethodStoryboard.storyboard */,
+				8D3B0F052DAD697F00C54E31 /* ChooseLocMethodVC.swift */,
+				8D3B0F062DAD697F00C54E31 /* ChooseLocMethodViewModel.swift */,
+			);
+			path = ChooseLocMethod;
+			sourceTree = "<group>";
+		};
 		8D8F5DE12DA15DCE0046DB8E /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2052,18 +2150,6 @@
 				8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */,
 			);
 			path = cells;
-			sourceTree = "<group>";
-		};
-		8D8F5DEA2DA1663C0046DB8E /* Detailsreservation */ = {
-			isa = PBXGroup;
-			children = (
-				8D4D2C852DA166A2001502EC /* DetailsreservationCoordinator.swift */,
-				8D4D2C862DA166A2001502EC /* DetailsreservationModel.swift */,
-				8D4D2C872DA166A2001502EC /* DetailsreservationStoryboard.storyboard */,
-				8D4D2C882DA166A2001502EC /* DetailsreservationVC.swift */,
-				8D4D2C892DA166A2001502EC /* DetailsreservationViewModel.swift */,
-			);
-			path = Detailsreservation;
 			sourceTree = "<group>";
 		};
 		8DA612AC2DA3F2190098CC92 /* Bookservice */ = {
@@ -3075,6 +3161,10 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8D3B0F0C2DAD699200C54E31 /* ChooseLocMethod */,
+				8D3B0EF72DAD692A00C54E31 /* RatingPopup */,
+				8D3B0EEC2DAD68FE00C54E31 /* CancelPopup */,
+				8D3B0EDD2DAD454C00C54E31 /* Detailsreservation */,
 				8DB6ADE32DA7C9200093EB4E /* OnlinePayment */,
 				8DB6ADD82DA7C8680093EB4E /* PaymentDone */,
 				8DB6ADCD2DA7C82B0093EB4E /* Calenderselect */,
@@ -3082,7 +3172,6 @@
 				8DA612AC2DA3F2190098CC92 /* Bookservice */,
 				8DD3C1632DA2C15800D8962B /* CancelOrder */,
 				8DD3C1532DA2B81600D8962B /* ClientRating */,
-				8D8F5DEA2DA1663C0046DB8E /* Detailsreservation */,
 				664E68E12D955DB900899D5E /* Detailscenters */,
 				6606AA402D802B3700E7665E /* Selectonmap */,
 				6606AA352D802B0900E7665E /* AddAddress */,
@@ -3340,6 +3429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD3C16D2DA2C16F00D8962B /* CancelOrderStoryboard.storyboard in Resources */,
+				8D3B0EEB2DAD5BA300C54E31 /* RatingCollectionViewCell.xib in Resources */,
 				66BF522B2D6F0ECB0030B38A /* ReservationStoryboard.storyboard in Resources */,
 				C86BF98A266947F0002D87BC /* StatusLine.xib in Resources */,
 				C871C729272FEB7B00DCBD2D /* SFPRODISPLAYBLACKITALIC.OTF in Resources */,
@@ -3401,7 +3491,6 @@
 				C86BF98B266947F0002D87BC /* warningIconLight.png in Resources */,
 				667FB07E2D748445002A4D87 /* FilterServiceStoryboard.storyboard in Resources */,
 				C86BF999266947F0002D87BC /* warningIconSubtle@2x.png in Resources */,
-				8D4D2C8E2DA166A2001502EC /* DetailsreservationStoryboard.storyboard in Resources */,
 				C871C735272FEB7C00DCBD2D /* Muli.ttf in Resources */,
 				C86BF99A266947F0002D87BC /* warningIconSubtle@3x.png in Resources */,
 				8DD3C15D2DA2B83A00D8962B /* ClientRatingStoryboard.storyboard in Resources */,
@@ -3409,6 +3498,7 @@
 				C871C732272FEB7C00DCBD2D /* SFPRODISPLAYBOLD.OTF in Resources */,
 				8DB6ADCC2DA7C81A0093EB4E /* GiftStoryboard.storyboard in Resources */,
 				8DB6ADF42DA7CD870093EB4E /* ServicesslotsTableViewCell.xib in Resources */,
+				8D3B0F012DAD694000C54E31 /* RatingPopupStoryboard.storyboard in Resources */,
 				66D634F82D771DAB00B6A6E3 /* CustomTabBarView.xib in Resources */,
 				6636D7CE2C3AE370007116F7 /* LoginStoryboard.storyboard in Resources */,
 				8DA612B62DA3F2320098CC92 /* BookserviceStoryboard.storyboard in Resources */,
@@ -3432,6 +3522,7 @@
 				663830862D75A37F00E9CC0E /* SelectAddressStoryboard.storyboard in Resources */,
 				C86BF99F266947F0002D87BC /* infoIcon.png in Resources */,
 				6693369F2D79CFF6008DB727 /* LogoutStoryboard.storyboard in Resources */,
+				8D3B0EE72DAD45B700C54E31 /* DetailsreservationTableViewCell.xib in Resources */,
 				66C2E0D62D6F30620027823E /* EditPasswordStoryboard.storyboard in Resources */,
 				C86BF9A0266947F0002D87BC /* errorIconLight.png in Resources */,
 				8DB6ADEB2DA7C94E0093EB4E /* PayTapsWebView.storyboard in Resources */,
@@ -3460,10 +3551,12 @@
 				663C3FAF2D6DC92900A2C80A /* ResetpasswordStoryboard.storyboard in Resources */,
 				7756A096253482EF00BFE53C /* RadioView.xib in Resources */,
 				8DB6ADF02DA7CD620093EB4E /* SelectservicesTableViewCell.xib in Resources */,
+				8D3B0F0B2DAD697F00C54E31 /* ChooseLocMethodStoryboard.storyboard in Resources */,
 				C86BF9A4266947F0002D87BC /* warningIconSubtle.png in Resources */,
 				66C8C0932D6C687700096320 /* Expo-Arabic-Medium.ttf in Resources */,
 				C86BF996266947F0002D87BC /* errorIconLight@3x.png in Resources */,
 				66DED3992D74798C001AF6E0 /* SlidersCollectionViewCell.xib in Resources */,
+				8D3B0EF62DAD691A00C54E31 /* CancelPopupStoryboard.storyboard in Resources */,
 				66BF52152D6F0E2D0030B38A /* MainStoryboard.storyboard in Resources */,
 				C86BF994266947F0002D87BC /* infoIconSubtle@3x.png in Resources */,
 				C86BF99E266947F0002D87BC /* errorIconLight@2x.png in Resources */,
@@ -3483,6 +3576,7 @@
 				C86BF98E266947F0002D87BC /* infoIconLight.png in Resources */,
 				664C815F2D6F20AA0086D0D4 /* ProfileStoryboard.storyboard in Resources */,
 				664DCAFD2C3BC2460011DB96 /* Tajawal-Bold.ttf in Resources */,
+				8D3B0EE22DAD454C00C54E31 /* DetailsreservationStoryboard.storyboard in Resources */,
 				66C2E0E12D6F34380027823E /* EditProfileStoryboard.storyboard in Resources */,
 				C86BF986266947F0002D87BC /* errorIcon@3x.png in Resources */,
 			);
@@ -3687,6 +3781,10 @@
 				C86BF9A6266947F0002D87BC /* SwiftMessageFacade.swift in Sources */,
 				C8C9D023266CD56000E66D46 /* Validator.swift in Sources */,
 				C853B95626D7F9450008F09D /* SPPermissionsDialogController.swift in Sources */,
+				8D3B0EFD2DAD694000C54E31 /* RatingPopupCoordinator.swift in Sources */,
+				8D3B0EFE2DAD694000C54E31 /* RatingPopupVC.swift in Sources */,
+				8D3B0EFF2DAD694000C54E31 /* RatingPopupViewModel.swift in Sources */,
+				8D3B0F002DAD694000C54E31 /* RatingPopupModel.swift in Sources */,
 				6606AA3B2D802B2900E7665E /* AddAddressCoordinator.swift in Sources */,
 				8DA612BB2DA3F61A0098CC92 /* CalendarDayCell.swift in Sources */,
 				6606AA3C2D802B2900E7665E /* AddAddressModel.swift in Sources */,
@@ -3766,6 +3864,10 @@
 				6606AA312D802AF800E7665E /* AddressModel.swift in Sources */,
 				6606AA322D802AF800E7665E /* AddressVC.swift in Sources */,
 				6606AA332D802AF800E7665E /* AddressViewModel.swift in Sources */,
+				8D3B0EDE2DAD454C00C54E31 /* DetailsreservationVC.swift in Sources */,
+				8D3B0EDF2DAD454C00C54E31 /* DetailsreservationCoordinator.swift in Sources */,
+				8D3B0EE02DAD454C00C54E31 /* DetailsreservationViewModel.swift in Sources */,
+				8D3B0EE12DAD454C00C54E31 /* DetailsreservationModel.swift in Sources */,
 				669E1B442C47F15700950373 /* RoundedBottomView.swift in Sources */,
 				66AEC2D72C43C49900BC260E /* JWT.swift in Sources */,
 				C853B94A26D7F9450008F09D /* Depricated.swift in Sources */,
@@ -3804,6 +3906,10 @@
 				C853B95526D7F9450008F09D /* SPPermissionsDialogView.swift in Sources */,
 				C871C99F2730231300DCBD2D /* AssociationPolicy.swift in Sources */,
 				7756A18325348AD400BFE53C /* OptionalExtensions.swift in Sources */,
+				8D3B0F072DAD697F00C54E31 /* ChooseLocMethodModel.swift in Sources */,
+				8D3B0F082DAD697F00C54E31 /* ChooseLocMethodViewModel.swift in Sources */,
+				8D3B0F092DAD697F00C54E31 /* ChooseLocMethodVC.swift in Sources */,
+				8D3B0F0A2DAD697F00C54E31 /* ChooseLocMethodCoordinator.swift in Sources */,
 				C86BF978266947F0002D87BC /* AccessibleMessage.swift in Sources */,
 				C86BF979266947F0002D87BC /* Error.swift in Sources */,
 				C853B95126D7F9450008F09D /* SPPermissionsListHeaderView.swift in Sources */,
@@ -3842,10 +3948,6 @@
 				C871C9A02730231300DCBD2D /* PrepareForSkeletonProtocol.swift in Sources */,
 				C871C97F2730231300DCBD2D /* Collection+SkeletonEX.swift in Sources */,
 				C871C9962730231300DCBD2D /* CollectionSkeletonProtocol.swift in Sources */,
-				8D4D2C8A2DA166A2001502EC /* DetailsreservationCoordinator.swift in Sources */,
-				8D4D2C8B2DA166A2001502EC /* DetailsreservationModel.swift in Sources */,
-				8D4D2C8C2DA166A2001502EC /* DetailsreservationViewModel.swift in Sources */,
-				8D4D2C8D2DA166A2001502EC /* DetailsreservationVC.swift in Sources */,
 				C871C8E3272FED5900DCBD2D /* GoogleMapHelper.swift in Sources */,
 				663C3FA02D6DC90100A2C80A /* ForgetpasswordCoordinator.swift in Sources */,
 				663C3FA12D6DC90100A2C80A /* ForgetpasswordModel.swift in Sources */,
@@ -4005,6 +4107,7 @@
 				C853B96626D7F9450008F09D /* Draw.swift in Sources */,
 				C853B95226D7F9450008F09D /* SPPermissionsListFooterCommentView.swift in Sources */,
 				77228EB1275667F8008F11B3 /* CalendarDateRangePickerHeaderView.swift in Sources */,
+				8D3B0EE62DAD45B700C54E31 /* DetailsreservationTableViewCell.swift in Sources */,
 				77A804F72738068A00168453 /* UIView+Combine.swift in Sources */,
 				C86BF9AB266947F0002D87BC /* BackgroundViewable.swift in Sources */,
 				23E16A232667A819001048E5 /* GalleryPickerHelper.swift in Sources */,
@@ -4046,6 +4149,7 @@
 				C8265E4D266CE1A900E099C1 /* GuardEmail.swift in Sources */,
 				E816A66127BB9D2B00CEDF57 /* Lottie.swift in Sources */,
 				664C815B2D6F20AA0086D0D4 /* ProfileCoordinator.swift in Sources */,
+				8D3B0EEA2DAD5BA300C54E31 /* RatingCollectionViewCell.swift in Sources */,
 				664C815C2D6F20AA0086D0D4 /* ProfileModel.swift in Sources */,
 				664C815D2D6F20AA0086D0D4 /* ProfileVC.swift in Sources */,
 				664C815E2D6F20AA0086D0D4 /* ProfileViewModel.swift in Sources */,
@@ -4056,6 +4160,10 @@
 				7756A0F7253482EF00BFE53C /* AlertableHelper.swift in Sources */,
 				C86BF9AC266947F0002D87BC /* UIWindow+Extensions.swift in Sources */,
 				7756A091253482EF00BFE53C /* NotificationSetup.swift in Sources */,
+				8D3B0EF22DAD691A00C54E31 /* CancelPopupModel.swift in Sources */,
+				8D3B0EF32DAD691A00C54E31 /* CancelPopupCoordinator.swift in Sources */,
+				8D3B0EF42DAD691A00C54E31 /* CancelPopupVC.swift in Sources */,
+				8D3B0EF52DAD691A00C54E31 /* CancelPopupViewModel.swift in Sources */,
 				C871C9882730231300DCBD2D /* UIColor+Skeleton.swift in Sources */,
 				C8C09317272ABDA200E2270A /* UITextField+Combine.swift in Sources */,
 				C86BF9B4266947F0002D87BC /* SwiftMessages.Config+Extensions.swift in Sources */,

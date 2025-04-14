@@ -46,19 +46,21 @@ struct Image: Codable {
 struct Service: Codable {
     let id: Int?
     let name: String?
+    let description: String?
     let image: String?
-    let rate: Double?
-    var isselect: Bool? = false
     let serviceType, providerType, price, duration: String?
     let maxConcurrentRequests: Int?
     let locationType: String?
+    var isselect: Bool? = false
+    let rate: Double?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, image , isselect, rate
+        case id, name, description, image, isselect
         case serviceType = "service_type"
         case providerType = "provider_type"
         case price, duration
         case maxConcurrentRequests = "max_concurrent_requests"
         case locationType = "location_type"
+        case rate
     }
 }

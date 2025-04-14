@@ -433,3 +433,11 @@
 "Confirm" = "تأكيد";
 "Back" = "رجوع";
 "gift" = "هدية";
+"Service Details" = "تفاصيل الخدمة";
+"Session Duration" = "مدة الجلسة";
+"Cancel order" = "الغاء الحجز";
+"Service Evaluation" = "تقييم الخدمة";
+"Paying" = "الدفع";
+"Rating list is empty" = "قائمه التقييمات فارغه";
+"No bookings yet" = "لا يوجد حجوزات حتى الآن";
+"Browse centers to select service" = "تصفح المراكز لاختيار الخدمة";

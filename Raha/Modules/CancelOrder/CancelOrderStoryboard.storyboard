@@ -137,6 +137,17 @@
                                                     <constraint firstItem="xZE-WI-uDe" firstAttribute="leading" secondItem="ORb-p0-Gny" secondAttribute="leading" constant="16" id="QOJ-Gx-bgx"/>
                                                     <constraint firstAttribute="trailing" secondItem="xZE-WI-uDe" secondAttribute="trailing" constant="16" id="vtz-Rv-7oy"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="lightgray"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -223,7 +234,6 @@
                     <connections>
                         <outlet property="cancelBtn" destination="dh2-LY-USu" id="d0M-bv-9ZY"/>
                         <outlet property="cancelLbl" destination="xZE-WI-uDe" id="mvJ-Lc-Tpj"/>
-                        <outlet property="titleLbl" destination="VUD-hQ-4Fv" id="HBz-WG-fS3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3IO-Qs-KBD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -243,6 +253,9 @@
         </namedColor>
         <namedColor name="blackshadow5">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.05000000074505806" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="lightgray">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="normalblue">
             <color red="0.12549019607843137" green="0.64313725490196083" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

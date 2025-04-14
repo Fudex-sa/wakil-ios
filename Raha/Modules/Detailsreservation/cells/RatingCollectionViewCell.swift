@@ -1,14 +1,14 @@
 //
-//  RatingTableViewCell.swift
+//  RatingCollectionViewCell.swift
 //  Raha
 //
-//  Created by mahmoud ezzat on 06/04/2025.
+//  Created by mahmoud ezzat on 14/04/2025.
 //  Copyright © 2025 com.M.Abdu. All rights reserved.
 //
 
 import UIKit
 
-class RatingTableViewCell: BaseTableViewCell {
+class RatingCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
@@ -23,4 +23,6 @@ class RatingTableViewCell: BaseTableViewCell {
         commentLbl.text = model.comment ?? ""
         rateLbl.text = model.rating?.string ?? ""
     }
+   
+
 }

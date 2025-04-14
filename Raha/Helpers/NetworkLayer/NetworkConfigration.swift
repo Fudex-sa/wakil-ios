@@ -122,6 +122,8 @@ struct NetworkConfigration {
         case slots = "client/slots"
         case createorder = "client/order"
         case myorders = "client/my-orders"
+        case orderdetails = "client/orders/"
+        case cancelpolicy = "client/pages/cancellation-policy"
     }
 }
 

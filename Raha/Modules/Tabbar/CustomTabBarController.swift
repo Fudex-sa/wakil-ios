@@ -41,8 +41,8 @@ class CustomTabBarController: UITabBarController {
             self.customTabBar.homeImg.tintColor = R.color.normalblue()
             self.customTabBar.homeLbl.textColor = R.color.normalblue()
             self.customTabBar.bookingBackgroundView.backgroundColor = .clear
-            self.customTabBar.bookingImg.tintColor = R.color.normalblue()
-            self.customTabBar.bookingLbl.textColor = R.color.normalblue()
+            self.customTabBar.bookingImg.tintColor = R.color.darkgray2()
+            self.customTabBar.bookingLbl.textColor = R.color.darkgray2()
             self.customTabBar.moreBackgroundView.backgroundColor = .clear
             self.customTabBar.moreImg.tintColor = R.color.darkgray2()
             self.customTabBar.moreLbl.textColor = R.color.darkgray2()
