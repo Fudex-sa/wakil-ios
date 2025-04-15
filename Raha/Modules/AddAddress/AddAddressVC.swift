@@ -32,6 +32,7 @@ class AddAddressVC: BaseController {
         validator.setUIType(.message).append(hayTxf, rules: [GuardRequired() ], title: "Neighborhood".localized).holdColor()
         return validator
     }()
+    var isfirst = false
 }
 
 // MARK: - ...  LifeCycle
@@ -66,6 +67,18 @@ extension AddAddressVC {
             self?.stopLoading()
         })
         viewModel?.addressdata.listen(on: { [weak self] value in
+            if self?.isfirst == true {
+                UD.address = self?.viewModel?.addressdata.value?.data
+            }
+            self?.navigationController?.popViewController(animated: true)
+            NotificationBuilder()
+                .setTitle("Success".localized)
+                .setBody(self?.viewModel?.addressdata.value?.message ?? "")
+                .setTheme(.success)
+                .bulid()
+
+        })
+        viewModel?.editsdata.listen(on: { [weak self] value in
             self?.navigationController?.popViewController(animated: true)
             NotificationBuilder()
                 .setTitle("Success".localized)

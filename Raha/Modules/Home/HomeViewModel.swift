@@ -18,10 +18,10 @@ class HomeViewModel: BaseViewModel ,DataSourceViewModel {
     var gender: Publisher<String> = .init()
     var rate: Publisher<String> = .init()
     var name: Publisher<String> = .init()
-    var items: Publisher<[AddressesDatum]> = .init()
+    var addressList: Publisher<[AddressesDatum]> = .init()
     var userddata: Publisher<ProfileModel> = .init()
-    var homedata: Publisher<[HomeDatum]> = .init()
-    var homestatus: Publisher<Bool> = .init()
+    var items: Publisher<[HomeDatum]> = .init()
+    var addressstatus: Publisher<Bool> = .init()
     var sliders: Publisher<[SlidersDatum]> = .init()
     var slidersFinished: Publisher<Bool> = .init()
 }
@@ -35,9 +35,8 @@ extension HomeViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
-            self?.append(contentsOf: model.data ?? [])
-            self?.paginator(respnod: model.data)
-            self?.publisher()
+            self?.addressList.send(model.data ?? [])
+            self?.addressstatus.send(true)
         }).store(self)
     }
     func getprofile() {
@@ -73,10 +72,9 @@ extension HomeViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
-            var data = self?.homedata.value ?? []
-            data.append(contentsOf: model.data ?? [])
-            self?.homedata.send(data)
-            self?.homestatus.send(true)
+            self?.append(contentsOf: model.data ?? [])
+            self?.paginator(respnod: model.data)
+            self?.publisher()
         }).store(self)
     }
     func fetchsliders() {

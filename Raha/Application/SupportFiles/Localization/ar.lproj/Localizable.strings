@@ -441,3 +441,13 @@
 "Rating list is empty" = "قائمه التقييمات فارغه";
 "No bookings yet" = "لا يوجد حجوزات حتى الآن";
 "Browse centers to select service" = "تصفح المراكز لاختيار الخدمة";
+"Are you sure you canceled your reservation?" = "هل انت متأكد من الغاء الحجز ؟";
+"Cancellation policy will apply" = "سيتم تطبيق سياسة الالغاء";
+"Comment" = "التعليق";
+"Send Feedback" = "ارسال التقييم";
+"Write your comment" = "اكتب تعليقك";
+"make rating" = "قم باضافه تقييم";
+"Are you sure to delete your account from the app?" = "هل أنت متأكد من حذف حسابك من التطبيق ؟";
+"Allow the app to access your location" = "السماح للتطبيق بالوصول لموقعك";
+"Please allow the app to access your location or enter your address to successfully complete the booking of services and home visits" = "من فضلك قم بالسماح للتبطيق بالوصول لموقعك او قم بإدخال عنوانك لتتمكن من إتمام حجز الخدمات والزيارات المنزلية بنجاح";
+"Allow access to location" = "السماح بالوصول للموقع";

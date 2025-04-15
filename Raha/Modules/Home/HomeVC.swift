@@ -59,10 +59,10 @@ extension HomeVC {
         viewModel?.error.listen(on: { [weak self] error in
             self?.didError(error: error?.localizedDescription)
         })
-        viewModel?.requestFinished.listen(on: { [weak self] value in
+        viewModel?.addressstatus.listen(on: { [weak self] value in
             self?.reloadaadress()
         })
-        viewModel?.homestatus.listen(on: { [weak self] value in
+        viewModel?.requestFinished.listen(on: { [weak self] value in
             self?.reloadhome()
         })
         viewModel?.slidersFinished.listen(on: { [weak self] value in
@@ -96,35 +96,12 @@ extension HomeVC {
                 addressdata = UD.address
                 viewModel?.lat.send(UD.address?.lat?.double() ?? 0.0)
                 viewModel?.lng.send(UD.address?.lng?.double() ?? 0.0)
+                viewModel?.resetPaginator()
+                viewModel?.clearDataSource()
                 viewModel?.fetchhome()
             }
         }else {
-            switch CLLocationManager.authorizationStatus() {
-            case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
-            case .restricted, .denied:
-                viewModel?.lat.send(30.5765)
-                viewModel?.lng.send(31.5042)
-                viewModel?.fetchhome()
-            case .authorizedAlways, .authorizedWhenInUse:
-                location = .init()
-                location?.useOnlyoneTime = false
-                location?.onUpdateLocation = { [self] degree in
-                    if self.lat != 0 {
-                        return
-                    }
-                    self.lat = degree?.latitude ?? 0
-                    self.lng = degree?.longitude ?? 0
-                    isaddress = true
-                    viewModel?.lat.send(degree?.latitude ?? 0)
-                    viewModel?.lng.send(degree?.longitude ?? 0)
-                    viewModel?.fetchhome()
-                }
-                location?.currentLocation()
-            @unknown default:
-                // Handle future cases if they are added in later iOS versions.
-                break
-            }
+            currentlocation()
         }
         langBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.selectlanguage()
@@ -135,38 +112,48 @@ extension HomeVC {
         locLbl.UIViewAction {
             self.coordinator?.selectaddress()
         }
-        searchTxf.publisher.listen(on: { [weak self]_ in
-            self?.timer?.stopTimer()
-            self?.timer = nil
-            self?.timer = .init(seconds: 1, closure: { [self] (second) in
-                self?.timer?.stopTimer()
-                self?.timer = nil
-                self?.viewModel?.name.send(self?.searchTxf.text ?? "")
-                self?.viewModel?.homedata.send([])
+        searchTxf
+            .editingChangedPublisher
+            .compactMap { [weak searchTxf] in searchTxf?.text }
+            .removeDuplicates()
+            .debounce(for: .seconds(1), scheduler: RunLoop.main)
+            .sink { [weak self] text in
+                self?.viewModel?.name.send(text)
+                self?.viewModel?.resetPaginator()
+                self?.viewModel?.clearDataSource()
                 self?.viewModel?.fetchhome()
-            })
-            
-        }).store(self)
+            }
+            .store(self)
     }
     func reloadaadress() {
-        if viewModel?.items.value?.count ?? 0 == 0 {
-            coordinator?.addaddress()
+        if viewModel?.addressList.value?.count ?? 0 == 0 {
+            if UD.lat ?? 0 == 0 {
+                coordinator?.currentloc()
+            }else {
+                viewModel?.lat.send(UD.lat ?? 0.0)
+                viewModel?.lng.send(UD.lng ?? 0.0)
+                viewModel?.resetPaginator()
+                viewModel?.clearDataSource()
+                viewModel?.fetchhome()
+            }
             return
         }
-        for index in viewModel?.items.value ?? [] {
+        for index in viewModel?.addressList.value ?? [] {
             if index.isDefault ?? 0 == 1 {
                 locLbl.text = "\(index.street ?? "") - \(index.district ?? "") - \(index.cityID?.name ?? "") - \(index.stateID?.name ?? "")"
                 addressdata = index
                 UD.address = index
                 viewModel?.lat.send(index.lat?.double() ?? 0.0)
                 viewModel?.lng.send(index.lng?.double() ?? 0.0)
+                viewModel?.resetPaginator()
+                viewModel?.clearDataSource()
                 viewModel?.fetchhome()
                 break
             }
         }
     }
     func reloadhome() {
-        if viewModel?.homedata.value?.count ?? 0 == 0 {
+        if viewModel?.items.value?.count ?? 0 == 0 {
             centerTbl.isHidden = true
             showEmptyScreen(for: 300, title: "Centers list is empty".localized)
             
@@ -185,14 +172,50 @@ extension HomeVC {
         }
         slidersCollection.reloadData()
     }
+    func currentlocation() {
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+//            viewModel?.lat.send(30.5765)
+//            viewModel?.lng.send(31.5042)
+            viewModel?.resetPaginator()
+            viewModel?.clearDataSource()
+            viewModel?.fetchhome()
+        case .authorizedAlways, .authorizedWhenInUse:
+            location = .init()
+            location?.useOnlyoneTime = false
+            location?.onUpdateLocation = { [self] degree in
+                if self.lat != 0 {
+                    return
+                }
+                self.lat = degree?.latitude ?? 0
+                self.lng = degree?.longitude ?? 0
+                UD.lat = lat
+                UD.lng = lng
+                isaddress = true
+                viewModel?.lat.send(degree?.latitude ?? 0)
+                viewModel?.lng.send(degree?.longitude ?? 0)
+                viewModel?.resetPaginator()
+                viewModel?.clearDataSource()
+                viewModel?.fetchhome()
+            }
+            location?.currentLocation()
+        @unknown default:
+            // Handle future cases if they are added in later iOS versions.
+            break
+        }
+    }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
             switch status {
             case .notDetermined:
                 // The user has not yet made a choice regarding location permission.
                 break
             case .restricted, .denied:
-                viewModel?.lat.send(30.5765)
-                viewModel?.lng.send(31.5042)
+//                viewModel?.lat.send(30.5765)
+//                viewModel?.lng.send(31.5042)
+                viewModel?.resetPaginator()
+                viewModel?.clearDataSource()
                 viewModel?.fetchhome()
             case .authorizedAlways, .authorizedWhenInUse:
                 // Location permission is authorized.
@@ -204,9 +227,13 @@ extension HomeVC {
                     }
                     self.lat = degree?.latitude ?? 0
                     self.lng = degree?.longitude ?? 0
+                    UD.lat = lat
+                    UD.lng = lng
                     isaddress = true
                     viewModel?.lat.send(degree?.latitude ?? 0)
                     viewModel?.lng.send(degree?.longitude ?? 0)
+                    viewModel?.resetPaginator()
+                    viewModel?.clearDataSource()
                     viewModel?.fetchhome()
                 }
                 location?.currentLocation()
@@ -246,19 +273,19 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.homedata.value?.count ?? 2
+        return viewModel?.items.value?.count ?? 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: CentersTableViewCell.self, indexPath)
-        cell.model = viewModel?.homedata.value?[safe: indexPath.row]
+        cell.model = viewModel?.items.value?[safe: indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if viewModel?.homedata.value?.count ?? 0 == 0 {
+        if viewModel?.items.value?.count ?? 0 == 0 {
             return
         }
-        coordinator?.detailscenter(id: viewModel?.homedata.value?[safe: indexPath.row]?.id ?? 0)
+        coordinator?.detailscenter(id: viewModel?.items.value?[safe: indexPath.row]?.id ?? 0)
     }
     
 }

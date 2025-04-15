@@ -36,5 +36,8 @@ public extension UITextField {
     var didBeginEditingPublisher: AnyPublisher<Void, Never> {
         controlEventPublisher(for: .editingDidBegin)
     }
+    var editingChangedPublisher: AnyPublisher<Void, Never> {
+        controlEventPublisher(for: .editingChanged)
+    }
 }
 

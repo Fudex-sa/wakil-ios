@@ -12,3 +12,8 @@ import Foundation
 struct AddAddressModel: Codable {
     var data: [RegisterModel]?
 }
+
+struct AddAddres: Codable {
+    var message: String?
+    var data: AddressesDatum?
+}

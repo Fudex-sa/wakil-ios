@@ -9,9 +9,7 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class HomeCoordinator: Coordinator, SelectAddressVCDelegate, FilterServiceVCDelegate {
-    
-    
+class HomeCoordinator: Coordinator, SelectAddressVCDelegate, FilterServiceVCDelegate, ChooseLocMethodVCDelegate {
     typealias PresentingView = HomeVC
     weak var view: PresentingView?
     deinit {
@@ -53,7 +51,8 @@ extension HomeCoordinator {
         view?.addressdata = model
         view?.viewModel?.lat.send(model.lat?.double() ?? 0.0)
         view?.viewModel?.lng.send(model.lng?.double() ?? 0.0)
-        view?.viewModel?.homedata.send([])
+        view?.viewModel?.resetPaginator()
+        view?.viewModel?.clearDataSource()
         view?.viewModel?.fetchhome()
     }
     func done(model: FilterServiceModel) {
@@ -63,7 +62,23 @@ extension HomeCoordinator {
         view?.viewModel?.rate.send(model.rate ?? "")
         view?.viewModel?.loctype.send(model.loctype ?? "")
         view?.viewModel?.servicetype.send(model.servicetype ?? "")
-        view?.viewModel?.homedata.send([])
+        view?.viewModel?.resetPaginator()
+        view?.viewModel?.clearDataSource()
         view?.viewModel?.fetchhome()
     }
+    func currentloc() {
+        guard let scene = R.storyboard.chooseLocMethodStoryboard.chooseLocMethodVC() else { return }
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
+    func addaddressreturn() {
+        guard let scene = R.storyboard.addAddressStoryboard.addAddressVC() else { return }
+        scene.isfirst = true
+        view?.push(scene)
+    }
+    
+    func currentlocreturn() {
+        view?.currentlocation()
+    }
+    
 }

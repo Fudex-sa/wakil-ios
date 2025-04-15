@@ -17,6 +17,7 @@ class LogoutVC: BaseController {
     enum VerifyType {
         case logout
         case address
+        case account
     }
     var delegate: LogoutVCDelegate?
     @IBOutlet weak var imgTop: NSLayoutConstraint!
@@ -60,6 +61,7 @@ extension LogoutVC {
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when){ [self] in
                 UD.user = nil
+                UD.address = nil
                 Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
             }
         })
@@ -76,11 +78,20 @@ extension LogoutVC {
             titlrLbl.text = "Delete address".localized
             bodyLbl.text = "Are you sure to delete address?".localized
             logoutLbl.setTitle("Delete".localized, for: .normal)
+        }else if type == .account {
+            logoutImg.image = UIImage(named: "fi_3128607")
+            titlrLbl.text = "Delete Account".localized
+            bodyLbl.text = "Are you sure to delete your account from the app?".localized
+            logoutLbl.setTitle("Delete".localized, for: .normal)
         }
         logoutBtn.publisher.listen(on: { [weak self] in
             if self?.type == .address {
                 self?.delegate?.address()
                 self?.dismiss(animated: true, completion: nil)
+                return
+            }
+            if self?.type == .account {
+                self?.viewModel?.deleteaccount()
                 return
             }
             self?.viewModel?.fetchlogout()

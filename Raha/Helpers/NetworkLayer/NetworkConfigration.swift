@@ -76,7 +76,7 @@ struct NetworkConfigration {
         case updatephone = "client/updateMobile"
         case profile = "client/profile"
         case updateprofile = "client/updateProfile"
-        case deleteaccount = "client/account/delete"
+        case deleteaccount = "client/deleteAccount"
         case matches
         case todaymatxh = "todayMatches"
         case perviousmatch = "previousMatches"

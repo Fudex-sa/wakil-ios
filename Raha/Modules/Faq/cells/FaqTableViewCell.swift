@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+protocol FaqTableViewCellDelegate: AnyObject {
+    func selectfaq(wasPressedOnCell cell: FaqTableViewCell , model : faqdataModel)}
 class FaqTableViewCell: BaseTableViewCell {
     @IBOutlet weak var arrowImg: UIImageView!
     @IBOutlet weak var containerView: UIView!
@@ -15,6 +16,7 @@ class FaqTableViewCell: BaseTableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     
     @IBOutlet weak var answerLbl: UILabel!
+    var delegate: FaqTableViewCellDelegate?
     var isControl: Bool = false
     override func setup() {
         super.setup()
@@ -22,19 +24,15 @@ class FaqTableViewCell: BaseTableViewCell {
         guard let model = model as? faqdataModel else { return }
         titleLbl.text = model.question ?? ""
         answerLbl.text = model.answer ?? ""
-        if (isControl ?? false){
-            answerLbl.text = model.answer ?? ""
-        }else {
+        if model.isselect ?? false {
+            arrowImg.image = R.image.arrowdown()
             answerLbl.text = ""
+        }else {
+            arrowImg.image = R.image.arrowup()
+            answerLbl.text = model.answer ?? ""
         }
         containerView.publisherGesture.listen(on: {[weak self]_ in
-            self?.isControl = !(self?.isControl ?? true)
-            if (self?.isControl ?? false){
-                self?.answerLbl.text = model.answer ?? ""
-            }else {
-                self?.answerLbl.text = ""
-
-            }
+            self?.delegate?.selectfaq(wasPressedOnCell: self!, model: self?.model as! faqdataModel)
         }).store(self)
     }
 }

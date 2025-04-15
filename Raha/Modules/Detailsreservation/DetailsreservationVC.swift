@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class DetailsreservationVC: BaseController {
+    @IBOutlet weak var cancelHight: NSLayoutConstraint!
     @IBOutlet weak var prividerImg: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var cancelView: UIView!
@@ -84,6 +85,8 @@ extension DetailsreservationVC {
         cancelBtn.publisher.listen(on: {[weak self] _ in
             if self?.viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 2 {
                 self?.coordinator?.cancelorder(id: self?.orderId ?? 0)
+            }else if self?.viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 4 {
+                self?.coordinator?.rateorder(id: self?.orderId ?? 0)
             }
         }).store(self)
     }
@@ -115,11 +118,14 @@ extension DetailsreservationVC {
         if viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 2 {
             cancelBtn.setTitle("Cancel order".localized, for: .normal)
             cancelView.isHidden = false
+            cancelHight.constant = 92
         }else if viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 4 && viewModel?.orderdetails.value?.data?.rating == nil {
             cancelBtn.setTitle("Service Evaluation".localized, for: .normal)
             cancelView.isHidden = false
+            cancelHight.constant = 92
         }else {
             cancelView.isHidden = true
+            cancelHight.constant = 0
         }
         service.removeAll()
         service.append(contentsOf: viewModel?.orderdetails.value?.data?.service ?? [])

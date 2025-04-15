@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class CancelOrderVC: BaseController {
+    
     @IBOutlet weak var cancelLbl: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
     var viewModel: CancelOrderViewModel?
@@ -53,6 +54,9 @@ extension CancelOrderVC {
 extension CancelOrderVC {
     func setup() {
         viewModel?.getcancelpolicy()
+        cancelBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.cancelorder(id: self?.centerId ?? 0)
+        }).store(self)
     }
 }
 // MARK: - ...  View Contract

@@ -20,6 +20,12 @@ internal class Defaults {
     @StoredDefaults("addressDataDefaults")
     var address: AddressesDatum?
     
+    @StoredDefaults("latDataDefaults")
+    var lat: Double?
+    
+    @StoredDefaults("lngDataDefaults")
+    var lng: Double?
+    
     @StoredDefaults("USER_LOGIN_REMEMBER")
     var LoginRemember: Bool?
     

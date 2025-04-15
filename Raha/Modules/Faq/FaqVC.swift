@@ -82,10 +82,32 @@ extension FaqVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: FaqTableViewCell.self, indexPath)
         cell.model = viewModel?.dataSource()?[safe: indexPath.row]
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+}
+extension FaqVC : FaqTableViewCellDelegate {
+    func selectfaq(wasPressedOnCell cell: FaqTableViewCell, model: faqdataModel) {
+        var item = 0
+        for index in viewModel?.dataSource() ?? [] {
+            if index.id == model.id {
+                var index1 = index
+                if index.isselect == true {
+                    index1.isselect = false
+                }else {
+                    index1.isselect = true
+                }
+                viewModel?.replace(index1, forIndexPath: item)
+                break
+            }
+            item = item + 1
+        }
+        faqTbl.reloadData()
+    }
+    
     
 }

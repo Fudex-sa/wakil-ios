@@ -28,7 +28,8 @@ extension BookserviceCoordinator {
     }
     func addaddress() {
         guard let scene = R.storyboard.addAddressStoryboard.addAddressVC() else { return }
-        view?.pushPop(scene)
+        scene.isfirst = true
+        view?.push(scene)
     }
     func done(model: AddressesDatum) {
         view?.address = model

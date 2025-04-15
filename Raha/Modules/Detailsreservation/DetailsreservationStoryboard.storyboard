@@ -669,6 +669,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelBtn" destination="Mr9-N0-C27" id="pY0-xv-3qY"/>
+                        <outlet property="cancelHight" destination="ow2-LV-Shc" id="lli-xZ-DsU"/>
                         <outlet property="cancelView" destination="wKm-pp-wby" id="kHu-hc-7g8"/>
                         <outlet property="commentLbl" destination="IqM-0A-lnr" id="huW-NY-Maw"/>
                         <outlet property="copyView" destination="RdT-JJ-QtP" id="8em-5f-VxE"/>

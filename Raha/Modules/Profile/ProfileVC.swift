@@ -77,6 +77,9 @@ extension ProfileVC {
         addressView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.addresses()
         }).store(self)
+        deleteView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.deleteaccount()
+        }).store(self)
     }
     func reload(){
         nameLbl.text = viewModel?.userddata.value?.data?.name ?? ""

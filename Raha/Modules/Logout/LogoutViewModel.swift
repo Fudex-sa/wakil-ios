@@ -25,4 +25,12 @@ extension LogoutViewModel {
             self?.logout.send(model)
         }).store(self)
     }
+    func deleteaccount() {
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.deleteaccount.rawValue)", type: .post, UserRoot.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.logout.send(model)
+        }).store(self)
+    }
 }

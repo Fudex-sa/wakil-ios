@@ -60,6 +60,10 @@ extension ReservationVC {
 // MARK: - ...  Functions
 extension ReservationVC {
     func setup() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            return
+        }
         orderTbl.skeleton()
         orderTbl.delegate = self
         orderTbl.dataSource = self

@@ -22,7 +22,8 @@ class AddAddressViewModel: BaseViewModel {
     var cities: Publisher<[RegisterModel]> = .init()
     var statesFinished: Publisher<Bool> = .init()
     var citiesFinished: Publisher<Bool> = .init()
-    var addressdata: Publisher<UserRoot> = .init()
+    var addressdata: Publisher<AddAddres> = .init()
+    var editsdata: Publisher<UserRoot> = .init()
 
 }
 // MARK: - ...  ViewModel Contract
@@ -58,7 +59,7 @@ extension AddAddressViewModel {
         NetworkManager.instance.paramaters["lat"] = lat.value ?? ""
         NetworkManager.instance.paramaters["lng"] = lng.value ?? ""
         NetworkManager.instance.paramaters["is_default"] = is_default.value ?? 0
-        NetworkManager.instance.request(NetworkConfigration.EndPoint.addresses.rawValue, type: .post, UserRoot.self)?.response(error: { [weak self] error in
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.addresses.rawValue, type: .post, AddAddres.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
@@ -78,7 +79,7 @@ extension AddAddressViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
-            self?.addressdata.send(model)
+            self?.editsdata.send(model)
         }).store(self)
         
     }

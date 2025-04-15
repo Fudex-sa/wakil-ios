@@ -40,7 +40,6 @@ class BookserviceVC: BaseController {
 extension BookserviceVC {
     override func viewDidLoad() {
         super.viewDidLoad()
-        address = UD.address
         date = DateHelper().currentDate() ?? ""
         
     }
@@ -86,6 +85,9 @@ extension BookserviceVC {
 // MARK: - ...  Functions
 extension BookserviceVC {
     func setup() {
+        if address == nil {
+            address = UD.address
+        }
         serviceTbl.skeleton()
         serviceTbl.delegate = self
         serviceTbl.dataSource = self

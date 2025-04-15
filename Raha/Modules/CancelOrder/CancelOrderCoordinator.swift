@@ -18,5 +18,9 @@ class CancelOrderCoordinator: Coordinator {
 }
 
 extension CancelOrderCoordinator {
-    
+    func cancelorder(id:Int) {
+        guard let scene = R.storyboard.cancelPopupStoryboard.cancelPopupVC() else { return }
+        scene.orderId = id
+        view?.pushPop(scene)
+    }
 }
