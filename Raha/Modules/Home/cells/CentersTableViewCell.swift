@@ -32,13 +32,19 @@ class CentersTableViewCell: BaseTableViewCell {
         servicesCollection.delegate = self
         servicesCollection.dataSource = self
         servicesCollection.observe()
+        if let layout = servicesCollection.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
 }
 extension CentersTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 80, height: servicesCollection.height)
+        let label = UILabel(frame: CGRect.zero)
+        label.text =  homedata?.serviceTypes?[safe: indexPath.item]?.name
+        label.sizeToFit()
+        return CGSize(width:  label.frame.width + 10 , height: servicesCollection.height)
        }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           return homedata?.serviceTypes?.count ?? 0

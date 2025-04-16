@@ -451,3 +451,15 @@
 "Allow the app to access your location" = "السماح للتطبيق بالوصول لموقعك";
 "Please allow the app to access your location or enter your address to successfully complete the booking of services and home visits" = "من فضلك قم بالسماح للتبطيق بالوصول لموقعك او قم بإدخال عنوانك لتتمكن من إتمام حجز الخدمات والزيارات المنزلية بنجاح";
 "Allow access to location" = "السماح بالوصول للموقع";
+"New1" = "جديدة";
+"Under review" = "قيد المراجعة";
+"Closed" = "مغلقة";
+"Management response" = "رد الإدارة";
+"Complaints & Suggestions list is empty" = "قائمه الشكاوي والمقترحات فارغه";
+"Message Type" = "نوع الرسالة";
+"select message type" = "اختر نوع الرسالة";
+"Thank you for contacting us, we will preview the message and reply to you as soon as possible" = "شكرا لتواصلك معنا سنقوم بمعاينة الرسالة والرد عليك في أسرع وقت";
+"Complaint" = "شكوى";
+"Suggestion" = "اقتراح";
+"cancel" = "الغاء";
+"Success" = "نجاح";

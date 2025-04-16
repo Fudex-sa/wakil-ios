@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j6Q-oJ-AWo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j6Q-oJ-AWo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -54,7 +54,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dI9-qj-gbs">
-                                <rect key="frame" x="0.0" y="127" width="414" height="677"/>
+                                <rect key="frame" x="0.0" y="127" width="414" height="643"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SO-21-fRn">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="17"/>
@@ -88,8 +88,11 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvw-p1-Wi0">
-                                <rect key="frame" x="0.0" y="804" width="414" height="92"/>
+                                <rect key="frame" x="0.0" y="770" width="414" height="92"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CTA-Photoroom" translatesAutoresizingMaskIntoConstraints="NO" id="BOv-iH-Gbq">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5W-gB-qTr">
                                         <rect key="frame" x="24" y="18" width="366" height="56"/>
                                         <color key="backgroundColor" name="normalblue"/>
@@ -114,6 +117,10 @@
                                     <constraint firstItem="g5W-gB-qTr" firstAttribute="centerX" secondItem="tvw-p1-Wi0" secondAttribute="centerX" id="8Pg-PB-j3H"/>
                                     <constraint firstItem="g5W-gB-qTr" firstAttribute="centerY" secondItem="tvw-p1-Wi0" secondAttribute="centerY" id="Ix8-yc-VIa"/>
                                     <constraint firstAttribute="height" constant="92" id="LGR-md-9qN"/>
+                                    <constraint firstItem="BOv-iH-Gbq" firstAttribute="leading" secondItem="tvw-p1-Wi0" secondAttribute="leading" id="NBl-Hz-X37"/>
+                                    <constraint firstItem="BOv-iH-Gbq" firstAttribute="top" secondItem="tvw-p1-Wi0" secondAttribute="top" id="UYF-vF-JCp"/>
+                                    <constraint firstAttribute="bottom" secondItem="BOv-iH-Gbq" secondAttribute="bottom" id="XkQ-85-pXe"/>
+                                    <constraint firstAttribute="trailing" secondItem="BOv-iH-Gbq" secondAttribute="trailing" id="hXI-Nu-TCJ"/>
                                     <constraint firstItem="g5W-gB-qTr" firstAttribute="leading" secondItem="tvw-p1-Wi0" secondAttribute="leading" constant="24" id="xqx-kp-glC"/>
                                     <constraint firstAttribute="trailing" secondItem="g5W-gB-qTr" secondAttribute="trailing" constant="24" id="yJD-dn-HwL"/>
                                 </constraints>
@@ -136,7 +143,7 @@
                         <viewLayoutGuide key="safeArea" id="eRU-vT-uGi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="tvw-p1-Wi0" secondAttribute="bottom" id="1Hv-b2-bFU"/>
+                            <constraint firstItem="eRU-vT-uGi" firstAttribute="bottom" secondItem="tvw-p1-Wi0" secondAttribute="bottom" id="1Hv-b2-bFU"/>
                             <constraint firstItem="0U7-t4-HCj" firstAttribute="leading" secondItem="4wi-JJ-DTy" secondAttribute="leading" constant="24" id="7Mh-xx-hvO"/>
                             <constraint firstItem="0U7-t4-HCj" firstAttribute="top" secondItem="eRU-vT-uGi" secondAttribute="top" constant="20" id="7NE-j7-Yjr"/>
                             <constraint firstItem="dI9-qj-gbs" firstAttribute="trailing" secondItem="eRU-vT-uGi" secondAttribute="trailing" id="IEP-og-OvT"/>
@@ -159,6 +166,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CTA-Photoroom" width="430" height="99"/>
         <image name="back" width="24" height="24"/>
         <namedColor name="Black1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -84,6 +84,9 @@ extension MoreVC {
         privacyView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.privacy()
         }).store(self)
+        complainView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.complains()
+        }).store(self)
         settingView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.setting()
         }).store(self)

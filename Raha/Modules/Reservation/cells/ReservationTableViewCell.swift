@@ -9,6 +9,7 @@
 import UIKit
 
 class ReservationTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var widthContants: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
@@ -35,19 +36,34 @@ class ReservationTableViewCell: BaseTableViewCell {
         }
         titleLbl.text = title
         if model.is_gift ?? 0 == 1 {
-            homedata?.serviceTypes?.append("".localized)
+            homedata?.serviceTypes?.append("gift".localized)
         }
+        var width = 0
+        for index in homedata?.serviceTypes ?? [] {
+            let label = UILabel(frame: CGRect.zero)
+            label.text =  index.name
+            label.sizeToFit()
+            width = width + Int(label.frame.width) + 10
+        }
+        widthContants.constant = CGFloat(width + ((homedata?.serviceTypes?.count ?? 0 ) * 8) )
         servicesCollection.skeleton()
         servicesCollection.delegate = self
         servicesCollection.dataSource = self
+        if let layout = servicesCollection.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
         servicesCollection.observe()
+        servicesCollection.reloadData()
     }
 }
 extension ReservationTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 80, height: servicesCollection.height)
+        let label = UILabel(frame: CGRect.zero)
+        label.text =  homedata?.serviceTypes?[safe: indexPath.item]?.name
+        label.sizeToFit()
+        return CGSize(width:  label.frame.width + 10 , height: servicesCollection.height)
        }
       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           return homedata?.serviceTypes?.count ?? 0

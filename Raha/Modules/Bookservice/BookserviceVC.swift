@@ -41,11 +41,10 @@ extension BookserviceVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         date = DateHelper().currentDate() ?? ""
-        
+        viewModel = .init()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel = .init()
         coordinator = .init()
         coordinator?.view = self
         setup()
@@ -53,8 +52,8 @@ extension BookserviceVC {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        viewModel = nil
         coordinator = nil
+        viewModel?.createorder = .init()
     }
     override func bind() {
         super.bind()

@@ -456,3 +456,15 @@
 "Allow the app to access your location" = "Allow the app to access your location";
 "Please allow the app to access your location or enter your address to successfully complete the booking of services and home visits" = "Please allow the app to access your location or enter your address to successfully complete the booking of services and home visits";
 "Allow access to location" = "Allow access to location";
+"New1" = "New";
+"Under review" = "Under review";
+"Closed" = "Closed";
+"Management response" = "Management response";
+"Complaints & Suggestions list is empty" = "Complaints & Suggestions list is empty";
+"Message Type" = "Message Type";
+"select message type" = "select message type";
+"Thank you for contacting us, we will preview the message and reply to you as soon as possible" = "Thank you for contacting us, we will preview the message and reply to you as soon as possible";
+"Complaint" = "Complaint";
+"Suggestion" = "Suggestion";
+"cancel" = "cancel";
+"Success" = "Success";

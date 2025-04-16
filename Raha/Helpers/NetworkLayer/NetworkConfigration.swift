@@ -124,6 +124,8 @@ struct NetworkConfigration {
         case myorders = "client/my-orders"
         case orderdetails = "client/orders/"
         case cancelpolicy = "client/pages/cancellation-policy"
+        case compalins = "client/my-complaint-suggesstion"
+        case sendcompalin = "client/complaintOrSuggest"
     }
 }
 

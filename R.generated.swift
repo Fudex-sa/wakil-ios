@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 39 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 41 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -110,6 +110,8 @@ struct R: Rswift.Validatable {
     static let chooseLocMethodStoryboard = _R.storyboard.chooseLocMethodStoryboard()
     /// Storyboard `ClientRatingStoryboard`.
     static let clientRatingStoryboard = _R.storyboard.clientRatingStoryboard()
+    /// Storyboard `ComplainsStoryboard`.
+    static let complainsStoryboard = _R.storyboard.complainsStoryboard()
     /// Storyboard `ContactusStoryboard`.
     static let contactusStoryboard = _R.storyboard.contactusStoryboard()
     /// Storyboard `DetailscentersStoryboard`.
@@ -164,6 +166,8 @@ struct R: Rswift.Validatable {
     static let selectLanguageStoryboard = _R.storyboard.selectLanguageStoryboard()
     /// Storyboard `SelectonmapStoryboard`.
     static let selectonmapStoryboard = _R.storyboard.selectonmapStoryboard()
+    /// Storyboard `SendcomplainStoryboard`.
+    static let sendcomplainStoryboard = _R.storyboard.sendcomplainStoryboard()
     /// Storyboard `SettingsStoryboard`.
     static let settingsStoryboard = _R.storyboard.settingsStoryboard()
     /// Storyboard `TermsStoryboard`.
@@ -231,6 +235,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ClientRatingStoryboard", bundle: ...)`
     static func clientRatingStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.clientRatingStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ComplainsStoryboard", bundle: ...)`
+    static func complainsStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.complainsStoryboard)
     }
     #endif
 
@@ -420,6 +431,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SelectonmapStoryboard", bundle: ...)`
     static func selectonmapStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.selectonmapStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SendcomplainStoryboard", bundle: ...)`
+    static func sendcomplainStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.sendcomplainStoryboard)
     }
     #endif
 
@@ -11044,6 +11062,9 @@ struct _R: Rswift.Validatable {
       try clientRatingStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try complainsStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try contactusStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -11123,6 +11144,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try selectonmapStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try sendcomplainStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try settingsStoryboard.validate()
@@ -11379,6 +11403,28 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'ClientRatingStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.clientRatingStoryboard().clientRatingVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'clientRatingVC' could not be loaded from storyboard 'ClientRatingStoryboard' as 'ClientRatingVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct complainsStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ComplainsVC
+
+      let bundle = R.hostingBundle
+      let complainsVC = StoryboardViewControllerResource<ComplainsVC>(identifier: "ComplainsVC")
+      let name = "ComplainsStoryboard"
+
+      func complainsVC(_: Void = ()) -> ComplainsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: complainsVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.complainsStoryboard().complainsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'complainsVC' could not be loaded from storyboard 'ComplainsStoryboard' as 'ComplainsVC'.") }
       }
 
       fileprivate init() {}
@@ -12196,6 +12242,28 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'SelectonmapStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.selectonmapStoryboard().selectonmapVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectonmapVC' could not be loaded from storyboard 'SelectonmapStoryboard' as 'SelectonmapVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct sendcomplainStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SendcomplainVC
+
+      let bundle = R.hostingBundle
+      let name = "SendcomplainStoryboard"
+      let sendcomplainVC = StoryboardViewControllerResource<SendcomplainVC>(identifier: "SendcomplainVC")
+
+      func sendcomplainVC(_: Void = ()) -> SendcomplainVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: sendcomplainVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.sendcomplainStoryboard().sendcomplainVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendcomplainVC' could not be loaded from storyboard 'SendcomplainStoryboard' as 'SendcomplainVC'.") }
       }
 
       fileprivate init() {}

@@ -187,6 +187,9 @@ extension DetailscentersVC {
         }
         services.removeAll()
         services.append(contentsOf: viewModel?.centerdetails.value?.data?.services ?? [])
+        if let layout = catsCollection.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
         catsCollection.reloadData()
         servicesTbl.skeleton()
         servicesTbl.stopSwipeButtom()
@@ -216,7 +219,10 @@ extension DetailscentersVC {
 extension DetailscentersVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == catsCollection {
-            return .init(width: 75, height: catsCollection.height)
+            let label = UILabel(frame: CGRect.zero)
+            label.text =  ServiceType[safe: indexPath.item]?.value
+            label.sizeToFit()
+            return CGSize(width:  label.frame.width + 10 , height: catsCollection.height)
         }else if collectionView == ratingCollection {
             return .init(width: 280, height: ratingCollection.height)
         }else {

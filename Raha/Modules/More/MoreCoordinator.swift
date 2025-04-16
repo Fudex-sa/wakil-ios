@@ -47,6 +47,14 @@ extension MoreCoordinator {
         guard let scene = R.storyboard.faqStoryboard.faqVC() else { return }
         view?.push(scene)
     }
+    func complains() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            return
+        }
+        guard let scene = R.storyboard.complainsStoryboard.complainsVC() else { return }
+        view?.push(scene)
+    }
     func logout() {
         guard let scene = R.storyboard.logoutStoryboard.logoutVC() else { return }
         view?.pushPop(scene)
