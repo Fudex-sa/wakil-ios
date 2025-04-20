@@ -94,11 +94,9 @@ extension AddAddressVC {
     func setup() {
         if isedit {
             viewModel?.addressId.send(address?.id ?? 0)
-            streetTxf.text = address?.street ?? ""
             hayTxf.text = address?.district ?? ""
             cityLbl.text = address?.cityID?.name ?? ""
             regionLbl.text = address?.stateID?.name ?? ""
-            viewModel?.street.send(address?.street ?? "")
             viewModel?.district.send(address?.district ?? "")
             viewModel?.statesId.send(address?.stateID?.id ?? 0)
             viewModel?.city_id.send(address?.cityID?.id ?? 0)

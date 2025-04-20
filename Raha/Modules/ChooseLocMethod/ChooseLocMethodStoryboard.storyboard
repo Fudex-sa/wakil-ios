@@ -129,17 +129,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWe-59-fLo">
+                                <rect key="frame" x="0.0" y="48" width="414" height="516"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sh9-XF-Ahb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dWe-59-fLo" firstAttribute="leading" secondItem="sh9-XF-Ahb" secondAttribute="leading" id="AEf-9j-1V1"/>
+                            <constraint firstItem="R2X-af-31T" firstAttribute="top" secondItem="dWe-59-fLo" secondAttribute="bottom" id="Btb-t9-c9l"/>
                             <constraint firstItem="sh9-XF-Ahb" firstAttribute="bottom" secondItem="R2X-af-31T" secondAttribute="bottom" id="J5J-2L-zOr"/>
+                            <constraint firstItem="dWe-59-fLo" firstAttribute="top" secondItem="sh9-XF-Ahb" secondAttribute="top" id="RbW-1L-Vvf"/>
                             <constraint firstItem="sh9-XF-Ahb" firstAttribute="trailing" secondItem="R2X-af-31T" secondAttribute="trailing" id="dN8-fT-GK9"/>
+                            <constraint firstItem="sh9-XF-Ahb" firstAttribute="trailing" secondItem="dWe-59-fLo" secondAttribute="trailing" id="iY3-OQ-jLC"/>
                             <constraint firstItem="R2X-af-31T" firstAttribute="leading" secondItem="sh9-XF-Ahb" secondAttribute="leading" id="xod-bm-AlS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addBtn" destination="wZO-N9-UWy" id="MDg-kJ-sIJ"/>
+                        <outlet property="closeBtn" destination="dWe-59-fLo" id="40b-2K-ChS"/>
                         <outlet property="locBtn" destination="GHT-Oc-M4c" id="Uo1-8w-h0Y"/>
                     </connections>
                 </viewController>

@@ -24,7 +24,7 @@ class AddresslistTableViewCell: BaseTableViewCell {
         super.setup()
         skeleton(view: containerView)
         guard let model = model as? AddressesDatum else { return }
-        titleLbl.text = "\(model.street ?? "") - \(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
+        titleLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
         if model.isDefault ?? 0 == 1 {
             deleteBtn.isHidden = true
             defualtLbl.isHidden = false

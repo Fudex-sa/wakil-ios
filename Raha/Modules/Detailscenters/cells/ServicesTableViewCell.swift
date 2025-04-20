@@ -9,6 +9,7 @@
 import UIKit
 
 class ServicesTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var rateLbl: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var selectLbl: UILabel!
     @IBOutlet weak var selectImg: UIImageView!
@@ -24,6 +25,7 @@ class ServicesTableViewCell: BaseTableViewCell {
         priceLbl.text = model.price ?? ""
         providerLbl.text = model.providerType ?? ""
         timeLbl.text = model.duration ?? ""
+        rateLbl.text = model.rate?.string ?? ""
         if model.isselect == true {
             selectLbl.text = "Selected".localized
             selectLbl.textColor = R.color.normalblue()

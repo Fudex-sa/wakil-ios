@@ -48,8 +48,10 @@ extension HomeViewModel {
         }).store(self)
     }
     func fetchhome() {
-        NetworkManager.instance.paramaters["lat"] = lat.value ?? 0.0
-        NetworkManager.instance.paramaters["lng"] = lng.value ?? 0.0
+        if lat.value ?? 0.0 != 0.0 {
+            NetworkManager.instance.paramaters["lat"] = lat.value ?? 0.0
+            NetworkManager.instance.paramaters["lng"] = lng.value ?? 0.0
+        }
         if distance.value ?? "" != "" {
             NetworkManager.instance.paramaters["max_distance"] = distance.value ?? ""
         }

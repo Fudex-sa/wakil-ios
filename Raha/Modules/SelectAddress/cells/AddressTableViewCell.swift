@@ -24,7 +24,7 @@ class AddressTableViewCell: BaseTableViewCell {
         super.setup()
         skeleton(view: containerView)
         guard let model = model as? AddressesDatum else { return }
-        locLbl.text = "\(model.street ?? "") - \(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
+        locLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
         if model.isDefault ?? 0 == 1 {
             defualtLbl.isHidden = false
             locTop.constant = 8

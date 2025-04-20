@@ -18,7 +18,6 @@ struct AddressesModel: Codable {
 // MARK: - Datum
 struct AddressesDatum: Codable {
     let id: Int?
-    let street: String?
     let lat, lng: String?
     let isDefault: Int?
     let stateID: CityID?
@@ -26,7 +25,7 @@ struct AddressesDatum: Codable {
     let district: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, street, lat, lng
+        case id, lat, lng
         case isDefault = "is_default"
         case stateID = "state_id"
         case cityID = "city_id"

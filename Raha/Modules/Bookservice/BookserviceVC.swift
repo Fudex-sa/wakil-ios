@@ -107,7 +107,7 @@ extension BookserviceVC {
             addressView.isHidden = true
         }
         if address != nil {
-            addressLbl.text = "\(address?.street ?? "") - \(address?.district ?? "") - \(address?.cityID?.name ?? "") - \(address?.stateID?.name ?? "")"
+            addressLbl.text = "\(address?.district ?? "") - \(address?.cityID?.name ?? "") - \(address?.stateID?.name ?? "")"
             changeAddressBtn.setTitle("Change".localized, for: .normal)
         }else {
             addressLbl.text = "Addresses list is empty".localized

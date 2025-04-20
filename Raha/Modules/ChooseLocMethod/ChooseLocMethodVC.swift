@@ -11,9 +11,11 @@ import UIKit
 protocol ChooseLocMethodVCDelegate: AnyObject {
     func addaddressreturn()
     func currentlocreturn()
+    func close()
 }
 // MARK: - ...  ViewController - Vars
 class ChooseLocMethodVC: BaseController {
+    @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var locBtn: UIButton!
     @IBOutlet weak var addBtn: UIButton!
     var viewModel: ChooseLocMethodViewModel?
@@ -48,6 +50,10 @@ extension ChooseLocMethodVC {
         }).store(self)
         locBtn.publisher.listen(on: {[weak self] _ in
             self?.delegate?.currentlocreturn()
+            self?.dismiss(animated: true, completion: nil)
+        }).store(self)
+        closeBtn.publisher.listen(on: {[weak self] _ in
+            self?.delegate?.close()
             self?.dismiss(animated: true, completion: nil)
         }).store(self)
     }

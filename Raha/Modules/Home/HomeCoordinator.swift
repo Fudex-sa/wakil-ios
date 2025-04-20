@@ -47,7 +47,7 @@ extension HomeCoordinator {
         view?.push(scene)
     }
     func done(model:AddressesDatum){
-        view?.locLbl.text = "\(model.street ?? "") - \(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
+        view?.locLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
         view?.addressdata = model
         view?.viewModel?.lat.send(model.lat?.double() ?? 0.0)
         view?.viewModel?.lng.send(model.lng?.double() ?? 0.0)
@@ -79,6 +79,9 @@ extension HomeCoordinator {
     
     func currentlocreturn() {
         view?.currentlocation()
+    }
+    func close() {
+        view?.viewModel?.fetchhome()
     }
     
 }

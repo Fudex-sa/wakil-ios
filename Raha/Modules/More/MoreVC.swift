@@ -59,6 +59,7 @@ extension MoreVC {
         viewModel?.logout.listen(on: { [weak self] value in
             self?.stopLoading()
             UD.user = nil
+            UD.address = nil
             Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
         })
     }

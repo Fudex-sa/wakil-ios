@@ -33,7 +33,7 @@ extension BookserviceCoordinator {
     }
     func done(model: AddressesDatum) {
         view?.address = model
-        view?.addressLbl.text = "\(model.street ?? "") - \(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
+        view?.addressLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
     }
     func paymentdone() {
         guard let scene = R.storyboard.paymentDoneStoryboard.paymentDoneVC() else { return }

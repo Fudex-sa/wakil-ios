@@ -193,6 +193,7 @@
                 <outlet property="containerView" destination="3EZ-Mm-Mce" id="oDh-dY-FZN"/>
                 <outlet property="priceLbl" destination="uaA-4k-u74" id="kpi-CZ-MGv"/>
                 <outlet property="providerLbl" destination="x42-tr-1mf" id="DkX-uT-DWe"/>
+                <outlet property="rateLbl" destination="RBH-Mf-nuQ" id="R1F-Fp-nsY"/>
                 <outlet property="selectImg" destination="HyB-mb-aZ0" id="25Q-de-lEo"/>
                 <outlet property="selectLbl" destination="2It-H1-lHp" id="0IA-Tj-AKc"/>
                 <outlet property="timeLbl" destination="wfl-gE-Odc" id="gwA-Il-XkE"/>

@@ -92,7 +92,7 @@ extension HomeVC {
             if UD.address == nil {
                 viewModel?.fetchaddresses()
             }else {
-                locLbl.text = "\(UD.address?.street ?? "") - \(UD.address?.district ?? "") - \(UD.address?.cityID?.name ?? "") - \(UD.address?.stateID?.name ?? "")"
+                locLbl.text = "\(UD.address?.district ?? "") - \(UD.address?.cityID?.name ?? "") - \(UD.address?.stateID?.name ?? "")"
                 addressdata = UD.address
                 viewModel?.lat.send(UD.address?.lat?.double() ?? 0.0)
                 viewModel?.lng.send(UD.address?.lng?.double() ?? 0.0)
@@ -140,7 +140,7 @@ extension HomeVC {
         }
         for index in viewModel?.addressList.value ?? [] {
             if index.isDefault ?? 0 == 1 {
-                locLbl.text = "\(index.street ?? "") - \(index.district ?? "") - \(index.cityID?.name ?? "") - \(index.stateID?.name ?? "")"
+                locLbl.text = "\(index.district ?? "") - \(index.cityID?.name ?? "") - \(index.stateID?.name ?? "")"
                 addressdata = index
                 UD.address = index
                 viewModel?.lat.send(index.lat?.double() ?? 0.0)
@@ -182,17 +182,25 @@ extension HomeVC {
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
             viewModel?.fetchhome()
-        case .authorizedAlways, .authorizedWhenInUse:
+        case .authorizedAlways, .authorizedWhenInUse, .authorized:
             location = .init()
             location?.useOnlyoneTime = false
             location?.onUpdateLocation = { [self] degree in
-                if self.lat != 0 {
+                if self.lat != 0.0 {
                     return
                 }
                 self.lat = degree?.latitude ?? 0
                 self.lng = degree?.longitude ?? 0
                 UD.lat = lat
                 UD.lng = lng
+                getAddressFromLatLon(latitude: self.lat, longitude: self.lng) { address in
+                    if let address = address {
+                        self.locLbl.text = address
+                    } else {
+                        print("Unable to get address")
+                    }
+                }
+
                 isaddress = true
                 viewModel?.lat.send(degree?.latitude ?? 0)
                 viewModel?.lng.send(degree?.longitude ?? 0)
@@ -217,18 +225,25 @@ extension HomeVC {
                 viewModel?.resetPaginator()
                 viewModel?.clearDataSource()
                 viewModel?.fetchhome()
-            case .authorizedAlways, .authorizedWhenInUse:
+            case .authorizedAlways, .authorizedWhenInUse, .authorized:
                 // Location permission is authorized.
                 location = .init()
                 location?.useOnlyoneTime = false
                 location?.onUpdateLocation = { [self] degree in
-                    if self.lat != 0 {
+                    if self.lat != 0.0 {
                         return
                     }
                     self.lat = degree?.latitude ?? 0
                     self.lng = degree?.longitude ?? 0
                     UD.lat = lat
                     UD.lng = lng
+                    getAddressFromLatLon(latitude: self.lat, longitude: self.lng) { address in
+                        if let address = address {
+                            self.locLbl.text = address
+                        } else {
+                            print("Unable to get address")
+                        }
+                    }
                     isaddress = true
                     viewModel?.lat.send(degree?.latitude ?? 0)
                     viewModel?.lng.send(degree?.longitude ?? 0)
@@ -242,6 +257,37 @@ extension HomeVC {
                 break
             }
         }
+
+    func getAddressFromLatLon(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (String?) -> Void) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                print("Reverse geocode failed: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            if let placemark = placemarks?.first {
+                var addressString = ""
+
+                if let name = placemark.name {
+                    addressString += name + ", "
+                }
+                if let city = placemark.locality {
+                    addressString += city + ", "
+                }
+                if let country = placemark.country {
+                    addressString += country
+                }
+                completion(addressString)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+
 }
 // MARK: - ...  View Contract
 extension HomeVC {
