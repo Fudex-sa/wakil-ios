@@ -117,19 +117,43 @@ extension DetailscentersVC {
             viewModel?.loctype.send("center")
         }
         homeRadio.onSelect(execute: { [self] in
+            if loctype == "home" {
+                return
+            }
             centerRadio.deselect()
             homeLbl.textColor = R.color.black1()
             centerLbl.textColor = R.color.darkgray2()
             viewModel?.loctype.send("home")
+            loctype = "home"
             selectservices.removeAll()
             countLbl.isHidden = true
             countWidth.constant = 0
             viewModel?.fetchcentersdetails()
         })
+        homeRadio.onDeselect {[self] in
+            homeLbl.textColor = R.color.darkgray2()
+            centerLbl.textColor = R.color.darkgray2()
+            viewModel?.loctype.send("")
+            loctype = ""
+            selectservices.removeAll()
+            viewModel?.fetchcentersdetails()
+        }
+        centerRadio.onDeselect {[self] in
+            homeLbl.textColor = R.color.darkgray2()
+            centerLbl.textColor = R.color.darkgray2()
+            viewModel?.loctype.send("")
+            loctype = ""
+            selectservices.removeAll()
+            viewModel?.fetchcentersdetails()
+        }
         centerRadio.onSelect(execute: { [self] in
+            if loctype == "center" {
+                return
+            }
             centerLbl.textColor = R.color.black1()
             homeLbl.textColor = R.color.darkgray2()
             homeRadio.deselect()
+            loctype = "center"
             viewModel?.loctype.send("center")
             selectservices.removeAll()
             countLbl.isHidden = true
@@ -154,6 +178,20 @@ extension DetailscentersVC {
             self?.coordinator?.bookservices(id: self?.centerId ?? 0)
 
         }).store(self)
+        addressLbl.UIViewAction {
+            guard let latString = self.viewModel?.centerdetails.value?.data?.lat,
+                  let lngString = self.viewModel?.centerdetails.value?.data?.lng,
+                  let lat = Double(latString),
+                  let lng = Double(lngString) else {
+                // Handle invalid coordinates gracefully if needed
+                return
+            }
+
+            let title = self.viewModel?.centerdetails.value?.data?.name ?? ""
+            let navigate = NavigateMap(lat: lat, lng: lng, title: title)
+            navigate.openMapForPlace(delegate: self)
+        }
+
        
     }
     func reload() {

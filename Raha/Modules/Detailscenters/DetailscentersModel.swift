@@ -19,7 +19,7 @@ struct DetailscentersModel: Codable {
 struct DetailscentersDataClass: Codable {
     let id: Int?
     let name, description, address: String?
-    let image: String?
+    let image, lat, lng: String?
     let rate: Double?
     let homeServicesAvailable: Int?
     let distance: String?
@@ -28,7 +28,7 @@ struct DetailscentersDataClass: Codable {
     let services: [Service]?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, description, address, image, rate
+        case id, name, description, address, image, rate, lat, lng
         case homeServicesAvailable = "home_services_available"
         case distance, images
         case serviceTypes = "service_types"

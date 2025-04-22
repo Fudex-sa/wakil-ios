@@ -33,6 +33,10 @@ struct DataClass: Codable {
 struct SlotsModel: Codable {
     let status: Bool?
     let message: String?
+    let sub_total: Double?
+    let vat_amount: Double?
+    let total_price: Double?
+    let vat_rate: String?
     let data: [SlotsDatum]?
 }
 

@@ -3362,7 +3362,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 387 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 390 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3560,6 +3560,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let bookTheServiceNow = Rswift.StringResource(key: "Book the service now", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Booked on
+      ///
+      /// Locales: ar, en
+      static let bookedOn = Rswift.StringResource(key: "Booked on", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Booking Cancellation Confirmation
       ///
       /// Locales: ar, en
@@ -3588,6 +3592,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let budgetLan = Rswift.StringResource(key: "budget.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: COPIED!
+      ///
+      /// Locales: ar, en
+      static let copieD = Rswift.StringResource(key: "COPIED!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Calendar
       ///
       /// Locales: ar, en
@@ -4684,6 +4692,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let username = Rswift.StringResource(key: "Username", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Vat
+      ///
+      /// Locales: ar, en
+      static let vat = Rswift.StringResource(key: "Vat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Verification
       ///
       /// Locales: ar, en
@@ -5648,6 +5660,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Book the service now", bundle: bundle, comment: "")
       }
 
+      /// en translation: Booked on
+      ///
+      /// Locales: ar, en
+      static func bookedOn(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Booked on", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Booked on"
+        }
+
+        return NSLocalizedString("Booked on", bundle: bundle, comment: "")
+      }
+
       /// en translation: Booking Cancellation Confirmation
       ///
       /// Locales: ar, en
@@ -5751,6 +5778,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("budget.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: COPIED!
+      ///
+      /// Locales: ar, en
+      static func copieD(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("COPIED!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "COPIED!"
+        }
+
+        return NSLocalizedString("COPIED!", bundle: bundle, comment: "")
       }
 
       /// en translation: Calendar
@@ -9861,6 +9903,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Username", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Vat
+      ///
+      /// Locales: ar, en
+      static func vat(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Vat", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Vat"
+        }
+
+        return NSLocalizedString("Vat", bundle: bundle, comment: "")
       }
 
       /// en translation: Verification

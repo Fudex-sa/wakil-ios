@@ -42,12 +42,21 @@ struct NavigateMap {
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
     func openGoogleMap() {
-        let (lat, lng, _) = (self.lat ?? 0, self.lng ?? 0, self.title ?? "")
-        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-            UIApplication.shared.open(URL(string:
-                "comgooglemaps://?saddr=&daddr=\(lat),\(lng)&directionsmode=driving")!)
-        } else {
-            NSLog("Can't use comgooglemaps://")
-        }
+        if let url = URL(string: "comgooglemaps://?center=\(self.lat ?? 0),\(self.lng ?? 0)&zoom=14&views=traffic") {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    // Google Maps app is not installed, open in Safari
+                    let googleMapsUrl = URL(string: "https://maps.google.com/?q=\(self.lat ?? 0),\(self.lng ?? 0)")!
+                    UIApplication.shared.open(googleMapsUrl, options: [:], completionHandler: nil)
+                }
+            }
+//        let (lat, lng, _) = (self.lat ?? 0, self.lng ?? 0, self.title ?? "")
+//        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+//            UIApplication.shared.open(URL(string:
+//                "comgooglemaps://?saddr=&daddr=\(lat),\(lng)&directionsmode=driving")!)
+//        } else {
+//            NSLog("Can't use comgooglemaps://")
+//        }
     }
 }

@@ -22,6 +22,9 @@ class BookserviceVC: BaseController {
     @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var visitLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var vatTitleLbl: UILabel!
+    @IBOutlet weak var vatLbl: UILabel!
+
     @IBOutlet weak var serviceTbl: UITableView!
     var viewModel: BookserviceViewModel?
     var coordinator: BookserviceCoordinator?
@@ -68,6 +71,9 @@ extension BookserviceVC {
             }else {
                 self?.noAppointmentLbl.isHidden = true
             }
+            self?.vatTitleLbl.text = "\("Vat".localized) \(self?.viewModel?.slotsdetails.value?.vat_rate ?? "") % :"
+            self?.vatLbl.text = self?.viewModel?.slotsdetails.value?.vat_amount?.string ?? ""
+            self?.priceLbl.text = self?.viewModel?.slotsdetails.value?.sub_total?.string ?? ""
             self?.slotsTbl.reloadData()
         })
         viewModel?.createorder.listen(on: { [weak self] value in

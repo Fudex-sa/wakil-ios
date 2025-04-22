@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MBProgressHUD
 
 // MARK: - ...  ViewController - Vars
 class DetailsreservationVC: BaseController {
@@ -39,6 +40,7 @@ class DetailsreservationVC: BaseController {
     var coordinator: DetailsreservationCoordinator?
     var service: [Service] = []
     var orderId = 0
+    var copy = ""
 }
 
 // MARK: - ...  LifeCycle
@@ -75,6 +77,13 @@ extension DetailsreservationVC {
 // MARK: - ...  Functions
 extension DetailsreservationVC {
     func setup() {
+        if UD.address != nil {
+            viewModel?.lat.send(Double(UD.address?.lat ?? "0.0") ?? 0.0)
+            viewModel?.lng.send(Double(UD.address?.lng ?? "0.0") ?? 0.0)
+        }else {
+            viewModel?.lat.send(UD.lat ?? 0.0)
+            viewModel?.lng.send(UD.lng ?? 0.0)
+        }
         viewModel?.orderId.send(orderId)
         startLoading()
         viewModel?.fetchorderdetails()
@@ -87,6 +96,16 @@ extension DetailsreservationVC {
                 self?.coordinator?.cancelorder(id: self?.orderId ?? 0)
             }else if self?.viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 4 {
                 self?.coordinator?.rateorder(id: self?.orderId ?? 0)
+            }
+        }).store(self)
+        copyView.publisherGesture.listen(on: {[weak self] _ in
+            UIPasteboard.general.string = self?.copy ?? ""
+            let progress = MBProgressHUD.showAdded(to: self?.view ?? UIView(), animated: true)
+            progress.mode = .text
+            progress.label.text = "COPIED!".localized
+            progress.show(animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                progress.hide(animated: true)
             }
         }).store(self)
     }
@@ -126,6 +145,16 @@ extension DetailsreservationVC {
         }else {
             cancelView.isHidden = true
             cancelHight.constant = 0
+        }
+        copy = ""
+        copy = "\("Booked on".localized) \(viewModel?.orderdetails.value?.data?.date ?? "") \(viewModel?.orderdetails.value?.data?.time ?? "") \n"
+        for index in viewModel?.orderdetails.value?.data?.service ?? [] {
+            var loc = if index.locationType ?? "" == "home" {"Domestic service".localized}else{"At the center".localized}
+            if Localizer.current == .english {
+                copy = "\(copy)Booking \(index.name ?? "") service for \(index.duration ?? "") minutes at a price of \(index.price ?? "") SAR for \(loc)\n"
+            }else {
+                copy = "\(copy)تم حجز خدمه \(index.name ?? "") لمده \(index.duration ?? "") دقيقه بسعر \(index.price ?? "") ريال \(loc)\n"
+            }
         }
         service.removeAll()
         service.append(contentsOf: viewModel?.orderdetails.value?.data?.service ?? [])

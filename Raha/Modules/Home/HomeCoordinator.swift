@@ -81,6 +81,8 @@ extension HomeCoordinator {
         view?.currentlocation()
     }
     func close() {
+        UD.lat = 0.0
+        UD.lng = 0.0
         view?.viewModel?.fetchhome()
     }
     

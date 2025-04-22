@@ -10,6 +10,8 @@ import Foundation
 
 // MARK: - ...  ViewModel
 class DetailsreservationViewModel: BaseViewModel{
+    var lat: Publisher<Double> = .init()
+    var lng: Publisher<Double> = .init()
     var orderId: Publisher<Int> = .init()
     var orderdetails: Publisher<DetailsreservationModel> = .init()
 }
@@ -19,6 +21,10 @@ extension DetailsreservationViewModel {
 // MARK: - ...  Example of network response
 extension DetailsreservationViewModel {
     func fetchorderdetails() {
+        if lat.value ?? 0.0 != 0.0 {
+            NetworkManager.instance.paramaters["lat"] = lat.value ?? 0.0
+            NetworkManager.instance.paramaters["lng"] = lng.value ?? 0.0
+        }
         NetworkManager.instance.request("\(NetworkConfigration.EndPoint.orderdetails.rawValue)\(orderId.value ?? 0)", type: .get, DetailsreservationModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

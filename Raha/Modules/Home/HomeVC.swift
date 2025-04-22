@@ -127,11 +127,22 @@ extension HomeVC {
     }
     func reloadaadress() {
         if viewModel?.addressList.value?.count ?? 0 == 0 {
-            if UD.lat ?? 0 == 0 {
+            if UD.lat ?? -1 == -1 {
                 coordinator?.currentloc()
             }else {
                 viewModel?.lat.send(UD.lat ?? 0.0)
                 viewModel?.lng.send(UD.lng ?? 0.0)
+                if UD.lat ?? 0.0 != 0.0 {
+                    lat = UD.lat ?? 0.0
+                    lng = UD.lng ?? 0.0
+                    getAddressFromLatLon(latitude: self.lat, longitude: self.lng) { address in
+                        if let address = address {
+                            self.locLbl.text = address
+                        } else {
+                            print("Unable to get address")
+                        }
+                    }
+                }
                 viewModel?.resetPaginator()
                 viewModel?.clearDataSource()
                 viewModel?.fetchhome()

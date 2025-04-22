@@ -14,6 +14,7 @@ class SelectservicesTableViewCell: BaseTableViewCell {
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var providerLbl: UILabel!
+    @IBOutlet weak var rateLbl: UILabel!
     override func setup() {
         super.setup()
         skeleton(view: containerView)
@@ -22,5 +23,6 @@ class SelectservicesTableViewCell: BaseTableViewCell {
         priceLbl.text = model.price ?? ""
         providerLbl.text = model.providerType ?? ""
         timeLbl.text = model.duration ?? ""
+        rateLbl.text = model.rate?.string ?? ""
     }
 }
