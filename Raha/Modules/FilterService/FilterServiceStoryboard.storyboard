@@ -19,6 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFT-2m-vrZ">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ue2-yM-QF2">
                                 <rect key="frame" x="20" y="164.5" width="374" height="567.5"/>
                                 <subviews>
@@ -398,15 +402,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="ue2-yM-QF2" secondAttribute="trailing" constant="20" id="0pU-3t-5SR"/>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="bottom" secondItem="YFT-2m-vrZ" secondAttribute="bottom" id="SgP-WW-Eeh"/>
                             <constraint firstItem="ue2-yM-QF2" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="20" id="UTL-LV-tgl"/>
                             <constraint firstItem="ue2-yM-QF2" firstAttribute="centerX" secondItem="wn8-wF-9xc" secondAttribute="centerX" id="XCo-wm-aOe"/>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="YFT-2m-vrZ" secondAttribute="trailing" id="avS-hL-2jR"/>
                             <constraint firstItem="ue2-yM-QF2" firstAttribute="centerY" secondItem="wn8-wF-9xc" secondAttribute="centerY" id="fRU-NA-mns"/>
+                            <constraint firstItem="YFT-2m-vrZ" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" id="gHo-fV-LiW"/>
+                            <constraint firstItem="YFT-2m-vrZ" firstAttribute="top" secondItem="ckT-Oz-gwY" secondAttribute="top" id="uP6-Ib-Dox"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="centerLbl" destination="AmP-Vp-dtR" id="bmw-Og-7K9"/>
                         <outlet property="centerRadio" destination="4lD-ZS-Jnd" id="cYe-6j-Vea"/>
                         <outlet property="clearBtn" destination="p2K-54-jip" id="ilm-42-7aM"/>
+                        <outlet property="closeBtn" destination="YFT-2m-vrZ" id="Pdj-nw-mwa"/>
                         <outlet property="distanceLbl" destination="VkA-IL-jle" id="0b3-sN-bKz"/>
                         <outlet property="distanceView" destination="HfP-lS-F6S" id="onm-zN-vsh"/>
                         <outlet property="femaleLbl" destination="D0c-k8-dOc" id="g44-69-FRq"/>

@@ -215,6 +215,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="obv-eQ-TpR"/>
                     <connections>
+                        <outlet property="homeView" destination="pLc-pN-o29" id="ktP-Vi-FeL"/>
                         <outlet property="newLbl" destination="2QN-1g-xI2" id="13j-9l-GIZ"/>
                         <outlet property="newLineView" destination="WwQ-Cc-9e9" id="EAg-dZ-FeG"/>
                         <outlet property="newView" destination="fhe-2l-kOu" id="iAJ-CD-QH5"/>

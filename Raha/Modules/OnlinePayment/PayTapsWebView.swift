@@ -92,6 +92,7 @@ extension PayTapsWebView: WKNavigationDelegate {
                     print(url)
                     if url.lowercased().contains(successURL.lowercased()) {
                         orderID = 22
+                        self.webView.isHidden = true
                         self.successed = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                             // Your action or code here
@@ -100,6 +101,7 @@ extension PayTapsWebView: WKNavigationDelegate {
                         //self.dismiss(animated: true, completion: nil)
                     } else if url.lowercased().contains(failURL.lowercased()) {
                         self.successed = false
+                        self.webView.isHidden = true
                         self.navigationController?.popViewController(animated: true)
                         //self.dismiss(animated: true, completion: nil)
                     }

@@ -34,7 +34,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIS-MT-Spz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIS-MT-Spz">
                                 <rect key="frame" x="0.0" y="41" width="42" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="UbB-XO-jSk"/>
@@ -46,7 +46,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0md-7F-sCX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0md-7F-sCX">
                                 <rect key="frame" x="47" y="43" width="32.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="black3"/>
@@ -56,14 +56,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="aXG-2s-YUl">
-                                <rect key="frame" x="109.33333333333333" y="43.666666666666664" width="19.999999999999986" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="aXG-2s-YUl">
+                                <rect key="frame" x="109.33333333333331" y="43.666666666666664" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="6fm-P9-bb3"/>
                                     <constraint firstAttribute="width" constant="20" id="dzy-nc-mIv"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5u1-eC-r9S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5u1-eC-r9S">
                                 <rect key="frame" x="133.33333333333334" y="43" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Black1"/>
@@ -72,8 +72,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTJ-4c-EYw">
-                                <rect key="frame" x="179.33333333333334" y="43" width="52.333333333333343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTJ-4c-EYw">
+                                <rect key="frame" x="179.33333333333331" y="43" width="52.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="black3"/>
                                 <nil key="highlightedColor"/>
@@ -82,15 +82,15 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Minute"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user 1" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-Us-w8j">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="user 1" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-Us-w8j">
                                 <rect key="frame" x="266.33333333333331" y="43.666666666666664" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="0Oh-Cm-c6c"/>
                                     <constraint firstAttribute="height" constant="20" id="qEZ-6w-EUA"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service Provider :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5C-zi-8OV">
-                                <rect key="frame" x="290.33333333333331" y="43" width="133.66666666666669" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Service Provider :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5C-zi-8OV">
+                                <rect key="frame" x="290.33333333333326" y="43" width="133.66666666666669" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="black3"/>
                                 <nil key="highlightedColor"/>
@@ -99,7 +99,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Service Provider :"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnK-fO-GvV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnK-fO-GvV">
                                 <rect key="frame" x="428" y="43.333333333333336" width="42" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Black1"/>
@@ -137,6 +137,7 @@
                             <constraint firstItem="5u1-eC-r9S" firstAttribute="leading" secondItem="aXG-2s-YUl" secondAttribute="trailing" constant="4" id="38h-7g-dca"/>
                             <constraint firstItem="fYl-mf-O9y" firstAttribute="leading" secondItem="ii2-qJ-HVV" secondAttribute="trailing" constant="5" id="8R9-iU-eX3"/>
                             <constraint firstAttribute="bottom" secondItem="hdJ-1U-Mtt" secondAttribute="bottom" constant="6" id="9oK-Kx-kaW"/>
+                            <constraint firstItem="QrY-Us-w8j" firstAttribute="leading" secondItem="HTJ-4c-EYw" secondAttribute="trailing" constant="5" id="CRK-z3-m2v"/>
                             <constraint firstItem="KnK-fO-GvV" firstAttribute="leading" secondItem="M5C-zi-8OV" secondAttribute="trailing" constant="4" id="Drk-iM-wZb"/>
                             <constraint firstItem="7Xe-sN-4ug" firstAttribute="leading" secondItem="MwG-El-fUK" secondAttribute="leading" id="EL2-cV-BKe"/>
                             <constraint firstItem="hdJ-1U-Mtt" firstAttribute="leading" secondItem="MwG-El-fUK" secondAttribute="leading" id="F3M-wl-4yz"/>

@@ -39,6 +39,8 @@ class HomeVC: BaseController, CLLocationManagerDelegate {
 extension HomeVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -28,7 +28,6 @@ class AddAddressVC: BaseController {
     var address : AddressesDatum?
     lazy var validator: Validator? = {
         let validator = Validator(guardOnSuperViewOfTextField: true)
-        validator.setUIType(.message).append(streetTxf, rules: [GuardRequired()], title: "Street".localized).holdColor()
         validator.setUIType(.message).append(hayTxf, rules: [GuardRequired() ], title: "Neighborhood".localized).holdColor()
         return validator
     }()
@@ -150,7 +149,7 @@ extension AddAddressVC {
             if error != "" {
                 self?.didError(error: error)
             }else {
-                self?.viewModel?.street.send(self?.streetTxf.text ?? "")
+              //  self?.viewModel?.street.send(self?.streetTxf.text ?? "")
                 self?.viewModel?.district.send(self?.hayTxf.text ?? "")
                 self?.startLoading()
                 if self?.defaultBtn.isOn == false {

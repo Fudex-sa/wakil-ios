@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ReservationVC: BaseController {
+    @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var orderTbl: UITableView!
     @IBOutlet weak var perviousLineView: UIView!
@@ -144,6 +145,10 @@ extension ReservationVC {
             self?.viewModel?.resetPaginator()
             self?.viewModel?.clearDataSource()
             self?.viewModel?.fetchorders()
+        }).store(self)
+        homeView.publisherGesture.listen(on: {[weak self] _ in
+            Constants.index = 0
+            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
         }).store(self)
     }
     func reload() {

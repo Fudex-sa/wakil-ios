@@ -14,6 +14,7 @@ protocol FilterServiceVCDelegate: AnyObject {
 }
 // MARK: - ...  ViewController - Vars
 class FilterServiceVC: BaseController {
+    @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var homeLbl: UILabel!
     @IBOutlet weak var centerLbl: UILabel!
     @IBOutlet weak var femaleLbl: UILabel!
@@ -167,6 +168,9 @@ extension FilterServiceVC {
             self?.centerRadio.deselect()
             self?.distanceLbl.text = "All".localized
             self?.typesCollection.reloadData()
+        }).store(self)
+        closeBtn.publisher.listen(on: {[weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
         }).store(self)
     }
     func pickdistance() {

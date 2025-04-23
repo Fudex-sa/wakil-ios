@@ -35,7 +35,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.309215017604-eq5i4u9k5fo604t365tc01e6h09bekqu</string>
+				<string>com.googleusercontent.apps.208568714925-s3gn4k7ekcu25pav40o8aqrt7pcfubdc</string>
 			</array>
 		</dict>
 	</array>
@@ -144,5 +144,7 @@
 	</array>
 	<key>aps-environment</key>
 	<string>production</string>
+    <key>GIDClientID</key>
+    <string>208568714925-s3gn4k7ekcu25pav40o8aqrt7pcfubdc.apps.googleusercontent.com</string>
 </dict>
 </plist>

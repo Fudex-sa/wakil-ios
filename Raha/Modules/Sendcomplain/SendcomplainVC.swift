@@ -29,7 +29,8 @@ extension SendcomplainVC {
         complains.removeAll()
         complains.append(RegisterModel.init(id: 1, name: "Complaint".localized))
         complains.append(RegisterModel.init(id: 2, name: "Suggestion".localized))
-
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tapGesture)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,6 +63,9 @@ extension SendcomplainVC {
             self?.navigationController?.popViewController(animated: true)
         })
        
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 // MARK: - ...  Functions

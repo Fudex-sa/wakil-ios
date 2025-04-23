@@ -31,6 +31,8 @@ extension ContactusVC {
             emailTxf.text = UD.user?.data?.user?.email ?? ""
         }
         messageTxt.text =  "Message text".localized
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tapGesture)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,6 +65,9 @@ extension ContactusVC {
             self?.navigationController?.popViewController(animated: true)
         })
        
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 // MARK: - ...  Functions

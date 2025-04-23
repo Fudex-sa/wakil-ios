@@ -124,7 +124,7 @@ extension LoginVC {
             }
         }
         googleBtn.publisherGesture.listen(on: {[weak self] _ in
-           // self?.loginwithgoogle()
+           self?.loginwithgoogle()
         }).store(self)
        
         appleBtn.publisherGesture.listen { [weak self] _ in

@@ -40,8 +40,8 @@ extension LoginViewModel {
         }).store(self)
     }
     func loginsocail() {
-        NetworkManager.instance.paramaters["provider_token"] = socailId.value ?? ""
-        NetworkManager.instance.paramaters["provider_type"] = socialType.value ?? ""
+        NetworkManager.instance.paramaters["social_id"] = socailId.value ?? ""
+        NetworkManager.instance.paramaters["social_type"] = socialType.value ?? ""
         NetworkManager.instance.paramaters["email"] = email.value ?? ""
         NetworkManager.instance.paramaters["device_type"] = Constants.FCMTYPE
         NetworkManager.instance.paramaters["fcm_token"] = Constants.FCMTOKEN

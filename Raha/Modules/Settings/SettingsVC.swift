@@ -48,12 +48,14 @@ extension SettingsVC {
             if Localizer.current == .arabic {
                 Localizer.instance.language.send(.english)
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+                    UD.address = nil
                     Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
                     //Localizer.initLang()
                 }
             }else {
                 Localizer.instance.language.send(.arabic)
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+                    UD.address = nil
                     Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
                     //Localizer.initLang()
                 }
@@ -63,12 +65,14 @@ extension SettingsVC {
             if Localizer.current == .arabic {
                 Localizer.instance.language.send(.english)
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+                    UD.address = nil
                     Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
                     //Localizer.initLang()
                 }
             }else {
                 Localizer.instance.language.send(.arabic)
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+                    UD.address = nil
                     Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
                     //Localizer.initLang()
                 }

@@ -40,6 +40,8 @@ class GiftVC: BaseController {
 extension GiftVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tapGesture)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,6 +54,9 @@ extension GiftVC {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 // MARK: - ...  Functions

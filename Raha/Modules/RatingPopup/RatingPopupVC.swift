@@ -29,6 +29,8 @@ extension RatingPopupVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         coomentTxt.text =  "Write your comment".localized
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tapGesture)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,6 +60,9 @@ extension RatingPopupVC {
             self?.dismiss(animated: true, completion: nil)
         })
         
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 // MARK: - ...  Functions

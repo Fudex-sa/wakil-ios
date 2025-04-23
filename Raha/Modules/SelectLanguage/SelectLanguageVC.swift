@@ -74,6 +74,7 @@ extension SelectLanguageVC {
                 self?.dismiss(animated: true, completion: {
                     Localizer.instance.language.send(.english)
                     DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+                        UD.address = nil
                         Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
                         //Localizer.initLang()
                     }
@@ -84,6 +85,7 @@ extension SelectLanguageVC {
                 self?.dismiss(animated: true, completion: {
                     Localizer.instance.language.send(.arabic)
                     DispatchQueue.main.asyncAfter(deadline: .now()+0.050) {
+                        UD.address = nil
                         Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
                         //Localizer.initLang()
                     }
