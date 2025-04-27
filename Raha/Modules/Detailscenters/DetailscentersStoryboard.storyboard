@@ -203,6 +203,7 @@
                                                     <constraint firstItem="cd6-ZN-6ab" firstAttribute="leading" secondItem="Vad-Uf-FXl" secondAttribute="trailing" constant="8" id="qa9-Oq-vwB"/>
                                                     <constraint firstItem="LvY-C8-YhH" firstAttribute="leading" secondItem="eE3-Rb-uFC" secondAttribute="trailing" constant="2" id="qbS-6g-Kwg"/>
                                                     <constraint firstItem="pr3-Oz-PaW" firstAttribute="top" secondItem="AyA-3y-VaH" secondAttribute="top" constant="4" id="rih-Kq-1LK"/>
+                                                    <constraint firstItem="eE3-Rb-uFC" firstAttribute="leading" secondItem="bVZ-I5-tWH" secondAttribute="trailing" constant="10" id="um3-xw-Dzp"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNy-Pj-5TA">
@@ -654,7 +655,9 @@
                         <outlet property="countLbl" destination="1gn-du-vJ2" id="ucH-uF-r3R"/>
                         <outlet property="countWidth" destination="oxa-xR-RI9" id="lGP-XV-goA"/>
                         <outlet property="desLbl" destination="2GK-91-xMc" id="gvH-Al-65y"/>
+                        <outlet property="distanceImg" destination="Vad-Uf-FXl" id="BdM-Eu-JBS"/>
                         <outlet property="distanceLbl" destination="cd6-ZN-6ab" id="la5-uk-43l"/>
+                        <outlet property="distanceTitleLbl" destination="pr3-Oz-PaW" id="iAd-JA-Cjr"/>
                         <outlet property="homeLbl" destination="abG-S2-tuE" id="z6T-cl-cnV"/>
                         <outlet property="homeRadio" destination="QKl-oa-KIu" id="bhP-Jf-85g"/>
                         <outlet property="homeView" destination="SsX-05-2gt" id="uXY-Bd-NxJ"/>

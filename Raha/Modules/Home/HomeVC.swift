@@ -168,7 +168,7 @@ extension HomeVC {
     func reloadhome() {
         if viewModel?.items.value?.count ?? 0 == 0 {
             centerTbl.isHidden = true
-            showEmptyScreen(for: 300, title: "Centers list is empty".localized)
+            showEmptyScreen(for: 400, title: "Centers list is empty".localized)
             
         } else {
             hideEmptyScreen()
@@ -195,6 +195,7 @@ extension HomeVC {
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
             viewModel?.fetchhome()
+            self.locLbl.text = ""
         case .authorizedAlways, .authorizedWhenInUse, .authorized:
             location = .init()
             location?.useOnlyoneTime = false
@@ -238,6 +239,7 @@ extension HomeVC {
                 viewModel?.resetPaginator()
                 viewModel?.clearDataSource()
                 viewModel?.fetchhome()
+                self.locLbl.text = ""
             case .authorizedAlways, .authorizedWhenInUse, .authorized:
                 // Location permission is authorized.
                 location = .init()

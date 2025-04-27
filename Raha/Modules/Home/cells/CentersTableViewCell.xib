@@ -179,6 +179,8 @@
                 <outlet property="containerView" destination="jfF-SF-u7p" id="TyI-I5-TlE"/>
                 <outlet property="desLbl" destination="nap-CW-2YX" id="d4C-ko-cDV"/>
                 <outlet property="distance" destination="RTC-0G-23k" id="tKp-tZ-p0g"/>
+                <outlet property="distanceImg" destination="ybr-GZ-Alm" id="tQt-LD-KBj"/>
+                <outlet property="distanceTitleLbl" destination="PhU-1v-nLd" id="hee-5i-HsE"/>
                 <outlet property="rateLbl" destination="lla-ZR-Bqg" id="S51-9d-NUP"/>
                 <outlet property="servicesCollection" destination="SQx-VF-gXB" id="iZc-tF-9XB"/>
                 <outlet property="titleLbl" destination="0tV-3d-LOX" id="Y0A-5g-NUm"/>

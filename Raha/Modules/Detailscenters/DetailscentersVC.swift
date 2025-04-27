@@ -11,6 +11,8 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class DetailscentersVC: BaseController {
+    @IBOutlet weak var distanceTitleLbl: UILabel!
+    @IBOutlet weak var distanceImg: UIImageView!
     @IBOutlet weak var ratingCollection: UICollectionView!
     @IBOutlet weak var moreBtn: UIButton!
     @IBOutlet weak var revIewView: UIStackView!
@@ -201,6 +203,15 @@ extension DetailscentersVC {
         titleLbl.text = viewModel?.centerdetails.value?.data?.name ?? ""
         desLbl.text = viewModel?.centerdetails.value?.data?.description ?? ""
         centerImg.setImage(url: viewModel?.centerdetails.value?.data?.image ?? "")
+        if viewModel?.centerdetails.value?.data?.distance ?? "" == "" {
+            distanceTitleLbl.isHidden = true
+            distanceLbl.isHidden = true
+            distanceImg.isHidden = true
+        }else {
+            distanceTitleLbl.isHidden = false
+            distanceLbl.isHidden = false
+            distanceImg.isHidden = false
+        }
         if viewModel?.centerdetails.value?.data?.homeServicesAvailable ?? 0 == 1 {
             homeView.isHidden = false
         }else {

@@ -14,6 +14,7 @@ struct NetworkConfigration {
     enum Environment {
         case live
         case test
+        case stage
     }
     struct Config {
         static var environment: Environment = .test  // Change this to .test for testing
@@ -24,6 +25,8 @@ struct NetworkConfigration {
                 return "http://sfanz.co/api/v4/"
             case .test:
                 return "https://demo.raha.fudex-tech.net/api/v1/"
+            case .stage:
+                return "https://stage.raha.fudex-tech.net/api/v1/"
             }
         }
         static var firebaseTopic: String {
@@ -32,6 +35,8 @@ struct NetworkConfigration {
                 return "superfan_ios_live"
             case .test:
                 return "superfan_ios_demo"
+            case .stage:
+                return "superfan_ios_stage"
             }
         }
     }

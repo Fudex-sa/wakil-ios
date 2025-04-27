@@ -73,7 +73,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="16"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m16"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Allow access to location"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
@@ -87,7 +87,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="16"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m16"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Add address"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" name="normalblue"/>

@@ -30,8 +30,8 @@ extension RegisterViewModel {
         NetworkManager.instance.paramaters["fcm_token"] = Constants.FCMTOKEN
         NetworkManager.instance.paramaters["device_id"] = Constants.DEVICEID
         if socailType.value ?? 0 != 0 {
-            NetworkManager.instance.paramaters["provider_token"] = socailId.value ?? ""
-            NetworkManager.instance.paramaters["provider_type"] = socailType.value ?? ""
+            NetworkManager.instance.paramaters["social_id"] = socailId.value ?? ""
+            NetworkManager.instance.paramaters["social_type"] = socailType.value ?? ""
         }else {
             NetworkManager.instance.paramaters["password"] = password.value ?? ""
             NetworkManager.instance.paramaters["password_confirmation"] = password.value ?? ""

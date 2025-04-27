@@ -235,7 +235,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNq-h3-l9G">
-                                                        <rect key="frame" x="36" y="47" width="31" height="14.5"/>
+                                                        <rect key="frame" x="36" y="47" width="260" height="14.5"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <color key="textColor" name="black2"/>
                                                         <nil key="highlightedColor"/>
@@ -278,6 +278,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="tp5-CH-SNJ" secondAttribute="trailing" constant="12" id="atg-RY-gyS"/>
                                                     <constraint firstItem="u2M-nU-PwP" firstAttribute="centerY" secondItem="WyT-Bj-08J" secondAttribute="centerY" id="eVg-5V-Z8z"/>
                                                     <constraint firstAttribute="bottom" secondItem="u2M-nU-PwP" secondAttribute="bottom" constant="10" id="enc-VJ-B08"/>
+                                                    <constraint firstItem="u2M-nU-PwP" firstAttribute="leading" secondItem="nNq-h3-l9G" secondAttribute="trailing" constant="10" id="fhw-mU-iCu"/>
                                                     <constraint firstAttribute="height" constant="78" id="oIi-DU-Vjd"/>
                                                     <constraint firstAttribute="trailing" secondItem="u2M-nU-PwP" secondAttribute="trailing" id="oc5-Wk-F9c"/>
                                                 </constraints>
@@ -302,8 +303,8 @@
                                                             <constraint firstAttribute="width" constant="20" id="fhf-J3-Eik"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send the booking as a gift to a loved one" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxv-5J-m8c">
-                                                        <rect key="frame" x="36" y="47" width="231" height="14.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send the booking as a gift to a loved one" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxv-5J-m8c">
+                                                        <rect key="frame" x="36" y="47" width="260" height="14.5"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <color key="textColor" name="black2"/>
                                                         <nil key="highlightedColor"/>
@@ -339,6 +340,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="sNc-Bj-8mQ" firstAttribute="centerY" secondItem="6Fu-PR-QxR" secondAttribute="centerY" id="09H-Gl-Mqn"/>
+                                                    <constraint firstItem="sNc-Bj-8mQ" firstAttribute="leading" secondItem="kxv-5J-m8c" secondAttribute="trailing" constant="10" id="1SG-F4-nMQ"/>
                                                     <constraint firstItem="6Fu-PR-QxR" firstAttribute="leading" secondItem="Nc3-H3-85c" secondAttribute="leading" constant="12" id="AI4-9w-EE5"/>
                                                     <constraint firstItem="6Fu-PR-QxR" firstAttribute="top" secondItem="raV-7q-6kR" secondAttribute="bottom" constant="8" id="Muf-sQ-oUJ"/>
                                                     <constraint firstItem="raV-7q-6kR" firstAttribute="leading" secondItem="Nc3-H3-85c" secondAttribute="leading" constant="12" id="Wrt-OS-Aph"/>

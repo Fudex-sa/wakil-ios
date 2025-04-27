@@ -18,6 +18,7 @@ class Coordinator: NSObject {
         delegate?.window?.rootViewController = scene
     }
     func unAuthorized() {
+        UD.address = nil
         let scene = R.storyboard.loginStoryboard().instantiateInitialViewController()
         let delegate = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)
         delegate?.window?.rootViewController = scene

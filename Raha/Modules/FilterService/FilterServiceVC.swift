@@ -109,6 +109,37 @@ extension FilterServiceVC {
             femaleLbl.textColor = R.color.black1()
             maleLbl.textColor = R.color.darkgray2()
         }
+        if filter.rate == "5"{
+            star5Img.image = R.image.star51()
+            star4Img.image = R.image.star4()
+            star3Img.image = R.image.star3()
+            star2Img.image = R.image.star2()
+            star1Img.image = R.image.star1()
+        }else if filter.rate == "4"{
+            star5Img.image = R.image.star5()
+            star4Img.image = R.image.star41()
+            star3Img.image = R.image.star3()
+            star2Img.image = R.image.star2()
+            star1Img.image = R.image.star1()
+        }else if filter.rate == "3"{
+            star5Img.image = R.image.star5()
+            star4Img.image = R.image.star4()
+            star3Img.image = R.image.star31()
+            star2Img.image = R.image.star2()
+            star1Img.image = R.image.star1()
+        }else if filter.rate == "2"{
+            star5Img.image = R.image.star5()
+            star4Img.image = R.image.star4()
+            star3Img.image = R.image.star3()
+            star2Img.image = R.image.star21()
+            star1Img.image = R.image.star1()
+        }else if filter.rate == "1"{
+            star5Img.image = R.image.star5()
+            star4Img.image = R.image.star4()
+            star3Img.image = R.image.star3()
+            star2Img.image = R.image.star2()
+            star1Img.image = R.image.star11()
+        }
         if filter.distance ?? "" != "" && filter.distance ?? "" != "0" {
             distanceLbl.text = "\(filter.distance ?? "") \("kilometer".localized)"
         }else {
@@ -126,6 +157,12 @@ extension FilterServiceVC {
             centerLbl.textColor = R.color.black1()
             homeLbl.textColor = R.color.darkgray2()
         })
+        homeLbl.UIViewAction { [self] in
+            homeRadio.select()
+        }
+        centerLbl.UIViewAction { [self] in
+            centerRadio.select()
+        }
         maleRadio.onSelect(execute: { [self] in
             femaleRadio.deselect()
             filter.gender = "male"
@@ -138,20 +175,51 @@ extension FilterServiceVC {
             femaleLbl.textColor = R.color.black1()
             maleLbl.textColor = R.color.darkgray2()
         })
+        maleLbl.UIViewAction { [self] in
+            maleRadio.select()
+        }
+        femaleLbl.UIViewAction { [self] in
+            femaleRadio.select()
+        }
         star5Img.UIViewAction {
             self.filter.rate = "5"
+            self.star5Img.image = R.image.star51()
+            self.star4Img.image = R.image.star4()
+            self.star3Img.image = R.image.star3()
+            self.star2Img.image = R.image.star2()
+            self.star1Img.image = R.image.star1()
         }
         star4Img.UIViewAction {
             self.filter.rate = "4"
+            self.star5Img.image = R.image.star5()
+            self.star4Img.image = R.image.star41()
+            self.star3Img.image = R.image.star3()
+            self.star2Img.image = R.image.star2()
+            self.star1Img.image = R.image.star1()
         }
         star3Img.UIViewAction {
             self.filter.rate = "3"
+            self.star5Img.image = R.image.star5()
+            self.star4Img.image = R.image.star4()
+            self.star3Img.image = R.image.star31()
+            self.star2Img.image = R.image.star2()
+            self.star1Img.image = R.image.star1()
         }
         star2Img.UIViewAction {
             self.filter.rate = "2"
+            self.star5Img.image = R.image.star5()
+            self.star4Img.image = R.image.star4()
+            self.star3Img.image = R.image.star3()
+            self.star2Img.image = R.image.star21()
+            self.star1Img.image = R.image.star1()
         }
         star1Img.UIViewAction {
             self.filter.rate = "1"
+            self.star5Img.image = R.image.star5()
+            self.star4Img.image = R.image.star4()
+            self.star3Img.image = R.image.star3()
+            self.star2Img.image = R.image.star2()
+            self.star1Img.image = R.image.star11()
         }
         distanceView.publisherGesture.listen(on: {[weak self] _ in
             self?.pickdistance()
@@ -166,7 +234,18 @@ extension FilterServiceVC {
             self?.femaleRadio.deselect()
             self?.homeRadio.deselect()
             self?.centerRadio.deselect()
+            self?.maleLbl.textColor = R.color.darkgray2()
+            self?.femaleLbl.textColor = R.color.darkgray2()
+            self?.homeLbl.textColor = R.color.black1()
+            self?.centerLbl.textColor = R.color.darkgray2()
+            self?.distanceLbl.textColor = R.color.darkgray2()
             self?.distanceLbl.text = "All".localized
+            self?.filter = FilterServiceModel.init()
+            self?.star5Img.image = R.image.star5()
+            self?.star4Img.image = R.image.star4()
+            self?.star3Img.image = R.image.star3()
+            self?.star2Img.image = R.image.star2()
+            self?.star1Img.image = R.image.star1()
             self?.typesCollection.reloadData()
         }).store(self)
         closeBtn.publisher.listen(on: {[weak self] _ in

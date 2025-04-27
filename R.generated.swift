@@ -1952,7 +1952,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 106 images.
+  /// This `R.image` struct is generated, and contains static references to 111 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -2134,18 +2134,28 @@ struct R: Rswift.Validatable {
     static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
     /// Image `sms`.
     static let sms = Rswift.ImageResource(bundle: R.hostingBundle, name: "sms")
+    /// Image `star11`.
+    static let star11 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star11")
     /// Image `star1`.
     static let star1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star1")
+    /// Image `star21`.
+    static let star21 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star21")
     /// Image `star2`.
     static let star2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star2")
+    /// Image `star31`.
+    static let star31 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star31")
     /// Image `star3`.
     static let star3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star3")
+    /// Image `star41`.
+    static let star41 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star41")
     /// Image `star4`.
     static let star4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star4")
+    /// Image `star51`.
+    static let star51 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star51")
+    /// Image `star5`.
+    static let star5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "star5")
     /// Image `star`.
     static let star = Rswift.ImageResource(bundle: R.hostingBundle, name: "star")
-    /// Image `start5`.
-    static let start5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "start5")
     /// Image `successIconLight`.
     static let successIconLight = Rswift.ImageResource(bundle: R.hostingBundle, name: "successIconLight")
     /// Image `successIconSubtle`.
@@ -2812,9 +2822,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "star11", bundle: ..., traitCollection: ...)`
+    static func star11(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star11, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "star2", bundle: ..., traitCollection: ...)`
     static func star2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.star2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "star21", bundle: ..., traitCollection: ...)`
+    static func star21(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star21, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2826,6 +2850,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "star31", bundle: ..., traitCollection: ...)`
+    static func star31(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star31, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "star4", bundle: ..., traitCollection: ...)`
     static func star4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.star4, compatibleWith: traitCollection)
@@ -2833,9 +2864,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "start5", bundle: ..., traitCollection: ...)`
-    static func start5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.start5, compatibleWith: traitCollection)
+    /// `UIImage(named: "star41", bundle: ..., traitCollection: ...)`
+    static func star41(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star41, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "star5", bundle: ..., traitCollection: ...)`
+    static func star5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star5, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "star51", bundle: ..., traitCollection: ...)`
+    static func star51(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star51, compatibleWith: traitCollection)
     }
     #endif
 
@@ -12005,10 +12050,9 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "star2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'star2' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "star3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'star3' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "star4", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'star4' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "start5", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'start5' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "star5", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'star5' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "black2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black2' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "black3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black3' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "darkgray 2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray 2' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray' is used in storyboard 'FilterServiceStoryboard', but couldn't be loaded.") }

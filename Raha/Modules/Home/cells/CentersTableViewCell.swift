@@ -9,6 +9,8 @@
 import UIKit
 
 class CentersTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var distanceImg: UIImageView!
+    @IBOutlet weak var distanceTitleLbl: UILabel!
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var centerImg: UIImageView!
@@ -28,6 +30,15 @@ class CentersTableViewCell: BaseTableViewCell {
         titleLbl.text = model.name ?? ""
         rateLbl.text = model.rate?.string ?? ""
         desLbl.text = model.description ?? ""
+        if model.distance ?? "" == "" {
+            distanceTitleLbl.isHidden = true
+            distance.isHidden = true
+            distanceImg.isHidden = true
+        }else {
+            distanceTitleLbl.isHidden = false
+            distance.isHidden = false
+            distanceImg.isHidden = false
+        }
         servicesCollection.skeleton()
         servicesCollection.delegate = self
         servicesCollection.dataSource = self
