@@ -12,6 +12,7 @@ import Foundation
 class SendcomplainViewModel: BaseViewModel {
     var type: Publisher<String> = .init()
     var message: Publisher<String> = .init()
+    var orderId: Publisher<Int> = .init()
     var contact: Publisher<DeleteaddresssModel> = .init()
 }
 // MARK: - ...  ViewModel Contract
@@ -20,6 +21,9 @@ extension SendcomplainViewModel {
 // MARK: - ...  Example of network response
 extension SendcomplainViewModel {
     func sendMessage() {
+        if orderId.value ?? 0 != 0 {
+            NetworkManager.instance.paramaters["order_id"] = orderId.value ?? 0
+        }
         NetworkManager.instance.paramaters["type"] = type.value ?? ""
         NetworkManager.instance.paramaters["message"] = message.value ?? ""
         NetworkManager.instance.request(NetworkConfigration.EndPoint.sendcompalin.rawValue, type: .post, DeleteaddresssModel.self)?.response(error: { [weak self] error in

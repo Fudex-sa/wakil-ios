@@ -23,6 +23,11 @@ extension DetailsreservationCoordinator {
         scene.centerId = id
         view?.push(scene)
     }
+    func sendcomplain(id: Int) {
+        guard let scene = R.storyboard.sendcomplainStoryboard.sendcomplainVC() else { return }
+        scene.orderId = id
+        view?.push(scene)
+    }
     func rateorder(id:Int) {
         guard let scene = R.storyboard.ratingPopupStoryboard.ratingPopupVC() else { return }
         scene.orderId = id

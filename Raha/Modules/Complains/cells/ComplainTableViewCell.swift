@@ -37,6 +37,7 @@ class ComplainTableViewCell: BaseTableViewCell {
             statusView.backgroundColor = UIColor(hex: "#D8FDED")
             statusLbl.textColor = UIColor(hex: "#0C9D61")
         }
+        dateLbl.text = model.created_at ?? ""
         messageLbl.text = model.message ?? ""
         replyLbl.text = model.reply ?? ""
         if model.reply ?? "" == "" {

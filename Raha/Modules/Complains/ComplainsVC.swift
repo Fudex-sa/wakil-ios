@@ -11,6 +11,11 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class ComplainsVC: BaseController {
+    @IBOutlet weak var closedLbl: UILabel!
+    @IBOutlet weak var processLbl: UILabel!
+    @IBOutlet weak var newLbl: UILabel!
+    @IBOutlet weak var allLbl: UILabel!
+    @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var scrollContainerView: UIScrollView!
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var complainTbl: UITableView!
@@ -62,6 +67,68 @@ extension ComplainsVC {
         sendBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.sendcomplain()
         }).store(self)
+        filterBtn.publisher.listen(on: {[weak self] _ in
+            if self?.statusView.isHidden == false {
+                self?.statusView.fadeOut()
+                self?.statusView.isHidden = true
+                return
+            }
+            self?.statusView.fadeIn()
+            self?.statusView.isHidden = false
+            self?.status()
+        }).store(self)
+        allLbl.UIViewAction { [self] in
+            statusView.fadeOut()
+            viewModel?.status.send(0)
+            viewModel?.resetPaginator()
+            viewModel?.clearDataSource()
+            viewModel?.fetchcomplains()
+        }
+        newLbl.UIViewAction { [self] in
+            statusView.fadeOut()
+            viewModel?.status.send(1)
+            viewModel?.resetPaginator()
+            viewModel?.clearDataSource()
+            viewModel?.fetchcomplains()
+        }
+        processLbl.UIViewAction { [self] in
+            statusView.fadeOut()
+            viewModel?.status.send(2)
+            viewModel?.resetPaginator()
+            viewModel?.clearDataSource()
+            viewModel?.fetchcomplains()
+        }
+        closedLbl.UIViewAction { [self] in
+            statusView.fadeOut()
+            viewModel?.status.send(3)
+            viewModel?.resetPaginator()
+            viewModel?.clearDataSource()
+            viewModel?.fetchcomplains()
+        }
+    }
+    func status() {
+        if viewModel?.status.value ?? 0 == 0 {
+            allLbl.textColor = R.color.black1()
+            newLbl.textColor = R.color.black3()
+            processLbl.textColor = R.color.black3()
+            closedLbl.textColor = R.color.black3()
+        }else  if viewModel?.status.value ?? 0 == 1 {
+            allLbl.textColor = R.color.black3()
+            newLbl.textColor = R.color.black1()
+            processLbl.textColor = R.color.black3()
+            closedLbl.textColor = R.color.black3()
+        }else  if viewModel?.status.value ?? 0 == 2 {
+            allLbl.textColor = R.color.black3()
+            newLbl.textColor = R.color.black3()
+            processLbl.textColor = R.color.black1()
+            closedLbl.textColor = R.color.black3()
+        }else  if viewModel?.status.value ?? 0 == 3 {
+            allLbl.textColor = R.color.black3()
+            newLbl.textColor = R.color.black3()
+            processLbl.textColor = R.color.black3()
+            closedLbl.textColor = R.color.black1()
+        }
+        statusView.isHidden = true
     }
     func reload() {
         if viewModel?.dataSource()?.count ?? 0 == 0 {

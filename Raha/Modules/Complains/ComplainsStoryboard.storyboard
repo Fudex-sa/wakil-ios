@@ -151,10 +151,84 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJy-bd-9fW">
+                                <rect key="frame" x="264" y="112" width="130" height="152"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-pO-hbR">
+                                        <rect key="frame" x="15" y="15" width="100" height="137"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Complaints" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgo-6S-Bpt">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="Black1"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="All Complaints"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymc-3w-eAF">
+                                                <rect key="frame" x="0.0" y="34.5" width="100" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="black3"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="New1"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjb-Te-8Yh">
+                                                <rect key="frame" x="0.0" y="68.5" width="100" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="black3"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Under review"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXx-BF-NVd">
+                                                <rect key="frame" x="0.0" y="103" width="100" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="black3"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Closed"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="tZx-pO-hbR" firstAttribute="top" secondItem="ZJy-bd-9fW" secondAttribute="top" constant="15" id="1Vk-Ts-rcU"/>
+                                    <constraint firstAttribute="bottom" secondItem="tZx-pO-hbR" secondAttribute="bottom" id="F4r-3G-j8x"/>
+                                    <constraint firstItem="tZx-pO-hbR" firstAttribute="leading" secondItem="ZJy-bd-9fW" secondAttribute="leading" constant="15" id="NGv-jV-S9v"/>
+                                    <constraint firstAttribute="height" constant="152" id="b5V-Y0-tri"/>
+                                    <constraint firstAttribute="width" constant="130" id="hME-FG-UCU"/>
+                                    <constraint firstAttribute="trailing" secondItem="tZx-pO-hbR" secondAttribute="trailing" constant="15" id="l19-vs-9J4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.074509803921568626" green="0.039215686274509803" blue="0.1803921568627451" alpha="0.13" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uqx-wJ-0k2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="uqx-wJ-0k2" firstAttribute="trailing" secondItem="ZJy-bd-9fW" secondAttribute="trailing" constant="20" id="6aZ-Xk-7t1"/>
                             <constraint firstItem="uqx-wJ-0k2" firstAttribute="bottom" secondItem="P4M-nf-5JE" secondAttribute="bottom" id="9Gx-GZ-zdF"/>
                             <constraint firstItem="P4M-nf-5JE" firstAttribute="leading" secondItem="uqx-wJ-0k2" secondAttribute="leading" id="EAA-qU-vCa"/>
                             <constraint firstItem="Jgy-I5-XNG" firstAttribute="leading" secondItem="uqx-wJ-0k2" secondAttribute="leading" id="KGn-dU-dHq"/>
@@ -165,13 +239,19 @@
                             <constraint firstItem="W0e-9e-u0k" firstAttribute="leading" secondItem="hqC-iP-XFw" secondAttribute="leading" constant="24" id="fNs-je-FM5"/>
                             <constraint firstItem="Jgy-I5-XNG" firstAttribute="top" secondItem="W0e-9e-u0k" secondAttribute="bottom" constant="23" id="fkP-oa-zNA"/>
                             <constraint firstItem="uqx-wJ-0k2" firstAttribute="trailing" secondItem="P4M-nf-5JE" secondAttribute="trailing" id="hkh-wx-oxa"/>
+                            <constraint firstItem="ZJy-bd-9fW" firstAttribute="top" secondItem="W0e-9e-u0k" secondAttribute="bottom" id="nZg-aw-idd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allLbl" destination="mgo-6S-Bpt" id="a0s-OS-NSj"/>
+                        <outlet property="closedLbl" destination="uXx-BF-NVd" id="xOo-k5-3gC"/>
                         <outlet property="complainTbl" destination="NM4-ug-r6b" id="A9l-xx-C2R"/>
                         <outlet property="filterBtn" destination="eus-zu-Usf" id="XM1-Yh-Sa4"/>
+                        <outlet property="newLbl" destination="ymc-3w-eAF" id="DDY-Jg-E9N"/>
+                        <outlet property="processLbl" destination="Tjb-Te-8Yh" id="PwQ-C8-ikG"/>
                         <outlet property="scrollContainerView" destination="Jgy-I5-XNG" id="4vv-JB-KWo"/>
                         <outlet property="sendBtn" destination="Pkh-np-Qgb" id="I8D-Ph-yko"/>
+                        <outlet property="statusView" destination="ZJy-bd-9fW" id="v9s-uA-29o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC1-xc-0Em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -185,6 +265,9 @@
         <image name="quick search" width="46" height="46"/>
         <namedColor name="Black1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="black3">
+            <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blackshadow5">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.05000000074505806" colorSpace="custom" customColorSpace="displayP3"/>

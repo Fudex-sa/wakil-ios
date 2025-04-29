@@ -18,7 +18,7 @@ struct ComplainsModel: Codable {
 // MARK: - Datum
 struct ComplainsDatum: Codable {
     let id: Int?
-    let type, message: String?
+    let type, message, created_at: String?
     let reply: String?
     let status: Int?
 }

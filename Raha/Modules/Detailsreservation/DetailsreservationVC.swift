@@ -98,6 +98,9 @@ extension DetailsreservationVC {
                 self?.coordinator?.rateorder(id: self?.orderId ?? 0)
             }
         }).store(self)
+        suggestionBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.sendcomplain(id: self?.orderId ?? 0)
+        }).store(self)
         copyView.publisherGesture.listen(on: {[weak self] _ in
             UIPasteboard.general.string = self?.copy ?? ""
             let progress = MBProgressHUD.showAdded(to: self?.view ?? UIView(), animated: true)

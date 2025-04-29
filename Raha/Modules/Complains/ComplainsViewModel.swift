@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: - ...  ViewModel
 class ComplainsViewModel: BaseViewModel  ,DataSourceViewModel {
+    var status: Publisher<Int> = .init()
     var items: Publisher<[ComplainsDatum]> = .init()
 }
 // MARK: - ...  ViewModel Contract
@@ -18,6 +19,9 @@ extension ComplainsViewModel {
 // MARK: - ...  Example of network response
 extension ComplainsViewModel {
     func fetchcomplains() {
+        if status.value ?? 0 != 0 {
+            NetworkManager.instance.paramaters["status"] = status.value ?? ""
+        }
         NetworkManager.instance.request(NetworkConfigration.EndPoint.compalins.rawValue, type: .get, ComplainsModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

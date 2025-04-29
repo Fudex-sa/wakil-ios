@@ -18,6 +18,7 @@ class SendcomplainVC: BaseController {
     var viewModel: SendcomplainViewModel?
     var coordinator: SendcomplainCoordinator?
     var complains: [RegisterModel] = []
+    var orderId = 0
 
 }
 
@@ -71,6 +72,7 @@ extension SendcomplainVC {
 // MARK: - ...  Functions
 extension SendcomplainVC {
     func setup() {
+        viewModel?.orderId.send(orderId)
         messageTxt.delegate = self
         messageTxt.textColor = R.color.black3()
         sendBtn.publisher.listen(on: {[weak self] _ in
