@@ -467,3 +467,8 @@
 "COPIED!" = "تم النسخ!";
 "Vat" = "الضريبه";
 "All Complaints" = "كل الشكاوي";
+"Notifications" = "الاشعارات";
+"Notifications :" = "الاشعارات :";
+"No notifications yet" = "لا يوجد اشعارات حتى الآن";
+"Delete notification" = "حذف اشعارات";
+"Are you sure to delete notification?" = "هل تريد حذف الاشعارات ؟";

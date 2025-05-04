@@ -18,6 +18,7 @@ class LogoutVC: BaseController {
         case logout
         case address
         case account
+        case notification
     }
     var delegate: LogoutVCDelegate?
     @IBOutlet weak var imgTop: NSLayoutConstraint!
@@ -78,6 +79,13 @@ extension LogoutVC {
             titlrLbl.text = "Delete address".localized
             bodyLbl.text = "Are you sure to delete address?".localized
             logoutLbl.setTitle("Delete".localized, for: .normal)
+        }else if type == .notification {
+            logoutImg.isHidden = true
+            logoutHight.constant = 0
+            imgTop.constant = 0
+            titlrLbl.text = "Delete notification".localized
+            bodyLbl.text = "Are you sure to delete notification?".localized
+            logoutLbl.setTitle("Delete".localized, for: .normal)
         }else if type == .account {
             logoutImg.image = UIImage(named: "fi_3128607")
             titlrLbl.text = "Delete Account".localized
@@ -86,6 +94,11 @@ extension LogoutVC {
         }
         logoutBtn.publisher.listen(on: { [weak self] in
             if self?.type == .address {
+                self?.delegate?.address()
+                self?.dismiss(animated: true, completion: nil)
+                return
+            }
+            if self?.type == .notification {
                 self?.delegate?.address()
                 self?.dismiss(animated: true, completion: nil)
                 return

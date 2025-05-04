@@ -77,6 +77,33 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGq-9C-JBp">
+                                <rect key="frame" x="276" y="51.666666666666664" width="52" height="20.999999999999993"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz9-FI-RQ1">
+                                        <rect key="frame" x="5" y="0.0" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="hz9-FI-RQ1" firstAttribute="leading" secondItem="dGq-9C-JBp" secondAttribute="leading" constant="5" id="AML-NT-dxE"/>
+                                    <constraint firstItem="hz9-FI-RQ1" firstAttribute="centerY" secondItem="dGq-9C-JBp" secondAttribute="centerY" id="LK5-Nt-dDN"/>
+                                    <constraint firstItem="hz9-FI-RQ1" firstAttribute="centerX" secondItem="dGq-9C-JBp" secondAttribute="centerX" id="Lxd-qo-R2O"/>
+                                    <constraint firstAttribute="height" constant="21" id="PHy-EL-4Nt"/>
+                                    <constraint firstAttribute="trailing" secondItem="hz9-FI-RQ1" secondAttribute="trailing" constant="5" id="nvX-Fh-KDo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -85,10 +112,12 @@
                             <constraint firstAttribute="trailing" secondItem="SkF-ke-Q8q" secondAttribute="trailing" constant="16" id="D1r-2Q-sX0"/>
                             <constraint firstItem="20G-yA-7Ij" firstAttribute="top" secondItem="f3k-Bz-BX7" secondAttribute="top" constant="16" id="EFY-DH-OAR"/>
                             <constraint firstItem="2V8-ee-vmH" firstAttribute="leading" secondItem="Q8B-75-VFB" secondAttribute="trailing" constant="24" id="JWI-uV-nmc"/>
+                            <constraint firstItem="dGq-9C-JBp" firstAttribute="centerY" secondItem="2V8-ee-vmH" secondAttribute="centerY" id="KEs-ye-cKF"/>
                             <constraint firstItem="o43-9P-Aeg" firstAttribute="top" secondItem="SkF-ke-Q8q" secondAttribute="bottom" constant="16" id="NtC-w0-ZFu"/>
                             <constraint firstItem="2V8-ee-vmH" firstAttribute="centerY" secondItem="o43-9P-Aeg" secondAttribute="centerY" id="OYE-GP-IuO"/>
                             <constraint firstItem="SkF-ke-Q8q" firstAttribute="top" secondItem="f3k-Bz-BX7" secondAttribute="top" constant="16" id="Ojt-wX-peB"/>
                             <constraint firstItem="Q8B-75-VFB" firstAttribute="leading" secondItem="o43-9P-Aeg" secondAttribute="trailing" constant="4" id="Sl2-W6-gw0"/>
+                            <constraint firstItem="dGq-9C-JBp" firstAttribute="trailing" secondItem="SkF-ke-Q8q" secondAttribute="trailing" id="UKy-QT-jrf"/>
                             <constraint firstItem="20G-yA-7Ij" firstAttribute="leading" secondItem="f3k-Bz-BX7" secondAttribute="leading" constant="16" id="WAU-IO-NsN"/>
                             <constraint firstItem="akI-um-DBo" firstAttribute="centerY" secondItem="2V8-ee-vmH" secondAttribute="centerY" id="XqP-C5-bc2"/>
                             <constraint firstItem="SkF-ke-Q8q" firstAttribute="leading" secondItem="20G-yA-7Ij" secondAttribute="trailing" constant="5" id="abd-Do-vGy"/>
@@ -121,6 +150,8 @@
                 <outlet property="containerView" destination="f3k-Bz-BX7" id="HHm-UB-Tn3"/>
                 <outlet property="dateLbl" destination="Q8B-75-VFB" id="R4b-Iq-SYU"/>
                 <outlet property="servicesCollection" destination="SkF-ke-Q8q" id="0Tz-UA-Jar"/>
+                <outlet property="statusLbl" destination="hz9-FI-RQ1" id="Num-EN-pin"/>
+                <outlet property="statusView" destination="dGq-9C-JBp" id="l7o-jl-gig"/>
                 <outlet property="timeLbl" destination="akI-um-DBo" id="HvM-Ym-3fM"/>
                 <outlet property="titleLbl" destination="20G-yA-7Ij" id="Coe-V4-ECx"/>
                 <outlet property="widthContants" destination="utF-XK-lBd" id="vqq-t4-jwN"/>

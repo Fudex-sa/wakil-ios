@@ -71,6 +71,23 @@ extension HomeCoordinator {
         scene.delegate = self
         view?.pushPop(scene)
     }
+    func notification() {
+        if UD.user == nil {
+            Coordinator.instance.unAuthorized()
+            return
+        }
+        guard let scene = R.storyboard.notificationStoryboard.notificationVC() else { return }
+        view?.push(scene)
+    }
+    func detailsreservation(id:Int) {
+        guard let scene = R.storyboard.detailsreservationStoryboard.detailsreservationVC() else { return }
+        scene.orderId = id
+        view?.push(scene)
+    }
+    func complains(){
+        guard let scene = R.storyboard.complainsStoryboard.complainsVC() else { return }
+        view?.push(scene)
+    }
     func addaddressreturn() {
         guard let scene = R.storyboard.addAddressStoryboard.addAddressVC() else { return }
         scene.isfirst = true

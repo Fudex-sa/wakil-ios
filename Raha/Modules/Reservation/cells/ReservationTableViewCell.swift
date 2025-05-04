@@ -9,6 +9,8 @@
 import UIKit
 
 class ReservationTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var widthContants: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var timeLbl: UILabel!
@@ -33,6 +35,18 @@ class ReservationTableViewCell: BaseTableViewCell {
                 title = "\(title) \(index.name ?? "") - "
             }
             item = item + 1
+        }
+        statusLbl.text = model.status ?? ""
+        if model.status_key ?? 0 == 4 {
+            statusView.backgroundColor = UIColor(hex: "#DFFFF2")
+            statusLbl.textColor = UIColor(hex: "#0C9D61")
+            statusView.isHidden = false
+        }else  if model.status_key ?? 0 == 5 {
+            statusView.backgroundColor = UIColor(hex: "#FFEAEA")
+            statusLbl.textColor = UIColor(hex: "#EC2D30")
+            statusView.isHidden = false
+        }else {
+            statusView.isHidden = true
         }
         titleLbl.text = title
         if model.is_gift ?? 0 == 1 {

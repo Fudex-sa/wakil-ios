@@ -37,11 +37,13 @@ extension ComplainsVC {
         (self.tabBarController as? CustomTabBarController)?.hideTabBar()
         setup()
         bind()
+        subscribe()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+        unsubscribe()
     }
     override func bind() {
         super.bind()
@@ -79,6 +81,7 @@ extension ComplainsVC {
         }).store(self)
         allLbl.UIViewAction { [self] in
             statusView.fadeOut()
+            statusView.isHidden = true
             viewModel?.status.send(0)
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
@@ -86,6 +89,7 @@ extension ComplainsVC {
         }
         newLbl.UIViewAction { [self] in
             statusView.fadeOut()
+            statusView.isHidden = true
             viewModel?.status.send(1)
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
@@ -93,6 +97,7 @@ extension ComplainsVC {
         }
         processLbl.UIViewAction { [self] in
             statusView.fadeOut()
+            statusView.isHidden = true
             viewModel?.status.send(2)
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
@@ -100,6 +105,7 @@ extension ComplainsVC {
         }
         closedLbl.UIViewAction { [self] in
             statusView.fadeOut()
+            statusView.isHidden = true
             viewModel?.status.send(3)
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
@@ -128,7 +134,7 @@ extension ComplainsVC {
             processLbl.textColor = R.color.black3()
             closedLbl.textColor = R.color.black1()
         }
-        statusView.isHidden = true
+        //statusView.isHidden = true
     }
     func reload() {
         if viewModel?.dataSource()?.count ?? 0 == 0 {
@@ -186,4 +192,15 @@ extension ComplainsVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+}
+extension ComplainsVC: NotificationSubscriber {
+    func notificationControlWillPresent(notificationType: String?, json: String, closure: SoundHandler?) {
+        closure?(true)
+        if notificationType ?? "" == "complaint"  {
+            return
+        }
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
+        viewModel?.fetchcomplains()
+    }
 }

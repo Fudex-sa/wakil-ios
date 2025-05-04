@@ -42,6 +42,11 @@
                                     <constraint firstAttribute="trailing" secondItem="9G5-ep-pWi" secondAttribute="trailing" constant="5" id="SJq-s5-Efh"/>
                                     <constraint firstItem="9G5-ep-pWi" firstAttribute="centerY" secondItem="XD6-ed-IYL" secondAttribute="centerY" id="ird-0M-aYf"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4l-eg-mOD">
                                 <rect key="frame" x="384.66666666666669" y="48" width="45.333333333333314" height="24"/>
@@ -64,6 +69,11 @@
                                     <constraint firstAttribute="trailing" secondItem="2KU-nr-9SB" secondAttribute="trailing" constant="5" id="Pf6-fy-NAM"/>
                                     <constraint firstItem="2KU-nr-9SB" firstAttribute="leading" secondItem="H4l-eg-mOD" secondAttribute="leading" constant="5" id="tQp-2w-e7h"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrJ-9d-NEw">
                                 <rect key="frame" x="12" y="16" width="42" height="24"/>
@@ -103,6 +113,33 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Service Details"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krF-Hu-673">
+                                <rect key="frame" x="384.66666666666669" y="80" width="45.333333333333314" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-Yn-YH5">
+                                        <rect key="frame" x="5" y="3.6666666666666714" width="35.333333333333336" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="orange"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="gift"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="0q4-7S-OKP"/>
+                                    <constraint firstItem="Gf8-Yn-YH5" firstAttribute="leading" secondItem="krF-Hu-673" secondAttribute="leading" constant="5" id="BQ9-w1-PI6"/>
+                                    <constraint firstItem="Gf8-Yn-YH5" firstAttribute="centerY" secondItem="krF-Hu-673" secondAttribute="centerY" id="ZNf-iH-Qc7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gf8-Yn-YH5" secondAttribute="trailing" constant="5" id="mQ1-js-Gdz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2v-7h-LPp">
                                 <rect key="frame" x="12" y="110" width="418" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -165,11 +202,13 @@
                             <constraint firstItem="rrJ-9d-NEw" firstAttribute="top" secondItem="AHv-ER-iTk" secondAttribute="top" constant="16" id="Mo3-Xx-Hi9"/>
                             <constraint firstAttribute="bottom" secondItem="uGE-h9-r3o" secondAttribute="bottom" constant="12.67" id="O5t-zV-4N5"/>
                             <constraint firstAttribute="trailing" secondItem="94r-6r-4tp" secondAttribute="trailing" constant="12" id="Q4w-ph-2T3"/>
+                            <constraint firstItem="krF-Hu-673" firstAttribute="trailing" secondItem="H4l-eg-mOD" secondAttribute="trailing" id="ROI-ft-Uib"/>
                             <constraint firstItem="uGE-h9-r3o" firstAttribute="leading" secondItem="94r-6r-4tp" secondAttribute="leading" id="S3v-e8-c3e"/>
                             <constraint firstItem="rrJ-9d-NEw" firstAttribute="centerY" secondItem="XD6-ed-IYL" secondAttribute="centerY" id="YDb-MK-LuZ"/>
                             <constraint firstItem="aCF-dg-WEm" firstAttribute="leading" secondItem="AHv-ER-iTk" secondAttribute="leading" constant="12" id="Ynv-VJ-jwT"/>
                             <constraint firstItem="Tma-RP-qg5" firstAttribute="leading" secondItem="AHv-ER-iTk" secondAttribute="leading" constant="12" id="cz2-AP-zyo"/>
                             <constraint firstAttribute="trailing" secondItem="XD6-ed-IYL" secondAttribute="trailing" constant="12" id="dVi-W8-Nh8"/>
+                            <constraint firstItem="krF-Hu-673" firstAttribute="top" secondItem="H4l-eg-mOD" secondAttribute="bottom" constant="8" id="g3b-6a-xOp"/>
                             <constraint firstItem="wTU-Df-fuu" firstAttribute="top" secondItem="aCF-dg-WEm" secondAttribute="bottom" constant="8" id="gMF-8F-t9p"/>
                             <constraint firstItem="H4l-eg-mOD" firstAttribute="top" secondItem="XD6-ed-IYL" secondAttribute="bottom" constant="8" id="kNC-tt-G3m"/>
                             <constraint firstItem="h2v-7h-LPp" firstAttribute="leading" secondItem="AHv-ER-iTk" secondAttribute="leading" constant="12" id="lkK-OI-YqR"/>
@@ -195,10 +234,14 @@
                 <outlet property="containerView" destination="AHv-ER-iTk" id="osN-hK-f4s"/>
                 <outlet property="desLbl" destination="h2v-7h-LPp" id="fW7-7U-tgj"/>
                 <outlet property="durationLbl" destination="uGE-h9-r3o" id="xQV-bN-bLd"/>
+                <outlet property="giftHight" destination="P5E-p3-3Nt" id="ckp-7W-SPI"/>
+                <outlet property="giftTop" destination="kNC-tt-G3m" id="spK-VX-IKt"/>
                 <outlet property="giftView" destination="H4l-eg-mOD" id="sSt-hG-kgJ"/>
                 <outlet property="locTypeLbl" destination="wTU-Df-fuu" id="OvB-2G-Up5"/>
                 <outlet property="nameLbl" destination="rrJ-9d-NEw" id="EgX-9k-sBH"/>
                 <outlet property="priceLbl" destination="Hyh-sV-R39" id="cFJ-Ci-Jj9"/>
+                <outlet property="statusLbl" destination="Gf8-Yn-YH5" id="pxc-4E-SUm"/>
+                <outlet property="statusView" destination="krF-Hu-673" id="2ly-xa-M4A"/>
                 <outlet property="typeLbl" destination="9G5-ep-pWi" id="3gq-zb-iZ2"/>
             </connections>
             <point key="canvasLocation" x="123.66412213740458" y="52.112676056338032"/>

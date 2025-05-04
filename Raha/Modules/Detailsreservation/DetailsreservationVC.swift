@@ -56,11 +56,13 @@ extension DetailsreservationVC {
         (self.tabBarController as? CustomTabBarController)?.hideTabBar()
         setup()
         bind()
+        subscribe()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel = nil
         coordinator = nil
+        unsubscribe()
     }
     override func bind() {
         super.bind()
@@ -177,6 +179,8 @@ extension DetailsreservationVC: UITableViewDelegate, UITableViewDataSource {
         var cell = tableView.cell(type: DetailsreservationTableViewCell.self, indexPath)
         cell.model = service[safe: indexPath.row]
         cell.isgift = viewModel?.orderdetails.value?.data?.isGift ?? 0
+        cell.statuskey = viewModel?.orderdetails.value?.data?.statusKey ?? 0
+        cell.statusValue = viewModel?.orderdetails.value?.data?.status ?? ""
         cell.setup()
         return cell
     }
@@ -184,4 +188,13 @@ extension DetailsreservationVC: UITableViewDelegate, UITableViewDataSource {
        
     }
     
+}
+extension DetailsreservationVC: NotificationSubscriber {
+    func notificationControlWillPresent(notificationType: String?, json: String, closure: SoundHandler?) {
+        closure?(true)
+        if notificationType ?? "" != "reservation" || json.int ?? 0 != orderId {
+            return
+        }
+        viewModel?.fetchorderdetails()
+    }
 }

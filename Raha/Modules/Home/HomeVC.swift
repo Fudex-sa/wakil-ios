@@ -33,6 +33,8 @@ class HomeVC: BaseController, CLLocationManagerDelegate {
     var filter : FilterServiceModel = FilterServiceModel.init()
     let locationManager = CLLocationManager()
     var timer: TimeHelper?
+    static var itemId: Int?
+    static var type: String?
 }
 
 // MARK: - ...  LifeCycle
@@ -79,6 +81,19 @@ extension HomeVC {
 // MARK: - ...  Functions
 extension HomeVC {
     func setup() {
+        if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "reservation"{
+            coordinator?.detailsreservation(id: HomeVC.itemId ?? 0)
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else  if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "complaint"{
+            coordinator?.complains()
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }else if HomeVC.type ?? "" == "profile" &&  HomeVC.type ?? "" == "booking"{
+            coordinator?.notification()
+            HomeVC.type = ""
+            HomeVC.itemId = 0
+        }
         scrollContainerView.delegate = self
         centerTbl.skeleton()
         centerTbl.delegate = self
@@ -107,6 +122,9 @@ extension HomeVC {
         }
         langBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.selectlanguage()
+        }).store(self)
+        notBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.notification()
         }).store(self)
         filterView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.filter()

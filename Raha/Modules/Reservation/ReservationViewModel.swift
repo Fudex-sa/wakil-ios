@@ -19,7 +19,12 @@ extension ReservationViewModel {
 // MARK: - ...  Example of network response
 extension ReservationViewModel {
     func fetchorders() {
-        NetworkManager.instance.paramaters["status"] = status.value ?? 0
+        var statuses: [Int] = []
+        statuses.append(status.value ?? 0)
+        if status.value ?? 0 == 4 {
+            statuses.append(5)
+        }
+        NetworkManager.instance.paramaters["statuses"] = statuses
         NetworkManager.instance.request(NetworkConfigration.EndPoint.myorders.rawValue, type: .get, ReservationModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

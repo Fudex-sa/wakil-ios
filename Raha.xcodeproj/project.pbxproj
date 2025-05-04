@@ -337,6 +337,15 @@
 		8DD3C16B2DA2C16F00D8962B /* CancelOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1682DA2C16F00D8962B /* CancelOrderViewModel.swift */; };
 		8DD3C16C2DA2C16F00D8962B /* CancelOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3C1672DA2C16F00D8962B /* CancelOrderVC.swift */; };
 		8DD3C16D2DA2C16F00D8962B /* CancelOrderStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3C1662DA2C16F00D8962B /* CancelOrderStoryboard.storyboard */; };
+		8DE8ECA72DC223E80021E859 /* NotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8ECA22DC223E80021E859 /* NotificationCoordinator.swift */; };
+		8DE8ECA82DC223E80021E859 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8ECA62DC223E80021E859 /* NotificationViewModel.swift */; };
+		8DE8ECA92DC223E80021E859 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8ECA52DC223E80021E859 /* NotificationVC.swift */; };
+		8DE8ECAA2DC223E80021E859 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8ECA32DC223E80021E859 /* NotificationModel.swift */; };
+		8DE8ECAB2DC223E80021E859 /* NotificationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE8ECA42DC223E80021E859 /* NotificationStoryboard.storyboard */; };
+		8DEDCB5E2DC22B6B00EC573E /* NotsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEDCB5C2DC22B6B00EC573E /* NotsTableViewCell.swift */; };
+		8DEDCB5F2DC22B6B00EC573E /* NotsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEDCB5D2DC22B6B00EC573E /* NotsTableViewCell.xib */; };
+		8DEDCB622DC22C7200EC573E /* Nots1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEDCB602DC22C7200EC573E /* Nots1TableViewCell.swift */; };
+		8DEDCB632DC22C7200EC573E /* Nots1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEDCB612DC22C7200EC573E /* Nots1TableViewCell.xib */; };
 		C806799D266E2F80001591AF /* GuardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806799C266E2F80001591AF /* GuardUI.swift */; };
 		C80679A0266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806799F266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift */; };
 		C80679A3266E3009001591AF /* ValidatorUnderlineUI+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80679A2266E3009001591AF /* ValidatorUnderlineUI+Ex.swift */; };
@@ -1023,6 +1032,15 @@
 		8DD3C1662DA2C16F00D8962B /* CancelOrderStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CancelOrderStoryboard.storyboard; sourceTree = "<group>"; };
 		8DD3C1672DA2C16F00D8962B /* CancelOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderVC.swift; sourceTree = "<group>"; };
 		8DD3C1682DA2C16F00D8962B /* CancelOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderViewModel.swift; sourceTree = "<group>"; };
+		8DE8ECA22DC223E80021E859 /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
+		8DE8ECA32DC223E80021E859 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		8DE8ECA42DC223E80021E859 /* NotificationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationStoryboard.storyboard; sourceTree = "<group>"; };
+		8DE8ECA52DC223E80021E859 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		8DE8ECA62DC223E80021E859 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		8DEDCB5C2DC22B6B00EC573E /* NotsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotsTableViewCell.swift; sourceTree = "<group>"; };
+		8DEDCB5D2DC22B6B00EC573E /* NotsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotsTableViewCell.xib; sourceTree = "<group>"; };
+		8DEDCB602DC22C7200EC573E /* Nots1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nots1TableViewCell.swift; sourceTree = "<group>"; };
+		8DEDCB612DC22C7200EC573E /* Nots1TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Nots1TableViewCell.xib; sourceTree = "<group>"; };
 		A7D5D8C73E2E95434085A056 /* Pods-Raha.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raha.development.xcconfig"; path = "Target Support Files/Pods-Raha/Pods-Raha.development.xcconfig"; sourceTree = "<group>"; };
 		C806799C266E2F80001591AF /* GuardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardUI.swift; sourceTree = "<group>"; };
 		C806799F266E2FCE001591AF /* ValidatorInfoMarkUI+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValidatorInfoMarkUI+Ex.swift"; sourceTree = "<group>"; };
@@ -2330,6 +2348,30 @@
 			path = CancelOrder;
 			sourceTree = "<group>";
 		};
+		8DE8ECA12DC223C30021E859 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				8DEDCB5B2DC22B4800EC573E /* cells */,
+				8DE8ECA22DC223E80021E859 /* NotificationCoordinator.swift */,
+				8DE8ECA32DC223E80021E859 /* NotificationModel.swift */,
+				8DE8ECA42DC223E80021E859 /* NotificationStoryboard.storyboard */,
+				8DE8ECA52DC223E80021E859 /* NotificationVC.swift */,
+				8DE8ECA62DC223E80021E859 /* NotificationViewModel.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		8DEDCB5B2DC22B4800EC573E /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				8DEDCB5C2DC22B6B00EC573E /* NotsTableViewCell.swift */,
+				8DEDCB5D2DC22B6B00EC573E /* NotsTableViewCell.xib */,
+				8DEDCB602DC22C7200EC573E /* Nots1TableViewCell.swift */,
+				8DEDCB612DC22C7200EC573E /* Nots1TableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		C24929DD1F6900B652036CF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3222,6 +3264,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8DE8ECA12DC223C30021E859 /* Notification */,
 				8D732FC92DAFDE2600990B9F /* Sendcomplain */,
 				8D732FBE2DAFDE0600990B9F /* Complains */,
 				8D3B0F0C2DAD699200C54E31 /* ChooseLocMethod */,
@@ -3491,6 +3534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE8ECAB2DC223E80021E859 /* NotificationStoryboard.storyboard in Resources */,
 				8DD3C16D2DA2C16F00D8962B /* CancelOrderStoryboard.storyboard in Resources */,
 				8D3B0EEB2DAD5BA300C54E31 /* RatingCollectionViewCell.xib in Resources */,
 				66BF522B2D6F0ECB0030B38A /* ReservationStoryboard.storyboard in Resources */,
@@ -3571,6 +3615,7 @@
 				C84539A82729887000004173 /* NeoSansArabic-Light.ttf in Resources */,
 				77C5F4A72534814200E70C4C /* Assets.xcassets in Resources */,
 				C86BF998266947F0002D87BC /* warningIconLight@3x.png in Resources */,
+				8DEDCB5F2DC22B6B00EC573E /* NotsTableViewCell.xib in Resources */,
 				664DCAFF2C3BC2460011DB96 /* Tajawal-Light.ttf in Resources */,
 				C86BF987266947F0002D87BC /* successIconSubtle.png in Resources */,
 				8D8F5DE82DA15E630046DB8E /* ReservationTableViewCell.xib in Resources */,
@@ -3615,6 +3660,7 @@
 				E8339CA827CD262D000D5A6E /* Loading-Light.gif in Resources */,
 				663C3FAF2D6DC92900A2C80A /* ResetpasswordStoryboard.storyboard in Resources */,
 				7756A096253482EF00BFE53C /* RadioView.xib in Resources */,
+				8DEDCB632DC22C7200EC573E /* Nots1TableViewCell.xib in Resources */,
 				8DB6ADF02DA7CD620093EB4E /* SelectservicesTableViewCell.xib in Resources */,
 				8D3B0F0B2DAD697F00C54E31 /* ChooseLocMethodStoryboard.storyboard in Resources */,
 				8D732FC82DAFDE1900990B9F /* ComplainsStoryboard.storyboard in Resources */,
@@ -4003,6 +4049,7 @@
 				8DB6ADD42DA7C8470093EB4E /* CalenderselectModel.swift in Sources */,
 				8DB6ADD52DA7C8470093EB4E /* CalenderselectViewModel.swift in Sources */,
 				8DB6ADD62DA7C8470093EB4E /* CalenderselectCoordinator.swift in Sources */,
+				8DEDCB5E2DC22B6B00EC573E /* NotsTableViewCell.swift in Sources */,
 				66C2E0DE2D6F34380027823E /* EditProfileModel.swift in Sources */,
 				66C2E0DF2D6F34380027823E /* EditProfileVC.swift in Sources */,
 				66C2E0E02D6F34380027823E /* EditProfileViewModel.swift in Sources */,
@@ -4021,6 +4068,10 @@
 				663C3FA22D6DC90100A2C80A /* ForgetpasswordVC.swift in Sources */,
 				663C3FA32D6DC90100A2C80A /* ForgetpasswordViewModel.swift in Sources */,
 				C806799D266E2F80001591AF /* GuardUI.swift in Sources */,
+				8DE8ECA72DC223E80021E859 /* NotificationCoordinator.swift in Sources */,
+				8DE8ECA82DC223E80021E859 /* NotificationViewModel.swift in Sources */,
+				8DE8ECA92DC223E80021E859 /* NotificationVC.swift in Sources */,
+				8DE8ECAA2DC223E80021E859 /* NotificationModel.swift in Sources */,
 				C871C9992730231300DCBD2D /* SkeletonTableViewProtocols.swift in Sources */,
 				C853B95026D7F9450008F09D /* SPPermissionsList.swift in Sources */,
 				7756A17225348AD400BFE53C /* UIAlertControllerExtensions.swift in Sources */,
@@ -4140,6 +4191,7 @@
 				C8C0933E272AC76B00E2270A /* Publisher+Listener.swift in Sources */,
 				C84539AD2729887000004173 /* MaintanceScreenContract.swift in Sources */,
 				C8C0930F272ABDA200E2270A /* UIButton+Combine.swift in Sources */,
+				8DEDCB622DC22C7200EC573E /* Nots1TableViewCell.swift in Sources */,
 				C86BF9B7266947F0002D87BC /* Weak.swift in Sources */,
 				C853B94526D7F9450008F09D /* Permission.swift in Sources */,
 				C86BF97B266947F0002D87BC /* WindowViewController.swift in Sources */,
@@ -4371,7 +4423,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Raha;
@@ -4456,7 +4508,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4547,7 +4599,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Raha;
@@ -4631,7 +4683,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Raha;

@@ -102,7 +102,6 @@ struct NetworkConfigration {
         case mytryouts = "client/myTryouts"
         case tryoutsstatus = "client/myTryoutsFilters"
         case notificationcount = "client/notificationsCount"
-        case notifications = "client/notifications"
         case socialLogin = "client/checkSocialUser"
         case years = "client/years"
         case playerserach = "client/players/search"
@@ -131,6 +130,8 @@ struct NetworkConfigration {
         case cancelpolicy = "client/pages/cancellation-policy"
         case compalins = "client/my-complaint-suggesstion"
         case sendcompalin = "client/complaintOrSuggest"
+        case notifications = "client/notifications"
+        case deletenotification = "client/notifications/delete"
     }
 }
 
