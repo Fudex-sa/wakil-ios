@@ -22,6 +22,7 @@ struct DetailsreservationDataClass: Codable {
     let service: [Service]?
     let serviceTypes: [String]?
     let price: String?
+    let is_refunded: Int?
     let isGift: Int?
     let locationType, date, time: String?
     let rating: Rating?
@@ -29,7 +30,7 @@ struct DetailsreservationDataClass: Codable {
     let gift: Gift?
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case id, is_refunded
         case statusKey = "status_key"
         case status, service
         case serviceTypes = "service_types"

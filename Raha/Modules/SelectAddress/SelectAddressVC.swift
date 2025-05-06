@@ -76,6 +76,9 @@ extension SelectAddressVC {
             })
             }).store(self)
         doneBtn.publisher.listen(on: {[weak self] _ in
+            if self?.viewModel?.items.value?.count ?? 0 == 0 {
+                return
+            }
             for index in self?.viewModel?.items.value ?? [] {
                 if index.id == self?.addressId ?? 0 {
                     self?.addressdata = index

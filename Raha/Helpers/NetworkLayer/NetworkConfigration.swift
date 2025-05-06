@@ -132,6 +132,7 @@ struct NetworkConfigration {
         case sendcompalin = "client/complaintOrSuggest"
         case notifications = "client/notifications"
         case deletenotification = "client/notifications/delete"
+        case notcount = "client/notifications/count"
     }
 }
 

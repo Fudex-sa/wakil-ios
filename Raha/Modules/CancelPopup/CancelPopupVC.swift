@@ -50,7 +50,7 @@ extension CancelPopupVC {
             self?.dismiss(animated: true, completion: nil)
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when){ [self] in
-                Coordinator.instance.restart(storyboard: R.storyboard.homeStoryboard())
+                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
             }
         })
         

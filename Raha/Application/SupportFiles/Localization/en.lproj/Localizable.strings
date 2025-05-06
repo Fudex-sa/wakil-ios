@@ -477,3 +477,5 @@
 "No notifications yet" = "No notifications yet";
 "Delete notification" = "Delete notification";
 "Are you sure to delete notification?" = "Are you sure to delete notification?";
+"The reservation amount has been refunded after applying the cancellation policy" = "The reservation amount has been refunded after applying the cancellation policy";
+"Reservation and cancellation policy will apply and the reservation amount will be refunded to you as soon as possible" = "Reservation and cancellation policy will apply and the reservation amount will be refunded to you as soon as possible";

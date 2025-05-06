@@ -12,6 +12,9 @@ import MBProgressHUD
 
 // MARK: - ...  ViewController - Vars
 class DetailsreservationVC: BaseController {
+    @IBOutlet weak var cancelLbl: UILabel!
+    @IBOutlet weak var cancelImg: UIImageView!
+    @IBOutlet weak var refundView: UIView!
     @IBOutlet weak var cancelHight: NSLayoutConstraint!
     @IBOutlet weak var prividerImg: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -143,13 +146,31 @@ extension DetailsreservationVC {
             cancelBtn.setTitle("Cancel order".localized, for: .normal)
             cancelView.isHidden = false
             cancelHight.constant = 92
+            suggestionView.isHidden = false
+            refundView.isHidden = true
         }else if viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 4 && viewModel?.orderdetails.value?.data?.rating == nil {
             cancelBtn.setTitle("Service Evaluation".localized, for: .normal)
             cancelView.isHidden = false
             cancelHight.constant = 92
+            suggestionView.isHidden = false
+            refundView.isHidden = true
+        }else if viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 5 {
+            cancelView.isHidden = true
+            cancelHight.constant = 0
+            refundView.isHidden = false
+            suggestionView.isHidden = true
+            if viewModel?.orderdetails.value?.data?.is_refunded ?? 0 == 1 {
+                cancelLbl.text = "The reservation amount has been refunded after applying the cancellation policy".localized
+                cancelImg.image = UIImage(named: "done 1")
+            }else {
+                cancelLbl.text = "Reservation and cancellation policy will apply and the reservation amount will be refunded to you as soon as possible".localized
+                cancelImg.image = UIImage(named: "alert 1")
+            }
         }else {
             cancelView.isHidden = true
             cancelHight.constant = 0
+            suggestionView.isHidden = false
+            refundView.isHidden = true
         }
         copy = ""
         copy = "\("Booked on".localized) \(viewModel?.orderdetails.value?.data?.date ?? "") \(viewModel?.orderdetails.value?.data?.time ?? "") \n"

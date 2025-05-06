@@ -13,6 +13,7 @@ struct HomeModel: Codable {
     let data: [HomeDatum]?
     let status: Bool?
     let message: String?
+    let meta: Meta?
 }
 
 // MARK: - Datum
@@ -28,6 +29,12 @@ struct HomeDatum: Codable {
     enum CodingKeys: String, CodingKey {
         case id, name, description, address, image, rate, distance
         case serviceTypes = "service_types"
+    }
+}
+struct Meta: Codable {
+    let currentPage: Int?
+    enum CodingKeys: String, CodingKey {
+        case currentPage = "current_page"
     }
 }
 struct SlidersModel: Codable {
@@ -48,4 +55,8 @@ struct SlidersDatum: Codable {
         case sortOrder = "sort_order"
         case image
     }
+}
+
+struct NotcountModel: Codable {
+    let data: Int?
 }

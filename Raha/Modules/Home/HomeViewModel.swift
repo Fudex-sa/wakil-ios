@@ -24,6 +24,7 @@ class HomeViewModel: BaseViewModel ,DataSourceViewModel {
     var addressstatus: Publisher<Bool> = .init()
     var sliders: Publisher<[SlidersDatum]> = .init()
     var slidersFinished: Publisher<Bool> = .init()
+    var notcount: Publisher<Int> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -74,6 +75,9 @@ extension HomeViewModel {
             self?.error.send(error)
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
+            if model.meta?.currentPage == 1 && self?.dataSource()?.count ?? 0 == 0 {
+                self?.clearDataSource()
+            }
             self?.append(contentsOf: model.data ?? [])
             self?.paginator(respnod: model.data)
             self?.publisher()
@@ -86,6 +90,14 @@ extension HomeViewModel {
             guard let model = model else { return }
             self?.sliders.send(model.data ?? [])
             self?.slidersFinished.send(true)
+        }).store(self)
+    }
+    func getnotcount() {
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.notcount.rawValue, type: .get, NotcountModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.notcount.send(model.data ?? 0)
         }).store(self)
     }
 }

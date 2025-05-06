@@ -12,6 +12,7 @@ import CoreLocation
 
 // MARK: - ...  ViewController - Vars
 class HomeVC: BaseController, CLLocationManagerDelegate {
+    @IBOutlet weak var dotImg: UIImageView!
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var scrollContainerView: UIScrollView!
     @IBOutlet weak var centerTbl: UITableView!
@@ -41,7 +42,6 @@ class HomeVC: BaseController, CLLocationManagerDelegate {
 extension HomeVC {
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +75,13 @@ extension HomeVC {
         viewModel?.userddata.listen(on: { [weak self] value in
             self?.userImg.setImage(url: self?.viewModel?.userddata.value?.data?.avatar ?? "")
         })
+        viewModel?.notcount.listen(on: { [weak self] value in
+            if value == 0 {
+                self?.dotImg.isHidden = true
+            }else {
+                self?.dotImg.isHidden = false
+            }
+        })
        
     }
 }
@@ -106,6 +113,7 @@ extension HomeVC {
         viewModel?.fetchsliders()
         if UD.user != nil {
             viewModel?.getprofile()
+            viewModel?.getnotcount()
             if UD.address == nil {
                 viewModel?.fetchaddresses()
             }else {
@@ -147,7 +155,7 @@ extension HomeVC {
     }
     func reloadaadress() {
         if viewModel?.addressList.value?.count ?? 0 == 0 {
-            if UD.lat ?? -1 == -1 {
+            if UD.lat == nil {
                 coordinator?.currentloc()
             }else {
                 viewModel?.lat.send(UD.lat ?? 0.0)
@@ -204,6 +212,7 @@ extension HomeVC {
         slidersCollection.reloadData()
     }
     func currentlocation() {
+        locationManager.delegate = self
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()

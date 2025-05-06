@@ -44,6 +44,39 @@
                                             <constraint firstAttribute="height" constant="32" id="XS3-6v-As6"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ux1-Al-hK0">
+                                        <rect key="frame" x="350" y="5" width="40" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noti" translatesAutoresizingMaskIntoConstraints="NO" id="zcn-VL-Liw">
+                                                <rect key="frame" x="8" y="8" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="I2A-sx-MMr"/>
+                                                    <constraint firstAttribute="height" constant="24" id="wGR-5P-vbZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="KUX-uQ-u6A">
+                                                <rect key="frame" x="22" y="10" width="6" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="6" id="7b4-GV-inQ"/>
+                                                    <constraint firstAttribute="width" constant="6" id="mM0-Cx-xPG"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="zcn-VL-Liw" firstAttribute="centerX" secondItem="Ux1-Al-hK0" secondAttribute="centerX" id="bmq-gE-brj"/>
+                                            <constraint firstItem="zcn-VL-Liw" firstAttribute="centerY" secondItem="Ux1-Al-hK0" secondAttribute="centerY" id="gVI-7g-KUo"/>
+                                            <constraint firstItem="KUX-uQ-u6A" firstAttribute="top" secondItem="Ux1-Al-hK0" secondAttribute="top" constant="10" id="kIE-gh-YIE"/>
+                                            <constraint firstAttribute="trailing" secondItem="KUX-uQ-u6A" secondAttribute="trailing" constant="12" id="kX1-tU-tph"/>
+                                            <constraint firstAttribute="height" constant="40" id="opq-HP-pRB"/>
+                                            <constraint firstAttribute="width" constant="40" id="uoK-La-jNB"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOj-cH-Nbg">
                                         <rect key="frame" x="350" y="5" width="40" height="40"/>
                                         <constraints>
@@ -51,7 +84,6 @@
                                             <constraint firstAttribute="width" constant="40" id="L8W-Tg-gBh"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="notification"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZT-aO-BJO">
                                         <rect key="frame" x="310" y="5" width="40" height="40"/>
@@ -68,9 +100,12 @@
                                     <constraint firstAttribute="height" constant="50" id="1rE-zf-ebT"/>
                                     <constraint firstItem="nkt-kU-Dt4" firstAttribute="centerY" secondItem="i2F-rv-5YP" secondAttribute="centerY" id="3ev-rZ-eq7"/>
                                     <constraint firstItem="nkt-kU-Dt4" firstAttribute="leading" secondItem="i2F-rv-5YP" secondAttribute="leading" constant="24" id="4TV-oo-LRL"/>
+                                    <constraint firstItem="Ux1-Al-hK0" firstAttribute="trailing" secondItem="tOj-cH-Nbg" secondAttribute="trailing" id="B7P-lj-K38"/>
+                                    <constraint firstItem="Ux1-Al-hK0" firstAttribute="centerY" secondItem="xf2-PR-KGc" secondAttribute="centerY" id="C3F-mH-b8V"/>
                                     <constraint firstItem="tOj-cH-Nbg" firstAttribute="centerY" secondItem="i2F-rv-5YP" secondAttribute="centerY" id="HXh-DB-dbT"/>
                                     <constraint firstItem="UZT-aO-BJO" firstAttribute="centerY" secondItem="i2F-rv-5YP" secondAttribute="centerY" id="Y7k-t8-cga"/>
                                     <constraint firstItem="tOj-cH-Nbg" firstAttribute="leading" secondItem="UZT-aO-BJO" secondAttribute="trailing" id="eHW-sm-ZTa"/>
+                                    <constraint firstItem="Ux1-Al-hK0" firstAttribute="leading" secondItem="tOj-cH-Nbg" secondAttribute="leading" id="jEy-vZ-Ssm"/>
                                     <constraint firstAttribute="trailing" secondItem="tOj-cH-Nbg" secondAttribute="trailing" constant="24" id="lUF-K2-17h"/>
                                     <constraint firstItem="xf2-PR-KGc" firstAttribute="centerY" secondItem="i2F-rv-5YP" secondAttribute="centerY" id="p7P-RX-VgG"/>
                                     <constraint firstItem="xf2-PR-KGc" firstAttribute="centerX" secondItem="i2F-rv-5YP" secondAttribute="centerX" id="u52-3f-AmP"/>
@@ -83,8 +118,8 @@
                                     <constraint firstAttribute="width" constant="24" id="uyl-di-q5y"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZc-g4-Rwi">
-                                <rect key="frame" x="56" y="164" width="41.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZc-g4-Rwi">
+                                <rect key="frame" x="56" y="174" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Black1"/>
                                 <nil key="highlightedColor"/>
@@ -93,7 +128,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown" translatesAutoresizingMaskIntoConstraints="NO" id="QPp-2K-bvF">
-                                <rect key="frame" x="99.5" y="166" width="16" height="16"/>
+                                <rect key="frame" x="58" y="166" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="eW0-hU-Uuo"/>
                                     <constraint firstAttribute="height" constant="16" id="psY-2I-0f2"/>
@@ -301,6 +336,7 @@
                     <navigationItem key="navigationItem" id="5z5-RY-GuD"/>
                     <connections>
                         <outlet property="centerTbl" destination="QH2-4e-j6S" id="ZjR-Xh-beq"/>
+                        <outlet property="dotImg" destination="KUX-uQ-u6A" id="Fzh-b3-R28"/>
                         <outlet property="dotsPage" destination="j8n-1Y-J86" id="Xge-cy-e0y"/>
                         <outlet property="filterView" destination="63K-Me-ge6" id="tDe-NW-Frx"/>
                         <outlet property="langBtn" destination="UZT-aO-BJO" id="klB-Wg-Go3"/>
@@ -339,11 +375,12 @@
     <resources>
         <image name="LOGO" width="190" height="79"/>
         <image name="arrowdown" width="16" height="16"/>
+        <image name="dot" width="7" height="7"/>
         <image name="filter" width="24" height="24"/>
         <image name="gradiant" width="430" height="932"/>
         <image name="language 2" width="48" height="48"/>
         <image name="location 1" width="24" height="24"/>
-        <image name="notification" width="48" height="48"/>
+        <image name="noti" width="24" height="24"/>
         <image name="search" width="18" height="18"/>
         <namedColor name="Black1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

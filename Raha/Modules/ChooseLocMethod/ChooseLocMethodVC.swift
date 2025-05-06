@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 protocol ChooseLocMethodVCDelegate: AnyObject {
     func addaddressreturn()
     func currentlocreturn()
@@ -44,6 +45,14 @@ extension ChooseLocMethodVC {
 // MARK: - ...  Functions
 extension ChooseLocMethodVC {
     func setup() {
+        if #available(iOS 14.0, *) {
+            let status = CLLocationManager().authorizationStatus
+            if status == .denied || status == .restricted {
+                locBtn.isHidden = true
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         addBtn.publisher.listen(on: {[weak self] _ in
             self?.delegate?.addaddressreturn()
             self?.dismiss(animated: true, completion: nil)
