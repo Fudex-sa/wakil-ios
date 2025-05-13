@@ -17,12 +17,12 @@ struct AddressesModel: Codable {
 
 // MARK: - Datum
 struct AddressesDatum: Codable {
-    let id: Int?
-    let lat, lng: String?
-    let isDefault: Int?
-    let stateID: CityID?
-    let cityID: CityID?
-    let district: String?
+    var id: Int?
+    var lat, lng: String?
+    var isDefault: Int?
+    var stateID: CityID?
+    var cityID: CityID?
+    var district: String?
 
     enum CodingKeys: String, CodingKey {
         case id, lat, lng

@@ -22,6 +22,9 @@ struct DetailsreservationDataClass: Codable {
     let service: [Service]?
     let serviceTypes: [String]?
     let price: String?
+    let vatRate: String?
+    let vatPrice: String?
+    let totalPrice: String?
     let is_refunded: Int?
     let isGift: Int?
     let locationType, date, time: String?
@@ -31,6 +34,9 @@ struct DetailsreservationDataClass: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, is_refunded
+        case vatRate = "vat_rate"
+        case vatPrice = "vat_price"
+        case totalPrice = "total_price"
         case statusKey = "status_key"
         case status, service
         case serviceTypes = "service_types"

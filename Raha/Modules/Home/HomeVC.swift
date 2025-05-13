@@ -112,6 +112,7 @@ extension HomeVC {
         slidersCollection.observe()
         viewModel?.fetchsliders()
         if UD.user != nil {
+            viewModel?.updatelang()
             viewModel?.getprofile()
             viewModel?.getnotcount()
             if UD.address == nil {

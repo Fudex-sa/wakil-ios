@@ -25,6 +25,7 @@ class HomeViewModel: BaseViewModel ,DataSourceViewModel {
     var sliders: Publisher<[SlidersDatum]> = .init()
     var slidersFinished: Publisher<Bool> = .init()
     var notcount: Publisher<Int> = .init()
+    var langdata: Publisher<DeleteaddresssModel> = .init()
 }
 // MARK: - ...  ViewModel Contract
 extension HomeViewModel {
@@ -98,6 +99,16 @@ extension HomeViewModel {
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
             self?.notcount.send(model.data ?? 0)
+        }).store(self)
+    }
+    func updatelang() {
+        NetworkManager.instance.paramaters["lang"] = Localizer.current.rawValue
+        NetworkManager.instance.paramaters["device_id"] = Constants.DEVICEID
+        NetworkManager.instance.request(NetworkConfigration.EndPoint.updatelanguage.rawValue, type: .post, DeleteaddresssModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.langdata.send(model)
         }).store(self)
     }
 }

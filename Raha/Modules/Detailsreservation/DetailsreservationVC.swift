@@ -39,6 +39,10 @@ class DetailsreservationVC: BaseController {
     @IBOutlet weak var copyView: UIView!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var vatTitleLbl: UILabel!
+    @IBOutlet weak var vatLbl: UILabel!
+    @IBOutlet weak var totalpriceLbl: UILabel!
     var viewModel: DetailsreservationViewModel?
     var coordinator: DetailsreservationCoordinator?
     var service: [Service] = []
@@ -121,6 +125,10 @@ extension DetailsreservationVC {
         stopLoading()
         dateLbl.text = viewModel?.orderdetails.value?.data?.date ?? ""
         timeLbl.text = viewModel?.orderdetails.value?.data?.time ?? ""
+        priceLbl.text = viewModel?.orderdetails.value?.data?.price ?? ""
+        vatTitleLbl.text = "\("Vat".localized) \(viewModel?.orderdetails.value?.data?.vatRate ?? "") % :"
+        vatLbl.text = viewModel?.orderdetails.value?.data?.vatPrice ?? ""
+        totalpriceLbl.text = viewModel?.orderdetails.value?.data?.totalPrice ?? ""
         prividerImg.setImage(url: viewModel?.orderdetails.value?.data?.branch?.image ?? "")
         nameLbl.text = viewModel?.orderdetails.value?.data?.branch?.name ?? ""
         rateLbl.text = viewModel?.orderdetails.value?.data?.branch?.rate?.string ?? ""

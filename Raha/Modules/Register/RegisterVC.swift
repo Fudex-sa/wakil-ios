@@ -69,6 +69,7 @@ extension RegisterVC {
             confirmSpace1View.isHidden = true
             viewModel?.socailId.send(socailId ?? "")
             viewModel?.socailType.send(type ?? 0)
+            viewModel?.email.send(email ?? "")
         }
     }
     override func viewWillAppear(_ animated: Bool) {

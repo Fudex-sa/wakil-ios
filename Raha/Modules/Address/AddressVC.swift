@@ -43,6 +43,7 @@ extension AddressVC {
         })
         viewModel?.requestFinished.listen(on: { [weak self] value in
             self?.reload()
+            self?.stopLoading()
         })
         viewModel?.deltedata.listen(on: { [weak self] value in
             self?.stopLoading()
@@ -51,6 +52,8 @@ extension AddressVC {
             self?.viewModel?.fetchaddresses()
             
         })
+        
+       
     }
 }
 // MARK: - ...  Functions
@@ -126,6 +129,15 @@ extension AddressVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 extension AddressVC : AddresslistTableViewCellDelegate {
+    func defult(wasPressedOnCell cell: AddresslistTableViewCell, model: AddressesDatum) {
+        if model.isDefault ?? 0 == 1 {
+            return
+        }
+        viewModel?.addressId.send(model.id ?? 0)
+        startLoading()
+        viewModel?.defultaddress()
+    }
+    
     func delete(wasPressedOnCell cell: AddresslistTableViewCell, model: AddressesDatum) {
         viewModel?.addressId.send(model.id ?? 0)
         coordinator?.delete()

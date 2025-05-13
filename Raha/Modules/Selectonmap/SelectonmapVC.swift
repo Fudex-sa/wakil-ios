@@ -79,6 +79,9 @@ extension SelectonmapVC: MKMapViewDelegate, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if lat ?? 0 != 0 {
+            return
+        }
         guard let location = locations.first else { return }
         updateCamera(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
     }

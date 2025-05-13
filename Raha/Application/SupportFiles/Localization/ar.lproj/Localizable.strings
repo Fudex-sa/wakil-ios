@@ -331,6 +331,7 @@
 "Language" = "اللغة";
 "English" = "English";
 "Find a center" = "ابحث عن مركز";
+"Raha application" = "تطبيق راحة";
 "kilometer" = "كيلومتر";
 "Filtering services" = "تصفية الخدمات";
 "Service Type" = "نوع الخدمة" ;
@@ -474,3 +475,4 @@
 "Are you sure to delete notification?" = "هل تريد حذف الاشعارات ؟";
 "The reservation amount has been refunded after applying the cancellation policy" = "تم رد مبلغ الحجز بعد تطبيق سياسة الالغاء";
 "Reservation and cancellation policy will apply and the reservation amount will be refunded to you as soon as possible" = "سيتم تطبيق سياسة الحجز والالغاء وسيتم رد مبلغ الحجز اليك في أسرع وقت";
+"Total price :" = "السعر الاجمالى :";

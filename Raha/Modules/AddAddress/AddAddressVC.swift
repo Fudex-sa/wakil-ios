@@ -46,6 +46,7 @@ extension AddAddressVC {
         coordinator?.view = self
         setup()
         bind()
+        (self.tabBarController as? CustomTabBarController)?.hideTabBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

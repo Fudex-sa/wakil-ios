@@ -133,6 +133,7 @@ struct NetworkConfigration {
         case notifications = "client/notifications"
         case deletenotification = "client/notifications/delete"
         case notcount = "client/notifications/count"
+        case updatelanguage = "client/changeLanguage"
     }
 }
 

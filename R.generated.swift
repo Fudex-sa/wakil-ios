@@ -3507,7 +3507,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 396 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 397 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -4547,8 +4547,8 @@ struct R: Rswift.Validatable {
       static let profileData = Rswift.StringResource(key: "Profile Data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Raha application
       ///
-      /// Locales: en
-      static let rahaApplication = Rswift.StringResource(key: "Raha application", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: ar, en
+      static let rahaApplication = Rswift.StringResource(key: "Raha application", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Rate:
       ///
       /// Locales: ar, en
@@ -4833,6 +4833,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let toActivateYourAccountPleaseEnterTheCodeSentTo = Rswift.StringResource(key: "To activate your account, please enter the code sent to", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Total price :
+      ///
+      /// Locales: ar, en
+      static let totalPrice = Rswift.StringResource(key: "Total price :", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Total price of services:
       ///
       /// Locales: ar, en
@@ -8981,7 +8985,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Raha application
       ///
-      /// Locales: en
+      /// Locales: ar, en
       static func rahaApplication(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Raha application", bundle: hostingBundle, comment: "")
@@ -10057,6 +10061,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("To activate your account, please enter the code sent to", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Total price :
+      ///
+      /// Locales: ar, en
+      static func totalPrice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Total price :", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Total price :"
+        }
+
+        return NSLocalizedString("Total price :", bundle: bundle, comment: "")
       }
 
       /// en translation: Total price of services:

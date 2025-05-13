@@ -10,6 +10,7 @@ import UIKit
 protocol AddresslistTableViewCellDelegate: AnyObject {
     func edit(wasPressedOnCell cell: AddresslistTableViewCell , model : AddressesDatum)
     func delete(wasPressedOnCell cell: AddresslistTableViewCell , model : AddressesDatum)
+    func defult(wasPressedOnCell cell: AddresslistTableViewCell , model : AddressesDatum)
 
 }
 class AddresslistTableViewCell: BaseTableViewCell {
@@ -41,6 +42,10 @@ class AddresslistTableViewCell: BaseTableViewCell {
         deleteBtn.publisher.listen(on: {[weak self] _ in
             guard let self = self else { return }
             self.delegate?.delete(wasPressedOnCell: self, model: model)
+        }).store(self)
+        defultBtn.publisher.listen(on: {[weak self] _ in
+            guard let self = self else { return }
+            self.delegate?.defult(wasPressedOnCell: self, model: model)
         }).store(self)
     }
 }
