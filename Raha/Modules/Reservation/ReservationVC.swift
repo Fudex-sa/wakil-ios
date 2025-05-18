@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class ReservationVC: BaseController {
+class ReservationVC: BaseController, Reloader {
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var orderTbl: UITableView!
@@ -53,6 +55,7 @@ extension ReservationVC {
             self?.didError(error: error?.localizedDescription)
         })
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
         
@@ -150,6 +153,11 @@ extension ReservationVC {
             Constants.index = 0
             Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
         }).store(self)
+        swipeTopRefresh(scrollView: orderTbl) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchorders()
+        }
     }
     func reload() {
         if viewModel?.dataSource()?.count ?? 0 == 0 {

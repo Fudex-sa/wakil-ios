@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class ComplainsVC: BaseController {
+class ComplainsVC: BaseController,Reloader {
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var closedLbl: UILabel!
     @IBOutlet weak var processLbl: UILabel!
     @IBOutlet weak var newLbl: UILabel!
@@ -51,6 +53,7 @@ extension ComplainsVC {
             self?.didError(error: error?.localizedDescription)
         })
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
     }
@@ -110,6 +113,11 @@ extension ComplainsVC {
             viewModel?.resetPaginator()
             viewModel?.clearDataSource()
             viewModel?.fetchcomplains()
+        }
+        swipeTopRefresh(scrollView: complainTbl) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchcomplains()
         }
     }
     func status() {

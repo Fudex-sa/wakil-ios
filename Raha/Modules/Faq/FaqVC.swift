@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class FaqVC: BaseController {
+class FaqVC: BaseController,Reloader {
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var faqTbl: UITableView!
     var viewModel: FaqViewModel?
     var coordinator: FaqCoordinator?
@@ -41,6 +43,7 @@ extension FaqVC {
             self?.didError(error: error?.localizedDescription)
         })
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
     }
@@ -52,7 +55,14 @@ extension FaqVC {
         faqTbl.delegate = self
         faqTbl.dataSource = self
         faqTbl.observe()
+        viewModel?.resetPaginator()
+        viewModel?.clearDataSource()
         viewModel?.fetchfaq()
+        swipeTopRefresh(scrollView: faqTbl) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchfaq()
+        }
     }
     func reload() {
         if viewModel?.dataSource()?.count ?? 0 == 0 {

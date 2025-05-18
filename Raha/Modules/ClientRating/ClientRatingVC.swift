@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class ClientRatingVC: BaseController {
+class ClientRatingVC: BaseController,Reloader {
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var ratingTbl: UITableView!
     var viewModel: ClientRatingViewModel?
     var coordinator: ClientRatingCoordinator?
@@ -41,6 +43,7 @@ extension ClientRatingVC {
             self?.didError(error: error?.localizedDescription)
         })
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
     }
@@ -56,6 +59,11 @@ extension ClientRatingVC {
         viewModel?.resetPaginator()
         viewModel?.clearDataSource()
         viewModel?.fetchrating()
+        swipeTopRefresh(scrollView: ratingTbl) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchrating()
+        }
     }
     func reload() {
         if viewModel?.dataSource()?.count ?? 0 == 0 {

@@ -29,8 +29,8 @@
                                     <constraint firstAttribute="height" constant="28" id="JB5-Hb-zou"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSH-RF-BOM">
-                                <rect key="frame" x="63" y="12" width="372" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSH-RF-BOM">
+                                <rect key="frame" x="63" y="12" width="372" height="21.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Black1"/>
                                 <nil key="highlightedColor"/>
@@ -38,8 +38,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWP-VV-7i9">
-                                <rect key="frame" x="63" y="37" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWP-VV-7i9">
+                                <rect key="frame" x="63" y="37.333333333333336" width="42" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="black2"/>
                                 <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyz-dm-2hd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyz-dm-2hd">
                                 <rect key="frame" x="369" y="37" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="black2"/>
@@ -59,12 +59,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="kyz-dm-2hd" secondAttribute="bottom" constant="9" id="9Er-ib-M3a"/>
                             <constraint firstItem="0eE-4q-vpW" firstAttribute="leading" secondItem="DFp-yT-xky" secondAttribute="leading" constant="23" id="DTX-oO-xm1"/>
+                            <constraint firstItem="kyz-dm-2hd" firstAttribute="leading" secondItem="JWP-VV-7i9" secondAttribute="trailing" constant="10" id="NPz-DU-bg6"/>
                             <constraint firstItem="0eE-4q-vpW" firstAttribute="centerY" secondItem="DFp-yT-xky" secondAttribute="centerY" id="R5z-y2-Ina"/>
                             <constraint firstItem="kyz-dm-2hd" firstAttribute="centerY" secondItem="JWP-VV-7i9" secondAttribute="centerY" id="VbP-vE-C5p"/>
                             <constraint firstItem="JWP-VV-7i9" firstAttribute="top" secondItem="fSH-RF-BOM" secondAttribute="bottom" constant="4" id="aTq-Ix-4NS"/>
                             <constraint firstAttribute="trailing" secondItem="fSH-RF-BOM" secondAttribute="trailing" id="ar4-Bv-fKI"/>
+                            <constraint firstAttribute="bottom" secondItem="JWP-VV-7i9" secondAttribute="bottom" constant="9.3300000000000001" id="fkv-eZ-PCf"/>
                             <constraint firstItem="fSH-RF-BOM" firstAttribute="leading" secondItem="0eE-4q-vpW" secondAttribute="trailing" constant="12" id="m6w-jq-3BX"/>
                             <constraint firstAttribute="trailing" secondItem="kyz-dm-2hd" secondAttribute="trailing" constant="24" id="vaT-aW-FDA"/>
                             <constraint firstItem="JWP-VV-7i9" firstAttribute="leading" secondItem="0eE-4q-vpW" secondAttribute="trailing" constant="12" id="y9W-LX-fkR"/>

@@ -17,12 +17,12 @@ struct NetworkConfigration {
         case stage
     }
     struct Config {
-        static var environment: Environment = .test  // Change this to .test for testing
+        static var environment: Environment = .live  // Change this to .test for testing
 
         static var baseURL: String {
             switch environment {
             case .live:
-                return "http://sfanz.co/api/v4/"
+                return "https://rahase.com/api/v1/"
             case .test:
                 return "https://demo.raha.fudex-tech.net/api/v1/"
             case .stage:

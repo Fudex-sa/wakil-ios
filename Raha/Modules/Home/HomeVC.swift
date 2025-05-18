@@ -11,7 +11,8 @@ import UIKit
 import CoreLocation
 
 // MARK: - ...  ViewController - Vars
-class HomeVC: BaseController, CLLocationManagerDelegate {
+class HomeVC: BaseController, CLLocationManagerDelegate,Reloader {
+    var refreshControl: UIRefreshControl!
     @IBOutlet weak var dotImg: UIImageView!
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var scrollContainerView: UIScrollView!
@@ -67,6 +68,7 @@ extension HomeVC {
             self?.reloadaadress()
         })
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reloadhome()
         })
         viewModel?.slidersFinished.listen(on: { [weak self] value in
@@ -153,6 +155,11 @@ extension HomeVC {
                 self?.viewModel?.fetchhome()
             }
             .store(self)
+        swipeTopRefresh(scrollView: scrollContainerView) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchhome()
+        }
     }
     func reloadaadress() {
         if viewModel?.addressList.value?.count ?? 0 == 0 {

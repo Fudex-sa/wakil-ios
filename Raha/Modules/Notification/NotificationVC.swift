@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class NotificationVC: BaseController {
+class NotificationVC: BaseController,Reloader {
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var notHight: NSLayoutConstraint!
     @IBOutlet weak var noResultView: UIView!
     @IBOutlet weak var notTbl: UITableView!
@@ -46,6 +48,7 @@ extension NotificationVC {
             self?.didError(error: error?.localizedDescription)
         })
         viewModel?.requestFinished.listen(on: { [weak self] value in
+            self?.stopSwipeTop()
             self?.reload()
         })
         viewModel?.deltedata.listen(on: { [weak self] value in
@@ -70,6 +73,11 @@ extension NotificationVC {
         deleteView.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.deletenotification()
         }).store(self)
+        swipeTopRefresh(scrollView: notTbl) { [weak self] in
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchnotifications()
+        }
     }
     func reload() {
         notLbl.text = viewModel?.total.value ?? ""

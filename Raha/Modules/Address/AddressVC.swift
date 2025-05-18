@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 // MARK: - ...  ViewController - Vars
-class AddressVC: BaseController {
+class AddressVC: BaseController,Reloader {
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var addressLTbl: UITableView!
     var viewModel: AddressViewModel?
@@ -69,6 +71,12 @@ extension AddressVC {
         addBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.addaddress()
         }).store(self)
+        swipeTopRefresh(scrollView: addressLTbl) { [weak self] in
+            self?.stopSwipeTop()
+            self?.viewModel?.resetPaginator()
+            self?.viewModel?.clearDataSource()
+            self?.viewModel?.fetchaddresses()
+        }
     }
     func reload() {
         if viewModel?.dataSource()?.count ?? 0 == 0 {
