@@ -8,9 +8,12 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 // MARK: - ...  ViewController - Vars
 class BookserviceVC: BaseController {
+    @IBOutlet weak var giftcheckView: UIView!
+    @IBOutlet weak var checkView: UIView!
     @IBOutlet weak var noAppointmentLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var bookBtn: UIButton!
@@ -84,6 +87,23 @@ extension BookserviceVC {
             self?.payTaps?.delegate = self
             self?.payTaps?.present(in: self)
         })
+        viewModel?.checkaddress.listen(on: { [weak self] value in
+            if self?.viewModel?.name.value ?? "" != "" {
+                self?.checkView.isHidden = true
+                if self?.viewModel?.checkaddress.value?.status ?? false {
+                    self?.giftcheckView.isHidden = true
+                }else {
+                    self?.giftcheckView.isHidden = false
+                }
+            }else {
+                self?.giftcheckView.isHidden = true
+                if self?.viewModel?.checkaddress.value?.status ?? false {
+                    self?.checkView.isHidden = true
+                }else {
+                    self?.checkView.isHidden = false
+                }
+            }
+        })
        
     }
 }
@@ -108,12 +128,24 @@ extension BookserviceVC {
         if loctype == "home" {
             visitLbl.text = "Home visit".localized
             addressView.isHidden = false
+            if UD.address != nil {
+                viewModel?.lat.send(Double(UD.address?.lat ?? "0.0") ?? 0.0)
+                viewModel?.lng.send(Double(UD.address?.lng ?? "0.0") ?? 0.0)
+                viewModel?.fetchcheckaddress()
+            }
         }else {
             visitLbl.text = "At the center".localized
             addressView.isHidden = true
         }
         if address != nil {
-            addressLbl.text = "\(address?.district ?? "") - \(address?.cityID?.name ?? "") - \(address?.stateID?.name ?? "")"
+//            addressLbl.text = "\(address?.district ?? "") - \(address?.cityID?.name ?? "") - \(address?.stateID?.name ?? "")"
+            getAddressFromLatLon(latitude: Double(address?.lat ?? "0.0") ?? 0.0, longitude: Double(address?.lng ?? "0.0") ?? 0.0) { address in
+                if let address = address {
+                    self.addressLbl.text = address
+                } else {
+                    print("Unable to get address")
+                }
+            }
             changeAddressBtn.setTitle("Change".localized, for: .normal)
         }else {
             addressLbl.text = "Addresses list is empty".localized
@@ -152,6 +184,9 @@ extension BookserviceVC {
             if self?.loctype != "center" && self?.address?.id ?? 0 == 0 {
                 error = "\(error) \("Add address".localized)\n"
             }
+            if self?.viewModel?.checkaddress.value?.status ?? true == false {
+                error = "\(error) \("Address is out of range".localized)\n"
+            }
             for index in self?.slots ?? [] {
                 var isgood = false
                 for item in index.slots ?? [] {
@@ -176,6 +211,37 @@ extension BookserviceVC {
         }).store(self)
 
     }
+    func getAddressFromLatLon(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (String?) -> Void) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let geocoder = CLGeocoder()
+        
+        let locale = Locale(identifier: "lang".localized) // e.g., "ar" or "en"
+        geocoder.reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, error in
+            if let error = error {
+                print("Reverse geocode failed: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            if let placemark = placemarks?.first {
+                var addressString = ""
+                
+                if let name = placemark.name {
+                    addressString += name + ", "
+                }
+                if let city = placemark.locality {
+                    addressString += city + ", "
+                }
+                if let country = placemark.country {
+                    addressString += country
+                }
+                completion(addressString)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+
 }
 // MARK: - ...  View Contract
 extension BookserviceVC {

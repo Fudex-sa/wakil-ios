@@ -21,9 +21,14 @@ class BookserviceViewModel: BaseViewModel {
     var payment_method: Publisher<String> = .init()
     var price: Publisher<String> = .init()
     var gender: Publisher<String> = .init()
+    var latgift: Publisher<Double> = .init()
+    var lnggift: Publisher<Double> = .init()
+    var lat: Publisher<Double> = .init()
+    var lng: Publisher<Double> = .init()
     var slots: Publisher<[SlotsDatum]> = .init()
     var slotsdetails: Publisher<SlotsModel> = .init()
     var createorder: Publisher<BookserviceModel> = .init()
+    var checkaddress: Publisher<DeleteaddresssModel> = .init()
 
 }
 // MARK: - ...  ViewModel Contract
@@ -53,6 +58,8 @@ extension BookserviceViewModel {
             NetworkManager.instance.paramaters["mobile"] = mobile.value ?? ""
             NetworkManager.instance.paramaters["gender"] = gender.value ?? ""
             NetworkManager.instance.paramaters["address"] = address.value ?? ""
+            NetworkManager.instance.paramaters["gift_lat"] = latgift.value ?? 0.0
+            NetworkManager.instance.paramaters["gift_lng"] = lnggift.value ?? 0.0
             NetworkManager.instance.paramaters["is_gift"] = 1
         }else {
             NetworkManager.instance.paramaters["is_gift"] = 0
@@ -85,6 +92,21 @@ extension BookserviceViewModel {
         }, receiveValue: { [weak self] model in
             guard let model = model else { return }
             self?.createorder.send(model)
+        }).store(self)
+    }
+    func fetchcheckaddress() {
+        if name.value ?? "" == "" {
+            NetworkManager.instance.paramaters["lat"] = lat.value ?? 0.0
+            NetworkManager.instance.paramaters["lng"] = lng.value ?? 0.0
+        }else {
+            NetworkManager.instance.paramaters["lat"] = latgift.value ?? 0.0
+            NetworkManager.instance.paramaters["lng"] = lnggift.value ?? 0.0
+        }
+        NetworkManager.instance.request("\(NetworkConfigration.EndPoint.home.rawValue)/\(centerId.value ?? 0)/checkDistance", type: .get, DeleteaddresssModel.self)?.response(error: { [weak self] error in
+            self?.error.send(error)
+        }, receiveValue: { [weak self] model in
+            guard let model = model else { return }
+            self?.checkaddress.send(model)
         }).store(self)
     }
 }

@@ -120,7 +120,14 @@ extension HomeVC {
             if UD.address == nil {
                 viewModel?.fetchaddresses()
             }else {
-                locLbl.text = "\(UD.address?.district ?? "") - \(UD.address?.cityID?.name ?? "") - \(UD.address?.stateID?.name ?? "")"
+//                locLbl.text = "\(UD.address?.district ?? "") - \(UD.address?.cityID?.name ?? "") - \(UD.address?.stateID?.name ?? "")"
+                getAddressFromLatLon(latitude: Double(UD.address?.lat ?? "0.0") ?? 0.0, longitude: Double(UD.address?.lng ?? "0.0") ?? 0.0) { address in
+                    if let address = address {
+                        self.locLbl.text = address
+                    } else {
+                        print("Unable to get address")
+                    }
+                }
                 addressdata = UD.address
                 viewModel?.lat.send(UD.address?.lat?.double() ?? 0.0)
                 viewModel?.lng.send(UD.address?.lng?.double() ?? 0.0)
@@ -187,7 +194,14 @@ extension HomeVC {
         }
         for index in viewModel?.addressList.value ?? [] {
             if index.isDefault ?? 0 == 1 {
-                locLbl.text = "\(index.district ?? "") - \(index.cityID?.name ?? "") - \(index.stateID?.name ?? "")"
+//                locLbl.text = "\(index.district ?? "") - \(index.cityID?.name ?? "") - \(index.stateID?.name ?? "")"*/
+                getAddressFromLatLon(latitude: Double(index.lat ?? "0.0") ?? 0.0, longitude: Double(index.lng ?? "0.0") ?? 0.0) { address in
+                    if let address = address {
+                        self.locLbl.text = address
+                    } else {
+                        print("Unable to get address")
+                    }
+                }
                 addressdata = index
                 UD.address = index
                 viewModel?.lat.send(index.lat?.double() ?? 0.0)
@@ -312,7 +326,8 @@ extension HomeVC {
         let location = CLLocation(latitude: latitude, longitude: longitude)
         let geocoder = CLGeocoder()
         
-        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+        let locale = Locale(identifier: "lang".localized) // e.g., "ar" or "en"
+        geocoder.reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, error in
             if let error = error {
                 print("Reverse geocode failed: \(error.localizedDescription)")
                 completion(nil)
@@ -321,7 +336,7 @@ extension HomeVC {
             
             if let placemark = placemarks?.first {
                 var addressString = ""
-
+                
                 if let name = placemark.name {
                     addressString += name + ", "
                 }

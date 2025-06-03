@@ -15,4 +15,6 @@ class GiftModel: Codable {
     var phone: String?
     var gender: String?
     var address: String?
+    var lat: String?
+    var lng: String?
 }

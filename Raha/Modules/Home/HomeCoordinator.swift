@@ -47,7 +47,14 @@ extension HomeCoordinator {
         view?.push(scene)
     }
     func done(model:AddressesDatum){
-        view?.locLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
+//        view?.locLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
+        view?.getAddressFromLatLon(latitude: Double(model.lat ?? "0.0") ?? 0.0, longitude: Double(model.lng ?? "0.0") ?? 0.0) { address in
+            if let address = address {
+                self.view?.locLbl.text = address
+            } else {
+                print("Unable to get address")
+            }
+        }
         view?.addressdata = model
         view?.viewModel?.lat.send(model.lat?.double() ?? 0.0)
         view?.viewModel?.lng.send(model.lng?.double() ?? 0.0)

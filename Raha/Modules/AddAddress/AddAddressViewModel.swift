@@ -53,9 +53,15 @@ extension AddAddressViewModel {
     }
     func addaddress() {
     //    NetworkManager.instance.paramaters["street"] = street.value ?? ""
-        NetworkManager.instance.paramaters["state_id"] = statesId.value ?? 0
-        NetworkManager.instance.paramaters["city_id"] = city_id.value ?? 0
-        NetworkManager.instance.paramaters["district"] = district.value ?? ""
+        if statesId.value ?? 0 != 0 {
+            NetworkManager.instance.paramaters["state_id"] = statesId.value ?? 0
+        }
+        if city_id.value ?? 0 != 0 {
+            NetworkManager.instance.paramaters["city_id"] = city_id.value ?? 0
+        }
+        if district.value ?? "" != "" {
+            NetworkManager.instance.paramaters["district"] = district.value ?? ""
+        }
         NetworkManager.instance.paramaters["lat"] = lat.value ?? ""
         NetworkManager.instance.paramaters["lng"] = lng.value ?? ""
         NetworkManager.instance.paramaters["is_default"] = is_default.value ?? 0
@@ -69,9 +75,15 @@ extension AddAddressViewModel {
     }
     func editaddress() {
         //NetworkManager.instance.paramaters["street"] = street.value ?? ""
-        NetworkManager.instance.paramaters["state_id"] = statesId.value ?? 0
-        NetworkManager.instance.paramaters["city_id"] = city_id.value ?? 0
-        NetworkManager.instance.paramaters["district"] = district.value ?? ""
+        if statesId.value ?? 0 != 0 {
+            NetworkManager.instance.paramaters["state_id"] = statesId.value ?? 0
+        }
+        if city_id.value ?? 0 != 0 {
+            NetworkManager.instance.paramaters["city_id"] = city_id.value ?? 0
+        }
+        if district.value ?? "" != "" {
+            NetworkManager.instance.paramaters["district"] = district.value ?? ""
+        }
         NetworkManager.instance.paramaters["lat"] = lat.value ?? ""
         NetworkManager.instance.paramaters["lng"] = lng.value ?? ""
         NetworkManager.instance.paramaters["is_default"] = is_default.value ?? 0

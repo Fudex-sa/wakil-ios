@@ -47,4 +47,5 @@ struct CityID: Codable {
 
 struct DeleteaddresssModel: Codable {
     let message: String?
+    let status: Bool?
 }

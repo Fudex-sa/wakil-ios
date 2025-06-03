@@ -283,6 +283,52 @@
                                                     <constraint firstAttribute="trailing" secondItem="u2M-nU-PwP" secondAttribute="trailing" id="oc5-Wk-F9c"/>
                                                 </constraints>
                                             </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpA-1t-PRc">
+                                                <rect key="frame" x="0.0" y="501" width="366" height="75"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqV-un-vMU">
+                                                        <rect key="frame" x="0.0" y="15" width="366" height="60"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address is out of range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DK-Sx-yKs">
+                                                                <rect key="frame" x="15" y="15" width="336" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" name="red"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Address is out of range"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.92549019607843142" green="0.1764705882352941" blue="0.18823529411764706" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="0DK-Sx-yKs" firstAttribute="leading" secondItem="nqV-un-vMU" secondAttribute="leading" constant="15" id="BMZ-9A-HgF"/>
+                                                            <constraint firstAttribute="height" constant="60" id="Oms-Ed-MIo"/>
+                                                            <constraint firstAttribute="bottom" secondItem="0DK-Sx-yKs" secondAttribute="bottom" constant="15" id="QqS-ni-LpV"/>
+                                                            <constraint firstItem="0DK-Sx-yKs" firstAttribute="top" secondItem="nqV-un-vMU" secondAttribute="top" constant="15" id="qd5-3f-jEV"/>
+                                                            <constraint firstAttribute="trailing" secondItem="0DK-Sx-yKs" secondAttribute="trailing" constant="15" id="sHY-Wp-4Ul"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="red"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="nqV-un-vMU" firstAttribute="leading" secondItem="tpA-1t-PRc" secondAttribute="leading" id="N7e-n7-JUD"/>
+                                                    <constraint firstItem="nqV-un-vMU" firstAttribute="top" secondItem="tpA-1t-PRc" secondAttribute="top" constant="15" id="Nau-zG-tMf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nqV-un-vMU" secondAttribute="bottom" id="cyi-5Z-hpi"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nqV-un-vMU" secondAttribute="trailing" id="pjI-kr-DnF"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nc3-H3-85c">
                                                 <rect key="frame" x="0.0" y="501" width="366" height="78"/>
                                                 <subviews>
@@ -303,7 +349,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="fhf-J3-Eik"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send the booking as a gift to a loved one" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxv-5J-m8c">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send the booking as a gift to a loved one" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxv-5J-m8c">
                                                         <rect key="frame" x="36" y="47" width="260" height="14.5"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <color key="textColor" name="black2"/>
@@ -351,6 +397,52 @@
                                                     <constraint firstAttribute="bottom" secondItem="sNc-Bj-8mQ" secondAttribute="bottom" constant="10" id="w1R-ff-fq2"/>
                                                     <constraint firstItem="kxv-5J-m8c" firstAttribute="centerY" secondItem="6Fu-PR-QxR" secondAttribute="centerY" id="wiB-Pa-C2j"/>
                                                     <constraint firstAttribute="height" constant="78" id="xiO-6E-gP4"/>
+                                                </constraints>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xk-LH-p1v">
+                                                <rect key="frame" x="0.0" y="579" width="366" height="75"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-7p-m5f">
+                                                        <rect key="frame" x="0.0" y="15" width="366" height="60"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address is out of range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQj-QF-gEV">
+                                                                <rect key="frame" x="15" y="15" width="336" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" name="red"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Address is out of range"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.92549019610000005" green="0.1764705882" blue="0.18823529410000001" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="2df-wu-WS9"/>
+                                                            <constraint firstItem="IQj-QF-gEV" firstAttribute="top" secondItem="TO1-7p-m5f" secondAttribute="top" constant="15" id="NK1-eC-mVc"/>
+                                                            <constraint firstAttribute="bottom" secondItem="IQj-QF-gEV" secondAttribute="bottom" constant="15" id="QIA-Lt-xZf"/>
+                                                            <constraint firstItem="IQj-QF-gEV" firstAttribute="leading" secondItem="TO1-7p-m5f" secondAttribute="leading" constant="15" id="Rzo-if-nZh"/>
+                                                            <constraint firstAttribute="trailing" secondItem="IQj-QF-gEV" secondAttribute="trailing" constant="15" id="xxV-Jc-GFI"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="red"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="TO1-7p-m5f" firstAttribute="top" secondItem="1xk-LH-p1v" secondAttribute="top" constant="15" id="Q4t-an-CbT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="TO1-7p-m5f" secondAttribute="bottom" id="c4e-nf-kkl"/>
+                                                    <constraint firstItem="TO1-7p-m5f" firstAttribute="leading" secondItem="1xk-LH-p1v" secondAttribute="leading" id="g9a-YS-Yzo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TO1-7p-m5f" secondAttribute="trailing" id="p8Z-Bi-hnq"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skW-QR-e0Z">
@@ -518,6 +610,8 @@
                         <outlet property="bookBtn" destination="L8g-bp-LBG" id="Oob-VY-ERt"/>
                         <outlet property="calenderView" destination="rCJ-HW-OUW" id="ae6-B0-HL8"/>
                         <outlet property="changeAddressBtn" destination="u2M-nU-PwP" id="r1l-kz-qjy"/>
+                        <outlet property="checkView" destination="tpA-1t-PRc" id="1BN-uC-BrA"/>
+                        <outlet property="giftcheckView" destination="1xk-LH-p1v" id="cX1-Fc-IGU"/>
                         <outlet property="nameLbl" destination="kxv-5J-m8c" id="LBw-MD-tv0"/>
                         <outlet property="noAppointmentLbl" destination="Hju-0M-7ah" id="tgY-B3-Ghl"/>
                         <outlet property="priceLbl" destination="eYm-fa-yTD" id="4Yd-3E-3QJ"/>
@@ -550,6 +644,9 @@
         </namedColor>
         <namedColor name="normalblue">
             <color red="0.12549019607843137" green="0.64313725490196083" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="red">
+            <color red="0.92549019607843142" green="0.17647058823529413" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="whiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

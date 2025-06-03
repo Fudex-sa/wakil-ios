@@ -16,7 +16,8 @@ protocol GiftVCDelegate: AnyObject {
 class GiftVC: BaseController {
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var doneBtn: UIButton!
-    @IBOutlet weak var addressTxf: UITextField!
+    @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var mobileTXf: UITextField!
     @IBOutlet weak var nameTxf: UITextField!
     @IBOutlet weak var femaleLbl: UILabel!
@@ -25,12 +26,11 @@ class GiftVC: BaseController {
     @IBOutlet weak var maleRadio: RadioButton!
     var viewModel: GiftViewModel?
     var coordinator: GiftCoordinator?
-    var gift : GiftModel = GiftModel.init()
+    var gift : GiftModel?
     var delegate: GiftVCDelegate?
     lazy var validator: Validator? = {
         let validator = Validator(guardOnSuperViewOfTextField: true)
         validator.setUIType(.message).append(mobileTXf, rules: [GuardRequired()], title: "Mobile number".localized).holdColor()
-        validator.setUIType(.message).append(addressTxf, rules: [GuardRequired() ], title: "Address".localized).holdColor()
         validator.setUIType(.message).append(nameTxf, rules: [GuardRequired() ], title: "Name of the person to whom the gift is sent".localized).holdColor()
         return validator
     }()
@@ -62,18 +62,33 @@ extension GiftVC {
 // MARK: - ...  Functions
 extension GiftVC {
     func setup() {
+        nameTxf.text = gift?.name ?? ""
+        mobileTXf.text = gift?.phone ?? ""
+        if gift?.address ?? "" != "" {
+            addressLbl.text = gift?.address ?? ""
+            addressLbl.textColor = R.color.black()
+        }
+        if gift?.gender == "male" {
+            maleRadio.select()
+        }else if gift?.gender == "female" {
+            femaleRadio.select()
+        }
+
         maleRadio.onSelect(execute: { [self] in
             femaleRadio.deselect()
-            gift.gender = "male"
+            gift?.gender = "male"
             maleLbl.textColor = R.color.black1()
             femaleLbl.textColor = R.color.darkgray2()
         })
         femaleRadio.onSelect(execute: { [self] in
             maleRadio.deselect()
-            gift.gender = "female"
+            gift?.gender = "female"
             femaleLbl.textColor = R.color.black1()
             maleLbl.textColor = R.color.darkgray2()
         })
+        addressView.publisherGesture.listen(on: {[weak self] _ in
+            self?.coordinator?.locate()
+        }).store(self)
         doneBtn.publisher.listen(on: {[weak self] _ in
             if self?.validator?.build() == false {
                 return
@@ -93,8 +108,11 @@ extension GiftVC {
                     error = "\(error)\n\("Mobile number".localized) \("lenght must be".localized) \(9)"
                 }
             }
-            if self?.gift.gender ?? "" == "" {
+            if self?.gift?.gender ?? "" == "" {
                 error = "\(error)\n\("select gender".localized)"
+            }
+            if self?.gift?.lat ?? "" == "" {
+                error = "\(error)\n\("Add address".localized)"
             }
             if error != "" {
                 self?.didError(error: error)
@@ -102,12 +120,12 @@ extension GiftVC {
                 if phone.count > 3 && phone.prefix(upTo:phone.index(phone.startIndex, offsetBy: 1)) == "0" {
                     let index = phone.index(phone.startIndex, offsetBy: 1)
                     phone = String(phone.suffix(from: index))
-                    self?.gift.phone = phone
+                    self?.gift?.phone = phone
                 }else {
-                    self?.gift.phone = self?.mobileTXf.text ?? ""
+                    self?.gift?.phone = self?.mobileTXf.text ?? ""
                 }
-                self?.gift.name = self?.nameTxf.text ?? ""
-                self?.gift.address = self?.addressTxf.text ?? ""
+                self?.gift?.name = self?.nameTxf.text ?? ""
+                self?.gift?.address = self?.addressLbl.text ?? ""
                 self?.delegate?.done(model: (self?.gift)!)
                 self?.dismiss(animated: true, completion: nil)
             }

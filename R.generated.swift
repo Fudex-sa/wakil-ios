@@ -3507,7 +3507,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 397 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 398 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3565,6 +3565,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let addressList = Rswift.StringResource(key: "Address List", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Address is out of range
+      ///
+      /// Locales: ar, en
+      static let addressIsOutOfRange = Rswift.StringResource(key: "Address is out of range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Addresses list is empty
       ///
       /// Locales: ar, en
@@ -5306,6 +5310,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Address List", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Address is out of range
+      ///
+      /// Locales: ar, en
+      static func addressIsOutOfRange(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Address is out of range", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Address is out of range"
+        }
+
+        return NSLocalizedString("Address is out of range", bundle: bundle, comment: "")
       }
 
       /// en translation: Addresses list is empty
@@ -11872,6 +11891,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "black2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black2' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "blackshadow5", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'blackshadow5' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'red' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.bookserviceStoryboard().bookserviceVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bookserviceVC' could not be loaded from storyboard 'BookserviceStoryboard' as 'BookserviceVC'.") }

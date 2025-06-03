@@ -206,27 +206,23 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2C-V2-cKa">
                                         <rect key="frame" x="24" y="273" width="366" height="56"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p82-qC-G3s">
-                                                <rect key="frame" x="16" y="0.0" width="342" height="56"/>
-                                                <color key="textColor" name="black"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLF-ox-lRa">
+                                                <rect key="frame" x="16" y="18" width="334" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="darkgray 2"/>
+                                                <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Address"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                        <color key="value" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Address"/>
                                                 </userDefinedRuntimeAttributes>
-                                            </textField>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="p82-qC-G3s" firstAttribute="top" secondItem="u2C-V2-cKa" secondAttribute="top" id="6cX-A7-2Eb"/>
-                                            <constraint firstAttribute="bottom" secondItem="p82-qC-G3s" secondAttribute="bottom" id="TZo-B8-Tc6"/>
+                                            <constraint firstItem="JLF-ox-lRa" firstAttribute="centerY" secondItem="u2C-V2-cKa" secondAttribute="centerY" id="0yc-cA-zbR"/>
                                             <constraint firstAttribute="height" constant="56" id="W32-Cq-OId"/>
-                                            <constraint firstItem="p82-qC-G3s" firstAttribute="leading" secondItem="u2C-V2-cKa" secondAttribute="leading" constant="16" id="WPn-0O-gLg"/>
-                                            <constraint firstAttribute="trailing" secondItem="p82-qC-G3s" secondAttribute="trailing" constant="8" id="nE8-3N-scm"/>
+                                            <constraint firstAttribute="trailing" secondItem="JLF-ox-lRa" secondAttribute="trailing" constant="16" id="dvw-WW-6ag"/>
+                                            <constraint firstItem="JLF-ox-lRa" firstAttribute="leading" secondItem="u2C-V2-cKa" secondAttribute="leading" constant="16" id="wCh-vs-RZS"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -295,7 +291,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addressTxf" destination="p82-qC-G3s" id="wts-UH-yKR"/>
+                        <outlet property="addressLbl" destination="JLF-ox-lRa" id="qo3-BR-sz0"/>
+                        <outlet property="addressView" destination="u2C-V2-cKa" id="BEm-ND-J5k"/>
                         <outlet property="closeBtn" destination="6ss-Y7-js4" id="0sK-Cu-pz6"/>
                         <outlet property="doneBtn" destination="PUx-CD-K5X" id="FGQ-oq-bOR"/>
                         <outlet property="femaleLbl" destination="P92-uh-20l" id="RxD-zP-318"/>

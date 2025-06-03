@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 protocol AddressTableViewCellViewCellDelegate: AnyObject {
     func done(wasPressedOnCell cell: AddressTableViewCell , model : AddressesDatum)
 
@@ -24,7 +25,14 @@ class AddressTableViewCell: BaseTableViewCell {
         super.setup()
         skeleton(view: containerView)
         guard let model = model as? AddressesDatum else { return }
-        locLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
+//        locLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
+        getAddressFromLatLon(latitude: Double(model.lat ?? "0.0") ?? 0.0, longitude: Double(model.lng ?? "0.0") ?? 0.0) { address in
+            if let address = address {
+                self.locLbl.text = address
+            } else {
+                print("Unable to get address")
+            }
+        }
         if model.isDefault ?? 0 == 1 {
             defualtLbl.isHidden = false
             locTop.constant = 8
@@ -44,5 +52,35 @@ class AddressTableViewCell: BaseTableViewCell {
             self.delegate?.done(wasPressedOnCell: self, model: model)
         }).store(self)
        
+    }
+    func getAddressFromLatLon(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (String?) -> Void) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let geocoder = CLGeocoder()
+        
+        let locale = Locale(identifier: "lang".localized) // e.g., "ar" or "en"
+        geocoder.reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, error in
+            if let error = error {
+                print("Reverse geocode failed: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            if let placemark = placemarks?.first {
+                var addressString = ""
+                
+                if let name = placemark.name {
+                    addressString += name + ", "
+                }
+                if let city = placemark.locality {
+                    addressString += city + ", "
+                }
+                if let country = placemark.country {
+                    addressString += country
+                }
+                completion(addressString)
+            } else {
+                completion(nil)
+            }
+        }
     }
 }

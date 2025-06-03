@@ -17,7 +17,7 @@ struct NetworkConfigration {
         case stage
     }
     struct Config {
-        static var environment: Environment = .live  // Change this to .test for testing
+        static var environment: Environment = .test  // Change this to .test for testing
 
         static var baseURL: String {
             switch environment {

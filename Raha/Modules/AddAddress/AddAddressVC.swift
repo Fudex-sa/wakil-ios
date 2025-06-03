@@ -134,16 +134,16 @@ extension AddAddressVC {
             self?.coordinator?.locate()
         }).store(self)
         saveBtn.publisher.listen(on: {[weak self] _ in
-            if self?.validator?.build() == false {
-                return
-            }
+//            if self?.validator?.build() == false {
+//                return
+//            }
             var error = ""
-            if self?.viewModel?.statesId.value ?? 0 == 0 {
-                error = "\(error)\n\("select Region".localized)"
-            }
-            if self?.viewModel?.city_id.value ?? 0 == 0 {
-                error = "\(error)\n\("select City".localized)"
-            }
+//            if self?.viewModel?.statesId.value ?? 0 == 0 {
+//                error = "\(error)\n\("select Region".localized)"
+//            }
+//            if self?.viewModel?.city_id.value ?? 0 == 0 {
+//                error = "\(error)\n\("select City".localized)"
+//            }
             if self?.viewModel?.lat.value ?? "" == "" {
                 error = "\(error)\n\("select Location".localized)"
             }

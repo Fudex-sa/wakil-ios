@@ -476,3 +476,4 @@
 "The reservation amount has been refunded after applying the cancellation policy" = "تم رد مبلغ الحجز بعد تطبيق سياسة الالغاء";
 "Reservation and cancellation policy will apply and the reservation amount will be refunded to you as soon as possible" = "سيتم تطبيق سياسة الحجز والالغاء وسيتم رد مبلغ الحجز اليك في أسرع وقت";
 "Total price :" = "السعر الاجمالى :";
+"Address is out of range" = "العنوان خارج النطاق";
