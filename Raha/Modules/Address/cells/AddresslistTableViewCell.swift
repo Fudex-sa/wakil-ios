@@ -27,13 +27,13 @@ class AddresslistTableViewCell: BaseTableViewCell {
         skeleton(view: containerView)
         guard let model = model as? AddressesDatum else { return }
 //        titleLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
-        getAddressFromLatLon(latitude: Double(model.lat ?? "0.0") ?? 0.0, longitude: Double(model.lng ?? "0.0") ?? 0.0) { address in
-            if let address = address {
-                self.titleLbl.text = address
-            } else {
-                print("Unable to get address")
-            }
-        }
+//        getAddressFromLatLon(latitude: Double(model.lat ?? "0.0") ?? 0.0, longitude: Double(model.lng ?? "0.0") ?? 0.0) { address in
+//            if let address = address {
+//                self.titleLbl.text = address
+//            } else {
+//                print("Unable to get address")
+//            }
+//        }
         if model.isDefault ?? 0 == 1 {
             deleteBtn.isHidden = true
             defualtLbl.isHidden = false

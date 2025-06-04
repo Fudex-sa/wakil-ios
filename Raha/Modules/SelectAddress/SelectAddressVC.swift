@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 protocol SelectAddressVCDelegate: AnyObject {
     func done(model : AddressesDatum)
 
@@ -100,7 +101,37 @@ extension SelectAddressVC {
         }
         addressTbl.skeleton()
         addressTbl.stopSwipeButtom()
+        addressTbl.reloadData()
+    }
+    func getAddressFromLatLon(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (String?) -> Void) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let geocoder = CLGeocoder()
         
+        let locale = Locale(identifier: "lang".localized) // e.g., "ar" or "en"
+        geocoder.reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, error in
+            if let error = error {
+                print("Reverse geocode failed: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            if let placemark = placemarks?.first {
+                var addressString = ""
+                
+                if let name = placemark.name {
+                    addressString += name + ", "
+                }
+                if let city = placemark.locality {
+                    addressString += city + ", "
+                }
+                if let country = placemark.country {
+                    addressString += country
+                }
+                completion(addressString)
+            } else {
+                completion(nil)
+            }
+        }
     }
 }
 // MARK: - ...  View Contract
@@ -140,6 +171,13 @@ extension SelectAddressVC: UITableViewDelegate, UITableViewDataSource {
         var cell = tableView.cell(type: AddressTableViewCell.self, indexPath)
         cell.model = viewModel?.dataSource()?[safe: indexPath.row]
         cell.id = addressId
+        getAddressFromLatLon(latitude: Double(viewModel?.dataSource()?[safe: indexPath.row]?.lat ?? "0.0") ?? 0.0, longitude: Double(viewModel?.dataSource()?[safe: indexPath.row]?.lng ?? "0.0") ?? 0.0) { address in
+                    if let address = address {
+                        cell.locLbl.text = address
+                    } else {
+                        print("Unable to get address")
+                    }
+        }
         cell.setup()
         cell.delegate = self
         return cell

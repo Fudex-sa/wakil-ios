@@ -50,7 +50,7 @@ struct Service: Codable {
     let image: String?
     let serviceType, providerType, price, duration: String?
     let maxConcurrentRequests: Int?
-    let locationType: String?
+    var locationType: String?
     var isselect: Bool? = false
     let rate: Double?
 

@@ -26,13 +26,13 @@ class AddressTableViewCell: BaseTableViewCell {
         skeleton(view: containerView)
         guard let model = model as? AddressesDatum else { return }
 //        locLbl.text = "\(model.district ?? "") - \(model.cityID?.name ?? "") - \(model.stateID?.name ?? "")"
-        getAddressFromLatLon(latitude: Double(model.lat ?? "0.0") ?? 0.0, longitude: Double(model.lng ?? "0.0") ?? 0.0) { address in
-            if let address = address {
-                self.locLbl.text = address
-            } else {
-                print("Unable to get address")
-            }
-        }
+//        getAddressFromLatLon(latitude: Double(model.lat ?? "0.0") ?? 0.0, longitude: Double(model.lng ?? "0.0") ?? 0.0) { address in
+//            if let address = address {
+//                self.locLbl.text = address
+//            } else {
+//                print("Unable to get address")
+//            }
+//        }
         if model.isDefault ?? 0 == 1 {
             defualtLbl.isHidden = false
             locTop.constant = 8

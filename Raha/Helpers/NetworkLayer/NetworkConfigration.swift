@@ -17,7 +17,7 @@ struct NetworkConfigration {
         case stage
     }
     struct Config {
-        static var environment: Environment = .test  // Change this to .test for testing
+        static var environment: Environment = .live  // Change this to .test for testing
 
         static var baseURL: String {
             switch environment {
@@ -32,11 +32,11 @@ struct NetworkConfigration {
         static var firebaseTopic: String {
             switch environment {
             case .live:
-                return "superfan_ios_live"
+                return "raha_ios_live"
             case .test:
-                return "superfan_ios_demo"
+                return "raha_ios_demo"
             case .stage:
-                return "superfan_ios_stage"
+                return "raha_ios_stage"
             }
         }
     }

@@ -210,6 +210,7 @@ extension DetailsreservationVC: UITableViewDelegate, UITableViewDataSource {
         cell.isgift = viewModel?.orderdetails.value?.data?.isGift ?? 0
         cell.statuskey = viewModel?.orderdetails.value?.data?.statusKey ?? 0
         cell.statusValue = viewModel?.orderdetails.value?.data?.status ?? ""
+        cell.loctype = viewModel?.orderdetails.value?.data?.locationType ?? ""
         cell.setup()
         return cell
     }

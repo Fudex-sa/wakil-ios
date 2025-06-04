@@ -24,6 +24,7 @@ class DetailsreservationTableViewCell: BaseTableViewCell {
     var isgift = 0
     var statuskey = 0
     var statusValue = ""
+    var loctype = ""
     override func setup() {
         super.setup()
         skeleton(view: containerView)
@@ -33,7 +34,7 @@ class DetailsreservationTableViewCell: BaseTableViewCell {
         desLbl.text = model.description ?? ""
         typeLbl.text = model.serviceType ?? ""
         nameLbl.text = model.name ?? ""
-        locTypeLbl.text = if model.locationType ?? "" == "home" {"Domestic service".localized}else{"At the center".localized}
+        locTypeLbl.text = if loctype == "home" {"Domestic service".localized}else{"At the center".localized}
         if isgift == 1 {
             giftView.isHidden = false
             giftHight.constant = 24
