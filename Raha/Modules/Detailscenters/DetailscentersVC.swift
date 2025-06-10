@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class DetailscentersVC: BaseController {
+    @IBOutlet weak var rateHight: NSLayoutConstraint!
     @IBOutlet weak var distanceTitleLbl: UILabel!
     @IBOutlet weak var distanceImg: UIImageView!
     @IBOutlet weak var ratingCollection: UICollectionView!
@@ -224,8 +225,10 @@ extension DetailscentersVC {
         if viewModel?.centerdetails.value?.data?.services?.count ?? 0 == 0 {
             servicesTbl.isHidden = true
             showEmptyScreen(for: 500, title: "Services list is empty".localized)
+            rateHight.constant = 200
             
         } else {
+            rateHight.constant = 20
             hideEmptyScreen()
             servicesTbl.isHidden = false
         }

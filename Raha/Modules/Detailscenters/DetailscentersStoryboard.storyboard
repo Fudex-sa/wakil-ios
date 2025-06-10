@@ -665,6 +665,7 @@
                         <outlet property="imagesCollection" destination="rW6-G9-PKD" id="sZy-Xm-lkf"/>
                         <outlet property="moreBtn" destination="9Kl-vc-gZY" id="bP8-T2-3XB"/>
                         <outlet property="pageControll" destination="tfW-Q7-yMm" id="oQ5-XZ-LVm"/>
+                        <outlet property="rateHight" destination="hzd-fh-5lU" id="UP5-0w-x1M"/>
                         <outlet property="rateLbl" destination="eE3-Rb-uFC" id="gxD-ek-C6N"/>
                         <outlet property="ratingCollection" destination="3iL-p8-bci" id="eZq-ig-Tzg"/>
                         <outlet property="revIewView" destination="dOl-L5-J4p" id="8aG-MB-IlL"/>
