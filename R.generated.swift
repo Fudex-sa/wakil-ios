@@ -4549,10 +4549,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let profileData = Rswift.StringResource(key: "Profile Data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
-      /// en translation: Raha application
-      ///
-      /// Locales: ar, en
-      static let rahaApplication = Rswift.StringResource(key: "Raha application", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Rate:
       ///
       /// Locales: ar, en
@@ -4809,6 +4805,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let sureLan = Rswift.StringResource(key: "sure.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: TARTA7 application
+      ///
+      /// Locales: ar, en
+      static let rahaApplication = Rswift.StringResource(key: "Raha application", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Terms and conditions
       ///
       /// Locales: ar, en
@@ -9002,21 +9002,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Profile Data", bundle: bundle, comment: "")
       }
 
-      /// en translation: Raha application
-      ///
-      /// Locales: ar, en
-      static func rahaApplication(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Raha application", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Raha application"
-        }
-
-        return NSLocalizedString("Raha application", bundle: bundle, comment: "")
-      }
-
       /// en translation: Rate:
       ///
       /// Locales: ar, en
@@ -9975,6 +9960,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("sure.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: TARTA7 application
+      ///
+      /// Locales: ar, en
+      static func rahaApplication(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Raha application", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Raha application"
+        }
+
+        return NSLocalizedString("Raha application", bundle: bundle, comment: "")
       }
 
       /// en translation: Terms and conditions

@@ -4423,10 +4423,10 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Raha;
+				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4508,12 +4508,12 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Raha;
+				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4599,10 +4599,10 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Raha;
+				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4683,10 +4683,10 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Raha;
+				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

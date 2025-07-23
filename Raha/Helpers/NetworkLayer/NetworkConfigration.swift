@@ -22,7 +22,7 @@ struct NetworkConfigration {
         static var baseURL: String {
             switch environment {
             case .live:
-                return "https://rahase.com/api/v1/"
+                return "https://tarta7.com/api/v1/"
             case .test:
                 return "https://demo.raha.fudex-tech.net/api/v1/"
             case .stage:
