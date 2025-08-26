@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZY1-4E-ogX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZY1-4E-ogX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -29,7 +29,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ShJ-bc-rTN">
-                                        <rect key="frame" x="24" y="21" width="366" height="573"/>
+                                        <rect key="frame" x="24" y="21" width="366" height="633"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-Hd-jY1">
                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="36"/>
@@ -177,15 +177,91 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsR-tn-kbX">
+                                                <rect key="frame" x="0.0" y="337" width="366" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="1sv-Go-XWv"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSa-VJ-cNZ">
+                                                <rect key="frame" x="0.0" y="367" width="366" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t03-ON-Mzv" customClass="RadioButton" customModule="Raha" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="7" width="16" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="16" id="ThP-Ay-8Dy"/>
+                                                            <constraint firstAttribute="height" constant="16" id="lBF-ME-97b"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="radioColor">
+                                                                <color key="value" name="normalblue"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="radioSize">
+                                                                <integer key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avf-x3-K8z">
+                                                        <rect key="frame" x="26" y="6.5" width="31" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkgray 2"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Male"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgw-Za-RDu" customClass="RadioButton" customModule="Raha" customModuleProvider="target">
+                                                        <rect key="frame" x="80" y="7" width="16" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="16" id="hdU-mi-oO8"/>
+                                                            <constraint firstAttribute="height" constant="16" id="vkI-Ce-lAk"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="radioSize">
+                                                                <integer key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="radioColor">
+                                                                <color key="value" name="normalblue"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzb-Vn-G4J">
+                                                        <rect key="frame" x="106" y="6.5" width="47" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkgray 2"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Female"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Avf-x3-K8z" firstAttribute="leading" secondItem="t03-ON-Mzv" secondAttribute="trailing" constant="10" id="7DL-5u-o2m"/>
+                                                    <constraint firstItem="Vgw-Za-RDu" firstAttribute="centerY" secondItem="hSa-VJ-cNZ" secondAttribute="centerY" id="FN7-FS-ccU"/>
+                                                    <constraint firstItem="Zzb-Vn-G4J" firstAttribute="leading" secondItem="Vgw-Za-RDu" secondAttribute="trailing" constant="10" id="Ghb-NT-gVm"/>
+                                                    <constraint firstItem="t03-ON-Mzv" firstAttribute="leading" secondItem="hSa-VJ-cNZ" secondAttribute="leading" id="RzZ-mP-trE"/>
+                                                    <constraint firstItem="Zzb-Vn-G4J" firstAttribute="centerY" secondItem="hSa-VJ-cNZ" secondAttribute="centerY" id="SfF-QS-rZb"/>
+                                                    <constraint firstItem="Avf-x3-K8z" firstAttribute="centerY" secondItem="hSa-VJ-cNZ" secondAttribute="centerY" id="b3Y-TI-ifA"/>
+                                                    <constraint firstItem="Vgw-Za-RDu" firstAttribute="leading" secondItem="hSa-VJ-cNZ" secondAttribute="leading" constant="80" id="iAn-Fa-CsK"/>
+                                                    <constraint firstAttribute="height" constant="30" id="rDq-sV-t3m"/>
+                                                    <constraint firstItem="t03-ON-Mzv" firstAttribute="centerY" secondItem="hSa-VJ-cNZ" secondAttribute="centerY" id="wfL-js-8c2"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqY-1s-AEZ">
-                                                <rect key="frame" x="0.0" y="337" width="366" height="180"/>
+                                                <rect key="frame" x="0.0" y="397" width="366" height="180"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="07M-IB-vbm"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2G9-aa-Mhb">
-                                                <rect key="frame" x="0.0" y="517" width="366" height="56"/>
+                                                <rect key="frame" x="0.0" y="577" width="366" height="56"/>
                                                 <color key="backgroundColor" name="normalblue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="YrN-Ey-HSg"/>
@@ -228,7 +304,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="femaleLbl" destination="Zzb-Vn-G4J" id="cXP-lf-iEh"/>
+                        <outlet property="femaleRadio" destination="Vgw-Za-RDu" id="oyK-xX-9Ma"/>
                         <outlet property="imageEditBtn" destination="I8C-3N-a2b" id="Bft-8a-nel"/>
+                        <outlet property="maleLbl" destination="Avf-x3-K8z" id="dEW-Br-dlJ"/>
+                        <outlet property="maleRadio" destination="t03-ON-Mzv" id="yBP-Ys-2SS"/>
                         <outlet property="nameTxf" destination="haK-AC-MOE" id="weo-rg-SNi"/>
                         <outlet property="saveBtn" destination="2G9-aa-Mhb" id="IQd-7L-fJQ"/>
                         <outlet property="userImg" destination="Xoo-ad-8bw" id="YIt-zG-KJ6"/>
@@ -248,6 +328,9 @@
         </namedColor>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkgray 2">
+            <color red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lightgray">
             <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

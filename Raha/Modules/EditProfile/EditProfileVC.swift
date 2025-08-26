@@ -11,6 +11,10 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class EditProfileVC: BaseController {
+    @IBOutlet weak var femaleLbl: UILabel!
+    @IBOutlet weak var maleLbl: UILabel!
+    @IBOutlet weak var femaleRadio: RadioButton!
+    @IBOutlet weak var maleRadio: RadioButton!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var nameTxf: UITextField!
     @IBOutlet weak var imageEditBtn: UIButton!
@@ -72,6 +76,33 @@ extension EditProfileVC {
     func setup() {
         nameTxf.text = user?.data?.name ?? ""
         userImg.setImage(url: user?.data?.avatar ?? "")
+        if user?.data?.gender == "male" {
+            maleLbl.textColor = R.color.black1()
+            femaleLbl.textColor = R.color.darkgray2()
+            maleRadio.select()
+        }else  if user?.data?.gender == "female" {
+            femaleRadio.select()
+            femaleLbl.textColor = R.color.black1()
+            maleLbl.textColor = R.color.darkgray2()
+        }
+        maleRadio.onSelect(execute: { [self] in
+            femaleRadio.deselect()
+            viewModel?.gender.send("male")
+            maleLbl.textColor = R.color.black1()
+            femaleLbl.textColor = R.color.darkgray2()
+        })
+        femaleRadio.onSelect(execute: { [self] in
+            maleRadio.deselect()
+            viewModel?.gender.send("female")
+            femaleLbl.textColor = R.color.black1()
+            maleLbl.textColor = R.color.darkgray2()
+        })
+        maleLbl.UIViewAction { [self] in
+            maleRadio.select()
+        }
+        femaleLbl.UIViewAction { [self] in
+            femaleRadio.select()
+        }
     }
     func actions(){
         picker = .init()
@@ -90,9 +121,9 @@ extension EditProfileVC {
                 return
             }
             var error = ""
-//            if self?.viewModel?.lat.value ?? "" == "" {
-//                error = "Locate on map".localized
-//            }
+            if self?.viewModel?.gender.value ?? "" == "" {
+                error = "select gender".localized
+            }
             if error == "" {
                 self?.viewModel?.name.send(self?.nameTxf.text ?? "")
                 self?.viewModel?.userImg.send(self?.userImg.image ?? UIImage())

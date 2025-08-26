@@ -12,6 +12,7 @@ import UIKit
 // MARK: - ...  ViewModel
 class EditProfileViewModel: BaseViewModel {
     var name: Publisher<String> = .init()
+    var gender: Publisher<String> = .init()
     var userImg: Publisher<UIImage> = .init()
     var userdata: Publisher<ProfileModel> = .init()
 }
@@ -22,6 +23,7 @@ extension EditProfileViewModel {
 extension EditProfileViewModel {
     func updateprofile() {
         NetworkManager.instance.paramaters["name"] = name.value ?? ""
+        NetworkManager.instance.paramaters["gender"] = gender.value ?? ""
         var images: [String: UIImage] = [:]
         images["avatar"] = userImg.value ?? UIImage()
         NetworkManager.instance.uploadMultiImagesWithKey(NetworkConfigration.EndPoint.updateprofile.rawValue, type: .post,files: images, ProfileModel.self)?.response(error: { [weak self] error in

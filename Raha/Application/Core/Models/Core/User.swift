@@ -39,6 +39,7 @@ extension UserRoot {
         var images: [String]?
         var whatsmobile: String?
         var timer: Int?
+        var gender: String?
         var birthdate: String?
         var countryId: Int?
         var positionId: Int?
@@ -62,6 +63,7 @@ extension UserRoot {
             case lat
             case timer
             case lng
+            case gender
             case location
             case youtubeLink = "youtube_link"
             case isSocial = "is_social"
