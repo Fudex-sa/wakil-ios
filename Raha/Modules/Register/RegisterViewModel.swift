@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: - ...  ViewModel
 class RegisterViewModel: BaseViewModel {
+    var gender: Publisher<String> = .init()
     var email: Publisher<String> = .init()
     var phone: Publisher<String> = .init()
     var name: Publisher<String> = .init()
@@ -30,6 +31,7 @@ extension RegisterViewModel {
         NetworkManager.instance.paramaters["device_type"] = Constants.FCMTYPE
         NetworkManager.instance.paramaters["fcm_token"] = Constants.FCMTOKEN
         NetworkManager.instance.paramaters["device_id"] = Constants.DEVICEID
+        NetworkManager.instance.paramaters["gender"] = gender.value ?? ""
         if socailType.value ?? 0 != 0 {
             NetworkManager.instance.paramaters["social_id"] = socailId.value ?? ""
             NetworkManager.instance.paramaters["social_type"] = socailType.value ?? ""

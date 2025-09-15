@@ -4,6 +4,7 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import Photos
 
 internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
     private var picker: UIImagePickerController?
@@ -32,9 +33,9 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
     
     internal func pick(in screen: UIViewController?, type: PickingType = .picture) {
         scene = screen
-        if !authroize(.camera, .photoLibrary) {
-            return access(.camera, .photoLibrary)
-        }
+//        if !authroize(.camera, .photoLibrary) {
+//            return access(.camera, .photoLibrary)
+//        }
         picker = UIImagePickerController()
         picker?.delegate = self
         picker?.allowsEditing = true
@@ -47,42 +48,110 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
             self?.onCancel?()
         }))
         alert.addAction(cameraAction(in: screen))
-        alert.addAction(libraryAction(in: screen))
+        if #available(iOS 14, *) {
+            alert.addAction(libraryAction(in: screen))
+        } else {
+            // Fallback on earlier versions
+        }
         screen?.present(alert, animated: true)
     }
     private func cameraAction(in screen: UIViewController?) -> UIAlertAction {
         return UIAlertAction(title: cameraTitle, style: .default, handler: { [weak self] (_) in
             guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-                NSLog("tell user something in `onError` block because camera not available")
-                self?.onError?()
-                return
-            }
-            self?.picker?.sourceType = .camera
-            guard let picker = self?.picker else {
-                NSLog("use `onError` block because ImagePicker is null")
-                self?.onError?()
-                return
-            }
-            screen?.present(picker, animated: true)
+                   NSLog("Camera hardware not available")
+                   self?.onError?()          // your custom error callback
+                   return
+               }
+
+               // 2. Check & request camera permission
+               let status = AVCaptureDevice.authorizationStatus(for: .video)
+
+               switch status {
+               case .authorized:
+                   // Already authorized: present camera
+                   self?.presentCamera(from: screen!)
+
+               case .notDetermined:
+                   // Ask for permission the first time
+                   AVCaptureDevice.requestAccess(for: .video) { granted in
+                       DispatchQueue.main.async {
+                           if granted {
+                               self?.presentCamera(from: screen!)
+                           } else {
+                               NSLog("User denied camera permission")
+                               self?.onError?()
+                           }
+                       }
+                   }
+
+               case .denied, .restricted:
+                   NSLog("Camera access denied or restricted")
+                   self?.onError?()
+                   // 👉 Optionally present an alert to guide user to Settings.
+
+               @unknown default:
+                   self?.onError?()
+               }
         })
     }
+    private func presentCamera(from screen: UIViewController) {
+        guard let picker = self.picker else {
+            NSLog("ImagePicker is nil")
+            self.onError?()
+            return
+        }
+        picker.sourceType = .camera
+        screen.present(picker, animated: true)
+    }
+    @available(iOS 14, *)
     private func libraryAction(in screen: UIViewController?) -> UIAlertAction {
         return UIAlertAction(title: libraryTitle, style: .default, handler: { [weak self] (_) in
             guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-                NSLog("tell user something in `onError` block because photoLibrary not available")
-                self?.onError?()
-                return
-            }
-            self?.picker?.sourceType = .photoLibrary
-            guard let picker = self?.picker else {
-                NSLog("use `onError` block because ImagePicker is null")
-                self?.onError?()
-                return
-            }
-            screen?.present(picker, animated: true)
+                    NSLog("Photo library not available")
+                    self?.onError?()
+                    return
+                }
+
+                // 2. Check Photos permission
+                let status = PHPhotoLibrary.authorizationStatus()
+
+                switch status {
+                case .authorized, .limited:
+                    // ✅ Already allowed
+                    self?.presentPhotoLibrary(from: screen!)
+
+                case .notDetermined:
+                    // Ask for permission the first time
+                    PHPhotoLibrary.requestAuthorization { newStatus in
+                        DispatchQueue.main.async {
+                            if newStatus == .authorized || newStatus == .limited {
+                                self?.presentPhotoLibrary(from: screen!)
+                            } else {
+                                NSLog("User denied photo library access")
+                                self?.onError?()
+                            }
+                        }
+                    }
+
+                case .denied, .restricted:
+                    NSLog("Photo library access denied or restricted")
+                    self?.onError?()
+                    // 👉 Optionally show an alert guiding user to Settings.
+
+                @unknown default:
+                    self?.onError?()
+                }
         })
     }
-
+    private func presentPhotoLibrary(from screen: UIViewController) {
+        guard let picker = self.picker else {
+            NSLog("ImagePicker is nil")
+            self.onError?()
+            return
+        }
+        picker.sourceType = .photoLibrary
+        screen.present(picker, animated: true)
+    }
     internal func getThumbnailImage(for url: URL) -> UIImage? {
         let asset = AVAsset.init(url: url)
         let imageGenerator = AVAssetImageGenerator.init(asset: asset)

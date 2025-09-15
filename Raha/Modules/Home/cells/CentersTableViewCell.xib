@@ -183,6 +183,7 @@
                 <outlet property="distanceTitleLbl" destination="PhU-1v-nLd" id="hee-5i-HsE"/>
                 <outlet property="rateLbl" destination="lla-ZR-Bqg" id="S51-9d-NUP"/>
                 <outlet property="servicesCollection" destination="SQx-VF-gXB" id="iZc-tF-9XB"/>
+                <outlet property="starImg" destination="hfY-qc-bqj" id="VFV-kO-90G"/>
                 <outlet property="titleLbl" destination="0tV-3d-LOX" id="Y0A-5g-NUm"/>
             </connections>
             <point key="canvasLocation" x="64.122137404580144" y="23.943661971830988"/>

@@ -196,6 +196,7 @@
                 <outlet property="rateLbl" destination="RBH-Mf-nuQ" id="R1F-Fp-nsY"/>
                 <outlet property="selectImg" destination="HyB-mb-aZ0" id="25Q-de-lEo"/>
                 <outlet property="selectLbl" destination="2It-H1-lHp" id="0IA-Tj-AKc"/>
+                <outlet property="starImg" destination="ApC-e2-8Im" id="LHk-dN-Dar"/>
                 <outlet property="timeLbl" destination="wfl-gE-Odc" id="gwA-Il-XkE"/>
                 <outlet property="titleLbl" destination="tkr-vA-Sb3" id="tfg-XU-qg1"/>
             </connections>

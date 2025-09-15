@@ -10,19 +10,25 @@ import UIKit
 struct ThemeApp {
     struct Fonts {
         static func lightFont(size: CGFloat) -> UIFont {
-            return  UIFont.init(name: "Expo-Arabic-Light", size: size) ?? UIFont.systemFont(ofSize: size , weight: .light)
+            return  UIFont.init(name: FontFamily.italic.rawValue, size: size) ?? UIFont.systemFont(ofSize: size , weight: .light)
         }
         static func regularFont(size: CGFloat) -> UIFont {
-            return UIFont.init(name: "Expo-Arabic-Book", size: size) ?? UIFont.systemFont(ofSize: size , weight: .regular)
+            return UIFont.init(name: FontFamily.regular.rawValue, size: size) ?? UIFont.systemFont(ofSize: size , weight: .regular)
         }
         static func mediumFont(size: CGFloat) -> UIFont {
-            return UIFont.init(name: "Expo-Arabic-Medium", size: size) ??  UIFont.systemFont(ofSize: size  , weight: .medium)
+            return UIFont.init(name: FontFamily.medium.rawValue, size: size) ??  UIFont.systemFont(ofSize: size  , weight: .medium)
         }
         static func boldFont(size: CGFloat) -> UIFont {
-            return UIFont.init(name: "Expo-Arabic-Bold", size: size) ??   UIFont.systemFont(ofSize: size , weight: .bold)
+            return UIFont.init(name: FontFamily.bold.rawValue, size: size) ??   UIFont.systemFont(ofSize: size , weight: .bold)
         }
         static func mainFont() -> UIFont {
             return UIFont.systemFont(ofSize: 17)
+        }
+        static func registerFontsToSystem() {
+            let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+            fonts?.forEach({ url in
+                CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+            })
         }
     }
 }

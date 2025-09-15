@@ -48,7 +48,7 @@
 	<key>FacebookClientToken</key>
 	<string>395a43e1ca27cef0e2afcd8306aaba32</string>
 	<key>FacebookDisplayName</key>
-	<string>Raha</string>
+	<string>TARTA7</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
@@ -92,13 +92,10 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Expo-Arabic-Bold.ttf</string>
-		<string>Expo-Arabic-Book.ttf</string>
-		<string>Expo-Arabic-Light.ttf</string>
-		<string>Expo-Arabic-Medium.ttf</string>
-		<string>AlGhadTV-Regular.ttf</string>
-		<string>AlGhadTV-Bold.ttf</string>
-		<string>AraHamahHoms-Regular.ttf</string>
+        <string>expoarabicbook.ttf</string>
+        <string>expoarabicbold.ttf</string>
+        <string>expoarabiclight.ttf</string>
+        <string>expoarabicmedium.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

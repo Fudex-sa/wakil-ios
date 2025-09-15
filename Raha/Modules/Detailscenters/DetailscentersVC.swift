@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class DetailscentersVC: BaseController {
+    @IBOutlet weak var starImg: UIImageView!
     @IBOutlet weak var rateHight: NSLayoutConstraint!
     @IBOutlet weak var distanceTitleLbl: UILabel!
     @IBOutlet weak var distanceImg: UIImageView!
@@ -204,6 +205,13 @@ extension DetailscentersVC {
         titleLbl.text = viewModel?.centerdetails.value?.data?.name ?? ""
         desLbl.text = viewModel?.centerdetails.value?.data?.description ?? ""
         centerImg.setImage(url: viewModel?.centerdetails.value?.data?.image ?? "")
+        if viewModel?.centerdetails.value?.data?.rate ?? 0 == 0 {
+            rateLbl.isHidden = true
+            starImg.isHidden = true
+        }else {
+            rateLbl.isHidden = false
+            starImg.isHidden = false
+        }
         if viewModel?.centerdetails.value?.data?.distance ?? "" == "" {
             distanceTitleLbl.isHidden = true
             distanceLbl.isHidden = true

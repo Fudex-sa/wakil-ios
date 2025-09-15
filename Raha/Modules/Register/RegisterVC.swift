@@ -11,6 +11,10 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class RegisterVC: BaseController {
+    @IBOutlet weak var femaleLbl: UILabel!
+    @IBOutlet weak var maleLbl: UILabel!
+    @IBOutlet weak var femaleRadio: RadioButton!
+    @IBOutlet weak var maleRadio: RadioButton!
     @IBOutlet weak var confirmSpace1View: UIView!
     @IBOutlet weak var confirmView: UIView!
     @IBOutlet weak var confirmSpaceView: UIView!
@@ -81,7 +85,6 @@ extension RegisterVC {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        viewModel = nil
         coordinator = nil
         viewModel?.userdata = .init()
     }
@@ -104,6 +107,24 @@ extension RegisterVC {
     func actions(){
         termsLbl.UIViewAction {
             self.coordinator?.terms()
+        }
+        maleRadio.onSelect(execute: { [self] in
+            femaleRadio.deselect()
+            viewModel?.gender.send("male")
+            maleLbl.textColor = R.color.black1()
+            femaleLbl.textColor = R.color.darkgray2()
+        })
+        femaleRadio.onSelect(execute: { [self] in
+            maleRadio.deselect()
+            viewModel?.gender.send("female")
+            femaleLbl.textColor = R.color.black1()
+            maleLbl.textColor = R.color.darkgray2()
+        })
+        maleLbl.UIViewAction { [self] in
+            maleRadio.select()
+        }
+        femaleLbl.UIViewAction { [self] in
+            femaleRadio.select()
         }
         eyeBtn.publisher.listen(on: {[weak self] _ in
             if self?.passTxf.isSecureTextEntry == true {
@@ -140,6 +161,9 @@ extension RegisterVC {
 //            }
             if self?.CheckBtn.isOn == false {
                 error = "\(error)\n\("agree to".localized) \("Terms & Conditions".localized)"
+            }
+            if self?.viewModel?.gender.value ?? "" == "" {
+                error = "\(error)\n\("select gender".localized)"
             }
 //            if self?.photoURL == nil {
 //                error = "\(error)\n\("add personal image".localized)"

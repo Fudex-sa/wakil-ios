@@ -12,6 +12,7 @@ import MBProgressHUD
 
 // MARK: - ...  ViewController - Vars
 class DetailsreservationVC: BaseController {
+    @IBOutlet weak var starImg: UIImageView!
     @IBOutlet weak var cancelLbl: UILabel!
     @IBOutlet weak var cancelImg: UIImageView!
     @IBOutlet weak var refundView: UIView!
@@ -139,6 +140,13 @@ extension DetailsreservationVC {
             phoneLbl.text = viewModel?.orderdetails.value?.data?.gift?.mobile ?? ""
         }else {
             giftView.isHidden = true
+        }
+        if viewModel?.orderdetails.value?.data?.branch?.rate ?? 0 == 0 {
+            rateLbl.isHidden = true
+            starImg.isHidden = true
+        }else {
+            rateLbl.isHidden = false
+            starImg.isHidden = false
         }
         if viewModel?.orderdetails.value?.data?.rating != nil {
             rateView.isHidden = false

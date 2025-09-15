@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-public enum Fonts: String {
-    case regular = "Expo-Arabic-Book"
-    case bold = "Expo-Arabic-Bold"
-    case italic = "Expo-Arabic-Light"
-    case medium = "Expo-Arabic-Medium"
+public enum FontFamily: String {
+    case regular = "ExpoArabic-Book"
+    case bold = "ExpoArabic-Bold"
+    case italic = "ExpoArabic-Light"
+    case medium = "ExpoArabic-Medium"
 }
 
 extension UIFontDescriptor.AttributeName {
@@ -23,16 +23,16 @@ extension UIFontDescriptor.AttributeName {
 extension UIFont {
     static var isOverrided: Bool = false
     @objc class func appFont(ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: Fonts.regular.rawValue, size: size)!
+        return UIFont(name: FontFamily.regular.rawValue, size: size)!
     }
     @objc class func boldAppFont(ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: Fonts.bold.rawValue, size: size)!
+        return UIFont(name: FontFamily.bold.rawValue, size: size)!
     }
     @objc class func italicAppFont(ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: Fonts.italic.rawValue, size: size)!
+        return UIFont(name: FontFamily.italic.rawValue, size: size)!
     }
     @objc class func mediumAppFont(ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: Fonts.medium.rawValue, size: size)!
+        return UIFont(name: FontFamily.medium.rawValue, size: size)!
     }
     @objc convenience init(myCoder aDecoder: NSCoder) {
         guard
@@ -44,13 +44,13 @@ extension UIFont {
         var fontName = ""
         switch fontAttribute {
             case "CTFontRegularUsage":
-                fontName = Fonts.regular.rawValue
+                fontName = FontFamily.regular.rawValue
             case "CTFontEmphasizedUsage", "CTFontBoldUsage":
-                fontName = Fonts.bold.rawValue
+                fontName = FontFamily.bold.rawValue
             case "CTFontObliqueUsage":
-                fontName = Fonts.italic.rawValue
+                fontName = FontFamily.italic.rawValue
             default:
-                fontName = Fonts.regular.rawValue
+                fontName = FontFamily.regular.rawValue
         }
         self.init(name: fontName, size: fontDescriptor.pointSize)!
     }

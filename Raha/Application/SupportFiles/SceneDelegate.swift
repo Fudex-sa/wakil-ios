@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         window?.overrideUserInterfaceStyle = .light
+        ThemeApp.Fonts.registerFontsToSystem()
 //        if UD.APP_MODE == ThemeApp.Mode.dark.rawValue {
 //            window?.overrideUserInterfaceStyle = .dark
 //        } else {

@@ -136,7 +136,11 @@ extension HomeVC {
                 viewModel?.fetchhome()
             }
         }else {
+            userImg.isHidden = true
             currentlocation()
+        }
+        userImg.UIViewAction {
+            self.coordinator?.profile()
         }
         langBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.selectlanguage()

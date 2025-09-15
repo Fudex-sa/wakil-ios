@@ -9,6 +9,7 @@
 import UIKit
 
 class SelectservicesTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var starImg: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
@@ -24,5 +25,12 @@ class SelectservicesTableViewCell: BaseTableViewCell {
         providerLbl.text = model.providerType ?? ""
         timeLbl.text = model.duration ?? ""
         rateLbl.text = model.rate?.string ?? ""
+        if model.rate ?? 0 == 0 {
+            rateLbl.isHidden = true
+            starImg.isHidden = true
+        }else {
+            rateLbl.isHidden = false
+            starImg.isHidden = false
+        }
     }
 }

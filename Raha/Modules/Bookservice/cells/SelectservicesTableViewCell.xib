@@ -178,6 +178,7 @@
                 <outlet property="priceLbl" destination="FIS-MT-Spz" id="KDR-Mu-vqK"/>
                 <outlet property="providerLbl" destination="KnK-fO-GvV" id="rPy-cX-RZK"/>
                 <outlet property="rateLbl" destination="ii2-qJ-HVV" id="zcI-y2-hFj"/>
+                <outlet property="starImg" destination="fYl-mf-O9y" id="o75-a3-1wf"/>
                 <outlet property="timeLbl" destination="5u1-eC-r9S" id="Koo-la-2QK"/>
                 <outlet property="titleLbl" destination="7Xe-sN-4ug" id="Mp9-dh-Cxs"/>
             </connections>

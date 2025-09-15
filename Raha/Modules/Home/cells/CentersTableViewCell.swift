@@ -9,6 +9,7 @@
 import UIKit
 
 class CentersTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var starImg: UIImageView!
     @IBOutlet weak var distanceImg: UIImageView!
     @IBOutlet weak var distanceTitleLbl: UILabel!
     @IBOutlet weak var containerView: UIView!
@@ -30,6 +31,13 @@ class CentersTableViewCell: BaseTableViewCell {
         titleLbl.text = model.name ?? ""
         rateLbl.text = model.rate?.string ?? ""
         desLbl.text = model.description ?? ""
+        if model.rate ?? 0 == 0 {
+            rateLbl.isHidden = true
+            starImg.isHidden = true
+        }else {
+            rateLbl.isHidden = false
+            starImg.isHidden = false
+        }
         if model.distance ?? "" == "" {
             distanceTitleLbl.isHidden = true
             distance.isHidden = true

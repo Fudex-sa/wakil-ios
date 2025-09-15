@@ -1106,46 +1106,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 76 files.
+  /// This `R.file` struct is generated, and contains static references to 53 files.
   struct file {
     /// Resource file `Config.xcconfig`.
     static let configXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Config", pathExtension: "xcconfig")
     /// Resource file `Development.xcconfig`.
     static let developmentXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Development", pathExtension: "xcconfig")
-    /// Resource file `Expo-Arabic-Bold.ttf`.
-    static let expoArabicBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Expo-Arabic-Bold", pathExtension: "ttf")
-    /// Resource file `Expo-Arabic-Book.ttf`.
-    static let expoArabicBookTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Expo-Arabic-Book", pathExtension: "ttf")
-    /// Resource file `Expo-Arabic-Light.ttf`.
-    static let expoArabicLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Expo-Arabic-Light", pathExtension: "ttf")
-    /// Resource file `Expo-Arabic-Medium.ttf`.
-    static let expoArabicMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Expo-Arabic-Medium", pathExtension: "ttf")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `Loading-Dark.gif`.
     static let loadingDarkGif = Rswift.FileResource(bundle: R.hostingBundle, name: "Loading-Dark", pathExtension: "gif")
     /// Resource file `Loading-Light.gif`.
     static let loadingLightGif = Rswift.FileResource(bundle: R.hostingBundle, name: "Loading-Light", pathExtension: "gif")
-    /// Resource file `Muli-Bold.ttf`.
-    static let muliBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-Bold", pathExtension: "ttf")
-    /// Resource file `Muli-BoldItalic.ttf`.
-    static let muliBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-BoldItalic", pathExtension: "ttf")
-    /// Resource file `Muli-ExtraLight.ttf`.
-    static let muliExtraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-ExtraLight", pathExtension: "ttf")
-    /// Resource file `Muli-ExtraLightItalic.ttf`.
-    static let muliExtraLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-ExtraLightItalic", pathExtension: "ttf")
-    /// Resource file `Muli-Italic.ttf`.
-    static let muliItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-Italic", pathExtension: "ttf")
-    /// Resource file `Muli-Light.ttf`.
-    static let muliLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-Light", pathExtension: "ttf")
-    /// Resource file `Muli-LightItalic.ttf`.
-    static let muliLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-LightItalic", pathExtension: "ttf")
-    /// Resource file `Muli-Semi-BoldItalic.ttf`.
-    static let muliSemiBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-Semi-BoldItalic", pathExtension: "ttf")
-    /// Resource file `Muli-SemiBold.ttf`.
-    static let muliSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli-SemiBold", pathExtension: "ttf")
-    /// Resource file `Muli.ttf`.
-    static let muliTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Muli", pathExtension: "ttf")
     /// Resource file `NeoSansArabic-Light.ttf`.
     static let neoSansArabicLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "NeoSansArabic-Light", pathExtension: "ttf")
     /// Resource file `NeoSansArabic-Medium.ttf`.
@@ -1158,32 +1130,6 @@ struct R: Rswift.Validatable {
     static let pull_To_RefreshMp3 = Rswift.FileResource(bundle: R.hostingBundle, name: "Pull_To_Refresh", pathExtension: "mp3")
     /// Resource file `README.md`.
     static let readmeMd = Rswift.FileResource(bundle: R.hostingBundle, name: "README", pathExtension: "md")
-    /// Resource file `SFPRODISPLAYBLACKITALIC.OTF`.
-    static let sfprodisplayblackitalicotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYBLACKITALIC", pathExtension: "OTF")
-    /// Resource file `SFPRODISPLAYBOLD.OTF`.
-    static let sfprodisplayboldotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYBOLD", pathExtension: "OTF")
-    /// Resource file `SFPRODISPLAYHEAVYITALIC.OTF`.
-    static let sfprodisplayheavyitalicotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYHEAVYITALIC", pathExtension: "OTF")
-    /// Resource file `SFPRODISPLAYLIGHTITALIC.OTF`.
-    static let sfprodisplaylightitalicotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYLIGHTITALIC", pathExtension: "OTF")
-    /// Resource file `SFPRODISPLAYMEDIUM.OTF`.
-    static let sfprodisplaymediumotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYMEDIUM", pathExtension: "OTF")
-    /// Resource file `SFPRODISPLAYREGULAR.OTF`.
-    static let sfprodisplayregularotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYREGULAR", pathExtension: "OTF")
-    /// Resource file `SFPRODISPLAYSEMIBOLDITALIC.OTF`.
-    static let sfprodisplaysemibolditalicotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYSEMIBOLDITALIC", pathExtension: "OTF")
-    /// Resource file `SFPRODISPLAYTHINITALIC.OTF`.
-    static let sfprodisplaythinitalicotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYTHINITALIC", pathExtension: "OTF")
-    /// Resource file `SFPRODISPLAYULTRALIGHTITALIC.OTF`.
-    static let sfprodisplayultralightitalicotF = Rswift.FileResource(bundle: R.hostingBundle, name: "SFPRODISPLAYULTRALIGHTITALIC", pathExtension: "OTF")
-    /// Resource file `Tajawal-Bold.ttf`.
-    static let tajawalBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Tajawal-Bold", pathExtension: "ttf")
-    /// Resource file `Tajawal-Light.ttf`.
-    static let tajawalLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Tajawal-Light", pathExtension: "ttf")
-    /// Resource file `Tajawal-Medium.ttf`.
-    static let tajawalMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Tajawal-Medium", pathExtension: "ttf")
-    /// Resource file `Tajawal-Regular.ttf`.
-    static let tajawalRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Tajawal-Regular", pathExtension: "ttf")
     /// Resource file `all_round.ttf`.
     static let all_roundTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "all_round", pathExtension: "ttf")
     /// Resource file `contact.gif`.
@@ -1206,6 +1152,14 @@ struct R: Rswift.Validatable {
     static let errorIconSubtle2xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "errorIconSubtle@2x", pathExtension: "png")
     /// Resource file `errorIconSubtle@3x.png`.
     static let errorIconSubtle3xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "errorIconSubtle@3x", pathExtension: "png")
+    /// Resource file `expoarabicbold.ttf`.
+    static let expoarabicboldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "expoarabicbold", pathExtension: "ttf")
+    /// Resource file `expoarabicbook.ttf`.
+    static let expoarabicbookTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "expoarabicbook", pathExtension: "ttf")
+    /// Resource file `expoarabiclight.ttf`.
+    static let expoarabiclightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "expoarabiclight", pathExtension: "ttf")
+    /// Resource file `expoarabicmedium.ttf`.
+    static let expoarabicmediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "expoarabicmedium", pathExtension: "ttf")
     /// Resource file `infoIcon.png`.
     static let infoIconPng = Rswift.FileResource(bundle: R.hostingBundle, name: "infoIcon", pathExtension: "png")
     /// Resource file `infoIcon@2x.png`.
@@ -1273,30 +1227,6 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "Expo-Arabic-Bold", withExtension: "ttf")`
-    static func expoArabicBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.expoArabicBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Expo-Arabic-Book", withExtension: "ttf")`
-    static func expoArabicBookTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.expoArabicBookTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Expo-Arabic-Light", withExtension: "ttf")`
-    static func expoArabicLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.expoArabicLightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Expo-Arabic-Medium", withExtension: "ttf")`
-    static func expoArabicMediumTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.expoArabicMediumTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
@@ -1312,66 +1242,6 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Loading-Light", withExtension: "gif")`
     static func loadingLightGif(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.loadingLightGif
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli", withExtension: "ttf")`
-    static func muliTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-Bold", withExtension: "ttf")`
-    static func muliBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-BoldItalic", withExtension: "ttf")`
-    static func muliBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliBoldItalicTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-ExtraLight", withExtension: "ttf")`
-    static func muliExtraLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliExtraLightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-ExtraLightItalic", withExtension: "ttf")`
-    static func muliExtraLightItalicTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliExtraLightItalicTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-Italic", withExtension: "ttf")`
-    static func muliItalicTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliItalicTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-Light", withExtension: "ttf")`
-    static func muliLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliLightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-LightItalic", withExtension: "ttf")`
-    static func muliLightItalicTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliLightItalicTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-Semi-BoldItalic", withExtension: "ttf")`
-    static func muliSemiBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliSemiBoldItalicTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Muli-SemiBold", withExtension: "ttf")`
-    static func muliSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.muliSemiBoldTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1408,84 +1278,6 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "README", withExtension: "md")`
     static func readmeMd(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.readmeMd
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYBLACKITALIC", withExtension: "OTF")`
-    static func sfprodisplayblackitalicotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplayblackitalicotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYBOLD", withExtension: "OTF")`
-    static func sfprodisplayboldotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplayboldotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYHEAVYITALIC", withExtension: "OTF")`
-    static func sfprodisplayheavyitalicotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplayheavyitalicotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYLIGHTITALIC", withExtension: "OTF")`
-    static func sfprodisplaylightitalicotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplaylightitalicotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYMEDIUM", withExtension: "OTF")`
-    static func sfprodisplaymediumotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplaymediumotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYREGULAR", withExtension: "OTF")`
-    static func sfprodisplayregularotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplayregularotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYSEMIBOLDITALIC", withExtension: "OTF")`
-    static func sfprodisplaysemibolditalicotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplaysemibolditalicotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYTHINITALIC", withExtension: "OTF")`
-    static func sfprodisplaythinitalicotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplaythinitalicotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "SFPRODISPLAYULTRALIGHTITALIC", withExtension: "OTF")`
-    static func sfprodisplayultralightitalicotF(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sfprodisplayultralightitalicotF
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Tajawal-Bold", withExtension: "ttf")`
-    static func tajawalBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.tajawalBoldTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Tajawal-Light", withExtension: "ttf")`
-    static func tajawalLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.tajawalLightTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Tajawal-Medium", withExtension: "ttf")`
-    static func tajawalMediumTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.tajawalMediumTtf
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "Tajawal-Regular", withExtension: "ttf")`
-    static func tajawalRegularTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.tajawalRegularTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1552,6 +1344,30 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "errorIconSubtle@3x", withExtension: "png")`
     static func errorIconSubtle3xPng(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.errorIconSubtle3xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "expoarabicbold", withExtension: "ttf")`
+    static func expoarabicboldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.expoarabicboldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "expoarabicbook", withExtension: "ttf")`
+    static func expoarabicbookTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.expoarabicbookTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "expoarabiclight", withExtension: "ttf")`
+    static func expoarabiclightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.expoarabiclightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "expoarabicmedium", withExtension: "ttf")`
+    static func expoarabicmediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.expoarabicmediumTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1720,7 +1536,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 35 fonts.
+  /// This `R.font` struct is generated, and contains static references to 9 fonts.
   struct font: Rswift.Validatable {
     /// Font `AllRoundGothicW03-Demi`.
     static let allRoundGothicW03Demi = Rswift.FontResource(fontName: "AllRoundGothicW03-Demi")
@@ -1732,20 +1548,6 @@ struct R: Rswift.Validatable {
     static let expoArabicLight = Rswift.FontResource(fontName: "ExpoArabic-Light")
     /// Font `ExpoArabic-Medium`.
     static let expoArabicMedium = Rswift.FontResource(fontName: "ExpoArabic-Medium")
-    /// Font `Muli-BoldItalic`.
-    static let muliBoldItalic = Rswift.FontResource(fontName: "Muli-BoldItalic")
-    /// Font `Muli-ExtraLightItalic`.
-    static let muliExtraLightItalic = Rswift.FontResource(fontName: "Muli-ExtraLightItalic")
-    /// Font `Muli-ExtraLight`.
-    static let muliExtraLight = Rswift.FontResource(fontName: "Muli-ExtraLight")
-    /// Font `Muli-Italic`.
-    static let muliItalic = Rswift.FontResource(fontName: "Muli-Italic")
-    /// Font `Muli-LightItalic`.
-    static let muliLightItalic = Rswift.FontResource(fontName: "Muli-LightItalic")
-    /// Font `Muli-Light`.
-    static let muliLight = Rswift.FontResource(fontName: "Muli-Light")
-    /// Font `Muli-Semi-BoldItalic`.
-    static let muliSemiBoldItalic = Rswift.FontResource(fontName: "Muli-Semi-BoldItalic")
     /// Font `NeoSansArabic-Bold`.
     static let neoSansArabicBold = Rswift.FontResource(fontName: "NeoSansArabic-Bold")
     /// Font `NeoSansArabic-Light`.
@@ -1754,32 +1556,6 @@ struct R: Rswift.Validatable {
     static let neoSansArabicMedium = Rswift.FontResource(fontName: "NeoSansArabic-Medium")
     /// Font `NeoSansArabic`.
     static let neoSansArabic = Rswift.FontResource(fontName: "NeoSansArabic")
-    /// Font `SFProDisplay-BlackItalic`.
-    static let sfProDisplayBlackItalic = Rswift.FontResource(fontName: "SFProDisplay-BlackItalic")
-    /// Font `SFProDisplay-Bold`.
-    static let sfProDisplayBold = Rswift.FontResource(fontName: "SFProDisplay-Bold")
-    /// Font `SFProDisplay-HeavyItalic`.
-    static let sfProDisplayHeavyItalic = Rswift.FontResource(fontName: "SFProDisplay-HeavyItalic")
-    /// Font `SFProDisplay-LightItalic`.
-    static let sfProDisplayLightItalic = Rswift.FontResource(fontName: "SFProDisplay-LightItalic")
-    /// Font `SFProDisplay-Medium`.
-    static let sfProDisplayMedium = Rswift.FontResource(fontName: "SFProDisplay-Medium")
-    /// Font `SFProDisplay-Regular`.
-    static let sfProDisplayRegular = Rswift.FontResource(fontName: "SFProDisplay-Regular")
-    /// Font `SFProDisplay-SemiboldItalic`.
-    static let sfProDisplaySemiboldItalic = Rswift.FontResource(fontName: "SFProDisplay-SemiboldItalic")
-    /// Font `SFProDisplay-ThinItalic`.
-    static let sfProDisplayThinItalic = Rswift.FontResource(fontName: "SFProDisplay-ThinItalic")
-    /// Font `SFProDisplay-UltralightItalic`.
-    static let sfProDisplayUltralightItalic = Rswift.FontResource(fontName: "SFProDisplay-UltralightItalic")
-    /// Font `Tajawal-Bold`.
-    static let tajawalBold = Rswift.FontResource(fontName: "Tajawal-Bold")
-    /// Font `Tajawal-Light`.
-    static let tajawalLight = Rswift.FontResource(fontName: "Tajawal-Light")
-    /// Font `Tajawal-Medium`.
-    static let tajawalMedium = Rswift.FontResource(fontName: "Tajawal-Medium")
-    /// Font `Tajawal-Regular`.
-    static let tajawalRegular = Rswift.FontResource(fontName: "Tajawal-Regular")
 
     /// `UIFont(name: "AllRoundGothicW03-Demi", size: ...)`
     static func allRoundGothicW03Demi(size: CGFloat) -> UIKit.UIFont? {
@@ -1806,41 +1582,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIFont(resource: expoArabicMedium, size: size)
     }
 
-    /// `UIFont(name: "Muli-BoldItalic", size: ...)`
-    static func muliBoldItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: muliBoldItalic, size: size)
-    }
-
-    /// `UIFont(name: "Muli-ExtraLight", size: ...)`
-    static func muliExtraLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: muliExtraLight, size: size)
-    }
-
-    /// `UIFont(name: "Muli-ExtraLightItalic", size: ...)`
-    static func muliExtraLightItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: muliExtraLightItalic, size: size)
-    }
-
-    /// `UIFont(name: "Muli-Italic", size: ...)`
-    static func muliItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: muliItalic, size: size)
-    }
-
-    /// `UIFont(name: "Muli-Light", size: ...)`
-    static func muliLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: muliLight, size: size)
-    }
-
-    /// `UIFont(name: "Muli-LightItalic", size: ...)`
-    static func muliLightItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: muliLightItalic, size: size)
-    }
-
-    /// `UIFont(name: "Muli-Semi-BoldItalic", size: ...)`
-    static func muliSemiBoldItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: muliSemiBoldItalic, size: size)
-    }
-
     /// `UIFont(name: "NeoSansArabic", size: ...)`
     static func neoSansArabic(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: neoSansArabic, size: size)
@@ -1861,101 +1602,16 @@ struct R: Rswift.Validatable {
       return UIKit.UIFont(resource: neoSansArabicMedium, size: size)
     }
 
-    /// `UIFont(name: "SFProDisplay-BlackItalic", size: ...)`
-    static func sfProDisplayBlackItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplayBlackItalic, size: size)
-    }
-
-    /// `UIFont(name: "SFProDisplay-Bold", size: ...)`
-    static func sfProDisplayBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplayBold, size: size)
-    }
-
-    /// `UIFont(name: "SFProDisplay-HeavyItalic", size: ...)`
-    static func sfProDisplayHeavyItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplayHeavyItalic, size: size)
-    }
-
-    /// `UIFont(name: "SFProDisplay-LightItalic", size: ...)`
-    static func sfProDisplayLightItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplayLightItalic, size: size)
-    }
-
-    /// `UIFont(name: "SFProDisplay-Medium", size: ...)`
-    static func sfProDisplayMedium(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplayMedium, size: size)
-    }
-
-    /// `UIFont(name: "SFProDisplay-Regular", size: ...)`
-    static func sfProDisplayRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplayRegular, size: size)
-    }
-
-    /// `UIFont(name: "SFProDisplay-SemiboldItalic", size: ...)`
-    static func sfProDisplaySemiboldItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplaySemiboldItalic, size: size)
-    }
-
-    /// `UIFont(name: "SFProDisplay-ThinItalic", size: ...)`
-    static func sfProDisplayThinItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplayThinItalic, size: size)
-    }
-
-    /// `UIFont(name: "SFProDisplay-UltralightItalic", size: ...)`
-    static func sfProDisplayUltralightItalic(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sfProDisplayUltralightItalic, size: size)
-    }
-
-    /// `UIFont(name: "Tajawal-Bold", size: ...)`
-    static func tajawalBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: tajawalBold, size: size)
-    }
-
-    /// `UIFont(name: "Tajawal-Light", size: ...)`
-    static func tajawalLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: tajawalLight, size: size)
-    }
-
-    /// `UIFont(name: "Tajawal-Medium", size: ...)`
-    static func tajawalMedium(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: tajawalMedium, size: size)
-    }
-
-    /// `UIFont(name: "Tajawal-Regular", size: ...)`
-    static func tajawalRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: tajawalRegular, size: size)
-    }
-
     static func validate() throws {
       if R.font.allRoundGothicW03Demi(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AllRoundGothicW03-Demi' could not be loaded, is 'all_round.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.expoArabicBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Bold' could not be loaded, is 'Expo-Arabic-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.expoArabicBook(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Book' could not be loaded, is 'Expo-Arabic-Book.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.expoArabicLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Light' could not be loaded, is 'Expo-Arabic-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.expoArabicMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Medium' could not be loaded, is 'Expo-Arabic-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.muliBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-BoldItalic' could not be loaded, is 'Muli-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.muliExtraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-ExtraLight' could not be loaded, is 'Muli-ExtraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.muliExtraLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-ExtraLightItalic' could not be loaded, is 'Muli-ExtraLightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.muliItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-Italic' could not be loaded, is 'Muli-Italic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.muliLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-Light' could not be loaded, is 'Muli-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.muliLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-LightItalic' could not be loaded, is 'Muli-LightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.muliSemiBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Muli-Semi-BoldItalic' could not be loaded, is 'Muli-Semi-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.expoArabicBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Bold' could not be loaded, is 'expoarabicbold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.expoArabicBook(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Book' could not be loaded, is 'expoarabicbook.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.expoArabicLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Light' could not be loaded, is 'expoarabiclight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.expoArabicMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ExpoArabic-Medium' could not be loaded, is 'expoarabicmedium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.neoSansArabic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'NeoSansArabic' could not be loaded, is 'NeoSansArabic-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.neoSansArabicBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'NeoSansArabic-Bold' could not be loaded, is 'NeoSansW23-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.neoSansArabicLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'NeoSansArabic-Light' could not be loaded, is 'NeoSansArabic-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.neoSansArabicMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'NeoSansArabic-Medium' could not be loaded, is 'NeoSansArabic-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplayBlackItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-BlackItalic' could not be loaded, is 'SFPRODISPLAYBLACKITALIC.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplayBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Bold' could not be loaded, is 'SFPRODISPLAYBOLD.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplayHeavyItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-HeavyItalic' could not be loaded, is 'SFPRODISPLAYHEAVYITALIC.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplayLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-LightItalic' could not be loaded, is 'SFPRODISPLAYLIGHTITALIC.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplayMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Medium' could not be loaded, is 'SFPRODISPLAYMEDIUM.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplayRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Regular' could not be loaded, is 'SFPRODISPLAYREGULAR.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplaySemiboldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-SemiboldItalic' could not be loaded, is 'SFPRODISPLAYSEMIBOLDITALIC.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplayThinItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-ThinItalic' could not be loaded, is 'SFPRODISPLAYTHINITALIC.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sfProDisplayUltralightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-UltralightItalic' could not be loaded, is 'SFPRODISPLAYULTRALIGHTITALIC.OTF' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.tajawalBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Tajawal-Bold' could not be loaded, is 'Tajawal-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.tajawalLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Tajawal-Light' could not be loaded, is 'Tajawal-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.tajawalMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Tajawal-Medium' could not be loaded, is 'Tajawal-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.tajawalRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Tajawal-Regular' could not be loaded, is 'Tajawal-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}
@@ -12758,6 +12414,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'RegisterStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'RegisterStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "black2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black2' is used in storyboard 'RegisterStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "darkgray 2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'darkgray 2' is used in storyboard 'RegisterStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray' is used in storyboard 'RegisterStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in storyboard 'RegisterStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'RegisterStoryboard', but couldn't be loaded.") }

@@ -876,6 +876,7 @@
                         <outlet property="rateView" destination="gbe-ou-vVP" id="LFc-cJ-IGT"/>
                         <outlet property="refundView" destination="xQM-yB-7NI" id="Gh6-0d-uPa"/>
                         <outlet property="servicesTbl" destination="0H4-s3-ohp" id="tIV-Og-sCQ"/>
+                        <outlet property="starImg" destination="o5N-zC-sbj" id="DXR-bH-Vso"/>
                         <outlet property="suggestionBtn" destination="lyO-KR-TDM" id="e9y-cy-Tma"/>
                         <outlet property="suggestionSpaceView" destination="2Xy-By-wmD" id="gEP-uP-uCc"/>
                         <outlet property="suggestionView" destination="BeT-Ae-Ygo" id="dkg-dT-1kA"/>

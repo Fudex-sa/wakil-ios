@@ -52,6 +52,7 @@ extension AboutusVC {
 extension AboutusVC {
     func setup() {
         viewModel?.getabout()
+       // desLbl.textAlignment = .justified
     }
 }
 // MARK: - ...  View Contract

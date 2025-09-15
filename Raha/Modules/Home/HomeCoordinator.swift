@@ -91,6 +91,10 @@ extension HomeCoordinator {
         scene.orderId = id
         view?.push(scene)
     }
+    func profile(){
+        guard let scene = R.storyboard.profileStoryboard.profileVC() else { return }
+        view?.push(scene)
+    }
     func complains(){
         guard let scene = R.storyboard.complainsStoryboard.complainsVC() else { return }
         view?.push(scene)
