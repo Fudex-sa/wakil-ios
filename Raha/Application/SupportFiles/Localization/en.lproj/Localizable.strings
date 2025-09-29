@@ -350,7 +350,7 @@
 "Clear all" = "Clear all";
 "Select a language" = "Select a language";
 "Done" = "Done";
-"Add a new address" = "Add a new address";
+"Add a new address" = "Add address";
 "Contact the application management" = "Contact the application management";
 "If you face any problem or have an inquiry, do not hesitate to contact us and we will preview the message and respond to you as soon as possible" = "If you face any problem or have an inquiry, do not hesitate to contact us and we will preview the message and respond to you as soon as possible";
 "Your message" = "Your message";
@@ -362,7 +362,7 @@
 "Are you sure to log out of the app?" = "Are you sure to log out of the app?";
 "Cancel" = "Cancel";
 "Add address" = "Add address";
-"Add a new address" = "Add a new address";
+"Add a new address" = "Add address";
 "Street" = "Street";
 "Region" = "Region";
 "City" = "City";
@@ -482,3 +482,6 @@
 "Total price :" = "Total price :";
 "Address is out of range" = "Address is out of range";
 "select gender" = "select gender";
+"Choose appropriate payment method" = "Choose appropriate payment method";
+"Pay" = "Pay";
+"Enter mobile number: 5XXXXXXXX or 05XXXXXXXX" = "Enter mobile number: 5XXXXXXXX or 05XXXXXXXX";

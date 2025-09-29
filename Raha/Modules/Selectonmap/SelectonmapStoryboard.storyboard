@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1z-F3-ot6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -54,6 +54,27 @@
                                     <constraint firstAttribute="height" constant="36" id="yGe-fW-2fq"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="axh-g3-UdI">
+                                <rect key="frame" x="20" y="124" width="374" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="D82-Jj-fag"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="v1z-F3-ot6" id="7Zf-YD-fPy"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="29W-5f-jBi">
+                                <rect key="frame" x="20" y="195" width="374" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="X8G-GK-5WE"/>
+                                </constraints>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLA-Jm-WeM">
                                 <rect key="frame" x="24" y="756" width="366" height="56"/>
                                 <color key="backgroundColor" name="normalblue"/>
@@ -78,20 +99,28 @@
                         <constraints>
                             <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="oEH-2R-ObX" secondAttribute="trailing" constant="24" id="4yF-16-zsp"/>
                             <constraint firstItem="ckT-Oz-gwY" firstAttribute="bottom" secondItem="OLA-Jm-WeM" secondAttribute="bottom" constant="50" id="ER1-IA-AQp"/>
+                            <constraint firstItem="29W-5f-jBi" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="20" id="IGT-6I-iFZ"/>
                             <constraint firstItem="yXX-GO-CZx" firstAttribute="top" secondItem="ckT-Oz-gwY" secondAttribute="top" id="QiR-7y-Wfe"/>
                             <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="yXX-GO-CZx" secondAttribute="trailing" id="RE6-nR-jVG"/>
                             <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="OLA-Jm-WeM" secondAttribute="trailing" constant="24" id="Wpo-Mj-xZT"/>
+                            <constraint firstAttribute="trailing" secondItem="axh-g3-UdI" secondAttribute="trailing" constant="20" id="YAr-Gm-Bw0"/>
                             <constraint firstItem="oEH-2R-ObX" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="24" id="fxb-V2-LGK"/>
+                            <constraint firstItem="axh-g3-UdI" firstAttribute="top" secondItem="oEH-2R-ObX" secondAttribute="bottom" constant="20" id="jUb-Kb-K7l"/>
+                            <constraint firstItem="ckT-Oz-gwY" firstAttribute="trailing" secondItem="29W-5f-jBi" secondAttribute="trailing" constant="20" id="kwX-8V-QyE"/>
                             <constraint firstItem="ckT-Oz-gwY" firstAttribute="bottom" secondItem="yXX-GO-CZx" secondAttribute="bottom" id="qYX-D3-prm"/>
                             <constraint firstItem="yXX-GO-CZx" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" id="sSG-XK-z2O"/>
                             <constraint firstItem="OLA-Jm-WeM" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="24" id="sZw-Qh-QDr"/>
                             <constraint firstItem="oEH-2R-ObX" firstAttribute="top" secondItem="ckT-Oz-gwY" secondAttribute="top" constant="20" id="vtp-mE-7yh"/>
+                            <constraint firstItem="axh-g3-UdI" firstAttribute="leading" secondItem="ckT-Oz-gwY" secondAttribute="leading" constant="20" id="wNt-zA-Pgj"/>
+                            <constraint firstItem="29W-5f-jBi" firstAttribute="top" secondItem="axh-g3-UdI" secondAttribute="bottom" constant="15" id="wpY-IL-laO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressTbl" destination="29W-5f-jBi" id="cVN-D6-sEx"/>
                         <outlet property="backBtn" destination="soo-J0-olP" id="8gY-nL-1j0"/>
                         <outlet property="mapView" destination="yXX-GO-CZx" id="bGB-lZ-TbA"/>
                         <outlet property="saveBtn" destination="OLA-Jm-WeM" id="EeE-B1-2QE"/>
+                        <outlet property="searchBar" destination="axh-g3-UdI" id="XoR-vd-5wu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-za-4cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

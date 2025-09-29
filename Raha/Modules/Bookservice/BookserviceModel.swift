@@ -62,3 +62,45 @@ struct Slot: Codable {
     let active: Bool?
     var isselect: Bool? = false
 }
+struct PaymethodModel: Codable {
+    let status: Bool?
+    let message: String?
+    let data: PaymethodDataClass?
+}
+
+// MARK: - DataClass
+struct PaymethodDataClass: Codable {
+    let paymentMethods: [PaymentMethod]?
+    let orderID: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case paymentMethods = "payment_methods"
+        case orderID = "order_id"
+    }
+}
+
+// MARK: - PaymentMethod
+struct PaymentMethod: Codable {
+    let paymentMethodID: Int?
+    let paymentMethodAr, paymentMethodEn, paymentMethodCode: String?
+    let isDirectPayment: Bool?
+    let serviceCharge, totalAmount: Double?
+    let currencyISO: String?
+    let imageURL: String?
+    let isEmbeddedSupported: Bool?
+    let paymentCurrencyISO: String?
+
+    enum CodingKeys: String, CodingKey {
+        case paymentMethodID = "PaymentMethodId"
+        case paymentMethodAr = "PaymentMethodAr"
+        case paymentMethodEn = "PaymentMethodEn"
+        case paymentMethodCode = "PaymentMethodCode"
+        case isDirectPayment = "IsDirectPayment"
+        case serviceCharge = "ServiceCharge"
+        case totalAmount = "TotalAmount"
+        case currencyISO = "CurrencyIso"
+        case imageURL = "ImageUrl"
+        case isEmbeddedSupported = "IsEmbeddedSupported"
+        case paymentCurrencyISO = "PaymentCurrencyIso"
+    }
+}

@@ -279,6 +279,13 @@
 		8D732FD72DAFE29400990B9F /* ComplainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D732FD52DAFE29400990B9F /* ComplainTableViewCell.swift */; };
 		8D732FD82DAFE29400990B9F /* ComplainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D732FD62DAFE29400990B9F /* ComplainTableViewCell.xib */; };
 		8D732FDA2DB0035800990B9F /* SelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D732FD92DB0035500990B9F /* SelfSizingCollectionView.swift */; };
+		8D87A3912E800A1500A308DF /* PaymentmethodStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D87A38E2E800A1500A308DF /* PaymentmethodStoryboard.storyboard */; };
+		8D87A3922E800A1500A308DF /* PaymentmethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87A38F2E800A1500A308DF /* PaymentmethodVC.swift */; };
+		8D87A3932E800A1500A308DF /* PaymentmethodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87A38D2E800A1500A308DF /* PaymentmethodModel.swift */; };
+		8D87A3942E800A1500A308DF /* PaymentmethodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87A38C2E800A1500A308DF /* PaymentmethodCoordinator.swift */; };
+		8D87A3952E800A1500A308DF /* PaymentmethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87A3902E800A1500A308DF /* PaymentmethodViewModel.swift */; };
+		8D87A3992E800EE200A308DF /* PaymentmethodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D87A3982E800EE200A308DF /* PaymentmethodTableViewCell.xib */; };
+		8D87A39A2E800EE200A308DF /* PaymentmethodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87A3972E800EE200A308DF /* PaymentmethodTableViewCell.swift */; };
 		8D8F5DE82DA15E630046DB8E /* ReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */; };
 		8D8F5DE92DA15E630046DB8E /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */; };
 		8DA612B22DA3F2320098CC92 /* BookserviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA612B12DA3F2320098CC92 /* BookserviceViewModel.swift */; };
@@ -948,6 +955,13 @@
 		8D732FD52DAFE29400990B9F /* ComplainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTableViewCell.swift; sourceTree = "<group>"; };
 		8D732FD62DAFE29400990B9F /* ComplainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplainTableViewCell.xib; sourceTree = "<group>"; };
 		8D732FD92DB0035500990B9F /* SelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingCollectionView.swift; sourceTree = "<group>"; };
+		8D87A38C2E800A1500A308DF /* PaymentmethodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentmethodCoordinator.swift; sourceTree = "<group>"; };
+		8D87A38D2E800A1500A308DF /* PaymentmethodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentmethodModel.swift; sourceTree = "<group>"; };
+		8D87A38E2E800A1500A308DF /* PaymentmethodStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentmethodStoryboard.storyboard; sourceTree = "<group>"; };
+		8D87A38F2E800A1500A308DF /* PaymentmethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentmethodVC.swift; sourceTree = "<group>"; };
+		8D87A3902E800A1500A308DF /* PaymentmethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentmethodViewModel.swift; sourceTree = "<group>"; };
+		8D87A3972E800EE200A308DF /* PaymentmethodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentmethodTableViewCell.swift; sourceTree = "<group>"; };
+		8D87A3982E800EE200A308DF /* PaymentmethodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentmethodTableViewCell.xib; sourceTree = "<group>"; };
 		8D8F5DE62DA15E630046DB8E /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		8D8F5DE72DA15E630046DB8E /* ReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationTableViewCell.xib; sourceTree = "<group>"; };
 		8DA612AD2DA3F2320098CC92 /* BookserviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookserviceCoordinator.swift; sourceTree = "<group>"; };
@@ -2170,6 +2184,28 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		8D87A38B2E8009EA00A308DF /* Paymentmethod */ = {
+			isa = PBXGroup;
+			children = (
+				8D87A3962E800EC600A308DF /* cell */,
+				8D87A38C2E800A1500A308DF /* PaymentmethodCoordinator.swift */,
+				8D87A38D2E800A1500A308DF /* PaymentmethodModel.swift */,
+				8D87A38E2E800A1500A308DF /* PaymentmethodStoryboard.storyboard */,
+				8D87A38F2E800A1500A308DF /* PaymentmethodVC.swift */,
+				8D87A3902E800A1500A308DF /* PaymentmethodViewModel.swift */,
+			);
+			path = Paymentmethod;
+			sourceTree = "<group>";
+		};
+		8D87A3962E800EC600A308DF /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				8D87A3972E800EE200A308DF /* PaymentmethodTableViewCell.swift */,
+				8D87A3982E800EE200A308DF /* PaymentmethodTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		8D8F5DE12DA15DCE0046DB8E /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -3186,6 +3222,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8D87A38B2E8009EA00A308DF /* Paymentmethod */,
 				8DE8ECA12DC223C30021E859 /* Notification */,
 				8D732FC92DAFDE2600990B9F /* Sendcomplain */,
 				8D732FBE2DAFDE0600990B9F /* Complains */,
@@ -3497,6 +3534,7 @@
 				C86BF989266947F0002D87BC /* successIcon@3x.png in Resources */,
 				C83A5044272F453700996984 /* Development.xcconfig in Resources */,
 				C86BF98C266947F0002D87BC /* errorIconSubtle@3x.png in Resources */,
+				8D87A3992E800EE200A308DF /* PaymentmethodTableViewCell.xib in Resources */,
 				8D732FD82DAFE29400990B9F /* ComplainTableViewCell.xib in Resources */,
 				66762D2E2C3EB79E00D36BC6 /* contact.gif in Resources */,
 				66B979C42D75CE2C00962C19 /* AddressTableViewCell.xib in Resources */,
@@ -3525,6 +3563,7 @@
 				8DA612B62DA3F2320098CC92 /* BookserviceStoryboard.storyboard in Resources */,
 				C84539A82729887000004173 /* NeoSansArabic-Light.ttf in Resources */,
 				77C5F4A72534814200E70C4C /* Assets.xcassets in Resources */,
+				8D87A3912E800A1500A308DF /* PaymentmethodStoryboard.storyboard in Resources */,
 				C86BF998266947F0002D87BC /* warningIconLight@3x.png in Resources */,
 				8DEDCB5F2DC22B6B00EC573E /* NotsTableViewCell.xib in Resources */,
 				C86BF987266947F0002D87BC /* successIconSubtle.png in Resources */,
@@ -3824,6 +3863,7 @@
 				C871C9792730231300DCBD2D /* SkeletonFlow.swift in Sources */,
 				C84539852729880600004173 /* TokenModel.swift in Sources */,
 				C871C98B2730231300DCBD2D /* UITableView+VisibleSections.swift in Sources */,
+				8D87A39A2E800EE200A308DF /* PaymentmethodTableViewCell.swift in Sources */,
 				C871C98A2730231300DCBD2D /* UIView+UIApplicationDelegate.swift in Sources */,
 				66B979B82D75C75200962C19 /* FaqCoordinator.swift in Sources */,
 				66B979B92D75C75200962C19 /* FaqModel.swift in Sources */,
@@ -4117,6 +4157,10 @@
 				C871C8A1272FECF200DCBD2D /* GoogleModel.swift in Sources */,
 				66DE7D9E2738008700CAD557 /* BaseTableViewCell.swift in Sources */,
 				C871C9772730231300DCBD2D /* SkeletonMultilineLayerBuilder.swift in Sources */,
+				8D87A3922E800A1500A308DF /* PaymentmethodVC.swift in Sources */,
+				8D87A3932E800A1500A308DF /* PaymentmethodModel.swift in Sources */,
+				8D87A3942E800A1500A308DF /* PaymentmethodCoordinator.swift in Sources */,
+				8D87A3952E800A1500A308DF /* PaymentmethodViewModel.swift in Sources */,
 				C853B95D26D7F9450008F09D /* ArrayExtension.swift in Sources */,
 				C871C89D272FECF200DCBD2D /* CoreSocial.swift in Sources */,
 				C871C8C7272FED0600DCBD2D /* SwipeFeedback.swift in Sources */,
@@ -4319,7 +4363,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
@@ -4404,7 +4448,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4495,7 +4539,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
@@ -4579,7 +4623,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;

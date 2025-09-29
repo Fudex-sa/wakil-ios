@@ -15,6 +15,9 @@ protocol SelectonmapVCDelegate: AnyObject {
 }
 // MARK: - ...  ViewController - Vars
 class SelectonmapVC: BaseController {
+    @IBOutlet weak var addressTbl: UITableView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var mapView: MKMapView!
@@ -27,6 +30,8 @@ class SelectonmapVC: BaseController {
     var locationManager = CLLocationManager()
     var currentLocationMarker: MKPointAnnotation?
     weak var delegate: SelectonmapVCDelegate?
+    private let completer = MKLocalSearchCompleter()
+    private var completions: [MKLocalSearchCompletion] = []
     var address = ""
 
 }
@@ -60,6 +65,13 @@ extension SelectonmapVC {
 
 extension SelectonmapVC: MKMapViewDelegate, CLLocationManagerDelegate {
     func setupMap() {
+        mapView.mapType = .mutedStandard
+        completer.delegate = self
+        completer.resultTypes = .address // or .pointOfInterest / .query
+        addressTbl.dataSource = self
+        addressTbl.delegate = self
+        searchBar.delegate = self
+        addressTbl.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -116,7 +128,6 @@ extension SelectonmapVC: MKMapViewDelegate, CLLocationManagerDelegate {
         
         lat = coordinate.latitude
         lng = coordinate.longitude
-
         // Remove old marker
         if let currentMarker = currentLocationMarker {
             mapView.removeAnnotation(currentMarker)
@@ -145,6 +156,7 @@ extension SelectonmapVC: MKMapViewDelegate, CLLocationManagerDelegate {
             if let placemark = placemarks?.first {
                 let address = self?.getAddressFromPlacemark(placemark) ?? "Unknown Location"
                 self?.address = address
+                self?.searchBar.text = address
                 print("Location: \(address)")
             }
         }
@@ -157,5 +169,128 @@ extension SelectonmapVC: MKMapViewDelegate, CLLocationManagerDelegate {
         if let state = placemark.administrativeArea { address += ", \(state)" }
         if let zip = placemark.postalCode { address += " \(zip)" }
         return address
+    }
+    private func setSuggestionsVisible(_ visible: Bool, count: Int = 0) {
+           let maxHeight: CGFloat = min(CGFloat(count) * 56.0, 300)
+           for c in view.constraints {
+               if c.firstItem as? UITableView == addressTbl && c.firstAttribute == .height {
+                   c.constant = visible ? maxHeight : 0
+                   UIView.animate(withDuration: 0.2) { self.view.layoutIfNeeded() }
+                   return
+               }
+           }
+       }
+
+       private func dropPinAndZoom(to coordinate: CLLocationCoordinate2D, title: String?) {
+           let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+           mapView.setRegion(region, animated: true)
+           self.lat = coordinate.latitude ?? 0
+           self.lng = coordinate.longitude ?? 0
+           let position = CLLocationCoordinate2D(latitude: self.lat ?? 0, longitude: self.lng ?? 0)
+
+           // Remove old marker
+           if let currentMarker = currentLocationMarker {
+               mapView.removeAnnotation(currentMarker)
+           }
+
+           // Add new marker
+           currentLocationMarker = MKPointAnnotation()
+           currentLocationMarker?.coordinate = position
+           currentLocationMarker?.title = title
+           if let marker = currentLocationMarker {
+               mapView.addAnnotation(marker)
+           }
+
+           //reverseGeocode(lat: coordinate.latitude, lng: coordinate.longitude)
+       }
+    func mapView(_ mapView: MKMapView,
+                 viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation { return nil } // keep blue dot
+        let id = "pin"
+        let v = mapView.dequeueReusableAnnotationView(withIdentifier: id)
+            as? MKMarkerAnnotationView ?? MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: id)
+        v.markerTintColor = .systemBlue   // or any UIColor
+        v.glyphTintColor  = .white
+        return v
+    }
+
+}
+extension SelectonmapVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        completer.queryFragment = searchText
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        // Optionally run a search for the typed text (if user pressed search)
+        performSearch(for: searchBar.text)
+    }
+
+    private func performSearch(for query: String?) {
+        guard let q = query, !q.isEmpty else { return }
+        let req = MKLocalSearch.Request()
+        req.naturalLanguageQuery = q
+        let search = MKLocalSearch(request: req)
+        search.start { [weak self] response, error in
+            guard let self = self, let item = response?.mapItems.first else { return }
+            self.dropPinAndZoom(to: item.placemark.coordinate, title: item.name)
+        }
+    }
+}
+
+// MARK: - MKLocalSearchCompleterDelegate
+extension SelectonmapVC: MKLocalSearchCompleterDelegate {
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        completions = completer.results
+        addressTbl.reloadData()
+        setSuggestionsVisible(!completions.isEmpty, count: completions.count)
+    }
+
+    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+        print("Completer error: \(error.localizedDescription)")
+        completions = []
+        addressTbl.reloadData()
+        setSuggestionsVisible(false)
+    }
+}
+
+// MARK: - Table View (suggestions)
+extension SelectonmapVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tv: UITableView, numberOfRowsInSection section: Int) -> Int {
+        completions.count
+    }
+
+    func tableView(_ tv: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let c = tv.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let suggestion = completions[indexPath.row]
+        // nicely format: title + subtitle
+        c.textLabel?.text = suggestion.title
+        c.detailTextLabel?.text = suggestion.subtitle
+        c.textLabel?.numberOfLines = 1
+        c.detailTextLabel?.numberOfLines = 1
+        c.accessoryType = .disclosureIndicator
+        return c
+    }
+
+    func tableView(_ tv: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tv.deselectRow(at: indexPath, animated: true)
+        searchBar.resignFirstResponder()
+
+        let completion = completions[indexPath.row]
+        // Build a search request from the selected completion
+        let searchRequest = MKLocalSearch.Request(completion: completion)
+        let search = MKLocalSearch(request: searchRequest)
+        search.start { [weak self] response, error in
+            guard let self = self, let item = response?.mapItems.first else {
+                print("No map item for completion: \(error?.localizedDescription ?? "nil")")
+                return
+            }
+            self.setSuggestionsVisible(false)
+            self.searchBar.text = completion.title
+            self.address = completion.title
+            completions.removeAll()
+            addressTbl.reloadData()
+            self.dropPinAndZoom(to: item.placemark.coordinate, title: item.name ?? completion.title)
+        }
     }
 }

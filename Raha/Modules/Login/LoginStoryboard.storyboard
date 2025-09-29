@@ -129,13 +129,13 @@
                                                             <constraint firstAttribute="height" constant="20" id="gMM-0P-QHI"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZ7-UX-TS9">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter mobile number: 5XXXXXXXX or 05XXXXXXXX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZ7-UX-TS9">
                                                         <rect key="frame" x="46" y="0.0" width="312" height="56"/>
                                                         <color key="textColor" name="black"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Mobile number"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter mobile number: 5XXXXXXXX or 05XXXXXXXX"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r12"/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                                 <color key="value" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -552,7 +552,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Vector-7" width="72" height="80"/>
+        <image name="Vector-7" width="128" height="128"/>
         <image name="apple" width="25" height="24"/>
         <image name="eye-slash" width="20" height="20"/>
         <image name="google" width="25" height="24"/>

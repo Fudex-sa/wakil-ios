@@ -23,6 +23,9 @@ extension HomeCoordinator {
         view?.push(scene)
     }
     func selectaddress() {
+        if UD.user == nil {
+            return
+        }
         guard let scene = R.storyboard.selectAddressStoryboard.selectAddressVC() else { return }
         scene.addressId = view?.addressdata?.id ?? 0
         scene.delegate = self

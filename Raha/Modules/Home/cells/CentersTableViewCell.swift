@@ -31,6 +31,17 @@ class CentersTableViewCell: BaseTableViewCell {
         titleLbl.text = model.name ?? ""
         rateLbl.text = model.rate?.string ?? ""
         desLbl.text = model.description ?? ""
+        titleLbl.text = model.name ?? ""
+//        if let title = model.name {
+//            let maxLength = 9
+//            if title.count > maxLength {
+//                titleLbl.text = String(title.prefix(maxLength)) + "..."
+//            } else {
+//                titleLbl.text = title
+//            }
+//        } else {
+//            titleLbl.text = ""
+//        }
         if model.rate ?? 0 == 0 {
             rateLbl.isHidden = true
             starImg.isHidden = true

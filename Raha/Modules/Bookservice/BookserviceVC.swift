@@ -12,6 +12,10 @@ import CoreLocation
 
 // MARK: - ...  ViewController - Vars
 class BookserviceVC: BaseController {
+    @IBOutlet weak var vatCurrencyLbl: UILabel!
+    @IBOutlet weak var vatImg: UIImageView!
+    @IBOutlet weak var totalCurrencyLbl: UILabel!
+    @IBOutlet weak var totalImg: UIImageView!
     @IBOutlet weak var giftcheckView: UIView!
     @IBOutlet weak var checkView: UIView!
     @IBOutlet weak var noAppointmentLbl: UILabel!
@@ -60,6 +64,7 @@ extension BookserviceVC {
         super.viewWillDisappear(animated)
         coordinator = nil
         viewModel?.createorder = .init()
+        viewModel?.paymentmethodorder = .init()
     }
     override func bind() {
         super.bind()
@@ -87,6 +92,10 @@ extension BookserviceVC {
             self?.payTaps?.delegate = self
             self?.payTaps?.present(in: self)
         })
+        viewModel?.paymentmethodorder.listen(on: { [weak self] value in
+            self?.stopLoading()
+            self?.coordinator?.selectpaymentmethod()
+        })
         viewModel?.checkaddress.listen(on: { [weak self] value in
             if self?.viewModel?.name.value ?? "" != "" {
                 self?.checkView.isHidden = true
@@ -112,6 +121,17 @@ extension BookserviceVC {
     func setup() {
         if address == nil {
             address = UD.address
+        }
+        if Localizer.current == .arabic {
+            totalImg.isHidden = false
+            totalCurrencyLbl.isHidden = true
+            vatImg.isHidden = false
+            vatCurrencyLbl.isHidden = true
+        }else {
+            totalImg.isHidden = true
+            totalCurrencyLbl.isHidden = false
+            vatImg.isHidden = true
+            vatCurrencyLbl.isHidden = false
         }
         serviceTbl.skeleton()
         serviceTbl.delegate = self
@@ -204,7 +224,8 @@ extension BookserviceVC {
                 self?.viewModel?.payment_method.send("visa")
                 self?.viewModel?.price.send(self?.priceLbl.text ?? "")
                 self?.viewModel?.slots.send(self?.slots ?? [])
-                self?.viewModel?.makecreateorder()
+                self?.startLoading()
+                self?.viewModel?.fetchpaymentmethod()
             }else {
                 self?.didError(error: error)
             }

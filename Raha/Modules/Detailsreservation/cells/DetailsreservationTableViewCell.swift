@@ -9,6 +9,8 @@
 import UIKit
 
 class DetailsreservationTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var currencyLbl: UILabel!
+    @IBOutlet weak var priceImg: UIImageView!
     @IBOutlet weak var giftTop: NSLayoutConstraint!
     @IBOutlet weak var giftHight: NSLayoutConstraint!
     @IBOutlet weak var statusLbl: UILabel!
@@ -35,6 +37,13 @@ class DetailsreservationTableViewCell: BaseTableViewCell {
         typeLbl.text = model.serviceType ?? ""
         nameLbl.text = model.name ?? ""
         locTypeLbl.text = if loctype == "home" {"Domestic service".localized}else{"At the center".localized}
+        if Localizer.current == .arabic {
+            priceImg.isHidden = false
+            currencyLbl.isHidden = true
+        }else {
+            priceImg.isHidden = true
+            currencyLbl.isHidden = false
+        }
         if isgift == 1 {
             giftView.isHidden = false
             giftHight.constant = 24

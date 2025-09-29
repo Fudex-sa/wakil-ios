@@ -478,3 +478,6 @@
 "Total price :" = "السعر الاجمالى :";
 "Address is out of range" = "العنوان خارج النطاق";
 "select gender" = "اختر النوع";
+"Choose appropriate payment method" = "اختر طريقة الدفع المناسبة";
+"Pay" = "ادفع";
+"Enter mobile number: 5XXXXXXXX or 05XXXXXXXX" = "أدخل رقم الجوال بصيغة: 5XXXXXXXX أو 05XXXXXXXX";

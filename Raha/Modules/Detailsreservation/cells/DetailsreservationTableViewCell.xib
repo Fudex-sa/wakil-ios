@@ -93,7 +93,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r16"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F14-Za-5Rf">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F14-Za-5Rf">
                                 <rect key="frame" x="59" y="48" width="32.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Black1"/>
@@ -187,12 +187,21 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="saudi" translatesAutoresizingMaskIntoConstraints="NO" id="1mx-iV-2bF">
+                                <rect key="frame" x="59" y="42" width="24" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5oO-8U-o2t"/>
+                                    <constraint firstAttribute="width" constant="24" id="g6F-Qw-YSd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1mx-iV-2bF" firstAttribute="centerY" secondItem="Hyh-sV-R39" secondAttribute="centerY" id="0Xf-Hg-Rpq"/>
                             <constraint firstItem="94r-6r-4tp" firstAttribute="centerY" secondItem="aCF-dg-WEm" secondAttribute="centerY" id="1KW-qq-P23"/>
                             <constraint firstItem="rrJ-9d-NEw" firstAttribute="leading" secondItem="AHv-ER-iTk" secondAttribute="leading" constant="12" id="1bn-qu-Iy2"/>
                             <constraint firstItem="uGE-h9-r3o" firstAttribute="top" secondItem="94r-6r-4tp" secondAttribute="bottom" constant="8" id="1qX-QN-Hm2"/>
+                            <constraint firstItem="1mx-iV-2bF" firstAttribute="leading" secondItem="Hyh-sV-R39" secondAttribute="trailing" constant="5" id="65f-p9-tXu"/>
                             <constraint firstItem="Tma-RP-qg5" firstAttribute="top" secondItem="Hyh-sV-R39" secondAttribute="bottom" constant="16" id="6AD-cy-ynK"/>
                             <constraint firstItem="Hyh-sV-R39" firstAttribute="top" secondItem="rrJ-9d-NEw" secondAttribute="bottom" constant="8" id="6nL-d1-vSm"/>
                             <constraint firstItem="F14-Za-5Rf" firstAttribute="centerY" secondItem="Hyh-sV-R39" secondAttribute="centerY" id="9we-FV-Tof"/>
@@ -232,6 +241,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="containerView" destination="AHv-ER-iTk" id="osN-hK-f4s"/>
+                <outlet property="currencyLbl" destination="F14-Za-5Rf" id="MIH-iv-bht"/>
                 <outlet property="desLbl" destination="h2v-7h-LPp" id="fW7-7U-tgj"/>
                 <outlet property="durationLbl" destination="uGE-h9-r3o" id="xQV-bN-bLd"/>
                 <outlet property="giftHight" destination="P5E-p3-3Nt" id="ckp-7W-SPI"/>
@@ -239,6 +249,7 @@
                 <outlet property="giftView" destination="H4l-eg-mOD" id="sSt-hG-kgJ"/>
                 <outlet property="locTypeLbl" destination="wTU-Df-fuu" id="OvB-2G-Up5"/>
                 <outlet property="nameLbl" destination="rrJ-9d-NEw" id="EgX-9k-sBH"/>
+                <outlet property="priceImg" destination="1mx-iV-2bF" id="uyE-Xi-Rgz"/>
                 <outlet property="priceLbl" destination="Hyh-sV-R39" id="cFJ-Ci-Jj9"/>
                 <outlet property="statusLbl" destination="Gf8-Yn-YH5" id="pxc-4E-SUm"/>
                 <outlet property="statusView" destination="krF-Hu-673" id="2ly-xa-M4A"/>
@@ -248,6 +259,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="saudi" width="1124.1400146484375" height="1256.3900146484375"/>
         <namedColor name="Black1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

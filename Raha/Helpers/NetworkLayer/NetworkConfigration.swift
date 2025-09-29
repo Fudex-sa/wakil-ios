@@ -125,6 +125,7 @@ struct NetworkConfigration {
         case sliders = "client/sliders"
         case slots = "client/slots"
         case createorder = "client/order"
+        case paymentmethodorder = "client/order/initiate-payment"
         case myorders = "client/my-orders"
         case orderdetails = "client/orders/"
         case cancelpolicy = "client/pages/cancellation-policy"

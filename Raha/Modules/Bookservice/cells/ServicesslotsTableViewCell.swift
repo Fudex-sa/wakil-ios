@@ -41,7 +41,7 @@ class ServicesslotsTableViewCell: BaseTableViewCell {
             slotsCollection.isHidden = false
             let quotient = (model.slots?.count ?? 0) / 3
             let remainder = (model.slots?.count ?? 0) % 3
-            slothight.constant = CGFloat((quotient + remainder) * 52)
+            slothight.constant = CGFloat((quotient + remainder) * 55)
         }
         slotsCollection.reloadData()
         arrowImg.UIViewAction {

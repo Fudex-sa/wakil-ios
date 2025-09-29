@@ -9,7 +9,9 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class BookserviceCoordinator: Coordinator, SelectAddressVCDelegate, GiftVCDelegate, CalenderselectVCDelegate {
+class BookserviceCoordinator: Coordinator, SelectAddressVCDelegate, GiftVCDelegate, CalenderselectVCDelegate, PaymentmethodVCDelegate {
+   
+    
     
     typealias PresentingView = BookserviceVC
     weak var view: PresentingView?
@@ -81,5 +83,17 @@ extension BookserviceCoordinator {
     }
     func done(model: Date) {
         view?.calenderView.loadDates(today: model)
+    }
+    
+    func selectpaymentmethod() {
+        guard let scene = R.storyboard.paymentmethodStoryboard.paymentmethodVC() else { return }
+        scene.paymentmethod = view?.viewModel?.paymentmethodorder.value
+        scene.delegate = self
+        view?.pushPop(scene)
+    }
+    func done(model: Int) {
+        view?.viewModel?.paymentmethodid.send(model)
+        view?.startLoading()
+        view?.viewModel?.makecreateorder()
     }
 }

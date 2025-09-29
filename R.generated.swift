@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 42 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 43 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -152,6 +152,8 @@ struct R: Rswift.Validatable {
     static let payTapsWebView = _R.storyboard.payTapsWebView()
     /// Storyboard `PaymentDoneStoryboard`.
     static let paymentDoneStoryboard = _R.storyboard.paymentDoneStoryboard()
+    /// Storyboard `PaymentmethodStoryboard`.
+    static let paymentmethodStoryboard = _R.storyboard.paymentmethodStoryboard()
     /// Storyboard `ProfileStoryboard`.
     static let profileStoryboard = _R.storyboard.profileStoryboard()
     /// Storyboard `RatingPopupStoryboard`.
@@ -384,6 +386,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "PaymentDoneStoryboard", bundle: ...)`
     static func paymentDoneStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.paymentDoneStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PaymentmethodStoryboard", bundle: ...)`
+    static func paymentmethodStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.paymentmethodStoryboard)
     }
     #endif
 
@@ -1617,7 +1626,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 118 images.
+  /// This `R.image` struct is generated, and contains static references to 119 images.
   struct image {
     /// Image `App Icon Mask`.
     static let appIconMask = Rswift.ImageResource(bundle: R.hostingBundle, name: "App Icon Mask")
@@ -1807,6 +1816,8 @@ struct R: Rswift.Validatable {
     static let reservation = Rswift.ImageResource(bundle: R.hostingBundle, name: "reservation")
     /// Image `routing`.
     static let routing = Rswift.ImageResource(bundle: R.hostingBundle, name: "routing")
+    /// Image `saudi`.
+    static let saudi = Rswift.ImageResource(bundle: R.hostingBundle, name: "saudi")
     /// Image `search`.
     static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "search")
     /// Image `setting`.
@@ -2515,6 +2526,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "saudi", bundle: ..., traitCollection: ...)`
+    static func saudi(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.saudi, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
     static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.search, compatibleWith: traitCollection)
@@ -2716,7 +2734,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 31 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 32 nibs.
   struct nib {
     /// Nib `AddressTableViewCell`.
     static let addressTableViewCell = _R.nib._AddressTableViewCell()
@@ -2752,6 +2770,8 @@ struct R: Rswift.Validatable {
     static let nots1TableViewCell = _R.nib._Nots1TableViewCell()
     /// Nib `NotsTableViewCell`.
     static let notsTableViewCell = _R.nib._NotsTableViewCell()
+    /// Nib `PaymentmethodTableViewCell`.
+    static let paymentmethodTableViewCell = _R.nib._PaymentmethodTableViewCell()
     /// Nib `RadioView`.
     static let radioView = _R.nib._RadioView()
     /// Nib `Radio`.
@@ -2914,6 +2934,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.notsTableViewCell) instead")
     static func notsTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.notsTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PaymentmethodTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.paymentmethodTableViewCell) instead")
+    static func paymentmethodTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.paymentmethodTableViewCell)
     }
     #endif
 
@@ -3097,6 +3125,10 @@ struct R: Rswift.Validatable {
       return R.nib.notsTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NotsTableViewCell
     }
 
+    static func paymentmethodTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PaymentmethodTableViewCell? {
+      return R.nib.paymentmethodTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PaymentmethodTableViewCell
+    }
+
     static func radio(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.radio.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -3163,7 +3195,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 398 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 401 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3201,7 +3233,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let addChildTitleLan = Rswift.StringResource(key: "add.child.title.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
-      /// en translation: Add a new address
+      /// en translation: Add address
       ///
       /// Locales: ar, en
       static let addANewAddress = Rswift.StringResource(key: "Add a new address", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
@@ -3489,6 +3521,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let chooseImageTitleLan = Rswift.StringResource(key: "choose.image.title.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Choose appropriate payment method
+      ///
+      /// Locales: ar, en
+      static let chooseAppropriatePaymentMethod = Rswift.StringResource(key: "Choose appropriate payment method", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Choose the appropriate date for each of the available appointments
       ///
       /// Locales: ar, en
@@ -3705,6 +3741,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let enterANewPasswordToReopenYourAccount = Rswift.StringResource(key: "Enter a new password to reopen your account", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Enter mobile number: 5XXXXXXXX or 05XXXXXXXX
+      ///
+      /// Locales: ar, en
+      static let enterMobileNumber5XXXXXXXXOr05XXXXXXXX = Rswift.StringResource(key: "Enter mobile number: 5XXXXXXXX or 05XXXXXXXX", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Enter valid email or password.
       ///
       /// Locales: ar, en
@@ -4121,6 +4161,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let passwordTooShortLan = Rswift.StringResource(key: "password.too.short.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Pay
+      ///
+      /// Locales: ar, en
+      static let pay = Rswift.StringResource(key: "Pay", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Paying
       ///
       /// Locales: ar, en
@@ -4893,7 +4937,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("add.child.title.lan", bundle: bundle, comment: "")
       }
 
-      /// en translation: Add a new address
+      /// en translation: Add address
       ///
       /// Locales: ar, en
       static func addANewAddress(preferredLanguages: [String]? = nil) -> String {
@@ -5973,6 +6017,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("choose.image.title.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Choose appropriate payment method
+      ///
+      /// Locales: ar, en
+      static func chooseAppropriatePaymentMethod(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Choose appropriate payment method", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Choose appropriate payment method"
+        }
+
+        return NSLocalizedString("Choose appropriate payment method", bundle: bundle, comment: "")
+      }
+
       /// en translation: Choose the appropriate date for each of the available appointments
       ///
       /// Locales: ar, en
@@ -6781,6 +6840,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Enter a new password to reopen your account", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Enter mobile number: 5XXXXXXXX or 05XXXXXXXX
+      ///
+      /// Locales: ar, en
+      static func enterMobileNumber5XXXXXXXXOr05XXXXXXXX(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Enter mobile number: 5XXXXXXXX or 05XXXXXXXX", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Enter mobile number: 5XXXXXXXX or 05XXXXXXXX"
+        }
+
+        return NSLocalizedString("Enter mobile number: 5XXXXXXXX or 05XXXXXXXX", bundle: bundle, comment: "")
       }
 
       /// en translation: Enter valid email or password.
@@ -8341,6 +8415,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("password.too.short.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Pay
+      ///
+      /// Locales: ar, en
+      static func pay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Pay", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Pay"
+        }
+
+        return NSLocalizedString("Pay", bundle: bundle, comment: "")
       }
 
       /// en translation: Paying
@@ -10767,12 +10856,14 @@ struct _R: Rswift.Validatable {
       try _CentersTableViewCell.validate()
       try _ComplainTableViewCell.validate()
       try _CustomTabBarView.validate()
+      try _DetailsreservationTableViewCell.validate()
       try _EmptyScreen.validate()
       try _FaqTableViewCell.validate()
       try _MaintanceScreen.validate()
       try _MessageView.validate()
       try _NetworkFailScreen.validate()
       try _Nots1TableViewCell.validate()
+      try _PaymentmethodTableViewCell.validate()
       try _RadioView.validate()
       try _RatingCollectionViewCell.validate()
       try _RatingTableViewCell.validate()
@@ -10948,12 +11039,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _DetailsreservationTableViewCell: Rswift.NibResourceType {
+    struct _DetailsreservationTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "DetailsreservationTableViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DetailsreservationTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DetailsreservationTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "saudi", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'saudi' is used in nib 'DetailsreservationTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in nib 'DetailsreservationTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "black3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black3' is used in nib 'DetailsreservationTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "lightblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightblue' is used in nib 'DetailsreservationTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in nib 'DetailsreservationTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "orange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'orange' is used in nib 'DetailsreservationTableViewCell', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}
@@ -11085,6 +11187,25 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _PaymentmethodTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PaymentmethodTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PaymentmethodTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PaymentmethodTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "checkbox", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkbox' is used in nib 'PaymentmethodTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "lightblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightblue' is used in nib 'PaymentmethodTableViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in nib 'PaymentmethodTableViewCell', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _Radio: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "Radio"
@@ -11194,6 +11315,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "clock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'clock' is used in nib 'SelectservicesTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "saudi", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'saudi' is used in nib 'SelectservicesTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "star", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'star' is used in nib 'SelectservicesTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "user 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user 1' is used in nib 'SelectservicesTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -11217,6 +11339,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "clock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'clock' is used in nib 'ServicesTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "saudi", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'saudi' is used in nib 'ServicesTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "star", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'star' is used in nib 'ServicesTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "unchecked-box", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unchecked-box' is used in nib 'ServicesTableViewCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "user 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user 1' is used in nib 'ServicesTableViewCell', but couldn't be loaded.") }
@@ -11401,6 +11524,9 @@ struct _R: Rswift.Validatable {
       try paymentDoneStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try paymentmethodStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try profileStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -11542,6 +11668,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "calendar-tick", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'calendar-tick' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "gift", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gift' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "location", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'location' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "saudi", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'saudi' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
           if UIKit.UIColor(named: "black2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black2' is used in storyboard 'BookserviceStoryboard', but couldn't be loaded.") }
@@ -11815,6 +11942,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "done", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'done' is used in storyboard 'DetailsreservationStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "mobile 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mobile 1' is used in storyboard 'DetailsreservationStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "routing", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'routing' is used in storyboard 'DetailsreservationStoryboard', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "saudi", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'saudi' is used in storyboard 'DetailsreservationStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sms", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sms' is used in storyboard 'DetailsreservationStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "star", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'star' is used in storyboard 'DetailsreservationStoryboard', but couldn't be loaded.") }
         if UIKit.UIImage(named: "user 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user 1' is used in storyboard 'DetailsreservationStoryboard', but couldn't be loaded.") }
@@ -12321,6 +12449,31 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'PaymentDoneStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.paymentDoneStoryboard().paymentDoneVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'paymentDoneVC' could not be loaded from storyboard 'PaymentDoneStoryboard' as 'PaymentDoneVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct paymentmethodStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = PaymentmethodVC
+
+      let bundle = R.hostingBundle
+      let name = "PaymentmethodStoryboard"
+      let paymentmethodVC = StoryboardViewControllerResource<PaymentmethodVC>(identifier: "PaymentmethodVC")
+
+      func paymentmethodVC(_: Void = ()) -> PaymentmethodVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: paymentmethodVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Black1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Black1' is used in storyboard 'PaymentmethodStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in storyboard 'PaymentmethodStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'PaymentmethodStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.paymentmethodStoryboard().paymentmethodVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'paymentmethodVC' could not be loaded from storyboard 'PaymentmethodStoryboard' as 'PaymentmethodVC'.") }
       }
 
       fileprivate init() {}

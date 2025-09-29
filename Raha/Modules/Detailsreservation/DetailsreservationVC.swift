@@ -12,6 +12,12 @@ import MBProgressHUD
 
 // MARK: - ...  ViewController - Vars
 class DetailsreservationVC: BaseController {
+    @IBOutlet weak var vatCurrencyLbl: UILabel!
+    @IBOutlet weak var vatImg: UIImageView!
+    @IBOutlet weak var totalCurrencyLbl: UILabel!
+    @IBOutlet weak var totalImg: UIImageView!
+    @IBOutlet weak var serviceImg: UIImageView!
+    @IBOutlet weak var serviceCurrencyLbl: UILabel!
     @IBOutlet weak var starImg: UIImageView!
     @IBOutlet weak var cancelLbl: UILabel!
     @IBOutlet weak var cancelImg: UIImageView!
@@ -87,6 +93,21 @@ extension DetailsreservationVC {
 // MARK: - ...  Functions
 extension DetailsreservationVC {
     func setup() {
+        if Localizer.current == .arabic {
+            serviceImg.isHidden = false
+            serviceCurrencyLbl.isHidden = true
+            totalImg.isHidden = false
+            totalCurrencyLbl.isHidden = true
+            vatImg.isHidden = false
+            vatCurrencyLbl.isHidden = true
+        }else {
+            serviceImg.isHidden = true
+            serviceCurrencyLbl.isHidden = false
+            totalImg.isHidden = true
+            totalCurrencyLbl.isHidden = false
+            vatImg.isHidden = true
+            vatCurrencyLbl.isHidden = false
+        }
         if UD.address != nil {
             viewModel?.lat.send(Double(UD.address?.lat ?? "0.0") ?? 0.0)
             viewModel?.lng.send(Double(UD.address?.lng ?? "0.0") ?? 0.0)

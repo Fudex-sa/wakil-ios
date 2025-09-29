@@ -9,6 +9,8 @@
 import UIKit
 
 class SelectservicesTableViewCell: BaseTableViewCell {
+    @IBOutlet weak var currencyLbl: UILabel!
+    @IBOutlet weak var priceImg: UIImageView!
     @IBOutlet weak var starImg: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLbl: UILabel!
@@ -25,6 +27,13 @@ class SelectservicesTableViewCell: BaseTableViewCell {
         providerLbl.text = model.providerType ?? ""
         timeLbl.text = model.duration ?? ""
         rateLbl.text = model.rate?.string ?? ""
+        if Localizer.current == .arabic {
+            priceImg.isHidden = false
+            currencyLbl.isHidden = true
+        }else {
+            priceImg.isHidden = true
+            currencyLbl.isHidden = false
+        }
         if model.rate ?? 0 == 0 {
             rateLbl.isHidden = true
             starImg.isHidden = true
