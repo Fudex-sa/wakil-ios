@@ -53,7 +53,9 @@ class BaseController: UIViewController, POPUPModal, Combining, Sounder {
         
         
     }
-    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if self.hiddenNav {

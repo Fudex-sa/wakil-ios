@@ -66,9 +66,7 @@ extension ContactusVC {
         })
        
     }
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
+   
 }
 // MARK: - ...  Functions
 extension ContactusVC {

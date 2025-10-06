@@ -38,6 +38,8 @@ class LoginVC: BaseController {
 extension LoginVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tapGesture)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

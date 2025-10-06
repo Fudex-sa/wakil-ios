@@ -61,9 +61,7 @@ extension RatingPopupVC {
         })
         
     }
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
+    
 }
 // MARK: - ...  Functions
 extension RatingPopupVC {

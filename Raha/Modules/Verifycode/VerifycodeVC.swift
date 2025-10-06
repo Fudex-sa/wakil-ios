@@ -44,6 +44,8 @@ extension VerifycodeVC {
         setup()
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldTextDidChange(_:)), name: UITextField.textDidChangeNotification, object: verfiy4Txf)
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldTextDidChange(_:)), name: UITextField.textDidChangeNotification, object: verfiy1Txf)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tapGesture)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

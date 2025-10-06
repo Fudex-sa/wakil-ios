@@ -55,9 +55,7 @@ extension GiftVC {
         viewModel = nil
         coordinator = nil
     }
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
+    
 }
 // MARK: - ...  Functions
 extension GiftVC {

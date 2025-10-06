@@ -75,6 +75,8 @@ extension RegisterVC {
             viewModel?.socailType.send(type ?? 0)
             viewModel?.email.send(email ?? "")
         }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tapGesture)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

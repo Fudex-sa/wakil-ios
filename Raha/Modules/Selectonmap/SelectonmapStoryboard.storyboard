@@ -54,7 +54,7 @@
                                     <constraint firstAttribute="height" constant="36" id="yGe-fW-2fq"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="axh-g3-UdI">
+                            <searchBar hidden="YES" contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="axh-g3-UdI">
                                 <rect key="frame" x="20" y="124" width="374" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="D82-Jj-fag"/>
@@ -68,7 +68,7 @@
                                     <outlet property="delegate" destination="v1z-F3-ot6" id="7Zf-YD-fPy"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="29W-5f-jBi">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="29W-5f-jBi">
                                 <rect key="frame" x="20" y="195" width="374" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

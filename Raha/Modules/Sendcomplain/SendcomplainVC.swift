@@ -65,9 +65,7 @@ extension SendcomplainVC {
         })
        
     }
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
+   
 }
 // MARK: - ...  Functions
 extension SendcomplainVC {

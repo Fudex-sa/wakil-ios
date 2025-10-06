@@ -11,7 +11,7 @@ import UIKit
 import CoreLocation
 
 // MARK: - ...  ViewController - Vars
-class HomeVC: BaseController, CLLocationManagerDelegate,Reloader {
+class HomeVC: BaseController, CLLocationManagerDelegate,Reloader,  UITextFieldDelegate {
     var refreshControl: UIRefreshControl!
     @IBOutlet weak var dotImg: UIImageView!
     @IBOutlet weak var sliderView: UIView!
@@ -43,6 +43,8 @@ class HomeVC: BaseController, CLLocationManagerDelegate,Reloader {
 extension HomeVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//            view.addGestureRecognizer(tapGesture)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -86,10 +88,15 @@ extension HomeVC {
         })
        
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder() // يغلق الكيبورد
+            return true
+    }
 }
 // MARK: - ...  Functions
 extension HomeVC {
     func setup() {
+        searchTxf.delegate = self
         if HomeVC.type ?? "" != ""  &&  HomeVC.type ?? "" == "reservation"{
             coordinator?.detailsreservation(id: HomeVC.itemId ?? 0)
             HomeVC.type = ""

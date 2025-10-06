@@ -45,7 +45,7 @@ extension TermsVC {
         })
         
         viewModel?.aboutddata.listen(on: { [weak self] value in
-            self?.desLbl.text = self?.viewModel?.aboutddata.value?.data?.description?.htmlToString ?? ""
+            self?.desLbl.attributedText = self?.viewModel?.aboutddata.value?.data?.description?.htmlToAttributedString
         })
         
     }

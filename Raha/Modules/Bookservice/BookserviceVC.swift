@@ -65,10 +65,12 @@ extension BookserviceVC {
         coordinator = nil
         viewModel?.createorder = .init()
         viewModel?.paymentmethodorder = .init()
+        viewModel?.error = .init()
     }
     override func bind() {
         super.bind()
         viewModel?.error.listen(on: { [weak self] error in
+            self?.stopLoading()
             self?.didError(error: error?.localizedDescription)
         })
         viewModel?.slotsdetails.listen(on: { [weak self] value in
