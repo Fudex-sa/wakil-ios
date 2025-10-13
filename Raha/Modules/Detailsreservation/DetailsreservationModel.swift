@@ -24,16 +24,20 @@ struct DetailsreservationDataClass: Codable {
     let price: String?
     let vatRate: String?
     let vatPrice: String?
+    let deliveryFee: String?
     let totalPrice: String?
     let is_refunded: Int?
     let isGift: Int?
     let locationType, date, time: String?
+    let invoiceUrl: String
     let rating: Rating?
     let branch: Branch?
     let gift: Gift?
 
     enum CodingKeys: String, CodingKey {
         case id, is_refunded
+        case invoiceUrl = "invoice_url"
+        case deliveryFee = "delivery_fee"
         case vatRate = "vat_rate"
         case vatPrice = "vat_price"
         case totalPrice = "total_price"
@@ -53,6 +57,10 @@ struct Branch: Codable {
     let image: String?
     let rate: Int?
     let distance: String?
+    let provider: Provider?
+}
+struct Provider: Codable {
+    let name: String?
 }
 
 // MARK: - Gift

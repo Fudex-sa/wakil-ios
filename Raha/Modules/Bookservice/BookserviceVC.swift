@@ -12,6 +12,10 @@ import CoreLocation
 
 // MARK: - ...  ViewController - Vars
 class BookserviceVC: BaseController {
+    @IBOutlet weak var delivaryView: UIView!
+    @IBOutlet weak var delivaryLbl: UILabel!
+    @IBOutlet weak var delivaryCurrencyLbl: UILabel!
+    @IBOutlet weak var delivaryImg: UIImageView!
     @IBOutlet weak var vatCurrencyLbl: UILabel!
     @IBOutlet weak var vatImg: UIImageView!
     @IBOutlet weak var totalCurrencyLbl: UILabel!
@@ -31,7 +35,6 @@ class BookserviceVC: BaseController {
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var vatTitleLbl: UILabel!
     @IBOutlet weak var vatLbl: UILabel!
-
     @IBOutlet weak var serviceTbl: UITableView!
     var viewModel: BookserviceViewModel?
     var coordinator: BookserviceCoordinator?
@@ -84,6 +87,7 @@ extension BookserviceVC {
             self?.vatTitleLbl.text = "\("Vat".localized) \(self?.viewModel?.slotsdetails.value?.vat_rate ?? "") % :"
             self?.vatLbl.text = self?.viewModel?.slotsdetails.value?.vat_amount?.string ?? ""
             self?.priceLbl.text = self?.viewModel?.slotsdetails.value?.sub_total?.string ?? ""
+            self?.delivaryLbl.text = self?.viewModel?.slotsdetails.value?.delivery_fee?.string ?? ""
             self?.slotsTbl.reloadData()
         })
         viewModel?.createorder.listen(on: { [weak self] value in
@@ -129,11 +133,15 @@ extension BookserviceVC {
             totalCurrencyLbl.isHidden = true
             vatImg.isHidden = false
             vatCurrencyLbl.isHidden = true
+            delivaryImg.isHidden = false
+            delivaryCurrencyLbl.isHidden = true
         }else {
             totalImg.isHidden = true
             totalCurrencyLbl.isHidden = false
             vatImg.isHidden = true
             vatCurrencyLbl.isHidden = false
+            delivaryImg.isHidden = true
+            delivaryCurrencyLbl.isHidden = false
         }
         serviceTbl.skeleton()
         serviceTbl.delegate = self
@@ -143,6 +151,7 @@ extension BookserviceVC {
         slotsTbl.delegate = self
         slotsTbl.dataSource = self
         slotsTbl.observe()
+        viewModel?.location_type.send(loctype)
         viewModel?.centerId.send(centerId)
         viewModel?.services.send(selectservices)
         viewModel?.date.send(date)
@@ -155,9 +164,11 @@ extension BookserviceVC {
                 viewModel?.lng.send(Double(UD.address?.lng ?? "0.0") ?? 0.0)
                 viewModel?.fetchcheckaddress()
             }
+            delivaryView.isHidden = false
         }else {
             visitLbl.text = "At the center".localized
             addressView.isHidden = true
+            delivaryView.isHidden = true
         }
         if address != nil {
 //            addressLbl.text = "\(address?.district ?? "") - \(address?.cityID?.name ?? "") - \(address?.stateID?.name ?? "")"

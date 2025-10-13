@@ -3195,7 +3195,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 401 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 404 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -3717,6 +3717,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let doneLan = Rswift.StringResource(key: "done.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Download invoice
+      ///
+      /// Locales: ar, en
+      static let downloadInvoice = Rswift.StringResource(key: "Download invoice", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: ERROR
       ///
       /// Locales: ar, en
@@ -3781,6 +3785,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let female = Rswift.StringResource(key: "Female", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: File downloaded successfully
+      ///
+      /// Locales: ar, en
+      static let fileDownloadedSuccessfully = Rswift.StringResource(key: "File downloaded successfully", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Filtering services
       ///
       /// Locales: ar, en
@@ -3881,6 +3889,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let verificationMessageLan = Rswift.StringResource(key: "verification.message.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: In-Home service fee
+      ///
+      /// Locales: ar, en
+      static let inHomeServiceFee = Rswift.StringResource(key: "In-Home service fee", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Invalid First name.
       ///
       /// Locales: ar, en
@@ -6752,6 +6764,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("done.lan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Download invoice
+      ///
+      /// Locales: ar, en
+      static func downloadInvoice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Download invoice", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Download invoice"
+        }
+
+        return NSLocalizedString("Download invoice", bundle: bundle, comment: "")
+      }
+
       /// en translation: ERROR
       ///
       /// Locales: ar, en
@@ -6990,6 +7017,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Female", bundle: bundle, comment: "")
+      }
+
+      /// en translation: File downloaded successfully
+      ///
+      /// Locales: ar, en
+      static func fileDownloadedSuccessfully(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("File downloaded successfully", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "File downloaded successfully"
+        }
+
+        return NSLocalizedString("File downloaded successfully", bundle: bundle, comment: "")
       }
 
       /// en translation: Filtering services
@@ -7365,6 +7407,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("verification.message.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: In-Home service fee
+      ///
+      /// Locales: ar, en
+      static func inHomeServiceFee(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("In-Home service fee", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "In-Home service fee"
+        }
+
+        return NSLocalizedString("In-Home service fee", bundle: bundle, comment: "")
       }
 
       /// en translation: Invalid First name.

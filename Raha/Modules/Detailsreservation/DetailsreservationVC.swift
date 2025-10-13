@@ -12,6 +12,14 @@ import MBProgressHUD
 
 // MARK: - ...  ViewController - Vars
 class DetailsreservationVC: BaseController {
+    @IBOutlet weak var providerLbl: UILabel!
+    @IBOutlet weak var fatoraBtn: UIButton!
+    @IBOutlet weak var fatoraView: UIView!
+    @IBOutlet weak var delivaryCenterView: UIView!
+    @IBOutlet weak var delivaryView: UIView!
+    @IBOutlet weak var delivaryLbl: UILabel!
+    @IBOutlet weak var delivaryCurrencyLbl: UILabel!
+    @IBOutlet weak var delivaryImg: UIImageView!
     @IBOutlet weak var vatCurrencyLbl: UILabel!
     @IBOutlet weak var vatImg: UIImageView!
     @IBOutlet weak var totalCurrencyLbl: UILabel!
@@ -100,6 +108,8 @@ extension DetailsreservationVC {
             totalCurrencyLbl.isHidden = true
             vatImg.isHidden = false
             vatCurrencyLbl.isHidden = true
+            delivaryImg.isHidden = false
+            delivaryCurrencyLbl.isHidden = true
         }else {
             serviceImg.isHidden = true
             serviceCurrencyLbl.isHidden = false
@@ -107,6 +117,8 @@ extension DetailsreservationVC {
             totalCurrencyLbl.isHidden = false
             vatImg.isHidden = true
             vatCurrencyLbl.isHidden = false
+            delivaryImg.isHidden = true
+            delivaryCurrencyLbl.isHidden = false
         }
         if UD.address != nil {
             viewModel?.lat.send(Double(UD.address?.lat ?? "0.0") ?? 0.0)
@@ -142,17 +154,22 @@ extension DetailsreservationVC {
                 progress.hide(animated: true)
             }
         }).store(self)
+        fatoraBtn.publisher.listen(on: {[weak self] _ in
+            self?.downloadFile(from: self?.viewModel?.orderdetails.value?.data?.invoiceUrl ?? "")
+        }).store(self)
     }
     func reload() {
         stopLoading()
         dateLbl.text = viewModel?.orderdetails.value?.data?.date ?? ""
         timeLbl.text = viewModel?.orderdetails.value?.data?.time ?? ""
         priceLbl.text = viewModel?.orderdetails.value?.data?.price ?? ""
+        delivaryLbl.text = viewModel?.orderdetails.value?.data?.deliveryFee ?? ""
         vatTitleLbl.text = "\("Vat".localized) \(viewModel?.orderdetails.value?.data?.vatRate ?? "") % :"
         vatLbl.text = viewModel?.orderdetails.value?.data?.vatPrice ?? ""
         totalpriceLbl.text = viewModel?.orderdetails.value?.data?.totalPrice ?? ""
         prividerImg.setImage(url: viewModel?.orderdetails.value?.data?.branch?.image ?? "")
         nameLbl.text = viewModel?.orderdetails.value?.data?.branch?.name ?? ""
+        providerLbl.text = viewModel?.orderdetails.value?.data?.branch?.provider?.name ?? ""
         rateLbl.text = viewModel?.orderdetails.value?.data?.branch?.rate?.string ?? ""
         distanceLbl.text = viewModel?.orderdetails.value?.data?.branch?.distance ?? ""
         if viewModel?.orderdetails.value?.data?.isGift ?? 0 == 1 {
@@ -168,6 +185,13 @@ extension DetailsreservationVC {
         }else {
             rateLbl.isHidden = false
             starImg.isHidden = false
+        }
+        if viewModel?.orderdetails.value?.data?.locationType ?? "" == "home" {
+            delivaryView.isHidden = false
+            delivaryCenterView.isHidden = false
+        }else {
+            delivaryView.isHidden = true
+            delivaryCenterView.isHidden = true
         }
         if viewModel?.orderdetails.value?.data?.rating != nil {
             rateView.isHidden = false
@@ -209,6 +233,11 @@ extension DetailsreservationVC {
             suggestionView.isHidden = false
             refundView.isHidden = true
         }
+        if viewModel?.orderdetails.value?.data?.statusKey ?? 0 == 4 && viewModel?.orderdetails.value?.data?.invoiceUrl ?? "" != ""{
+            fatoraView.isHidden = false
+        }else {
+            fatoraView.isHidden = true
+        }
         copy = ""
         copy = "\("Booked on".localized) \(viewModel?.orderdetails.value?.data?.date ?? "") \(viewModel?.orderdetails.value?.data?.time ?? "") \n"
         for index in viewModel?.orderdetails.value?.data?.service ?? [] {
@@ -223,6 +252,17 @@ extension DetailsreservationVC {
         service.append(contentsOf: viewModel?.orderdetails.value?.data?.service ?? [])
         servicesTbl.reloadData()
     }
+
+    func downloadFile(from url: String) {
+        guard let url = URL(string: url) else {
+                   print("This is an invalid URL")
+                  
+                   return
+               }
+        let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+        session.downloadTask(with: url).resume()
+    }
+
 }
 // MARK: - ...  View Contract
 extension DetailsreservationVC {
@@ -256,4 +296,52 @@ extension DetailsreservationVC: NotificationSubscriber {
         }
         viewModel?.fetchorderdetails()
     }
+}
+extension DetailsreservationVC: URLSessionDownloadDelegate {
+func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+    guard let _ = try? Data(contentsOf: location) else {
+        print("The data could not be loaded")
+//        SpinnerAction.shared.hideActivityIndicator()
+//        ToastManager.shared.showError(message: "Corrupted file".localized(), view: self.view, status: .failure)
+        return
+    }
+    print("File Downloaded Location- ",  location)
+          
+          guard let url = downloadTask.originalRequest?.url else {
+              return
+          }
+          let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+          let destinationPath = docsPath.appendingPathComponent(url.lastPathComponent)
+          
+          try? FileManager.default.removeItem(at: destinationPath)
+          
+          do{
+              try FileManager.default.copyItem(at: location, to: destinationPath)
+          }catch let error {
+              print("Copy Error: \(error.localizedDescription)")
+          }
+
+        DispatchQueue.main.async { [weak self] in
+        guard let self = self else {return}
+        //            self?.downloadImageView.image = image
+        //            self?.progressLbl.isHidden = true
+       
+            NotificationBuilder().setTitle("Success".localized)
+                                   .setBody("File downloaded successfully".localized)
+                                   .setTheme(.success)
+                                   .bulid()
+           
+            
+        }
+}
+
+func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+//    let progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+    
+    //        DispatchQueue.main.async { [weak self] in
+    //            self?.progressBar.progress = progress
+    //            self?.progressLbl.text = "\(progress * 100)%"
+    
+    
+}
 }

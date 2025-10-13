@@ -47,6 +47,7 @@ extension BookserviceViewModel {
             NetworkManager.instance.paramaters["service_ids[\(item)]"] = index.id ?? 0
             item = item + 1
         }
+        NetworkManager.instance.paramaters["location_type"] = location_type.value ?? ""
         NetworkManager.instance.request("\(NetworkConfigration.EndPoint.slots.rawValue)", type: .get, SlotsModel.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

@@ -34,6 +34,7 @@ struct SlotsModel: Codable {
     let status: Bool?
     let message: String?
     let sub_total: Double?
+    let delivery_fee: Double?
     let vat_amount: Double?
     let total_price: Double?
     let vat_rate: String?
