@@ -18,6 +18,12 @@ class DetailsreservationCoordinator: Coordinator, RatingPopupVCDelegate {
 }
 
 extension DetailsreservationCoordinator {
+    func showfatora() {
+        guard let scene = R.storyboard.showfatoaraStoryboard.showfatoaraVC() else { return }
+        scene.url = view?.viewModel?.orderdetails.value?.data?.invoiceUrl ?? ""
+        scene.downlaodurl = view?.viewModel?.orderdetails.value?.data?.invoice_download_url ?? ""
+        view?.push(scene)
+    }
     func cancelorder(id:Int) {
         guard let scene = R.storyboard.cancelOrderStoryboard.cancelOrderVC() else { return }
         scene.centerId = id

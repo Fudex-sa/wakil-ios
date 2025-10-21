@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 43 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 44 storyboards.
   struct storyboard {
     /// Storyboard `AboutusStoryboard`.
     static let aboutusStoryboard = _R.storyboard.aboutusStoryboard()
@@ -174,6 +174,8 @@ struct R: Rswift.Validatable {
     static let sendcomplainStoryboard = _R.storyboard.sendcomplainStoryboard()
     /// Storyboard `SettingsStoryboard`.
     static let settingsStoryboard = _R.storyboard.settingsStoryboard()
+    /// Storyboard `ShowfatoaraStoryboard`.
+    static let showfatoaraStoryboard = _R.storyboard.showfatoaraStoryboard()
     /// Storyboard `TermsStoryboard`.
     static let termsStoryboard = _R.storyboard.termsStoryboard()
     /// Storyboard `VerifycodeStoryboard`.
@@ -463,6 +465,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SettingsStoryboard", bundle: ...)`
     static func settingsStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.settingsStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ShowfatoaraStoryboard", bundle: ...)`
+    static func showfatoaraStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.showfatoaraStoryboard)
     }
     #endif
 
@@ -3195,7 +3204,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 404 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 406 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -4277,6 +4286,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let recipientOfTheGift = Rswift.StringResource(key: "Recipient of the gift", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Refund amount after applying  cancellation policy
+      ///
+      /// Locales: ar, en
+      static let refundAmountAfterApplyingCancellationPolicy = Rswift.StringResource(key: "Refund amount after applying  cancellation policy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Region
       ///
       /// Locales: ar, en
@@ -4457,6 +4470,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let showResultsLan = Rswift.StringResource(key: "show.results.lan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: Show invoice
+      ///
+      /// Locales: ar, en
+      static let showInvoice = Rswift.StringResource(key: "Show invoice", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: Show on map
       ///
       /// Locales: ar, en
@@ -8864,6 +8881,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Recipient of the gift", bundle: bundle, comment: "")
       }
 
+      /// en translation: Refund amount after applying  cancellation policy
+      ///
+      /// Locales: ar, en
+      static func refundAmountAfterApplyingCancellationPolicy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Refund amount after applying  cancellation policy", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Refund amount after applying  cancellation policy"
+        }
+
+        return NSLocalizedString("Refund amount after applying  cancellation policy", bundle: bundle, comment: "")
+      }
+
       /// en translation: Region
       ///
       /// Locales: ar, en
@@ -9537,6 +9569,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("show.results.lan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Show invoice
+      ///
+      /// Locales: ar, en
+      static func showInvoice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Show invoice", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Show invoice"
+        }
+
+        return NSLocalizedString("Show invoice", bundle: bundle, comment: "")
       }
 
       /// en translation: Show on map
@@ -11614,6 +11661,9 @@ struct _R: Rswift.Validatable {
       try settingsStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try showfatoaraStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try termsStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -12827,6 +12877,31 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "lightgray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'lightgray' is used in storyboard 'SettingsStoryboard', but couldn't be loaded.") }
         }
         if _R.storyboard.settingsStoryboard().settingsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsVC' could not be loaded from storyboard 'SettingsStoryboard' as 'SettingsVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct showfatoaraStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ShowfatoaraVC
+
+      let bundle = R.hostingBundle
+      let name = "ShowfatoaraStoryboard"
+      let showfatoaraVC = StoryboardViewControllerResource<ShowfatoaraVC>(identifier: "ShowfatoaraVC")
+
+      func showfatoaraVC(_: Void = ()) -> ShowfatoaraVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: showfatoaraVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "back 4", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back 4' is used in storyboard 'ShowfatoaraStoryboard', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "normalblue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'normalblue' is used in storyboard 'ShowfatoaraStoryboard', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "whiteColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'whiteColor' is used in storyboard 'ShowfatoaraStoryboard', but couldn't be loaded.") }
+        }
+        if _R.storyboard.showfatoaraStoryboard().showfatoaraVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'showfatoaraVC' could not be loaded from storyboard 'ShowfatoaraStoryboard' as 'ShowfatoaraVC'.") }
       }
 
       fileprivate init() {}

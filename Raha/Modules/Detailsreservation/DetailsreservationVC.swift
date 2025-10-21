@@ -155,7 +155,7 @@ extension DetailsreservationVC {
             }
         }).store(self)
         fatoraBtn.publisher.listen(on: {[weak self] _ in
-            self?.downloadFile(from: self?.viewModel?.orderdetails.value?.data?.invoiceUrl ?? "")
+            self?.coordinator?.showfatora()
         }).store(self)
     }
     func reload() {
@@ -220,13 +220,15 @@ extension DetailsreservationVC {
             cancelHight.constant = 0
             refundView.isHidden = false
             suggestionView.isHidden = true
-            if viewModel?.orderdetails.value?.data?.is_refunded ?? 0 == 1 {
-                cancelLbl.text = "The reservation amount has been refunded after applying the cancellation policy".localized
-                cancelImg.image = UIImage(named: "done 1")
-            }else {
-                cancelLbl.text = "Reservation and cancellation policy will apply and the reservation amount will be refunded to you as soon as possible".localized
-                cancelImg.image = UIImage(named: "alert 1")
-            }
+//            if viewModel?.orderdetails.value?.data?.is_refunded ?? 0 == 1 {
+//                cancelLbl.text = "\("Refund amount after applying  cancellation policy".localized) \("that is".localized) \(viewModel?.orderdetails.value?.data?.refundedAmount ?? "")"
+//                cancelImg.image = UIImage(named: "done 1")
+//            }else {
+//                cancelLbl.text = "Reservation and cancellation policy will apply and the reservation amount will be refunded to you as soon as possible".localized
+//                cancelImg.image = UIImage(named: "alert 1")
+//            }
+            cancelLbl.text = "\("Refund amount after applying  cancellation policy".localized) \(viewModel?.orderdetails.value?.data?.refundedAmount ?? "")"
+            cancelImg.image = UIImage(named: "alert 1")
         }else {
             cancelView.isHidden = true
             cancelHight.constant = 0

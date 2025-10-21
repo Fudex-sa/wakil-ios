@@ -473,7 +473,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQJ-xn-LCG">
-                                                        <rect key="frame" x="71" y="37.5" width="41.5" height="20.5"/>
+                                                        <rect key="frame" x="71" y="37.5" width="307" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="Black1"/>
                                                         <nil key="highlightedColor"/>
@@ -524,7 +524,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHC-yH-cV4">
-                                                        <rect key="frame" x="71" y="68" width="41.5" height="20.5"/>
+                                                        <rect key="frame" x="71" y="68" width="307" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="Black1"/>
                                                         <nil key="highlightedColor"/>
@@ -539,11 +539,13 @@
                                                     <constraint firstItem="8gm-mH-g4s" firstAttribute="leading" secondItem="2R7-4e-Uye" secondAttribute="leading" constant="12" id="59U-Hx-1Cz"/>
                                                     <constraint firstItem="yQJ-xn-LCG" firstAttribute="top" secondItem="PPf-GH-jo2" secondAttribute="bottom" constant="12" id="7EI-Rc-GAT"/>
                                                     <constraint firstItem="PHC-yH-cV4" firstAttribute="top" secondItem="yQJ-xn-LCG" secondAttribute="bottom" constant="10" id="8MP-Sa-XZo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PHC-yH-cV4" secondAttribute="trailing" id="BZG-QQ-8IT"/>
                                                     <constraint firstItem="8gm-mH-g4s" firstAttribute="top" secondItem="PPf-GH-jo2" secondAttribute="bottom" constant="12" id="CPS-AJ-hfr"/>
                                                     <constraint firstItem="tVn-XJ-6y6" firstAttribute="centerY" secondItem="BKD-kP-5aX" secondAttribute="centerY" id="Fen-B5-qPJ"/>
                                                     <constraint firstItem="yQJ-xn-LCG" firstAttribute="leading" secondItem="8gm-mH-g4s" secondAttribute="trailing" constant="5" id="HgC-sZ-bGt"/>
                                                     <constraint firstItem="TpS-WC-5YU" firstAttribute="centerY" secondItem="tVn-XJ-6y6" secondAttribute="centerY" id="MHC-ga-HEd"/>
                                                     <constraint firstItem="BKD-kP-5aX" firstAttribute="leading" secondItem="PPf-GH-jo2" secondAttribute="trailing" constant="16" id="a4K-AI-7Gc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yQJ-xn-LCG" secondAttribute="trailing" id="aCZ-gF-aAY"/>
                                                     <constraint firstItem="POT-XT-VvM" firstAttribute="top" secondItem="PHC-yH-cV4" secondAttribute="bottom" constant="10" id="dJF-qV-XGM"/>
                                                     <constraint firstItem="o5N-zC-sbj" firstAttribute="leading" secondItem="POT-XT-VvM" secondAttribute="trailing" constant="4" id="djT-Ew-6jX"/>
                                                     <constraint firstItem="PPf-GH-jo2" firstAttribute="leading" secondItem="2R7-4e-Uye" secondAttribute="leading" constant="12" id="fzk-ht-ZgI"/>
@@ -597,7 +599,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYo-c8-nti">
-                                                                <rect key="frame" x="0.0" y="28.5" width="41.5" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="28.5" width="177" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="Black1"/>
                                                                 <nil key="highlightedColor"/>
@@ -612,6 +614,7 @@
                                                             <constraint firstItem="PYo-c8-nti" firstAttribute="top" secondItem="Ups-A7-SGR" secondAttribute="bottom" constant="8" id="Aom-iL-EcY"/>
                                                             <constraint firstAttribute="height" constant="55" id="B84-aU-XjO"/>
                                                             <constraint firstAttribute="trailing" secondItem="Ups-A7-SGR" secondAttribute="trailing" constant="4" id="O21-am-8iI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="PYo-c8-nti" secondAttribute="trailing" id="Qvb-mW-C1d"/>
                                                             <constraint firstItem="PYo-c8-nti" firstAttribute="leading" secondItem="JWb-DZ-Yu0" secondAttribute="leading" id="Z3e-Wr-76K"/>
                                                             <constraint firstItem="qxc-ET-A0D" firstAttribute="top" secondItem="JWb-DZ-Yu0" secondAttribute="top" id="tGE-pc-yfT"/>
                                                             <constraint firstItem="qxc-ET-A0D" firstAttribute="leading" secondItem="JWb-DZ-Yu0" secondAttribute="leading" id="xMr-Lz-xUQ"/>
@@ -639,7 +642,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6u-gQ-c2n">
-                                                                <rect key="frame" x="0.0" y="28" width="41.5" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="28" width="126.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="Black1"/>
                                                                 <nil key="highlightedColor"/>
@@ -654,6 +657,7 @@
                                                             <constraint firstItem="F6u-gQ-c2n" firstAttribute="leading" secondItem="q1T-VK-ZYq" secondAttribute="leading" id="BdC-Cc-vif"/>
                                                             <constraint firstItem="w1H-vd-YRR" firstAttribute="leading" secondItem="pxR-JK-hBK" secondAttribute="trailing" constant="4" id="anJ-Oq-mUj"/>
                                                             <constraint firstAttribute="trailing" secondItem="w1H-vd-YRR" secondAttribute="trailing" constant="4" id="az0-Rj-bma"/>
+                                                            <constraint firstAttribute="trailing" secondItem="F6u-gQ-c2n" secondAttribute="trailing" id="eMJ-hr-qwn"/>
                                                             <constraint firstItem="F6u-gQ-c2n" firstAttribute="top" secondItem="pxR-JK-hBK" secondAttribute="bottom" constant="8" id="lZv-DJ-jxm"/>
                                                             <constraint firstItem="w1H-vd-YRR" firstAttribute="centerY" secondItem="pxR-JK-hBK" secondAttribute="centerY" id="o1r-Gw-x5o"/>
                                                             <constraint firstAttribute="height" constant="50" id="qZF-Zc-qWM"/>
@@ -701,8 +705,8 @@
                                                             <constraint firstAttribute="width" constant="20" id="VO0-GA-QmO"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can file a complaint if you have a problem with your booking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGS-ka-Zi9">
-                                                        <rect key="frame" x="36" y="47.5" width="342" height="14.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can file a complaint if you have a problem with your booking" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGS-ka-Zi9">
+                                                        <rect key="frame" x="36" y="40" width="342" height="29"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <color key="textColor" name="black2"/>
                                                         <nil key="highlightedColor"/>
@@ -893,11 +897,11 @@
                                                             <constraint firstAttribute="height" constant="56" id="k5e-VB-gVz"/>
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Download invoice">
+                                                        <state key="normal" title="Show invoice">
                                                             <color key="titleColor" name="whiteColor"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Download invoice"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Show invoice"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="b16"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="16"/>

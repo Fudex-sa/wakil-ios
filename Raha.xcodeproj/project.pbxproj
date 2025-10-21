@@ -279,6 +279,11 @@
 		8D732FD72DAFE29400990B9F /* ComplainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D732FD52DAFE29400990B9F /* ComplainTableViewCell.swift */; };
 		8D732FD82DAFE29400990B9F /* ComplainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D732FD62DAFE29400990B9F /* ComplainTableViewCell.xib */; };
 		8D732FDA2DB0035800990B9F /* SelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D732FD92DB0035500990B9F /* SelfSizingCollectionView.swift */; };
+		8D7BEAEE2EA630E600ED5AED /* ShowfatoaraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7BEAEC2EA630E600ED5AED /* ShowfatoaraVC.swift */; };
+		8D7BEAEF2EA630E600ED5AED /* ShowfatoaraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7BEAED2EA630E600ED5AED /* ShowfatoaraViewModel.swift */; };
+		8D7BEAF02EA630E600ED5AED /* ShowfatoaraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7BEAE92EA630E600ED5AED /* ShowfatoaraCoordinator.swift */; };
+		8D7BEAF12EA630E600ED5AED /* ShowfatoaraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7BEAEA2EA630E600ED5AED /* ShowfatoaraModel.swift */; };
+		8D7BEAF22EA630E600ED5AED /* ShowfatoaraStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7BEAEB2EA630E600ED5AED /* ShowfatoaraStoryboard.storyboard */; };
 		8D87A3912E800A1500A308DF /* PaymentmethodStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D87A38E2E800A1500A308DF /* PaymentmethodStoryboard.storyboard */; };
 		8D87A3922E800A1500A308DF /* PaymentmethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87A38F2E800A1500A308DF /* PaymentmethodVC.swift */; };
 		8D87A3932E800A1500A308DF /* PaymentmethodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87A38D2E800A1500A308DF /* PaymentmethodModel.swift */; };
@@ -955,6 +960,11 @@
 		8D732FD52DAFE29400990B9F /* ComplainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTableViewCell.swift; sourceTree = "<group>"; };
 		8D732FD62DAFE29400990B9F /* ComplainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplainTableViewCell.xib; sourceTree = "<group>"; };
 		8D732FD92DB0035500990B9F /* SelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingCollectionView.swift; sourceTree = "<group>"; };
+		8D7BEAE92EA630E600ED5AED /* ShowfatoaraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowfatoaraCoordinator.swift; sourceTree = "<group>"; };
+		8D7BEAEA2EA630E600ED5AED /* ShowfatoaraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowfatoaraModel.swift; sourceTree = "<group>"; };
+		8D7BEAEB2EA630E600ED5AED /* ShowfatoaraStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowfatoaraStoryboard.storyboard; sourceTree = "<group>"; };
+		8D7BEAEC2EA630E600ED5AED /* ShowfatoaraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowfatoaraVC.swift; sourceTree = "<group>"; };
+		8D7BEAED2EA630E600ED5AED /* ShowfatoaraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowfatoaraViewModel.swift; sourceTree = "<group>"; };
 		8D87A38C2E800A1500A308DF /* PaymentmethodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentmethodCoordinator.swift; sourceTree = "<group>"; };
 		8D87A38D2E800A1500A308DF /* PaymentmethodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentmethodModel.swift; sourceTree = "<group>"; };
 		8D87A38E2E800A1500A308DF /* PaymentmethodStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentmethodStoryboard.storyboard; sourceTree = "<group>"; };
@@ -2184,6 +2194,18 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		8D7BEAE82EA630C400ED5AED /* Showfatoara */ = {
+			isa = PBXGroup;
+			children = (
+				8D7BEAE92EA630E600ED5AED /* ShowfatoaraCoordinator.swift */,
+				8D7BEAEA2EA630E600ED5AED /* ShowfatoaraModel.swift */,
+				8D7BEAEB2EA630E600ED5AED /* ShowfatoaraStoryboard.storyboard */,
+				8D7BEAEC2EA630E600ED5AED /* ShowfatoaraVC.swift */,
+				8D7BEAED2EA630E600ED5AED /* ShowfatoaraViewModel.swift */,
+			);
+			path = Showfatoara;
+			sourceTree = "<group>";
+		};
 		8D87A38B2E8009EA00A308DF /* Paymentmethod */ = {
 			isa = PBXGroup;
 			children = (
@@ -3222,6 +3244,7 @@
 		C8BABF082666401E0080B058 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8D7BEAE82EA630C400ED5AED /* Showfatoara */,
 				8D87A38B2E8009EA00A308DF /* Paymentmethod */,
 				8DE8ECA12DC223C30021E859 /* Notification */,
 				8D732FC92DAFDE2600990B9F /* Sendcomplain */,
@@ -3587,6 +3610,7 @@
 				C86BF98D266947F0002D87BC /* errorIconSubtle@2x.png in Resources */,
 				E8339CA927CD262D000D5A6E /* Loading-Dark.gif in Resources */,
 				66B979BF2D75C87A00962C19 /* FaqTableViewCell.xib in Resources */,
+				8D7BEAF22EA630E600ED5AED /* ShowfatoaraStoryboard.storyboard in Resources */,
 				8DD3C1622DA2B91E00D8962B /* RatingTableViewCell.xib in Resources */,
 				66C2E0CB2D6F2DBF0027823E /* EditEmailStoryboard.storyboard in Resources */,
 				C86BF997266947F0002D87BC /* successIconSubtle@3x.png in Resources */,
@@ -3786,6 +3810,10 @@
 				C871C8CD272FED0600DCBD2D /* SwipeCollectionViewCell.swift in Sources */,
 				C84539AB2729887000004173 /* UIFontEx.swift in Sources */,
 				C871C98E2730231300DCBD2D /* ContainsMultilineText.swift in Sources */,
+				8D7BEAEE2EA630E600ED5AED /* ShowfatoaraVC.swift in Sources */,
+				8D7BEAEF2EA630E600ED5AED /* ShowfatoaraViewModel.swift in Sources */,
+				8D7BEAF02EA630E600ED5AED /* ShowfatoaraCoordinator.swift in Sources */,
+				8D7BEAF12EA630E600ED5AED /* ShowfatoaraModel.swift in Sources */,
 				8DB6ADE82DA7C94E0093EB4E /* PayTapsContract.swift in Sources */,
 				8DB6ADE92DA7C94E0093EB4E /* PayTaps.swift in Sources */,
 				8DB6ADEA2DA7C94E0093EB4E /* PayTapsWebView.swift in Sources */,
@@ -4363,7 +4391,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
@@ -4448,7 +4476,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4539,7 +4567,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
@@ -4623,7 +4651,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
