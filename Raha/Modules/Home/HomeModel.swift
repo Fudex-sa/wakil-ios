@@ -49,11 +49,12 @@ struct SlidersDatum: Codable {
     let title, desc: String?
     let sortOrder: Int?
     let image: String?
+    let url: String?
 
     enum CodingKeys: String, CodingKey {
         case id, title, desc
         case sortOrder = "sort_order"
-        case image
+        case image, url
     }
 }
 

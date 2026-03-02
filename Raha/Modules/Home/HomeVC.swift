@@ -435,7 +435,9 @@ extension HomeVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
             
         }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if viewModel?.sliders.value?[safe: indexPath.row]?.url ?? "" != "" {
+            Common().openUrl(text: viewModel?.sliders.value?[safe: indexPath.row]?.url ?? "")
+        }
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

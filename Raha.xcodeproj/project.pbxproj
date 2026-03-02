@@ -4391,7 +4391,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
@@ -4400,7 +4400,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.raha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4476,7 +4476,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4487,7 +4487,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.5;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.raha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4567,7 +4567,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
@@ -4576,7 +4576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.raha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4651,7 +4651,7 @@
 				CODE_SIGN_ENTITLEMENTS = Raha/Raha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = G24U7LTB23;
 				INFOPLIST_FILE = "$(SRCROOT)/Raha/Application/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
@@ -4660,7 +4660,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.raha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
