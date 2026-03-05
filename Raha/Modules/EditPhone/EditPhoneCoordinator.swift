@@ -9,7 +9,8 @@
 import Foundation
 
 // MARK: - ...  Coordinator
-class EditPhoneCoordinator: Coordinator {
+class EditPhoneCoordinator: Coordinator, VerifycodeVCCDelegate {
+    
     typealias PresentingView = EditPhoneVC
     weak var view: PresentingView?
     deinit {
@@ -22,6 +23,15 @@ extension EditPhoneCoordinator {
         guard let scene = R.storyboard.verifycodeStoryboard.verifycodeVC() else { return }
         scene.mobile = view?.viewModel?.phone.value ?? ""
         scene.type = .update
+        scene.isorder = view?.isorder ?? 0
+        if view?.isorder ?? 0 == 1 {
+            scene.delegate = self
+        }
         view?.push(scene)
+
     }
+    func done() {
+        view?.navigationController?.popViewController(animated: true)
+    }
+    
 }

@@ -7,6 +7,7 @@ import CoreData
 // MARK: - ...  Base Model for all models
 class BaseModel<T: Codable>: Codable {
     var success: Bool?
+    var complete: Bool?
     var message: String?
     var errorMessage: String?
     var errors: [String: [String]]?
@@ -15,6 +16,7 @@ class BaseModel<T: Codable>: Codable {
     
     enum CodingKeys: String, CodingKey {
         case success
+        case complete
         case message
         case errorMessage
         case errors

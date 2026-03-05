@@ -163,6 +163,13 @@ extension BaseNetworkManager {
                 if fullurl.contains("backstages"){
                     Coordinator.instance.suscribpopup()
                 }
+                if fullurl.contains("order/initiate-payment"){
+                    guard let error = try? JSONDecoder().decode(BaseModel<String>.self, from: response.data ?? Data()) else { return nil }
+                    if error.complete ?? false == false {
+                        Coordinator.instance.profileinit()
+                    }
+                    
+                }
                 let error: NetworkError = .init(message: getErrorMessage(data: response.data ?? Data()) ?? "")
                 return (.failure(error))
             case 426?:

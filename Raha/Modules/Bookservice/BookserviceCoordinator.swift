@@ -81,6 +81,11 @@ extension BookserviceCoordinator {
         scene.delegate = self
         view?.pushPop(scene)
     }
+    func editphone() {
+        guard let scene = R.storyboard.editPhoneStoryboard.editPhoneVC() else { return }
+        scene.isorder = 1
+        view?.push(scene)
+    }
     func done(model: Date) {
         view?.calenderView.loadDates(today: model)
     }

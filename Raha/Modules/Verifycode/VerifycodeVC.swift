@@ -8,7 +8,10 @@
 
 import Foundation
 import UIKit
+protocol VerifycodeVCCDelegate: AnyObject {
+    func done()
 
+}
 // MARK: - ...  ViewController - Vars
 class VerifycodeVC: BaseController {
     enum VerifyType {
@@ -29,11 +32,13 @@ class VerifycodeVC: BaseController {
     var viewModel: VerifycodeViewModel?
     var coordinator: VerifycodeCoordinator?
     var verifyCodeInputs: VerifyCodeInputs?
+    var delegate: VerifycodeVCCDelegate?
     var timer: TimeHelper?
     var type: VerifyType = .register
     var code = ""
     var mobile = ""
     var time = 120
+    var isorder = 0
 }
 
 // MARK: - ...  LifeCycle
@@ -92,7 +97,12 @@ extension VerifycodeVC {
                 .setBody(self?.viewModel?.editphonedata.value?.message ?? "")
                 .setTheme(.success)
                 .bulid()
-            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+            if self?.isorder ?? 0 == 1 {
+                self?.delegate?.done()
+                self?.navigationController?.popViewController(animated: true)
+            }else {
+                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+            }
         })
         viewModel?.checkotp.listen(on: { [weak self] value in
             self?.coordinator?.resetpass()

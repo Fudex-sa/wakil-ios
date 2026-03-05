@@ -37,6 +37,11 @@ class Coordinator: NSObject {
 //        let view = UIApplication.topViewController() as? BaseController
 //        view?.pushPop(scene)
     }
+    @objc dynamic func profileinit() {
+        guard let scene = R.storyboard.profileStoryboard.profileVC() else { return }
+        let view = UIApplication.topViewController() as? BaseController
+        view?.push(scene)
+    }
     func forceupdate(msg: String) {
 //        guard let scene = R.storyboard.forceUpdateStoryboard.forceUpdateVC() else { return }
 //        let view = UIApplication.topViewController() as? BaseController

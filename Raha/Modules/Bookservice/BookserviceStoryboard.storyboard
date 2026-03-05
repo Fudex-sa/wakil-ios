@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QMS-Rg-I23">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QMS-Rg-I23">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHe-8u-vxo">
-                                <rect key="frame" x="24" y="68" width="366" height="36"/>
+                                <rect key="frame" x="24" y="116" width="366" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzX-0O-E8a">
                                         <rect key="frame" x="0.0" y="3" width="30" height="30"/>
@@ -54,7 +54,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgf-m4-xoq">
-                                <rect key="frame" x="0.0" y="125" width="414" height="645"/>
+                                <rect key="frame" x="0.0" y="173" width="414" height="563"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eI-12-C2g">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
@@ -523,6 +523,76 @@
                                                     <constraint firstAttribute="trailing" secondItem="TO1-7p-m5f" secondAttribute="trailing" id="p8Z-Bi-hnq"/>
                                                 </constraints>
                                             </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2x-15-UX2">
+                                                <rect key="frame" x="0.0" y="594" width="366" height="45"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bh7-QP-9ws">
+                                                        <rect key="frame" x="0.0" y="15" width="366" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must enter a mobile number for your account in order to be able to place an order" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-4h-may">
+                                                                <rect key="frame" x="15" y="15" width="271" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" name="red"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="r14"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="You must enter a mobile number for your account in order to be able to place an order"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-YW-sGo">
+                                                                <rect key="frame" x="291" y="1" width="60" height="28"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="Chf-it-8hz"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="YI9-RO-dOi"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Add"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontLabel" value="m14"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Add"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="8"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" name="normalblue"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.92549019610000005" green="0.1764705882" blue="0.18823529410000001" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="gtx-4h-may" secondAttribute="trailing" constant="80" id="Lwc-Ad-5rj"/>
+                                                            <constraint firstItem="gtx-4h-may" firstAttribute="top" secondItem="Bh7-QP-9ws" secondAttribute="top" constant="15" id="WdW-Ix-9sT"/>
+                                                            <constraint firstItem="gtx-4h-may" firstAttribute="leading" secondItem="Bh7-QP-9ws" secondAttribute="leading" constant="15" id="XjS-4k-gLz"/>
+                                                            <constraint firstItem="zSp-YW-sGo" firstAttribute="centerY" secondItem="Bh7-QP-9ws" secondAttribute="centerY" id="gO8-DG-bQf"/>
+                                                            <constraint firstAttribute="bottom" secondItem="gtx-4h-may" secondAttribute="bottom" constant="15" id="s3e-kh-oir"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zSp-YW-sGo" secondAttribute="trailing" constant="15" id="xBb-hf-edj"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="red"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Bh7-QP-9ws" secondAttribute="trailing" id="FG4-bJ-Jpc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Bh7-QP-9ws" secondAttribute="bottom" id="K7I-PD-Cja"/>
+                                                    <constraint firstItem="Bh7-QP-9ws" firstAttribute="top" secondItem="e2x-15-UX2" secondAttribute="top" constant="15" id="Uou-Uj-CeF"/>
+                                                    <constraint firstItem="Bh7-QP-9ws" firstAttribute="leading" secondItem="e2x-15-UX2" secondAttribute="leading" id="gJg-uP-WOi"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skW-QR-e0Z">
                                                 <rect key="frame" x="0.0" y="594" width="366" height="16"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -621,7 +691,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvv-1K-FcF">
-                                <rect key="frame" x="0.0" y="770" width="414" height="92"/>
+                                <rect key="frame" x="0.0" y="736" width="414" height="92"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CTA-Photoroom" translatesAutoresizingMaskIntoConstraints="NO" id="agP-JF-4ik">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
@@ -690,6 +760,7 @@
                     </view>
                     <connections>
                         <outlet property="addGiftBtn" destination="sNc-Bj-8mQ" id="XQL-6i-X85"/>
+                        <outlet property="addPhoneBtn" destination="zSp-YW-sGo" id="j1B-7w-CYG"/>
                         <outlet property="addressLbl" destination="nNq-h3-l9G" id="Wvn-xK-nPl"/>
                         <outlet property="addressView" destination="5Mv-hJ-R0w" id="yJa-e6-bSp"/>
                         <outlet property="bookBtn" destination="L8g-bp-LBG" id="Oob-VY-ERt"/>
@@ -706,6 +777,7 @@
                         <outlet property="priceLbl" destination="eYm-fa-yTD" id="4Yd-3E-3QJ"/>
                         <outlet property="serviceTbl" destination="6DL-hC-1mj" id="lFi-ob-JTb"/>
                         <outlet property="slotsTbl" destination="zpC-Ey-PrG" id="Qqz-0y-F4v"/>
+                        <outlet property="socialView" destination="e2x-15-UX2" id="PFH-mr-0BJ"/>
                         <outlet property="totalCurrencyLbl" destination="5Ga-sQ-Wwb" id="1dJ-xp-RFd"/>
                         <outlet property="totalImg" destination="5Lx-02-pAv" id="H1Q-dI-90u"/>
                         <outlet property="vatCurrencyLbl" destination="dAd-D2-Bdc" id="dFV-25-7G9"/>

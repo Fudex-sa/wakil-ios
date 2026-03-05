@@ -21,6 +21,7 @@ class EditPhoneVC: BaseController {
         return validator
     }()
     var user: ProfileModel?
+    var isorder = 0
 }
 
 // MARK: - ...  LifeCycle

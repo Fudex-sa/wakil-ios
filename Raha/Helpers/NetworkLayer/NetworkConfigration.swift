@@ -102,7 +102,7 @@ struct NetworkConfigration {
         case mytryouts = "client/myTryouts"
         case tryoutsstatus = "client/myTryoutsFilters"
         case notificationcount = "client/notificationsCount"
-        case socialLogin = "client/checkSocialUser"
+        case socialLogin = "client/checkSocialUserLogin"
         case years = "client/years"
         case playerserach = "client/players/search"
         case posts = "client/posts"

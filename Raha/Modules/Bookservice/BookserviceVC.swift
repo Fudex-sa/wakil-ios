@@ -12,6 +12,8 @@ import CoreLocation
 
 // MARK: - ...  ViewController - Vars
 class BookserviceVC: BaseController {
+    @IBOutlet weak var addPhoneBtn: UIButton!
+    @IBOutlet weak var socialView: UIView!
     @IBOutlet weak var delivaryView: UIView!
     @IBOutlet weak var delivaryLbl: UILabel!
     @IBOutlet weak var delivaryCurrencyLbl: UILabel!
@@ -125,6 +127,11 @@ extension BookserviceVC {
 // MARK: - ...  Functions
 extension BookserviceVC {
     func setup() {
+//        if UD.user?.data?.user?.isSocial ?? 0 == 1 && UD.user?.data?.user?.isverified ?? 1 == 0 {
+//            socialView.isHidden = false
+//        }else {
+//            socialView.isHidden = true
+//        }
         if address == nil {
             address = UD.address
         }
@@ -202,6 +209,9 @@ extension BookserviceVC {
             }else {
                 self?.coordinator?.selectaddress()
             }
+        }).store(self)
+        addPhoneBtn.publisher.listen(on: {[weak self] _ in
+            self?.coordinator?.editphone()
         }).store(self)
         addGiftBtn.publisher.listen(on: {[weak self] _ in
             self?.coordinator?.gift()

@@ -29,7 +29,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UD.lat = nil
         UD.lng = nil
         if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
-            Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
+            if UD.user?.data?.user?.isSocial ?? 0 == 1 {
+                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+            }else {
+                Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
+            }
         }else {
             Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
         }

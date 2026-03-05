@@ -3204,7 +3204,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 406 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 407 localization keys.
     struct localizable {
       /// en translation: ADD
       ///
@@ -4658,6 +4658,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ar, en
       static let youHaveAProblemConnectingToTheInternetTryCallAgainAndTryAgain = Rswift.StringResource(key: "You have a problem connecting to the Internet try Call again and try again", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
+      /// en translation: You must enter a mobile number for your account in order to be able to place an order
+      ///
+      /// Locales: ar, en
+      static let youMustEnterAMobileNumberForYourAccountInOrderToBeAbleToPlaceAnOrder = Rswift.StringResource(key: "You must enter a mobile number for your account in order to be able to place an order", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ar", "en"], comment: nil)
       /// en translation: You must have greater than 18 years old.
       ///
       /// Locales: ar, en
@@ -10274,6 +10278,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("You have a problem connecting to the Internet try Call again and try again", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You must enter a mobile number for your account in order to be able to place an order
+      ///
+      /// Locales: ar, en
+      static func youMustEnterAMobileNumberForYourAccountInOrderToBeAbleToPlaceAnOrder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You must enter a mobile number for your account in order to be able to place an order", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You must enter a mobile number for your account in order to be able to place an order"
+        }
+
+        return NSLocalizedString("You must enter a mobile number for your account in order to be able to place an order", bundle: bundle, comment: "")
       }
 
       /// en translation: You must have greater than 18 years old.

@@ -43,6 +43,7 @@ extension LoginViewModel {
         NetworkManager.instance.paramaters["social_id"] = socailId.value ?? ""
         NetworkManager.instance.paramaters["social_type"] = socialType.value ?? ""
         NetworkManager.instance.paramaters["email"] = email.value ?? ""
+        NetworkManager.instance.paramaters["name"] = name.value ?? ""
         NetworkManager.instance.paramaters["device_type"] = Constants.FCMTYPE
         NetworkManager.instance.paramaters["fcm_token"] = Constants.FCMTOKEN
         NetworkManager.instance.paramaters["device_id"] = Constants.DEVICEID

@@ -66,7 +66,11 @@ extension LoginVC {
                 if self?.viewModel?.userdata.value?.data?.user?.isverified ?? 0 == 1 {
                     Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
                 }else {
-                    self?.coordinator?.verify()
+                    if self?.viewModel?.userdata.value?.data?.user?.isSocial ?? 1 == 0 {
+                        self?.coordinator?.verify()
+                    }else {
+                        Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+                    }
                 }
             }else {
                 self?.coordinator?.registersocail()
@@ -156,7 +160,7 @@ extension LoginVC {
                 return
             }
             self?.startLoading()
-            self?.viewModel?.name.send(model?.fullName ?? "")
+            self?.viewModel?.name.send("\(model?.givenName ?? "") \(model?.familyName ?? "")")
             self?.viewModel?.email.send(model?.email ?? "")
             self?.viewModel?.socailId.send(model?.id ?? "")
             self?.viewModel?.socialType.send(3)
