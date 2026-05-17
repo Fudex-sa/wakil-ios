@@ -17,8 +17,8 @@ internal class Defaults {
     @StoredDefaults("userDataDefaults")
     var user: UserRoot?
     
-    @StoredDefaults("addressDataDefaults")
-    var address: AddressesDatum?
+    @StoredDefaults("typeDataDefaults")
+    var type: Int?
     
     @StoredDefaults("latDataDefaults")
     var lat: Double?

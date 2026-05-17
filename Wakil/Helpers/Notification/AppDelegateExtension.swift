@@ -21,9 +21,9 @@ extension AppDelegate: FirebaseNotificationDelegate {
     func notificationControl(notification: [AnyHashable: Any]) {
         guard let type = notification["type"] as? String else {return}
         guard let itemId = notification["item_id"] as? String else { return }
-        HomeVC.itemId = itemId.int ?? 0
-        HomeVC.type = type
-        Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+//        HomeVC.itemId = itemId.int ?? 0
+//        HomeVC.type = type
+//        Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
     }
     // MARK: - ...  Did present the notification
     func notificationControlWillPresent(notification: [AnyHashable: Any], closure: SoundHandler? = nil) {
@@ -34,9 +34,9 @@ extension AppDelegate: FirebaseNotificationDelegate {
 //            notificationType = NotificationType.init(rawValue: type)
 //        }
         if let subscriber = notificationSubscriber {
-            let item = notification["item"] as? String
-            let data = item?.data(using: .utf8)
-            subscriber.notificationControlWillPresent(notificationType: type,json: itemId, closure: closure)
+//            let item = notification["item"] as? String
+//            let data = item?.data(using: .utf8)
+//            subscriber.notificationControlWillPresent(notificationType: type,json: itemId, closure: closure)
         } else {
             closure?(true)
         }

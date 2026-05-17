@@ -49,6 +49,8 @@
 	<string>395a43e1ca27cef0e2afcd8306aaba32</string>
 	<key>FacebookDisplayName</key>
 	<string>TARTA7</string>
+	<key>GIDClientID</key>
+	<string>208568714925-s3gn4k7ekcu25pav40o8aqrt7pcfubdc.apps.googleusercontent.com</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
@@ -92,10 +94,10 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-        <string>expoarabicbook.ttf</string>
-        <string>expoarabicbold.ttf</string>
-        <string>expoarabiclight.ttf</string>
-        <string>expoarabicmedium.ttf</string>
+		<string>expoarabicbook.ttf</string>
+		<string>expoarabicbold.ttf</string>
+		<string>expoarabiclight.ttf</string>
+		<string>expoarabicmedium.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -141,7 +143,5 @@
 	</array>
 	<key>aps-environment</key>
 	<string>production</string>
-    <key>GIDClientID</key>
-    <string>208568714925-s3gn4k7ekcu25pav40o8aqrt7pcfubdc.apps.googleusercontent.com</string>
 </dict>
 </plist>

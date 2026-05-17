@@ -28,17 +28,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UD.address = nil
         UD.lat = nil
         UD.lng = nil
-        if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
-            if UD.user?.data?.user?.isSocial ?? 0 == 1 {
-                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-            }else {
-                Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
-            }
-        }else {
-            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-        }
+//        if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
+//            if UD.user?.data?.user?.isSocial ?? 0 == 1 {
+//                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+//            }else {
+//                Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
+//            }
+//        }else {
+//            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+//        }
 
-//        Coordinator.instance.restart(storyboard: R.storyboard.matchdetailsStoryboard())
+        Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
         
 //        for family in UIFont.familyNames {
 //            print("\(family)")

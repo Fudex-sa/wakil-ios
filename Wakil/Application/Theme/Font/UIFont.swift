@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 public enum FontFamily: String {
-    case regular = "ExpoArabic-Book"
-    case bold = "ExpoArabic-Bold"
-    case italic = "ExpoArabic-Light"
+    case regular = "CoconNextArabic-Regular"
+    case bold = "CoconNextArabic-Bold"
+    case italic = "CoconNextArabic-Light"
     case medium = "ExpoArabic-Medium"
 }
 
