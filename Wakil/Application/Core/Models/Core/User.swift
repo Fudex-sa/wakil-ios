@@ -14,6 +14,7 @@ class UserRoot: Codable {
     var access_token: String?
     //var token: String?
     var isSuccess: Bool?
+    var user: User?
     var errorMessage: String?
     var statusCode: Int?
     var refresh_token: String?
@@ -184,7 +185,7 @@ extension UserRoot {
     // MARK: - ...  Function for fetch token
     public static func token() -> String? {
         let user = UD.user
-        return user?.data?.token
+        return user?.access_token ?? ""
     }
     // MARK: - ...  Function for logout user
     public static func logout() {

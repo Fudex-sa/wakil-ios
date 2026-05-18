@@ -18,7 +18,7 @@ class Coordinator: NSObject {
         delegate?.window?.rootViewController = scene
     }
     func unAuthorized() {
-        UD.address = nil
+       // UD.address = nil
         let scene = R.storyboard.loginStoryboard().instantiateInitialViewController()
         let delegate = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)
         delegate?.window?.rootViewController = scene
@@ -38,9 +38,9 @@ class Coordinator: NSObject {
 //        view?.pushPop(scene)
     }
     @objc dynamic func profileinit() {
-        guard let scene = R.storyboard.profileStoryboard.profileVC() else { return }
-        let view = UIApplication.topViewController() as? BaseController
-        view?.push(scene)
+//        guard let scene = R.storyboard.profileStoryboard.profileVC() else { return }
+//        let view = UIApplication.topViewController() as? BaseController
+//        view?.push(scene)
     }
     func forceupdate(msg: String) {
 //        guard let scene = R.storyboard.forceUpdateStoryboard.forceUpdateVC() else { return }

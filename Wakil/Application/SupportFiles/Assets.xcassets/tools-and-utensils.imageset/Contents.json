@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tools-and-utensils.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -56,19 +56,25 @@ extension LoginVC {
         })
         
         viewModel?.userdata.listen(on: { [weak self] value in
-            if self?.viewModel?.userdata.value?.data != nil {
-                if self?.viewModel?.userdata.value?.data?.user?.isverified ?? 0 == 1 {
-                  //  Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-                }else {
-                    if self?.viewModel?.userdata.value?.data?.user?.isSocial ?? 1 == 0 {
-                        self?.coordinator?.verify()
-                    }else {
-                        //Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
-                    }
-                }
-            }else {
-                self?.coordinator?.registersocail()
+            if UD.type == 1 {
+                Coordinator.instance.restart(storyboard: R.storyboard.mainuserStoryboard())
+            }else  if UD.type == 2 {
+                Coordinator.instance.restart(storyboard: R.storyboard.providermainStoryboard())
             }
+//            if self?.viewModel?.userdata.value?.data != nil {
+//
+////                if self?.viewModel?.userdata.value?.data?.user?.isverified ?? 0 == 1 {
+////                  //  Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+////                }else {
+////                    if self?.viewModel?.userdata.value?.data?.user?.isSocial ?? 1 == 0 {
+////                        self?.coordinator?.verify()
+////                    }else {
+////                        //Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
+////                    }
+////                }
+//            }else {
+//                self?.coordinator?.registersocail()
+//            }
         })
        
     }
@@ -76,8 +82,12 @@ extension LoginVC {
 // MARK: - ...  Functions
 extension LoginVC {
     func setup() {
+        regLbl.underline()
         regLbl.UIViewAction {
             self.coordinator?.register()
+        }
+        forgetStack.UIViewAction {
+            self.coordinator?.forgetpass()
         }
         forgetStack.publisherGesture.listen(on: {[weak self] _ in
             self?.coordinator?.forgetpass()

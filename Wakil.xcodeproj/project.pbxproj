@@ -55,6 +55,7 @@
 		4E4A07322FB9EBD200D3E4AA /* CoconNextArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4A07312FB9EBD200D3E4AA /* CoconNextArabic-Bold.ttf */; };
 		4E4A07342FB9EC4300D3E4AA /* CoconNextArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4A07332FB9EC4300D3E4AA /* CoconNextArabic-Regular.ttf */; };
 		4E4A07362FB9EC6700D3E4AA /* CoconNextArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4A07352FB9EC6700D3E4AA /* CoconNextArabic-Light.ttf */; };
+		4E54F13B2FBB26B100600596 /* VerifyCodeInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E54F13A2FBB26B100600596 /* VerifyCodeInputs.swift */; };
 		6627E36C277099AF00A4A6A6 /* GuardPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6627E36B277099AF00A4A6A6 /* GuardPassword.swift */; };
 		6636D7CA2C3AE370007116F7 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6636D7C52C3AE36F007116F7 /* LoginCoordinator.swift */; };
 		6636D7CB2C3AE370007116F7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6636D7C72C3AE36F007116F7 /* LoginModel.swift */; };
@@ -528,6 +529,7 @@
 		4E4A07312FB9EBD200D3E4AA /* CoconNextArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CoconNextArabic-Bold.ttf"; sourceTree = "<group>"; };
 		4E4A07332FB9EC4300D3E4AA /* CoconNextArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CoconNextArabic-Regular.ttf"; sourceTree = "<group>"; };
 		4E4A07352FB9EC6700D3E4AA /* CoconNextArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CoconNextArabic-Light.ttf"; sourceTree = "<group>"; };
+		4E54F13A2FBB26B100600596 /* VerifyCodeInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeInputs.swift; sourceTree = "<group>"; };
 		6627E36B277099AF00A4A6A6 /* GuardPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardPassword.swift; sourceTree = "<group>"; };
 		6636D7C52C3AE36F007116F7 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		6636D7C62C3AE36F007116F7 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
@@ -1033,6 +1035,7 @@
 		4E4A06ED2FB9E92600D3E4AA /* Verify */ = {
 			isa = PBXGroup;
 			children = (
+				4E54F13A2FBB26B100600596 /* VerifyCodeInputs.swift */,
 				4E4A06EE2FB9E94700D3E4AA /* VerifyCoordinator.swift */,
 				4E4A06EF2FB9E94700D3E4AA /* VerifyModel.swift */,
 				4E4A06F02FB9E94700D3E4AA /* VerifyStoryboard.storyboard */,
@@ -2961,6 +2964,7 @@
 				C871C8E3272FED5900DCBD2D /* GoogleMapHelper.swift in Sources */,
 				C806799D266E2F80001591AF /* GuardUI.swift in Sources */,
 				C871C9992730231300DCBD2D /* SkeletonTableViewProtocols.swift in Sources */,
+				4E54F13B2FBB26B100600596 /* VerifyCodeInputs.swift in Sources */,
 				C853B95026D7F9450008F09D /* SPPermissionsList.swift in Sources */,
 				7756A17225348AD400BFE53C /* UIAlertControllerExtensions.swift in Sources */,
 				C853B96326D7F9450008F09D /* SPPermissionsControllerInterface.swift in Sources */,
@@ -3242,7 +3246,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Wakil/Application/SupportFiles/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
+				INFOPLIST_KEY_CFBundleDisplayName = ELWAKEEL;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3329,7 +3333,7 @@
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "$(SRCROOT)/Wakil/Application/SupportFiles/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
+				INFOPLIST_KEY_CFBundleDisplayName = ELWAKEEL;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3418,7 +3422,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Wakil/Application/SupportFiles/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
+				INFOPLIST_KEY_CFBundleDisplayName = ELWAKEEL;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3502,7 +3506,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = "$(SRCROOT)/Wakil/Application/SupportFiles/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = TARTA7;
+				INFOPLIST_KEY_CFBundleDisplayName = ELWAKEEL;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

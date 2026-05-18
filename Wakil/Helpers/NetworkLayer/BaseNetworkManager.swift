@@ -131,6 +131,18 @@ extension BaseNetworkManager {
                     let model = try JSONDecoder().decode(M.self, from: response.data ?? Data())
                     return (.success(model))
                 } catch { return (.failure(error)) }
+            case 204?:
+                
+                        do {
+                            let emptyData = "{}".data(using: .utf8) ?? Data()
+                            let model = try JSONDecoder().decode(M.self, from: emptyData)
+                            return (.success(model))
+                        } catch {
+                            // If M cannot be constructed from an empty object, we pass a generic success
+                            // token if your NetworkResponse architecture supports it, or return a custom error.
+                            print("204 No Content received, but model \(M.self) requires properties.")
+                            return (.failure(NetworkError.init(message: "Success with no content.")))
+            }
             case 400?:
                 (UIApplication.topViewController() as? BaseController)?.stopLoading()
                 let error: NetworkError = NetworkError.init(errors: getError(data: (response.data ?? Data()) ))

@@ -17,14 +17,14 @@ struct NetworkConfigration {
         case stage
     }
     struct Config {
-        static var environment: Environment = .live  // Change this to .test for testing
+        static var environment: Environment = .test  // Change this to .test for testing
 
         static var baseURL: String {
             switch environment {
             case .live:
                 return "https://tarta7.com/api/v1/"
             case .test:
-                return "https://demo.raha.fudex-tech.net/api/v1/"
+                return "https://wakil.fudex-tech.net/api/"
             case .stage:
                 return "https://stage.raha.fudex-tech.net/api/v1/"
             }
@@ -64,14 +64,15 @@ struct NetworkConfigration {
     // MARK: - ...  The Endpoints
     public enum EndPoint: String {
         case forceUpdate = "/api/app/register/force-update"
-        case login = "client/login"
+        case login = "login"
         case countries
         case validteregister = "checkRegisterValidation"
         case register = "client/register"
         case news = "client/news"
-        case confirmotp = "client/confirm-otp-register"
+        case confirmotp = "code/verify"
         case sendotp = "client/send-otp"
-        case resetpass = "client/forgotPassword"
+        case forgetpass = "password/reset"
+        case resetpass = "password/update"
         case checkotp = "client/check-otp"
         case updateemail = "client/updateEmail"
         case updatepassword = "client/updatePassword"

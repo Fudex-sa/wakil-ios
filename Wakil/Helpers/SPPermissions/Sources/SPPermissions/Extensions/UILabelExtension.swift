@@ -30,4 +30,14 @@ extension UILabel {
             frame = .init(x: x, y: y, width: width, height: frame.height)
         }
     }
+    func underline() {
+            guard let text = self.text else { return }
+            let attributedString = NSMutableAttributedString(string: text)
+            attributedString.addAttribute(
+                .underlineStyle,
+                value: NSUnderlineStyle.single.rawValue,
+                range: NSRange(location: 0, length: attributedString.length)
+            )
+            self.attributedText = attributedString
+        }
 }

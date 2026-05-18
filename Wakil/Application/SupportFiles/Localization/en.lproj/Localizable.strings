@@ -291,3 +291,16 @@
 "Create a new account" = "Create a new account";
 "Forgot your password?" = "Forgot your password?";
 "Don't have an account?" = "Don't have an account?";
+"Send verification code" = "Send verification code";
+"Forgot password" = "Forgot password";
+"Enter your phone number and we will send you a verification code to reset your password" = "Enter your phone number and we will send you a verification code to reset your password";
+"Mobile number confirmation" = "Mobile number confirmation";
+"A verification code has been sent to you, please check the sent code and re-enter it to confirm your mobile number" = "A verification code has been sent to you, please check the sent code and re-enter it to confirm your mobile number";
+"Resend confirmation code" = "Resend confirmation code";
+"Confirm code" = "Confirm code";
+"New password" = "New password";
+"The new password" = "The new password";
+"Please enter the new password" = "Please enter the new password";
+"Repeat the password" = "Repeat the password";
+"Save" = "Save";
+"lenght must be" = "lenght must be";

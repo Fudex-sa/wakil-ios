@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>TARTA7</string>
+	<string>ELWAKEEL</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -48,7 +48,7 @@
 	<key>FacebookClientToken</key>
 	<string>395a43e1ca27cef0e2afcd8306aaba32</string>
 	<key>FacebookDisplayName</key>
-	<string>TARTA7</string>
+	<string>ELWAKEEL</string>
 	<key>GIDClientID</key>
 	<string>208568714925-s3gn4k7ekcu25pav40o8aqrt7pcfubdc.apps.googleusercontent.com</string>
 	<key>ITSAppUsesNonExemptEncryption</key>

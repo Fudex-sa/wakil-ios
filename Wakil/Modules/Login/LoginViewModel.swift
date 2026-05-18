@@ -26,11 +26,16 @@ extension LoginViewModel {
 // MARK: - ...  Example of network response
 extension LoginViewModel {
     func login() {
-        NetworkManager.instance.paramaters["mobile"] = phone.value ?? ""
+        NetworkManager.instance.paramaters["phone"] = phone.value ?? ""
         NetworkManager.instance.paramaters["password"] = password.value ?? ""
         NetworkManager.instance.paramaters["device_type"] = Constants.FCMTYPE
-        NetworkManager.instance.paramaters["fcm_token"] = Constants.FCMTOKEN
-        NetworkManager.instance.paramaters["device_id"] = Constants.DEVICEID
+        NetworkManager.instance.paramaters["token"] = Constants.FCMTOKEN
+        NetworkManager.instance.paramaters["mac"] = Constants.DEVICEID
+        if UD.type == 1 {
+            NetworkManager.instance.paramaters["type"] = "client"
+        }else if UD.type == 2 {
+            NetworkManager.instance.paramaters["type"] = "provider"
+        }
         NetworkManager.instance.request(NetworkConfigration.EndPoint.login.rawValue, type: .post, UserRoot.self)?.response(error: { [weak self] error in
             self?.error.send(error)
         }, receiveValue: { [weak self] model in

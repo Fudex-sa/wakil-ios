@@ -11,6 +11,9 @@ import UIKit
 
 // MARK: - ...  ViewController - Vars
 class RegisteruserVC: BaseController {
+    @IBOutlet weak var agreeBtn: CheckBoxButton!
+    @IBOutlet weak var regBtn: UIButton!
+    @IBOutlet weak var phoneTxf: UITextField!
     var viewModel: RegisteruserViewModel?
     var coordinator: RegisteruserCoordinator?
 }

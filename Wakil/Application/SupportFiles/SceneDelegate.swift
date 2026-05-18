@@ -25,9 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        } else {
 //            window?.overrideUserInterfaceStyle = .light
 //        }
-        UD.address = nil
-        UD.lat = nil
-        UD.lng = nil
+        
 //        if UD.user == nil || UD.user?.data?.user?.isverified ?? 0 == 0 {
 //            if UD.user?.data?.user?.isSocial ?? 0 == 1 {
 //                Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
@@ -38,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            Coordinator.instance.restart(storyboard: R.storyboard.mainStoryboard())
 //        }
 
-        Coordinator.instance.restart(storyboard: R.storyboard.loginStoryboard())
+        Coordinator.instance.restart(storyboard: R.storyboard.selecttypeStoryboard())
         
 //        for family in UIFont.familyNames {
 //            print("\(family)")

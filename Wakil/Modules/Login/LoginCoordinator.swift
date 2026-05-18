@@ -19,13 +19,18 @@ class LoginCoordinator: Coordinator {
 
 extension LoginCoordinator {
    func forgetpass(){
-//        guard let scene = R.storyboard.forgetpasswordStoryboard.forgetpasswordVC() else { return }
-//        view?.push(scene)
+        guard let scene = R.storyboard.forgetStoryboard.forgetVC() else { return }
+        view?.push(scene)
    }
     
     func register(){
-//        guard let scene = R.storyboard.registerStoryboard.registerVC() else { return }
-//        view?.push(scene)
+        if UD.type == 1 {
+            guard let scene = R.storyboard.registeruserStoryboard.registeruserVC() else { return }
+            view?.push(scene)
+        }else if UD.type == 2 {
+            guard let scene = R.storyboard.providerregisterStoryboard.providerregisterVC() else { return }
+            view?.push(scene)
+        }
     }
     func registersocail(){
 //        guard let scene = R.storyboard.registerStoryboard.registerVC() else { return }
